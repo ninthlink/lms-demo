@@ -1,0 +1,51 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="World of Apps" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again, but only once in a 24 hour period. Thanks for your time and hard work!" 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="An important thing to remember about Apps is:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="All apps are available on all platforms, making it easy for customers " />
+		<option key="" value="Apps are just mini-websites, and aren't very important to customers "/>
+		<option key="" value="Apps help personalize and customize a smartphone for the individual customer " answer="1"/>
+		<option key="" value="Apps are generally pretty limited in features and functions."/>
+	</question>
+
+	<question id="2" q="The marketplace with the largest number of apps available (as of summer 2013) is: " type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Google Play Store"  answer="1"/>
+		<option key="" value="Apple App Store " />
+		<option key="" value="Windows Moblie Store" />
+		<option key="" value="BlackBerry World"/>
+	</question>
+
+	<question id="3" q="Apps are limited to four categories: Entertainment, Games, Productivity, and Heath &amp; Fitness. " type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="True" />
+		<option key="" value="False" answer="1" />
+	</question>
+
+	<question id="4" q="Customers use apps to:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Increase productivity"/>
+		<option key="" value="Enjoy games" />
+		<option key="" value="Share videos and photos" />
+		<option key="" value="All of the above" answer="1"/>
+	</question>
+
+	<question id="5" q="A great way to showcase apps your customer might be interested in is to: " type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Talk to them about their interests, work, or hobbies "/>
+		<option key="" value="Be ready and knowledgable about apps for specific platforms"/>
+		<option key="" value="Bookmark the web sites for different app stores to demonstrate what's available"/>
+		<option key="" value="All of the above" answer="1"/>
+	</question>
+
+</quiz>

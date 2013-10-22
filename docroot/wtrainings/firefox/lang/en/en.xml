@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="Introduction to Firefox OS" right="false" language="en">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+			<swf name="page1">../section2/page1.swf</swf>
+			<swf name="page2">../section2/page2.swf</swf>
+			<swf name="page3">../section2/page3.swf</swf>
+			<swf name="page4">../section2/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+			<swf name="page1">../section3/page1.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<SWFs name="s4SWF">
+			<swf name="page1">../section4/page1.swf</swf>
+		</SWFs>
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text" posY="-8"><![CDATA[<font size="-3">Introduction to Firefox OS</font>]]></course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">Introduction</tab>
+			<tab title="3G vs 4G Tab"			field="tab2_text">Made For More</tab>
+			<tab title="In Daily Life Tab"  	field="tab3_text">Market Demand</tab>
+			<tab title="All Day, All Ways Tab"	field="tab4_text" posY="-7">Communicating with Customers</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">Next</pillar>
+			<pillar title="Previous Button" 	field="prev_text">Previous</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">Click the title of the course to return to the beginning of the course.</text>
+			<text title="Navigation Explaination" 	field="help2_text">This is the navigation, and your main means of getting around the course. The main categories are at the top, and the sub-categories listed below. Each section gets checked off as you visit it.</text>
+			<text title="Progress Bar Explaination" field="help3_text">This is the progress bar. It gradually increases as you go through the course, helping you to keep track of your overall progress.</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[Are you sure you want to exit this learning module?<br><br>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">Proceed to Assessment</text>
+			<text title="Continue to Assessment" 	field="yes_text">Yes, continue to the assessment</text>
+			<text title="Return to Module" 			field="cancel_text">Cancel &amp; return to the module</text>
+		</assessment>
+	</container>
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1 >> Make Every Moment Count
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Make Every Moment Count" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Make Every Moment Count<b/>]]></laserbeam>
+		<body title="Body" field="body_text">Your needs change from one moment to the next. Firefox OS does the same. Firefox OS is a new, free operating system for mobile devices, built by Mozilla - the makers of the popular Firefox web browser. It is an open platform that fosters greater participation in the value chain from developers to manufacturers to customers.</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 2 >> A Different Kind of OS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="A Different Kind of OS" name="s1p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>A Different Kind of OS</b>]]></laserbeam>
+		<body title="Body" field="body_text">Firefox OS breaks from the typical proprietary OS in modern devices, using HTML5, css, and javascript to allow developers to deliver powerful apps that aren’t tied to the OS platform. It’s a comprehensive standalone operating system for the mobile web. This allows:</body>
+
+		<text title="Features List" field="features_text"><![CDATA[<li>Direct connections and relationships between companies and customers. An open source operating system means customers will benefit from custom, personalized experiences.</li><li>Fast performance, even on lower end devices</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 3 >> Devices
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Devices" name="s1p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Devices</b>]]></laserbeam>
+		<body title="Body" field="body_text">Firefox is developing valuable relationships with carriers, manufacturers, developers, and technology providers to deliver the powerful Firefox OS platform, including Telefonica, Sprint, T-Mobile, LG, Sony and Qualcomm Technologies.</body>
+
+		<text title="Devices Callout" field="callout_text">Devices include the ZTE Open, the Alcatel One Touch Fire, each including a 3.5” screen, 1GHz processor, 512 MB of storage (plus a 2 GB SD card) and a 2.3 MP camera.  Additional Snapdragon phones will be coming from other manufacturers in Latin America, Europe, and other worldwide markets.</text>
+	</page>
+	
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 1 >> Friendly Platform
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Friendly Platform" name="s2p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Friendly Platform</b>]]></laserbeam>
+		<body title="4G Caption" field="body_text"><![CDATA[Firefox OS is an open alternative to proprietary systems like iOS and Android. Built entirely around HTML5, css, and javascript, Firefox OS can reduce the investment from developers, allowing them to develop more innovative apps and develop better customer loyalty and relationships.<br><br>Firefox OS uniquely anticipates your needs, adapts to every situation and instantly delivers the information you want. That includes popular, big name apps, but also local content that means the most to you and your life.]]></body>
+
+		<text title="HTML5 Callout" field="callout_text">HTML 5 is the next major revision of the HTML web standard - markup language for building websites.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 2 >> Adaptive App Search
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Adaptive App Search" name="s2p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Adaptive App Search</b>]]></laserbeam>
+		<body title="Body" field="body_text">Firefox OS is the only operating system with Adaptive App Search. While every other phone today is static, giving you the exact same apps each time you turn it on, Firefox OS is always changing to offer exactly the apps you need at any moment in your life.</body>
+
+		<text title="Search" 	field="search_text">Type a word or subject you're interested in</text>
+		<text title="Find" 		field="find_text">Find exactly what you want – and more</text>
+		<text title="Apps" 		field="apps_text">Get instant access or save apps to your phone</text>
+		<text title="Discover" 	field="discover_text">Discover more apps on the Firefox Marketplace</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 3 >> Have it all
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Have it all" name="s2p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Have it all</b>]]></laserbeam>
+		<body title="Body" field="body_text">Firefox Marketplace is the kind of app store customers expect, where they can get great apps for entertainment, productivity, social networking, and more. However, unlike other systems, Firefox Marketplace is not the only point of distribution for apps – apps can be distributed from anywhere online, by any developer – from carriers to movie makers to game developers. This allows a direct link to customers. From social to photography, music to maps - with Firefox OS, the web is the app store.</body>
+	</page>
+	
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 4 >> Powerful Platform
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Powerful Platform" name="s2p4">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Powerful Platform</b>]]></laserbeam>
+		<body title="Body" field="body_text">Firefox OS is packed with the features you want, and fits your life perfectly so you can fit in with the world around you. It scales from feature phone to smartphones, utilizing high performance standards-based API’s and open source software components. Inside, tight integration with Qualcomm® CPU, GPU, &amp; MM accelerators meet or exceed the native app experience.</body>
+
+		<text title="Image Footnote" field="footnotes_text"><![CDATA[Image attribution: <a href="http://arewemobileyet.com">http://arewemobileyet.com</a>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 1 >> Tearing Down Walls
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Tearing Down Walls" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Tearing Down Walls</b>]]></laserbeam>
+		<body title="Body" field="body_text">The open standards perspective of Firefox OS gives operators some clear advantages to working with the “walled gardens” of iOS, Android, and Blackberry. Carriers can create value-add services to customers, delivery rich, powerful apps directly to customers, and have more ownership over the customer experience.</body>
+
+		<text title="Quote 1" field="quote1_text"><![CDATA[<i>“Operators will benefit from higher control over the mobile ecosystem and consequently will have the opportunity to address specific customers.”</i><cite>– Franco Bernabe, Telecom Italia CEO</cite>]]></text>
+
+		<text title="Quote 2" field="quote2_text"><![CDATA[<i>“This is a major step to bring balance back to the telco sector. The smartphone market is currently working backwards. [Customers are] not able to take an application from one platform to another. Duopolies are not beneficial for any industry.”</i><cite>– Cesar Alierta, CEO, Telefonica</cite>]]></text>
+
+		<text title="Quote 3" field="quote3_text"><![CDATA[<i>“Suddenly we have something which is a bit more flexible.”</i><cite>– Jon Fredrick Baksaas, CEO, Telenor</cite>]]></text>
+
+		<text title="Quote 4" field="quote4_text"><![CDATA[<i>“This is the beginning of the end of walled gardens.”</i><cite>– Marco Quatorze, CMO, America Movil</cite>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 1 >> Selling Firefox OS
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Selling Firefox OS" name="s4p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Selling Firefox OS</b>]]></laserbeam>
+		<body title="Body" field="body_text">Firefox OS will especially appeal to customers who will appreciate an open, flexible environment.</body>
+
+		<text title="Selling Features" field="selling_features_text"><![CDATA[<li>Powerful Firefox Search built into the OS allows the power of the web to inform any part of the OS experience – search for “movies” and you’ll not only get information on movies, but entertainment apps at your fingertips to read reviews, buy tickets, learn more about the cast, or experience a movie’s standalone app. The OS allows a fluid, dynamic user experience.</li><li>Social media is deeply integrated into Firefox OS, making connecting via Facebook or Twitter less reliant on stand-alone apps or websites.</li><li>Firefox OS is where the web meets apps. The power of the internet combines with the elegance of the app form factor, giving users powerful, new, unique experiences on their devices. A huge app ecosystem can become available; more becomes possible.</li><li>Firefox OS will grow with the web – as standards evolve, so will the OS</li><li>HTML5 allows for automatic update of Apps, without the user’s intervention.</li><li>Adaptive App Search means the OS changes as you do – apps and information available to you change according to what you search for, giving you more of what you want.</li>]]></text>
+	</page>
+
+</course>
+

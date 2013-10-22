@@ -1,0 +1,4 @@
+name = Elite Custom
+description = "Provides site specific customizations for the Qualcomm Elite website"
+package = Elite
+core = 7.x

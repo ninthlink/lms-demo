@@ -1,0 +1,433 @@
+<?php
+
+function elite_custom_form_alter(&$form, &$form_state, $form_id) {
+  if($form_id == 'user_login') {
+    $register_link = elite_custom_markup_wrapper('Register', array('href' => '/user/register', 'class' => 'user-link'), 'a');
+    $forgot_link = elite_custom_markup_wrapper('Forgot Password', array('href' => '/user/password', 'class' => 'user-link'), 'a');
+    
+    
+    $form['links'] = array(
+      '#markup' => elite_custom_markup_wrapper("$register_link   |   $forgot_link", array('class' => 'user-links')),
+      '#weight' => 101
+    );
+  }
+  if ($form_id == 'user_register_form') {
+    $form['#validate'][] = 'elite_custom_validate_user_register';
+  }
+}
+
+function elite_custom_block_info() {
+  $blocks['avatar_block'] = array(
+    'info' => t('Avatar Block'),
+    'cache' => DRUPAL_CACHE_PER_USER
+  );
+	
+  $blocks['elite_user_block'] = array(
+    'info' => t('Elite User Block'),
+    'cache' => DRUPAL_CACHE_PER_USER
+  );
+	
+  $blocks['userflop'] = array(
+    'info' => t('Elite User Flop Block'),
+    'cache' => DRUPAL_CACHE_PER_USER
+  );
+
+  return $blocks;
+}
+
+function elite_custom_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'avatar_block':
+      $block['content'] = array(
+        '#markup' =>  elite_custom_block_avatar_view()
+      );
+			break;
+    case 'elite_user_block':
+      $block['content'] = array(
+        '#markup' =>  elite_custom_block_user_view()
+      );
+			break;
+    case 'userflop':
+      $block['content'] = array(
+        '#markup' =>  elite_custom_block_flop_view()
+      );
+			break;
+  }
+
+  return $block;
+}
+
+/**
+ * Implementation of hook_services_resources().
+ */
+function elite_custom_services_resources() {
+  $resources = array();
+
+  $resources['store']['actions']['purchase'] = array(
+    'file' => array(
+      'type' => 'inc', 
+      'module' => 'elite_custom', 
+      'name' => 'elite_custom',
+    ),
+    'help'   => t('Purchase products with points.'),
+    'access arguments' => array('access content'),
+    'callback' => 'elite_custom_user_purchase',
+    'args' => array(
+      array(
+        'name' => 'product_id',
+        'type' => 'int',
+        'description' => t('The ID of product being purchased.'),
+        'source' => 'data',
+        'optional' => FALSE,
+      ),
+      array(
+        'name' => 'shipping_data',
+        'type' => 'array',
+        'description' => t('The name of the person being shipped to.'),
+        'source' => 'data',
+        'optional' => FALSE,
+      ),
+    ),
+  );
+  
+  $resources['user']['actions']['picture'] = array(
+    'file' => array(
+      'type' => 'inc', 
+      'module' => 'elite_custom', 
+      'name' => 'elite_custom',
+    ),
+    'help'   => t('Set user picture.'),
+    'access arguments' => array('access content'),
+    'callback' => 'elite_custom_user_picture',
+    'args' => array(
+      array(
+        'name' => 'fid',
+        'type' => 'int',
+        'description' => t('The existing file ID of the file being set.'),
+        'source' => 'data',
+        'optional' => FALSE,
+      ),
+    ),
+  );
+  
+  $resources['image']['actions']['cache_style'] = array(
+    'file' => array(
+      'type' => 'inc', 
+      'module' => 'elite_custom', 
+      'name' => 'elite_custom',
+    ),
+    'help'   => t('Get a cached copy of an image.'),
+    'access arguments' => array('access content'),
+    'callback' => 'elite_custom_services_imagecache',
+    'args' => array(
+      array(
+        'name' => 'fid',
+        'type' => 'int',
+        'description' => t('The existing file ID of the file being set.'),
+        'source' => 'data',
+        'optional' => FALSE,
+      ),
+      array(
+        'name' => 'style',
+        'type' => 'string',
+        'description' => t('The name of the image_style being fetched'),
+        'source' => 'data',
+        'optional' => FALSE,
+      ),
+    ),
+  );
+
+  return $resources;
+}
+
+function elite_custom_validate_user_register($form, &$form_state) {
+  $values = $form_state['values'];
+
+  if($values['field_user_of_age'][LANGUAGE_NONE][0]['value'] != 1) {
+    form_set_error('field_user_of_age', t('You must be 18 or older.'));
+  }
+  if($values['field_terms_conditions'][LANGUAGE_NONE][0]['value'] != 1) {
+    form_set_error('field_terms_conditions', t('You must agree to the terms and conditions.'));
+  }
+}
+/*
+ * Provides content for the user Avatar block in the header,
+ * displaying userpoints + small user image thumbnail
+ */
+function elite_custom_block_avatar_view() {
+  global $user;
+  $user = user_load($user->uid);
+
+  if($user->uid == 0) {
+    return '';
+  }
+  
+  if (!empty($user->picture)) {
+    $picture = theme('image_style', array(
+      'path' => $user->picture->uri,
+      'style_name' => 'micro',
+    ));
+		$picture = l( $picture, 'user', array('html'=>true));
+    $picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
+  } else {
+    $picture_markup = '';
+  }
+  $points = userpoints_get_current_points($user->uid);
+  $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
+  
+  $markup =  $points_markup . $picture_markup;
+  
+//  drupal_add_css(drupal_get_path('module', 'elite_custom') . '/css/avatar-block.css');
+  
+  return elite_custom_markup_wrapper($markup, array('id' => 'avatar-block-wrapper'));
+}
+/*
+ * Provides content for the user block, for right column areas,
+ * displaying larger user image thumbnail + points total
+ * + possibly more info in the futures?
+ */
+function elite_custom_block_user_view() {
+  global $user;
+  $user = user_load($user->uid);
+
+  if($user->uid == 0) {
+    return '';
+  }
+  
+  if (!empty($user->picture)) {
+    $picture = theme('image_style', array(
+      'path' => $user->picture->uri,
+      'style_name' => 'rounduser',
+    ));
+		$picture = l( $picture, 'user', array('html'=>true));
+    $picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
+  } else {
+    $picture_markup = '';
+  }
+  $points = '<strong>'. userpoints_get_current_points($user->uid) .'</strong> points';
+  $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
+  
+  $markup = $picture_markup . $points_markup;
+  
+  return elite_custom_markup_wrapper($markup, array('id' => 'elite-user-block-wrapper'));
+}
+/*
+ * Provides content for the detailed user block, for flop out,
+ * displaying larger user image thumbnail + points total
+ * + more
+ */
+function elite_custom_block_flop_view() {
+  global $user;
+  $user = user_load($user->uid);
+
+  if($user->uid == 0) {
+    return '';
+  }
+  
+	$uname = '';
+  if (!empty($user->field_user_name_first)) {
+		$uname .= $user->field_user_name_first['und'][0]['value'];
+	}
+	$uname .= ' ';
+  if (!empty($user->field_user_name_last)) {
+		$uname .= $user->field_user_name_last['und'][0]['value'];
+	}
+	$uname_markup = elite_custom_markup_wrapper($uname, array('class' => 'user-name' ) );
+  if (!empty($user->picture)) {
+    $picture = theme('image_style', array(
+      'path' => $user->picture->uri,
+      'style_name' => 'rounduser',
+    ));
+		$picture = l( $picture, 'user', array('html'=>true));
+    $picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
+  } else {
+    $picture_markup = '';
+  }
+  $points = '<strong>'. userpoints_get_current_points($user->uid) .'</strong> points';
+  $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
+  
+	$umenu = '<ul class="usermenu">';
+	$myaccount = t('My Account');
+	$myaccount = elite_custom_markup_wrapper($myaccount, array(), 'usermenu');
+	$laccount = l( $myaccount, 'user/'. $user->uid .'/edit', array('html'=>true) );
+	$umenu .= '<li class="account">'. $laccount .'</li>';
+	
+	$training = t('Trainings Completed');
+	$tnum = elite_customer_user_training_count();
+	$mattr = array('count'=>$tnum);
+	$training = elite_custom_markup_wrapper($training, $mattr, 'usermenu');
+	$lt = l( $training, 'trainings', array('html'=>true) );
+	$umenu .= '<li class="trainings">'. $lt .'</li>';
+	
+	$umenu .= '<li class="activity">'. l( elite_custom_markup_wrapper(t('My Activity'), false, 'usermenu'), 'user/'. $user->uid .'/points', array('html'=>true) ) .'</li>';
+	$umenu .= '<li class="logout">'. l( elite_custom_markup_wrapper(t('Log out'), false, 'usermenu'), 'user/logout', array('html'=>true) ) .'</li>';
+	
+	$umenu .= '</ul>';
+	
+	// put it all together
+  $markup = $uname_markup . $picture_markup . $points_markup . $umenu;
+	$markup .= '<pre style="display:none">'. print_r($user,true) .'</pre>';
+	
+  return elite_custom_markup_wrapper($markup, array('id' => 'elite-user-flop'));
+}
+
+function elite_custom_views_pre_render(&$view) {
+  if($view->name == 'questions_by_quiz') {
+    //collapse multi-answer listings
+    $results = $answers = array();
+    foreach($view->result as $result) {
+      if (isset($result->quiz_node_relationship_child_nid) && $qid = $result->quiz_node_relationship_child_nid){
+        $answers[$qid][] = $result->quiz_multichoice_answers_answer;
+        $result->quiz_multichoice_answers_answer = json_encode($answers[$qid]);
+        $results[$qid] = $result;
+      }
+    }
+    $view->result = array_values($results);
+  }
+}
+
+function elite_custom_services_poll_data_fetch(&$return) {
+  $poll = node_load($return->nid);
+  if (isset($poll->field_base_points) && !empty($poll->field_base_points)) {
+    $return->base_points = $poll->field_base_points;
+  } 
+}
+
+function elite_custom_markup_wrapper($markup, $attributes = NULL, $tag = 'div') {
+	if ( $tag == 'usermenu' ) {
+		$output = '<span class="icon"></span><span class="title">'. $markup .'</span>';
+		if (isset($attributes) && is_array($attributes)) {
+			if ( isset( $attributes['count'] ) ) {
+				$output .= '<span class="count">'. $attributes['count'] .'</span>';
+			}
+		}
+	} else {
+		$attrs = '';
+		if (isset($attributes) && is_array($attributes)) {
+			foreach($attributes as $k => $v) {
+					$attrs .= " $k='$v'";
+			}
+		}
+		$output = "<$tag$attrs>$markup</$tag>";
+	}
+  return $output;
+}
+
+/**
+ * Implements hook_quiz_finished().
+ */
+function elite_custom_quiz_finished($quiz, $score, $rid) {
+  $training_data = db_select('field_data_field_training_quiz', 'tq')
+    ->fields('tq', array('entity_id'))
+    ->condition('field_training_quiz_target_id', $quiz->nid)
+    ->orderBy('entity_id', 'DESC')
+    ->execute()
+    ->fetchAssoc();
+  $training_node = node_load($training_data['entity_id']);
+//	watchdog('elite quizd', 'trainign done?! <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre>');
+  if (!empty($training_node->field_base_points)) {
+    $base_points = $training_node->field_base_points[LANGUAGE_NONE][0]['value'];
+
+    $ptsres = userpoints_userpointsapi( array(
+			'points' => $base_points,
+			'operation' => 'elite_custom_quiz_finished',
+			'entity_id' => $training_node->nid,
+			'entity_type' => 'node',
+		));
+		if ( function_exists('watchdog') ) watchdog('elite quizd', 'trainign done?! <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre><br />base pts?! '. $base_points .' : <pre>'. print_r($ptsres,true) .'</pre>');
+  }
+}
+
+/**
+ * Implements hook_userpoints_info().
+ */
+function elite_custom_userpoints_info() {
+  return array(
+    'elite_custom_quiz_finished' => array(
+      'description callback' => 'elite_custom_userpoints_description_callback',
+    ),
+  );
+}
+
+/**
+ * Description callback for userpoint operation description/reason.
+ */
+function elite_custom_userpoints_description_callback($operation, $entity) {
+
+  $arguments = array();
+  // Try to load content type name.
+  if ($operation->entity_type == 'node' && $entity) {
+    $arguments['%title'] = $entity->title;
+  }
+
+  // Fallback to string content if the above failed for some reason.
+  if (empty($arguments['%title'])) {
+    $arguments['%title'] = t('content');
+  }
+
+  switch ($operation->operation) {
+    case 'elite_custom_quiz_finished':
+      return t('Completed training quiz "%title"', $arguments);
+      break;
+	}
+}
+
+/*
+ * based off quiz module quiz_get_user_results
+ * from quiz.pages.inc
+ */
+function elite_customer_user_training_count($uid = -1) {
+	if ( $uid == -1 ) {
+		global $user;
+		$uid = $user->uid;
+	}
+	$dbresult = db_query('SELECT DISTINCT(n.nid), n.title, qnp.pass_rate, qnrs.result_id, qnrs.time_start, qnrs.time_end, qnrs.score, qnrs.is_evaluated
+    FROM {node} n
+    INNER JOIN {quiz_node_properties} qnp ON n.nid = qnp.nid
+    INNER JOIN {quiz_node_results} qnrs ON qnrs.vid = qnp.vid
+    INNER JOIN {users} u ON u.uid = qnrs.uid
+    WHERE n.type = :type
+      AND u.uid = :uid
+    ORDER BY qnrs.result_id ASC', array(':type' => 'quiz', ':uid' => $uid));
+
+  // Create an array out of the results.
+	$total = 0;
+	$results = array();
+  foreach ($dbresult as $result) {
+    $result = (array) $result;
+		if ( !isset( $results[$result['nid']] ) ) {
+    	$results[$result['nid']] = $result;
+			$total++;
+		}
+  }
+//	$total = '<pre>'. print_r($results,true) .'</pre>';
+	return $total;
+}
+
+/*
+ * hook_node_load to tweak some things for Services mostly
+ */
+function elite_custom_node_load( $nodes, $types ) {
+//	watchdog('hook node load', 'args '. arg(0) .' / '. arg(1) .' / '. arg(2) .' ... <br />nodes <pre>'. print_r($nodes,true) .'</pre><br />types <pre>'. print_r($types,true) .'</pre>');
+	foreach ( $nodes as $id => $n ) {
+		if ( $n->type == 'training' ) {
+			// change wslash URL ?
+			if ( defined('ELITELOCAL') ) {
+				if ( arg(0) == 'ws' ) {
+					if ( is_array( $n->field_wslash_training ) ) {
+						if ( isset( $n->field_wslash_training['und'] ) ) {
+							if ( isset( $n->field_wslash_training['und'][0] ) ) {
+								$ws = $n->field_wslash_training['und'][0]['url'];
+								$firstslash = strpos( $ws, '/', 8 );
+								if ( $firstslash > 0 ) {
+									$n->field_wslash_training['und'][0]['url'] = ELITELOCAL . substr($ws, $firstslash);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

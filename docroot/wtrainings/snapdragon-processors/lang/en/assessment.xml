@@ -1,0 +1,53 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="The Right Qualcomm® Snapdragon™ Processor" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again, but only once in a 24 hour period. Thanks for your time and hard work!" 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="The Snapdragon 800 processor features:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="1080p video and 5.1 surround sound " />
+		<option key="" value="Wi-Fi 802.11n connectivity "/>
+		<option key="" value="Bluetooth 3.0" />
+		<option key="" value="4K Ultra HD video playback and 7.1 surround sound" answer="1"/>
+	</question>
+
+	<question id="2" q="The Snapdragon 600 customer " type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Engages in heavy web browsing, but little social media" />
+		<option key="" value="Is looking for a premium gaming device "/>
+		<option key="" value="Is generally the most tech-savvy of any customer " />
+		<option key="" value="Might use their device for 4+ hours each day" answer="1"/>
+	</question>
+
+	<question id="3" q="Snapdragon 200 customers" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Are very tech savvy" />
+		<option key="" value='Are your \"mainstream\" customer'/>
+		<option key="" value="Typically use their devices 4-6 hours each day" />
+		<option key="" value="Might be intimidated by a lot of tech talk" answer="1"/>
+	</question>
+
+	<question id="4" q="The Snapdragon 800 customer" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Is generally looking for you to teach them about smartphone technology" />
+		<option key="" value="Has high expectations, and might know a lot about tech."  answer="1"/>
+		<option key="" value="Use their devices sparingly throughout the day "/>
+		<option key="" value="Might be turned off by deep dives into tech features."/>
+	</question>
+
+	<question id="5" q="With a Snapdragon 400 customer:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Show them social media, email, and entertainment capabilities" answer="1"/>
+		<option key="" value="Don't demo devices - they want to learn more through talking"/>
+		<option key="" value="It's better not to ask about how they use their smartphone, this might intimidate them " />
+		<option key="" value="Focus on features like Auto Volume Mode for great voice calling"/>
+	</question>
+
+</quiz>

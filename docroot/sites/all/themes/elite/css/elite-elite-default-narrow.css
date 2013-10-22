@@ -1,0 +1,27 @@
+/* This file will hold styles that are loaded using the same media query as the narrow grid. */
+/* If you are using the default media queries provided by Omega, these styles will also
+ *  apply to the normal and widescreen layouts. You may override these styles in the normal
+ *  and widescreen CSS files as appropriate. */
+.not-logged-in.page-user.responsive-layout-narrow #zone-content {
+  padding: 20px 0;
+  min-height: 0;
+}
+.not-logged-in.page-user.responsive-layout-narrow #block-system-main {
+  width: 100%;
+  padding: 20px;
+  background: none;
+}
+.not-logged-in.page-user.responsive-layout-narrow #messages .messages {
+  width: 100%;
+}
+
+.not-logged-in.page-user.responsive-layout-narrow .form-item.password-parent,
+.not-logged-in.page-user.responsive-layout-narrow .form-item.confirm-parent,
+.not-logged-in.page-user.responsive-layout-narrow #edit-field-user-of-age,
+.not-logged-in.page-user.responsive-layout-narrow #edit-field-terms-conditions,
+.not-logged-in.page-user.responsive-layout-narrow #edit-field-region,
+.not-logged-in.page-user.responsive-layout-narrow #edit-field-user-language-pref {
+  width: 100%;
+  float: none;
+  clear: both;
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="Smartphone 101" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again, but only once in a 24 hour period. Thanks for your time and hard work!" 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="The processor directly controls performance of…" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="The CPU only" />
+		<option key="" value="Primarily graphics, battery life, and video playback"/>
+		<option key="" value="All major functions of the smartphone " answer="1"/>
+		<option key="" value="Speed in executing commands"/>
+	</question>
+
+	<question id="2" q="2G connectivity was designed for: " type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Media streaming"/>
+		<option key="" value="Online gaming" />
+		<option key="" value="Social media" />
+		<option key="" value="Voice calling and text messaging" answer="1" />
+	</question>
+
+	<question id="3" q="Qualcomm Snapdragon processors are designed to improve battery efficiency by using power only when needed." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="True" answer="1"/>
+		<option key="" value="False" />
+	</question>
+
+	<question id="4" q="According to this course, a smartphone's ability to deliver great images is determined by:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Lens and aperture" />
+		<option key="" value="Focal length and ISO" />
+		<option key="" value="Processor and Image Sensor" answer="1"/>
+		<option key="" value="Apps and megapixels" />
+	</question>
+
+	<question id="5" q="Popular ways smartphones connect to the world around us are:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Wi-Fi"/>
+		<option key="" value="GPS"/>
+		<option key="" value="Bluetooth"/>
+		<option key="" value="All of the above" answer="1"/>
+	</question>
+</quiz>

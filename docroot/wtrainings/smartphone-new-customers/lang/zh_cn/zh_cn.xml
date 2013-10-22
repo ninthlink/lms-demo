@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="Smartphone for New Customers" right="false" language="zh_cn">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+			<swf name="page1">../section2/page1.swf</swf>
+			<swf name="page2">../section2/page2.swf</swf>
+			<swf name="page3">../section2/page3.swf</swf>
+			<swf name="page4">../section2/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+			<swf name="page1">../section3/page1.swf</swf>
+			<swf name="page2">../section3/page2.swf</swf>
+			<swf name="page3">../section3/page3.swf</swf>
+			<swf name="page4">../section3/page4.swf</swf>
+			<swf name="page5">../section3/page5.swf</swf>
+			<swf name="page6">../section3/page6.swf</swf>
+			<swf name="page7">../section3/page7.swf</swf>
+			<swf name="page8">../section3/page8.swf</swf>
+			<swf name="page9">../section3/page9.swf</swf>
+			<swf name="page10">../section3/page10.swf</swf>
+			<swf name="page11">../section3/page11.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<SWFs name="s4SWF">
+			<swf name="page1">../section4/page1.swf</swf>
+			<swf name="page2">../section4/page2.swf</swf>
+			<swf name="page3">../section4/page3.swf</swf>
+			<swf name="page4">../section4/page4.swf</swf>
+		</SWFs>
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text" posY="-8">智能手机新客户</course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">介绍</tab>
+			<tab title="3G vs 4G Tab"			field="tab2_text">智能智能手机</tab>
+			<tab title="In Daily Life Tab"  	field="tab3_text">智能客户</tab>
+			<tab title="All Day, All Ways Tab"	field="tab4_text">总结</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">下</pillar>
+			<pillar title="Previous Button" 	field="prev_text">前</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">单击该标题的使用过程中返回的过程的开始。</text>
+			<text title="Navigation Explaination" 	field="help2_text">这是导航，越来越围绕课程的主要手段。主要的分类在顶部，下面列出的子类别。每一节都被检查你访问它。</text>
+			<text title="Progress Bar Explaination" field="help3_text">这是进度酒吧。逐渐增大，当您去通过课程，帮助您跟踪您的整体进步。</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[您确定要退出这个学习模块吗？<br><br>我们鼓励你去探索这个模块彻底，重新审视这些领域，可能需要更深的理解。你知道，更多的结果，你会看到销售现场！您可以随时选择退出的评估。]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">继续评估</text>
+			<text title="Continue to Assessment" 	field="yes_text">是的，继续评估</text>
+			<text title="Return to Module" 			field="cancel_text">取消和返回模块</text>
+		</assessment>
+	</container>
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Introduction" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text">智能手机新客户</laserbeam>
+		<sublaser title="Sublaser" field="sublaser_text">欢迎</sublaser>
+		<body title="Body" field="body_text"><![CDATA[人们都在加紧从功能手机到智能手机比以往任何时候都更快。智能手机的便利性和功能已经改变了我们如何与人交流，我们周围的世界互动。<br><br>该模块将教你如何帮助客户选择他们的第一款智能手机 - 即使你没有自己的一个自己。]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 1 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Get to Know Them" name="s2p1">
+		<laserbeam title="Header" field="laserbeam_text">去了解他们</laserbeam>
+		<body title="Body" field="body_text">如果您的客户正在浏览的智能手机，他们很可能急于了解更多。你的工作是了解他们的需求，回答问题，并告诉他们如何智能手机可以更好地使他们的生活。</body>
+
+		<text title="Sales Tip" field="sales_tip_text"><![CDATA[<b>销售技巧</b>: 开始与客户是一个伟大的地方问，“你要买什么，做您的智能手机吗？”这是一个伟大的方式，了解什么样的功能和应用程序对他们很重要。]]></text>
+	</page>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 2 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="The Basics" name="s2p2">
+		<laserbeam title="Header" field="laserbeam_text">基础知识</laserbeam>
+		<body title="Body" field="body_text">几乎每个人都希望被连接到朋友，家人和同事。开始他们的基本特征：</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>触摸屏</li><li>语音通话</li><li>短信和通话历史记录</li><li>语音进行文字的</li>]]></text>
+
+		<text title="Sales Tip" field="sales_tip_text"><![CDATA[<b>销售技巧</b>: 第一次智能手机的消费者往往被淹没。从基础开始，以帮助他们成为自信。]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Web Access" name="s2p3">
+		<laserbeam title="Header" field="laserbeam_text">Web访问</laserbeam>
+		<body title="Body" field="body_text">智能手机将你的口袋里的互联网。他们可以告诉他们如何使用网络，就像他们在家里做：</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>搜索信息</li><li>发送和阅读电子邮件</li><li>购物</li><li>查看新闻和天气</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="GPS &amp; Maps" name="s2p4">
+		<laserbeam title="Header" field="laserbeam_text">GPS和地图</laserbeam>
+		<body title="Body" field="body_text">智能手机允许你GPS的力量，与你到处走。告诉他们如何：</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>查明您当前的位置</li><li>查找附近的商家</li><li>获得行车路线</li><li>搜索地图</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 5
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Apps" name="s2p5">
+		<laserbeam title="Header" field="laserbeam_text">应用程序</laserbeam>
+		<body title="Body" field="body_text">应用程序可用于几乎任何你能想象的。但应用程序的伟大的事情是不是真的定制的手机是个人。问他们，他们的利益是什么，并告诉他们，他们可能会喜欢的应用程序：</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>社交网络（Facebook，Twitter的）</li><li>音乐（潘多拉，Spotify的）</li><li>（摄影分享的Instagram）</li><li>视频和电影（YouTube，Netflix公司的）</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 6
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="The Camera" name="s2p6">
+		<laserbeam title="Header" field="laserbeam_text">相机</laserbeam>
+		<body title="Body" field="body_text">智能手机有惊人的摄像头，可以点和拍摄你已经拥有的一样好。显示他们的相机，以及他们如何可以：</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>拍摄的照片和视频</li><li>应通过短信，电子邮件或社交媒体</li><li>编辑与特效</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 7
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Put It All Together" name="s2p7">
+		<laserbeam title="Header" field="laserbeam_text">把它放在一起</laserbeam>
+		<body title="Body" field="body_text">智能手机可以帮助您连接，保持消息灵通，并予以受理。自定义您的智能手机应用程序，使您的设备个人提供你正是你所需要的功能。</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Busy Parent" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text">忙碌的家长</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[艾米是在负责协调她的孩子们的日程安排，是一个积极的志愿者，喜欢留在接触社交媒体。<br><br>显示艾米它是多么容易使用智能手机的日历，以及如何，她甚至可能是能够同步与她的儿子或其他家庭成员。相机拍摄的一些照片从她的志愿服务活动，将是伟大的，她可以分享他们的权利，网站或社会媒体。]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Business Owner" name="s3p2">
+		<laserbeam title="Header" field="laserbeam_text">业主</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[卡洛斯运行一个小企业，并正在寻找方式，智能手机可以帮助他更富有成效。<br><br>他谈他的智能手机应用程序如何可以帮他做一切从轨道开支来管理库存，甚至充当销售点。他可以更新他的网站，或直接写信给他公司的博客，他的智能手机时，灵感闪现，更新他的社交媒体是一件轻而易举的。]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="College Student" name="s3p3">
+		<laserbeam title="Header" field="laserbeam_text">大学生</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[艾琳就要上大学了，并且已经有一些头脑检查设备在您的商店。她知道，她会做很多的短信和社交网络，但她的兴奋，以及拍照和拍摄视频。<br><br>交谈伊林一切智能手机可以帮她做的 - 从她的课表管理研究和写作的学校作业 - 与有限的生存空间，作为一名大学生，她可能真的很享受家庭影院，您的手智能手机可以提供。]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Congratulations" name="s4p1">
+		<laserbeam title="Header" field="laserbeam_text">祝贺您</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[您已经完成了本次培训的智能手机101。请记住，这个客户可能是移动功能的手机，并考虑他们的第一款智能手机。当然，他们已经看到他们周围可能是一个有点熟悉的一些智能手机的功能，但他们会知道更多的便利性和个性化的智能手机可以提供。<br><br>帮助他们看到智能手机如何能成为他们的生活方式，把正确的东西，是他们最重要的 - 特定的应用程序，照片和视频，娱乐，游戏，或生产力功能 - 在他们的指尖。拿起你的店的设备，演示功能，让您的客户与他们进行互动。<br><br>首次购房者可能会看看周围有很多，访问您的店好几次，有很多的问题。准备倾听，帮助和建议。]]></body>
+	</page>
+
+</course>
+

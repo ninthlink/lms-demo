@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Blackberry 10</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+
+   <!-- IE Fix for HTML5 Tags -->
+   <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/foundation.min-rtl.css" disabled>
+  <link rel="stylesheet" href="stylesheets/jquery.horslidernav-v1.5.css">
+  <link rel="stylesheet" href="stylesheets/qualcomm-template.css">
+  <link rel="stylesheet" href="stylesheets/course.css">
+
+   <!-- IE9 Fix for Full Stop Gradients -->
+   <!--[if gte IE 9]>
+      <style type="text/css">
+         .qualcomm-gradient { filter: none; }
+      </style>
+   <![endif]-->
+
+   <!--[if lt IE 9]>
+      <link rel="stylesheet" href="stylesheets/ie.css">
+   <![endif]-->
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <!-- Sublime video (Chris - wslash domain) -->
+  <!-- <script type="text/javascript" src="//cdn.sublimevideo.net/js/pk4r4ijx.js"></script> -->
+  <!-- Sublime video with no SSL registered to Qualcomm.com w/ wildcard -->
+  <script type="text/javascript" src="//cdn.sublimevideo.net/js/brxysbmu.js"></script>
+  <script type="text/javascript">
+    /*--------------------------------------------------------------------------------------------
+      Get the url parameter passed in to load in the appropriate XML file to parse.
+    --------------------------------------------------------------------------------------------*/
+    var urlLang = getUrlVars()["lang"];
+    /*--------------------------------------------------------------------------------------------
+      Get URL Parameter Function
+       - Gets the URL parameters and stores in an associative array
+       - If the user clicks a tab it appends a #hash tag to the URL, which can return a 
+         URL variables such as "lang=fr#experience1". 
+       - Function will only take anything from the "?" to the first index of the "#" IF the hash 
+         is found, othewise, just take from "?" to the end of URL.
+    --------------------------------------------------------------------------------------------*/
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            var hashIndex = value.search('#');
+            if(hashIndex == -1) {
+              vars[key] = value;
+            } else {
+              value = value.substring(0,hashIndex);
+              vars[key] = value;
+            }
+        });
+        return vars;
+    }
+  </script>
+
+</head>
+<body>
+
+  <!-- Loader for the page -->
+  <div class="loader">
+      <img src="images/shared/loader.gif" alt="loading image"/>
+  </div>
+
+   <!-- Main Navigation [Top-Bar]:
+      • This contains the main navigation for the course, allows the user to jump between elements
+   -->
+   <div class="main-navigation fixed" data-context="container">
+      <nav class="top-bar bars-navicon">
+         <ul>
+            <li class="name"><img src="images/shared/qualcomm-logo.png" alt="Qualcommm Logo" class="logo"></li>
+            <li class="name course-name"><h1 class="subheader"><a href="#" onclick="goToByScroll('.section1', 1);" data-field="title_text">Blackberry 10</a></h1></li>
+            <li class="toggle-topbar"><a href="#"></a></li>
+         </ul>
+         
+         <section>
+            <ul class="right">
+               <li class="divider"></li>
+               <li class="has-dropdown">
+                  <a href="#" data-lang="nav">MENU</a>
+                  <ul class="dropdown">
+                    <li><a href="#"  onclick="goToByScroll('.section1', 1);" data-field="tab1_text">Introduction</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section2', 2);" data-field="tab2_text">Blackberry<sup>®</sup> is...</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section3', 3);" data-field="tab3_text">Benefits of Qualcomm<sup>®</sup> Snapdragon™ Processors</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" data-lang="dashboard">Back to Dashboard</a></li>
+                  </ul>
+               </li>
+            </ul>
+
+            <!-- this is the proceed quiz -->
+            <!-- <ul class="right quiz-container">
+              <li><a class="quiz chevron disable" href="">Proceed to Assessment</a></li>
+            </ul> -->
+         </section>
+      </nav>
+   </div>
+
+   <!-- Content Starts Here 
+      • Slides: they make ups each section of content or in relation to Flash course, each SWF that is loaded
+   -->
+   <div class="content-container">
+
+      <!-- SECTION 1 -->
+      <div class="section1 slide qualcomm-gradient snapdragon-radial-black slide-first">
+        <!-- Introduction -->
+        <div class="row inner-section first" data-context="s1p1">
+          <div class="twelve columns">
+            <h1 class="qualcomm-header" data-field="laserbeam_text">Blackberry<sup>®</sup> 10.<br/><span class="yellow">Built to Keep You Moving.</span></h1>
+          </div>
+        </div>
+
+        <!-- Built to Keep You Moving -->
+        <div class="row inner-section" data-context="s1p1">
+          <div class="seven columns h-center">
+            <img src="images/shared/section1/built-to-move.png" />
+          </div>
+
+          <div class="five columns">
+            <h1 data-field="sublaser_text">Blackberry 10...</h1>
+            <ul data-field="body_text">
+              <li>Introduces a fluid and effortless new experience that makes it a pleasure to make things happen</li>
+              <li>Delivers ease and speed by removing all of the little roadblocks you experience on other smartphones that take up valuable time</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Built to Keep You Moving:: Callout Panel -->
+        <div class="row" data-context="s1p1">
+          <div class="twelve columns">
+            <div class="panel outline">
+              <div class="row">
+                <div class="three columns h-center">
+                  <img class="img-change" src="lang/en/images/snapdragon-chip.png" alt="snapdragon chip">
+                </div>
+                <div class="nine columns">
+                  <div class="vcenter-container" data-field="callout_text">The new Blackberry<sup>®</sup> Z10 smartphone, BlackBerry<sup>®</sup> Q10 smartphone, and BlackBerry<sup>®</sup> Q5 smartphone ship with the Qualcomm<sup>®</sup> Snapdragon™ processor offering an unprecedented combination of performance, rich multi-media, graphics, wireless connectivity and power efficiency.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="vspacer-50"></div>
+
+        <hr />
+
+        <!-- What is Snapdragon -->
+        <div class="row inner-section" data-context="s1p2">
+          <div class="six columns">
+            <h1 class="yellow" data-field="laserbeam_text">What is Snapdragon™ Processor?</h1>
+            <p data-field="body_text">Qualcomm<sup>®</sup> Snapdragon™ all-in-one processors give you technologies that work faster, smoother, and more efficiently.  That’s because everything is designed to work together, delivering the ultimate mobile experience.</p>
+          </div>
+          <div class="six columns">
+            <img class="img-change" src="lang/en/images/snapdragon-chip.png" alt="snapdragon chip">
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- What Makes Snapdragno Special -->
+        <div class="row inner-section" data-context="s1p3">
+           <div class="six columns push-six">
+            <h1 class="yellow" data-field="laserbeam_text">What Makes Snapdragon Special?</h1>
+            <p data-field="body_text">The components on Snapdragon processors — CPU, GPU, modem, GPS, multimedia and other technologies — are built together from the ground up, meaning that Qualcomm designs, integrates and delivers a complete system-on-a-chip.<br/><br/>The entire system is purpose-built and integrated to work together. It delivers a great mobile experience with extended battery life on BlackBerry<sup>®</sup> 10 devices - no matter what you’re doing.</p>
+          </div>
+          <div class="six columns pull-six">
+            <img class="img-change" src="lang/en/images/graph.png" alt="">
+          </div>
+        </div>
+      
+      </div> <!-- end "SECTION 1" -->
+
+
+      <!-- SECTION 2 -->
+      <div class="section2 slide qualcomm-background white">
+
+        <!-- People Who Are Successful -->
+        <div class="blackberry-bg">
+          <div class="row inner-section" data-context="s2p1">
+            <div class="twelve columns">
+              <div class="blackberry-box-logo">
+                <img src="images/shared/section2/blackberry-logo.png" alt="">
+              </div>
+              <div class="blackberry-box">
+                <h2 data-field="laserbeam_text">Blackberry<sup>®</sup> is for people who want to be successful.</h2>
+                <h3 data-field="sublaser_text">Whatever their definition of success is.</h3>
+                <h5 class="subheader" data-field="body_text">By helping BlackBerry People to keep moving, to be faster, more efficient and more effective, we aid them to be more successful in their personal and professional lives.</h5>
+              </div>
+              
+              <div class="vspacer-50"></div>
+
+              <h3 data-field="people_header_text">Blackberry People Are...</h3>
+              
+              <div class="row">
+                <div class="four columns">
+                  <div class="border-top">
+                    <h4 class="subheader" data-field="people1_header_text">Hyper Connected</h4>
+                    <p data-field="people1_body_text">Accessing social network sites daily more than the average smartphone user</p>
+                  </div>
+                </div>
+                <div class="four columns">
+                  <div class="border-top">
+                    <h4 class="subheader" data-field="people2_header_text">Appetite for Accomplishment</h4>
+                    <p data-field="people2_body_text">Use more organization tools daily vs. average smartphone user</p>
+                  </div>
+                </div>
+                <div class="four columns">
+                  <div class="border-top">
+                    <h4 class="subheader" data-field="people3_header_text">Crazy Multi-taskers</h4>
+                    <p data-field="people3_body_text">Multi-tasking on device more than once a day more than the average smartphone user</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div> <!-- End of blackberry-bg -->
+
+
+        <!-- Blackberry Z10 -->
+        <div class="row inner-section" data-context="s2p2">
+          <div class="twelve columns">
+            <h1 class="large phone-headers blue" data-field="laserbeam_text">Z10</h1>
+            <h4 class="subheader" data-field="body_text">For hyper connected multi-taskers that need to get things done, the BlackBerry<sup>®</sup> Z10 smartphone introduce a new touch experience that's faster and more fluid.</h4>
+
+            <div class="vspacer-50"></div>
+
+            <div class="row phone-images">
+              <div class="three columns">
+                <img src="images/shared/section2/z10-messages.png" alt="">
+                <p data-field="feature1_text"><em>“All your messages and social conversations, only one swipe away”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/z10-ideas.png" alt="">
+                <p data-field="feature2_text"><em>“Share ideas and experiences in an instant”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/z10-keyboard.png" alt="">
+                <p data-field="feature3_text"><em>“The best virtual keyboard experience – seamless one hand use”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/z10-balance.png" alt="">
+                <p data-field="feature4_text"><em>“Balance your personal and business life perfectly”</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Blackberry Q10 -->
+        <div class="row inner-section" data-context="s2p3">
+          <div class="twelve columns">
+            <h1 class="large phone-headers purple" data-field="laserbeam_text">Q10</h1>
+            <h4 class="subheader" data-field="body_text">Take action, with a powerful, premium experience that help you communicate, collaborate and keep moving forward towards your goals faster, more efficiently and more effectively.</h4>
+
+            <div class="vspacer-50"></div>
+
+            <div class="row phone-images">
+              <div class="three columns">
+                <img src="images/shared/section2/q10-conversations.png" alt="">
+                <p data-field="feature1_text"><em>“Every conversation, always one swipe away”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/q10-type.png" alt="">
+                <p data-field="feature2_text"><em>“Type and take action with speed, accuracy and confidence”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/q10-ideas.png" alt="">
+                <p data-field="feature3_text"><em>“Share ideas and experiences in an instant”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/q10-organize.png" alt="">
+                <p data-field="feature4_text"><em>“Collect, organize and act on the info you need to complete tasks”</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Blackberry Q5 -->
+        <div class="row inner-section" data-context="s2p4">
+          <div class="twelve columns">
+            <h1 class="large phone-headers red" data-field="laserbeam_text"><span class="white">Q</span>5</h1>
+            <h4 class="subheader" data-field="body_text">The BlackBerry<sup>®</sup> Q5 smartphone offers the first taste of the BlackBerry 10 experience to those who want to have the best tools to explore, create and share at an affordable price.</h4>
+
+            <div class="vspacer-50"></div>
+
+            <div class="row phone-images">
+              <div class="three columns">
+                <img src="images/shared/section2/q5-moments.png" alt="">
+                <p data-field="feature1_text"><em>“Turn moments into stories worth sharing”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/q5-ideas.png" alt="">
+                <p data-field="feature2_text"><em>“Share ideas and experiences in an instant”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/q5-social.png" alt="">
+                <p data-field="feature3_text"><em>“All your messages and social conversations, only one swipe away”</em></p>
+              </div>
+              <div class="three columns">
+                <img src="images/shared/section2/q5-brands.png" alt="">
+                <p data-field="feature4_text"><em>“All the brands you want in one store”</em></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>  <!-- end SECTION 2 -->
+
+
+			<!-- SECTION 3 -->
+			<div class="section3 slide qualcomm-background white">
+        <!-- Customer Benefits -->
+        <div class="row inner-section first" data-context="s3p1">
+          <div class="twelve columns h-center">
+            <h2 class="red customer" data-field="laserbeam_text">Customer Benefits of the Combination of Blackberry<sup>®</sup> 10 + Qualcomm<sup>®</sup> Snapdragon™ Processor</h2>
+            <h4 class="subheader customer" data-field="body_text">Blackberry Hub • BBM Video With Screen Share • Gaming • Blackberry Browser • Audio • Camera</h4>
+
+            <div class="vspacer-50"></div>
+          
+            <img src="images/shared/section3/phones.png" alt="">
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- BBM Video -->
+        <div class="row inner-section" data-context="s3p2">
+          <div class="six columns">
+            <h1 class="red" data-field="laserbeam_text">Blackberry<sup>®</sup> Hub &amp; BBM Video with Screen Share</h1>
+            <p data-field="body_text">The Qualcomm<sup>®</sup> Snapdragon™ processor inside BlackBerry 10 devices includes Qualcomm's own custom-designed GPU and CPU, providing the processing power to deliver dazzling, complex, graphics and rich UIs that respond immediately to user interaction while maintaining power efficiency.<br/><br/>Advanced compositing and fast graphics rendering ensure smooth, flicker-free animation.  And the entire SoC works seamlessly to deliver 1080p HD 30FPS video capture and playback, taking the sharing experience to another level and helping you to get a closer to real-life conversation with BBM video calls.</p>
+          </div>
+          <div class="six columns h-center">
+            <img src="images/shared/section3/bbm-video.png" alt="">
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Gaming & Browser -->
+        <div class="row inner-section" data-context="s3p3">
+          <div class="six columns push-six">
+            <h1 class="red" data-field="laserbeam_text">Gaming &amp; Blackberry<sup>®</sup> Browser</h1>
+            <p data-field="body_text">The custom GPU inside the Qualcomm<sup>®</sup> Snapdragon™ processor give BlackBerry 10 devices the processing power to deliver rich 3D gaming experiences on the go and at home on your HD display.<br/><br/>Web browsing is blazing fast, and you can download large documents, photos and videos with ease.</p>
+          </div>
+          <div class="six columns pull-six h-center">
+            <img src="images/shared/section3/gaming.png" alt="">
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Audio & Gaming -->
+        <div class="row inner-section" data-context="s3p4">
+          <div class="six columns">
+            <h1 class="red" data-field="laserbeam_text">Audio &amp; Camera</h1>
+            <p data-field="body_text">Bring your home stereo system with you, thanks to the high fidelity surround sound audio capabilities provided by the Qualcomm<sup>®</sup> Snapdragon™ processor and BlackBerry<sup>®</sup> 10<br/><br/>Create the perfect shot every time with Time Shift mode and the power of the Snapdragon processor on the BlackBerry 10 devices.</p>
+          </div>
+          <div class="six columns h-center">
+            <img src="images/shared/section3/audio.png" alt="">
+          </div>
+        </div>
+
+			</div> <!-- end SECTION 3 -->
+
+   </div> <!-- end "content-container" -->
+
+
+  <!-- Quiz Wrapper: 
+    • Contains a link for the learner to go to the quiz portion
+  -->
+  <!-- <div class="quiz-wrapper h-center">
+    <a class="button chevron large quiz" href="assessment.html?lang=en" data-lang="quiz">Procced to Assessment</a>
+  </div> -->
+
+  <!-- Quiz Modal:
+    • Modal to be launched to ask the user if they want to go to the quiz
+  -->
+  <div id="quizModal" class="reveal-modal" data-context="container">
+    <h3 class="subheader" data-field="assessmentbtn_text">Proceed to Assessment</h3>
+    <p data-field="assessment_text">Are you sure you want to exit this learning module?<br/><br/>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.</p>
+    <a class="button chevron quiz success radius" href="assessment.html?lang=en" data-lang="quiz" onclick="parent.qelite_taketraining_btn(); return false;">Proceed to Assessment</a>
+    <a class="button chevron radius close-reveal-modal" data-field="cancel_text">Cancel &amp; return to the module</a>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <!-- Footer: 
+    • Desktop/Tablet: Contains "back-to-top" link
+    • Mobile: Contains "back-to-top" link, as well as the slide navigation
+   -->
+   <div class="footer">
+    <p><a href="#" class="chevron back-to-top" onclick="goToByScroll('top')" data-lang="top">Back to Top</a></p>
+   </div>
+
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  <script src="javascripts/jquery.js"></script><script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script><script src="javascripts/jquery.foundation.forms.js"></script><script src="javascripts/jquery.foundation.reveal.js"></script><script src="javascripts/jquery.foundation.orbit.js"></script><script src="javascripts/jquery.foundation.navigation.js"></script><script src="javascripts/jquery.foundation.buttons.js"></script><script src="javascripts/jquery.foundation.tabs.js"></script><script src="javascripts/jquery.foundation.tooltips.js"></script><script src="javascripts/jquery.foundation.accordion.js"></script><script src="javascripts/jquery.placeholder.js"></script><script src="javascripts/jquery.foundation.alerts.js"></script><script src="javascripts/jquery.foundation.topbar.js"></script><script src="javascripts/jquery.foundation.joyride.js"></script><script src="javascripts/jquery.foundation.clearing.js"></script><script src="javascripts/jquery.foundation.magellan.js"></script>
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+  <script src="javascripts/responsive-tables.js"></script>
+  <script src="javascripts/jquery.horslidernav-v3.7.js"></script>
+  <script src="javascripts/jquery.animate-enhanced.min.js"></script>
+  <script src="javascripts/jquery.easing.1.3.js"></script>
+  <script src="javascripts/parse-xml-v1.5.js"></script>
+  <script src="javascripts/qualcomm-template.js"></script>
+  
+</body>
+</html>

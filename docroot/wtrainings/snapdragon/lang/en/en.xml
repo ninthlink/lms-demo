@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="Snapdragon Qualcomm Processors" right="false" language="en">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+			<swf name="page1">../section1/page4.swf</swf>
+			<swf name="page5">../section1/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+			<swf name="page1">../section2/page1.swf</swf>
+			<swf name="page2">../section2/page2.swf</swf>
+			<swf name="page3">../section2/page3.swf</swf>
+			<swf name="page4">../section2/page4.swf</swf>
+			<swf name="page2">../section2/page5.swf</swf>
+			<swf name="page3">../section2/page6.swf</swf>
+			<swf name="page4">../section2/page7.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+			<swf name="page1">../section3/page1.swf</swf>
+			<swf name="page2">../section3/page2.swf</swf>
+			<swf name="page3">../section3/page3.swf</swf>
+			<swf name="page4">../section3/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<!-- <SWFs name="s4SWF">
+			<swf name="page1">../section4/page1.swf</swf>
+		</SWFs> -->
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text" posY="-8"><![CDATA[<font size="-3">Qualcomm® Snapdragon Processors</font>]]></course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">Introduction</tab>
+			<tab title="Technology Tab" 		field="tab2_text">Technology</tab>
+			<tab title="Qualcomm Snapdragon Processors Tab" field="tab3_text">Qualcomm® Snapdragon™ Processors</tab>
+			<tab title="Experience Tab" 		field="tab4_text">Experience</tab>
+			<tab title="Customer Tab" 			field="tab5_text">Customers</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">Next</pillar>
+			<pillar title="Previous Button" 	field="prev_text">Previous</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">Click the title of the course to return to the beginning of the course.</text>
+			<text title="Navigation Explaination" 	field="help2_text">This is the navigation, and your main means of getting around the course. The main categories are at the top, and the sub-categories listed below. Each section gets checked off as you visit it.</text>
+			<text title="Progress Bar Explaination" field="help3_text">This is the progress bar. It gradually increases as you go through the course, helping you to keep track of your overall progress.</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[Are you sure you want to exit this learning module?<br><br>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">Proceed to Assessment</text>
+			<text title="Continue to Assessment" 	field="yes_text">Yes, continue to the assessment</text>
+			<text title="Return to Module" 			field="cancel_text">Cancel &amp; return to the module</text>
+		</assessment>
+	</container>
+	
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1 >> Introduction
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Qualcomm Snapdragon Processors" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text">Qualcomm® Snapdragon Processors</laserbeam>
+		<sublaser title="Subheader" field="sublaser_text">Qualcomm Snapdragon processors give your mobile devices breathtaking speed, jaw-dropping graphics and longer battery life so you can do more of the things you love.</sublaser>
+		<body title="Body" field="body_text"><![CDATA["If you've got any smartphone chances are pretty good that it's powered by one of Qualcomm's Snapdragon chipsets." <cite>— TechCrunch</cite>]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 2 >> Snapdragon in the Marketplace
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Snapdragon in the Marketplace" name="s1p2">
+		<laserbeam title="Header" field="laserbeam_text">There are over 1000 Snapdragon devices announced/commercially available including more than 40 tablets. In addition to enabling a large number of Android-powered smartphones, Qualcomm powers all Windows Phones available today. Cumulatively, over 11 billion chips have been shipped to date.</laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 3 >> About Qualcomm 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="About Qualcomm" name="s1p3">
+		<laserbeam title="Header" field="laserbeam_text">Qualcomm is the world leader in mobile technologies.</laserbeam>
+		<body title="Body" field="body_text">Qualcomm innovates and manufactures breakthrough mobile chipsets enabling partners around the world to create next-gen mobile devices, services, and experiences. Qualcomm is making wireless more personal, affordable, and accessible to people everywhere.</body>
+
+		<text title="Callout" field="callout_text"><![CDATA["Qualcomm's reach is global and unsurpassed. They are designed into everywhere that matters." <cite>— Businessweek</cite>]]></text>
+	</page>
+	
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 1 >> Technology Splash
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Technology Splash" name="s2p1">
+		<laserbeam title="Header" field="laserbeam_text">The part to look for is the part you can’t see.</laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 2 >> Bouquet
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Bouquet" name="s2p2">
+		<laserbeam title="Header" field="laserbeam_text">Roll over each icon to learn more</laserbeam>
+
+		<text title="Multimedia" field="">Multimedia: Whether you want to capture high-quality photos and videos or watch movies in HD, Qualcomm's audio and video technology lets you do more.</text>
+		<text title="Power Management" field="popup2_text">Power Management: Snapdragon has best-in-class technologies designed and built to work together so that your devices work more efficiently. Now you can do more, and recharge less.</text>
+		<text title="Radio Frequency" field="popup3_text">Radio Frequency (RF): Support for a wide frequency spectrum to ensure that your device is connected no matter where you are.</text>
+		<text title="Location" field="popup4_text">Location: Snapdragon processors are first to deliver GPS plus GLONASS for more accurate and reliable positioning.</text>
+		<text title="Modem" field="popup5_text">Modem: Snapdragon processors offer a comprehensive cellular multimode modem solution with integrated support for 4G LTE and 3G to provide a consistent, seamless user experience.</text>
+		<text title="Connectivity" field="popup6_text">Connectivity: Ubiquitous, real-time connectivity including WWAN, Wi-Fi®, and Bluetooth® technology.</text>
+		<text title="Memory" field="popup7_text">Memory: Memory is essential for all computing needs, from multi-tab web browsing to 3D gaming.</text>
+		<text title="DPS" field="popup8_text">Digital Signal Processor (DSP): Dedicated Sub-processors that help take the load off of the CPU and GPU, freeing up valuable resources and helping preserve battery life.</text>
+		<text title="CPU" field="popup9_text">Central Processing Unit (CPU): The 'brain' of the Snapdragon processor is the Scorpion CPU, which Qualcomm custom designs for mobile. Snapdragon CPU's are performance optimized, allowing fantastic user experiences without draining your battery. Qualcomm's S1 included the first mobile CPU to reach 1GHz speed and the latest S4 leads the pack with the first mobile processor to hit 1.5GHz.</text>
+		<text title="GPU" field="popup10_text">Graphics Processing Unit (GPU): The Snapdragon chipset and its integrated Adreno GPU together enable power-efficient, high-end 3D graphics and console quality gaming across a broad range of mobile devices and on even the largest, highest resolution displays.</text>
+		<text title="OS" field="popup11_text">Operating System (OS): Our processors support operating systems that run on the majority of mobile devices, including Android and Windows Phone.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 3 >> City of Innerconnectivity
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Q10" name="s2p3">
+		<laserbeam title="Header" field="laserbeam_text">Check out this video to see the “city of interconnectivity” inside Snapdragon enabled devices.</laserbeam>
+	</page>
+	
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 1 >> 200 Qualcomm Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="200 Processors" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text">200 Processors</laserbeam>
+		<sublaser title="Header" field="sublaser_text">The optimal balance of mobility and low power</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>Entry level smart-phones and tablets</li><li>Auto Volume Mode: With the Snapdragon 200 processor, when ambient noise increases the phone speaker volume automatically increases to compensate.</li><li>Streamlined app discovery: On many Snapdragon 200 devices, apps for video conferencing and GPS are pre-installed.</li><li>Great graphics performance: The Adreno 302 GPU on the Snapdragon 200 gives great graphics performance for social media and web browsing.</li>]]></body>
+
+		<table>
+			<row>
+				<td field="cpu_head_text">CPU</td>
+				<td field="graphics_head_text">Graphics</td>
+				<td field="multi_head_text">Multimedia</td>
+			</row>
+			<row>
+				<td field="cpu_body_text">Up to Quad ARM Cortex A7 CPU at up to 1.4GHz per core</td>
+				<td field="graphics_body_text">Up to Adreno 302 GPU</td>
+				<td field="multi_body_text">Up to 8 MP camera 720p HD Video (30/15 fps)</td>
+			</row>
+		</table>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 2 >> 400 Qualcomm Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="400 Processors" name="s3p2">
+		<laserbeam title="Header" field="laserbeam_text">400 Processors</laserbeam>
+		<sublaser title="Header" field="sublaser_text">Mobile Experience Made Better</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>High volume smart-phones and tablets</li><li>Faster browsing and downloading: Snapdragon 400 has battery optimized 3G and 4G LTE connectivity for doing more online for longer periods of time.</li><li>Always connected: the integrated Snapdragon 400 processor provides great voice and data connectivity.</li><li>Battery life: There it is again - like all Snapdragon processors, Snapdragon 400 is designed to let you stay online longer and recharge less.</li>]]></body>
+
+		<table>
+			<row>
+				<td field="cpu_head_text">CPU</td>
+				<td field="graphics_head_text">Graphics</td>
+				<td field="multi_head_text">Multimedia</td>
+			</row>
+			<row>
+				<td field="cpu_body_text">Up to 1.7 GHz Dual Krait 300 CPU</td>
+				<td field="graphics_body_text">Adreno 305 GPU</td>
+				<td field="multi_body_text">Up to 13.5MP camera, Stereoscopic 3D on select processors 1080p HD video</td>
+			</row>
+		</table>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 3 >> 600 Qualcomm Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="600 Processors" name="s3p3">
+		<laserbeam title="Header" field="laserbeam_text">600 Processors</laserbeam>
+		<sublaser title="Header" field="sublaser_text">High Performance for the ultimate recreation</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>Mid-high tier smart-phones and tablets</li><li>Battery life: watch more, browser more, and share more while recharging less.</li><li>Responsive experience: The Snapdragon 600 integrates a graphics processor that's designed for smooth scrolling and zooming - performance you demand for web browsing.</li><li>Social engagement: With the Snapdragon 600, you can record, upload, and playback more social content.</li>]]></body>
+
+		<table>
+			<row>
+				<td field="cpu_head_text">CPU</td>
+				<td field="graphics_head_text">Graphics</td>
+				<td field="multi_head_text">Multimedia</td>
+			</row>
+			<row>
+				<td field="cpu_body_text">Up to 1.9 GHz Quad Krait 300 CPU</td>
+				<td field="graphics_body_text">Adreno 320 GPU</td>
+				<td field="multi_body_text">Up to 21MP camera, Stereoscopic 3D 1080p HD video</td>
+			</row>
+		</table>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 4 >> 800 Qualcomm Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="600 Processors" name="s3p4">
+		<laserbeam title="Header" field="laserbeam_text">800 Processors</laserbeam>
+		<sublaser title="Header" field="sublaser_text">Beyond Mobile. And Beyond all Expectations.</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>Premium mobile computing devices including: tablets, smartphones, and Smart TVs</li><li>Battery life: Integrated Snapdragon 800 processors are more efficient, so you can do more and recharge less</li><li>Entertainment: Ultra HD (4k) video playback and Dolby 7.1 surround bring the home theater experience to wherever you go. And of course, it's battery optimized for more entertainment, longer.</li><li>Connectivity - An integrated modem with features like 4G LTE, WiFi 802.11ac, and Bluetooth 4.0 makes it easy.</li>]]></body>
+
+		<table>
+			<row>
+				<td field="cpu_head_text">CPU</td>
+				<td field="graphics_head_text">Graphics</td>
+				<td field="multi_head_text">Multimedia</td>
+			</row>
+			<row>
+				<td field="cpu_body_text">Up to 2.3 GHz Quad Krait 400 CPU</td>
+				<td field="graphics_body_text">Adreno 330 GPU</td>
+				<td field="multi_body_text">Up to 21MP camera, Stereoscopic 3D, Dual ISP 4k x 2k UHD video capture/playback</td>
+			</row>
+		</table>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 1 >> Experience Splash
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Experience Splash" name="s4p1">
+		<laserbeam title="Header" field="laserbeam_text">Experience the difference with Snapdragon by Qualcomm.</laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 2 >> Connectivity
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Connectivity" name="s4p2">
+		<laserbeam title="Header" field="laserbeam_text">Maximizes 3G and 4G LTE wireless networks to deliver the best the web can offer.</laserbeam>
+		<body title="Body" field="body_text">With built-in 3G, 4G LTE, Wi-Fi®, Bluetooth®, GPS, and GLONASS, Snapdragon’s reliable connection and blazing fast speeds are exactly what you need to instantly locate your position or surf the internet.</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 3 >> Web
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Web" name="s4p3">
+		<laserbeam title="Header" field="laserbeam_text">Lightning fast downloads, immediate responsiveness, enhanced capabilities, and seamless video streaming.</laserbeam>
+		<body title="Body" field="body_text">The wait is over. Snapdragon Processors don’t just give you enhanced speed when you are browsing the web, they also enhance the way you can view it. Snapdragon Processors have built-in hardware that enhances the way you browse the web. From streaming high-definition YouTube videos, to the latest, most cutting-edge online games, your Snapdragon enabled device is designed to tackle anything in the web browser.</body>
+
+		<text title="Callout" field="callout_text">Nearly three times the web-browsing speed*</text>
+		<text title="Source" field="source_text">*Endgadget – Review of the LG Optimus G (Vellamo and GL BenchMark 2.5 Egypt HD)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 4 >> Pictures and Video
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Pictures and Video" name="s4p4">
+		<laserbeam title="Header" field="laserbeam_text">Beyond Mobile. And Beyond all Expectations</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[<li>Playing ultra HD video</li><li>Capture video up to 4k x 2k</li><li>Take photos up to 21 Megapixel</li><li>Connection to surround-sound HDTVs for theatre-like experiences.</li>]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 5 >> Gaming
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Gaming" name="s4p5">
+		<laserbeam title="Header" field="laserbeam_text">Snapdragon's high-performance integrated Adreno GPU breathes fire into mobile 3D games.</laserbeam>
+		<body title="Body" field="body_text">The device user interface and mobile 3D games look ultra realistic, run lightning fast, and virtually sip power. The power efficient design enables high-end, console like gaming experiences on a broad range of mobile devices and on even the largest high-resolution displays.</body>
+
+		<text title="Callout" field="callout_text">Runs your favorite games up to 40% faster.*</text>
+		<text title="Source" field="source_text">*Endgadget – Review of the LG Optimus G (Vellamo and GL BenchMark 2.5 Egypt HD)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 5 >> Battery
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Battery" name="s4p6">
+		<laserbeam title="Header" field="laserbeam_text">Snapdragon's high-performance integrated Adreno GPU breathes fire into mobile 3D games.</laserbeam>
+		<body title="Body" field="body_text">The device user interface and mobile 3D games look ultra realistic, run lightning fast, and virtually sip power. The power efficient design enables high-end, console like gaming experiences on a broad range of mobile devices and on even the largest high-resolution displays.</body>
+
+		<text title="Callout" field="callout_text">Runs your favorite games up to 40% faster.*</text>
+		<text title="Source" field="source_text">*Endgadget – Review of the LG Optimus G (Vellamo and GL BenchMark 2.5 Egypt HD)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5: Page 1 >> Practice Splash
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Practice Splash" name="s5p1">
+		<laserbeam title="Header" field="laserbeam_text">Let's practice.</laserbeam>
+		<body title="Body" field="body_text">Identify the Snapdragon features that will make the most impact in selling to each customer.</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5: Page 2 >> Customer 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Customer 1" name="s5p2">
+		<laserbeam title="Header" field="laserbeam_text">Daniel</laserbeam>
+		<body title="Body" field="body_text">Meet Daniel… He does his homework on purchases and always gets the latest and greatest technology. He spends a lot of time online surfing the Web, playing video games with friends and downloading movies. He often gets frustrated because the quality on his phone just doesn’t compare to his home PC. He wants his mobile experience to offer the same quality with no compromise, wherever he goes.</body>
+
+		<!-- Drag & Drops -->
+		<text title="Drag1" field="drag1_text">Keeping in Touch (Phone Calls, Text, and Video Conferencing)</text>
+		<text title="Drag2" field="drag2_text">Entertainment (Music, Gaming, Pictures and Videos)</text>
+		<text title="Drag3" field="drag3_text">GPS and Location Based Services</text>
+		<text title="Drag4" field="drag4_text">Social Networking</text>
+		<text title="Drag5" field="drag5_text">On-The-Go Interactive (Supports Wi-Fi® and Bluetooth®)</text>
+
+		<text title="Drag Here" field="draghere_text">Drag features from here...</text>
+		<text title="Drag Here" field="overhere_text">...over to here</text>
+
+		<!-- FeedBack -->
+		<text title="Feedback Header" field="feedback_header_text">That's correct.</text>
+		<text title="Feedback Body" field="feedback_body_text">Daniel is looking for a device supporting entertainment that's available wherever he goes. Talk to Daniel more abou the specific features that enhance his experience with entertainment and connectivity such as peer-to-peer enabled gaming</text>
+
+		<text title="Feedback1 Header" field="feedback1_header_text">Entertainment (Music, Gaming, Pictures and Videos)</text>
+		<text title="Feedback1 Body" field="feedback1_body_text">Snapdragon's Adreno GPUs enable high-end 3D graphics, console quality games, and accelerated mobile Web content.</text>	
+
+		<text title="Feedback2 Header" field="feedback2_header_text">On-The-Go Interactive (Supports Wi-Fi® and Bluetooth®</text>
+		<text title="Feedback2 Body" field="feedback2_body_text">Connectivity flexibility integrating popular wireless technologies such as Bluetooth®, and Wi-Fi® immediate response.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5: Page 3 >> Customer 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Customer 2" name="s5p3">
+		<laserbeam title="Header" field="laserbeam_text">Olivia</laserbeam>
+		<body title="Body" field="body_text">Olivia is a college student enrolled in business and NEEDS to be connected. She’s got a lot of friends and communicates constantly through text, chat, and voice. She also has a lot of online projects for school. She needs something that’s fast and will always keep her connected—and has the battery life to support it</body>
+
+		<!-- Drag & Drops -->
+		<text title="Drag1" field="drag1_text">Keeping in Touch (Phone Calls, Text, and Video Conferencing)</text>
+		<text title="Drag2" field="drag2_text">Entertainment (Music, Gaming, Pictures and Videos)</text>
+		<text title="Drag3" field="drag3_text">GPS and Location Based Services</text>
+		<text title="Drag4" field="drag4_text">Social Networking</text>
+		<text title="Drag5" field="drag5_text">On-The-Go Interactive (Supports Wi-Fi® and Bluetooth®)</text>
+
+		<text title="Drag Here" field="draghere_text">Drag features from here...</text>
+		<text title="Drag Here" field="overhere_text">...over to here</text>
+
+		<!-- FeedBack -->
+		<text title="Feedback Header" field="feedback_header_text">That's correct.</text>
+		<text title="Feedback Body" field="feedback_body_text">Olivia's looking for a device that allows her to keep connected through social media, talking, and texting. Talk to Olivia about how easy Snapdragon makes it to keep connected.</text>
+
+		<text title="Feedback1 Header" field="feedback1_header_text">Social Networking</text>
+		<text title="Feedback1 Body" field="feedback1_body_text">Access to social networks with real time connectivity</text>	
+
+		<text title="Feedback2 Header" field="feedback2_header_text">Keeping In Touch (Phone Calls, Text, and Video Conferencing)</text>
+		<text title="Feedback2 Body" field="feedback2_body_text">Industry's first fully integrated 3G/4G world/multimode LTE Modem</text>
+
+		<text title="Feedback2 Header" field="feedback3_header_text">On-The-Go Interactive (Supports Wi-Fi® and Bluetooth®</text>
+		<text title="Feedback2 Body" field="feedback3_body_text">Connectivity flexibility integrating popular wireless technologies such as Bluetooth®, and Wi-Fi® immediate response.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5: Page 5 >> Customer 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Customer 3" name="s5p4">
+		<laserbeam title="Header" field="laserbeam_text">William</laserbeam>
+		<body title="Body" field="body_text">William works 10 hour days and is on call the rest of the time. His work is fast paced and he has to respond to demanding clients whenever they need him. He travels a lot and depends on his phone’s GPS. His family is also important, so his mobile device needs to support the demands at home as well as work. He needs something that’s responsive and comes with all the latest technologies.</body>
+
+		<!-- Drag & Drops -->
+		<text title="Drag1" field="drag1_text">Keeping in Touch (Phone Calls, Text, and Video Conferencing)</text>
+		<text title="Drag2" field="drag2_text">Entertainment (Music, Gaming, Pictures and Videos)</text>
+		<text title="Drag3" field="drag3_text">GPS and Location Based Services</text>
+		<text title="Drag4" field="drag4_text">Social Networking</text>
+		<text title="Drag5" field="drag5_text">On-The-Go Interactive (Supports Wi-Fi® and Bluetooth®)</text>
+
+		<text title="Drag Here" field="draghere_text">Drag features from here...</text>
+		<text title="Drag Here" field="overhere_text">...over to here</text>
+
+		<!-- FeedBack -->
+		<text title="Feedback Header" field="feedback_header_text">That's correct.</text>
+		<text title="Feedback Body" field="feedback_body_text">William needs something that allows him to stay connected to his clients and family wherever he is. Talk with William about the features and apps like Bizzabo that will make it easy for him to keep connected to family and clients while still keeping him mobile.</text>
+
+		<text title="Feedback1 Header" field="feedback1_header_text">Keeping In Touch (Phone Calls, Text, and Video Conferencing)</text>
+		<text title="Feedback1 Body" field="feedback1_body_text">Industry's first fully integrated 3G/4G world/multimode LTE Modem</text>	
+
+		<text title="Feedback2 Header" field="feedback2_header_text">On-The-Go Interactive (Supports Wi-Fi® and Bluetooth®</text>
+		<text title="Feedback2 Body" field="feedback2_body_text">Connectivity flexibility integrating popular wireless technologies such as Bluetooth®, and Wi-Fi® immediate response.</text>
+
+		<text title="Feedback2 Header" field="feedback3_header_text">GPS and Location Based Services</text>
+		<text title="Feedback2 Body" field="feedback3_body_text">First to deliver GPS and GLONASS for accurate and reliable positioning</text>
+	</page>
+
+</course>
+

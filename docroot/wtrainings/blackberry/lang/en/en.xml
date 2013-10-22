@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="Blackberry 10" right="false" language="en">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+			<swf name="page1">../section1/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+			<swf name="page1">../section2/page1.swf</swf>
+			<swf name="page2">../section2/page2.swf</swf>
+			<swf name="page3">../section2/page3.swf</swf>
+			<swf name="page4">../section2/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+			<swf name="page1">../section3/page1.swf</swf>
+			<swf name="page1">../section3/page2.swf</swf>
+			<swf name="page1">../section3/page3.swf</swf>
+			<swf name="page1">../section3/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<!-- <SWFs name="s4SWF">
+			<swf name="page1">../section4/page1.swf</swf>
+		</SWFs> -->
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text" posY="-8"><![CDATA[<font size="-3">Blackberry® 10</font>]]></course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">Introduction</tab>
+			<tab title="Built to Keep You Moving Tab" field="tab2_text">BlackBerry® is...</tab>
+			<tab title="Devices Tab"  			field="tab3_text">Benefits of Qualcomm® Snapdragon™ Processors</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">Next</pillar>
+			<pillar title="Previous Button" 	field="prev_text">Previous</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">Click the title of the course to return to the beginning of the course.</text>
+			<text title="Navigation Explaination" 	field="help2_text">This is the navigation, and your main means of getting around the course. The main categories are at the top, and the sub-categories listed below. Each section gets checked off as you visit it.</text>
+			<text title="Progress Bar Explaination" field="help3_text">This is the progress bar. It gradually increases as you go through the course, helping you to keep track of your overall progress.</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[Are you sure you want to exit this learning module?<br><br>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">Proceed to Assessment</text>
+			<text title="Continue to Assessment" 	field="yes_text">Yes, continue to the assessment</text>
+			<text title="Return to Module" 			field="cancel_text">Cancel &amp; return to the module</text>
+		</assessment>
+	</container>
+	
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1 >> Built to Keep You Moving
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Built to Keep You Moving" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Blackberry® 10.<br/><span class="yellow">Built to Keep You Moving.</span>]]></laserbeam>
+		<sublaser title="Subheader" field="sublaser_text">Blackberry 10...</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>Introduces a fluid and effortless new experience that makes it a pleasure to make things happen</li><li>Delivers ease and speed by removing all of the little roadblocks you experience on other smartphones that take up valuable time</li>]]></body>
+
+		<text title="Callout" field="callout_text">The new Blackberry® Z10 smartphone, BlackBerry® Q10 smartphone, and BlackBerry® Q5 smartphone ship with the Qualcomm® Snapdragon™ processor offering an unprecedented combination of performance, rich multi-media, graphics, wireless connectivity and power efficiency.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 2 >> What is Snapdragon Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="What is Snapdragon Processors" name="s1p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>What is Snapdragon™ Processor?</b>]]></laserbeam>
+		<body title="Body" field="body_text">Qualcomm® Snapdragon™ all-in-one processors give you technologies that work faster, smoother, and more efficiently.  That’s because everything is designed to work together, delivering the ultimate mobile experience.</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 3 >> What Makes Snapdragon Special
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="What Makes Snapdragon Special" name="s1p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>What Makes Snapdragon Special?</b>]]></laserbeam>
+		<body title="Body" field="body_text"><![CDATA[The components on Snapdragon processors — CPU, GPU, modem, GPS, multimedia and other technologies — are built together from the ground up, meaning that Qualcomm designs, integrates and delivers a complete system-on-a-chip.<br><br>The entire system is purpose-built and integrated to work together. It delivers a great mobile experience with extended battery life on BlackBerry® 10 devices - no matter what you’re doing.]]></body>
+	</page>
+	
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 1 >> Blackberry 10
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Blackberry 10" name="s2p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Blackberry® is for people who want to be successful.</b>]]></laserbeam>
+		<sublaser title="Subheader" field="sublaser_text">Whatever their definition of success is.</sublaser>
+		<body title="Body" field="body_text">By helping BlackBerry People to keep moving, to be faster, more efficient and more effective, we aid them to be more successful in their personal and professional lives.</body>
+
+		<text title="Blackberry People Are..." 		field="people_header_text">Blackberry People Are...</text>
+		
+		<text title="Hyper Connected Header" 		field="people1_header_text">Hyper Connected</text>
+		<text title="Hyper Connected Body" 			field="people1_body_text">Accessing social network sites daily more than the average smartphone user</text>
+		
+		<text title="Appetite for Accomplishment Header" field="people2_header_text">Appetite for Accomplishment</text>
+		<text title="Appetite for Accomplishment Body" 	 field="people2_body_text">Use more organization tools daily vs. average smartphone user</text>
+		
+		<text title="Crazy Multi-Taskers Header" 		field="people3_header_text">Crazy Multi-taskers</text>
+		<text title="Crazy Multi-Taskers Body" 			field="people3_body_text">Multi-tasking on device more than once a day more than the average smartphone user</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 2 >> Z10
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Z10" name="s2p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Z10</b>]]></laserbeam>
+		<body title="Body" field="body_text">For hyper connected multi-taskers that need to get things done, the BlackBerry® Z10 smartphone introduce a new touch experience that's faster and more fluid.</body>
+
+		<text title="Messaging" field="feature1_text"><![CDATA[<i>“All your messages and social conversations, only one swipe away”</i>]]></text>
+		<text title="Ideas" 	field="feature2_text"><![CDATA[<i>“Share ideas and experiences in an instant”</i>]]></text>
+		<text title="Keyboard" 	field="feature3_text"><![CDATA[<i>“The best virtual keyboard experience – seamless one hand use”</i>]]></text>
+		<text title="Balance" 	field="feature4_text"><![CDATA[<i>“Balance your personal and business life perfectly”</i>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 3 >> Q10
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Q10" name="s2p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Q10</b>]]></laserbeam>
+		<body title="Body" field="body_text">Take action, with a powerful, premium experience that help you communicate, collaborate and keep moving forward towards your goals faster, more efficiently and more effectively.</body>
+
+		<text title="Messaging" field="feature1_text"><![CDATA[<i>“Every conversation, always one swipe away”</i>]]></text>
+		<text title="Ideas" 	field="feature2_text"><![CDATA[<i>“Type and take action with speed, accuracy and confidence”</i>]]></text>
+		<text title="Keyboard" 	field="feature3_text"><![CDATA[<i>“Share ideas and experiences in an instant”</i>]]></text>
+		<text title="Balance" 	field="feature4_text"><![CDATA[<i>“Collect, organize and act on the info you need to complete tasks”</i>]]></text>
+	</page>
+	
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 4 >> Q5
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Q5" name="s2p4">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Q5</b>]]></laserbeam>
+		<body title="Body" field="body_text">The BlackBerry® Q5 smartphone offers the first taste of the BlackBerry 10 experience to those who want to have the best tools to explore, create and share at an affordable price.</body>
+
+		<text title="Messaging" field="feature1_text"><![CDATA[<i>“Turn moments into stories worth sharing”</i>]]></text>
+		<text title="Ideas" 	field="feature2_text"><![CDATA[<i>“Share ideas and experiences in an instant”</i>]]></text>
+		<text title="Keyboard" 	field="feature3_text"><![CDATA[<i>“All your messages and social conversations, only one swipe away”</i>]]></text>
+		<text title="Balance" 	field="feature4_text"><![CDATA[<i>“All the brands you want in one store”</i>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 1 >> Customer Benefits
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Customer Benefits" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Customer Benefits of the Combination of Blackberry® 10 + Qualcomm® Snapdragon™ Processor</b>]]></laserbeam>
+		<body title="Body" field="body_text">Blackberry Hub • BBM Video With Screen Share • Gaming • Blackberry Browser • Audio • Camera</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 2 >> Blackberry HUB & BBM Video
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Blackberry HUB &amp; BBM Video" name="s3p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Blackberry® Hub &amp; BBM Video with Screen Share</b>]]></laserbeam>
+		<body title="Body" field="body_text"><![CDATA[The Qualcomm® Snapdragon™ processor inside BlackBerry 10 devices includes Qualcomm's own custom-designed GPU and CPU, providing the processing power to deliver dazzling, complex, graphics and rich UIs that respond immediately to user interaction while maintaining power efficiency.<br><br>Advanced compositing and fast graphics rendering ensure smooth, flicker-free animation.  And the entire SoC works seamlessly to deliver 1080p HD 30FPS video capture and playback, taking the sharing experience to another level and helping you to get a closer to real-life conversation with BBM video calls.]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 3 >> Gaming and Browser
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Gaming and Browser" name="s3p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Gaming &amp; Blackberry® Browser</b>]]></laserbeam>
+		<body title="Body" field="body_text"><![CDATA[The custom GPU inside the Qualcomm® Snapdragon™ processor give BlackBerry 10 devices the processing power to deliver rich 3D gaming experiences on the go and at home on your HD display.<br><br>Web browsing is blazing fast, and you can download large documents, photos and videos with ease.]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 4 >> Audio and Camera
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Audio and Camera" name="s3p4">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<b>Audio &amp; Camera</b>]]></laserbeam>
+		<body title="Body" field="body_text"><![CDATA[Bring your home stereo system with you, thanks to the high fidelity surround sound audio capabilities provided by the Qualcomm® Snapdragon™ processor and BlackBerry® 10<br><br>Create the perfect shot every time with Time Shift mode and the power of the Snapdragon processor on the BlackBerry 10 devices.]]></body>
+	</page>
+
+</course>
+

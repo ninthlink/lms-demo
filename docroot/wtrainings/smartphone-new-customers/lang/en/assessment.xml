@@ -1,0 +1,53 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="Smartphone for New Customers" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again, but only once in a 24 hour period. Thanks for your time and hard work!" 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="A good place to start with new smartphone customers is:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Top gaming features" />
+		<option key="" value="Basic features like touch screen, web browsing, and connectivity" answer="1"/>
+		<option key="" value="Explain the DSP"/>
+		<option key="" value="Explaining how the processor works"/>
+	</question>
+
+	<question id="2" q="Customers might love a smartphone's GPS features to:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Pinpoint their location on a map"/>
+		<option key="" value="Find nearby businesses" />
+		<option key="" value="Get driving directions" />
+		<option key="" value="All of these" answer="1" />
+	</question>
+
+	<question id="3" q="A smartphone's camera is:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Powerful and convenient" answer="1" />
+		<option key="" value="A selling gimmick that likely won't get used" />
+		<option key="" value="Generally not important to customers" />
+		<option key="" value="Only worthwhile if taking pictures of cats" />
+	</question>
+
+	<question id="4" q="To help customers understand apps, ask them:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Which color smartphone they prefer" />
+		<option key="" value="If they prefer a larger or smaller touchscreen" />
+		<option key="" value="What interests or hobbies they enjoy" answer="1" />
+		<option key="" value="What time they get up in the morning" />
+	</question>
+
+	<question id="5" q="A new smartphone customer may be:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Moving up from a feature phone" />
+		<option key="" value="Buying their first mobile device"/>
+		<option key="" value="Intimidated by deep technology discussions"/>
+		<option key="" value="All of the above" answer="1"/>
+	</question>
+
+</quiz>

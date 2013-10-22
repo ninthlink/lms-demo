@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="The World of Apps" right="false" language="en">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+			<swf name="page1">../section2/page1.swf</swf>
+			<swf name="page2">../section2/page2.swf</swf>
+			<swf name="page3">../section2/page3.swf</swf>
+			<swf name="page4">../section2/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+			<swf name="page1">../section3/page1.swf</swf>
+			<swf name="page2">../section3/page2.swf</swf>
+			<swf name="page3">../section3/page3.swf</swf>
+			<swf name="page4">../section3/page4.swf</swf>
+			<swf name="page5">../section3/page5.swf</swf>
+			<swf name="page6">../section3/page6.swf</swf>
+			<swf name="page7">../section3/page7.swf</swf>
+			<swf name="page8">../section3/page8.swf</swf>
+			<swf name="page9">../section3/page9.swf</swf>
+			<swf name="page10">../section3/page10.swf</swf>
+			<swf name="page11">../section3/page11.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<SWFs name="s4SWF">
+			<swf name="page1">../section4/page1.swf</swf>
+			<swf name="page2">../section4/page2.swf</swf>
+			<swf name="page3">../section4/page3.swf</swf>
+			<swf name="page4">../section4/page4.swf</swf>
+		</SWFs>
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text" posY="-8">The World of Apps</course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">Introduction</tab>
+			<tab title="Kinds of Apps Tab"		field="tab2_text">Kinds of Apps</tab>
+			<tab title="Summary Tab"  			field="tab3_text">Summary</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">Next</pillar>
+			<pillar title="Previous Button" 	field="prev_text">Previous</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">Click the title of the course to return to the beginning of the course.</text>
+			<text title="Navigation Explaination" 	field="help2_text">This is the navigation, and your main means of getting around the course. The main categories are at the top, and the sub-categories listed below. Each section gets checked off as you visit it.</text>
+			<text title="Progress Bar Explaination" field="help3_text">This is the progress bar. It gradually increases as you go through the course, helping you to keep track of your overall progress.</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[Are you sure you want to exit this learning module?<br><br>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">Proceed to Assessment</text>
+			<text title="Continue to Assessment" 	field="yes_text">Yes, continue to the assessment</text>
+			<text title="Return to Module" 			field="cancel_text">Cancel &amp; return to the module</text>
+		</assessment>
+	</container>
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Introduction" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text">The World of Apps</laserbeam>
+		<sublaser title="Sublaser" field="sublaser_text">Introduction</sublaser>
+		<body title="Body" field="body_text"><![CDATA[For your customer, the question they have about a smartphone isn't, <i>"How does it work?"</i> it's <i>"What can it do for me?</i><br><br>Learn how apps can turn "a smartphone" into "my smartphone."]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 2 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="What Are Apps?" name="s1p2">
+		<laserbeam title="Header" field="laserbeam_text">What are Apps?</laserbeam>
+		<body title="Body" field="body_text">An app (short for application) is software that performs a specific task - like interacting with Facebook, checking the weather, playing music or editing and sharing photos. Apps can turn a standard device into a tool that uniquely your own.</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 3 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Where Do Apps Come From?" name="s1p3">
+		<laserbeam title="Header" field="laserbeam_text">Where Do Apps Come From?</laserbeam>
+		<body title="Body" field="body_text">There are four major platforms and each has their own marketplace where users can buy and download apps specifically for their device.</body>
+
+		<text title="Instructions" field="instructions_text">Tap and drag to see more content</text>
+
+		<table title="Comparision Chart" name="chart">
+			<row title="Labels">
+				<cell title="Android" 			field="row1_1">Android</cell>
+				<cell title="Apple" 			field="row1_2">Apple</cell>
+				<cell title="Windows Mobile" 	field="row1_3">Windows Mobile</cell>
+				<cell title="BlackBerry"		field="row1_4">BlackBerry</cell>
+			</row>
+			<row title="App Stores">
+				<cell title="Android App Store" 	field="row2_1">Google Play Store</cell>
+				<cell title="Apple App Store" 		field="row2_2">App Store</cell>
+				<cell title="Windows App Store" 	field="row2_3">Windows Mobile</cell>
+				<cell title="BlackBerry App Store"	field="row2_4">BlackBerry World</cell>
+			</row>
+			<row title="Total Apps">
+				<cell title="Android Total Apps" 		field="row3_1"><![CDATA[1+ Million<br/><span class="footnote">as of June 2013</span>]]></cell>
+				<cell title="Apple Total Apps"			field="row3_2"><![CDATA[900,000+  <br/><span class="footnote">as of June 2013</span>]]></cell>
+				<cell title="Windows Mobile Total Apps"	field="row3_3"><![CDATA[170,000+  <br/><span class="footnote">as of August 2013</span>]]></cell>
+				<cell title="BlackBerry Total Apps"		field="row3_4"><![CDATA[120,000+  <br/><span class="footnote">as of August 2013</span>]]></cell>
+			</row>
+			<row title="Extra Stores">
+				<cell title="Amazon Store" 	field="row4_1"><![CDATA[Amazon App Store<br/>122,000]]></cell>
+				<cell title="" 				field="row4_2">-</cell>
+				<cell title="" 				field="row4_3">-</cell>
+				<cell title=""				field="row4_4">-</cell>
+			</row>
+		</table>
+
+		<text title="Sales Tip" field="sales_tip_text"><![CDATA[<b>Selling Tip:</b> Not all apps are on all platforms, so be sure to understand what apps are available for the device or platform your customer is considering.]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 4 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Why Do Apps Matter?" name="s1p4">
+		<laserbeam title="Header" field="laserbeam_text">Why Do Apps Matter?</laserbeam>
+		<body title="Body" field="body_text">Apps personalize a smartphone, so while customers might own identical devices, they will use them in different ways.</body>
+
+		<text title="Features" field="features_text"><![CDATA[<li>Business Travelers might be interested in weather, budgeting and finance, airline and maps apps.</li><li>Sports Fans might want apps for league news, scores, and game schjedules.</li><li>An Aspiring Chef might have apps to store recipes, photograph dishes, read or create reviews of local restaurants.</li>]]></text>
+
+		<text title="Let's Go" field="lets_go_text"><![CDATA[<i>Let's look at some popular categories.</i>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 1 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Entertainment" name="s2p1">
+		<laserbeam title="Header" field="laserbeam_text">Entertainment</laserbeam>
+		<body title="Body" field="body_text">With Entertainment apps, you can enjoy content - or create your own. Music. Video. Books. Whether you're looking to be entertained or do the entertaining, there's an app to help make it happen.</body>
+		<text title="Footnote" field="footnote_text">(Google Play Store top free entertainment apps in the U.S. on 9/25/13)</text>
+	</page>
+	
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Games" name="s2p2">
+		<laserbeam title="Header" field="laserbeam_text">Games</laserbeam>
+		<body title="Body" field="body_text">Gaming apps include casual time-passers and immersive console-quality gaming experiences. Playing games on a smartphone can happen anywhere, anytime – no sofa required. Whether you want to just play a word game with friends for a few minutes or you're a hard-core gamer up for an all-nighter, there's something for everybody.</body>
+		<text title="Footnote" field="footnote_text">(Google Play Store top games apps in the U.S. on 10/2/13)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Productivity" name="s2p3">
+		<laserbeam title="Header" field="laserbeam_text">Productivity</laserbeam>
+		<body title="Body" field="body_text">Productivity apps help you get stuff done – like making lists, tracking time, writing notes or creating a budget. Many store data in the cloud, or communicate directly with your computer so your information is always available.</body>
+		<text title="Footnote" field="footnote_text">(Windows Phone store top paid tools + productivity apps in the U.S. on 10/2/13)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Hobbies &amp; Lifestyle" name="s2p4">
+		<laserbeam title="Header" field="laserbeam_text">Hobbies &amp; Lifestyle</laserbeam>
+		<body title="Body" field="body_text">Apps keep things you care about closeby. Journal thoughts, capture inspirational snapshots, shop, and tune in to content and information. Or, customize your device with backgrounds or icons that suit your passion.</body>
+		<text title="Footnote" field="footnote_text">(Google Play Store top lifestyle apps in the U.S. on 9/25/13)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 5
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Social Networking" name="s2p5">
+		<laserbeam title="Header" field="laserbeam_text">Social Networking</laserbeam>
+		<body title="Body" field="body_text">One of the most popular uses for a smartphone is staying in touch - and this is an area your customer will probably be very interested in. Social networking apps let you update your status, check-in at favorite spots and broadcast spontaneous photos or videos.</body>
+		<text title="Footnote" field="footnote_text">(BlackBerry World top social apps in the U.S. on 9/25/13)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 6
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Health &amp; Fitness" name="s2p6">
+		<laserbeam title="Header" field="laserbeam_text">Health &amp; Fitness</laserbeam>
+		<body title="Body" field="body_text">Apps can help track what you're eating, motivate with a workout and encouragement, track your mileage, pace, and then guide you to a good night's sleep. Whether you're looking to shed a few pounds or train for a marathon, apps can help get you on the road to a healthy life.</body>
+		<text title="Footnote" field="footnote_text">(Google Play store top health &amp; fitness apps in the U.S. on 10/2/13)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 7
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Education" name="s2p7">
+		<laserbeam title="Header" field="laserbeam_text">Education</laserbeam>
+		<body title="Body" field="body_text">A smartphone can a constant educational companion - giving you access to so many learning tools. Learn a new skill or language. Explore the human body, a far-off country, or virtually dissect a frog. Apps can take you from "curious" to "expert".</body>
+		<text title="Footnote" field="footnote_text">(Windows Phone store top paid education apps in the U.S. on 9/25/13)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 8
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Kids" name="s2p8">
+		<laserbeam title="Header" field="laserbeam_text">Kids</laserbeam>
+		<body title="Body" field="body_text">From the amusing to the educational, kids apps deliver a whole new kind of interactive experience. They can see their favorite character come to life on the smartphone. From learning their ABC's to solving puzzles, kids apps turn your smartphone into a virtual playground.</body>
+		<text title="Footnote" field="footnote_text">(Windows Phone store top paid kids + family apps in the U.S. on 10/2/13)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Unique… just like you." name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text">Unique… just like you.</laserbeam>
+		<body title="Body" field="body_text">Apps are what make your smartphone, well, yours. And with so many different kinds of apps available you can make your standard device into something that’s truly personal.</body>
+	</page>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Congratulations" name="s3p2">
+		<laserbeam title="Header" field="laserbeam_text">Congratulations</laserbeam>
+		<body title="Body" field="body_text">You've finished this training on apps.</body>
+
+		<text title="Sales Tip" field="sales_tip_text"><![CDATA[<b>Selling Tip:</b> Remember - your customer is curious about what they can do with a new smartphone. Help them understand how apps create a personalized experience. Ask about their interests and show them features that excite them.]]></text>
+	</page>
+
+</course>
+

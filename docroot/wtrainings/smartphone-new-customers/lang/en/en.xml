@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="Smartphone for New Customers" right="false" language="en">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+			<swf name="page1">../section2/page1.swf</swf>
+			<swf name="page2">../section2/page2.swf</swf>
+			<swf name="page3">../section2/page3.swf</swf>
+			<swf name="page4">../section2/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+			<swf name="page1">../section3/page1.swf</swf>
+			<swf name="page2">../section3/page2.swf</swf>
+			<swf name="page3">../section3/page3.swf</swf>
+			<swf name="page4">../section3/page4.swf</swf>
+			<swf name="page5">../section3/page5.swf</swf>
+			<swf name="page6">../section3/page6.swf</swf>
+			<swf name="page7">../section3/page7.swf</swf>
+			<swf name="page8">../section3/page8.swf</swf>
+			<swf name="page9">../section3/page9.swf</swf>
+			<swf name="page10">../section3/page10.swf</swf>
+			<swf name="page11">../section3/page11.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<SWFs name="s4SWF">
+			<swf name="page1">../section4/page1.swf</swf>
+			<swf name="page2">../section4/page2.swf</swf>
+			<swf name="page3">../section4/page3.swf</swf>
+			<swf name="page4">../section4/page4.swf</swf>
+		</SWFs>
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text" posY="-8">Smartphones for New Customers</course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">Introduction</tab>
+			<tab title="3G vs 4G Tab"			field="tab2_text">Smart on Smartphones</tab>
+			<tab title="In Daily Life Tab"  	field="tab3_text">Smart Customers</tab>
+			<tab title="All Day, All Ways Tab"	field="tab4_text">Summary</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">Next</pillar>
+			<pillar title="Previous Button" 	field="prev_text">Previous</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">Click the title of the course to return to the beginning of the course.</text>
+			<text title="Navigation Explaination" 	field="help2_text">This is the navigation, and your main means of getting around the course. The main categories are at the top, and the sub-categories listed below. Each section gets checked off as you visit it.</text>
+			<text title="Progress Bar Explaination" field="help3_text">This is the progress bar. It gradually increases as you go through the course, helping you to keep track of your overall progress.</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[Are you sure you want to exit this learning module?<br><br>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">Proceed to Assessment</text>
+			<text title="Continue to Assessment" 	field="yes_text">Yes, continue to the assessment</text>
+			<text title="Return to Module" 			field="cancel_text">Cancel &amp; return to the module</text>
+		</assessment>
+	</container>
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Introduction" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text">Smartphones for New Customers</laserbeam>
+		<sublaser title="Sublaser" field="sublaser_text">Welcome</sublaser>
+		<body title="Body" field="body_text"><![CDATA[People are stepping from feature phones to smartphones faster than ever. The convenience and features of smartphones have changed how we interact with people and world around us.<br><br>This module will teach you how to help a customer choose their first smartphone – even if you don’t own one yourself.]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 1 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Get to Know Them" name="s2p1">
+		<laserbeam title="Header" field="laserbeam_text">Get to Know Them</laserbeam>
+		<body title="Body" field="body_text">If your customer is browsing smartphones, they're probably eager to know more. Your job is to understand their needs, answer questions, and show them how smartphone can make their life better.</body>
+
+		<text title="Sales Tip" field="sales_tip_text"><![CDATA[<b>Selling Tip</b>: A great place to start with a customer is by asking, “What are you looking to do with your smartphone?” This is a great way to understand what features and applications are important to them.]]></text>
+	</page>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 2 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="The Basics" name="s2p2">
+		<laserbeam title="Header" field="laserbeam_text">The Basics</laserbeam>
+		<body title="Body" field="body_text">Almost everyone wants to be connected to friends, family and colleagues. Start by showing them the basic features:</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>Touch screen</li><li>Voice calls</li><li>Texting and conversation history</li><li>Voice to text</li>]]></text>
+
+		<text title="Sales Tip" field="sales_tip_text"><![CDATA[<b>Selling Tip</b>: First time smartphone shoppers tend to be overwhelmed. Start with the basics to help them become confident. ]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Web Access" name="s2p3">
+		<laserbeam title="Header" field="laserbeam_text">Web Access</laserbeam>
+		<body title="Body" field="body_text">A smartphone puts the internet your pocket. Show them how they can use the web just like they do at home:</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>Search for information</li><li>Send and read email</li><li>Shopping</li><li>Check news and weather</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="GPS &amp; Maps" name="s2p4">
+		<laserbeam title="Header" field="laserbeam_text">GPS &amp; Maps</laserbeam>
+		<body title="Body" field="body_text">Smartphones allow you to take the power of GPS with you everywhere you go. Show them how to:</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>Pinpoint your current location</li><li>Find a nearby businesses</li><li>Get driving directions</li><li>Search for a map</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 5
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Apps" name="s2p5">
+		<laserbeam title="Header" field="laserbeam_text">Apps</laserbeam>
+		<body title="Body" field="body_text">Apps available for almost anything you can imagine. But the great thing about apps is it really customizes the phone to be personal. Ask them what their interests are and show them apps that they might like:</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>Social Networking (Facebook, Twitter)</li><li>Music (Pandora, Spotify)</li><li>Photo Sharing (Instagram)</li><li>Video &amp; Movies (YouTube, Netflix)</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 6
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="The Camera" name="s2p6">
+		<laserbeam title="Header" field="laserbeam_text">The Camera</laserbeam>
+		<body title="Body" field="body_text">Smartphones have amazing cameras that can be just as good as the point-and-shoot you already own. Show them the camera and how they can:</body>
+
+		<text title="Feature" field="features_text"><![CDATA[<li>Capture photos and video</li><li>Share through messaging, email, or social media</li><li>Edit with special effects</li>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 7
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Put It All Together" name="s2p7">
+		<laserbeam title="Header" field="laserbeam_text">Put It All Together</laserbeam>
+		<body title="Body" field="body_text">A smartphone helps you connect, stay informed, and be entertained. Customizing your smartphone with apps makes your device personal providing you exactly the functionality you need.</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Busy Parent" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text">Busy Parent</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[Amy is in charge of coordinating her kids' schedules, is an active volunteer, and likes to stay in touch with social media.<br><br>Show Amy how easy it is to use a smartphone calendar, and how she might even be able to sync it up with her son's or other family members. The camera will be great for capturing photos from some of her volunteering activities, and she can share them right to websites or social media.]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Business Owner" name="s3p2">
+		<laserbeam title="Header" field="laserbeam_text">Business Owner</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[Carlos runs a small business and is looking for ways that a smartphone can help him be more productive.<br><br>Talk to him about how apps for his smartphone can help him do everything from track expenses to manage inventory to even act as a point-of-sale. He can update his website or write to his company’s blog directly from his smartphone when inspiration strikes, and updating his social media is a breeze.]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="College Student" name="s3p3">
+		<laserbeam title="Header" field="laserbeam_text">College Student</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[Erin is heading to college, and already has some devices in mind to check out in your store. She knows she'll be doing a lot of texting and social networking, but she's excited about taking pictures and shooting video as well.<br><br>Talk to Erin about everything a smartphone can help her do - from researching and writing school assignments to managing her class schedule - and as a college student with limited living space, she might really enjoy the home-theater-in-your-hand a smartphone can provide.]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Congratulations" name="s4p1">
+		<laserbeam title="Header" field="laserbeam_text">Congratulations</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[You have completed this training on Smartphones 101. Remember, this customer is probably moving up from a feature phone and considering their first smartphone. They’ve certainly seen them around and might be a bit familiar with some smartphone features, but they’ll appreciate knowing more about the convenience and personalization a smartphone can provide.<br><br>Help them see how a smartphone can become a part of their lifestyle, putting the things that are most important to them – specific apps, photos and videos, entertainment and gaming, or productivity features – right at their fingertips. Pick up the devices in your store, demonstrate the features, and let your customers interact with them.<br><br>First time buyers might look around a lot, visit your store several times, and have a lot of questions. Be ready to listen, help, and recommend.]]></body>
+	</page>
+
+</course>
+

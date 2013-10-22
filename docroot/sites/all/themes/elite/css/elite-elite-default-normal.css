@@ -1,0 +1,32 @@
+/* This file will hold styles that are loaded using the same media query as the normal grid. */
+/* If you are using the default media queries provided by Omega, these styles will also
+ *  apply to the widescreen layout unless they are overridden by the widescreen styles. */
+.responsive-layout-normal .view-trainings .views-column,
+.responsive-layout-normal .view-trends .views-column {
+  min-height: 234px;
+}
+.not-logged-in.page-user.responsive-layout-normal #block-system-main,
+.not-logged-in.page-user.responsive-layout-normal #messages .messages {
+  width: 90%;
+}
+
+.responsive-layout-normal .view-popular-content .views-column {
+  min-height: 130px;
+}
+.responsive-layout-normal .view-popular-content .views-field-field-rating {
+  left: 105px;
+}
+.responsive-layout-normal .view-trainings .view-footer article.node-poll {
+  min-height: 234px;
+}
+.responsive-layout-normal .view-trainings .view-footer article.node-poll h1,
+.responsive-layout-normal .view-trainings .view-footer article.node-poll .poll-title {
+  font-size: 1.2em;
+  line-height: 1em;
+}
+.responsive-layout-normal .view-trainings .view-footer article.node-poll .form-item.form-item-choice {
+  margin: 0 0 .3em;
+}
+.responsive-layout-normal .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button {
+  bottom: 20px;
+}

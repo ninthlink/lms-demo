@@ -1,0 +1,53 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="Blackberry 10" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again, but only once in a 24 hour period. Thanks for your time and hard work!" 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="What is BlackBerry® 10?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="A new messaging app from BlackBerry, built to make you more productive" />
+		<option key="" value="A new smartphone from BlackBerry, built to help you communicate more" />
+		<option key="" value="A powerful OS from BlackBerry, built to keep you moving" answer="1" />
+		<option key="" value="A new category of devices from BlackBerry, built to keep you in the know" />
+	</question>
+
+	<question id="2" q="What are Qualcomm® Snapdragon™ processors?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="A mobile gaming app" />
+		<option key="" value="High resolution cameras" />
+		<option key="" value="All-in-one chips to power mobile devices" answer="1" />
+		<option key="" value="Secure mobile broadband connectivity" />
+	</question>
+
+	<question id="3" q="BlackBerry® people are:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Hyper-connected" />
+		<option key="" value="Have an appetite for accomplishment" />
+		<option key="" value="Are crazy multi-taskers" />
+		<option key="" value="All of the above" answer="1" />
+	</question>
+
+	<question id="4" q="Qualcomm® Snapdragon™ benefits BlackBerry® 10 features like:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="BlackBerry Smooth" />
+		<option key="" value="BlackBerry Hub" answer="1" />
+		<option key="" value="BlackBerry Stream" />
+		<option key="" value="BlackBerry Flight" />
+	</question>
+
+	<question id="5" q="Inside Qualcomm® Snapdragon™ processors, the custom-designed CPU and GPU provide BlackBerry® 10 devices with:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Processing power to deliver dazzling, complex graphics for gaming, web browsing, and UI" />
+		<option key="" value="Processing power to deliver 1080p HD 30FPS video capture and playback" />
+		<option key="" value="High fidelity surround sound capabilities" />
+		<option key="" value="All of the above" answer="1" />
+	</question>
+
+</quiz>

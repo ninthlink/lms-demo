@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Firefox OS</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+
+   <!-- IE Fix for HTML5 Tags -->
+   <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/foundation.min-rtl.css" disabled>
+  <link rel="stylesheet" href="stylesheets/jquery.horslidernav-v1.5.css">
+  <link rel="stylesheet" href="stylesheets/qualcomm-template.css">
+  <link rel="stylesheet" href="stylesheets/course.css">
+
+   <!-- IE9 Fix for Full Stop Gradients -->
+   <!--[if gte IE 9]>
+      <style type="text/css">
+         .qualcomm-gradient { filter: none; }
+      </style>
+   <![endif]-->
+
+   <!--[if lt IE 9]>
+      <link rel="stylesheet" href="stylesheets/ie.css">
+   <![endif]-->
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <!-- Sublime video (Chris - wslash domain) -->
+  <!-- <script type="text/javascript" src="//cdn.sublimevideo.net/js/pk4r4ijx.js"></script> -->
+	<!-- Sublime video with no SSL registered to Qualcomm.com w/ wildcard -->
+  <script type="text/javascript" src="//cdn.sublimevideo.net/js/brxysbmu.js"></script>
+  <script type="text/javascript">
+    /*--------------------------------------------------------------------------------------------
+      Get the url parameter passed in to load in the appropriate XML file to parse.
+    --------------------------------------------------------------------------------------------*/
+    var urlLang = getUrlVars()["lang"];
+    /*--------------------------------------------------------------------------------------------
+      Get URL Parameter Function
+       - Gets the URL parameters and stores in an associative array
+       - If the user clicks a tab it appends a #hash tag to the URL, which can return a 
+         URL variables such as "lang=fr#experience1". 
+       - Function will only take anything from the "?" to the first index of the "#" IF the hash 
+         is found, othewise, just take from "?" to the end of URL.
+    --------------------------------------------------------------------------------------------*/
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            var hashIndex = value.search('#');
+            if(hashIndex == -1) {
+              vars[key] = value;
+            } else {
+              value = value.substring(0,hashIndex);
+              vars[key] = value;
+            }
+        });
+        return vars;
+    }
+  </script>
+
+</head>
+<body>
+
+  <!-- Loader for the page -->
+  <div class="loader">
+      <img src="images/shared/loader.gif" alt="loading image"/>
+  </div>
+
+   <!-- Main Navigation [Top-Bar]:
+      • This contains the main navigation for the course, allows the user to jump between elements
+   -->
+   <div class="main-navigation fixed" data-context="container">
+      <nav class="top-bar bars-navicon">
+         <ul>
+            <li class="name"><img src="images/shared/qualcomm-logo.png" alt="Qualcommm Logo" class="logo"></li>
+            <li class="name course-name"><h1 class="subheader"><a href="#" onclick="goToByScroll('.section1', 1);" data-field="title_text">Introducing Firefox OS</a></h1></li>
+            <li class="toggle-topbar"><a href="#"></a></li>
+         </ul>
+         
+         <section>
+            <ul class="right">
+               <li class="divider"></li>
+               <li class="has-dropdown">
+                  <a href="#" data-lang="nav">MENU</a>
+                  <ul class="dropdown">
+                    <li><a href="#"  onclick="goToByScroll('.section1', 1);" data-field="tab1_text">Introduction</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section2', 2);" data-field="tab2_text">Made for More</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section3', 3);" data-field="tab3_text">Market Demand</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section4', 4);" data-field="tab4_text">Communicating with Customers</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" data-lang="dashboard">Back to Dashboard</a></li>
+                  </ul>
+               </li>
+            </ul>
+
+            <!-- this is the proceed quiz -->
+            <!-- <ul class="right quiz-container">
+              <li><a class="quiz chevron disable" href="">Proceed to Assessment</a></li>
+            </ul> -->
+         </section>
+      </nav>
+   </div>
+
+   <!-- Content Starts Here 
+      • Slides: they make ups each section of content or in relation to Flash course, each SWF that is loaded
+   -->
+   <div class="content-container">
+
+      <!-- SECTION 1 -->
+      <div class="section1 slide qualcomm-gradient purple slide-first">
+        <!-- Introduction -->
+        <div class="row inner-section first" data-context="container">
+          <div class="twelve columns">
+            <h1 class="qualcomm-header" data-field="title_text">Introducing Firefox OS</h1>
+            
+            <!-- nested: image -->
+            <div class="row">
+              <div class="eight columns h-center centered">
+                <img src="images/shared/section1/firefox-os.png" alt="image of a mozilla fox with it's tail wrapped around a phone" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Every Moment -->
+        <div class="row inner-section" data-context="s1p1">
+            <div class="seven columns h-center">
+              <img src="images/shared/section1/every-moment.png" />
+            </div>
+
+            <div class="five columns padding-left-50">
+                <h1 class="subheader" data-field="laserbeam_text">Make Every Moment Count</h1>
+                <p data-field="body_text">Your needs change from one moment to the next. Firefox OS does the same. Firefox OS is a new, free operating system for mobile devices, built by Mozilla - the makers of the popular Firefox web browser. It is an open platform that fosters greater participation in the value chain from developers to manufacturers to customers.</p>
+            </div>
+        </div>
+
+        <hr />
+
+        <!-- A Different Kind of OS -->
+        <div class="row inner-section" data-context="s1p2">
+          <div class="twelve columns">
+            <h1 class="subheader" data-field="laserbeam_text">A Different Kind of OS</h1>
+            <p data-field="body_text">Firefox OS breaks from the typical proprietary OS in modern devices, using HTML5, css, and javascript to allow developers to deliver powerful apps that aren’t tied to the OS platform. It’s a comprehensive standalone operating system for the mobile web. <strong>This allows:</strong></p>
+
+            <ul data-field="features_text">
+              <li>Direct connections and relationships between companies and customers. An open source operating system means customers will benefit from custom, personalized experiences.</li>
+              <li>Fast performance, even on lower end devices</li>
+            </ul>
+            
+            <div class="vspacer-50"></div>
+
+            <!-- Images and text -->
+            <div class="row">
+              <div class="four mobile-two columns h-center">
+                <img class="" src="images/shared/section1/person-rings.png" alt="illustration of a person profile with rings surrounding them" />
+                <div class="vspacer-25"></div>
+              </div>
+
+              <div class="four mobile-two columns h-center hide-for-small">
+                <div class="arrow-container c-align-parent">
+                  <img class="arrow c-align-child" src="images/shared/arrows.png" alt="two arrows, each pointing a different direction inside a circle" />
+                </div>
+              </div>
+
+              <div class="vspacer-50 show-for-small"></div>
+
+              <div class="four mobile-two columns h-center">
+                <img class="" src="images/shared/section1/tower.png" alt="illustration of a tower" />
+                <div class="vspacer-25"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+
+        <!-- Devices -->
+        <div class="row inner-section" data-context="s1p3">
+           <div class="twelve columns">
+            <h1 class="subheader" data-field="laserbeam_text">Devices</h1>
+            <p data-field="body_text">Firefox is developing valuable relationships with carriers, manufacturers, developers, and technology providers to deliver the powerful Firefox OS platform, including Telefonica, Sprint, T-Mobile, LG, Sony and Qualcomm Technologies.</p>
+
+            <div class="vspacer-50"></div>
+
+            <div class="row">
+              <div class="six mobile-two columns h-center"><img src="images/shared/section1/device1.png" alt=""></div>
+              <div class="six mobile-two columns h-center"><img src="images/shared/section1/device2.png" alt=""></div>
+            </div>
+
+            <div class="vspacer-50"></div>
+
+            <div class="panel outline">
+              <p data-field="callout_text">Devices include the ZTE Open, the Alcatel One Touch Fire, each including a 3.5” screen, 1GHz processor, 512 MB of storage (plus a 2 GB SD card) and a 2.3 MP camera.  Additional Snapdragon phones will be coming from other manufacturers in Latin America, Europe, and other worldwide markets.</p>
+            </div>            
+          </div>
+        </div>
+      
+      </div> <!-- end "SECTION 1" -->
+
+
+      <!-- SECTION 2 -->
+      <div class="section2 slide qualcomm-gradient blue">
+        <!-- Friendly Platform -->
+        <div class="row inner-section first" data-context="s2p1">
+					<!-- Device Image -->
+          <div class="six column h-center">
+            <img src="images/shared/section2/alcatel-phone.png" alt="white and orange phone running Firefox OS">
+          </div>
+
+          <div class="vspacer-25 show-on-small"></div>
+
+          <div class="six columns">
+            <h1 data-field="laserbeam_text" data-field="laserbeam_text">Friendly Platform</h1>
+            <p data-field="body_text">Firefox OS is an open alternative to proprietary systems like iOS and Android. Built entirely around HTML5, css, and javascript, Firefox OS can reduce the investment from developers, allowing them to develop more innovative apps and develop better customer loyalty and relationships.<br/><br/>Firefox OS uniquely anticipates your needs, adapts to every situation and instantly delivers the information you want. That includes popular, big name apps, but also local content that means the most to you and your life.</p>
+
+            <div class="vspacer-25"></div>
+
+						<!-- HTML5 Badge and Info -->
+						<div class="panel outline">
+	            <div class="row">
+	          		<div class="three columns h-center">
+	          			<img src="images/shared/section2/html5-badge.png" alt="official badge of the HTML5 standard">
+	          		</div>
+	          		<div class="nine columns">
+	          			<div class="vcenter-container" data-field="callout_text">HTML 5 is the next major revision of the HTML web standard - markup language for building websites.</div>
+	          		</div>
+	          	</div>
+						</div>
+					</div>
+        </div>
+
+
+        <!-- Adaptive App Search -->
+        <div class="qualcomm-background alpha wrap">
+	        <div class="row inner-section" data-context="s2p2">
+	        	<div class="twelve columns">
+	        		<h1 class="subheader" data-field="laserbeam_text">Adaptive App Search</h1>
+	        		<p data-field="body_text">Firefox OS is the only operating system with Adaptive App Search. While every other phone today is static, giving you the exact same apps each time you turn it on, Firefox OS is always changing to offer exactly the apps you need at any moment in your life.</p>
+
+	        		<div class="vspacer-50"></div>
+
+	        		<div class="row">
+
+	        			<div class="six columns h-center push-six">
+	        				<img src="images/shared/section2/search-device.png" alt="device running Firefox OS">
+	        			</div>
+
+	        			<div class="six columns pull-six">
+	        			<div class="vspacer-50 hide-for-small"></div>
+	        				<div class="search-box">
+	        					<span class="icon search"></span>
+	        					<p data-field="search_text">Type a word or subject you're interested in<p>
+	        				</div>
+	        				
+	        				<div class="search-box">
+	        					<span class="icon check"></span>
+	        					<p data-field="find_text">Find exactly what you want – and more<p>
+	        				</div>
+	        				
+	        				<div class="search-box">
+	        					<span class="icon hand"></span>
+	        					<p data-field="apps_text">Get instant access or save apps to your phone<p>
+	        				</div>
+
+	        				<div class="plus">+</div>
+
+	        				<div class="search-box">
+	        					<span class="icon ship"></span>
+	        					<p data-field="discover_text">Discover more apps on the Firefox Marketplace<p>
+	        				</div>
+	        			</div>
+
+	        		</div>
+	        	</div>
+	        </div> <!-- end row -->
+      	</div> <!-- end qualcomm-background.alpha -->
+
+
+				<!-- Have It All -->
+				<div class="row inner-section" data-context="s2p3">
+					<div class="seven columns h-center">
+        		<img src="images/shared/section2/apps-device.png" alt="device running Firefox OS showing the app store">
+					</div>
+					<div class="five columns">
+						<h1 class="subheader" data-field="laserbeam_text">Have it all</h1>
+						<p data-field="body_text">Firefox Marketplace is the kind of app store customers expect, where they can get great apps for entertainment, productivity, social networking, and more.  However, unlike other systems, Firefox Marketplace is not the only point of distribution for apps – apps can be distributed from anywhere online, by any developer – from carriers to movie makers to game developers.  This allows a direct link to customers.  From social to photography, music to maps - with Firefox OS, the web is the app store.</p>
+					</div>
+				</div>
+
+				<hr />
+
+				<div class="row inner-section" data-context="s2p4">
+					<div class="twelve columns">
+						<h1 class="subheader" data-field="laserbeam_text">Powerful Platform</h1>
+						<p data-field="body_text">Firefox OS is packed with the features you want, and fits your life perfectly so you can fit in with the world around you.  It scales from feature phone to smartphones, utilizing high performance standards-based API’s and open source software components.  Inside, tight integration with Qualcomm® CPU, GPU, & MM accelerators meet or exceed the native app experience.</p>
+
+						<div class="vspacer-50"></div>
+
+						<img src="images/shared/section2/technology.png" alt="breakdown of the technology in a smartphone" class="border twelve">
+						<p class="footnote" data-field="footnotes_text">Image attribution: <a href="http://arewemobileyet.com">http://arewemobileyet.com</a></p>
+					</div>
+				</div>
+
+      </div>  <!-- end SECTION 2 -->
+
+
+			<!-- SECTION 3 -->
+			<div class="section3 slide qualcomm-gradient violet">
+				<!-- Tearing Down Walls -->
+				<div class="row inner-section first" data-context="s3p1">
+					<div class="twelve columns">
+						<h1 data-field="laserbeam_text">Tearing Down Walls</h1>
+						<p data-field="body_text">The open standards perspective of Firefox OS gives operators some clear advantages to working with the “walled gardens” of iOS, Android, and Blackberry. Carriers can create value-add services to customers, delivery rich, powerful apps directly to customers, and have more ownership over the customer experience.</p>
+						
+						<hr />
+
+						<!-- Quotes -->
+						<div class="row">
+							<div class="six columns">
+								<blockquote>
+									<p data-field="quote1_text">Operators will benefit from higher control over the mobile ecosystem and consequently will have the opportunity to address specific customers. <cite>– Franco Bernabe, Telecom Italia CEO</cite></p>
+								</blockquote>
+
+								<blockquote>
+									<p data-field="quote2_text">This is a major step to bring balance back to the telco sector. The smartphone market is currently working backwards. [Customers are] not able to take an application from one platform to another. Duopolies are not beneficial for any industry. <cite>– Cesar Alierta, CEO, Telefonica</cite></p>
+								</blockquote>
+
+								<blockquote>
+									<p data-field="quote3_text">Suddenly we have something which is a bit more flexible. <cite>– Jon Fredrick Baksaas, CEO, Telenor</cite></p>
+								</blockquote>
+
+								<blockquote>
+									<p data-field="quote4_text">This is the beginning of the end of walled gardens. <cite>– Marco Quatorze, CMO, America Movil</cite></p>
+								</blockquote>
+							</div>
+
+							<div class="vspacer-50 show-for-small"></div>
+
+							<!-- Firefox Image -->
+							<div class="six columns h-center">
+								<img src="images/shared/section3/firefox-os-green.png" alt="Mozilla fox with it's tail wrapped around smartphone running Firefox OS">
+							</div>
+						</div>
+
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 3 -->
+
+			
+			<!-- SECTION 4 -->
+			<div class="section4 slide qualcomm-gradient aqua">
+				<!-- Selling Firefox OS -->
+				<div class="row inner-section first" data-context="s4p1">
+					<div class="seven columns">
+						<h1 data-field="laserbeam_text">Selling FireFox OS</h1>
+						<h4 class="subheader" data-field="body_text">Firefox OS will especially appeal to customers who will appreciate an open, flexible environment.</h4>
+
+						<hr />
+
+						<ul data-field="selling_features_text">
+							<li>Powerful Firefox Search built into the OS allows the power of the web to inform any part of the OS experience – search for “movies” and you’ll not only get information on movies, but entertainment apps at your fingertips to read reviews, buy tickets, learn more about the cast, or experience a movie’s standalone app. The OS allows a fluid, dynamic user experience.</li>
+							<li>Social media is deeply integrated into Firefox OS, making connecting via Facebook or Twitter less reliant on stand-alone apps or websites.</li>
+							<li>Firefox OS is where the web meets apps.  The power of the internet combines with the elegance of the app form factor, giving users powerful, new, unique experiences on their devices.  A huge app ecosystem can become available; more becomes possible.</li>
+							<li>Firefox OS will grow with the web – as standards evolve, so will the OS</li>
+							<li>HTML5 allows for automatic update of Apps, without the user’s intervention.</li>
+							<li>Adaptive App Search means the OS changes as you do – apps and information available to you change according to what you search for, giving you more of what you want.</li>
+						</ul>
+					</div>
+
+					<div class="vspacer-25 show-for-small"></div>
+
+					<div class="five columns h-center">
+						<img src="images/shared/section4/glyphs.png" alt="">
+					</div>
+
+				</div>
+			</div> <!-- end SECTION 4 -->
+
+   </div> <!-- end "content-container" -->
+
+
+  <!-- Quiz Wrapper: 
+    • Contains a link for the learner to go to the quiz portion
+  -->
+  <!-- <div class="quiz-wrapper h-center">
+    <a class="button chevron large quiz" href="assessment.html?lang=en" data-lang="quiz">Procced to Assessment</a>
+  </div> -->
+
+  <!-- Quiz Modal:
+    • Modal to be launched to ask the user if they want to go to the quiz
+  -->
+  <div id="quizModal" class="reveal-modal" data-context="container">
+    <h3 class="subheader" data-field="assessmentbtn_text">Proceed to Assessment</h3>
+    <p data-field="assessment_text">Are you sure you want to exit this learning module?<br/><br/>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.</p>
+    <a class="button chevron quiz success radius" href="assessment.html?lang=en" data-lang="quiz" onclick="parent.qelite_taketraining_btn(); return false;">Proceed to Assessment</a>
+    <a class="button chevron radius close-reveal-modal" data-field="cancel_text">Cancel &amp; return to the module</a>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <!-- Footer: 
+    • Desktop/Tablet: Contains "back-to-top" link
+    • Mobile: Contains "back-to-top" link, as well as the slide navigation
+   -->
+   <div class="footer">
+    <p><a href="#" class="chevron back-to-top" onclick="goToByScroll('top')" data-lang="top">Back to Top</a></p>
+   </div>
+
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  <script src="javascripts/jquery.js"></script><script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script><script src="javascripts/jquery.foundation.forms.js"></script><script src="javascripts/jquery.foundation.reveal.js"></script><script src="javascripts/jquery.foundation.orbit.js"></script><script src="javascripts/jquery.foundation.navigation.js"></script><script src="javascripts/jquery.foundation.buttons.js"></script><script src="javascripts/jquery.foundation.tabs.js"></script><script src="javascripts/jquery.foundation.tooltips.js"></script><script src="javascripts/jquery.foundation.accordion.js"></script><script src="javascripts/jquery.placeholder.js"></script><script src="javascripts/jquery.foundation.alerts.js"></script><script src="javascripts/jquery.foundation.topbar.js"></script><script src="javascripts/jquery.foundation.joyride.js"></script><script src="javascripts/jquery.foundation.clearing.js"></script><script src="javascripts/jquery.foundation.magellan.js"></script>
+  -->
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+  <script src="javascripts/responsive-tables.js"></script>
+  <script src="javascripts/jquery.horslidernav-v3.7.js"></script>
+  <script src="javascripts/jquery.animate-enhanced.min.js"></script>
+  <script src="javascripts/jquery.easing.1.3.js"></script>
+  <script src="javascripts/parse-xml-v1.5.js"></script>
+  <script src="javascripts/qualcomm-template.js"></script>
+  
+</body>
+</html>

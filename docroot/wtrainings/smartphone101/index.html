@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Set the viewport width to device width for mobile -->
+  <meta name="viewport" content="width=device-width" />
+
+  <title>Smartphone 101</title>
+  
+  <!-- Included CSS Files (Uncompressed) -->
+  <!--
+  <link rel="stylesheet" href="stylesheets/foundation.css">
+  -->
+
+   <!-- IE Fix for HTML5 Tags -->
+   <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/foundation.min-rtl.css" disabled>
+  <link rel="stylesheet" href="stylesheets/jquery.horslidernav-v1.5.css">
+  <link rel="stylesheet" href="stylesheets/qualcomm-template.css">
+  <link rel="stylesheet" href="stylesheets/snapdragon.css">
+  <link rel="stylesheet" href="stylesheets/course.css">
+
+   <!-- IE9 Fix for Full Stop Gradients -->
+   <!--[if gte IE 9]>
+      <style type="text/css">
+         .qualcomm-gradient { filter: none; }
+      </style>
+   <![endif]-->
+
+   <!--[if lt IE 9]>
+      <link rel="stylesheet" href="stylesheets/ie.css">
+   <![endif]-->
+
+  <script src="javascripts/modernizr.foundation.js"></script>
+  <!-- Sublime video (Chris - wslash domain) -->
+  <!-- <script type="text/javascript" src="//cdn.sublimevideo.net/js/pk4r4ijx.js"></script> -->
+  <!-- Sublime video with no SSL registered to Qualcomm.com w/ wildcard -->
+  <script type="text/javascript" src="//cdn.sublimevideo.net/js/brxysbmu.js"></script>
+
+</head>
+<body>
+
+  <!-- Loader for the page -->
+  <div class="loader">
+      <img src="images/shared/loader.gif" alt="loading image"/>
+  </div>
+
+   <!-- Main Navigation [Top-Bar]:
+      • This contains the main navigation for the course, allows the user to jump between elements
+   -->
+   <div class="main-navigation fixed" data-context="container">
+      <nav class="top-bar bars-navicon">
+         <ul>
+            <li class="name"><img src="images/shared/qualcomm-logo.png" alt="Qualcommm Logo" class="logo"></li>
+            <li class="name course-name"><h1 class="subheader"><a href="#" onclick="goToByScroll('.section1', 1);" data-field="title_text">Smartphone 101</a></h1></li>
+            <li class="toggle-topbar"><a href="#"></a></li>
+         </ul>
+         
+         <section>
+            <ul class="right">
+               <li class="divider"></li>
+               <li class="has-dropdown">
+                  <a href="#" data-lang="nav">Menu</a>
+                  <ul class="dropdown">
+                    <li><a href="#"  onclick="goToByScroll('.section1', 1);" data-field="tab1_text" class="active">Introduction</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section2', 2);" data-field="tab2_text" class="">The Processor</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section3', 3);" data-field="tab3_text" class="">Operating Systems</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section4', 4);" data-field="tab4_text" class="">Connectivity</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section5', 5);" data-field="tab5_text" class="">Exploring the Smartphone</a></li>
+                    <li><a href="#"  onclick="goToByScroll('.section6', 6);" data-field="tab6_text" class="">Summary</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" data-lang="dashboard">Back to Dashboard</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </section>
+      </nav>
+   </div>
+
+   <!-- Content Starts Here 
+      • Slides: they make up each section of content or in relation to Flash course, each SWF that is loaded
+   -->
+   <div class="content-container">
+
+      <!-- SECTION 1 -->
+      <div class="section1 slide qualcomm-gradient snapdragon-radial-fire slide-first">
+        <!-- Introduction -->
+        <div class="row inner-section first" data-context="s1p1">
+          <div class="twelve columns">
+            <img src="images/shared/section1/welcome.png" alt="introduction" class="center">
+        
+            <div class="vspacer-50"></div>
+
+            <h1 class="qualcomm-header show-for-small" data-field="laserbeam_text">Smartphone 101</h1>
+            <h1 class="" data-field="sublaser_text">Welcome</h1>
+            <h4 class="subheader" data-field="body_text">In this course we’ll discuss the technology that makes a smartphone… well, smart! The more you understand smartphones, the more confident you’ll be when demonstrating features, comparing products, and providing the expert advice that can lead to a sale. </h4>
+            
+            <div class="vspacer-25"></div>
+
+            <div class="panel radius sales-tip">
+              <p data-field="sales_tip_text"><strong>Selling Tip:</strong> Show your customers what smartphones can do. Demonstrate apps, the camera, or play a game or video to help customers imagine how a smartphone would make a difference in their life.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div> <!-- end "SECTION 1" -->
+
+
+      <!-- SECTION 2 -->
+      <div class="section2 slide qualcomm-gradient snapdragon-radial-stone">
+        <!-- Processor -->
+        <div class="row inner-section first" data-context="s2p1">
+          <div class="five columns">
+            <h1 class="" data-field="laserbeam_text">Processor</h1>
+            <p data-field="body_text">The processor is the “heart” of the smartphone. The processor directly controls functions like battery life, touchscreen responsiveness, camera shutter speed, access to apps and files, speed in executing commands, gaming graphics and smooth video playback.</p>
+            
+            <p class="footnote word-break"><a href="http://www.qualcomm.com/snapdragon/blog/2013/05/03/snapdragon-statstablets-are-true-multi-taskers" class="chevron" target="_blank">http://www.qualcomm.com/snapdragon/blog/2013/05/03/snapdragon-statstablets-are-true-multi-taskers</a></p>
+
+            <div class="vspacer-25"></div>
+
+            <div class="panel radius sales-tip">
+              <p data-field="sales_tip_text"><strong>Selling Tip:</strong>  All smartphones are not created equally. Because the processor is inside, it may be hard for the<br/><br/>Explain that Smartphones with Qualcomm<sup>®</sup> Snapdragon™ processors are designed to make your phone fast and efficient.</p>
+            </div>
+          </div>
+          
+          <div class="seven columns">
+            <img class="center" src="images/shared/section2/infographic.jpg" alt="what the processor controls">
+          </div>      
+		    </div>
+
+      </div>  <!-- end SECTION 2 -->
+
+
+			<!-- SECTION 3 -->
+			<div class="section3 slide qualcomm-gradient snapdragon-radial-sun">
+				<!-- OS -->
+				<div class="row inner-section first" data-context="s3p1">
+				  <div class="twelve columns">
+						<h1 data-field="laserbeam_text">Operating Systems and Apps</h1>
+						<p class="" data-field="body_text">Different manufacturers, devices, features and operating systems (OS) mean your customers have a lot to consider when choosing a smartphone. Understanding the different operating systems will give you confidence in helping your customers.</p>
+
+            <div class="vspacer-25"></div>
+
+            <!-- OS Tabs: Tabs -->
+              <dl class="tabs">
+                <dd class="active"><a href="#OStab1" data-field="OStab1">Apple<sup>®</sup> iOS</a></dd>
+                <dd><a href="#OStab2" data-field="OStab2">Android<sup>TM</sup></a></dd>
+                <dd><a href="#OStab3" data-field="OStab3">Windows Mobile<sup>®</sup></a></dd>
+                <dd><a href="#OStab4" data-field="OStab4">BlackBerry<sup>®</sup></a></dd>
+                <dd><a href="#OStab5" data-field="OStab5">Firefox<sup>®</sup></a></dd>
+             </dl>
+               
+             <!-- OS Tabs: Content -->
+             <ul class="tabs-content">
+                <!-- Apple -->
+                <li class="active" id="OStab1Tab"> 
+                  <div class="row inner-section">
+                    <div class="eight columns">
+                      <h5 class="" data-field="OStab1">Apple<sup>®</sup> iOS</h5>
+                      <p data-field="OStab1content">iOS is Apple's mobile operating system and it is available on the iPhone. Apps and content can be downloaded from the Apple App Store.</p>
+                      <p class="footnote" data-field="footnotes_text">The Apple logo and App Store badge are trademarks of Apple Inc.</p>
+                    </div> 
+
+                    <div class="four columns">
+                      <img src="images/shared/section3/apple.png" alt="apple">         
+                    </div>
+                  </div> <!-- end row -->
+                </li>
+              
+                <!-- Android -->
+                <li id="OStab2Tab"> 
+                  <div class="row inner-section">
+                    <div class="six columns">
+                      <h5 data-field="OStab2">Android</h5>
+                      <p data-field="OStab2content">Android is a mobile operating system developed by Google. It is used by many smartphone manufacturers who customize their user interface, so it’s a good idea to get familiar with the various devices in your store. With Android, apps and content can be downloaded from the Google Play store.</p>
+                      <img src="images/shared/section3/android.png" alt="android">
+                    </div>
+
+                    <div class="six columns">
+                     <img src="images/shared/section3/a_phones.png" alt="android phones">
+                    </div>
+                  </div> <!-- end row -->
+                </li>
+                
+                <!-- Windows Mobile -->
+                <li id="OStab3Tab"> 
+                  <div class="row inner-section">
+                    <div class="six columns">
+                      <h5 data-field="OStab3">Windows Mobile<sup®</sup></h5>
+                      <p data-field="OStab3content">Microsoft’s Windows Mobile operating system features a “live tiles” interface and apps, music, and games can be downloaded from the Windows Phone Store. There are several manufacturers of the Windows Phone. </p>
+                      
+                      <img src="images/shared/section3/windows.jpg" alt="windows">
+                    </div>
+
+                    <div class="six columns">
+                     <img src="images/shared/section3/w_phones.png" alt="windows phones">
+                    </div>
+                  </div> <!-- end row -->
+                </li>
+
+                <!-- Blackberry -->
+                <li id="OStab4Tab"> 
+                  <div class="row inner-section">
+                    <div class="six columns">
+                      <h5 data-field="OStab4">BlackBerry<sup>®</sup></h5>
+                      <p data-field="OStab4content">BlackBerry manufacturers phones with their own OS, including the BlackBerry 10 OS. Apps and other content are available through Blackberry World.</p>
+
+                      <img src="images/shared/section3/blackberry.png" alt="blackberry">
+                    </div>
+
+                    <div class="six columns">
+                     <img src="images/shared/section3/b_phones.png" alt="blackberry phones">
+                    </div>
+                  </div> <!-- end row -->
+                </li>
+
+                <!-- Firefox -->
+                <li id="OStab5Tab"> 
+                  <div class="row inner-section">
+                    <div class="six columns">
+                      <h5 data-field="OStab5">Firefox<sup>®</sup></h5>
+                      <p data-field="OStab5content">This new mobile OS is available in some countries. Mozilla has developed the Firefox OS for smartphones and several hardware partners to bring devices to consumers. Apps are available through the Firefox Marketplace or the adaptive app discovery engine. </p>
+                      <img src="images/shared/section3/firefox.png" alt="firefox">
+                    </div>
+                    <div class="six columns">
+                     <img src="images/shared/section3/f_phone.png" alt="firefox phone">
+                    </div>
+                  </div> <!-- end row -->
+                </li>
+
+              </ul> <!-- end OS Tabs: Content -->
+                   
+              
+              <div class="vspacer-25"></div>
+
+              <div class="panel radius sales-tip">
+                <p data-field="sales_tip_text"><strong>Selling Tip:</strong> Many customers want to be sure the smartphone they purchase will support their favorite apps. By teaching them how to search for apps they will become more confident when choosing the right smartphone.</p>
+              </div>
+            
+            </div>
+          </div>
+
+			</div> <!-- end SECTION 3 -->
+
+			
+			<!-- SECTION 4 -->
+			<div class="section4 slide qualcomm-gradient snapdragon-radial-ocean">
+				<!-- Connectivity -->
+				<div class="row inner-section first" data-context="s4p1">
+          <!-- <div class="twelve columns">
+					  <h1 align="center" data-field="headline_text">Connectivity</h1>
+          </div> -->
+          
+					<div class="seven columns">
+						<h2 class="" data-field="laserbeam_text">Connect Everywhere</h2>
+						<p data-field="body_text">The right smartphone can connect customers to cellular networks like 4G LTE, location services, Wi-Fi hotspots and Bluetooth devices. Some smartphones can even create their own hotspot so that other devices can share an Internet connection.</p>
+					</div>
+
+					<div class="five columns">
+              <img src="images/shared/section4/connectivity.png" alt="two android smartphones overlapping" class="center">
+					</div>
+				</div>
+
+				<hr />
+
+				<!-- Cell Networks -->
+				<div class="row inner-section" data-context="s4p2">
+					<div class="four columns">
+            <img src="images/shared/section4/cellular.png" alt="cell tower" class="cell-tower center">
+          </div>
+          
+          <div class="eight columns padding-left-50">
+						<h2 class="" data-field="laserbeam_text">Cellular Networks: 2G, 3G and 4G</h2>
+						<p data-field="body_text">The “G” stands for the “generation” of the mobile network. A higher number before the ‘G’ means more power to send and receive more data.<br/><br/>3G and 4G LTE are the latest generations, but not all smartphones can handle the increased bandwidth so it’s important to know how to identify a device that can support these advanced networks.</p>
+                        
+            <div class="row">
+              <div class="twelve columns">
+                <!-- Accordian -->
+                <ul class="accordion">
+                  <!-- 2nd Generation Cellular Technology -->
+                  <li class="active">
+                    <div class="title" =>
+                      <h5 data-field="tab1">2G: 2nd generation cellular technology</h5>
+                    </div>
+
+                    <div class="content">
+                      <p data-field="tab1_content">2G was designed for voice calling and text messaging. Data speeds are pretty low.</p>
+                    
+                      <div class="row"> 
+                        <div class="one columns">           
+                          <img src="images/shared/section4/fact.png" alt="fact icon">
+                        </div>
+                        
+                        <div class="eleven columns">     
+                          <p data-field="tab1fact"><em>Qualcomm<sup>®</sup> invented cdmaOne – the technology that played an important role in the transition from 1G (analog) to 2G (digital) networks. Qualcomm’s integration of CDMA into devices also helped lay the foundation for supporting wireless data on mobile devices </em></p>
+                        </div>
+                      </div>
+                    </div> <!-- end content -->
+                  </li>
+                   
+                  <!-- 3rd Generation -->  
+                  <li>
+                    <div class="title">
+                      <h5 data-field="tab2">3G: 3rd generation cellular technology</h5>
+                    </div>
+                       
+                    <div class="content">
+                      <p data-field="tab2_content">This generation has revolutionized mobile phones and has wide bandwidth and fast speeds. </p>
+                    
+                      <div class="row"> 
+                        <div class="one columns">           
+                          <img src="images/shared/section4/fact.png" alt="fact icon">
+                        </div>
+                        
+                        <div class="eleven columns">     
+                          <p data-field="tab2fact"> <em>Qualcomm’s integration of 3G wireless into mobile processors helped drive the transition from handsets to smartphones and enabled internet access on mobile devices like laptops and tablets.</em></p>
+                        </div>
+                      </div>            
+                    </div>
+                  </li>
+                  
+                  <!-- 4th Generation -->
+                  <li>
+                    <div class="title">
+                      <h5 data-field="tab3">4G: 4th generation cellular technology</h5>
+                    </div>
+                    
+                    <div class="content">
+                      <p data-field="tab3_content">4G offers even MORE bandwidth than 3G and can offer speeds comparable to home DSL/cable. </p>
+                        
+                      <div class="row"> 
+                        <div class="one columns">           
+                          <img src="images/shared/section4/fact.png" alt="fact icon">
+                        </div>
+              
+                        <div class="eleven columns">     
+                          <p data-field="tab3fact"> <em>Qualcomm was the first to integrate 3G and 4G/LTE with the processor to enable a compelling smartphone experience and truly global broadband access, virtually anywhere.</em></p>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul> <!-- end Accordion -->
+              </div> <!-- end inner "twelve columns" -->
+            </div> <!-- end inner-row -->
+				  </div>
+        </div> 
+                      
+        <hr />
+						
+				<!-- Ways to Connect -->
+				<div class="row inner-section" data-context="s4p3">
+				  <div class="twelve columns">
+            <h2 class="" data-field="laserbeam_text">Other Ways to Connect</h2>
+						<p data-field="body_text">There are many other ways to connect with a smartphone.</p>
+
+            <div class="vspacer-25"></div>
+
+            <!-- Connect Tabs -->
+            <dl class="tabs">
+              <dd class="active"><a href="#Connecttab1" data-field="Connecttab1">Wi-Fi </a></dd>
+              <dd><a href="#Connecttab2" data-field="Connecttab2">GPS and GLONASS </a></dd>
+              <dd><a href="#Connecttab3" data-field="Connecttab3">Bluetooth</a></dd>
+              <dd><a href="#Connecttab4" data-field="Connecttab4">USB<sup>®</sup></a></dd>
+              <dd><a href="#Connecttab5" data-field="Connecttab5">HDMI<sup>®</sup></a></dd>
+            </dl>
+               
+            <!-- Tabs: Content -->
+            <ul class="tabs-content">
+              <!-- Wi-Fi -->
+              <li class="active" id="Connecttab1Tab"> 
+                <div class="row inner-section">
+                  <div class="four columns">
+                    <img src="images/shared/section4/wifi.png" alt="wifi logo" class="center">
+                  </div>
+              
+                  <div class="eight columns padding-left-50">
+                    <p data-field="Connecttab1content"><strong>Wi-Fi</strong> allows internet access through a wireless network access point. While the signal has a limited range, Wi-Fi can provide an extremely fast wireless connection.</p>
+                  </div>
+              </li>
+
+              <!-- GPS and GLONASS -->
+              <li id="Connecttab2Tab"> 
+                <div class="row inner-section">
+                  <div class="four columns">
+                    <img src="images/shared/section4/gps.png" alt="gps logo">
+                  </div>
+                  
+                  <div class="eight columns padding-left-50">
+                    <p data-field="Connecttab2content"><strong>GPS and GLONASS</strong> technologies access global navigation satellite systems to provide location and direction information. This allows real-time driving directions, location services like traffic and weather updates and fitness apps to measure time and distance.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- Bluetooth -->
+              <li id="Connecttab3Tab"> 
+                <div class="row inner-section">
+                  <div class="four columns">
+                    <img src="images/shared/section4/bluetooth.png" alt="bluetooth logo">
+                  </div>
+
+                  <div class="eight columns padding-left-50">
+                    <p data-field="Connecttab3content"><strong>Bluetooth</strong> is a wireless technology used for connecting close-range devices like headphones, keyboards, and hands-free headsets.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- USB -->
+              <li id="Connecttab4Tab"> 
+                <div class="row inner-section">
+                  <div class="four columns">
+                    <img src="images/shared/section4/usb.png" alt="usb logo">
+                  </div>
+
+                  <div class="eight columns padding-left-50">
+                    <p data-field="Connecttab4content"><b>USB<sup>®</sup></b> is a wired technology most smartphones use to charge and transfer data.</p>
+                  </div>
+                </div>
+              </li>
+
+              <!-- HDMI -->
+              <li id="Connecttab5Tab"> 
+                <div class="row inner-section">
+                  <div class="four columns">
+                    <img src="images/shared/section4/hdmi.png" alt="hdmi logo">
+                  </div>
+                  
+                  <div class="eight columns padding-left-50">
+                    <p data-field="Connecttab5content"><strong>HDMI</strong> is an interface for transferring uncompressed data. That means you can connect your compatible smartphone to an HDTV to watch content in high resolution. </p>
+                  </div>
+                </div>
+              </li>
+            </ul> <!-- end Tab: Content -->
+          </div>
+				</div>
+			</div> <!-- end SECTION 4 -->
+            
+      
+      <!-- SECTION 5 -->
+      <div class="section5 slide qualcomm-gradient snapdragon-radial-sun">
+        <!-- Display -->
+        <div class="row inner-section first" data-context="s5p1">
+					<!-- <h1 align="center" data-field="headline_text">Exploring the Smartphone</h1> --> 
+          <div class="eight columns push-four padding-left-50">
+            <h2 class="" data-field="laserbeam_text">Display</h2>
+            <p data-field="body_text">A gorgeous touchscreen is the one of the wow-factors of a smartphone. A screen that is bright and sharp is essential for reading email, and web pages. Color and contrast will show off the detail for graphics, photos and video.<br/><br/>There are different elements that affect the visual quality - like display technology (LCD, OLED), resolution, pixel concentration and color range. Get familiar with different devices so you can see how they perform differently.</p>
+          </div>
+
+          <div class="four columns pull-eight">
+            <img src="images/shared/section5/display.png" alt="display">
+          </div>
+
+		  </div>
+
+      <hr />
+      
+      <!-- Battery -->
+      <div class="row inner-section first" data-context="s5p2">
+        <div class="eight columns">
+          <h2 class="" data-field="laserbeam_text">Battery</h2>
+          <p data-field="body_text">All the speed and power in the world is nothing if your phone is dies in the middle of an important call and you’re nowhere near a charger.<br/><br/>Battery life can range anywhere from a few hours to several hours, depending on how your customer is using their device.  Be sure to talk to customers about how important long battery life is to them.</p>
+
+          <div class="vspacer-25"></div>
+          
+          <div class="panel radius sales-tip" >
+            <p data-field="sales_tip_text"><strong>Selling Tip:</strong> Qualcomm<sup>®</sup> Snapdragon™ processors are designed to improve battery efficiency by using power only when needed. Learn more about in the Snapdragon Processors course.</p>
+          </div>
+        </div>
+
+        <div class="four columns padding-left-50">
+          <img src="images/shared/section5/battery.png" alt="battery" class="center">
+        </div>
+		  </div>
+
+      <hr />
+
+      <!-- Camera -->
+      <div class="row inner-section first" data-context="s5p3">   
+        <div class="twelve columns">
+          <h2 class="" data-field="laserbeam_text">Camera</h2>
+          <p data-field="body_text">Smartphones have become a convenient replacement for point-and-shoot cameras. With apps like Instagram, Facebook and Vine, a high quality camera is something your customers expect.</p>
+          
+        
+
+          <div class="row">
+            <div class="six columns">
+              <p data-field="body_text2">A smartphone’s ability to deliver great images is determined by several things including Image sensor and processor.</p>
+              <ul data-field="features_text">
+                <li><strong>Processor:</strong> The processor determines the speed and performance of your camera. Fast processors can capture multiple shots in a second!</li>
+                <li><strong>Image Sensor:</strong> The image sensor is the digital version of film. A good sensor can capture ge, fine detail and less noise.</li>
+						  </ul>
+            </div>
+            
+            <div class="six columns padding-left-50">
+              <img src="images/shared/section5/camera.png" alt="camera">
+            </div>
+          </div>
+
+        </div>
+        </div>
+
+      </div>  <!-- end SECTION 5 -->
+
+      
+      <!-- SECTION 6 -->
+      <div class="section6 slide qualcomm-gradient snapdragon-radial-fire">
+        <!-- Summary -->
+        <div class="row inner-section first" data-context="s6p1">
+          <div class="six columns">
+            <h2 class="" data-field="laserbeam_text">Take it From Here</h2>
+            <p data-field="body_text">Smartphone technology changes incredibly fast. What was cutting edge six months ago is just another smartphone feature today. We’ve given you a basic understanding of how smartphones work, but be sure to stay on top of knowing what the latest devices, features, and technologies have to offer.</p>
+          </div> 
+          <div class="six columns padding-left-50">
+            <img src="images/shared/section6/summary.png" alt="summary">
+          </div>
+        </div>
+
+        <!-- Congratulations -->
+        <div class="qualcomm-background alpha wrap">
+          <div class="row inner-section" data-context="s6p2">
+            <div class="twelve columns">
+              <h1 class="" data-field="laserbeam_text">Congratulations</h1>
+              <h4 class="subheader" data-field="body_text">You have completed this training on Smartphones 101. It can be hard to help customers understand some of the technology inside the devices - especially the parts they can’t see.<br/><br/>Knowing about processors, cameras, displays, connectivity and battery efficiency helps you become a smartphone expert for your customers!</h4>
+            </div>
+          </div>
+        </div>
+           
+      </div>  <!-- end SECTION 6 -->
+
+   </div> <!-- end "content-container" -->
+
+
+  <!-- Quiz Wrapper: 
+    • Contains a link for the learner to go to the quiz portion
+  -->
+  <!-- <div class="quiz-wrapper h-center">
+    <a class="button chevron large quiz" href="assessment.html?lang=en" data-lang="quiz">Procced to Assessment</a>
+  </div> -->
+
+  <!-- Quiz Modal:
+    • Modal to be launched to ask the user if they want to go to the quiz
+  -->
+  <div id="quizModal" class="reveal-modal" data-context="container">
+    <h3 class="subheader" data-field="assessmentbtn_text">Proceed to Assessment</h3>
+    <p data-field="assessment_text">Are you sure you want to exit this learning module?<br/><br/>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.</p>
+    <a class="button chevron quiz success radius" href="assessment.html?lang=en" data-lang="quiz" onclick="parent.qelite_taketraining_btn(); return false;">Proceed to Assessment</a>
+    <a class="button chevron radius close-reveal-modal" data-field="cancel_text">Cancel &amp; return to the module</a>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <!-- Footer: 
+    • Desktop/Tablet: Contains "back-to-top" link
+    • Mobile: Contains "back-to-top" link, as well as the slide navigation
+   -->
+   <div class="footer">
+		<p><a href="#" class="chevron back-to-top" onclick="goToByScroll('top')" data-lang="top">Back to Top</a></p>
+   </div>
+
+  <!-- Included JS Files (Uncompressed) -->
+  <!--
+  <script src="javascripts/jquery.js"></script><script src="javascripts/jquery.foundation.mediaQueryToggle.js"></script><script src="javascripts/jquery.foundation.forms.js"></script><script src="javascripts/jquery.foundation.reveal.js"></script><script src="javascripts/jquery.foundation.orbit.js"></script><script src="javascripts/jquery.foundation.navigation.js"></script><script src="javascripts/jquery.foundation.buttons.js"></script><script src="javascripts/jquery.foundation.tabs.js"></script><script src="javascripts/jquery.foundation.tooltips.js"></script><script src="javascripts/jquery.foundation.accordion.js"></script><script src="javascripts/jquery.placeholder.js"></script><script src="javascripts/jquery.foundation.alerts.js"></script><script src="javascripts/jquery.foundation.topbar.js"></script><script src="javascripts/jquery.foundation.joyride.js"></script><script src="javascripts/jquery.foundation.clearing.js"></script><script src="javascripts/jquery.foundation.magellan.js"></script>
+  -->
+
+  <script type="text/javascript">
+    /*--------------------------------------------------------------------------------------------
+      Get the url parameter passed in to load in the appropriate XML file to parse.
+    --------------------------------------------------------------------------------------------*/
+    var urlLang = getUrlVars()["lang"];
+    /*--------------------------------------------------------------------------------------------
+      Get URL Parameter Function
+       - Gets the URL parameters and stores in an associative array
+       - If the user clicks a tab it appends a #hash tag to the URL, which can return a 
+         URL variables such as "lang=fr#experience1". 
+       - Function will only take anything from the "?" to the first index of the "#" IF the hash 
+         is found, othewise, just take from "?" to the end of URL.
+    --------------------------------------------------------------------------------------------*/
+    function getUrlVars() {
+        var vars = {};
+        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            var hashIndex = value.search('#');
+            if(hashIndex == -1) {
+              vars[key] = value;
+            } else {
+              value = value.substring(0,hashIndex);
+              vars[key] = value;
+            }
+        });
+        return vars;
+    }
+  </script>
+  
+  <!-- Included JS Files (Compressed) -->
+  <script src="javascripts/foundation.min.js"></script>
+  
+  <!-- Initialize JS Plugins -->
+  <script src="javascripts/app.js"></script>
+  <script src="javascripts/responsive-tables.js"></script>
+  <script src="javascripts/jquery.horslidernav-v3.7.js"></script>
+  <script src="javascripts/jquery.animate-enhanced.min.js"></script>
+  <script src="javascripts/jquery.easing.1.3.js"></script>
+  <script src="javascripts/parse-xml-v1.5.js"></script>
+  <script src="javascripts/qualcomm-template.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      changeTabs();                   //call initial once to check
+      $(window).resize(changeTabs);   //call also when the window resizes
+    });
+
+    /*----------------------------------------------------------
+      If the screen is mobile size, then change the tabs to
+      vertical tabs.
+    ----------------------------------------------------------*/
+    function changeTabs() {
+      var $tabs = $('dl.tabs');
+      if( Modernizr.mq('only screen and (max-width: 767px)') ) {
+        $tabs.addClass('vertical');
+      } else {
+        $tabs.removeClass('vertical');
+      }
+    }
+  </script>
+
+</body>
+</html>
