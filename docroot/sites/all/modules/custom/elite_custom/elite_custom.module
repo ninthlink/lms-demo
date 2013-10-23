@@ -434,7 +434,7 @@ function elite_custom_node_load( $nodes, $types ) {
 
 function elite_custom_services_request_postprocess_alter($controller, $args, &$result) {
   if ($controller['callback'] === 'logintoboggan_services_login') {
-    if($user = user_load($result->user->uid)) {
+    if($user = user_load($result->user->uid, TRUE)) {
       //load full user object as return value for login service to reduce need
       //for subsequent calls
       $result->user = $user;
