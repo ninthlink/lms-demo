@@ -440,6 +440,7 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
         //for subsequent calls
         $result->user = $user;
       }
+      watchdog('ec', print_r($v->user, TRUE));
     }
   }
 }
