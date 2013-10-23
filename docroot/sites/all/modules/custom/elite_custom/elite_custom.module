@@ -438,8 +438,6 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
       //load full user object as return value for login service to reduce need
       //for subsequent calls
       $result->user = $user;
-      watchdog('ec', print_r($user, TRUE));
     }
-    watchdog('ec', print_r($result, TRUE));
   }
 }
