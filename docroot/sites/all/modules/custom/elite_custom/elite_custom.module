@@ -431,3 +431,15 @@ function elite_custom_node_load( $nodes, $types ) {
 		}
 	}
 }
+
+function elite_custom_services_request_postprocess_alter($controller, $args, &$result) {
+  if ($controller['callback'] === 'logintoboggan_services_login') {
+    foreach($result as $k => &$v) {
+      if($user = user_load($v->user->uid)) {
+        //load full user object as return value for login service to reduce need
+        //for subsequent calls
+        $result->user = $user;
+      }
+    }
+  }
+}
