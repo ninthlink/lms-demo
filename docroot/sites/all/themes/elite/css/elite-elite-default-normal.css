@@ -30,3 +30,22 @@
 .responsive-layout-normal .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button {
   bottom: 20px;
 }
+
+#block-menu-menu-trends-subnav {
+	display: block;
+	position: absolute;
+	top: 18px;
+	right: 0;
+	z-index: 91;
+}
+#block-menu-menu-trends-subnav ul.menu,
+#block-menu-menu-trends-subnav ul.menu li,
+#block-menu-menu-trends-subnav ul.menu li a {
+	float: left;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#block-menu-menu-trends-subnav ul.menu li {
+	margin-right: 20px;
+}

@@ -25,3 +25,6 @@
   float: none;
   clear: both;
 }
+#block-menu-menu-trends-subnav {
+	display: none
+}
