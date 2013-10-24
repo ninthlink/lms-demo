@@ -26,10 +26,15 @@ function services_quiz_eval_question($data) {
   $question_id = $data['question_id'];
   $answer = array('answer' => $data['answer']);
 
+  $quiz = node_load($quiz_id);
   $question = node_load($question_id);
+  if (!isset($_SESSION['quiz_' . $quiz_id])) {
+    _quiz_take_quiz_init($quiz);
+  }
   $result_id = $_SESSION['quiz_' . $quiz_id]['result_id'];
+  $question_array = array_shift($_SESSION['quiz_' . $quiz->nid]['quiz_questions']);
   $result = module_invoke('quiz_question', 'evaluate_question', $question, $result_id, $answer);
-watchdog('services_quiz', 'Evaluating response for ResultID:' . $result_id . ' QuizID:' . $quiz_id . ' QuestionID:' .$question_id . ' Answer:' . $answer);
+  quiz_store_question_result($quiz, $result, array('question_data' => $question_array));
   return $result;
 }
 
@@ -60,12 +65,12 @@ function services_quiz_finalize($data) {
   }
 }
 
-function _services_quiz_finalize($quiz) {watchdog('sc', print_r($quiz, TRUE));
+function _services_quiz_finalize($quiz) {
   $questions = _quiz_get_answers($quiz, $_SESSION['quiz_' . $quiz->nid]['result_id']);
   $score = quiz_end_scoring($quiz, $_SESSION['quiz_' . $quiz->nid]['result_id']);
-  
+watchdog('sq', print_r($score, TRUE));
   $session_data = $_SESSION['quiz_' . $quiz->nid];
-  unset($_SESSION['quiz_' . $quiz->nid]);
+  //unset($_SESSION['quiz_' . $quiz->nid]);
 
   quiz_end_actions($quiz, $score, $session_data);
 
