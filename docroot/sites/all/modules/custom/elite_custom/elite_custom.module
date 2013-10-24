@@ -273,7 +273,7 @@ function elite_custom_block_flop_view() {
 }
 
 function elite_custom_views_pre_render(&$view) {
-  if($view->name == 'questions_by_quiz') {
+  if(FALSE && $view->name == 'questions_by_quiz') {
     //collapse multi-answer listings
     $results = $answers = array();
     foreach($view->result as $result) {
@@ -438,6 +438,26 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
       //load full user object as return value for login service to reduce need
       //for subsequent calls
       $result->user = $user;
+    }
+  }
+  if ($controller['callback'] === 'services_views_execute_view') {
+    if ($controller['view info']['view_name'] == 'questions_by_quiz') {
+      $question_answers = array();
+      foreach($result as $k => $v) {
+        $question_answers[$v->question_id][$v->answer_id] = $v->answer;
+      }
+
+      foreach($result as $k => &$v) {
+        if(is_array($question_answers[$v->question_id]) && isset($v->question_id) && isset($v->answer_id)) {
+          $v->answer = $question_answers[$v->question_id];
+          unset($result[$k]->answer_id);
+          unset($question_answers[$v->question_id]);
+        } else {
+          unset($result[$k]);
+        }
+      }
+
+      $result = array_values($result);
     }
   }
 }
