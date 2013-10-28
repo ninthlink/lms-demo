@@ -254,7 +254,7 @@ function elite_custom_block_flop_view() {
 	$umenu .= '<li class="account">'. $laccount .'</li>';
 	
 	$training = t('Trainings Completed');
-	$tnum = elite_customer_user_training_count();
+	$tnum = elite_custom_user_training_count();
 	$mattr = array('count'=>$tnum);
 	$training = elite_custom_markup_wrapper($training, $mattr, 'usermenu');
 	$lt = l( $training, 'trainings', array('html'=>true) );
@@ -285,6 +285,15 @@ function elite_custom_views_pre_render(&$view) {
     }
     $view->result = array_values($results);
   }
+	
+	if ( $view->name == 'trainings' ) {
+		foreach($view->result as $result) {
+			if( isset($result->node_field_data_field_training_quiz_nid) ) {
+				$result->node_field_data_field_training_quiz_nid = elite_custom_user_taken_quiz(-1, $result->node_field_data_field_training_quiz_nid);
+			}
+		}
+		//watchdog('viewcheck', 'results : <pre>'. print_r($view->result,true) .'</pre>');
+	}
 }
 
 function elite_custom_services_poll_data_fetch(&$return) {
@@ -325,17 +334,25 @@ function elite_custom_quiz_finished($quiz, $score, $rid) {
     ->execute()
     ->fetchAssoc();
   $training_node = node_load($training_data['entity_id']);
-//	watchdog('elite quizd', 'trainign done?! <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre>');
+	//watchdog('elite quizd', 'trainign done?! <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre>');
   if (!empty($training_node->field_base_points)) {
     $base_points = $training_node->field_base_points[LANGUAGE_NONE][0]['value'];
-
-    $ptsres = userpoints_userpointsapi( array(
-			'points' => $base_points,
-			'operation' => 'elite_custom_quiz_finished',
-			'entity_id' => $training_node->nid,
-			'entity_type' => 'node',
-		));
-		if ( function_exists('watchdog') ) watchdog('elite quizd', 'trainign done?! <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre><br />base pts?! '. $base_points .' : <pre>'. print_r($ptsres,true) .'</pre>');
+		
+		$taken = elite_custom_user_taken_quiz(-1, $quiz->nid);
+		$ptsres = array();
+		if ( TRUE ) { //$taken == 0 ) {
+			$ptsres = userpoints_userpointsapi( array(
+				'points' => $base_points,
+				'operation' => 'elite_custom_quiz_finished',
+				'entity_id' => $training_node->nid,
+				'entity_type' => 'node',
+			));
+		} else {
+			drupal_set_message('You have already redeemed the points from this piece.', 'warning');
+		}
+		if ( function_exists('watchdog') ) watchdog('elite quizd', 'training done? <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre><br />base pts?! '. $base_points .' : <pre>'. print_r($ptsres,true) .'</pre>');
+		
+		
   }
 }
 
@@ -377,21 +394,18 @@ function elite_custom_userpoints_description_callback($operation, $entity) {
  * based off quiz module quiz_get_user_results
  * from quiz.pages.inc
  */
-function elite_customer_user_training_count($uid = -1) {
+function elite_custom_user_training_count($uid = -1) {
 	if ( $uid == -1 ) {
 		global $user;
 		$uid = $user->uid;
 	}
-	$dbresult = db_query('SELECT DISTINCT(n.nid), n.title, qnp.pass_rate, qnrs.result_id, qnrs.time_start, qnrs.time_end, qnrs.score, qnrs.is_evaluated
-    FROM {node} n
-    INNER JOIN {quiz_node_properties} qnp ON n.nid = qnp.nid
-    INNER JOIN {quiz_node_results} qnrs ON qnrs.vid = qnp.vid
-    INNER JOIN {users} u ON u.uid = qnrs.uid
-    WHERE n.type = :type
-      AND u.uid = :uid
-    ORDER BY qnrs.result_id ASC', array(':type' => 'quiz', ':uid' => $uid));
+	$dbresult = db_query('SELECT DISTINCT(n.nid), n.result_id, n.time_start, n.time_end
+    FROM {quiz_node_results} n
+    WHERE n.uid = :uid
+		AND n.time_end > 0
+    ORDER BY n.result_id ASC', array(':uid' => $uid));
 
-  // Create an array out of the results.
+  // count...
 	$total = 0;
 	$results = array();
   foreach ($dbresult as $result) {
@@ -401,10 +415,46 @@ function elite_customer_user_training_count($uid = -1) {
 			$total++;
 		}
   }
+	//watchdog('trainingcount', 'total '. $total .' : db results <pre>'. print_r($results,true) .'</pre>');
 //	$total = '<pre>'. print_r($results,true) .'</pre>';
 	return $total;
 }
-
+/* old function with alex typo in function name... */
+function elite_customer_user_training_count($uid = -1) {
+	return ( $uid % 10 );
+}
+/*
+ * whether a given user has taken a particular quiz
+ */
+function elite_custom_user_taken_quiz($uid = -1, $nid = -1) {
+	if ( $uid == -1 ) {
+		global $user;
+		$uid = $user->uid;
+	}
+	$total = 0;
+	$nid = (int)$nid;
+	if ( $nid > 0 ) {
+		$dbresult = db_query('SELECT DISTINCT(n.nid), n.result_id, n.time_start, n.time_end
+			FROM {quiz_node_results} n
+			WHERE n.nid = :nid
+			AND n.uid = :uid
+			AND n.time_end > 0
+			ORDER BY n.result_id ASC', array(':nid' => $nid, ':uid' => $uid));
+	
+		$results = array();
+		// count...
+		foreach ($dbresult as $result) {
+			$result = (array) $result;
+			if ( !isset( $results[$result['nid']] ) ) {
+				$results[$result['nid']] = $result;
+				$total++;
+			}
+		}
+	}
+	//watchdog('trainingcount', 'total '. $total .' : db results <pre>'. print_r($results,true) .'</pre>');
+//	$total = '<pre>'. print_r($results,true) .'</pre>';
+	return ($total==0) ? 0 : 1;
+}
 /*
  * hook_node_load to tweak some things for Services mostly
  */
