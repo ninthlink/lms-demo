@@ -381,6 +381,22 @@ body.page-trends h1#page-title {
 .view-store .views-field-commerce-price .field-content {
   padding: 0 20px;
 }
+.view-trainings .taken .views-field-field-base-points,
+.view-trends .taken .views-field-field-base-points,
+.view-store .taken .views-field-commerce-price {
+	color: #c0c0c0;
+}
+.view-trainings .taken .views-field-field-base-points span.chk,
+.view-trends .taken .views-field-field-base-points span.chk,
+.view-store .taken .views-field-commerce-price span.chk {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(../images/taken.png) no-repeat 0 0;
+	display: block;
+	width: 29px;
+	height: 30px;
+}
 .view-trainings .views-field-field-base-points strong,
 .view-trends .views-field-field-base-points strong,
 .view-store .views-field-commerce-price strong {
