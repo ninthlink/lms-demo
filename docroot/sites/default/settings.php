@@ -31,4 +31,20 @@ ini_set('url_rewriter.tags',        '');
 // (Drupal 5 or 6) or $databases (Drupal 7) as described in comments above.
 if (file_exists('/var/www/site-php')) {
   require('/var/www/site-php/elite/elite-settings.inc');
+} else {
+	$databases = array();
+
+	$databases['default']['default'] = array(
+		'driver' => 'mysql',
+		'database' => 'qelite',
+		'username' => 'root',
+		'password' => '',
+		'host' => 'localhost',
+		'prefix' => '',
+	);
+	//define('ELITELOCAL', 'http://192.168.0.57/elite/docroot');
 }
+// t() overrides?
+$conf['locale_custom_strings_en'][''] = array(
+    'The e-mail address %mail is not valid.' => 'The e-mail address you provided is not valid.',
+);
