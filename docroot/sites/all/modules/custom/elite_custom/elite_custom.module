@@ -303,6 +303,7 @@ function elite_custom_views_pre_render(&$view) {
 			}
 			$result->node_field_data_field_training_quiz_nid = elite_custom_check_taken_content( $type, $nid );
 		}
+		//watchdog('views pre', 'view name '. $view->name .'<br />results: <pre>'. print_r($view->result,true) .'</pre>');
 	}
 }
 
@@ -468,7 +469,7 @@ function elite_custom_user_taken_quiz( $nid = -1, $uid = NULL ) {
  * hook_node_load to tweak some things for Services mostly
  */
 function elite_custom_node_load( $nodes, $types ) {
-//	watchdog('hook node load', 'args '. arg(0) .' / '. arg(1) .' / '. arg(2) .' ... <br />nodes <pre>'. print_r($nodes,true) .'</pre><br />types <pre>'. print_r($types,true) .'</pre>');
+	//watchdog('hook node load', 'args '. arg(0) .' / '. arg(1) .' / '. arg(2) .' ... <br />nodes <pre>'. print_r($nodes,true) .'</pre><br />types <pre>'. print_r($types,true) .'</pre>');
 	foreach ( $nodes as $id => $n ) {
 		switch( $n->type ) {
 			case 'training':
@@ -499,7 +500,7 @@ function elite_custom_node_load( $nodes, $types ) {
  */
 function elite_custom_services_request_postprocess_alter($controller, $args, &$result) {
 	global $user;
-//	watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
+	//watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
 	switch( $controller['callback'] ) {
 		case 'logintoboggan_services_login':
 			if($user = user_load($result->user->uid, TRUE)) {
