@@ -134,7 +134,12 @@ function services_views_execute_view($view_info, $view = NULL, $display_id = NUL
       }
       if (isset($row->$f_key)) {
         $target_key = $field_key;
-        $format = ($field->options['type'] == 'services') ? 'raw' : 'rendered';
+        $format = 'rendered';
+				if ( isset($field->options['type']) ) {
+					if ( $field->options['type'] == 'services') {
+						$format = 'raw';
+					}
+				}
 
         // Skip this field?
         if (isset($field->options['exclude']) && $field->options['exclude'] == TRUE) {
