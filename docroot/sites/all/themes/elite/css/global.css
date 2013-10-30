@@ -820,7 +820,8 @@ div.quiz-report table tr {
 }
 
 
-a.bigBtn {
+a.bigBtn,
+span.bigBtn {
   float: left;
   margin: 0 0 35px 35px;
   width: 741px;
@@ -836,6 +837,9 @@ a.bigBtn {
 a.bigBtn:focus,
 a.bigBtn:hover {
   text-decoration: none;
+}
+span.bigBtn.taken {
+	background-image: url(../images/btn-largeComplete.jpg);
 }
 /* wlash wrapper */
 .wbar {
