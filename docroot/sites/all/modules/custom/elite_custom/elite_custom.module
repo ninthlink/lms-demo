@@ -14,6 +14,15 @@ function elite_custom_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_register_form') {
     $form['#validate'][] = 'elite_custom_validate_user_register';
   }
+	if ( $form_id == 'poll_view_voting' ) {
+		$form['vote']['#submit'][] = 'elite_custom_poll_vote';
+		//watchdog('poll form alt', 'form_id '. $form_id .' **form <pre>'. print_r($form,true) .'</pre><br />**formstate <pre>'. print_r($form_state,true) .'</pre>');
+	}
+	if ( $form_id == 'poll_cancel_form' ) {
+		$form['actions']['submit']['#submit'][] = 'elite_custom_poll_cancel';
+		watchdog('poll c form alt', 'form_id '. $form_id .' **form <pre>'. print_r($form,true) .'</pre>');
+	}
+	//watchdog('form alt', 'form_id '. $form_id);
 }
 
 function elite_custom_block_info() {
@@ -500,7 +509,7 @@ function elite_custom_node_load( $nodes, $types ) {
  */
 function elite_custom_services_request_postprocess_alter($controller, $args, &$result) {
 	global $user;
-	//watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
+	watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
 	switch( $controller['callback'] ) {
 		case 'logintoboggan_services_login':
 			if($user = user_load($result->user->uid, TRUE)) {
@@ -539,6 +548,15 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 				}
 			}
 			$result->taken = ''. elite_custom_check_taken_content( $result->type, $nid, $user->uid );
+			break;
+		case 'services_poll_vote':
+			$nid = $result->nid;
+			// fake form call
+			$node = node_load($nid);
+			$nform = array();
+			$nform_state = array();
+			$nform['#node'] = $node;
+			elite_custom_poll_vote( $nform, $nform_state );
 			break;
   }
 }
@@ -631,6 +649,53 @@ function elite_custom_flag_unflag($flag, $entity_id, $account, $flagging) {
 			));
 			if ( !$ptsres['status'] ) {
 				drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+			}
+		}
+	}
+}
+
+function elite_custom_poll_vote($form, &$form_state) {
+  $node = $form['#node'];
+	//watchdog('vote vote', 'for node <pre>'. print_r($node,true) .'</pre>');
+	if ( isset( $node->field_base_points ) ) {
+		if ( isset( $node->field_base_points['und'] ) ) {
+			if ( isset( $node->field_base_points['und'][0] ) ) {
+				$base_points = $node->field_base_points['und'][0]['value'];
+				global $user;
+				$ptsres = userpoints_userpointsapi( array(
+					'points' => $base_points,
+					'uid' => $user->uid,
+					'operation' => 'elite_custom_collect_points',
+					'entity_id' => $node->nid,
+					'entity_type' => 'node',
+				));
+				if ( !$ptsres['status'] ) {
+					drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+				}
+			}
+		}
+	}
+}
+
+function elite_custom_poll_cancel($form, &$form_state) {
+	$nid = $form['#nid'];
+  $node = node_load($nid);
+	//watchdog('vote CANC', 'for node <pre>'. print_r($node,true) .'</pre>');
+	if ( isset( $node->field_base_points ) ) {
+		if ( isset( $node->field_base_points['und'] ) ) {
+			if ( isset( $node->field_base_points['und'][0] ) ) {
+				$base_points = -1 * (int)$node->field_base_points['und'][0]['value'];
+				global $user;
+				$ptsres = userpoints_userpointsapi( array(
+					'points' => $base_points,
+					'uid' => $user->uid,
+					'operation' => 'elite_custom_collect_points',
+					'entity_id' => $nid,
+					'entity_type' => 'node',
+				));
+				if ( !$ptsres['status'] ) {
+					drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+				}
 			}
 		}
 	}
