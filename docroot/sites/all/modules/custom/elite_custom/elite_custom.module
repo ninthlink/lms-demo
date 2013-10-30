@@ -351,8 +351,6 @@ function elite_custom_quiz_finished($quiz, $score, $rid) {
 			drupal_set_message('You have already redeemed the points from this piece.', 'warning');
 		}
 		if ( function_exists('watchdog') ) watchdog('elite quizd', 'training done? <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre><br />base pts?! '. $base_points .' : <pre>'. print_r($ptsres,true) .'</pre>');
-		
-		
   }
 }
 
@@ -510,4 +508,69 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
       $result = array_values($result);
     }
   }
+}
+/**
+ * hook_flag_flag_flag
+ */
+function elite_custom_flag_flag($flag, $entity_id, $account, $flagging) {
+	//watchdog('flag flag', 'flag <pre>'. print_r($flag,true) .'</pre><br />entity_id <pre>'. print_r($entity_id,true) .'</pre><br />account <pre>'. print_r($account,true) .'</pre><br />flagging <pre>'. print_r($flagging,true) .'</pre>');
+	if ( $flag->name == 'collect_points' ) {
+		$uid = $flagging->uid;
+		$nid = $entity_id;
+		$node = node_load($nid);
+		$base_points = 0;
+		if ( isset( $node->field_base_points ) ) {
+			if ( isset( $node->field_base_points['und'] ) ) {
+				if ( isset( $node->field_base_points['und'][0] ) ) {
+					$base_points = (int)$node->field_base_points['und'][0]['value'];
+				}
+			}
+		}
+		if ( $base_points > 0 ) {
+			$ptsres = userpoints_userpointsapi( array(
+				'points' => $base_points,
+				'uid' => $uid,
+				'timestamp' => $account->timestamp,
+				'operation' => 'elite_custom_collect_points',
+				'entity_id' => $entity_id,
+				'entity_type' => 'node',
+			));
+			if ( !$ptsres['status'] ) {
+				drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+			}
+		}
+	}
+}
+/**
+ * hook_flag_flag_unflag
+ */
+function elite_custom_flag_unflag($flag, $entity_id, $account, $flagging) {
+	//watchdog('flag unflag', 'flag <pre>'. print_r($flag,true) .'</pre><br />entity_id <pre>'. print_r($entity_id,true) .'</pre><br />account <pre>'. print_r($account,true) .'</pre><br />flagging <pre>'. print_r($flagging,true) .'</pre>');
+	if ( $flag->name == 'collect_points' ) {
+		$uid = $flagging->uid;
+		$nid = $entity_id;
+		$node = node_load($nid);
+		$base_points = 0;
+		if ( isset( $node->field_base_points ) ) {
+			if ( isset( $node->field_base_points['und'] ) ) {
+				if ( isset( $node->field_base_points['und'][0] ) ) {
+					$base_points = (int)$node->field_base_points['und'][0]['value'];
+				}
+			}
+		}
+		if ( $base_points > 0 ) {
+			$base_points = $base_points * -1;
+			$ptsres = userpoints_userpointsapi( array(
+				'points' => $base_points,
+				'uid' => $uid,
+				'timestamp' => $account->timestamp,
+				'operation' => 'elite_custom_collect_points',
+				'entity_id' => $entity_id,
+				'entity_type' => 'node',
+			));
+			if ( !$ptsres['status'] ) {
+				drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+			}
+		}
+	}
 }
