@@ -459,55 +459,91 @@ function elite_custom_user_taken_quiz($uid = -1, $nid = -1) {
 function elite_custom_node_load( $nodes, $types ) {
 //	watchdog('hook node load', 'args '. arg(0) .' / '. arg(1) .' / '. arg(2) .' ... <br />nodes <pre>'. print_r($nodes,true) .'</pre><br />types <pre>'. print_r($types,true) .'</pre>');
 	foreach ( $nodes as $id => $n ) {
-		if ( $n->type == 'training' ) {
-			// change wslash URL ?
-			if ( defined('ELITELOCAL') ) {
-				if ( arg(0) == 'ws' ) {
-					if ( is_array( $n->field_wslash_training ) ) {
-						if ( isset( $n->field_wslash_training['und'] ) ) {
-							if ( isset( $n->field_wslash_training['und'][0] ) ) {
-								$ws = $n->field_wslash_training['und'][0]['url'];
-								$firstslash = strpos( $ws, '/', 8 );
-								if ( $firstslash > 0 ) {
-									$n->field_wslash_training['und'][0]['url'] = ELITELOCAL . substr($ws, $firstslash);
+		switch( $n->type ) {
+			case 'training':
+				// change wslash URL ?
+				if ( defined('ELITELOCAL') ) {
+					if ( arg(0) == 'ws' ) {
+						if ( is_array( $n->field_wslash_training ) ) {
+							if ( isset( $n->field_wslash_training['und'] ) ) {
+								if ( isset( $n->field_wslash_training['und'][0] ) ) {
+									$ws = $n->field_wslash_training['und'][0]['url'];
+									$firstslash = strpos( $ws, '/', 8 );
+									if ( $firstslash > 0 ) {
+										$n->field_wslash_training['und'][0]['url'] = ELITELOCAL . substr($ws, $firstslash);
+									}
 								}
 							}
 						}
 					}
 				}
-			}
+				break;
 		}
+		
 	}
 }
 
+/**
+ * hook_services_request_postprocess_alter($controller, $args, &$result)
+ */
 function elite_custom_services_request_postprocess_alter($controller, $args, &$result) {
-  if ($controller['callback'] === 'logintoboggan_services_login') {
-    if($user = user_load($result->user->uid, TRUE)) {
-      //load full user object as return value for login service to reduce need
-      //for subsequent calls
-      $result->user = $user;
-    }
+	global $user;
+	watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
+	switch( $controller['callback'] ) {
+		case 'logintoboggan_services_login':
+			if($user = user_load($result->user->uid, TRUE)) {
+				//load full user object as return value for login service to reduce need
+				//for subsequent calls
+				$result->user = $user;
+			}
+			break;
+		case 'services_views_execute_view':
+			if ($controller['view info']['view_name'] == 'questions_by_quiz') {
+				$question_answers = array();
+				foreach($result as $k => $v) {
+					$question_answers[$v->question_id][$v->answer_id] = $v->answer;
+				}
+	
+				foreach($result as $k => &$v) {
+					if(is_array($question_answers[$v->question_id]) && isset($v->question_id) && isset($v->answer_id)) {
+						$v->answer = $question_answers[$v->question_id];
+						unset($result[$k]->answer_id);
+						unset($question_answers[$v->question_id]);
+					} else {
+						unset($result[$k]);
+					}
+				}
+	
+				$result = array_values($result);
+			}
+			break;
+		case '_node_resource_retrieve':
+			// check about setting "taken" value after node_load has fired
+			$taken = 0;
+			switch ( $result->type ) {
+				case 'article':
+					$flag = flag_get_flag( 'collect_points' );
+					if ( !$flag ) {
+					} else {
+						$fcheck = $flag->is_flagged( $result->nid, $user->uid );
+						$taken = $fcheck ? 1 : 0;
+					}
+					break;
+				case 'training':
+					if ( isset( $result->field_training_quiz ) ) {
+						if ( isset( $result->field_training_quiz['und'] ) ) {
+							if ( isset( $result->field_training_quiz['und'][0] ) ) {
+								$taken = elite_custom_user_taken_quiz( -1, $result->field_training_quiz['und'][0]['target_id'] );
+							}
+						}
+					}
+					break;
+				
+			}
+			$result->taken = ''. $taken;
+			break;
   }
-  if ($controller['callback'] === 'services_views_execute_view') {
-    if ($controller['view info']['view_name'] == 'questions_by_quiz') {
-      $question_answers = array();
-      foreach($result as $k => $v) {
-        $question_answers[$v->question_id][$v->answer_id] = $v->answer;
-      }
-
-      foreach($result as $k => &$v) {
-        if(is_array($question_answers[$v->question_id]) && isset($v->question_id) && isset($v->answer_id)) {
-          $v->answer = $question_answers[$v->question_id];
-          unset($result[$k]->answer_id);
-          unset($question_answers[$v->question_id]);
-        } else {
-          unset($result[$k]);
-        }
-      }
-
-      $result = array_values($result);
-    }
-  }
+	
 }
 /**
  * hook_flag_flag_flag
