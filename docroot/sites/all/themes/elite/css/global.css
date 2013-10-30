@@ -383,12 +383,14 @@ body.page-trends h1#page-title {
 }
 .view-trainings .taken .views-field-field-base-points,
 .view-trends .taken .views-field-field-base-points,
-.view-store .taken .views-field-commerce-price {
+.view-store .taken .views-field-commerce-price,
+.view-popular-content .taken .views-field-field-base-points {
 	color: #c0c0c0;
 }
 .view-trainings .taken .views-field-field-base-points span.chk,
 .view-trends .taken .views-field-field-base-points span.chk,
-.view-store .taken .views-field-commerce-price span.chk {
+.view-store .taken .views-field-commerce-price span.chk,
+.view-popular-content .taken .views-field-field-base-points span.chk {
 	position: absolute;
 	top: 0;
 	left: 0;
