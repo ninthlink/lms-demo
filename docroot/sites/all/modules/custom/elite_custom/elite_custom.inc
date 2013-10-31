@@ -70,3 +70,48 @@ function elite_custom_services_imagecache($data) {
 
   return $return;
 }
+
+/**
+ * callback for services /user/counts
+ * 
+ * returns
+ * uid of current user
+ * points total for current user
+ * total + complete + remaining # for both Trainings & Trends
+ */
+function elite_custom_services_user_counts() {
+	global $user;
+	$uid = (int)$user->uid;
+	// trainings
+	$total_trainings = (int)elite_custom_get_node_count('training');
+	$complete_trainings = (int)elite_custom_user_training_count();
+	$remaining_trainings = $total_trainings - $complete_trainings;
+	if ( $remaining_trainings < 0 ) $remaining_trainings = 0; // just in case
+	
+	$trainings = array(
+		'total' => $total_trainings,
+		'complete' => $complete_trainings,
+		'remaining' => $remaining_trainings,
+	);
+	// trends
+	$total_trends = (int)elite_custom_get_node_count('article');
+	$complete_trends = (int)db_query("SELECT COUNT(*) FROM flagging WHERE uid=:uid and fid=2", array(':uid' => $uid))->fetchField();
+	$remaining_trends = $total_trends - $complete_trends;
+	if ( $remaining_trends < 0 ) $remaining_trends = 0; // just in case
+	
+	$trends = array(
+		'total' => $total_trends,
+		'complete' => $complete_trends,
+		'remaining' => $remaining_trends,
+	);
+	
+	$points = (int)userpoints_get_current_points($uid);
+	
+	$return = new stdClass();
+	$return->uid = $uid;
+	$return->points = $points;
+	$return->trainings = $trainings;
+	$return->trends = $trends;
+	
+	return $return;
+}
