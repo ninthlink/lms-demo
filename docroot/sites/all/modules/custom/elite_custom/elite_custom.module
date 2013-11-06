@@ -528,6 +528,12 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 				$result->user = $user;
 			}
 			break;
+    case '_user_resource_retrieve':
+      if($user = user_load($result->uid, TRUE)) {
+        //services excludes mail for some reason unless users have elevated permissions
+        $result->mail = $user->mail;
+      }
+      break;
 		case 'services_views_execute_view':
 			if ($controller['view info']['view_name'] == 'questions_by_quiz') {
 				$question_answers = array();
