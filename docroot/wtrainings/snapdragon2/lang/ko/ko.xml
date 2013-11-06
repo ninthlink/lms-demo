@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="Snapdragon Qualcomm Processors" right="false" language="ko">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+			<swf name="page1">../section1/page4.swf</swf>
+			<swf name="page5">../section1/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+			<swf name="page1">../section2/page1.swf</swf>
+			<swf name="page2">../section2/page2.swf</swf>
+			<swf name="page3">../section2/page3.swf</swf>
+			<swf name="page4">../section2/page4.swf</swf>
+			<swf name="page2">../section2/page5.swf</swf>
+			<swf name="page3">../section2/page6.swf</swf>
+			<swf name="page4">../section2/page7.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+			<swf name="page1">../section3/page1.swf</swf>
+			<swf name="page2">../section3/page2.swf</swf>
+			<swf name="page3">../section3/page3.swf</swf>
+			<swf name="page4">../section3/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<!-- <SWFs name="s4SWF">
+			<swf name="page1">../section4/page1.swf</swf>
+		</SWFs> -->
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text" posY="-8"><![CDATA[<font size="-3">퀄컴 스냅 드래곤 프로세서 ®</font>]]></course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">소개</tab>
+			<tab title="Technology Tab" 		field="tab2_text">기술</tab>
+			<tab title="Qualcomm Snapdragon Processors Tab" field="tab3_text">퀄컴 ® 금어초 ™ 프로세서</tab>
+			<tab title="Experience Tab" 		field="tab4_text">경험</tab>
+			<tab title="Customer Tab" 			field="tab5_text">고객</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">다음</pillar>
+			<pillar title="Previous Button" 	field="prev_text">이전</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">Click the title of the course to return to the beginning of the course.</text>
+			<text title="Navigation Explaination" 	field="help2_text">This is the navigation, and your main means of getting around the course. The main categories are at the top, and the sub-categories listed below. Each section gets checked off as you visit it.</text>
+			<text title="Progress Bar Explaination" field="help3_text">This is the progress bar. It gradually increases as you go through the course, helping you to keep track of your overall progress.</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[당신은 당신이 학습 모듈을 종료 하시겠습니까?<br><br>우리는 당신이 당신을 위해 깊은 이해가 필요할 수 있습니다 그 지역을 다시 방문, 철저하게이 모듈을 탐구하는 것이 좋습니다. 당신이 알고 더, 당신은 매장에 볼 수 있습니다 더 많은 결과! 언제든지 평가를 종료 할 수 있습니다.]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">평가를 진행</text>
+			<text title="Continue to Assessment" 	field="yes_text">예, 평가 계속</text>
+			<text title="Return to Module" 			field="cancel_text">취소 및 모듈에 반환</text>
+		</assessment>
+	</container>
+	
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1 >> Introduction
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Qualcomm Snapdragon Processors" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text">퀄컴 스냅 드래곤 프로세서 ®</laserbeam>
+		<sublaser title="Subheader" field="sublaser_text">당신은 당신이 사랑하는 것들을 더 많은 일을 할 수 있도록 퀄컴 스냅 드래곤 프로세서는 모바일 장치에게 숨막히는 속도, 턱 - 떨어지고 그래픽과 긴 배터리 수명을 제공합니다.</sublaser>
+		<body title="Body" field="body_text"><![CDATA["당신이 가지고있는 경우에 어떤 스마트 폰 기회가 퀄컴의 스냅 드래곤 칩셋 중 하나를 사용하여 전원을 공급하는 매우 좋다." <cite>— 테크 크런치 (TechCrunch)</cite>]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 2 >> Snapdragon in the Marketplace
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Snapdragon in the Marketplace" name="s1p2">
+		<laserbeam title="Header" field="laserbeam_text">40 개 이상의 정제를 포함하여 1000 금어초 장치 발표 / 시판에 있습니다. 안드로이드 구동 스마트 폰, 퀄컴 능력을 사용할 수있는 모든 윈도우 폰 오늘의 큰 숫자를 사용하는 것뿐만 아니라. 누적 억 이상 11 칩은 현재까지 출시되었다.</laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 3 >> About Qualcomm 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="About Qualcomm" name="s1p3">
+		<laserbeam title="Header" field="laserbeam_text">Qualcomm은 모바일 기술의 세계적인 선두 주자입니다.</laserbeam>
+		<body title="Body" field="body_text">퀄컴은 차세대 모바일 기기, 서비스 및 경험을 만들기 위해 세계의 협력을 가능하게 혁신적인 모바일 칩셋을 혁신하고 생산하고 있습니다. Qualcomm은 어디서나 무선 더 많은 개인, 저렴한, 그리고 액세스 할 사람을 만들고있다.</body>
+
+		<text title="Callout" field="callout_text"><![CDATA["퀄컴의 범위는 글로벌 타의 추종을 불허합니다. 그들은 어디서나 그 문제에 설계하고 있습니다." <cite>— 비즈니스 위크</cite>]]></text>
+	</page>
+	
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 1 >> Technology Splash
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Technology Splash" name="s2p1">
+		<laserbeam title="Header" field="laserbeam_text">를 찾는 부분은 당신이 볼 수없는 부분입니다.</laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 2 >> Bouquet
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Bouquet" name="s2p2">
+		<laserbeam title="Header" field="laserbeam_text">자세한 내용을 보려면 각 아이콘 위에 마우스</laserbeam>
+
+		<text title="Multimedia" field="popup1_text">멀티미디어 : 당신은 높은 품질의 사진과 비디오를 캡처하거나 HD에서 영화를 볼 것인지, Qualcomm의 오디오 및 비디오 기술은 더 많은 일을 할 수 있습니다.</text>
+		<text title="Power Management" field="popup2_text">전원 관리 : 스냅 드래곤은 설계와 장치를보다 효율적으로 작업 할 수 있도록 함께 작동하도록 만들어 최고 수준의 기술을 보유하고 있습니다. 이제 당신은 더 많은 일을, 더 적은을 충전 할 수 있습니다.</text>
+		<text title="Radio Frequency" field="popup3_text">무선 주파수 (RF) 장치가 당신이 상관없이 연결되어 있는지 확인하기 위해 넓은 주파수 스펙트럼을 지원합니다.</text>
+		<text title="Location" field="popup4_text">위치 : 스냅 드래곤 프로세서는보다 정확하고 신뢰할 수있는 위치에 대한 GPS 플러스 GLONASS를 제공하는 첫 번째입니다.</text>
+		<text title="Modem" field="popup5_text">모뎀 : 스냅 드래곤 프로세서는 일관성, 원활한 사용자 경험을 제공하는 4G LTE와 3G를위한 통합 지원과 포괄적 인 셀 멀티 모드 모뎀 솔루션을 제공합니다.</text>
+		<text title="Connectivity" field="popup6_text">연결 : WWAN, 와이파이 ®, 블루투스 ® 기술을 포함한 유비쿼터스, 실시간 연결.</text>
+		<text title="Memory" field="popup7_text">메모리 : 메모리 멀티 탭 웹 브라우징에서 3D 게임까지 모든 컴퓨팅 요구를 위해 필수적입니다.</text>
+		<text title="DPS" field="popup8_text">디지털 신호 프로세서 (DSP) : 귀중한 자원을 확보하고 배터리 수명을 보존하는 데 도움이 CPU와 GPU의 부하를 벗을 도움이되는 서브 프로세서 전용.</text>
+		<text title="CPU" field="popup9_text">중앙 처리 장치 (CPU) : 스냅 드래곤 프로세서의 '두뇌'전갈 CPU, 모바일 퀄컴 사용자 정의 디자인입니다. 스냅 드래곤 CPU의 당신의 배터리를 배출하지 않고 훌륭한 사용자 경험을 수 있도록 성능을 최적화합니다. Qualcomm의 S1은 1GHz의 속도에 도달하는 최초의 모바일 CPU를 포함하여 최신 S4는 1.5GHz의 충돌하는 최초의 모바일 프로세서와 팩을 리드.</text>
+		<text title="GPU" field="popup10_text">그래픽 처리 장치 (GPU) : 스냅 드래곤 칩셋과의 통합 Adreno GPU가 함께 모바일 장치의 넓은 범위에 걸쳐, 심지어 최대 규모, 최고 해상도 디스플레이에서 전력 효율이 높은 고성능 3D 그래픽과 콘솔 품질의 게임을 가능하게합니다.</text>
+		<text title="OS" field="popup11_text">운영 체제 (OS) : 우리의 프로세서는 안드로이드와 윈도우 폰 등 모바일 기기의 대부분에서 실행되는 운영 체제를 지원합니다.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 3 >> City of Innerconnectivity
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Q10" name="s2p3">
+		<laserbeam title="Header" field="laserbeam_text">스냅 드래곤 지원 장치 내부의 "상호의 도시"를 참조하기 위해이 비디오를 체크 아웃하십시오.</laserbeam>
+	</page>
+	
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 1 >> 200 Qualcomm Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="200 Processors" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text">200 프로세서</laserbeam>
+		<sublaser title="Header" field="sublaser_text">이동성의 최적의 균형 및 저전력</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>엔트리 레벨 스마트 폰과 태블릿</li><li>Auto Volume Mode: With the Snapdragon 200 processor, when ambient noise increases the phone speaker volume automatically increases to compensate.</li><li>Streamlined app discovery: On many Snapdragon 200 devices, apps for video conferencing and GPS are pre-installed.</li><li>Great graphics performance: The Adreno 302 GPU on the Snapdragon 200 gives great graphics performance for social media and web browsing.</li>]]></body>
+
+		<table>
+			<row>
+				<td field="cpu_head_text">CPU</td>
+				<td field="graphics_head_text">그래픽</td>
+				<td field="multi_head_text">멀티미디어</td>
+			</row>
+			<row>
+				<td field="cpu_body_text">국내 최대의 쿼드 ARM 코어 텍스 A7 CPU에 코어 당 1.4GHz의에</td>
+				<td field="graphics_body_text">최대 Adreno 302 GPU에</td>
+				<td field="multi_body_text">최대 8 MP 카메라 720P HD 영상 (15분의 30 프레임)로</td>
+			</row>
+		</table>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 2 >> 400 Qualcomm Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="400 Processors" name="s3p2">
+		<laserbeam title="Header" field="laserbeam_text">400 프로세서</laserbeam>
+		<sublaser title="Header" field="sublaser_text">모바일 환경은 더 나은 제작</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>대량 스마트 폰과 태블릿</li><li>Faster browsing and downloading: Snapdragon 400 has battery optimized 3G and 4G LTE connectivity for doing more online for longer periods of time.</li><li>Always connected: the integrated Snapdragon 400 processor provides great voice and data connectivity.</li><li>Battery life: There it is again - like all Snapdragon processors, Snapdragon 400 is designed to let you stay online longer and recharge less.</li>]]></body>
+
+		<table>
+			<row>
+				<td field="cpu_head_text">CPU</td>
+				<td field="graphics_head_text">그래픽</td>
+				<td field="multi_head_text">멀티미디어</td>
+			</row>
+			<row>
+				<td field="cpu_body_text">최대 1.7 GHz의 듀얼 Krait 300 CPU에</td>
+				<td field="graphics_body_text">Adreno 305 GPU</td>
+				<td field="multi_body_text">최대 13.5MP 카메라를 선택 프로세서 입체 3D는 HD 영상을 1080p의</td>
+			</row>
+		</table>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 3 >> 600 Qualcomm Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="600 Processors" name="s3p3">
+		<laserbeam title="Header" field="laserbeam_text">600 프로세서</laserbeam>
+		<sublaser title="Header" field="sublaser_text">최고의 휴양을위한 고성능</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>중간 높은 계층의 스마트 폰과 태블릿</li><li>Battery life: watch more, browser more, and share more while recharging less.</li><li>Responsive experience: The Snapdragon 600 integrates a graphics processor that's designed for smooth scrolling and zooming - performance you demand for web browsing.</li><li>Social engagement: With the Snapdragon 600, you can record, upload, and playback more social content.</li>]]></body>
+
+		<table>
+			<row>
+				<td field="cpu_head_text">CPU</td>
+				<td field="graphics_head_text">그래픽</td>
+				<td field="multi_head_text">멀티미디어</td>
+			</row>
+			<row>
+				<td field="cpu_body_text">최대 1.9 GHz의 쿼드 Krait 300 CPU에</td>
+				<td field="graphics_body_text">Adreno 320 GPU</td>
+				<td field="multi_body_text">최대 21MP 카메라, 입체 3D 1080p의 HD 비디오</td>
+			</row>
+		</table>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 4 >> 800 Qualcomm Processors
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="600 Processors" name="s3p4">
+		<laserbeam title="Header" field="laserbeam_text">800 프로세서</laserbeam>
+		<sublaser title="Header" field="sublaser_text">모바일을 넘어. 모두 기대 이상.</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>태블릿, 스마트 폰, 스마트 TV를 포함 : 프리미엄 모바일 컴퓨팅 장치</li><li>Battery life: Integrated Snapdragon 800 processors are more efficient, so you can do more and recharge less</li><li>Entertainment: Ultra HD (4k) video playback and Dolby 7.1 surround bring the home theater experience to wherever you go. And of course, it's battery optimized for more entertainment, longer.</li><li>Connectivity - An integrated modem with features like 4G LTE, WiFi 802.11ac, and Bluetooth 4.0 makes it easy.</li>]]></body>
+
+		<table>
+			<row>
+				<td field="cpu_head_text">CPU</td>
+				<td field="graphics_head_text">그래픽</td>
+				<td field="multi_head_text">멀티미디어</td>
+			</row>
+			<row>
+				<td field="cpu_body_text">최대 2.3 GHz의 쿼드 Krait 400 CPU에</td>
+				<td field="graphics_body_text">Adreno 330 GPU</td>
+				<td field="multi_body_text">최대 21MP 카메라, 입체 3D, 듀얼 ISP 4K X 2K UHD 비디오 캡처 / 재생</td>
+			</row>
+		</table>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 1 >> Experience Splash
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Experience Splash" name="s4p1">
+		<laserbeam title="Header" field="laserbeam_text">퀄컴 스냅 드래곤과의 차이가 발생합니다.</laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 1.5 >> True Mobility
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Experience Splash" name="s4p1.5">
+		<laserbeam title="Header" field="laserbeam_text">금어초의 Windows와 연결, 현대, 편리하게 컴퓨팅을 얻는다.</laserbeam>
+		<sublaser title="Subheader" field="sublaser_text">금어초의 Windows와 연결, 현대, 편리하게 컴퓨팅을 얻는다.</sublaser>
+		<body title="Body" field="body_text"><![CDATA[<li>전원 콘센트 나 끌고 액세서리 더 이상 검색하지 않습니다. 윈도우 Qualcomm의 선도적 인 통합 와이파이 기술을 사용합니다. 당신은 연결 유지합니다.</li><li>더 이상 번거 로움, 두통, 그리고 하드 디스크를 실패했습니다. 풀 터치 응용 프로그램, 키보드 및 액세서리와 함께 쉬운 통합을 위해 설계되었습니다.</li><li>더 이상 켜거나 깨울 컴퓨터에 대기하지 않습니다. 일 동안 지속되고 자동으로 업데이트하기 때문에 당신이 그것을 해제 할 필요가 없습니다 배터리 수명 얇고 가벼운 디자인으로 만들었습니다.</li>]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 2 >> Connectivity
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Connectivity" name="s4p2">
+		<laserbeam title="Header" field="laserbeam_text">3G 및 4G LTE 무선 네트워크가 웹이 제공 할 수있는 최선을 제공하기 위해 극대화 할 수 있습니다.</laserbeam>
+		<body title="Body" field="body_text">3G 내장 된, 4G LTE, 와이파이 ®, 블루투스 ®, GPS 및 GLONASS는 스냅 드래곤의 신뢰성있는 연결과 타오르는 빠른 속도는 당신이 즉시 위치를 찾거나 인터넷 서핑을 할 필요가 정확히 무엇입니까.</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 3 >> Web
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Web" name="s4p3">
+		<laserbeam title="Header" field="laserbeam_text">번개 빠른 다운로드, 즉각적인 반응, 향상된 기능, 원활한 비디오 스트리밍.</laserbeam>
+		<body title="Body" field="body_text">기다림은 끝났어. 웹을 탐색 할 때 스냅 드래곤 프로세서가 당신에게 향상된 속도를 제공하지 않습니다, ​​그들은 또한 당신이 그것을 볼 수있는 방법을 향상시킬 수 있습니다. 스냅 드래곤 프로세서가 내장되어 당신이 웹을 검색하는 방법을 향상 하드웨어.최신, 최첨단 온라인 게임을 고화질 YouTube 동영상을 스트리밍에서의 스냅 드래곤 지원 장치는 웹 브라우저에서 아무것도 해결하기 위해 설계되었습니다.</body>
+
+		<text title="Callout" field="callout_text">거의 3 배의 웹 브라우징 속도 *</text>
+		<text title="Source" field="source_text">* Endgadget - LG 옵티머스 G의 검토 (Vellamo 및 GL 벤치 마크 2.5 이집트 HD)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 4 >> Pictures and Video
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Pictures and Video" name="s4p4">
+		<laserbeam title="Header" field="laserbeam_text">모바일을 넘어. 모두 기대 이상</laserbeam>
+		<body title="Body" field="body_text"><![CDATA[<li>울트라 HD 비디오 재생</li><li>Capture video up to 4k x 2k</li><li>Take photos up to 21 Megapixel</li><li>Connection to surround-sound HDTVs for theatre-like experiences.</li>]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 5 >> Gaming
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Gaming" name="s4p5">
+		<laserbeam title="Header" field="laserbeam_text">금어초의 고성능 통합 Adreno GPU는 모바일 3D 게임에 불을 호흡.</laserbeam>
+		<body title="Body" field="body_text">디바이스 사용자 인터페이스 및 모바일 3D 게임은 매우 현실적인 실행 번개를 빨리보고, 실질적으로 모금 전원을 켭니다.전력 효율적인 설계는 모바일 장치의 넓은 범위에서, 심지어 가장 높은 해상도의 디스플레이에서 게임 경험과 같은 하이 엔드 콘솔을 수 있습니다.</body>
+
+		<text title="Callout" field="callout_text">빠른 최대 40 %까지 여러분이 좋아하는 게임을 실행합니다. *은</text>
+		<text title="Source" field="source_text">* Endgadget - LG 옵티머스 G의 검토 (Vellamo 및 GL 벤치 마크 2.5 이집트 HD)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4: Page 5 >> Battery
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Battery" name="s4p6">
+		<laserbeam title="Header" field="laserbeam_text">금어초의 고성능 통합 Adreno GPU는 모바일 3D 게임에 불을 호흡.</laserbeam>
+		<body title="Body" field="body_text">디바이스 사용자 인터페이스 및 모바일 3D 게임은 매우 현실적인 실행 번개를 빨리보고, 실질적으로 모금 전원을 켭니다.전력 효율적인 설계는 모바일 장치의 넓은 범위에서, 심지어 가장 높은 해상도의 디스플레이에서 게임 경험과 같은 하이 엔드 콘솔을 수 있습니다.</body>
+
+		<text title="Callout" field="callout_text">빠른 최대 40 %까지 여러분이 좋아하는 게임을 실행합니다. *은</text>
+		<text title="Source" field="source_text">* Endgadget - LG 옵티머스 G의 검토 (Vellamo 및 GL 벤치 마크 2.5 이집트 HD)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5: Page 1 >> Practice Splash
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Practice Splash" name="s5p1">
+		<laserbeam title="Header" field="laserbeam_text">연습하자.</laserbeam>
+		<body title="Body" field="body_text">각 고객에 판매에 가장 큰 영향을 만들 것입니다 금어초 기능을 식별합니다.</body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5: Page 2 >> Customer 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Customer 1" name="s5p2">
+		<laserbeam title="Header" field="laserbeam_text">다니엘</laserbeam>
+		<body title="Body" field="body_text">다니엘을 만나 ... 그는 구매에 숙제를 항상 최신의 그리고 최고의 기술을 가져옵니다. 그는 친구와 다운로드 영화 비디오 게임, 웹 서핑 시간을 온라인을 많이 보낸다. 자신의 휴대 전화에 품질은 그냥 자신의 홈 PC에 비교하지 않기 때문에 그는 종종 좌절됩니다. 그는 자신의 모바일 경험 타협, 그가가는 곳과 동일한 품질을 제공하고자합니다.</body>
+
+		<!-- Drag & Drops -->
+		<text title="Drag1" field="drag1_text">(전화 통화, 텍스트 및 화상 회의) 접촉을 유지</text>
+		<text title="Drag2" field="drag2_text">엔터테인먼트 (음악, 게임, 사진 및 비디오)</text>
+		<text title="Drag3" field="drag3_text">GPS 및 위치 기반 서비스</text>
+		<text title="Drag4" field="drag4_text">소셜 네트워킹</text>
+		<text title="Drag5" field="drag5_text">온 - 이동 인터랙티브 (지원 와이파이 ® 및 Bluetooth ®)</text>
+
+		<text title="Drag Here" field="draghere_text">여기에서 기능을 끌어 ...</text>
+		<text title="Drag Here" field="overhere_text">.... 여기까지 이상</text>
+
+		<!-- FeedBack -->
+		<text title="Feedback Header" field="feedback_header_text">맞습니다.</text>
+		<text title="Feedback Body" field="feedback_body_text">다니엘은 그가가는 곳마다 수의 장치를 지원하는 엔터테인먼트를 찾고 있습니다. 다니엘 더 이란게에 같은 피어 - 투 - 피어 지원 게임 등의 엔터테인먼트 및 연결과 자신의 경험을 향상 특정 기능 이야기</text>
+
+		<text title="Feedback1 Header" field="feedback1_header_text">엔터테인먼트 (음악, 게임, 사진 및 비디오)</text>
+		<text title="Feedback1 Body" field="feedback1_body_text">스냅 드래곤의 Adreno GPU는 하이 엔드 3D 그래픽, 콘솔 품질의 게임, 그리고 가속 모바일 웹 콘텐츠를 활성화합니다.</text>	
+
+		<text title="Feedback2 Header" field="feedback2_header_text">온 - 이동 인터랙티브 (지원 와이파이 ® 및 Bluetooth ®</text>
+		<text title="Feedback2 Body" field="feedback2_body_text">연결의 유연성은 블루투스 ®, 및 Wi-Fi ® 즉각적인 응답으로 인기있는 무선 기술을 통합.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5: Page 3 >> Customer 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Customer 2" name="s5p3">
+		<laserbeam title="Header" field="laserbeam_text">올리비아</laserbeam>
+		<body title="Body" field="body_text">올리비아 대학생 비즈니스에 등록하고 연결해야합니다. 그녀는 많은 친구를 가지고 있고 텍스트를 지속적으로 통신, 채팅, 음성 있어요. 그녀는 또한 학교 온라인 사업이 많이 있습니다. 그녀는 빨리 뭔가를 필요로하고 항상 그녀 유지할 연결을하고이를 지원하기 위해 배터리 수명을 가지고</body>
+
+		<!-- Drag & Drops -->
+		<text title="Drag1" field="drag1_text">(전화 통화, 텍스트 및 화상 회의) 접촉을 유지</text>
+		<text title="Drag2" field="drag2_text">엔터테인먼트 (음악, 게임, 사진 및 비디오)</text>
+		<text title="Drag3" field="drag3_text">GPS 및 위치 기반 서비스</text>
+		<text title="Drag4" field="drag4_text">소셜 네트워킹</text>
+		<text title="Drag5" field="drag5_text">온 - 이동 인터랙티브 (지원 와이파이 ® 및 Bluetooth ®)</text>
+
+		<text title="Drag Here" field="draghere_text">여기에서 기능을 끌어 ...</text>
+		<text title="Drag Here" field="overhere_text">.... 여기까지 이상</text>
+
+		<!-- FeedBack -->
+		<text title="Feedback Header" field="feedback_header_text">맞습니다.</text>
+		<text title="Feedback Body" field="feedback_body_text">올리비아는 그녀의 얘기, 그리고 문자 메시지, 소셜 미디어를 통해 연결된 유지할 수있는 장치를 찾고 있어요. 스냅 드래곤은 그것을 연결 유지 할 수 있습니다 얼마나 쉽게에 대한 올리비아에게 문의하십시오.</text>
+
+		<text title="Feedback1 Header" field="feedback1_header_text">소셜 네트워킹</text>
+		<text title="Feedback1 Body" field="feedback1_body_text">실시간 연결과 소셜 네트워크에 대한 액세스를</text>	
+
+		<text title="Feedback2 Header" field="feedback2_header_text">(전화 통화, 텍스트 및 화상 회의) 접촉을 유지</text>
+		<text title="Feedback2 Body" field="feedback2_body_text">업계 최초의 완전 세계 / 멀티 모드 LTE 모뎀 3G/4G 통합 된</text>
+
+		<text title="Feedback2 Header" field="feedback3_header_text">온 - 이동 인터랙티브 (지원 와이파이 ® 및 Bluetooth ®)</text>
+		<text title="Feedback2 Body" field="feedback3_body_text">연결의 유연성은 블루투스 ®, 및 Wi-Fi ® 즉각적인 응답으로 인기있는 무선 기술을 통합.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5: Page 5 >> Customer 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Customer 3" name="s5p4">
+		<laserbeam title="Header" field="laserbeam_text">윌리엄</laserbeam>
+		<body title="Body" field="body_text">윌리엄 10 시간 일 작품과의 시간의 나머지를 호출합니다. 그의 작업은 빠르게 진행이며, 그는 그들이 그를 필요로 할 때 클라이언트 요구에 응답 할 수 있습니다. 그는 많은 여행을하고 자신의 휴대 전화의 GPS에 따라 달라집니다. 그의 가족도 중요하고, 자신의 모바일 장치가 집에서 요구뿐만 아니라 작업을 지원해야하므로. 그 반응의 모든 최신 기술을 제공 뭔가를해야합니다.</body>
+
+		<!-- Drag & Drops -->
+		<text title="Drag1" field="drag1_text">(전화 통화, 텍스트 및 화상 회의) 접촉을 유지</text>
+		<text title="Drag2" field="drag2_text">엔터테인먼트 (음악, 게임, 사진 및 비디오)</text>
+		<text title="Drag3" field="drag3_text">GPS 및 위치 기반 서비스</text>
+		<text title="Drag4" field="drag4_text">소셜 네트워킹</text>
+		<text title="Drag5" field="drag5_text">온 - 이동 인터랙티브 (지원 와이파이 ® 및 Bluetooth ®)</text>
+
+		<text title="Drag Here" field="draghere_text">여기에서 기능을 끌어 ...</text>
+		<text title="Drag Here" field="overhere_text">.... 여기까지 이상</text>
+
+		<!-- FeedBack -->
+		<text title="Feedback Header" field="feedback_header_text">맞습니다.</text>
+		<text title="Feedback Body" field="feedback_body_text">윌리엄은 그가 어디 그의 클라이언트와 가족에게 연결을 유지할 수있는 무언가가 필요합니다. 쉽게 그를 여전히 그를 모바일 유지하면서 가족과 클라이언트에 연결을 유지하기위한 것입니다 Bizzabo 같은 기능과 애플 리케이션에 대한 윌리엄과 이야기.</text>
+
+		<text title="Feedback1 Header" field="feedback1_header_text">(전화 통화, 텍스트 및 화상 회의) 접촉을 유지</text>
+		<text title="Feedback1 Body" field="feedback1_body_text">업계 최초의 완전 세계 / 멀티 모드 LTE 모뎀 3G/4G 통합 된</text>	
+
+		<text title="Feedback2 Header" field="feedback2_header_text">온 - 이동 인터랙티브 (지원 와이파이 ® 및 Bluetooth ®</text>
+		<text title="Feedback2 Body" field="feedback2_body_text">연결의 유연성은 블루투스 ®, 및 Wi-Fi ® 즉각적인 응답으로 인기있는 무선 기술을 통합.</text>
+
+		<text title="Feedback2 Header" field="feedback3_header_text">GPS 및 위치 기반 서비스</text>
+		<text title="Feedback2 Body" field="feedback3_body_text">정확하고 신뢰할 수있는 위치에 대한 GPS와 GLONASS를 제공 할 첫 번째</text>
+	</page>
+
+</course>
+

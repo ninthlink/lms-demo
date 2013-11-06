@@ -1,0 +1,71 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="퀄컴 스냅 드래곤 프로세서" 
+	header="당신의 지식을 테스트"
+	laser="대화 형 평가에 대한 지식을 테스트하는 시간은이다. 당신은 성공적으로이 과정을 완료하는 데 80 % 이상 점수를해야합니다. 당신은 하루에 한 번씩 평가를 시도 할 수 있습니다,하지만 당신은 필요한만큼 여러 번 하루를 응시할 수 있습니다. 시작하려면 아래의 START 버튼을 클릭합니다."	
+	start="스타트"
+	submit="제출"
+	next="다음"
+	page="페이지"
+	end_header="퀴즈 결과" 
+	end_body="당신은 80 %의 점수로 완료 또는 더 나은 당신이 성공적으로이 과정을 완료 한 경우. 좋은 직장, 그리고 당신의 시간과 노력에 대한 감사합니다!" 
+	end_pass="당신은 80 %의 점수로 완료하고 성공적으로이 과정을 완료했습니다. 당신의 시간과 노력에 대한 감사합니다!" 
+	end_fail="당신은 80 % 미만의 점수를 가지고 있기 때문에 당신이 과정을 완료하지 않았습니다. 다시 평가를 받아, 한 번만 24 시간 기간에 있습니다. 당신의 시간과 노력에 대한 감사합니다!" 
+	total_correct="올바른 합계"
+	total_incorrect="잘못된 합계"
+	total_score="총 점수" >
+
+	<question id="1" q="퀄컴 스냅 드래곤 프로세서는 무엇입니까?" type="radio" random_answers="0" points="1" image="" option_text="정답을 선택하십시오." right="맞습니다!" wrong="죄송합니다, 잘못 대답은의" > 
+		<option key="" value="모바일 게임 애플 리케이션" />
+		<option key="" value="고해상도 카메라"/>
+		<option key="" value="전원을 모바일 장치에 대한 모든 -에 - 하나의 칩" answer="1"/>
+		<option key="" value="모바일 광대역 연결을 확보"/>
+	</question>
+
+	<question id="2" q="무엇 퀄컴 스냅 드래곤 프로세서에 대한 다른인가요?" type="radio" random_answers="1" points="1" image="" option_text="정답을 선택하십시오." right="맞습니다!" wrong="죄송합니다, 잘못 대답은의" > 		
+		<option key="" value="가득 차있는 기술 통합" answer="1"/>
+		<option key="" value="협력의 합계 용이성" />
+		<option key="" value="요소는 전원 장치를 개별적으로 작동" />
+		<option key="" value="첨단 기술" />
+	</question>
+
+	<question id="3" q="참 또는 거짓. 스냅 드래곤 프로세서는 일관 원활한 사용자 경험을 제공하는 4G LTE와 3G에 대한 통합 지원을 제공합니다." type="radio" random_answers="0" points="1" image="" option_text="정답을 선택하십시오." right="맞습니다!"  wrong="죄송합니다, 잘못 대답은의" > 	
+		<option key="" value="참된" answer="1" />
+		<option key="" value="거짓" />
+	</question>
+
+	<question id="4" q="하위 프로세서는 귀중한 자원을 확보하고 _________에 저장, CPU와 그래픽의 부하를 벗어." type="radio" random_answers="0" points="1" image="" option_text="정답을 선택하십시오." right="맞습니다!" wrong="죄송합니다, 잘못 대답은의" > 	
+		<option key="" value="공간"/>
+		<option key="" value="배터리 수명" answer="1"/>
+		<option key="" value="시간 생활" />
+		<option key="" value="돈"/>
+	</question>
+
+	<question id="5" q="금어초의 Windows가 당신에게 _________________의 컴퓨팅을 제공합니다." type="radio" random_answers="0" points="1" image="" option_text="정답을 선택하십시오." right="맞습니다!"  wrong="죄송합니다, 잘못 대답은의" > 
+		<option key="" value="연결"/>
+		<option key="" value="현대"/>
+		<option key="" value="편리한" />
+		<option key="" value="위의 모든" answer="1"/>
+	</question>
+
+	<question id="6" q="Qualcomm의 Adreno _______ 기술은 스냅 드래곤 프로세서 기반 장치에 3D 그래픽과 콘솔 품질의 게임 기능을 제공합니다." type="radio" random_answers="0" points="1" image="" option_text="정답을 선택하십시오." right="맞습니다!" wrong="죄송합니다, 잘못 대답은의" > 	
+		<option key="" value="소프트웨어 높은 수준의 출력 사양 (HLOS)"/>
+		<option key="" value="디지털 신호 프로세서 (DSP)"/>
+		<option key="" value="그래픽 처리 장치 (GPU)" answer="1"/>
+		<option key="" value="중앙 처리 장치 (CPU)"/>
+	</question>
+
+	<question id="7" q="당신은 스냅 드래곤 프로세서 기반 장치에서 어떤 종류의 기능을 기대할 수 있을까? 해당 사항을 모두 확인합니다." type="checkbox" random_answers="0" points="1" image="" option_text="정답을 선택하십시오." right="맞습니다!" wrong="죄송합니다, 잘못 대답은의" answer="1">	
+		<option key="" value="번개 빠른 다운로드" answer="1"/>
+		<option key="" value="즉각적인 대응" answer="1"/> 
+		<option key="" value="향상된 기능" answer="1"/> 	
+		<option key="" value="비디오 스트리밍" answer="1"/> 	
+	</question>
+
+
+	<question id="8" q="참 또는 거짓. 퀄컴 스냅 드래곤 프로세서, 모바일 멀티미디어 막대를 인상 - 풀 HD 동영상 재생을 1080p의 비디오를 캡처, 번개 빠른 3D 게임을 사진 (20 MP)이나 3D 사진을 (최대 8MP까지) 복용 및 서라운드에 연결 극장과 같은 경험을위한 사운드 HD TV를." type="radio" random_answers="0" points="1" image="" option_text="정답을 선택하십시오." right="맞습니다!" wrong="죄송합니다, 잘못 대답은의" >	
+		<option key="" value="참된"  answer="1"/>
+		<option key="" value="거짓"/>
+	</question>
+
+</quiz>

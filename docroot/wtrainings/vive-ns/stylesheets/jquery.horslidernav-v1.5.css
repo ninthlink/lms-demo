@@ -1,0 +1,223 @@
+/*=========================================================================================
+Author: Tou Lee
+Created: 2/04/13
+Last Updated: 10/11/13 - 10:19am
+Version: 1.5.1
+
+Changelog v1.0
+  - Declared left: 0 on the prev-arrow to implicically set it's position.
+
+Changelog v1.1
+  - Added html: overflow: to force to scrollbar on the pages to prevent jarring shift 
+  when the content is longer and can vary on each slide.
+
+Changelog v1.2 
+  - Added "height: auto;" to the ".slide" class so that they expand to hold their content
+  - Added "none" for the transitions to make the navigations have no animations by default
+    and so they are not affected by other calls to have "a" have transitions.
+
+Changelog v1.3 
+  - Added ".disable" class for ".nav-arrow, .prev-arrow, .next-arrow" that is used in the 
+    JS file when managing the navigation.
+
+Changelog v1.4 
+  - Added new mobile version for the navigation
+  - Added .horslider to html, and body so that it does not cause issues in IE
+
+Changelog v1.5 
+  - Added new classes for the location indicators (.location-nav && .indicator)
+  - Changed the .location-nav
+      - Changed "height" to "min-height"
+      - Added "padding-bottom: 7px;"
+  - Changed .indicator
+      - Changed "width" from 30 -> 25
+      - Added MOBILE "width" from 25 -> 22
+
+Changelog v1.5.1
+  - ".slider-nav", changed the position from "fixed" to "absolute", so that it stays at
+    the bottom of the screen, rather than fixed to the viewport for mobile/tablet devices
+
+==========================================================================================*/
+
+/* ----------------------------------------------------------------------------------------
+   HTML, Body
+    - HTML: Always force to show the vertical scrollbars, so no shifting occurs
+-----------------------------------------------------------------------------------------*/
+html.horslider { overflow-y: scroll !important; }
+
+/*-- IE7 Hack: overflow to hide the x-scrollbar --*/
+.horslider body { *overflow-x: hidden; }
+
+/* ----------------------------------------------------------------------------------------
+   Horizontal Slider Nav
+   	- This is the navigation that will be appended. 
+   	- This is a based on a sprite type image
+   	- Change height, width, and url if you decide to change the arrow
+-----------------------------------------------------------------------------------------*/
+.slider-nav { display: none; }
+
+.nav-arrow {
+	background: transparent url(../images/arrow.png) no-repeat;  
+	display: block; 
+	height: 60px;
+	width: 31px;
+	position: fixed; 
+	top: 45%;
+	cursor: pointer;
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+.prev-arrow { left: 0; }
+.prev-arrow:hover { background-position: 0 -60px; }
+.prev-arrow:active { background-position: 0 -120px; }
+
+.next-arrow { background-position: -31px 0; right: 0; }
+.next-arrow:hover { background-position: -31px -60px; }
+.next-arrow:active { background-position: -31px -120px; }
+
+.nav-arrow.disable, 
+.prev-arrow.disable, 
+.next-arrow.disable {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=5)";
+  filter: alpha(opacity=5);
+  -moz-opacity: 0.05;
+  -khtml-opacity: 0.05;
+  opacity: 0.05;
+}
+
+.nav-arrow.disable:hover, 
+.prev-arrow.disable:hover, 
+.next-arrow.disable:hover {
+  cursor: default;
+}
+
+.return-top { display: none; }
+
+/* ----------------------------------------------------------------------------------------
+   Location Indicators
+    - This is the navigation that will be appended. 
+    - This is a based on a sprite type image
+    - Change height, width, and url if you decide to change the arrow
+-----------------------------------------------------------------------------------------*/
+.location-nav {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  background: rgba(255,255,255,.1);
+  min-height: 25px;
+  line-height: 20px;
+  width: 100%;
+  padding-bottom: 7px;
+}
+
+.indicator {
+  display: inline-block;
+  height: 3px;
+  width: 25px;
+  background: black;
+  margin: 0 6px;
+  line-height: 5px;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
+  filter: alpha(opacity=20);
+  -moz-opacity: 0.2;
+  -khtml-opacity: 0.2;
+  opacity: .2;
+}
+
+.indicator.active {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  -moz-opacity: 1;
+  -khtml-opacity: 1;  
+  opacity: 1;
+  background: #f7911e;
+}
+
+/* ----------------------------------------------------------------------------------------
+   Horizontal Slider Nav [MOBILE]
+    - These are the styles that go for mobile or smaller tablet screens (iPhones, iPads)
+-----------------------------------------------------------------------------------------*/
+@media only screen and (max-width: 1024px) {
+  .slider-nav {
+    background: black;
+    background: rgba(0,0,0,.7);
+    height: 60px;
+    /*position: fixed;*/
+    position: absolute;
+    z-index: 9;
+    min-width: 100%;
+    bottom: 0;
+    left: 0;
+  }
+
+  .nav-arrow { 
+    display: inline-block; 
+    position: relative;
+  }
+
+  .prev-arrow { 
+    float: left;  
+    left: 0;  
+    top: 0; 
+  } 
+
+  .next-arrow { 
+    float: right; 
+    right: 0; 
+    top: 0; 
+  }
+
+  .return-top {
+    position: relative;
+    display: block;
+    background: transparent;
+    /*width: 924px;
+    width: 80%;*/
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    margin: 0 31px;
+  }
+
+  .return-top-link:hover { cursor: pointer; }
+
+  /* --| Indicator [Mobile] */
+  .indicator { width: 22px; }
+}
+
+/* ---------------------------------------------------------------------------------------
+  Slide-Wrapper
+    - Wrapper for the content; helps hide the scrollbars on slide 
+  	- This will be created dynamically within the plugin
+  	- The "body" declaration is a * hack for only IE7 to hide the overflow-x scrollbars
+----------------------------------------------------------------------------------------*/
+.slide-wrapper { overflow-x: hidden; -ms-overflow-x: hidden; }
+
+/* ---------------------------------------------------------------------------------------
+  Slides 
+  	- Slides that make up the slides 
+  	- Add .slide-first the first item if you don't want it to fade in and be visible 
+  	- Add .slide to all the DIVs that you want to be a slide
+----------------------------------------------------------------------------------------*/
+.slide.slide-first { display: block; }
+
+.horslider .slide { 
+  height: auto;
+  display: none; 
+  -webkit-backface-visibility: hidden; 
+  -webkit-perspective: 1000; 
+  transform: translate3d(0,0,0); 
+  -webkit-transform: translate3d(0,0,0);
+}
+
+/* ----------------------------------------------------------------------------------------
+   Slides [MOBILE]
+    - These are the styles that go for mobile or smaller tablet screens (iPhones, iPads)
+-----------------------------------------------------------------------------------------*/
+@media only screen and (max-width: 1024px) {
+  .horslider .slide { padding-bottom: 100px; }
+}
+
