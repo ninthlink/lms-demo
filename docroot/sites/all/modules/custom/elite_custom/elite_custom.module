@@ -182,20 +182,8 @@ function elite_custom_block_avatar_view() {
     return '';
   }
   
-  if (!empty($user->picture)) {
-	$picuri = $user->picture->uri;
-  } else {
-	$picuri = '/sites/all/themes/elite/images/profile-icon.png';
-  }
-	$picture = theme('image_style', array(
-	  'path' => $picuri,
-	  'style_name' => 'micro',
-	));
-		$picture = l( $picture, 'user', array('html'=>true));
-	$picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
-  /*} else {
-    $picture_markup = '';
-  }*/
+	$picture_markup = elite_custom_user_image($user,'micro');
+	
   $points = userpoints_get_current_points($user->uid);
   $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
   
@@ -218,20 +206,7 @@ function elite_custom_block_user_view() {
     return '';
   }
   
-  if (!empty($user->picture)) {
-	$picuri = $user->picture->uri;
-  } else {
-	$picuri = '/sites/all/themes/elite/images/profile-icon.png';
-  }
-	$picture = theme('image_style', array(
-	  'path' => $picuri,
-      'style_name' => 'rounduser',
-    ));
-		$picture = l( $picture, 'user', array('html'=>true));
-    $picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
-  /*} else {
-    $picture_markup = '';
-  }*/
+    $picture_markup = elite_custom_user_image($user,'rounduser');
   $points = '<strong>'. userpoints_get_current_points($user->uid) .'</strong> points';
   $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
   
@@ -239,6 +214,29 @@ function elite_custom_block_user_view() {
   
   return elite_custom_markup_wrapper($markup, array('id' => 'elite-user-block-wrapper'));
 }
+/*
+ * helper function for html of a user image
+ */
+function elite_custom_user_image($user, $style) {
+	if ( !in_array($style,array('rounduser','micro'))){
+		$style = 'rounduser';
+	}
+	
+	$oot = '';
+	 if (!empty($user->picture)) {
+	$picture = theme('image_style', array(
+	  'path' => $user->picture->uri,
+      'style_name' => $style,
+    ));
+  } else {
+    $picture = '<img src="/sites/all/themes/elite/images/profile-'. $style .'.png';
+  }
+		$picture = l( $picture, 'user', array('html'=>true));
+    $oot = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
+		
+		return $oot;
+}
+
 /*
  * Provides content for the detailed user block, for flop out,
  * displaying larger user image thumbnail + points total
@@ -261,20 +259,9 @@ function elite_custom_block_flop_view() {
 		$uname .= $user->field_user_name_last['und'][0]['value'];
 	}
 	$uname_markup = elite_custom_markup_wrapper($uname, array('class' => 'user-name' ) );
-  if (!empty($user->picture)) {
-	$picuri = $user->picture->uri;
-  } else {
-	$picuri = '/sites/all/themes/elite/images/profile-icon.png';
-  }
-	$picture = theme('image_style', array(
-	  'path' => $picuri,
-      'style_name' => 'rounduser',
-    ));
-		$picture = l( $picture, 'user', array('html'=>true));
-    $picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
-  /*} else {
-    $picture_markup = '';
-  }*/
+	
+  $picture_markup = elite_custom_user_image($user, 'rounduser');
+	
   $points = '<strong>'. userpoints_get_current_points($user->uid) .'</strong> points';
   $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
   
