@@ -385,19 +385,19 @@ body.page-trends h1#page-title {
 .view-trends .taken .views-field-field-base-points,
 .view-store .taken .views-field-commerce-price,
 .view-popular-content .taken .views-field-field-base-points {
-	color: #c0c0c0;
+  color: #c0c0c0;
 }
 .view-trainings .taken .views-field-field-base-points span.chk,
 .view-trends .taken .views-field-field-base-points span.chk,
 .view-store .taken .views-field-commerce-price span.chk,
 .view-popular-content .taken .views-field-field-base-points span.chk {
-	position: absolute;
-	top: 0;
-	left: 0;
-	background: url(../images/taken.png) no-repeat 0 0;
-	display: block;
-	width: 29px;
-	height: 30px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(../images/taken.png) no-repeat 0 0;
+  display: block;
+  width: 29px;
+  height: 30px;
 }
 .view-trainings .views-field-field-base-points strong,
 .view-trends .views-field-field-base-points strong,
@@ -787,6 +787,13 @@ body.node-type-quiz #quiz-report-form {
   padding: 20px 35px;
   border-bottom: 1px solid #c5c5c5;
 }
+body.node-type-quiz #quiz-report-form .dd table td {
+  vertical-align: middle;
+  padding: 5px 0
+}
+body.node-type-quiz #quiz-report-form .dd table td p {
+  margin: 0;
+}
 body.node-type-quiz .answering-form {}
 body.node-type-quiz .answering-form .quiz-question-body {
   background: #f8f8f8;
@@ -841,7 +848,7 @@ a.bigBtn:hover {
   text-decoration: none;
 }
 span.bigBtn.taken {
-	background-image: url(../images/btn-largeComplete.jpg);
+  background-image: url(../images/btn-largeComplete.jpg);
 }
 /* wlash wrapper */
 .wbar {
@@ -1449,4 +1456,68 @@ body.node-type-page .region-sidebar-second {
   margin: 10px 14px 0 0;
   text-align: center;
   background: url(../images/icons-usermenu.png) no-repeat 0 0;
+}
+
+/*
+* Better Messages - Popup
+*/
+#better-messages-default .messages-label {
+  font-size: 18px;
+}
+#better-messages-default .messages {
+  font-size: 24px;
+  color: #333 !important;
+}
+#better-messages-default div.error {
+  border: 1px solid #ba2127;
+  background: url(../images/icon-message-error.png) no-repeat 10px 10px;
+}
+h2.error {
+  background: #ba2127;
+}
+#better-messages-default div.warning {
+  border: 1px solid #f3851f;
+  background: url(../images/icon-message-warning.png) no-repeat 10px 10px;
+}
+h2.warning {
+  background: #f3851f;
+}
+#better-messages-default div.status {
+  border: 1px solid #5baf7a;
+  background: url(../images/icon-message-status.png) no-repeat 10px 10px;
+}
+h2.status {
+  background: #5baf7a;
+}
+#better-messages-default div.help {
+  border: 1px solid #027593;
+  background: url(../images/icon-message-help.png) no-repeat 10px 10px;
+}
+h2.help {
+  background: #027593;
+}
+#better-messages-default div.info {
+  border: 1px solid #027593;
+  background: url(../images/icon-message-info.png) no-repeat 10px 10px;
+}
+h2.info {
+  background: #027593;
+}
+
+.multichoice-icon {
+  background: url(../images/icons.png) no-repeat 0 0;
+}
+
+div.quiz-report .dt div.quiz-report-score-container {
+  border: 0;
+  padding: 4px 10px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 18px;
+}
+.q-wrong {
+  background: #ba2127;
+}
+.q-correct {
+  background: #5baf7a;
 }
