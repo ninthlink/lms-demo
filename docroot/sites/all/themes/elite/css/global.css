@@ -666,6 +666,7 @@ body.page-node.node-type-training #zone-content,
 body.page-node.node-type-quiz #zone-content,
 body.page-node.node-type-article #zone-content {
   background: #fff url(../images/bg-twocol.gif) repeat-y 100% 0;
+  background-size: 100%;
 }
 article.node-training,
 article.node-article {
