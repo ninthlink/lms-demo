@@ -1,7 +1,10 @@
 <?php
 
-function elite_custom_user_purchase($product_id, $shipping_data) {
+function elite_custom_user_purchase($data) {
   global $user;
+  $product_id = $data['product_id'];
+  $shipping_data = $data['shipping_data'];
+watchdog('ec', print_r($shipping_data, TRUE));
   if($product = commerce_product_load($product_id)) {
     $user_points = userpoints_get_current_points($user->uid);
     $product_points = $product->commerce_price[LANGUAGE_NONE][0]['amount'];
@@ -17,6 +20,7 @@ function elite_custom_user_purchase($product_id, $shipping_data) {
 
       $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
       $order_wrapper->commerce_line_items[] = $line_item;
+      $order_wrapper->field_user_shipping = $shipping_data;
       //@todo update shipping information
       commerce_order_save($order);
 
