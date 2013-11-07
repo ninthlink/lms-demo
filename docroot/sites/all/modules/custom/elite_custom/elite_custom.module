@@ -183,15 +183,19 @@ function elite_custom_block_avatar_view() {
   }
   
   if (!empty($user->picture)) {
-    $picture = theme('image_style', array(
-      'path' => $user->picture->uri,
-      'style_name' => 'micro',
-    ));
-		$picture = l( $picture, 'user', array('html'=>true));
-    $picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
+	$picuri = $user->picture->uri
   } else {
-    $picture_markup = '';
+	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
   }
+	$picture = theme('image_style', array(
+	  'path' => $picuri,
+	  'style_name' => 'micro',
+	));
+		$picture = l( $picture, 'user', array('html'=>true));
+	$picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
+  /*} else {
+    $picture_markup = '';
+  }*/
   $points = userpoints_get_current_points($user->uid);
   $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
   
@@ -215,15 +219,19 @@ function elite_custom_block_user_view() {
   }
   
   if (!empty($user->picture)) {
-    $picture = theme('image_style', array(
-      'path' => $user->picture->uri,
+	$picuri = $user->picture->uri
+  } else {
+	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
+  }
+	$picture = theme('image_style', array(
+	  'path' => $picuri,
       'style_name' => 'rounduser',
     ));
 		$picture = l( $picture, 'user', array('html'=>true));
     $picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
-  } else {
+  /*} else {
     $picture_markup = '';
-  }
+  }*/
   $points = '<strong>'. userpoints_get_current_points($user->uid) .'</strong> points';
   $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
   
@@ -254,15 +262,19 @@ function elite_custom_block_flop_view() {
 	}
 	$uname_markup = elite_custom_markup_wrapper($uname, array('class' => 'user-name' ) );
   if (!empty($user->picture)) {
-    $picture = theme('image_style', array(
-      'path' => $user->picture->uri,
+	$picuri = $user->picture->uri
+  } else {
+	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
+  }
+	$picture = theme('image_style', array(
+	  'path' => $picuri,
       'style_name' => 'rounduser',
     ));
 		$picture = l( $picture, 'user', array('html'=>true));
     $picture_markup = elite_custom_markup_wrapper($picture, array('class' => 'picture-wrapper' ) );
-  } else {
+  /*} else {
     $picture_markup = '';
-  }
+  }*/
   $points = '<strong>'. userpoints_get_current_points($user->uid) .'</strong> points';
   $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
   
