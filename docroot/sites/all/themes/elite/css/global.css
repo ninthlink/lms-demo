@@ -1465,39 +1465,45 @@ body.node-type-page .region-sidebar-second {
 #better-messages-default .messages-label {
   font-size: 18px;
 }
-#better-messages-default .messages {
+#better-messages-default .messages,
+.messages {
   font-size: 24px;
   color: #333 !important;
 }
-#better-messages-default div.error {
+#better-messages-default div.error,
+div.error {
   border: 1px solid #ba2127;
   background: url(../images/icon-message-error.png) no-repeat 10px 10px;
 }
 h2.error {
   background: #ba2127;
 }
-#better-messages-default div.warning {
+#better-messages-default div.warning,
+div.warning {
   border: 1px solid #f3851f;
   background: url(../images/icon-message-warning.png) no-repeat 10px 10px;
 }
 h2.warning {
   background: #f3851f;
 }
-#better-messages-default div.status {
+#better-messages-default div.status,
+div.status {
   border: 1px solid #5baf7a;
   background: url(../images/icon-message-status.png) no-repeat 10px 10px;
 }
 h2.status {
   background: #5baf7a;
 }
-#better-messages-default div.help {
+#better-messages-default div.help,
+div.help {
   border: 1px solid #027593;
   background: url(../images/icon-message-help.png) no-repeat 10px 10px;
 }
 h2.help {
   background: #027593;
 }
-#better-messages-default div.info {
+#better-messages-default div.info,
+div.info {
   border: 1px solid #027593;
   background: url(../images/icon-message-info.png) no-repeat 10px 10px;
 }
