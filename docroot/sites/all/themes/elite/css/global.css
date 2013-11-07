@@ -593,7 +593,7 @@ article.node-reward .field-type-commerce-product-reference .form-submit {
 .block.block-tips,
 .block.block-store {
   position: relative;
-  background: #008d95 url(../images/icon-spaceship.png) no-repeat 364px 68px;
+  background: #008d95 url(../images/icon-tools.png) no-repeat 388px 50px;
   color: #fff;
   min-height: 250px;
   line-height: 1em;
@@ -606,13 +606,15 @@ article.node-reward .field-type-commerce-product-reference .form-submit {
   color: #fff;
   text-transform: uppercase;
   padding: 35px 0 0 25px;
-  font-size: 1.6em;
+  font-size: 1.65em;
   width: 220px;
 }
 .block.block-tips p,
 .block.block-store p {
   padding: 0 0 55px 25px;
-  width: 220px;
+  width: 300px;
+  font-size: 1.15em;
+  line-height: 1.1em;
 }
 .block.block-tips .more-link,
 .block.block-store .more-link {
