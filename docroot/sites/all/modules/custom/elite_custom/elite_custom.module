@@ -185,7 +185,7 @@ function elite_custom_block_avatar_view() {
   if (!empty($user->picture)) {
 	$picuri = $user->picture->uri;
   } else {
-	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
+	$picuri = '/sites/all/themes/elite/images/profile-icon.png';
   }
 	$picture = theme('image_style', array(
 	  'path' => $picuri,
@@ -221,7 +221,7 @@ function elite_custom_block_user_view() {
   if (!empty($user->picture)) {
 	$picuri = $user->picture->uri;
   } else {
-	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
+	$picuri = '/sites/all/themes/elite/images/profile-icon.png';
   }
 	$picture = theme('image_style', array(
 	  'path' => $picuri,
@@ -264,7 +264,7 @@ function elite_custom_block_flop_view() {
   if (!empty($user->picture)) {
 	$picuri = $user->picture->uri;
   } else {
-	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
+	$picuri = '/sites/all/themes/elite/images/profile-icon.png';
   }
 	$picture = theme('image_style', array(
 	  'path' => $picuri,
