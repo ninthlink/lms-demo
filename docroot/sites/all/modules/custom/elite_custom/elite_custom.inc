@@ -20,7 +20,7 @@ watchdog('ec', print_r($shipping_data, TRUE));
 
       $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
       $order_wrapper->commerce_line_items[] = $line_item;
-      $order_wrapper->field_user_shipping = $shipping_data;
+      $order_wrapper->commerce_customer_shipping = $shipping_data;
       //@todo update shipping information
       commerce_order_save($order);
 
