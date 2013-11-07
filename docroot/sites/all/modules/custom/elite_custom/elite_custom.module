@@ -183,7 +183,7 @@ function elite_custom_block_avatar_view() {
   }
   
   if (!empty($user->picture)) {
-	$picuri = $user->picture->uri
+	$picuri = $user->picture->uri;
   } else {
 	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
   }
@@ -219,7 +219,7 @@ function elite_custom_block_user_view() {
   }
   
   if (!empty($user->picture)) {
-	$picuri = $user->picture->uri
+	$picuri = $user->picture->uri;
   } else {
 	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
   }
@@ -262,7 +262,7 @@ function elite_custom_block_flop_view() {
 	}
 	$uname_markup = elite_custom_markup_wrapper($uname, array('class' => 'user-name' ) );
   if (!empty($user->picture)) {
-	$picuri = $user->picture->uri
+	$picuri = $user->picture->uri;
   } else {
 	$picuri = 'sites/all/themes/elite/images/profile-icon.png';
   }
