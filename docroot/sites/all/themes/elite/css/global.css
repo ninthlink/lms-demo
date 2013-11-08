@@ -1282,6 +1282,12 @@ body.node-type-page .region-sidebar-second {
 .not-logged-in.page-user #edit-field-user-email-opt-in {
   display: none;
 }
+.not-logged-in.page-user .description.password-suggestions {
+	float: left;
+	width: 100%;
+	position: relative;
+	top: -25px;
+}
 .not-logged-in.page-user .form-submit {
   width: 100%;
   background: #59ae79;
