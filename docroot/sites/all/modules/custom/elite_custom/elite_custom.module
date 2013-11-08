@@ -567,10 +567,19 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 			break;
 		case '_node_resource_retrieve':
 			$nid = $result->nid;
+			watchdog("node_resource_retrieve", 'result.. <pre>'. print_r($result,true) .'</pre>');
 			if ( $result->type == 'training' ) {
 				if ( isset( $result->field_training_quiz ) ) {
 					if ( isset( $result->field_training_quiz['und'] ) ) {
-						$nid = $result->field_training_quiz['und']['target_id'];
+						if ( isset( $result->field_training_quiz['und']['target_id'] ) ) {
+							$nid = $result->field_training_quiz['und']['target_id'];
+						} else {
+							if ( isset( $result->field_training_quiz['und'][0] ) ) {
+								if ( isset( $result->field_training_quiz['und'][0]['target_id'] ) ) {
+									$nid = $result->field_training_quiz['und'][0]['target_id'];
+								}
+							}
+						}
 					}
 				}
 			}
