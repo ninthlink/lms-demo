@@ -754,7 +754,8 @@ function elite_custom_poll_cancel($form, &$form_state) {
 
 function elite_custom_get_node_count($content_type) {
 	 $query = "SELECT COUNT(*) amount FROM {node} n ".
-						"WHERE n.type = :type";
+						"WHERE n.type = :type".
+						" AND n.status = 1";
 	 $result = db_query($query, array(':type' => $content_type))->fetch();
 	 return $result->amount;
 }
