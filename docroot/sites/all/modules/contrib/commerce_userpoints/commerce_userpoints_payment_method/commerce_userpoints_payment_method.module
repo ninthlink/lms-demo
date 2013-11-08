@@ -29,8 +29,8 @@ function commerce_userpoints_payment_method_commerce_payment_method_info() {
  */
 function commerce_userpoints_payment_method_submit_form_submit($payment_method, $pane_form, $pane_values, $order, $charge) {
   $order->data['commerce_userpoints'] = $pane_values;
-
-  commerce_userpoints_payment_method_transaction($payment_method, $order, $charge, $pane_values['name']);
+	$name = isset( $pane_values['name'] ) ? $pane_values['name'] : '';
+  commerce_userpoints_payment_method_transaction($payment_method, $order, $charge, $name);
 }
 
 /**
