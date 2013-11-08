@@ -55,9 +55,10 @@ function commerce_userpoints_payment_method_transaction($payment_method, $order,
   $transaction->message_variables = userpoints_translation();
 
   commerce_payment_transaction_save($transaction);
-
+  
+  $amount = commerce_currency_amount_to_decimal($charge['amount'], $charge['currency_code']);
   userpoints_userpointsapi(array(
-    'points' => ($charge['amount']/100) * commerce_userpoints_payment_method_get_exchange_rate($payment_method['settings'], $order)  * -1,
+    'points' => $amount * commerce_userpoints_payment_method_get_exchange_rate($payment_method['settings'], $order)  * -1,
     'uid' => $order->uid,
     'operation' => 'commerce_userpoints_payment_method_payment',
     'entity_id' => $order->order_id,
@@ -112,7 +113,7 @@ function commerce_userpoints_payment_method_get_required_points($settings, $orde
   $order_total = array_shift($requerido);
 
   $exchange_rate = commerce_userpoints_payment_method_get_exchange_rate($settings, $order);
-  return commerce_currency_format($order_total['amount'], $order_total['currency_code']);
+  return commerce_currency_amount_to_decimal($order_total['amount'], $order_total['currency_code']);
 }
 
 /**
@@ -149,24 +150,39 @@ function commerce_userpoints_payment_method_submit_form($payment_method, $pane_v
 
   $rows = array(
     array(
-      t('Current !points', userpoints_translation()),
-      theme('cu_points', array('points' => $current_points)),
+      'data' => array(
+        t('Current !points', userpoints_translation()),
+        theme('cu_points', array('points' => $current_points)),
+      ),
+      'class' => array('current-points')
     ),
     array(
-      t('!Points credit limit', userpoints_translation()),
-      theme('cu_points', array('points' => $credit_limit)),
+      'data' => array(
+        t('!Points credit limit', userpoints_translation()),
+        theme('cu_points', array('points' => $credit_limit)),
+      ),
+      'class' => array('credit-limit')
     ),
     array(
-      t('Exchange rate'),
-      theme('cu_points', array('points' => $exchange_rate)),
+      'data' => array(
+        t('Exchange rate'),
+        theme('cu_points', array('points' => $exchange_rate)),
+      ),
+      'class' => array('exchange-rate')
     ),
     array(
-      t('Required !points', userpoints_translation()),
-      '<strong>' . theme('cu_points', array('points' => $required_points)) . '</strong>',
+      'data' => array(
+        t('Required !points', userpoints_translation()),
+        '<strong>' . theme('cu_points', array('points' => $required_points)) . '</strong>',
+      ),
+      'class' => array('required-points')
     ),
     array(
-      t('Resulting balance'),
-      theme('cu_points', array('points' => $resulting_balance)),
+      'data' => array(
+        t('Resulting balance'),
+        theme('cu_points', array('points' => $resulting_balance)),
+      ),
+      'class' => array('points-balance')
     ),
   );
 
