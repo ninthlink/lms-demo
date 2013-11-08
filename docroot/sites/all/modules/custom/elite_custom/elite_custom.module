@@ -323,6 +323,18 @@ function elite_custom_views_pre_render(&$view) {
 		}
 		//watchdog('views pre', 'view name '. $view->name .'<br />results: <pre>'. print_r($view->result,true) .'</pre>');
 	}
+	
+	if ( $view->name == 'related_content' ) {
+		foreach ( $view->result as $result ) {
+			$nid = $result->node_field_data_field_related_content_nid;
+			$type = $result->_field_data['node_field_data_field_related_content_nid']['entity']->type;
+			if ( $type  == 'training' ) {
+				$nid = $result->node_field_data_field_training_quiz_nid;
+			}
+			$result->node_field_data_field_training_quiz_nid = elite_custom_check_taken_content( $type, $nid );
+		}
+		//watchdog('views pre', 'view name '. $view->name .'<br />results: <pre>'. print_r($view->result,true) .'</pre>');
+	}
 }
 
 function elite_custom_services_poll_data_fetch(&$return) {
