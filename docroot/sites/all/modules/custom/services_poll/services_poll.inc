@@ -21,7 +21,7 @@ function _services_poll_data($poll, $reset = FALSE) {
   $return->title = $poll->title;
   $return->choices = $poll->choice;
   $return->voted = services_poll_is_voted_on($poll->nid);
-  $return->total_votes = services_poll_get_total_votes($poll->nid);
+  $return->total_votes = services_poll_get_total_votes($poll->choice);
 
   foreach(module_implements('services_poll_data_fetch') as $module) {
     $function = $module . '_services_poll_data_fetch';
@@ -47,12 +47,11 @@ function services_poll_is_voted_on($content_id) {
   }
 }
 
-function services_poll_get_total_votes($content_id) {
-  $vote_count = db_select('poll_vote', 'pv')
-    ->fields('pv')
-    ->condition('nid', $content_id, '=')
-    ->execute()
-    ->rowCount();
+function services_poll_get_total_votes($choices) {
+  $vote_count = 0;
+  foreach ($choices as $choice) {
+    $vote_count += $choice['chvotes'];
+  }
 
   return $vote_count;
 }
