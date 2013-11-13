@@ -562,22 +562,21 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
       break;
 		case 'services_views_execute_view':
 			if ($controller['view info']['view_name'] == 'questions_by_quiz') {
-				$question_answers = array();
+				// combine answers without massive php errors
+				$oot = array();
+				$usevids = false;
 				foreach($result as $k => $v) {
-					$question_answers[$v->question_id][$v->answer_id] = $v->answer;
-				}
-	
-				foreach($result as $k => &$v) {
-					if(is_array($question_answers[$v->question_id]) && isset($v->question_id) && isset($v->answer_id)) {
-						$v->answer = $question_answers[$v->question_id];
-						unset($result[$k]->answer_id);
-						unset($question_answers[$v->question_id]);
-					} else {
-						unset($result[$k]);
+					$i = $v->question_id;
+					if ( !isset( $oot[$i] ) ) {
+						$q = new stdClass();
+						$q->question_id = $i;
+						$q->question_title = $v->question_title;
+						$q->answer = array();
+						$oot[$i] = $q;
 					}
+					$oot[$i]->answer[$v->answer_id] = $v->answer;
 				}
-	
-				$result = array_values($result);
+				$result = array_values($oot);
 			}
 			break;
 		case '_node_resource_retrieve':
