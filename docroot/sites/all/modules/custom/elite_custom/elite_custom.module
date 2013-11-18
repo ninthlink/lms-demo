@@ -578,6 +578,12 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 				}
 				$result = array_values($oot);
 			}
+      foreach($result as $k => &$v) {
+        if (isset($v->title)) {
+          $v->title = htmlspecialchars_decode($v->title);
+        }
+      }
+  
 			break;
 		case '_node_resource_retrieve':
 			$nid = $result->nid;
