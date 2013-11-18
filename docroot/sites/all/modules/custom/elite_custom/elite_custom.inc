@@ -4,7 +4,6 @@ function elite_custom_user_purchase($data) {
   global $user;
   $product_id = $data['product_id'];
   $shipping_data = $data['shipping_data'];
-watchdog('ec', print_r($shipping_data, TRUE));
   if($product = commerce_product_load($product_id)) {
     $user_points = userpoints_get_current_points($user->uid);
     $product_points = $product->commerce_price[LANGUAGE_NONE][0]['amount'];
@@ -20,8 +19,13 @@ watchdog('ec', print_r($shipping_data, TRUE));
 
       $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
       $order_wrapper->commerce_line_items[] = $line_item;
-      $order_wrapper->commerce_customer_shipping = $shipping_data;
-      //@todo update shipping information
+
+      $profile_data = commerce_customer_profile_new('shipping', $user->uid);
+      $profile_data->commerce_customer_address = $shipping_data;
+      commerce_customer_profile_save($profile_data);
+      $profile_id = $profile_data->profile_id;
+      $order->commerce_customer_shipping[LANGUAGE_NONE][0]['profile_id'] = $profile_id;
+      
       commerce_order_save($order);
 
       userpoints_userpointsapi($product_points * -1);
