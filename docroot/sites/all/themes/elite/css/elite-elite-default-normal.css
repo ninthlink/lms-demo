@@ -49,3 +49,31 @@
 #block-menu-menu-trends-subnav ul.menu li {
 	margin-right: 20px;
 }
+
+/* vive / padding grid fix? */
+body.context-vive .field-name-title-field {
+	height: 398px;
+}
+.container-12 .grid-12 .pad {
+	margin: 0 50px;
+}
+.container-12 .grid-12 .pad .grid-4 {
+	width: 170px;
+	margin-left: 40px;
+}
+.container-12 .grid-12 .pad .grid-8 {
+	width: 458px;
+}
+.container-12 .grid-12 .pad .grid-10 {
+	width: 500px;
+}
+.container-12 .grid-12 .pad .grid-12 {
+	width: 668px;
+}
+
+body.context-vive .device.odd img {
+	border-right: 1px solid #959595;
+}
+body.context-vive .devicerow {
+	border-top: 1px solid #959595;
+}

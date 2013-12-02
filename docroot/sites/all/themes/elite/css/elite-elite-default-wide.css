@@ -1,1 +1,22 @@
 /* This file will hold styles that are loaded using the same media query as the wide grid. */
+
+/* vive / padding grid fix? */
+body.context-vive .field-name-title-field {
+	height: 531px;
+}
+.container-12 .grid-12 .pad {
+	margin: 0 50px;
+}
+.container-12 .grid-12 .pad .grid-4 {
+	width: 280px;
+	margin-left: 40px;
+}
+.container-12 .grid-12 .pad .grid-8 {
+	width: 600px;
+}
+.container-12 .grid-12 .pad .grid-10 {
+	width: 810px;
+}
+.container-12 .grid-12 .pad .grid-12 {
+	width: 980px;
+}

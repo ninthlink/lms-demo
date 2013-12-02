@@ -30,3 +30,10 @@ function elite_preprocess_views_view_responsive_grid(&$vars) {
 //		watchdog('rowscheck', 'rows : <pre>'. print_r($vars['rows'],true) .'</pre><br />view results <pre>'. print_r($vars['view']->result,true) .'</pre>');
 	}
 }
+
+function elite_preprocess_page( &$vars, $hook ) {
+	if ( isset( $vars['node'] ) ) {
+		$vars['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', $vars['node']->type);
+		$vars['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', drupal_get_path_alias());
+	}
+}

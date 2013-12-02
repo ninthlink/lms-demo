@@ -5,20 +5,19 @@
  */
 ?>
 <div<?php print $attributes; ?>>
-  <?php if (isset($page['header'])) : ?>
+  <?php /*if (isset($page['header'])) : ?>
     <?php print render($page['header']); ?>
-  <?php endif; ?>
+  <?php endif;*/ ?>
   <?php if (isset($section_title)): ?>
   <div class="section-title container-12">
-      <?php print $section_title ?>
+      <?php $section_title ?>
   </div>
   <?php endif; ?>
 
   <?php if (isset($page['content'])) : ?>
     <?php print render($page['content']); ?>
   <?php endif; ?>
-
-  <?php if (isset($page['footer'])) : ?>
+  <?php /*if (isset($page['footer'])) : ?>
     <?php print render($page['footer']); ?>
-  <?php endif; ?>
+  <?php endif;*/ ?>
 </div>

@@ -28,3 +28,26 @@
 #block-menu-menu-trends-subnav {
 	display: none
 }
+
+
+/* vive / padding grid fix? */
+body.context-vive .field-name-title-field {
+	height: 162px;
+}
+.container-12 .grid-12 .pad {
+	margin: 0 20px;
+}
+.container-12 .grid-12 .pad .grid-4,
+.container-12 .grid-12 .pad .grid-8,
+.container-12 .grid-12 .pad .grid-10,
+.container-12 .grid-12 .pad .grid-12 {
+	width: 100%;
+	margin-left: 0;
+}
+
+body.context-vive .device.odd img {
+	border-right: none;
+}
+body.context-vive .devicerow {
+	border-top: none;
+}

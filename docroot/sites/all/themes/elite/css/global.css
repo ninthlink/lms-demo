@@ -1547,3 +1547,64 @@ div.quiz-report .dt div.quiz-report-score-container {
 .q-correct {
   background: #5baf7a;
 }
+
+/* VIVE landing */
+body.node-type-page.context-vive article.node {
+	padding: 0;
+}
+body.context-vive .field-name-title-field {
+	float: left;
+	width: 100%;
+	height: 162px;
+	background: url(../images/vive/hdr.jpg) no-repeat 0 0;
+	background-size:cover;
+}
+body.context-vive h2 {
+	font-size: 2.4em;
+	margin: 1em 0;
+	color: #038e95;
+}
+body.context-vive .orange {
+	background: #f58b20;
+	margin-top: 100px
+}
+body.context-vive .teal {
+	background: #038e95
+}
+body.context-vive .orange h2,
+body.context-vive .teal h3 {
+	color: #fff;
+}
+body.context-vive .orange h2 {
+	margin-bottom: 0.5em
+}
+body.context-vive .teal h3 {
+	font-size: 2em;
+	margin: 0.5em 0;
+	font-family: "Qualcomm-Bold", sans-serif;
+	font-weight: normal;
+}
+body.context-vive p {
+	font-size: 17px;
+}
+body.context-vive .device {
+	position: relative;
+}
+body.context-vive .device.odd img {
+	border-right: 1px solid #959595;
+}
+body.context-vive .devicerow {
+	border-top: 1px solid #959595;
+}
+body.context-vive .device .name {
+	font-size: 22px;
+	font-family: "Qualcomm-Bold", sans-serif;
+	color: #038e95;
+	float: left;
+	width: 100%;
+	text-align: center;
+	left: 0;
+	bottom: 15%;
+	z-index: 2;
+	position: absolute;
+}
