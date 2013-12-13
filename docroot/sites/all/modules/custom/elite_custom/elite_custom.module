@@ -517,10 +517,17 @@ function elite_custom_node_load( $nodes, $types ) {
 	//watchdog('hook node load', 'args '. arg(0) .' / '. arg(1) .' / '. arg(2) .' ... <br />nodes <pre>'. print_r($nodes,true) .'</pre><br />types <pre>'. print_r($types,true) .'</pre>');
 	foreach ( $nodes as $id => $n ) {
 		switch( $n->type ) {
+			case 'article':
 			case 'training':
-				// change wslash URL ?
-				if ( defined('ELITELOCAL') ) {
-					if ( arg(0) == 'ws' ) {
+				if ( arg(0) == 'ws' ) {
+					if ( ( arg(1) == 'node' ) && ( arg(2) == $id ) ) {
+						// if this is a call from /ws/node/#.json, wipe any HTML from the body area, for now at least
+						$n->body['und'][0]['value'] = strip_tags( $n->body['und'][0]['value'] );
+						$n->body['und'][0]['safe_value'] = strip_tags( $n->body['und'][0]['safe_value'], '<p>' );
+					}
+					
+					// change wslash URL ?
+					if ( defined('ELITELOCAL') ) {
 						if ( is_array( $n->field_wslash_training ) ) {
 							if ( isset( $n->field_wslash_training['und'] ) ) {
 								if ( isset( $n->field_wslash_training['und'][0] ) ) {
@@ -536,7 +543,6 @@ function elite_custom_node_load( $nodes, $types ) {
 				}
 				break;
 		}
-		
 	}
 }
 
