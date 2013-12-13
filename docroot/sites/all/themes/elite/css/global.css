@@ -733,6 +733,12 @@ article.node-training .field-name-body,
 article.node-article .field-name-body {
   padding: 0 70px 70px 40px;
 }
+article.node-article .field-name-field-external-link {
+	font-weight: bold;
+	margin-top: -70px;
+	padding: 0 40px 40px;
+	position: relative;
+}
 article.node-training .field-name-field-training-quiz {}
 article.node-training .field-name-field-training-quiz .field-label {
   font-weight: normal;
