@@ -841,8 +841,31 @@ div.quiz-report table tr {
   border: 0;
   background: none;
 }
-
-
+body.node-type-quiz #quiz_score_possible,
+body.node-type-quiz #quiz-report-form {
+	padding-bottom: 0;
+	border-bottom: none;
+	font-size: 18px;
+	font-weight: normal;
+	font-family: "Qualcomm-Regular", sans-serif;
+}
+body.node-type-quiz #quiz-report-form { padding: 0 }
+body.node-type-quiz #quiz-report-form h2,
+body.node-type-quiz #quiz-report-form .dt,
+body.node-type-quiz #quiz-report-form .dd {
+	padding: 0 30px;
+}
+body.node-type-quiz #quiz-report-form .dt {
+	padding-top: 20px;
+	border-top: 1px solid #959595;
+}
+body.node-type-quiz #quiz-report-form .dd {
+	margin: 0 0 30px;
+}
+body.node-type-quiz #quiz_score_possible em { font-style: normal }
+body.node-type-quiz #quiz-report-form .dd table tr.correct td {
+	color: #75bc8f;
+}
 a.bigBtn,
 span.bigBtn {
   float: left;

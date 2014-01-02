@@ -37,3 +37,74 @@ function elite_preprocess_page( &$vars, $hook ) {
 		$vars['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', drupal_get_path_alias());
 	}
 }
+
+function elite_quiz_admin_summary($variables) {
+  $quiz = $variables['quiz'];
+  $questions = $variables['questions'];
+  $score = $variables['score'];
+  $summary = $variables['summary'];
+  $rid = $variables['rid'];
+  // To adjust the title uncomment and edit the line below:
+  // drupal_set_title(check_plain($quiz->title));
+  if (!$score['is_evaluated']) {
+    drupal_set_message(t('This quiz has not been scored yet.'), 'warning');
+  }
+  // Display overall result.
+  $output = '';
+  $params = array('%num_correct' => $score['numeric_score'], '%question_count' => $score['possible_score']);
+  $output .= '<div id="quiz_score_possible">' . t('This person got %num_correct of %question_count correct', $params) . '</div>' . "\n";
+  //$output .= '<div id="quiz_score_percent">' . t('Total score: @score %', array('@score' => $score['percentage_score'])) . '</div>' . "\n";
+	/*
+  if (isset($summary['passfail'])) {
+    $output .= '<div id="quiz_summary">' . check_markup($summary['passfail'], $quiz->body['und'][0]['format']) . '</div>' . "\n";
+  }
+  if (isset($summary['result'])) {
+    $output .= '<div id="quiz_summary">' . check_markup($summary['result'], $quiz->body['und'][0]['format']) . '</div>' . "\n";
+  }
+	*/
+  // Get the feedback for all questions.
+  require_once DRUPAL_ROOT . '/' . drupal_get_path('module', 'quiz') . '/quiz.pages.inc';
+  $report_form = drupal_get_form('quiz_report_form', $questions, TRUE, TRUE, TRUE);
+  $output .= drupal_render($report_form);
+  return $output;
+}
+
+function elite_quiz_take_summary($variables) {
+  $quiz = $variables['quiz'];
+  $questions = $variables['questions'];
+  $score = $variables['score'];
+  $summary = $variables['summary'];
+  $rid =  $variables['rid'];
+  // Set the title here so themers can adjust.
+  drupal_set_title($quiz->title);
+
+  // Display overall result.
+  $output = '';
+  if (!empty($score['possible_score'])) {
+    if (!$score['is_evaluated']) {
+      if (user_access('score taken quiz answer')) {
+        $msg = t('Parts of this @quiz have not been evaluated yet. The score below is not final. <a class="self-score" href="!result_url">Click here</a> to give scores on your own.', array('@quiz' => QUIZ_NAME, '!result_url' => url('node/' . $quiz->nid . '/results/' . $rid)));
+      }
+      else {
+        $msg = t('Parts of this @quiz have not been evaluated yet. The score below is not final.', array('@quiz' => QUIZ_NAME));
+      }
+      drupal_set_message($msg, 'warning');
+    }
+    $output .= '<div id="quiz_score_possible">' . t('You got %num_correct of %question_count questions correct', array('%num_correct' => $score['numeric_score'], '%question_count' => $score['possible_score'])) . '</div>' . "\n";
+    //$output .= '<div id="quiz_score_percent">' . t('Your score: %score %', array('%score' => $score['percentage_score'])) . '</div>' . "\n";
+  }
+	/*
+  if (isset($summary['passfail'])) {
+    $output .= '<div id="quiz_summary">' . $summary['passfail'] . '</div>' . "\n";
+  }
+  if (isset($summary['result'])) {
+    $output .= '<div id="quiz_summary">' . $summary['result'] . '</div>' . "\n";
+  }
+	*/
+  // Get the feedback for all questions. These are included here to provide maximum flexibility for themers
+  if ($quiz->display_feedback) {
+    $form = drupal_get_form('quiz_report_form', $questions);
+    $output .= drupal_render($form);
+  }
+  return $output;
+}
