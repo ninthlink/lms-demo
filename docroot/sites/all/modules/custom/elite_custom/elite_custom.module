@@ -280,6 +280,21 @@ function elite_custom_block_flop_view() {
   $points_markup = elite_custom_markup_wrapper($points, array('class' => 'points-wrapper'));
   
 	$umenu = '<ul class="usermenu">';
+	if ( function_exists('commerce_cart_order_load') ) {
+		if ($order = commerce_cart_order_load($user->uid)) {
+			// Count the number of product line items on the order.
+			$wrapper = entity_metadata_wrapper('commerce_order', $order);
+			$quantity = commerce_line_items_quantity($wrapper->commerce_line_items, commerce_product_line_item_types());
+	
+			// If there are more than 0 product line items on the order...
+			if ($quantity > 0) {
+				// Use the dynamic menu item title.
+				$cattr = array('count'=>$quantity);
+				$umenu .= '<li class="cart">'. l( elite_custom_markup_wrapper(t('Cart'), $cattr, 'usermenu'), 'cart', array('html'=>true) ) .'</li>';
+			}
+		}
+	}
+	
 	$myaccount = t('My Account');
 	$myaccount = elite_custom_markup_wrapper($myaccount, array(), 'usermenu');
 	$laccount = l( $myaccount, 'user/'. $user->uid .'/edit', array('html'=>true) );

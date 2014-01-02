@@ -1490,6 +1490,9 @@ body.node-type-page .region-sidebar-second {
 #elite-user-flop ul.usermenu li.activity a .icon {
   background-position: 0 -236px;
 }
+#elite-user-flop ul.usermenu li.cart a .icon {
+  background-position: 0 -287px;
+}
 #elite-user-flop ul.usermenu li a .title {
   font: 18px/24px "Qualcomm-Regular", sans-serif;
   float: left;
