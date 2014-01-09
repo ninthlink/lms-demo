@@ -26,14 +26,6 @@ class views_plugin_display_services extends views_plugin_display {
    */
   function execute() {
 
-    if (!$this->access()) {
-      global $user;
-      module_load_include('inc', 'services', 'includes/services.runtime');
-      return services_error(t('Access denied for user @user', array(
-        '@user' => isset($user->name) ? $user->name : 'anonymous',
-      )), 401);
-    }
-
     // Prior to this being called, the $view should already be set to this
     // display, and arguments should be set on the view.
     $this->view->build();
