@@ -21,7 +21,7 @@ function elite_custom_form_alter(&$form, &$form_state, $form_id) {
 	}
 	if ( $form_id == 'poll_cancel_form' ) {
 		$form['actions']['submit']['#submit'][] = 'elite_custom_poll_cancel';
-		watchdog('poll c form alt', 'form_id '. $form_id .' **form <pre>'. print_r($form,true) .'</pre>');
+		//watchdog('poll c form alt', 'form_id '. $form_id .' **form <pre>'. print_r($form,true) .'</pre>');
 	}
   if ($form_id == 'views_form_commerce_cart_form_default') {
     $order = commerce_cart_order_load($user->uid);
@@ -421,7 +421,7 @@ function elite_custom_quiz_finished($quiz, $score, $rid) {
 		} else {
 			drupal_set_message('You have already redeemed the points from this piece.', 'warning');
 		}
-		if ( function_exists('watchdog') ) watchdog('elite quizd', 'training done? <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre><br />base pts?! '. $base_points .' : <pre>'. print_r($ptsres,true) .'</pre>');
+		//if ( function_exists('watchdog') ) watchdog('elite quizd', 'training done? <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre><br />base pts?! '. $base_points .' : <pre>'. print_r($ptsres,true) .'</pre>');
   }
 }
 
@@ -566,7 +566,7 @@ function elite_custom_node_load( $nodes, $types ) {
  */
 function elite_custom_services_request_postprocess_alter($controller, $args, &$result) {
 	global $user;
-	watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
+	//watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
 	switch( $controller['callback'] ) {
 		case 'logintoboggan_services_login':
 			if($user = user_load($result->user->uid, TRUE)) {
