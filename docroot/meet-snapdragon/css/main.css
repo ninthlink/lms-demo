@@ -344,8 +344,10 @@ height: 100px;
     #single-chip,
     #single-chip .inner { min-height: 490px; }
 
+		/*
     #multiple-tasks { min-height: 759px; }
     #multiple-tasks .inner { min-height: 319px; }
+		*/
 
     #cpu-performance,
     #cpu-performance .inner { min-height: 1078px; }
@@ -398,9 +400,11 @@ height: 100px;
     #single-chip,
     #single-chip .inner { min-height: 490px; }
 
+		/*
     #multiple-tasks { min-height: 759px; }
     #multiple-tasks .inner { min-height: 319px; }
-
+		*/
+		
     #cpu-performance,
     #cpu-performance .inner { min-height: 1078px; }
 
@@ -482,26 +486,28 @@ height: 100px;
         text-align: center;
     }
     #header-device {
-        margin-left: -3.75%;
-        width: 33.5%;
+        margin-left: -36px;
+        width: auto;
 				height: auto;
     }
     #gear1 {
         position: absolute;
-        top: 16.4%;
-        left: 56.25%;
-        width: 8.3%;
-				height: auto;
+        top: 53px;
+        left: 50%;
+				margin-left: 60px;
+        width: 80px;
+				height: 80px;
         -webkit-animation:spin 14s linear infinite;
         -moz-animation:spin 14s linear infinite;
         animation:spin 14s linear infinite;
     }
     #gear2 {
         position: absolute;
-        top: 7.4%;
-        left: 63.5%;
-        width: 5.3%;
-				height: auto;
+        top: 24px;
+        left: 50%;
+				margin-left: 129px;
+        width: 50px;
+				height: 50px;
         -webkit-animation:spinreverse 10s linear infinite;
         -moz-animation:spinreverse 10s linear infinite;
         animation:spinreverse 10s linear infinite;
@@ -545,6 +551,23 @@ height: 100px;
         left: 50%;
         margin-left: -16px;
     }
+    @media only screen and (max-width: 799px) {
+        #loading .text-position {
+					padding-top: 0;
+				}
+		}
+    @media only screen and (min-width: 800px) {
+        #loading .text-position {
+            padding-top: 136px;
+						margin-left: 0;
+        }
+        #loading .graphic-position {
+            left: 0;
+            margin-top: 135px;
+            margin-left: 0;
+            clear: none;
+        }
+    }
     @media only screen and (min-width: 960px) {
         #loading .text-position {
             padding-top: 136px;
@@ -568,9 +591,15 @@ height: 100px;
     #difference .graphic-position {
         position: absolute;
         top: 400px;
-        right: -1000px;
+        right: -100%;
         opacity: 0;
     }
+    @media only screen and (max-width: 959px) {
+    #difference .graphic-position {
+				width: 100%;
+				text-align: center;
+		}
+		}
 /* end difference */
 
 /* earth section - responsive */
@@ -780,7 +809,7 @@ height: 100px;
     #reliable_connectivity .sprite { background-position: -325px -10px; }
     #long_battery_life .sprite { background-position: -520px -10px; }
     #every-phone .graphic-position p {
-    width: 160px;
+    width: 100%;
     text-align: center;
     margin: 40px auto 0;
     }
@@ -1067,6 +1096,7 @@ height: 100px;
 			float: left;
 			width: 100%;
 			height: 296px;
+			margin: 35px 0;
 			position: relative;
 			overflow: hidden;
 		}
@@ -1095,6 +1125,7 @@ height: 100px;
 			list-style: none;
 			overflow: hidden;
 		}
+
 		#qchips ul.left {
 			margin-left: -1414px;
 		}
@@ -1228,6 +1259,12 @@ height: 100px;
         margin-right: auto;
         letter-spacing: 0;
     }
+		
+		@media only screen and (min-width: 960px) {
+			#qchips {
+				margin: 99px 0;
+			}
+		}
 /* end multiple tasks */
 
 /* cpu performance section */

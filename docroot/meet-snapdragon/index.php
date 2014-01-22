@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.2.3
+ * v0.3.8
  */
 ?>
 <!doctype html>
@@ -243,22 +243,6 @@
 							<h2 class="txtw">Extraordinary <span class="thick">mobile power</span></h2>
 							<h5 class="txtw">Snapdragon processors pack a huge amount of mobile power into a tiny system on a chip.</h5>
 						</div>
-            <?php /*
-						<div class="graphic-position">
-							<div id="meter">
-							    <div id="rev-inner">
-							        <div id="red"></div>
-							        <div id="grey"></div>
-							        <div id="pin"></div>
-							    </div>
-							    <div id="cover">
-							    	<div id="dot"></div>
-							    	<img src="img/meter-shadow.png" />
-								</div>
-							</div>
-							<img id="chip3" src="img/chip135x132.png" />
-						</div>
-						*/ ?>
 					</div>
 				</section>
 
@@ -361,6 +345,8 @@
 							</div>
 
 							<span class="stretch"></span>
+              
+            	<p class="center"> *Peak measured data rates, actual speeds will vary. </p>
 
 						</div>
 					</div>

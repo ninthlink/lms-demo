@@ -14,7 +14,7 @@ $(document).ready(function() {
 		rotate: 0, // The rotation offset
 		direction: 1, // 1: clockwise, -1: counterclockwise
 		color: '#000', // #rgb or #rrggbb or array of colors
-		speed: 0.15, // Rounds per second
+		speed: 1, // Rounds per second
 		trail: 60, // Afterglow percentage
 		shadow: false, // Whether to render a shadow
 		hwaccel: false, // Whether to use hardware acceleration
@@ -36,8 +36,8 @@ $(document).ready(function() {
 
 	// #2 "Loading" :: fade in h3 and rotator
 	$('#loading').waypoint(function(){ 
-		$('#loading .text-position h3').fadeIn( 600, function() {
-			$('#loading .graphic-position').fadeIn( 400 );
+		$('#loading .graphic-position').fadeIn( 500, function() {
+			$('#loading .text-position h3').fadeIn( 500 );
 		} );
 	}, {
 		offset: offsetDefault
@@ -63,8 +63,8 @@ $(document).ready(function() {
 
 	$('#difference').waypoint(function(){
 		$('#difference .graphic-position').animate({
-			right: "10%",
-			opacity: "1",
+			right: 0,
+			opacity: 1,
 		}, 800 );
 	}, {
 		offset: offsetDefault
@@ -284,6 +284,7 @@ $(document).ready(function() {
 	});
 
 	// #13 "Modem Performance" :: slide in side text from outside frame (arrows rotate via CSS)
+	$('#modem-performance p:last').hide();
 	$('#modem-performance').waypoint(function(){
 		$('#modem-performance .graphic-position .left p').animate({
 			"left": "0px",
@@ -292,7 +293,9 @@ $(document).ready(function() {
 		$('#modem-performance .graphic-position .right p').animate({
 			"right": "0px",
 			opacity: 1, 
-		}, 1000, 'easeInOutBack' );
+		}, 1000, 'easeInOutBack', function() {
+			$('#modem-performance p:last').fadeIn(900);
+		});
 	}, {
 		offset: offsetDefault
 	});
