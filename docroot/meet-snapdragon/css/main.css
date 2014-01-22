@@ -942,118 +942,14 @@ height: 100px;
 			font-weight: 400;
 			font-size: 1em;
 		}
-		
-		/* :(
-    #mobile-power .graphic-position {
-        position: relative;
-        width: 370px;
-        height: 220px;
-        left: 50%;
-        margin-left: -185px;
-        margin-bottom: 40px;
-    }
-    #mobile-power .graphic-position #chip3 {
-        position: absolute;
-        left: 50%;
-        margin-left: -66px;
-        bottom: 0;
-        z-index: 99;
-    }
-    #meter {
-        position: absolute;
-        left: 0;
-        top: 0px;
-        width: 380px;
-        height: 380px;
-        background-color: transparent;
-    }
-    @media only screen and (min-width: 480px) {
-        #mobile-power .graphic-position #chip3 {
-            left: 0;
-            margin-left: 0;
-        }
-        #meter {
-            left: 22px;
-        }
-    }
-    @media only screen and (min-width: 960px) {
-        #mobile-power .graphic-position {
-            left: 580px;
-            margin-left: 0;
-            top: -40px;
-        }
-    }
-
-    #red {
-        position: absolute;
-        top: 50%;
-        margin-top: -162px;
-        left: 50%;
-        margin-left: -162px;
-        width: 324px;
-        height: 162px;
-        border-radius: 162px 162px 0 0;
-        background-color: #e12529;
-    }
-    #grey {
-        position: absolute;
-        bottom: 50%;
-        margin-bottom: -162px;
-        left: 50%;
-        margin-left: -162px;
-        width: 324px;
-        height: 162px;
-        border-radius: 0 0 162px 162px;
-        background-color: #ccc;
-    }
-    #pin {
-        position: absolute;
-        top: 50%;
-        margin-top: -3px;
-        left: 50%;
-        width: 184px;
-        height: 6px;
-        background-color: #333;
-    }
-    #dot {
-        position: absolute;
-        margin-top: -7px;
-        left: 50%;
-        margin-left: -7px;
-        border-radius: 7px;
-        width: 14px;
-        height: 14px;
-        background-color: #333;
-        z-index: 9;
-    }
-    #cover {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 380px;
-        height:190px;
-        background-color: #fff;
-    }
-    #cover img {
-        right: 18px;
-        position: absolute;
-        width: 92%;
-    }
-    #rev-inner {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        -webkit-animation: rev 10s infinite;
-        -moz-animation: rev 10s infinite;
-        animation: rev 10s infinite;
-    }
 /* end mobile power */
 
 /* single chip */
     #single-chip .text-position {
         margin-top: 4.6%;
-        margin-left: 6.25%;
-        max-width: 500px;
+        margin-left: 0;
+        max-width: 430px;
+				float: right;
         opacity: 0;
     }
     #single-chip .text-position p {
@@ -1063,31 +959,62 @@ height: 100px;
     }
     #single-chip .graphic-position {
         position: absolute;
-        right: calc(50% - 68px);  /* 68px; */
-        top: 94px;
-        width: 136px;
-        height: 258px;
+        left: 0;
+        top: 119px;
+        width: 480px;
+        height: 267px;
     }
     #single-chip .graphic-position img { position: absolute; }
-    #single-phone {}
     #pop-power {
-        bottom: -30px;
-        right: -36px;
-        width: 0px;
-        /* width: 53px; */
-    }
-    #pop-chip {
-        top: -70px;
-        right: -70px;
-        width: 0px;
-        /* width: 101px; */
+        top: 53px;
+        right: 15px;
+        width: 42px;
+				height: auto;
     }
     #pop-lines {
-        top: 106px;
-        left: -70px;
-        width: 0px;
-        /* width: 76px; */
+        top: -3px;
+        right: 53px;
+        width: 61px;
+				height: auto;
     }
+		
+		@media only screen and (max-width: 959px) {
+			#single-chip .text-position {
+				margin-top: 0;
+				padding-top: 0;
+			}
+			#single-chip .graphic-position {
+				top: auto;
+				bottom: 0;
+			}
+		}
+		@media only screen and (max-width: 599px) {
+			#single-chip .graphic-position {
+				width: 100%;
+			}
+		}
+		@media only screen and (max-width: 479px) {
+			#single-chip {
+				overflow: hidden;
+			}
+			#single-phone {
+				width: 100%;
+				height: auto;
+			}
+			#pop-power {
+        top: 33px;
+        right: -40px;
+			}
+			#pop-lines {
+					top: -30px;
+					right: -20px;
+			}
+		}
+		@media only screen and (max-width: 419px) {
+			#single-chip .graphic-position {
+				width: 80%;
+			}
+		}
 /* end single chip */
 
 /* multiple tasks section */

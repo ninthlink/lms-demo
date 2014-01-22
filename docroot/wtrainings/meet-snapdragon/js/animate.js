@@ -130,34 +130,21 @@ $(document).ready(function() {
 	// #8 "Mobile Power" ::
 
 	// #9 "Single Chip" :: slide phone to side (large screen) or bottom (small screen), then pop in icons and fade in text
+	$('#pop-power, #pop-lines').css('width',0);
+	$('#single-chip .graphic-position').css('left','-100%');
 	$('#single-chip').waypoint(function(){
-		if ( $('#single-chip .inner').width() >= 960 ) {
-			$('#single-chip .graphic-position').animate({
-				right: "68px",
-			}, 600, 'easeInOutSine');
-		}
-		else {
-			var h = $('#single-chip').height;
-			$('#single-chip').animate({
-				height: "+=300px",
-			}, 600, 'easeInOutSine');
-			$('#single-chip .graphic-position').animate({
-				top: "400px",
-			}, 600, 'easeInOutSine');	
-		}
-
+		$('#single-chip .graphic-position').animate({
+			left: "0",
+		}, 600, 'easeInOutSine');
+		
 		$('#single-chip .text-position').fadeTo( 2000, 1, 'easeInOutCubic' );
 	
 		$('#pop-lines').delay(600).animate({
-			width: "76px",
-		}, 150, 'easeInOutElastic', function() {
-			$('#pop-chip').delay(10).animate({
-				width: "101px",
-			}, 150, 'easeInOutElastic', function() {
-				$('#pop-power').delay(150).animate({
-					width: "53px",
-				}, 150, 'easeInOutElastic' );
-			});
+			width: "61px",
+		}, 400, 'easeInOutElastic', function() {
+			$('#pop-power').delay(10).animate({
+				width: "42px",
+			}, 400, 'easeInOutElastic' );
 		});
 	}, {
 		offset: offsetDefault,

@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.3.8
+ * v0.4.0
  */
 ?>
 <!doctype html>
@@ -253,9 +253,8 @@
 							<p class="txtw">Only Qualcomm designs the key  technology components that connect each of the components into a <span class="thick">single system on a chip</span></p>
 						</div>
 						<div class="graphic-position">
-							<img id="single-phone" src="img/phone-simple.png" />
+							<img id="single-phone" src="img/tablet.png" />
 							<img id="pop-power" src="img/pop-power.png" />
-							<img id="pop-chip" src="img/pop-chip.png" />
 							<img id="pop-lines" src="img/pop-lines.png" />
 						</div>
 
@@ -432,6 +431,19 @@
 		</div>
 		<script type="text/javascript" src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
 		<script src="js/animate.js"></script>
-
+<script type="text/javascript"> 
+//browser-update.org
+var $buoop = {vs:{i:9,f:5,o:12,s:5,n:9},reminder:0,onshow:function(infos) {
+	jQuery('#buorg > div').prepend('<strong>This module is built with the latest HTML5 + CSS3 in mind.</strong> ');
+	}}; 
+$buoop.ol = window.onload; 
+window.onload=function(){ 
+ try {if ($buoop.ol) $buoop.ol();}catch (e) {} 
+ var e = document.createElement("script"); 
+ e.setAttribute("type", "text/javascript"); 
+ e.setAttribute("src", "//browser-update.org/update.js"); 
+ document.body.appendChild(e); 
+} 
+</script>
 	</body>
 </html>
