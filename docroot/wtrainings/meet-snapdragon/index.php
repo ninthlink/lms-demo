@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.4.0
+ * v0.4.1
  */
 ?>
 <!doctype html>
@@ -415,7 +415,7 @@
 					<div class="inner">
 						<div class="text-position center">
 							<p class="txtw">&copy; 2014 Qualcomm Technologies, Inc.  All rights reserved.</p>
-							<p class="txtw">Qualcomm is a trademark of QUALCOMM Incorporated, registered in the United States and other countries. Snapdragon is a trademark of Qualcomm Technologies, Inc.</p>
+							<p class="txtw">Qualcomm is a trademark of QUALCOMM Incorporated registered in the United States and other countries. Gobi and Snapdragon are trademarks of Qualcomm Technologies, Inc.<br />Other products and brand names are property of their respective owners.</p>
 						</div>
 						<div class="graphic-position center">
 							<img id="logo" src="img/snapdragon-logo.png" />
