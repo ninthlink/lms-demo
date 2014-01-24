@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="Introduction to Qualcomm® Snapdragon™ Processors" right="false" language="en">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+			<swf name="page3">../section1/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<SWFs name="s4SWF">
+
+		</SWFs>
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text">Introduction to Qualcomm® Snapdragon™ Processors</course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">Introduction</tab>
+			<tab title="Powerful Companion Tab" field="tab2_text">Exploring the Snapdragon Processor</tab>
+			<tab title="Summary Tab"			field="tab3_text">Summary</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">Next</pillar>
+			<pillar title="Previous Button" 	field="prev_text">Previous</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">Click the title of the course to return to the beginning of the course.</text>
+			<text title="Navigation Explaination" 	field="help2_text">This is the navigation, and your main means of getting around the course. The main categories are at the top, and the sub-categories listed below. Each section gets checked off as you visit it.</text>
+			<text title="Progress Bar Explaination" field="help3_text">This is the progress bar. It gradually increases as you go through the course, helping you to keep track of your overall progress.</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[Are you sure you want to exit this learning module?<br><br>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">Proceed to Assessment</text>
+			<text title="Continue to Assessment" 	field="yes_text">Yes, continue to the assessment</text>
+			<text title="Return to Module" 			field="cancel_text">Cancel &amp; return to the module</text>
+		</assessment>
+	</container>
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Introduction" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text">Introduction to Qualcomm® Snapdragon™ Processors</laserbeam>
+		<sublaser title="Sublaser" field="sublaser_text">The Part to Look For Is the Part You Can't See.</sublaser>
+		<body title="Body" field="body_text"><![CDATA[Smooth media streaming, fast downloads, speedy camera performance and responsive gaming - a smartphone’s speed and performance has a lot to do with the built-in processor.<br><br>In this training you’ll learn about <b>Qualcomm® Snapdragon™ processors</b> and <b>how they make smartphones fast and power-efficient.</b>]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="The Role of the Mobile Processor" name="s1p2">
+		<laserbeam title="Header" field="laserbeam_text">The Role of the Mobile Processor</laserbeam>
+		<body title="Body" field="body_text">Every smartphone has a processor. It affects things like:</body>
+		<text title="Features" field="features_text"><![CDATA[<li>Fast internet connection</li><li>Speed in executing commands</li><li>Responsive graphics</li><li>Battery efficiency</li>]]></text>
+
+		<text title="Callout" field="callout_text"><![CDATA[<b>Qualcomm® Snapdragon™ processors are designed to deliver speed, performance and exceptional battery life.</b>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="PC Power. Smartphone Size." name="s1p3">
+		<laserbeam title="Header" field="laserbeam_text">PC Power. Smartphone Size.</laserbeam>
+		<body title="Body" field="body_text">Snapdragon processors pack innovative technology into a small package for today’s mobile devices. Snapdragon processors designed to deliver power and performance for today’s demanding mobile experiences.</body>
+
+		<text title="Callout" field="callout_text"><![CDATA[<b>Snapdragon processors are intelligently designed to pack loads of power into a tiny chip.</b>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Custom-built for mobile performance." name="s1p4">
+		<laserbeam title="Header" field="laserbeam_text">Custom-built for mobile performance.</laserbeam>
+		<body title="Body" field="body_text">Each Snapdragon processor is made up of specialized engines on one chip. The engines efficiently work together:</body>
+		<text title="Features" field="features_text"><![CDATA[<li>High speed performance</li><li>Fast, responsive graphics</li><li>Crystal clear audio</li><li>Fast downloads, uploads and navigation </li><li>Smooth video and clear audio</li><li>Battery life</li>]]></text>
+
+		<text title="Callout" field="callout_text"><![CDATA[<b>Snapdragon processors combine multiple engines on a single chip. This “system on a chip” (SoC) is custom designed by Qualcomm to deliver the power you need, when you need it. Snapdragon processors make smartphones super-fast and power-efficient.</b>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 3 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Summary" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text">Integrated Awesome</laserbeam>
+		<body title="Body" field="body_text">Qualcomm Snapdragon processors are custom built specifically for mobile. This integrated design keeps the parts of the processor working smart, not hard, using the right part of the processor for the task you demand at the time. The result? Unbeatable performance and power-efficiency.</body>
+
+		<text title="Callout" field="callout_text"><![CDATA[<b>Customers can be confident that a smartphone with a Snapdragon processor will be fast, responsive and have exceptional battery life.</b>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Congratulations" name="s3p2">
+		<laserbeam title="Header" field="laserbeam_text">Congratulations</laserbeam>
+		<body title="Body" field="body_text">You’ve completed the training on Qualcomm Snapdragon processors. Remember – the integration story is what makes Snapdragon processors unique. The parts of the processor are designed to seamlessly work together, providing a powerful mobile experience with great battery life.</body>
+	</page>
+
+</course>
+

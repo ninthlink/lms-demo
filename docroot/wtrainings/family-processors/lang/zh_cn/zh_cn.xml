@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<course name="Introduction to Qualcomm® Snapdragon™ Processors" right="false" language="zh_cn">
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container_loader title="Container Loader">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<item name="container">container.swf</item> 	
+		</preload>		
+	</container_loader>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!-- The SWFs, FLVs, images to preload -->
+		<preload>
+			<!-- <item></item> -->
+		</preload>
+		
+		<!-- Contain links Section 1 SWFs -->
+		<SWFs name="s1SWF">
+			<swf name="page1">../section1/page1.swf</swf>
+			<swf name="page2">../section1/page2.swf</swf>
+			<swf name="page3">../section1/page3.swf</swf>
+			<swf name="page3">../section1/page4.swf</swf>
+		</SWFs>
+
+		<!-- Contain links Section 2 SWFs -->
+		<SWFs name="s2SWF">
+
+		</SWFs>
+
+		<!-- Contain links Section 3 SWFs -->
+		<SWFs name="s3SWF">
+
+		</SWFs>
+
+		<!-- Contain links Section 4 SWFs -->
+		<SWFs name="s4SWF">
+
+		</SWFs>
+
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text">高通公司Snapdragon™处理器简介</course-name>		
+
+		<!-- Main Navigation: Tabs -->
+		<mainnavigation title="Main Sections" name="tabs">
+			<tab title="Introduction Tab"  		field="tab1_text">介绍</tab>
+			<tab title="Powerful Companion Tab" field="tab2_text">探索的Snapdragon处理器</tab>
+			<tab title="Summary Tab"			field="tab3_text">总结</tab>
+		</mainnavigation>
+		
+		<!-- Sub-Navigation: Pillars -->
+		<subnavigation title="Subsections" name="pillars">
+			<pillar title="Next Button" 		field="next_text">下</pillar>
+			<pillar title="Previous Button" 	field="prev_text">前</pillar>
+		</subnavigation>
+		
+		<!-- Help Menu -->
+		<help title="Help Menu">
+			<text title="Home Button Explaination" 	field="help1_text">单击该标题的使用过程中返回的过程的开始。</text>
+			<text title="Navigation Explaination" 	field="help2_text">这是导航，越来越围绕课程的主要手段。主要的分类在顶部，下面列出的子类别。每一节都被检查你访问它。</text>
+			<text title="Progress Bar Explaination" field="help3_text">这是进度酒吧。逐渐增大，当您去通过课程，帮助您跟踪您的整体进步。</text>
+		</help>
+
+		<!-- Assessment Menu --> 
+		<assessment title="Assessment">
+			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[您确定要退出这个学习模块吗？<br><br>我们鼓励你去探索这个模块彻底，重新审视这些领域，可能需要更深的理解。你知道，更多的结果，你会看到销售现场！您可以随时选择退出的评估。]]></text>
+			<text title="Proceed to Assessment" 	field="assessmentbtn_text">继续评估</text>
+			<text title="Continue to Assessment" 	field="yes_text">是的，继续评估</text>
+			<text title="Return to Module" 			field="cancel_text">取消和返回模块</text>
+		</assessment>
+	</container>
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1 Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Introduction" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text">高通公司Snapdragon™处理器简介</laserbeam>
+		<sublaser title="Sublaser" field="sublaser_text">部分要寻找的是你无法看到的部分。</sublaser>
+		<body title="Body" field="body_text"><![CDATA[平滑流媒体，高速下载，快速相机性能和响应游戏 - 智能手机的速度和性能，有很多事情要做的内置处理器。<br><br>在本次培训中，您将了解高通的Snapdragon™处理器，以及它们如何使智能手机的快速和高功率效率。]]></body>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="The Role of the Mobile Processor" name="s1p2">
+		<laserbeam title="Header" field="laserbeam_text">移动处理器的作用</laserbeam>
+		<body title="Body" field="body_text">每一个智能手机的处理器。它影响到的东西，如：</body>
+		<text title="Features" field="features_text"><![CDATA[<li>快速的互联网连接</li><li>在执行命令的速度</li><li>响应图形</li><li>电池效率</li>]]></text>
+
+		<text title="Callout" field="callout_text"><![CDATA[<b>高通的Snapdragon™处理器旨在提供速度，性能和卓越的电池寿命。</b>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="PC Power. Smartphone Size." name="s1p3">
+		<laserbeam title="Header" field="laserbeam_text">PC电源。智能手机的尺寸。</laserbeam>
+		<body title="Body" field="body_text">Snapdragon的处理器包装创新技术，为今天的移动设备成小包装。设计的Snapdragon处理器提供动力和性能为当今要求苛刻的移动体验。</body>
+
+		<text title="Callout" field="callout_text"><![CDATA[<b>智能设计的Snapdragon处理器包负载的功率到一个微小的芯片。</b>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1: Page 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Custom-built for mobile performance." name="s1p4">
+		<laserbeam title="Header" field="laserbeam_text">定制内置移动性能。</laserbeam>
+		<body title="Body" field="body_text">每个Snapdragon处理器是由专门的发动机在一个芯片上。该引擎高效协同工作：</body>
+		<text title="Features" field="features_text"><![CDATA[<li>高速性能</li><li>快速，反应灵敏的图形</li><li>水晶般清晰的音频</li><li>快速下载，上传和导航 </li><li>流畅的视频和清晰的音频</li><li>电池寿命</li>]]></text>
+
+		<text title="Callout" field="callout_text"><![CDATA[<b>的Snapdragon处理器在单一芯片上结合多个引擎。这种“片上系统”（SOC）是由高通公司提供你所需要的力量，当你需要它的定制设计。的Snapdragon处理器的智能手机，超快速和高功率效率。</b>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 3 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Summary" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text">集成真棒</laserbeam>
+		<body title="Body" field="body_text">高通Snapdragon处理器是专为移动定制。这种集成的设计，让处理器的部分工作聪明，并不难，使用当时的任务要求处理器的右侧部分。结果呢？无与伦比的性能和电源效率。</body>
+
+		<text title="Callout" field="callout_text"><![CDATA[<b>客户可以确信，与Snapdragon处理器的智能手机将是速度快，反应灵敏，并具有出色的电池寿命。</b>]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3: Page 4
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="Congratulations" name="s3p2">
+		<laserbeam title="Header" field="laserbeam_text">祝贺</laserbeam>
+		<body title="Body" field="body_text">您已经完成了培训的高通Snapdragon处理器。请记住 - 是什么使的Snapdragon处理器独特的整合故事。处理器的部分设计可以无缝地一起工作，提供了强大的移动体验与巨大的电池寿命。</body>
+	</page>
+
+</course>
+

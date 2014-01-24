@@ -1,0 +1,82 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="Snapdragon Speed and Power" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again, but only once in a 24 hour period. Thanks for your time and hard work!" 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="What does the abbreviation 4G stand for?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Four Gigabytes" />
+		<option key="" value="Four Gigahertz"/>
+		<option key="" value="Fourth Generation" answer="1"/>
+		<option key="" value="Fourth Gear"/>
+	</question>
+
+	<question id="2" q="Which of the following separates 4G from 3G?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Digital voice calls"/>
+		<option key="" value="Text Messaging" />
+		<option key="" value="Internet Browsing" />
+		<option key="" value="Data transmission speeds" answer="1" />
+	</question>
+
+	<question id="3" q="3G can achieve data speeds of up to 1.2 Mbps. What are the data speeds possible with 4G?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="25 Mbps" />
+		<option key="" value="50 Mbps" />
+		<option key="" value="100 Mbps" answer="1" />
+		<option key="" value="200 Mbps" />
+	</question>
+
+	<question id="4" q="By 2017, 3G will cover 85% of the world's population" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="True" answer="1"/>
+		<option key="" value="False" />
+	</question>
+
+	<question id="5" q="4G LTE will cover 50% of the world's population by 2017" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="True" answer="1"/>
+		<option key="" value="False"/>
+	</question>
+
+	<question id="6" q="What is the real-world data speeds most users can expect from 4G?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Up to 10-30 Mbps" answer="1"/>
+		<option key="" value="Up to 20-40 Mbps"/>
+		<option key="" value="Up to 30-40 Mbps"/>
+		<option key="" value="Up to 50-60 Mbps"/>
+	</question>
+
+
+	<question id="7" q="Wi-fi is constricted to where 'hotspots' are located, and speeds can suffer with many users on a single connection point (like in restaurants or hotels)." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." 
+	right="That's correct!" wrong="Sorry, that's the wrong answer" >	
+		<option key="" value="True" answer="1"/>
+		<option key="" value="False" /> 
+	</question>
+
+
+	<question id="8" q="4G is different than 3G because the high data transmission rate makes it faster to:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" >	
+		<option key="" value="Browse the web"/>
+		<option key="" value="Download and upload videos and pictures"/>
+		<option key="" value="Play multiplayer connected games"/>
+		<option key="" value="All of the above" answer="1"/>
+	</question>
+
+	<question id="9" q="3G and 4G enable broadband performance virtually anywhere. 4G connections can be even higher than cable or DSL."
+	type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" >	
+		<option key="" value="True" answer="1"/>
+		<option key="" value="False" /> 
+	</question>
+
+	<question id="10" q="Wi-Fi is an excellent way to connect in order to use GPS and turn-by-turn navigation." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer."  right="That's correct!" wrong="Sorry, that's the wrong answer" >	
+		<option key="" value="True"/>
+		<option key="" value="False" answer="1"/>
+	</question>
+
+</quiz>

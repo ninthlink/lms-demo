@@ -1,0 +1,27 @@
+/*=========================================================================================
+Author: Tou Lee
+Created: 1/16/14
+Last Updated: 1/16/14 - 12:13pm
+Version: 1.0.0
+
+** This is the stylesheet any CSS3 based animations **
+
+Changelog v1.0.0
+  - Created
+
+==========================================================================================*/
+/* -----------------------------------------
+   Section 1: Arrow Animation 
+----------------------------------------- */
+div.continue-arrow:before { 
+  -webkit-animation: arrow-v 1s linear infinite; 
+  -moz-animation: arrow-v 1s linear infinite; 
+  -o-animation: arrow-v 1s linear infinite; 
+  animation: arrow-v 1s linear infinite; 
+}
+
+@-webkit-keyframes arrow-v { from { top: 50%; } 50% { top: 65%; } to { top: 50%; } }
+@-moz-keyframes arrow-v { from { top: 50%; } 50% { top: 65%; } to { top: 50%; } }
+@-o-keyframes arrow-v { from { top: 50%; } 50% { top: 65%; } to { top: 50%; } }
+@keyframes arrow-v { from { top: 50%; } 50% { top: 65%; } to { top: 50%; } }
+

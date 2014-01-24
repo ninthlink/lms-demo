@@ -1,0 +1,870 @@
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if IE 8]>    <html class="no-js lt-ie9 quiz" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js quiz" lang="en" xml:lang="en"> <!--<![endif]-->
+<!-- <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> -->
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<script type="text/javascript" language="JavaScript" name="fsIeVbscript">
+	<!--
+	// Hook for Internet Explorer
+	if (navigator.appName && navigator.appName.indexOf("Microsoft") != -1 && navigator.userAgent.indexOf("Windows") != -1 && navigator.userAgent.indexOf("Windows 3.1") == -1) {
+		document.write('<script language=\"VBScript\"\>\n');
+		document.write('On Error Resume Next\n');
+		document.write('Sub container_FSCommand(ByVal command, ByVal args)\n');
+		document.write('	Call container_DoFSCommand(command, args)\n');
+		document.write('End Sub\n');
+		document.write('</script\>\n');
+	}
+	//-->
+	</script>
+
+	<!-- Set the viewport width to device width for mobile -->
+  	<meta name="viewport" content="width=device-width" />
+	
+	<title>Assessment</title>
+
+   <!-- IE Fix for HTML5 Tags -->
+   <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+   <![endif]-->
+  
+  <!-- Included CSS Files (Compressed) -->
+  <link rel="stylesheet" href="stylesheets/foundation.min.css">
+  <link rel="stylesheet" href="stylesheets/foundation.min-rtl.css" disabled>
+  <link rel="stylesheet" href="stylesheets/jquery.horslidernav-v1.5.css">
+  <link rel="stylesheet" href="stylesheets/main-template.css">
+  <link rel="stylesheet" href="stylesheets/snapdragon.css">
+  <link rel="stylesheet" href="stylesheets/course.css">
+
+   <!-- IE9 Fix for Full Stop Gradients -->
+   <!--[if gte IE 9]>
+      <style type="text/css">
+         .qualcomm-gradient { filter: none; }
+      </style>
+   <![endif]-->
+
+   <!--[if lt IE 9]>
+      <link rel="stylesheet" href="stylesheets/ie.css">
+   <![endif]-->
+
+  	<script src="javascripts/modernizr.foundation.js"></script>
+	<script type="text/javascript">
+		/*--------------------------------------------------------------------------------------------
+		 Get the url parameter passed in to load in the appropriate XML file to parse.
+		--------------------------------------------------------------------------------------------*/
+		var urlLang = getUrlVars()["lang"];
+		/*--------------------------------------------------------------------------------------------
+		 Get URL Parameter Function
+		  - Gets the URL parameters and stores in an associative array
+		  - If the user clicks a tab it appends a #hash tag to the URL, which can return a 
+		    URL variables such as "lang=fr#experience1". 
+		  - Function will only take anything from the "?" to the first index of the "#" IF the hash 
+		    is found, othewise, just take from "?" to the end of URL.
+		--------------------------------------------------------------------------------------------*/
+		function getUrlVars() {
+		   var vars = {};
+		   var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+		       var hashIndex = value.search('#');
+		       if(hashIndex == -1) {
+		         vars[key] = value;
+		       } else {
+		         value = value.substring(0,hashIndex);
+		         vars[key] = value;
+		       }
+		   });
+		   return vars;
+		}
+	</script>
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-2716510-2']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+</head>
+
+<script type="text/javascript" language="JavaScript" name="cmifrag">
+<!--
+// FS SCORM - fscommand adapter for ADL SCORM 1.2 and Flash MX 2004 Learning Interactions
+// version 1.0    08/19/03
+// Modified by Andrew Chemey, Macromedia
+// Based on FS SCORM adapater version 1.2.4:
+// 		Fragments Copyright 2002 Pathlore Software Corporation All rights Reserved
+// 		Fragments Copyright 2002 Macromedia Inc. All rights reserved.
+// 		Fragments Copyright 2003 Click2learn, Inc. All rights reserved.
+// 		Developed by Tom King, Macromedia,
+// 		             Leonard Greenberg, Pathlore,
+// 		             and Claude Ostyn, Click2learn, Inc.
+// 		Includes code by Jeff Burton and Andrew Chemey, Macromedia (01/09/02)
+// -----------------------------------------------------------------
+// Change these preset values to suit your taste and requirements.
+var g_bShowApiErrors = false; 	// change to true to show error messages
+var g_bInitializeOnLoad = true; // change to false to not initialize LMS when HTML page loads
+// Translate these strings if g_bShowApiErrors is true
+// and you need to localize the application
+var g_strAPINotFound = "Management system interface not found.";
+var g_strAPITooDeep = "Cannot find API - too deeply nested.";
+var g_strAPIInitFailed = "Found API but LMSInitialize failed.";
+var g_strAPISetError = "Trying to set value but API not available.";
+var g_strFSAPIError = 'LMS API adapter returned error code: "%1"\nWhen FScommand called API.%2\nwith "%3"';
+var g_strDisableErrorMsgs = "Select cancel to disable future warnings.";
+// Change g_bSetCompletedAutomatically to true if you want the status to
+// be set to completed automatically when calling LMSFinish. Normally,
+// this flag remains false if the Flash movie itself sets status
+// to completed by sending a FSCommand to set status to "completed",
+// "passed" or "failed" (both of which imply "completed")
+var g_bSetCompletedAutomatically = false;
+// This value is normally given by the LMS, but in case it is not
+// this is the default value to use to determine passed/failed.
+// Set this null if the Flash actionscript uses its own method
+// to determine passed/fail, otherwise set to a value from 0 to 1
+// inclusive (may be a floating point value, e.g "0.75".
+var g_SCO_MasteryScore = 80; // allowable values: 0.0..1.0, or null
+//==================================================================
+// WARNING!!!
+// Do not modify anything below this line unless you know exactly what
+// you are doing!
+// You should not have to change these two values as the Flash template
+// presets are based on them.
+var g_nSCO_ScoreMin = 0; 		// must be a number
+var g_nSCO_ScoreMax = 100; 		// must be a number > nSCO_Score_Min
+// Per SCORM specification, the LMS provided mastery score,
+// if any, will override the SCO in interpreting whether the score
+// should be interpreted when the pass/fail status is determined.
+// The template tries to obtain the mastery score, and if it
+// is available, to set the status to passed or failed accordingly
+// when the SCO sends a score. The LMS may not actually make the
+// determination until the SCO has been terminated.
+// Default value for this flag is true. Set it to false if don't
+// want to predict how the LMS will set pass/fail status based on
+// the mastery score (the LMS will win in the end anyway).
+var g_bInterpretMasteryScore = true;
+// This script implements various aspects of
+// common logic behavior of a SCO.
+/////////// API INTERFACE INITIALIZATION AND CATCHER FUNCTIONS ////////
+var g_nFindAPITries = 0;
+var g_objAPI = null;
+var g_bInitDone = false;
+var g_bFinishDone = false;
+var	g_bSCOBrowse = false;
+var g_dtmInitialized = new Date(); // will be adjusted after initialize
+var g_bMasteryScoreInitialized = false;
+function AlertUserOfAPIError(strText) {
+	if (g_bShowApiErrors) {
+		var s = strText + "\n\n" + g_strDisableErrorMsgs;
+		if (!confirm(s)){
+			g_bShowApiErrors = false
+		}
+	}
+}
+function ExpandString(s){
+	var re = new RegExp("%","g")
+	for (i = arguments.length-1; i > 0; i--){
+		s2 = "%" + i;
+		if (s.indexOf(s2) > -1){
+			re.compile(s2,"g")
+			s = s.replace(re, arguments[i]);
+		}
+	}
+	return s
+}
+function FindAPI(win) {
+	while ((win.API == null) && (win.parent != null) && (win.parent != win)) {
+		g_nFindAPITries ++;
+		if (g_nFindAPITries > 500) {
+			AlertUserOfAPIError(g_strAPITooDeep);
+			return null;
+		}
+		win = win.parent;
+	}
+	return win.API;
+}
+function APIOK() {
+	return ((typeof(g_objAPI)!= "undefined") && (g_objAPI != null))
+}
+function SCOInitialize() {
+	var err = true;
+	if (!g_bInitDone) {
+		if ((window.parent) && (window.parent != window)){
+			g_objAPI = FindAPI(window.parent)
+		}
+		if ((g_objAPI == null) && (window.opener != null))	{
+			g_objAPI = FindAPI(window.opener)
+		}
+		if (!APIOK()) {
+			AlertUserOfAPIError(g_strAPINotFound);
+			err = false
+		} else {
+			err = g_objAPI.LMSInitialize("");
+			if (err == "true") {
+				g_bSCOBrowse = (g_objAPI.LMSGetValue("cmi.core.lesson_mode") == "browse");						if (!g_bSCOBrowse) {
+					if (g_objAPI.LMSGetValue("cmi.core.lesson_status") == "not attempted") {
+						err = g_objAPI.LMSSetValue("cmi.core.lesson_status","incomplete")
+					}
+				}
+			} else {
+				AlertUserOfAPIError(g_strAPIInitFailed)
+			}
+		}
+		if (typeof(SCOInitData) != "undefined") {
+			// The SCOInitData function can be defined in another script of the SCO
+			SCOInitData()
+		}
+		g_dtmInitialized = new Date();
+	}
+	g_bInitDone = true;
+	return (err + "") // Force type to string
+}
+function SCOFinish() {
+	// don't process the call from the course so that we can display the scoring page
+}
+function SCOFinish2() {
+	if ((APIOK()) && (g_bFinishDone == false)) {
+		SCOReportSessionTime()
+		if (g_bSetCompletedAutomatically){
+			SCOSetStatusCompleted();
+		}
+		if (typeof(SCOSaveData) != "undefined"){
+			// The SCOSaveData function can be defined in another script of the SCO
+			SCOSaveData();
+		}
+		g_bFinishDone = (g_objAPI.LMSFinish("") == "true");
+	}
+	return (g_bFinishDone + "" ) // Force type to string
+}
+// Call these catcher functions rather than trying to call the API adapter directly
+function SCOGetValue(nam)			{return ((APIOK())?g_objAPI.LMSGetValue(nam.toString()):"")}
+function SCOCommit()					{return ((APIOK())?g_objAPI.LMSCommit(""):"false")}
+function SCOGetLastError()		{return ((APIOK())?g_objAPI.LMSGetLastError():"-1")}
+function SCOGetErrorString(n)	{return ((APIOK())?g_objAPI.LMSGetErrorString(n):"No API")}
+function SCOGetDiagnostic(p)	{return ((APIOK())?g_objAPI.LMSGetDiagnostic(p):"No API")}
+//LMSSetValue is implemented with more complex data
+//management logic below
+var g_bMinScoreAcquired = false;
+var g_bMaxScoreAcquired = false;
+// Special logic begins here
+function SCOSetValue(nam,val){
+	var err = "";
+	if (!APIOK()){
+			AlertUserOfAPIError(g_strAPISetError + "\n" + nam + "\n" + val);
+			err = "false"
+	} else if (nam == "cmi.core.score.raw") err = privReportRawScore(val)
+	if (err == ""){
+			err = g_objAPI.LMSSetValue(nam,val.toString() + "");
+			if (err != "true") return err
+	}
+	if (nam == "cmi.core.score.min"){
+		g_bMinScoreAcquired = true;
+		g_nSCO_ScoreMin = val
+	}
+	else if (nam == "cmi.core.score.max"){
+		g_bMaxScoreAcquired = true;
+		g_nSCO_ScoreMax = val
+	}
+	return err
+}
+function privReportRawScore(nRaw) { // called only by SCOSetValue
+	if (isNaN(nRaw)) return "false";
+/*	
+	if (!g_bMinScoreAcquired){
+		if (g_objAPI.LMSSetValue("cmi.core.score.min",g_nSCO_ScoreMin+"")!= "true") return "false"
+	}
+	if (!g_bMaxScoreAcquired){
+		if (g_objAPI.LMSSetValue("cmi.core.score.max",g_nSCO_ScoreMax+"")!= "true") return "false"
+	}
+*/	
+	if (g_objAPI.LMSSetValue("cmi.core.score.raw", nRaw)!= "true") return "false";
+	g_bMinScoreAcquired = false;
+	g_bMaxScoreAcquired = false;
+	
+/*
+	if (!g_bMasteryScoreInitialized){
+		var nMasteryScore = parseInt(SCOGetValue("cmi.student_data.mastery_score"),10);
+		if (!isNaN(nMasteryScore)) g_SCO_MasteryScore = nMasteryScore
+	}
+*/	
+  	if ((g_bInterpretMasteryScore)&&(!isNaN(g_SCO_MasteryScore))){
+    	var stat = (nRaw >= g_SCO_MasteryScore? "passed" : "failed");
+    	if (SCOSetValue("cmi.core.lesson_status",stat) != "true") return "false";
+  	}
+  	return "true"
+}
+function MillisecondsToCMIDuration(n) {
+//Convert duration from milliseconds to 0000:00:00.00 format
+	var hms = "";
+	var dtm = new Date();	dtm.setTime(n);
+	var h = "000" + Math.floor(n / 3600000);
+	var m = "0" + dtm.getMinutes();
+	var s = "0" + dtm.getSeconds();
+	var cs = "0" + Math.round(dtm.getMilliseconds() / 10);
+	hms = h.substr(h.length-4)+":"+m.substr(m.length-2)+":";
+	hms += s.substr(s.length-2)+"."+cs.substr(cs.length-2);
+	return hms
+}
+// SCOReportSessionTime is called automatically by this script,
+// but you may call it at any time also from the SCO
+function SCOReportSessionTime() {
+	var dtm = new Date();
+	var n = dtm.getTime() - g_dtmInitialized.getTime();
+	return SCOSetValue("cmi.core.session_time",MillisecondsToCMIDuration(n))
+}
+// Since only the designer of a SCO knows what completed means, another
+// script of the SCO may call this function to set completed status.
+// The function checks that the SCO is not in browse mode, and
+// avoids clobbering a "passed" or "failed" status since they imply "completed".
+function SCOSetStatusCompleted(){
+	var stat = SCOGetValue("cmi.core.lesson_status");
+	if (SCOGetValue("cmi.core.lesson_mode") != "browse"){
+		if ((stat!="completed") && (stat != "passed") && (stat != "failed")){
+			return SCOSetValue("cmi.core.lesson_status","completed")
+		}
+	} else return "false"
+}
+// Objective management logic
+function SCOSetObjectiveData(id, elem, v) {
+	var result = "false";
+	var i = SCOGetObjectiveIndex(id);
+	if (isNaN(i)) {
+		i = parseInt(SCOGetValue("cmi.objectives._count"));
+		if (isNaN(i)) i = 0;
+		if (SCOSetValue("cmi.objectives." + i + ".id", id) == "true"){
+			result = SCOSetValue("cmi.objectives." + i + "." + elem, v)
+		}
+	} else {
+		result = SCOSetValue("cmi.objectives." + i + "." + elem, v);
+		if (result != "true") {
+			// Maybe this LMS accepts only journaling entries
+			i = parseInt(SCOGetValue("cmi.objectives._count"));
+			if (!isNaN(i)) {
+				if (SCOSetValue("cmi.objectives." + i + ".id", id) == "true"){
+					result = SCOSetValue("cmi.objectives." + i + "." + elem, v)
+				}
+			}
+		}
+	}
+	return result
+}
+function SCOGetObjectiveData(id, elem) {
+	var i = SCOGetObjectiveIndex(id);
+	if (!isNaN(i)) {
+		return SCOGetValue("cmi.objectives." + i + "."+elem)
+	}
+	return ""
+}
+function SCOGetObjectiveIndex(id){
+	var i = -1;
+	var nCount = parseInt(SCOGetValue("cmi.objectives._count"));
+	if (!isNaN(nCount)) {
+		for (i = nCount-1; i >= 0; i--){ //walk backward in case LMS does journaling
+			if (SCOGetValue("cmi.objectives." + i + ".id") == id) {
+				return i
+			}
+		}
+	}
+	return NaN
+}
+// Functions to convert AICC compatible tokens or abbreviations to SCORM tokens
+function AICCTokenToSCORMToken(strList,strTest){
+	var a = strList.split(",");
+	var c = strTest.substr(0,1).toLowerCase();
+	for (i=0;i<a.length;i++){
+			if (c == a[i].substr(0,1)) return a[i]
+	}
+	return strTest
+}
+function normalizeStatus(status){
+	return AICCTokenToSCORMToken("completed,incomplete,not attempted,failed,passed", status)
+}
+function normalizeInteractionType(theType){
+	return AICCTokenToSCORMToken("true-false,choice,fill-in,matching,performance,sequencing,likert,numeric", theType)
+}
+function normalizeInteractionResult(result){
+	return AICCTokenToSCORMToken("correct,wrong,unanticipated,neutral", result)
+}
+// Detect Internet Explorer
+var g_bIsInternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
+// Handle fscommand messages from a Flash movie, remapping
+// any AICC Flash template commands to SCORM if necessary
+function container_DoFSCommand(command, args){
+	var containerObj = g_bIsInternetExplorer ? container : document.container;
+	// no-op if no SCORM API is available
+	var myArgs = new String(args);
+	var cmd = new String(command);
+	var v = "";
+	var err = "true";
+	var arg1, arg2, n, s, i;
+	var sep = myArgs.indexOf(",");
+	if (sep > -1){
+		arg1 = myArgs.substr(0, sep); // Name of data element to get from API
+		arg2 = myArgs.substr(sep+1) 	// Name of Flash movie variable to set
+	} else {
+		arg1 = myArgs
+	}
+	if (!APIOK()) return;
+	if (cmd.substring(0,3) == "LMS"){
+		// Handle "LMSxxx" FScommands (compatible with fsSCORM html template)
+		if ( cmd == "LMSInitialize" ){
+			err = (APIOK() + "")
+			// The actual LMSInitialize is called automatically by the template
+		}	else if ( cmd == "LMSSetValue" ){
+			err = SCOSetValue(arg1,arg2)
+		} else if ( cmd == "LMSFinish" ){
+			err = SCOFinish()
+			// Handled automatically by the template, but the movie
+			// may call it earlier.
+		}	else if ( cmd == "LMSCommit" ){
+			err = SCOCommit()
+		}	else if ( cmd == "LMSFlush" ){
+			// no-op
+			// LMSFlush is not defined in SCORM and calling it causes test suite error
+		}	else if ((arg2) && (arg2.length > 0)){
+			if ( cmd == "LMSGetValue") {
+				containerObj.SetVariable(arg2, SCOGetValue(arg1));
+			}	else if ( cmd == "LMSGetLastError") {
+				containerObj.SetVariable(arg2, SCOGetLastError(arg1));
+			}	else if ( cmd == "LMSGetErrorString") {
+				containerObj.SetVariable(arg2, SCOGetLastError(arg1));
+			}	else if ( cmd == "LMSGetDiagnostic") {
+				containerObj.SetVariable(arg2, SCOGetDiagnostic(arg1));
+			}	else {
+				// for unknown LMSGetxxxx extension
+				v = eval('g_objAPI.' + cmd + '(\"' + arg1 + '\")');
+				containerObj.SetVariable(arg2,v);
+			}
+		} else if (cmd.substring(0,3) == "LMSGet") {
+			err = "-2: No Flash variable specified"
+		}
+		// end of handling "LMSxxx" cmds
+	} else if ((cmd.substring(0,6) == "MM_cmi")||(cmd.substring(0,6) == "CMISet")) {
+		// Handle a Macromedia Learning Components FScommands.
+		// These are using AICC HACP data model conventions,
+		// so remap data from AICC to SCORM as necessary.
+		var F_intData = myArgs.split(";");
+		if (cmd == "MM_cmiSendInteractionInfo") {
+			n = SCOGetValue("cmi.interactions._count");
+			s = "cmi.interactions." + n + ".";
+			// Catch gross errors to avoid SCORM compliance test failure
+			// If no ID is provided for this interaction, we cannot record it
+			v = F_intData[2]
+			if ((v == null) || (v == "")) err = 201; // If no ID, makes no sense to record
+			if (err =="true"){
+				err = SCOSetValue(s + "id", v)
+			}
+			if (err =="true"){
+				var re = new RegExp("[{}]","g")
+				for (i=1; (i<9) && (err=="true"); i++){
+					v = F_intData[i];
+					if ((v == null) || (v == "")) continue
+					if (i == 1){
+						err = SCOSetValue(s + "time", v)
+					} else if (i == 3){
+						err = SCOSetValue(s + "objectives.0.id", v)
+					} else if (i == 4){
+						err = SCOSetValue(s + "type", normalizeInteractionType(v))
+					} else if (i == 5){
+						// strip out "{" and "}" from response
+						v = v.replace(re, "");
+						err = SCOSetValue(s + "correct_responses.0.pattern", v)
+					} else if (i == 6){
+						// strip out "{" and "}" from response
+						v = v.replace(re, "");
+						err = SCOSetValue(s + "student_response", v)
+					} else if (i == 7){
+						err = SCOSetValue(s + "result", normalizeInteractionResult(v))
+					} else if (i == 8){
+						err = SCOSetValue(s + "weighting", v)
+					} else if (i == 9){
+						err = SCOSetValue(s + "latency", v)
+					}
+				}
+			}
+		} else if (cmd == "MM_cmiSendObjectiveInfo"){
+			err = SCOSetObjectiveData(F_intData[1], ".score.raw", F_intData[2])
+			if (err=="true"){
+				SCOSetObjectiveData(F_intData[1], ".status", normalizeStatus(F_intData[3]))
+			}
+		} else if ((cmd=="CMISetScore") ||(cmd=="MM_cmiSendScore")){
+			err = SCOSetValue("cmi.core.score.raw", F_intData[0]);
+		} else if ((cmd=="CMISetStatus") || (cmd=="MM_cmiSetLessonStatus")){
+			err = SCOSetValue("cmi.core.lesson_status", normalizeStatus(F_intData[0]))
+		} else if (cmd=="CMISetTime"){
+			err = SCOSetValue("cmi.core.session_time", F_intData[0])
+		} else if (cmd=="CMISetCompleted"){
+			err = SCOSetStatusCompleted()
+		} else if (cmd=="CMISetStarted"){
+			err = SCOSetValue("cmi.core.lesson_status", "incomplete")
+		} else if (cmd=="CMISetPassed"){
+			err = SCOSetValue("cmi.core.lesson_status", "passed")
+		} else if (cmd=="CMISetFailed"){
+			err = SCOSetValue("cmi.core.lesson_status", "failed")
+		} else if (cmd=="CMISetData"){
+			err = SCOSetValue("cmi.suspend_data", F_intData[0])
+		} else if (cmd=="CMISetLocation"){
+			err = SCOSetValue("cmi.core.lesson_location", F_intData[0])
+		} else if (cmd=="CMISetTimedOut"){
+			err = SCOSetValue("cmi.core.exit", "time-out")
+		} // Other Learning Component FScommands are no-ops in this context
+	} else {
+		if (cmd=="CMIFinish" || cmd=="CMIExitAU"){
+			err = SCOFinish()
+		} else if (cmd=="CMIInitialize" || cmd=="MM_StartSession"){
+			err = SCOInitialize()
+		} else {
+			// Unknown command; may be invoking an API extension
+			// If commands comes with a 2nd argument, assume a value is expected
+			// otherwise assume it is just a cmd
+			if (eval('g_objAPI.' + cmd)) {
+				v = eval('g_objAPI.' + cmd + '(\"' + arg1 + '\")');
+				if ((arg2) && (arg2.length > 0)){
+					containerObj.SetVariable(arg2,v)
+				} else {
+					err = v
+				}
+			} else {
+				err = "false"
+			}
+		}
+	}
+	// End of command translation and processing
+	// handle detected errors, such LMS error returns
+	if ((g_bShowApiErrors) && (err != "true")) {
+		AlertUserOfAPIError(ExpandString(g_strFSAPIError, err, cmd, args))
+	}
+	return err
+}
+//-->
+</script>
+
+<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script> -->
+<script type="text/javascript" src="javascripts/jquery.js"></script>
+<script type="text/javascript" src="javascripts/xml2json.js"></script>
+
+<script>
+var current = -1;
+var a = [];
+var total_answered = 0;
+var percent_score = 0;
+var percent_format = percent_score + "%";
+var total_correct = 0;
+var total_incorrect = 0;
+var qparam = {};
+var surveyanswers = [];
+
+(function () {
+    var e,
+        d = function (s) { return decodeURIComponent(s).replace(/\+/g, " "); },
+        q = window.location.search.substring(1),
+        r = /([^&=]+)=?([^&]*)/g;
+
+    while (e = r.exec(q)) {
+        if (e[1].indexOf("[") == "-1")
+            qparam[d(e[1])] = d(e[2]);
+        else {
+            var b1 = e[1].indexOf("["),
+                aN = e[1].slice(b1+1, e[1].indexOf("]", b1)),
+                pN = d(e[1].slice(0, b1));
+          
+            if (typeof qparam[pN] != "object")
+                qparam[d(pN)] = {},
+                qparam[d(pN)].length = 0;
+            
+            if (aN)
+                qparam[d(pN)][d(aN)] = d(e[2]);
+            else
+                Array.prototype.push.call(qparam[d(pN)], d(e[2]));
+        }
+    }
+})();
+
+$(function(){
+		if(urlLang) {
+			assessmentfile = "lang/"+urlLang+"/assessment.xml";
+		} else {
+			assessmentfile = "assessment.xml";
+		}
+		//assessmentfile = "assessment.xml";
+		$.get(assessmentfile, function(xml){
+
+			q = xml2json(xml);
+			q = q.replace('undefined','');
+			$("#result").html(q);
+			j = $.parseJSON(q);
+
+			// Set the navigation title
+			$('.top-bar .course-name a').html(j.quiz.title);
+			
+			// Set the values for: submit, next, quiz result, total correct, total incorrect, total score
+			$('#submit').html(j.quiz.submit);
+			$('#next').html(j.quiz.next);
+			$('.end-header').html(j.quiz.end_header);
+			$('.end-correct').html(j.quiz.total_correct);
+			$('.end-incorrect').html(j.quiz.total_incorrect);
+			$('.end-totalscore').html(j.quiz.total_score);
+
+			loadquestions();
+			nextquestion();
+		});
+
+	$("#container_question").show();
+
+});
+
+	function loadquestions()
+	{
+			questions = j.quiz.question;
+			// sort questions
+			if (j.quiz.random_questions > 0)
+			{
+				questions.sort( function() { return 0.5 - Math.random()} );
+			}
+	}
+
+	function nextquestion()
+	{
+		// reset for next question
+		current++;
+		if (current >= questions.length)
+		{
+			showresults();
+			return;
+		}
+		a = [];
+		$("#options").html('');
+		//$("#qresult").html('<br>');
+		$("#qresult > h4").html('');
+		$("#submit").show();
+		$("#next").hide();
+		//$("#question").html((current-0+1) + ". Q: " + questions[current].q + "<br><br>");
+		$("#question > h3").html((current-0+1) + " : " + questions[current].q );
+
+		for (i=0; i<questions[current].option.length; i++)
+		{
+			if (questions[current].option[i].answer == "1")
+			{
+				a.push(i);
+			}
+
+			//$("#options").append('<input type="checkbox" class="largecheckbox" name="answer[]" value="'+i+'">' + questions[current].option[i].value + "<br>");
+			//$("#options").append('<input type="checkbox" class="largecheckbox" name="answer[]" id="option'+i+'" value="'+i+'">' + '<label for="option'+i+'">' + questions[current].option[i].value + "</label><br>");
+			$("#options").append('<input type="'+questions[current].type+'" class="largecheckbox" name="answer[]" id="option'+i+'" value="'+i+'">' + '<label for="option'+i+'">' + questions[current].option[i].value + "</label><br>");
+		}
+	}
+	
+	function scorequestion()
+	{
+		var answer = [];
+
+		//$('input:checkbox[name="answer[]"]:checked').each(function(index) { 
+		$('input[name="answer[]"]:checked').each(function(index) { 
+			answer.push($(this).val());
+		});
+		if (questions[current].points == "" || questions[current].points === undefined)
+			questions[current].points = 1;
+		
+		if (questions[current].survey!=1)
+			total_answered += Math.floor(questions[current].points);
+		$("#val_total_answered").val(total_answered);
+
+		if (answer.join(',') == a.join(',') || questions[current].survey==1)
+		{
+			//$("#qresult").html(questions[current].right);
+			$("#qresult h4").html(questions[current].right);
+			if (questions[current].survey!=1)
+				total_correct += Math.floor(questions[current].points);
+			$("#val_total_correct").val(total_correct);
+		}
+		else
+		{
+			//$("#qresult").html(questions[current].wrong);
+			$("#qresult h4").html(questions[current].wrong);
+			if (questions[current].survey!=1)
+				total_incorrect += Math.floor(questions[current].points);
+			$("#val_total_incorrect").val(total_incorrect);
+		}
+		percent_score = Math.round((total_correct / total_answered) * 100);
+		$("#val_percent_score").val(percent_score);
+		percent_format = percent_score + "%";
+		$("#val_percent_format").val(percent_format);
+		
+		// collect survey questions
+		if (questions[current].survey==1)
+		{
+			survey = {};
+			survey.qid = current;
+			survey.question = questions[current].q;
+			survey.answer = answer.join(',');
+			survey.answer_text = '';
+			for (i=0;i<answer.length;i++)
+			{
+				survey.answer_text += questions[current].option[answer[0]].value;
+			}
+
+			surveyanswers.push(survey);
+		}
+		
+		$("#submit").hide();
+		$("#next").show();
+	}
+
+	function showresults()
+	{
+		$("#container_question").hide();
+		
+		$("#total_correct").html(total_correct);
+		$("#total_incorrect").html(total_incorrect);
+		$("#percent_format").html(percent_format);
+		
+		$("#endresult").show();
+
+		if (percent_score>=80)
+		{
+			lesson_status = "completed";
+			//$("#msg").html(j.quiz.end_pass);
+			$("#msg > h5").html(j.quiz.end_pass);
+			//container_DoFSCommand("MM_cmiSetLessonStatus", "c");
+		}
+		else
+		{
+			lesson_status = "incomplete";
+			$("#msg > h5").html(j.quiz.end_fail);
+		}
+		
+		container_DoFSCommand("CMISetScore", percent_score);
+		//container_DoFSCommand("CMIFinish");
+		SCOCommit();
+	}
+</script>
+
+
+<body onload="SCOInitialize()" onunload="SCOFinish2()" onbeforeunload="SCOFinish2()">
+<script type="text/javascript" language="JavaScript" name="earlyInit">
+<!--
+// Determine whether to attempt to initialize API before loading
+// movie in case there is some ActionScript that fires off before
+// the rest of the HTML page has finished loading.  This is
+// configurable by setting the global boolean (g_bInitializeOnLoad)
+// in the beginning of this file.  Default value is TRUE.
+if (g_bInitializeOnLoad) {
+	SCOInitialize()
+}
+//-->
+</script>
+
+   <!-- Main Navigation [Top-Bar]:
+      • This contains the main navigation for the course, allows the user to jump between elements
+   -->
+   <div class="main-navigation fixed" data-context="container">
+      <nav class="top-bar bars-navicon">
+         <ul>
+            <li class="name"><img src="images/shared/qualcomm-logo.png" alt="Qualcommm Logo" class="logo"></li>
+            <li class="name course-name"><h1 class="subheader"><a href="#" onclick="goToByScroll('.section1', 1);" data-field="title_text">Introduction to Qualcomm<sup>®</sup> Snapdragon™ Processors</a></h1></li>
+            <!-- <li class="toggle-topbar"><a href="#"></a></li> -->
+         </ul>
+      </nav>
+   </div>     
+       
+   <!-- Content Starts Here 
+   	• Slides: they make up each section of content or in relation to Flash course, each SWF that is loaded
+   -->
+   <div class="content-container">
+		<!-- QUIZ container -->
+      <div class="quiz-container slide qualcomm-gradient snapdragon-radial-fire" >
+			
+			<!-- Row -->
+			<div class="row inner-section first">
+				<div class="twelve columns">
+					<div id="container_question" style="display:none;">
+						<!-- Question -->
+						<div id="question" class="">
+							<h3 class="subheader"></h3>
+						</div>
+						
+						<!-- Answers/choices -->
+						<div id="options" class="onscreen_text1"></div>
+
+						<!-- Right/wrong display -->
+						<div id="qresult" class="">
+							<div class="arrow-down"></div>
+							<h4 class="subheader"></h4>
+						</div>
+
+						<!-- Submit/Next button -->
+						<!-- <input id="submit" class="white button" type="button" value="Submit" onclick="scorequestion();" >
+						<input id="next" style="display: none;" class="nice medium radius white button" type="button" value="Next" onclick="nextquestion();" > -->
+						<button id="submit" class="button radius" type="button" value="Submit" onclick="scorequestion();" >Submit</button>
+						<button id="next" style="display: none;" class="button radius" type="button" value="Next" onclick="nextquestion();">Next</button>					
+					</div>
+					
+					<div id="endresult" style="display:none;">
+						<h2 class="end-header">Quiz Results</h2>
+						<div class="onscreen_text1 totals">
+							<h5 class="subheader end-correct">Total Correct:</h5> 		<span id="total_correct" class="total-tally"></span><br/>
+							<h5 class="subheader end-incorrect">Total Incorrect:</h5> 	<span id="total_incorrect" class="total-tally"></span><br/>
+							<h5 class="subheader end-totalscore">Total Score:</h5>  	<span id="percent_format" class="total-tally"></span><br/>
+							
+							<hr />
+							
+							<div id="msg"><h5 class="subheader">If you finished with a score of 80% or better you have successfully completed this course. If you have scored less than 80% you may take the assessment again, but only once in any 24 hour period. Thanks for your time and hard work!</h5></div>
+						</div>
+					</div>
+
+					<form id="values" name="values">
+						<input type="hidden" id="val_total_answered" name="val_total_answered" value="0">
+						<input type="hidden" id="val_total_correct" name="val_total_correct" value="0">
+						<input type="hidden" id="val_total_incorrect" name="val_total_incorrect" value="0">
+						<input type="hidden" id="val_percent_format" name="val_percent_format" value="">
+						<input type="hidden" id="val_percent_score" name="val_percent_score" value="0">
+					</form>
+				</div> <!-- End "twelve columns" -->
+			</div> <!-- End "row inner-section" -->
+
+		</div> <!-- End "QUIZ container" -->	
+	</div> <!-- End "content-container" -->
+
+	<script>
+		(function() {
+		    /* ----------------------------------------------------------------
+		      Reusuable cached variables
+		    ---------------------------------------------------------------- */
+		    var $html = $('html');
+
+		    /* ----------------------------------------------------------------
+		      RTL: Right-to-Left language switch 
+		        - Inject the RTL stylesheet after the original foundation so 
+		          it overrides those styles, BUT not the .rtl class found inside
+		          "qualcomm-template.css"
+		        - Then disable the original "foundation.min.css" file so there
+		          are not overlapping style conflicts
+		        - Activate the RTL version afterwards, rather than injecting it
+		          which can cause CSS override issues in IE.
+		        - Firefox/Opera do not act upon "disabled" if it is enabled right
+		          away, but they do act upon manual triggering of the attribute. 
+		          So we have to detect if it's Firefox or Opera, and manually 
+		          trigger the disabled state for the RTL stylesheet
+		    ---------------------------------------------------------------- */
+		    if(navigator.userAgent.match(/(Firefox)|(Opera)/i)) {
+		      var $rtl  = $('link[href="stylesheets/foundation.min-rtl.css"]');
+		      $rtl[0].disabled = true;
+		    }
+		    
+		    if( (urlLang == 'ar' || urlLang == 'he') ) {
+		    	$html.addClass('rtl');
+		      var $link = $('link[href="stylesheets/foundation.min.css"]');
+		      var $rtl  = $('link[href="stylesheets/foundation.min-rtl.css"]');
+		      $link[0].disabled = true;	//disable the original
+		      $rtl[0].disabled = false; //enable the rtl version
+		    }
+	    })(); //End self-invoking function
+
+  	</script> 
+
+</body>
+</html>
