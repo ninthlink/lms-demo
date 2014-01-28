@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.4.2
+ * v0.4.3
  */
 ?>
 <!doctype html>
@@ -72,7 +72,7 @@
 							<ul class="txtb">
 								<li id="parallax1">Who is Qualcomm?</li>
 								<li id="parallax2">The role of the processor in a smartphone</li>
-								<li id="parallax3">Why Snapdragon devices offer a better mobile experience</li>
+								<li id="parallax3">Why Snapdragon devices offer an exceptional mobile experience</li>
 							</ul>
 						</div>
 						<div class="graphic-position">
@@ -119,7 +119,7 @@
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtb"><span class="thick">Every smartphone</span> has a processor</h2>
-							<p class="txtb">be sure to select a processor with superior features</p>
+							<p class="txtb">be sure to select a processor with the right features</p>
 						</div>
 						<div class="graphic-position center multi-col">
 							<div class="scrollx">
