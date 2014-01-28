@@ -405,7 +405,7 @@
         	<div class="inner">
           	<div class="text-position center">
             	<div class="video-button">
-								<h2><a href="#" class="txtw">Proceed to <span class="thick">Assessment</span> <span class="sprite play"></span></a></h2>
+								<h2><a href="assessment.html" class="txtw">Proceed to <span class="thick">Assessment</span> <span class="sprite play"></span></a></h2>
 							</div>
             </div>
           </div>
