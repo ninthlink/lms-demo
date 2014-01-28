@@ -35,9 +35,8 @@ function qelite_taketraining_btn() {
 					}).appendTo('#elite-user-flop');
 				}
 			}
-			// training details stuff
+			// training details
 			if ( $('body').hasClass('node-type-training') || $('body').hasClass('node-type-quiz') ) {
-				//alert('ello train');
 				var wslash = $('.field-name-field-wslash-training a');
 				if ( wslash.size() > 0 ) {
 					wslash.click(function() {
@@ -61,6 +60,19 @@ function qelite_taketraining_btn() {
 						
 						return false;
 					});
+				}
+			}
+			// training details
+			if ( $('body').hasClass('node-type-article') ) {
+				var extl = $('.field-name-field-external-link a');
+				if ( extl.size() > 0 ) {
+					var collectpts = $('.flag-collect-points a.flag-action');
+					if ( collectpts.size() > 0 ) {
+						collectpts.hide();
+						extl.click(function() {
+							collectpts.show();
+						});
+					}
 				}
 			}
 		}
