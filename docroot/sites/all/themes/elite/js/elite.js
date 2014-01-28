@@ -1,3 +1,5 @@
+var qelite_ww, qelite_wh, qelite_rw = 0;
+
 function qelite_taketraining_btn() {
 	if ( jQuery('body').hasClass('node-type-training') ) {
 		jQuery('#quiz-start-quiz-button-form').submit();
@@ -12,14 +14,43 @@ function qelite_taketraining_btn() {
     attach: function (context, settings) {
 			// and then
 			$(window).unbind('resize.qelite').bind('resize.qelite', function () {
+				qelite_ww = $(window).width();
+				qelite_wh = $(window).height();
+				var qelite_widthchange = false;
+				
+				var nw = 320;
+				if ( qelite_ww >= 1024 ) { //why
+					nw = 1080;
+				} else if ( qelite_ww >= 768 ) { 
+					nw = 768;
+				}
+				if ( nw != qelite_rw ) {
+					qelite_rw = nw;
+					qelite_widthchange = true;
+				}
+				
 				$("#qvideo").each(function() {
 					var tw = $(this).parent().width();
 					var th = Math.ceil(tw*9/16);
 					$(this).attr({'width':tw,'height':th});
 				});
 				if ( $('#wslashd').size() > 0 ) {
-					var ih = $(window).height() - ( $('body').hasClass('admin-menu') ? 20 : 0 ) - 54;
+					var ih = qelite_wh - ( $('body').hasClass('admin-menu') ? 20 : 0 ) - 54;
 					$('#wslashd iframe').attr('height',ih);
+				}
+				if ( $('#block-views-home-slides-block').size() > 0 ) {
+					if ( qelite_widthchange ) {
+						$('#block-views-home-slides-block .qimgs').each(function(i) {
+							$(this).empty();
+							$('<img />').attr({
+								src: $(this).data('main-'+qelite_rw),
+								title: $(this).parents('.views-field-field-image').siblings('.views-field-title').children().text(),
+							}).css({
+								width: '100%',
+								height: 'auto',
+							}).appendTo($(this));
+						});
+					}
 				}
 			}).trigger('resize.qelite');
 			

@@ -202,7 +202,49 @@ p  {
 .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover {
   background: #6eceed;
 }
-
+@media only screen and (max-width: 767px) {
+	.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-title,
+	.view-sliders .views-slideshow-cycle-main-frame-row .views-field-title {
+		font-size: 61px;
+		line-height: 100%;
+		top: 20px;
+		left: 20px;
+	}
+	.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-subheader,
+	.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-subheader {
+		font-size: 17px;
+		line-height: 100%;
+		top: auto;
+		bottom: 30px;
+		left: 20px;
+		
+		font-family: 'Qualcomm-Semibold';
+	}
+	.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button,
+	.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button {
+		top: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 312px;
+	}
+	.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a,
+	.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button  a{
+		background: url(../images/fx.gif) repeat 0 0;
+		-webkit-border-radius: 0;
+		border-radius: 0;
+		padding: 0;
+		width: 100%;
+		height: 208px;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		text-indent: -999em;
+	}
+	.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover,
+	.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button  a:hover{
+		background: url(../images/fx.gif) repeat 0 0;
+	}
+}
 .view-home-slides .views-slideshow-controls-bottom,
 .view-sliders .views-slideshow-controls-bottom {
   position: absolute;
