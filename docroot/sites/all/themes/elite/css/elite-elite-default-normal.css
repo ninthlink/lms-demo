@@ -57,6 +57,27 @@ body.context-vive .field-name-title-field {
 .container-12 .grid-12 .pad {
 	margin: 0 50px;
 }
+body.context-vive a.qlogo {
+	margin: 34px 0 24px;
+	width: 210px;
+	height: 45px;
+}
+body.context-vive.node-type-page article.node h1 {
+	padding-top: 30px;
+	border-width: 6px;
+	font-size: 60px;
+	line-height: 44px;
+}
+body.context-vive.node-type-page article.node h1,
+body.context-vive .field-name-title-field h2 {
+	width: 73%;
+	display: block;
+}
+body.context-vive .field-name-title-field p.tdisc {
+	font-size: 1em;
+	line-height: 1em;
+	margin-top: 20px;
+}
 .container-12 .grid-12 .pad .grid-4 {
 	width: 170px;
 	margin-left: 40px;

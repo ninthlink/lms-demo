@@ -1633,14 +1633,51 @@ body.context-vive .field-name-title-field {
 	background: url(../images/vive/hdr.jpg) no-repeat 0 0;
 	background-size:cover;
 }
+body.context-vive a.qlogo {
+	background: url(../images/vive/qualcomm.png) no-repeat 0 0;
+	background-size: cover;
+	display: block;
+	margin: 10px 0;
+	text-indent: -999em;
+	width: 126px;
+	height: 27px;
+}
+body.context-vive.node-type-page article.node h1 {
+	border-top: 3px solid #fff;
+	color: #fff;
+	font: 30px/25px "Qualcomm-Bold", sans-serif;
+	margin: 0;
+	padding: 5px 0 0;
+	width: 100%;
+}
 body.context-vive h2 {
 	font-size: 2.4em;
 	margin: 1em 0;
 	color: #038e95;
 }
+body.context-vive .field-name-title-field h2 {
+	border-bottom: 2px solid #fff;
+	color: #fff;
+	font-size: 40px;
+	margin: 20px 0 0;
+	padding: 0 0 30px;
+	width: 100%;
+}
+body.context-vive .field-name-title-field p.tdisc {
+	color: #fff;
+	margin: 10px 0 0;
+	font-size: 0.9em;
+	line-height: 100%;
+}
+body.context-vive .field-name-title-field h2,
+body.context-vive .field-name-title-field a.tbutton {
+	display: none;
+}
 body.context-vive .orange {
-	background: #f58b20;
-	margin-top: 100px
+	background: url(../images/vive/orange.jpg) no-repeat 0 0;
+	background-size: cover;
+	color: #000;
+	margin-top: 100px;
 }
 body.context-vive .teal {
 	background: #038e95
@@ -1682,3 +1719,15 @@ body.context-vive .device .name {
 	z-index: 2;
 	position: absolute;
 }
+body.context-vive a.tbutton {
+	float: left;
+	width: 398px;
+	height: 53px;
+	background: url(../images/vive/btn.png) no-repeat 0 0;
+	padding: 0 24px;
+	font: 23px/53px "Qualcomm-Regular", sans-serif;
+	color: #fff;
+	margin: 20px 0
+}
+body.context-vive a.tbutton:hover { text-decoration: none }
+body.context-vive a.tbutton.right { float: right }

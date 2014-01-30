@@ -4,6 +4,13 @@
 body.context-vive .field-name-title-field {
 	height: 531px;
 }
+body.context-vive.node-type-page article.node h1,
+body.context-vive .field-name-title-field h2 {
+	width: 50%;
+}
+body.context-vive .field-name-title-field a.tbutton {
+	display: block;
+}
 .container-12 .grid-12 .pad {
 	margin: 0 50px;
 }
@@ -19,4 +26,11 @@ body.context-vive .field-name-title-field {
 }
 .container-12 .grid-12 .pad .grid-12 {
 	width: 980px;
+}
+.container-12 .grid-12.orange .pad .grid-12 {
+	margin: 90px 0 60px;
+}
+
+body.context-vive .orange {
+	height: 1230px;
 }
