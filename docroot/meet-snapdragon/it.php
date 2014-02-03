@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.4.3
+ * v0.4.4
  */
 ?>
 <!doctype html>

@@ -359,14 +359,21 @@ height: 100px;
     #modem-performance .inner { min-height: 521px; }
 
     #thermal-performance,
-    #thermal-performance .inner { min-height: 540px; }
+    #thermal-performance .inner { min-height: 185px; }
 
     /*
     #features,
     #features .inner { min-height: 484px; }
     */
 }
-
+@media only screen and (min-width: 480px) {
+    #thermal-performance,
+    #thermal-performance .inner { min-height: 540px; }
+}
+@media only screen and (min-width: 800px) {
+    #thermal-performance,
+    #thermal-performance .inner { min-height: 540px; }
+}
 @media only screen and (min-width: 960px) {
     /* section heights for pc size */
     
@@ -488,15 +495,15 @@ height: 100px;
     #header-device {
         margin-left: -36px;
         width: auto;
-				height: auto;
+		height: auto;
     }
     #gear1 {
         position: absolute;
         top: 53px;
         left: 50%;
-				margin-left: 60px;
+		margin-left: 60px;
         width: 80px;
-				height: 80px;
+		height: 80px;
         -webkit-animation:spin 14s linear infinite;
         -moz-animation:spin 14s linear infinite;
         animation:spin 14s linear infinite;
@@ -505,13 +512,32 @@ height: 100px;
         position: absolute;
         top: 24px;
         left: 50%;
-				margin-left: 129px;
+		margin-left: 129px;
         width: 50px;
-				height: 50px;
+		height: 50px;
         -webkit-animation:spinreverse 10s linear infinite;
         -moz-animation:spinreverse 10s linear infinite;
         animation:spinreverse 10s linear infinite;
     }
+	
+@media only screen and (max-width: 479px) {
+	#header-device {
+		margin-left: -14%;
+		width: 86%;
+	}
+	#gear1 {
+		top: 45px;
+		margin-left: 51px;
+		width: 68px;
+		height: 68px;
+	}
+	#gear2 {
+		top: 20px;
+		margin-left: 107px;
+		width: 42px;
+		height: 42px;
+	}
+}
 /* end header */
 
 /* loading section - responsive */
@@ -1338,10 +1364,10 @@ height: 100px;
         left: 540px;
         opacity: 0;
     }
-		#thermal-performance .graphic-position img {
-			width: 100%;
-			height: auto;
-		}
+	#thermal-performance .graphic-position img {
+		width: 100%;
+		height: auto;
+	}
     #thermal-performance .video-box {
         position: absolute;
         width: 320px;
@@ -1363,11 +1389,50 @@ height: 100px;
         color: #fff;
     }
     #butter-video { display: none; }
-		iframe#buttervid {
-			float: left;
-			width: 940px;
-			height: 540px;
+	iframe#buttervid {
+		float: left;
+		width: 940px;
+		height: 540px;
+	}
+	
+	@media only screen and (max-width: 959px) {
+		#thermal-performance .text-position {
+			top: 0;
+			max-width: 100%;
+			padding-bottom: 8.96%;
 		}
+		#thermal-performance .graphic-position,
+		#thermal-performance .video-box {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+		#thermal-performance .video-button {
+			float: left;
+			padding: 5% 0;
+		}
+		iframe#buttervid {
+			float: none;
+			display: block;
+			margin: 0;
+			width: 540px;
+			height: 312px;
+		}
+	}
+	@media only screen and (max-width: 799px) {
+		iframe#buttervid {
+			width: 400px;
+			height: 231px;
+		}
+	}
+	@media only screen and (max-width: 479px) {
+		iframe#buttervid {
+			margin: 0 -10px;
+			width: 320px;
+			height: 184px;
+		}
+	}
 /* end thermal performance */
 
 /* features slide - responsive */
