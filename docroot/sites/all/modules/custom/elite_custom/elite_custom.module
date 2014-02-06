@@ -13,6 +13,7 @@ function elite_custom_form_alter(&$form, &$form_state, $form_id) {
     );
   }
   if ($form_id == 'user_register_form') {
+		$form['actions']['submit']['#value'] = t('Accept & Create New Account');
     $form['#validate'][] = 'elite_custom_validate_user_register';
   }
 	if ( $form_id == 'poll_view_voting' ) {
