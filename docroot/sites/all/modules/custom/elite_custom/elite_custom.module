@@ -304,7 +304,7 @@ function elite_custom_block_flop_view() {
 	$tnum = elite_custom_user_training_count();
 	$mattr = array('count'=>$tnum);
 	$training = elite_custom_markup_wrapper($training, $mattr, 'usermenu');
-	$lt = l( $training, 'trainings', array('html'=>true) );
+	$lt = l( $training, 'user/'. $user->uid .'/myresults', array('html'=>true) );
 	$umenu .= '<li class="trainings">'. $lt .'</li>';
 	
 	$umenu .= '<li class="activity">'. l( elite_custom_markup_wrapper(t('My Activity'), false, 'usermenu'), 'user/'. $user->uid .'/points', array('html'=>true) ) .'</li>';
