@@ -32,7 +32,6 @@
   
   <!-- Included CSS Files (Compressed) -->
   <link rel="stylesheet" href="stylesheets/foundation.min.css">
-  <link rel="stylesheet" href="stylesheets/foundation.min-rtl.css" disabled>
   <link rel="stylesheet" href="stylesheets/jquery.horslidernav-v1.5.css">
   <link rel="stylesheet" href="stylesheets/main-template.css">
   <link rel="stylesheet" href="stylesheets/snapdragon.css">
@@ -394,7 +393,8 @@ var g_bIsInternetExplorer = navigator.appName.indexOf("Microsoft") != -1;
 // Handle fscommand messages from a Flash movie, remapping
 // any AICC Flash template commands to SCORM if necessary
 function container_DoFSCommand(command, args){
-	var containerObj = g_bIsInternetExplorer ? container : document.container;
+	var containerObj = document.container;
+	//var containerObj = g_bIsInternetExplorer ? container : document.container;
 	// no-op if no SCORM API is available
 	var myArgs = new String(args);
 	var cmd = new String(command);
@@ -588,7 +588,7 @@ $(function(){
 		if(urlLang) {
 			assessmentfile = "lang/"+urlLang+"/assessment.xml";
 		} else {
-			assessmentfile = "lang/en/assessment.xml";
+			assessmentfile = "assessment.xml";
 		}
 		//assessmentfile = "assessment.xml";
 		$.get(assessmentfile, function(xml){
@@ -850,18 +850,13 @@ if (g_bInitializeOnLoad) {
 		          So we have to detect if it's Firefox or Opera, and manually 
 		          trigger the disabled state for the RTL stylesheet
 		    ---------------------------------------------------------------- */
-		    if(navigator.userAgent.match(/(Firefox)|(Opera)/i)) {
-		      var $rtl  = $('link[href="stylesheets/foundation.min-rtl.css"]');
-		      $rtl[0].disabled = true;
-		    }
-		    
 		    if( (urlLang == 'ar' || urlLang == 'he') ) {
 		    	$html.addClass('rtl');
-		      var $link = $('link[href="stylesheets/foundation.min.css"]');
-		      var $rtl  = $('link[href="stylesheets/foundation.min-rtl.css"]');
-		      $link[0].disabled = true;	//disable the original
-		      $rtl[0].disabled = false; //enable the rtl version
-		    }
+		    	var $link = $('link[href="stylesheets/foundation.min.css"]');
+		    	var rtl  = '<link rel="stylesheet" href="stylesheets/foundation.min-rtl.css">';
+		    	$(rtl).insertAfter($link);
+			}
+
 	    })(); //End self-invoking function
 
   	</script> 

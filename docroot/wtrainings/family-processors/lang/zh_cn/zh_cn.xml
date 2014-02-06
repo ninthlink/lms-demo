@@ -1,70 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<course name="Introduction to Qualcomm® Snapdragon™ Processors" right="false" language="zh_cn">
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    CONTAINER_LOADER: Load the information for the preload flv's and where to find container.swf
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<container_loader title="Container Loader">
-		<!-- The SWFs, FLVs, images to preload -->
-		<preload>
-			<item name="container">container.swf</item> 	
-		</preload>		
-	</container_loader>
-
+<course name="高通Snapdragon™处理器家族" right="false" language="en">
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     CONTAINER: The main text for the interface of the main file 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	<container title="Container" name="container">
-		<!-- The SWFs, FLVs, images to preload -->
-		<preload>
-			<!-- <item></item> -->
-		</preload>
-		
-		<!-- Contain links Section 1 SWFs -->
-		<SWFs name="s1SWF">
-			<swf name="page1">../section1/page1.swf</swf>
-			<swf name="page2">../section1/page2.swf</swf>
-			<swf name="page3">../section1/page3.swf</swf>
-			<swf name="page3">../section1/page4.swf</swf>
-		</SWFs>
-
-		<!-- Contain links Section 2 SWFs -->
-		<SWFs name="s2SWF">
-
-		</SWFs>
-
-		<!-- Contain links Section 3 SWFs -->
-		<SWFs name="s3SWF">
-
-		</SWFs>
-
-		<!-- Contain links Section 4 SWFs -->
-		<SWFs name="s4SWF">
-
-		</SWFs>
 
 		<!--  Course's Title -->
-		<course-name title="Course Title" field="title_text">高通公司Snapdragon™处理器简介</course-name>		
+		<course-name title="Course Title" field="title_text">高通Snapdragon™处理器家族</course-name>		
 
 		<!-- Main Navigation: Tabs -->
 		<mainnavigation title="Main Sections" name="tabs">
-			<tab title="Introduction Tab"  		field="tab1_text">介绍</tab>
-			<tab title="Powerful Companion Tab" field="tab2_text">探索的Snapdragon处理器</tab>
-			<tab title="Summary Tab"			field="tab3_text">总结</tab>
+			<tab title="Introduction Tab"  		field="tab1_text">Introduction</tab>
+			<tab title="Powerful Companion Tab" field="tab2_text">Exploring the Snapdragon Processor</tab>
+			<tab title="Summary Tab"			field="tab3_text">Summary</tab>
 		</mainnavigation>
-		
-		<!-- Sub-Navigation: Pillars -->
-		<subnavigation title="Subsections" name="pillars">
-			<pillar title="Next Button" 		field="next_text">下</pillar>
-			<pillar title="Previous Button" 	field="prev_text">前</pillar>
-		</subnavigation>
-		
-		<!-- Help Menu -->
-		<help title="Help Menu">
-			<text title="Home Button Explaination" 	field="help1_text">单击该标题的使用过程中返回的过程的开始。</text>
-			<text title="Navigation Explaination" 	field="help2_text">这是导航，越来越围绕课程的主要手段。主要的分类在顶部，下面列出的子类别。每一节都被检查你访问它。</text>
-			<text title="Progress Bar Explaination" field="help3_text">这是进度酒吧。逐渐增大，当您去通过课程，帮助您跟踪您的整体进步。</text>
-		</help>
 
 		<!-- Assessment Menu --> 
 		<assessment title="Assessment">
@@ -76,67 +26,302 @@
 	</container>
 	
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    S1 Page 1
+    S1: Page 1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<page title="Introduction" name="s1p1">
-		<laserbeam title="Header" field="laserbeam_text">高通公司Snapdragon™处理器简介</laserbeam>
-		<sublaser title="Sublaser" field="sublaser_text">部分要寻找的是你无法看到的部分。</sublaser>
-		<body title="Body" field="body_text"><![CDATA[平滑流媒体，高速下载，快速相机性能和响应游戏 - 智能手机的速度和性能，有很多事情要做的内置处理器。<br><br>在本次培训中，您将了解高通的Snapdragon™处理器，以及它们如何使智能手机的快速和高功率效率。]]></body>
+	<page title="" name="s1p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[高通Snapdragon™<br/><span class="subheader">处理器家族</span>]]></laserbeam>
+	</page>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s2p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[通过这一模块的末尾，<br/><span class="subheader">你就会明白：</span>]]></laserbeam>
+		<text title="Body" field="body_text"><![CDATA[
+			<li>如何与你的客户对他们的期望智能手机的使用</li>
+			<li>每个高通Snapdragon处理器之间的主要区别</li>
+			<li>如何帮助客户选择合适的高通Snapdragon设备</li>
+		]]></text>
 	</page>
 
 
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    S1: Page 2
+    S3: Page 1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<page title="The Role of the Mobile Processor" name="s1p2">
-		<laserbeam title="Header" field="laserbeam_text">移动处理器的作用</laserbeam>
-		<body title="Body" field="body_text">每一个智能手机的处理器。它影响到的东西，如：</body>
-		<text title="Features" field="features_text"><![CDATA[<li>快速的互联网连接</li><li>在执行命令的速度</li><li>响应图形</li><li>电池效率</li>]]></text>
-
-		<text title="Callout" field="callout_text"><![CDATA[<b>高通的Snapdragon™处理器旨在提供速度，性能和卓越的电池寿命。</b>]]></text>
+	<page title="" name="s3p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[并非所有的客户<br/><span class="subheader">是相同的]]></laserbeam>
 	</page>
 
 
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    S1: Page 3
+    S4: Page 1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<page title="PC Power. Smartphone Size." name="s1p3">
-		<laserbeam title="Header" field="laserbeam_text">PC电源。智能手机的尺寸。</laserbeam>
-		<body title="Body" field="body_text">Snapdragon的处理器包装创新技术，为今天的移动设备成小包装。设计的Snapdragon处理器提供动力和性能为当今要求苛刻的移动体验。</body>
+	<page title="" name="s4p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[技术 <span class="light">盛产</span>]]></laserbeam>
+		<text title="Body" field="body_text">你想找到正确的技术为每一位客户</text>
 
-		<text title="Callout" field="callout_text"><![CDATA[<b>智能设计的Snapdragon处理器包负载的功率到一个微小的芯片。</b>]]></text>
+		<!-- 3 Tech -->
+		<text field="tech1_text">电池寿命</text>
+		<text field="tech2_text">连通性</text>
+		<text field="tech3_text">速度与性能</text>
 	</page>
 
 
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    S1: Page 4
+    S5: Page 1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<page title="Custom-built for mobile performance." name="s1p4">
-		<laserbeam title="Header" field="laserbeam_text">定制内置移动性能。</laserbeam>
-		<body title="Body" field="body_text">每个Snapdragon处理器是由专门的发动机在一个芯片上。该引擎高效协同工作：</body>
-		<text title="Features" field="features_text"><![CDATA[<li>高速性能</li><li>快速，反应灵敏的图形</li><li>水晶般清晰的音频</li><li>快速下载，上传和导航 </li><li>流畅的视频和清晰的音频</li><li>电池寿命</li>]]></text>
-
-		<text title="Callout" field="callout_text"><![CDATA[<b>的Snapdragon处理器在单一芯片上结合多个引擎。这种“片上系统”（SOC）是由高通公司提供你所需要的力量，当你需要它的定制设计。的Snapdragon处理器的智能手机，超快速和高功率效率。</b>]]></text>
+	<page title="" name="s5p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[所述处理器<br/><span class="light">重新定义</span>]]></laserbeam>
 	</page>
 
 
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    S3: Page 3 
+    S6: Page 1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<page title="Summary" name="s3p1">
-		<laserbeam title="Header" field="laserbeam_text">集成真棒</laserbeam>
-		<body title="Body" field="body_text">高通Snapdragon处理器是专为移动定制。这种集成的设计，让处理器的部分工作聪明，并不难，使用当时的任务要求处理器的右侧部分。结果呢？无与伦比的性能和电源效率。</body>
+	<page title="" name="s6p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[领导力<br/><span class="light">性能和效率</span>]]></laserbeam>
 
-		<text title="Callout" field="callout_text"><![CDATA[<b>客户可以确信，与Snapdragon处理器的智能手机将是速度快，反应灵敏，并具有出色的电池寿命。</b>]]></text>
+		<!-- Features -->
+		<text field="tech1_text"><![CDATA[<span>下载</span><br>速度<sup>1</sup>]]></text>
+		<text field="tech2_text"><![CDATA[<span>DSP</span><br>性能<sup>2</sup>]]></text>
+		<text field="tech3_text"><![CDATA[<span>效率</span><br>领导]]></text>
+		<text field="tech4_text"><![CDATA[<span>CPU</span><br>性能<sup>3</sup>]]></text>
+		<text field="tech5_text"><![CDATA[<span>GPU</span><br>性能<sup>4</sup>]]></text>
 	</page>
 
 
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    S3: Page 4
+    S7: Page 1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<page title="Congratulations" name="s3p2">
-		<laserbeam title="Header" field="laserbeam_text">祝贺</laserbeam>
-		<body title="Body" field="body_text">您已经完成了培训的高通Snapdragon处理器。请记住 - 是什么使的Snapdragon处理器独特的整合故事。处理器的部分设计可以无缝地一起工作，提供了强大的移动体验与巨大的电池寿命。</body>
+	<page title="" name="s7p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Snapdragon处理器系列：<br/><span class="light">其中一个为你的客户是对的？]]></laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S8: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s8p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 <span class="light">200</span>]]></laserbeam>
+		<text title="Body" field="body_text">旨在使卓越的性能和连接性比以往任何时候都更容易。</text>
+
+		<!-- Feature List -->
+		<text field="features_text"><![CDATA[
+			<li>随着3G*，无线网络的802.11n，蓝牙4.0，USB2.0连接强</li>
+			<li>随着3G*，无线网络的802.11n，蓝牙4.0，USB2.0连接强</li>
+			<li>电池寿命 - 确保我们最入门级的处理器是作为电池的效率在我们的Snapdragon系列所有其他处理器</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S8: Page 2 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s8p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 200 <span class="light">产品特点</span>]]></laserbeam>
+
+		<!-- Spec List -->
+		<text field="spec1_text"><![CDATA[<strong>高清视频:</strong> 720p HD]]></text>
+		<text field="spec2_text"><![CDATA[<strong>相机:</strong> 高达8MP]]></text>
+		<text field="spec3_text"><![CDATA[<strong>音频:</strong> 立体声]]></text>
+		<text field="spec4_text"><![CDATA[<strong>CPU的POWER:</strong> 高达每四核心的ARM Cortex A7处理器1.4GHz的]]></text>
+		<text field="spec5_text"><![CDATA[<strong>GPU:</strong> Adreno 203]]></text>
+		<text field="spec6_text"><![CDATA[<strong>网络:</strong> 3G]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S8: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s8p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 200 <span class="light">顾客</span>]]></laserbeam>
+		<text title="Body" field="body_text">他们展示的只是基础知识，这样你就不会压倒他们：</text>
+
+		<!-- Feature List -->
+		<text field="features_text"><![CDATA[
+			<li>触摸屏</li>
+			<li>语音通话</li>
+			<li>短信和通话记录</li>
+			<li>语音到文本</li>
+		]]></text>
+
+		<text field="sellingtip_text"><![CDATA[<strong>销售技巧：</strong> 让你的销售指导简单，实用和简单。]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S9: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s9p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 <span class="light">400</span>]]></laserbeam>
+		<text title="Body" field="body_text">Designed to deliver the most popular smartphone features:</text>
+
+		<!-- Feature List -->
+		<text field="features_text"><![CDATA[
+			<li>与3G/4G世界/多模LTE5，无线网络的802.11ac，蓝牙4.0强大的，快速的连接</li>
+			<li>拍摄高分辨率的照片高达13.5MP</li>
+			<li>在高达1080p全高清采集和回放视频</li>
+			<li>用的Adreno320 GPU进行响应的网页浏览和社交媒体应用程序伟大的图形性能</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S9: Page 2 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s9p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 400 <span class="light">产品特点</span>]]></laserbeam>
+
+		<!-- Spec List -->
+		<text field="spec1_text"><![CDATA[<strong>高清视频:</strong> 全高清1080p]]></text>
+		<text field="spec2_text"><![CDATA[<strong>相机:</strong> 高达13.5MP]]></text>
+		<text field="spec3_text"><![CDATA[<strong>音频:</strong> 5.1环绕声]]></text>
+		<text field="spec4_text"><![CDATA[<strong>CPU的POWER:</strong> 高达1.7 GHz双的Krait CPU300]]></text>
+		<text field="spec5_text"><![CDATA[<strong>GPU:</strong> Adreno 305]]></text>
+		<text field="spec6_text"><![CDATA[<strong>网络:</strong> 3G &amp; 4G]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S9: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s9p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 400 <span class="light">顾客</span>]]></laserbeam>
+		<text title="Body" field="body_text">他们展示他们如何能捕捉并记住经验：</text>
+
+		<!-- Feature List -->
+		<text field="features_text"><![CDATA[
+			<li>相机的照片和视频</li>
+			<li>照片和视频编辑应用程序</li>
+			<li>网页浏览</li>
+		]]></text>
+
+		<text field="sellingtip_text"><![CDATA[<strong>销售技巧：</strong> 有助于捕捉瞬间，使他们能够记住他们的细节。]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S10: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s10p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 <span class="light">600</span>]]></laserbeam>
+		<text title="Body" field="body_text">旨在提供先进的智能手机体验</text>
+
+		<!-- Feature List -->
+		<text field="features_text"><![CDATA[
+			<li>高速连接与4G LTE*，无线网络802.11n/ac，蓝牙4.0</li>
+			<li>数码单反相机拍摄照片的分辨率高达21MP</ LI> <LI>捕捉和高达1080p全高清播放视频</li>
+			<li>出色的图形用的Adreno305 GPU进行控制台质量的游戏</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S10: Page 2 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s10p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 600 <span class="light">产品特点</span>]]></laserbeam>
+
+		<!-- Spec List -->
+		<text field="spec1_text"><![CDATA[<strong>高清视频:</strong> 全高清1080p]]></text>
+		<text field="spec2_text"><![CDATA[<strong>相机:</strong> 高达21MP]]></text>
+		<text field="spec3_text"><![CDATA[<strong>音频:</strong> 5.1环绕声]]></text>
+		<text field="spec4_text"><![CDATA[<strong>CPU的POWER:</strong> 高达1.9 GHz的四核的Krait CPU300]]></text>
+		<text field="spec5_text"><![CDATA[<strong>GPU:</strong> Adreno 320]]></text>
+		<text field="spec6_text"><![CDATA[<strong>网络:</strong> 3G &amp; 4G]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S10: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s10p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 600 <span class="light">顾客</span>]]></laserbeam>
+		<text title="Body" field="body_text">他们展示他们如何能保持连接带：</text>
+
+		<!-- Feature List -->
+		<text field="features_text"><![CDATA[
+			<li>可靠的4G连接</li>
+			<li>社交网络应用程序</li>
+			<li>快速的网页浏览体验</li>
+			<li>电影，视频和游戏</li>
+		]]></text>
+
+		<text field="sellingtip_text"><![CDATA[<strong>销售技巧：</strong> 帮助他们维护自己的网络和在旅途中关系。]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S11: Page 1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s11p1">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 <span class="light">800</span>]]></laserbeam>
+		<text title="Body" field="body_text">专为提供出血的技术，功能，功耗和性能：</text>
+
+		<!-- Feature List -->
+		<text field="features_text"><![CDATA[
+			<li>高级电源与CPU功率高达2.3 </li>
+			<li>拍摄和播放超高清4K视频</li>
+			<li>捕捉超高分辨率的照片高达55MP</li>
+			<li>家庭影院式的音频，7.1声道环绕音效</li>
+			<li>令人难以置信的图形速度和详细的Adreno330</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S11: Page 2 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s11p2">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 800 <span class="light">产品特点</span>]]></laserbeam>
+
+		<!-- Spec List -->
+		<text field="spec1_text"><![CDATA[<strong>高清视频:</strong> 超高清4K]]></text>
+		<text field="spec2_text"><![CDATA[<strong>相机:</strong> 高达55MP]]></text>
+		<text field="spec3_text"><![CDATA[<strong>音频:</strong> 7.1环绕声]]></text>
+		<text field="spec4_text"><![CDATA[<strong>CPU的POWER:</strong> 高达2.3 GHz的四核的Krait CPU400]]></text>
+		<text field="spec5_text"><![CDATA[<strong>GPU:</strong> Adreno 330]]></text>
+		<text field="spec6_text"><![CDATA[<strong>网络:</strong> 3G &amp; 4G]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S11: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s11p3">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[金鱼草 800 <span class="light">顾客</span>]]></laserbeam>
+		<text title="Body" field="body_text">他们展示他们如何能与保持领先技术：</text>
+
+		<!-- Feature List -->
+		<text field="features_text"><![CDATA[
+			<li>CPU供电与四核的Krait400高达2.3 GHz的</li>
+			<li>超高清4K视频和超高分辨率的照片</li>
+			<li>7.1环绕声DTS-HD，杜比数字+</li>
+			<li>图形的速度与推每秒3.6亿像素的能力</li>
+		]]></text>
+		
+		<text field="sellingtip_text"><![CDATA[<strong>销售技巧：</strong> 教育他们最新的技术特点。]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S11: Page 3
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s12p1">
+		<laserbeam title="Header" field="laserbeam_text">Footnotes</laserbeam>
+
+		<!-- Feature List -->
+		<text field="footnotes_text"><![CDATA[
+			<li>QCT</li>
+			<li>源: BDTI - 欲了解更多详细信息，请参阅 <a href="www.BDTI.com">www.BDTI.com</a>. 所有的分数 &copy;2012 BDTI</li>
+			<li>源: Anandtech, 10/1/13, <a href="http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review">http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review</a></li>
+			<li>源: <a href="http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review">http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review</a>,
+                <a href="http://anandtech.com/show/7314/intel-baytrail-preview-intel-atom-z3770-tested">http://anandtech.com/show/7314/intel-baytrail-preview-intel-atom-z3770-tested</a>,
+                <a href="http://anandtech.com/show/7335/the-iphone-5s-review">http://anandtech.com/show/7335/the-iphone-5s-review</a>,
+                <a href="http://www.gsmarena.com/sony_xperia_z_ultra-review-975p5.php/">http://www.gsmarena.com/sony_xperia_z_ultra-review-975p5.php/</a>,
+                <a href="http://seekingalpha.com/article/1736492-bay-trail-trails">http://seekingalpha.com/article/1736492-bay-trail-trails</a></li>
+            <li>*搭配一个不显眼的调制解调器</li>
+        ]]></text>
 	</page>
 
 </course>

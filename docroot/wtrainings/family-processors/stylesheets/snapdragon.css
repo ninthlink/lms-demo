@@ -187,6 +187,7 @@ hr.dark {
     background-image:      -o-linear-gradient(left, rgba(99,99,99,0), rgba(99,99,99,0.4), rgba(99,99,99,0)); 
 }
 
+.lt-ie9 hr.plain,
 hr.plain {
 	background-image: none;
 	border-color: white;

@@ -545,7 +545,7 @@ body { background-color: black; color: white; font-family: Arial, Helvetica, san
    Layout: Loader 
 ----------------------------------------- */
 div.loader {
-	display: none;
+	/*display: none;*/
 	background: rgba(0,0,0,0.93);
 	position: absolute; 
 	top: 0; 
@@ -643,7 +643,8 @@ img.center {
     src: url('../fonts/custom-icons/custom-icons.eot');
     src: url('../fonts/custom-icons/custom-icons.eot?#iefix') format('embedded-opentype'),
          url('../fonts/custom-icons/custom-icons.woff') format('woff'),
-         url('../fonts/custom-icons/custom-icons.ttf') format('truetype');
+         url('../fonts/custom-icons/custom-icons.ttf') format('truetype'),
+         url('../fonts/custom-icons/custom-icons.svg#qualcomm-zero-engine-template') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -669,7 +670,7 @@ body, div, dl, dt, dd, ul, ol, li, pre, form, p, blockquote, th, td { font-size:
 }
 
 /* --| Footnotes */
-.footnote { font-size: .7em; }
+.footnote { font-size: .8em; }
 
 /* --| Qualcomm Bordered Header */
 h1.qualcomm-header { 
