@@ -1346,6 +1346,9 @@ body.node-type-page .region-sidebar-second {
   font-size: 1.4em;
   line-height: 90%;
 }
+.not-logged-in.page-user #edit-field-terms-conditions label.option {
+	display: none;
+}
 .not-logged-in.page-user #edit-field-terms-conditions .description {
 	display: inline;
 }
