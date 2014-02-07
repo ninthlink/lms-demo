@@ -345,7 +345,7 @@
 
 							<span class="stretch"></span>
               
-            	<p class="center"> *Peak measured data rates, actual speeds will vary. </p>
+            	<p class="center"> *data rate massima misurata, velocità effettive variano </p>
 
 						</div>
 					</div>
@@ -415,7 +415,7 @@
 					<div class="inner">
 						<div class="text-position center">
 							<p class="txtw">&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc. Tutti i diritti riservati.</p>
-							<p class="txtw">Qualcomm è un marchio di QUALCOMM Incorporated, registrato negli Stati Uniti e in altri Paesi. Gobi and Snapdragon are trademarks of Qualcomm Technologies, Inc.<br />Other products and brand names are property of their respective owners.</p>
+							<p class="txtw">Qualcomm è un marchio di QUALCOMM Incorporated, registrato negli Stati Uniti e in altri Paesi. Gobi e Snapdragon sono marchi registrati di Qualcomm Technologies, Inc.<br />Altri prodotti e marchi sono di proprietà delle rispettive società/aziende.</p>
 						</div>
 						<div class="graphic-position center">
 							<img id="logo" src="img/snapdragon-logo.png" />

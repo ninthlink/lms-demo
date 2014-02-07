@@ -276,7 +276,7 @@
               <li class="dsp"><span class="img"></span>DSP</li>
               <li class="cpu"><span class="img"></span>CPU</li>
               <li class="gpu"><span class="img"></span>GPU</li>
-              <li class="nav"><span class="img"></span>Navigation</li>
+              <li class="nav"><span class="img"></span>Navegación</li>
             </ul>
             <ul class="mid">
               <li class="mm onn"><span class="img"></span>Multimedia</li>
@@ -345,7 +345,7 @@
 
 							<span class="stretch"></span>
               
-            	<p class="center"> *Peak measured data rates, actual speeds will vary. </p>
+            	<p class="center"> *Máxima Tasa de datos medida, velocidad real puede variar. </p>
 
 						</div>
 					</div>
@@ -415,7 +415,7 @@
 					<div class="inner">
 						<div class="text-position center">
 							<p class="txtw">&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc. Todos los derechos reservados.</p>
-							<p class="txtw">Qualcomm es una marca comercial de QUALCOMM Incorporated, registrada en EE.UU. y en otros países. Gobi and Snapdragon are trademarks of Qualcomm Technologies, Inc.<br />Other products and brand names are property of their respective owners.</p>
+							<p class="txtw">Qualcomm es una marca comercial de QUALCOMM Incorporated, registrada en EE.UU. y en otros países. Gobi y Snapdragon son Marcas Registradas de Qualcomm Technologies Inc.<br />Otros productos y marcas son propiedad de sus respectivos propietarios.</p>
 						</div>
 						<div class="graphic-position center">
 							<img id="logo" src="img/snapdragon-logo.png" />
