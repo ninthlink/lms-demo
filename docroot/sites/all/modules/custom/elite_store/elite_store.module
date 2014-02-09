@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the elite_store feature.
+ */
+
+include_once 'elite_store.features.inc';
