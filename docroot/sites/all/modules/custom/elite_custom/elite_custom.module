@@ -172,6 +172,17 @@ function elite_custom_services_resources() {
     'access arguments' => array('access content'),
     'callback' => 'elite_custom_services_user_counts',
   );
+
+	$resources['regions']['index'] = array(
+    'file' => array(
+      'type' => 'inc', 
+      'module' => 'elite_custom',
+      'name' => 'elite_custom',
+    ),
+		'access callback' => 'services_access_menu', // allow ALL
+    'callback' => 'elite_custom_services_regions',
+    'help'   => t('Get list of Regions as options for when Registering new Users'),
+  );
   return $resources;
 }
 

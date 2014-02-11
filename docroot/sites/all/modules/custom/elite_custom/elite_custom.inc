@@ -123,3 +123,22 @@ function elite_custom_services_user_counts() {
 	
 	return $return;
 }
+
+/**
+ * callback for services /locations/regions
+ * 
+ * returns
+ * regions for registering peoples
+ */
+function elite_custom_services_regions() {
+	
+	$field = field_info_field('field_region');
+	$values = list_allowed_values($field);
+	
+	//$values = array('hello');
+	$return = new stdClass();
+	//$return->field = $field;
+	$return = $values;
+	
+	return $return;
+}
