@@ -895,3 +895,22 @@ function elite_custom_userpoints( $op, $params ) {
     }
 	}
 }
+/*
+ * returns current logged in user's region
+ */
+function elite_custom_user_region() {
+	global $user;
+	$oot = 'us';
+	if ( $user->uid ) {
+	$account = user_load($user->uid);
+	
+		if ( isset( $account->field_region['und'] ) ) {
+			if ( isset( $account->field_region['und'][0] ) ) {
+				if ( isset( $account->field_region['und'][0]['value'] ) ) {
+					$oot = $account->field_region['und'][0]['value'];
+				}
+			}
+		}
+	}
+	return $oot;
+}
