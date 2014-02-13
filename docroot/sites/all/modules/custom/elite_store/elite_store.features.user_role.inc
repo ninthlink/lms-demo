@@ -10,6 +10,12 @@
 function elite_store_user_default_roles() {
   $roles = array();
 
+  // Exported role: manager.
+  $roles['manager'] = array(
+    'name' => 'manager',
+    'weight' => 4,
+  );
+
   // Exported role: validated.
   $roles['validated'] = array(
     'name' => 'validated',
