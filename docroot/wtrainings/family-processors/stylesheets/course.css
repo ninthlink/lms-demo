@@ -25,9 +25,6 @@ img {
 	-o-user-select : none;
 	user-select : none;
 }
-/* -----------------------------------------
-   Shared Styles: TESTING
------------------------------------------ */
 
 /* -----------------------------------------
    Shared Styles: Large Images
@@ -83,6 +80,21 @@ div.continue-arrow:before {
 	margin-top: -12px;
 	margin-left: -10px;
 }
+
+/* -----------------------------------------
+   Section 1: Arrow Animation 
+----------------------------------------- */
+div.continue-arrow:before { 
+  -webkit-animation: arrow-v 1s linear infinite; 
+  -moz-animation: arrow-v 1s linear infinite; 
+  -o-animation: arrow-v 1s linear infinite; 
+  animation: arrow-v 1s linear infinite; 
+}
+
+@-webkit-keyframes arrow-v { from { top: 50%; } 50% { top: 65%; } to { top: 50%; } }
+@-moz-keyframes arrow-v { from { top: 50%; } 50% { top: 65%; } to { top: 50%; } }
+@-o-keyframes arrow-v { from { top: 50%; } 50% { top: 65%; } to { top: 50%; } }
+@keyframes arrow-v { from { top: 50%; } 50% { top: 65%; } to { top: 50%; } }
 
 /* -----------------------------------------
    Section 2: By the end of this module 
@@ -164,8 +176,8 @@ img.speech-bubbles.rsa 	 { width: 55%; z-index: 3; left: 1%; margin-top: -38%; }
 .lt-ie9 .tech > img.ie8-tech-circle { display: block; }
 
 /*--| Phone Image */
-.tech-phone { margin: 0 auto; position: relative; margin-bottom: -65px; width: 70%; visibility: hidden; opacity: 1; }
-.tech-phone > img { width: 100%; height: 100%; }
+.tech-phone { margin: 0 auto; position: relative; margin-bottom: -65px; /*width: 70%;*/ visibility: hidden; opacity: 1; }
+.tech-phone > img { width: 100%; /*height: 100%;*/ }
 
 /* -----------------------------------------
    Section 6: Leadership 
@@ -265,15 +277,14 @@ div.square-box > h1.subheader {
 /* -----------------------------------------
    Section 7: Snapdragon Processor Family
 ----------------------------------------- */
-.chip-container { width: 100%; position: relative; margin-top: 50px; }
+.chip-container { width: 100%; position: relative; /*margin-top: 50px;*/ }
 .chips { position: relative; float: left; visibility: hidden; opacity: 1; }
-.chips > img { width: 100%; height: 100%; }
+.chips > img { width: 100%; /*height: 100%;*/ }
 
-.chip-200 { width: 40%; z-index: 1; right:  12%; margin-top:  3%; }
-.chip-400 { width: 50%; z-index: 2; right:  36%; margin-top:  6%; }
-.chip-600 { width: 60%; z-index: 3; right: -23%; margin-top: -43%; }
-.chip-800 { width: 70%; z-index: 4; right: -46%; margin-top: -52%; }
-
+.chip-200 { width: 30%; z-index: 1; right:  0%;  margin-top:  7%; }
+.chip-400 { width: 35%; z-index: 2; right:  17%; margin-top:  9%; }
+.chip-600 { width: 45%; z-index: 3; right: -29%; margin-top: -31%; }
+.chip-800 { width: 50%; z-index: 4; right: -4%;  margin-top: -28%; } 
 
 /* -----------------------------------------
    Section 8,9,10,11: Shared Styles
@@ -389,6 +400,14 @@ p.spec-footnote {
 .lt-ie9 .section9 .spec div.icon,
 .lt-ie9 .section11 .spec div.icon { background-image: url(../images/ie8/spec-icons-dark.png); }
 
+
+/* -----------------------------------------
+   Quiz
+----------------------------------------- */
+.quiz.slide { padding: 75px 0; background: black; }
+a.button.large.chevron.quiz-button { font-size: 2.5em; border: 3px solid #121212; }
+.no-touch a.button.large.chevron.quiz-button:hover { background: #121212; }
+
 /* -----------------------------------------
    Footnotes
 ----------------------------------------- */
@@ -443,7 +462,7 @@ ol.footnotes > li a {
    	   Section 4: Technologies Abound 
 	----------------------------------------- */
 	/*.tech-container { min-height: 525px; }*/
-	.tech-phone { margin-bottom: -185px; }
+	.tech-phone { margin-bottom: -185px; width: 70%; }
 	.tech.battery { top: 0; left: 50%; margin-left: -240px; }
 	.tech.connect { margin-top: -120px; left: 50%; margin-left: 120px; }
 	.tech.speed   { margin-top: -120px; left: 50%; margin-left: -60px; }
@@ -495,6 +514,11 @@ ol.footnotes > li a {
 		.section11 img.cust-floating-icon.camera 	 { left: 57%; top: 20%; }
 		.section11 img.cust-floating-icon.phone  	 { left: 32%; top: 40%; }
 		.section11 img.cust-floating-icon.chat   	 { left: 60%; top: 41%; }
+
+	/* -----------------------------------------
+	   Quiz Section
+	----------------------------------------- */
+	a.button.large.chevron.quiz-button { font-size: 3.5em; }
 }
 
 /* ----------------------------------------------------- 
@@ -512,7 +536,7 @@ ol.footnotes > li a {
    	   Section 4: Technologies Abound 
 	----------------------------------------- */
 	/*.tech-container { min-height: 525px; }*/
-	.tech-phone { margin-bottom: -140px; }
+	.tech-phone { margin-bottom: -140px; width: 70%; }
 	.tech.battery { top: 0; left: 50%; margin-left: -240px; }
 	.tech.connect { margin-top: -120px; left: 50%; margin-left: 120px; }
 	.tech.speed   { margin-top: -120px; left: 50%; margin-left: -60px; }
@@ -564,6 +588,11 @@ ol.footnotes > li a {
 		.section11 img.cust-floating-icon.camera 	 { left: 57%; top: 20%; }
 		.section11 img.cust-floating-icon.phone  	 { left: 32%; top: 40%; }
 		.section11 img.cust-floating-icon.chat   	 { left: 60%; top: 41%; }
+
+	/* -----------------------------------------
+	   Quiz Section
+	----------------------------------------- */
+	a.button.large.chevron.quiz-button { font-size: 3.5em; }
 }
 
 /* ----------------------------------------------------- 

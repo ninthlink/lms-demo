@@ -1,89 +1,36 @@
 /*=========================================================================================
 Author: Tou Lee
-Created: 10/11/13
-Last Updated: 12/6/13 - 10:27am
-Version: 1.0.12
+Created: 1/27/14
+Last Updated: 2/12/14 - 11:06am
+Version: 1.0.1
 
-Changelog v1.0
-  - Updated location fixed position, dynamics. 
-  - Updated the changes to the fixed "navigation" and active states
-      • Switched to use .toggleClass()
-  - moveIndicators(): if-statement, if equal to or less than bottom bound
-      • bottom: bottomBound - (d - (w + s)) --> bottomBound
+** QUALCOMM :: Simplified, non-slider version **
+
+Changelog v1.0.0
+  - Updated RTL stylesheet insert. Rather than just having it be disabled, and enabled
+      • We are going to just insert it right after the foundtion.css file
+  - Removed anything related to the horslider plugin, including all calls to any
+      • $.publish events for 'slider'
+      • initPlugin() --> and removed any calls to it
+      • movedIncidators() --> and calls to it
+      • Removed main-navigation stuff
+  - sublimeResize() 
+      • Removed entirely
+  - hideLoader()
+      • Reverted to the old version, that just starts at the top
+      • Deleted all other functions
+  - Removed ".return-top-link" settting
+  - Removed assessment.html URLlang appending
+  - handleAJAX()
+      •  Removed calls to $(document).foundationTooltips(), and $.publish()
+  - fixCourseTitle() -->  removed
+  - setLinksSinglePage() --> removed
 
 Changelog v1.0.1
-  - Updated moveIndicatior(): added tiernary operator to check for how to set bounds if 
-    on a touch device or not.
-
-Changelog v1.0.2
-  - Added (Chrome) as a check for when to disable the "rtl" foundation stylesheet
-
-Changelog v1.0.3
-  - Added new function setLinksSinglePage():
-      • For helping moving when the user is on a single page of content 
-        (link switching, and highlighting.)
-  - Added new if-statement for checking inside the 'goto-assessment' subscription, for 
-    if the singlePageNav option is true, and if so, then manually call .trigger() on the 
-    '.next-arrow's "click" event. 
-      • For some reason, this helps resolve not having to second click it to trigger the 
-        assessment coming down.
-  - goToByScroll():
-      • Added new variables:
-        - $html > cache $('html') for use
-        - sliderActive > if the horizontal slider is havtive, by checking the html element
-          for the class of 'horslider'
-        - singlePage > checks the number of elements with '.slide' class, to determine if 
-          there is just a single page
-      • Added call to setLinksSinglePage(), if there is a single slide
-      • Added new condition for if-statement for first statement for when switching between
-        slides. 
-
-Changelog v1.0.4
-  - goToByScroll():
-      • Changed the test for single slide to see if there is a class on html element of
-        'single-page-nav' rather than checking the number of slides.
-
-Changelog v1.0.5 
-  - moveIndicators():
-      • Commeneted out bottomBound terianry operator switch for iPhone iOS7, and just set it to 50px
-
-Changelog v1.0.6
-  - handleAJAX():
-      • Added if-statement to check if urlLang is available, and if not, then we can just 
-        skip the ajax request all together.
-  - Added new spinner JS call to use JS to generate spinner instead of animated GIF, which
-    freezes during AJAX request.
-  - goToByScroll():
-      • Added speed argument/parameters
-
-Changelog v1.0.7
-  - Added new checkIECompView():
-      • Checks if the user is using IE7, or any version of the "Compatability View" in 
-        later versions of Internet Explorer
-  - Added a call to checkIECompView(), that will fadeIn the element IE alert.
-
-Changelog v1.0.8 
-  - Amended check for setting assessment quiz button. 
-      • If-condition of urlLang == 2 is too limiting.
-      • Changed "urlLang == 2" ==> urlLang >= 2
-
-Changelog v1.0.9
-  - Added $.subscription('slider/animation-done') to trigger the moveIndicator's location
-    when the sliding animation is finished
-
-Changelog v1.0.10
-  - Merged and added all the event bindings for $(window)'s call to moveIndicator();
-
-Changelog v1.0.11
-  - hideLoader():
-      • Added new if-statements, and animate functions to fade in and then scroll up the 
-        body of the content slowly toe the top
-  - Added new isMobile check for as a global variable inside the siaf
-
-Changelog v1.0.12
-  - Plugin setup inside sublime.ready() block, 
-      • added check for sublime.player property so that navigation does not halt/stop 
-        when the user clicks next because sublime.player function is not defined
+  - checkIECompView()
+      • Updated to return object with mode (string), and isCompView (boolean)
+  - Updated minor variable declarations to make them into one var x, y, z
+  - Call "spinner.stop()" as callback after the div.loader has been faded out
 
 ==========================================================================================*/
 
@@ -91,13 +38,13 @@ Changelog v1.0.12
   /* ----------------------------------------------------------------
     Reusuable cached variables
   ---------------------------------------------------------------- */
-  var $html = $('html');
-  var isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
+  var $html = $('html'),
+      isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i);
 
-  /* ----------------------------------------------------------------
+  /* ----------------------------------------------------------------s
     Check for IE Compatible View
   ---------------------------------------------------------------- */
-  if (checkIECompView()) { $('.ie-alert').fadeIn(); } 
+  if(checkIECompView().isCompView) { $('.ie-alert').fadeIn(); } 
 
   /* ----------------------------------------------------------------
     AJAX Spinner --> Doesn't freeze on AJAX request
@@ -119,10 +66,9 @@ Changelog v1.0.12
       zIndex: 2e9, // The z-index (defaults to 2000000000)
       top: 'auto', // Top position relative to parent in px
       left: 'auto' // Left position relative to parent in px
-    };
-
-    var target = document.getElementById('loader-spinner');
-    var spinner = new Spinner(opts).spin(target);
+    },
+    target = document.getElementById('loader-spinner'),
+    spinner = new Spinner(opts).spin(target);
 
   /* ----------------------------------------------------------------
     RTL: Right-to-Left language switch 
@@ -138,17 +84,13 @@ Changelog v1.0.12
         So we have to detect if it's Firefox or Opera, and manually 
         trigger the disabled state for the RTL stylesheet
   ---------------------------------------------------------------- */
-  if(navigator.userAgent.match(/(Firefox)|(Opera)|(Safari)|(Chrome)/i)) {
-    var $rtl  = $('link[href="stylesheets/foundation.min-rtl.css"]');
-    $rtl[0].disabled = true;
-  }
-  
   if( (urlLang == 'ar' || urlLang == 'he') ) {
-  	$html.addClass('rtl');
-    var $link = $('link[href="stylesheets/foundation.min.css"]');
-    var $rtl  = $('link[href="stylesheets/foundation.min-rtl.css"]');
-    $link[0].disabled = true;	//disable the original
-    $rtl[0].disabled = false; //enable the rtl version
+    $html.addClass('rtl');
+
+    var $link = $('link[href="stylesheets/foundation.min.css"]'),
+        rtl  = '<link rel="stylesheet" href="stylesheets/foundation.min-rtl.css">';
+
+    $(rtl).insertAfter($link);
   }
 
   /* ----------------------------------------------------------------
@@ -166,18 +108,15 @@ Changelog v1.0.12
   var vl = $('video.sublime').length;
 
   if(vl === 0) {
-    //console.log('sublime ::> there NO videos');
     if(urlLang) { translateImageVideo(); }
-    initPlugin(); //initalize the plugin
     handleAJAX();
   } 
   else if(vl > 0) {
     //update the video and images to change the path to appropriate language
     if(urlLang) { translateImageVideo(); }
-    //console.log('sublime ::> there ARE videos');
+    
     if(typeof sublime != 'undefined') {
       sublime.ready(function() {
-        initPlugin(); //initalize the plugin
         handleAJAX();
 
         if(sublime.hasOwnProperty('player') === true) {
@@ -186,163 +125,8 @@ Changelog v1.0.12
 
       });
     } else {
-      initPlugin(); //initalize the plugin
       handleAJAX();
     }
-  }
-
-  /* ----------------------------------------------------------------
-  Sets the location of the "indicators"
-    - Sets the location of the indicators bar
-    - Desktop: it is sticky when in the desktop view.
-    - Mobile: it is fixed just above the navigation
-  ---------------------------------------------------------------- */
-  moveIndicators(); //call it once to initially set the position
-
-  // $(window).on('touchmove',moveIndicators);
-  // $(window).scroll(moveIndicators);
-  $(window).on('touchmove scroll resize', moveIndicators);
-
-  //subscribe to changes, so the position is updated as well on animation-done (sliding)
-  $.subscribe('slider/animation-done', function() { moveIndicators(); });
-
-  /* --| Function to move the location of the fixed indicators */
-  function moveIndicators() {
-    var d = $(document).height(),                   // height of the document (total height)
-        w = $(window).height(),                     // height of the window (visible page)
-        s = $(this).scrollTop(),                    // scroll level
-        bottomBound = 50,
-        //bottomBound = (navigator.userAgent.match(/(iPhone);.*CPU.*OS 7_\d/i)) ? 119 : 50, // bottom bound - or the width of your 'big footer'
-        $location = $('.location-nav');             // the fixed element
-
-      //--| are we beneath the bottom bound?
-      if(d - (w + s) <= bottomBound) {
-          // if yes, start scrolling our own way, which is the
-          // bottom bound minus where we are in the page
-          ($html.hasClass('touch')) ?  
-            $location.css({ bottom: bottomBound, 'margin-bottom': '0px' }) :
-            $location.css({ bottom: bottomBound - (d - (w + s)), 'margin-bottom': '0px' });
-      } else {
-          // if we're beneath the bottom bound, then anchor ourselves
-          // to the bottom of the page in traditional footer style
-          $location.css({ bottom: 0, 'margin-bottom': '0px' });
-      }
-  }
-
-  /* ----------------------------------------------------------------
-    Add data-lang="top" attribute for return to top  link
-      - Set this so the translated text can override the default 
-  ---------------------------------------------------------------- */
-  $('.return-top-link').attr('data-lang','top');
-
-  /* ----------------------------------------------------------------
-    Set up assessment button's href link
-      - Concat on the 'urlLang' so that the assessment page can read 
-        it correctly and retrieve the correct assessment.xml
-      - If the urlLang length is larger than 2, then it's obviously 
-        not a language abbreviation 
-  ---------------------------------------------------------------- */
-  if(urlLang && urlLang.length >= 2) {
-    $('a.quiz').attr('href', 'assessment.html?lang='+urlLang);
-  } else {
-    $('a.quiz').attr('href', 'assessment.html?lang=en');
-  }
-
-  /* --------------------------------------------------------------
-  Enable the links as the user gets to that slide
-    - Each link starts with the ".disable" class to show that it
-      is not clickable until the user goes there on the slide.
-    - When the user is on a current slide the navigation will
-      indicate that as well by adding the class of ".active"
-  --------------------------------------------------------------- */
-  /* --- USE THIS IF LINEAR PROGRESSION IS: ON */
-  // $.subscribe('slider/animation-done', function() {
-  //   var index = $('.slide').filter(':visible').index();
-  //   var $link = $('.top-bar ul.dropdown li a').eq(index+1);
-
-  //   //enable the link once the user goes to that slide
-  //   if($link.hasClass('disable')) { $link.removeClass('disable'); }
-  //   //add the active class to the current slide that is showing
-  //   $link.addClass('active');
-  // });
-
-  // $.subscribe('slider/animation-start', function() {
-  //   $('.top-bar ul.dropdown li a.active').removeClass('active');
-  // });
-  
-  /* --- USE THIS IF LINEAR PROGRESSION IS: OFF */
-  $.subscribe('slider/animation-done', function() {
-    var index = $('.slide').filter(':visible').index();
-    var $link = $('.top-bar ul.dropdown li a').eq(index+1);
-    $link.toggleClass('active'); 
-  });
-
-  $.subscribe('slider/animation-start', function() {
-    $('.top-bar ul.dropdown li a').removeClass('active');
-  });
-
-  /* ----------------------------------------------------------------
-    Show Quiz when have the slider active
-      - When the user has visited all the slide then show the 
-        quiz button. 
-      - Only when the slider mode is active
-
-    Update:
-      - When the user gets to the last slide, and clicks on the
-        next arrow, we show modal asking if they are ready to go 
-        to the quiz, and if yes, then they can click button to
-        go to the quiz, if not then we close. 
-      - They can always hit hit the next arrow again to down down
-        the modal to proceed to the quiz.
-
-    * Requirements:
-      - The slider plugin options should be set like this: 
-          • linearNav: true,
-            linearLoop: false,
-            assessment: true
-  ---------------------------------------------------------------- */
-  $.subscribe('slider/goto-assessment', function(e, singlePageNav) {
-    $('.next-arrow').removeClass('disable').off('click').on('click', function() {
-      $("#quizModal").reveal();
-    });
-
-    if(singlePageNav) { 
-      $('.next-arrow').trigger('click');
-    }
-  });
-
-  /* ----------------------------------------------------------------
-    Sublime Video Fix with Horizontal Slider
-      - Remove all classes of ".sublime" on the videos by using 
-        sublime.unprepare()
-      - Prepare them when the user gets to that slide so they 
-        autoresize to their parent's container
-  ---------------------------------------------------------------- */
-  function sublimeResize() {
-    sublime.ready(function() {
-      //Resize the videos if they haven't been resized
-      $.subscribe('slider/animation-done', function() {
-        var $visibleslide = $('.slide').filter(':visible');    
-        var videos = $visibleslide.find('video.sublime');
-        if(videos.length != 0) {
-          for(var i = 0; i < videos.length; i++) { 
-            sublime.unprepare(videos[i])  //unparepare the videos
-            sublime.prepare(videos[i]);   //prepare them again so they can resize
-          }
-        }
-      });
-
-      //Stop the videos that are playing when the user moves to another slide
-      $.subscribe('slider/animation-start', function() {
-        var $visibleslide = $('.slide').filter(':visible');    
-        var videos = $visibleslide.find('video.sublime');
-        if(videos.length != 0) {
-          for(var i = 0; i < videos.length; i++) { 
-            sublime.player(videos[i]).stop();
-          }
-        }
-      });
-    }); //end sublime.ready()
   }
 
   /* --------------------------------------------------------------------
@@ -367,46 +151,18 @@ Changelog v1.0.12
       getXML().fail(function(){
         console.log('ERROR LOADING XML: Falling back to English');
         hideLoader();
-        $(document).foundationTooltips(); //initalize tooltips plugin
 
-        $.publish('ajax/parse-xml-done');
       }).done(function(data){
         console.log('XML LOADED: Success');
         parseXML(data); //call to parse the xml
         hideLoader();
-
-        $.publish('ajax/parse-xml-done');
       });
     } 
     else {
       console.log('NO TRANSLATION: Skipped AJAX Request');
       hideLoader();
-      $(document).foundationTooltips(); //initalize tooltips plugin
-      $.publish('ajax/parse-xml-done');
     }
 
-  }
-
-  /* ----------------------------------------------------------------
-  Build Slides 
-    - Calls the horizontal slider plugin to build out the plug-in
-  ---------------------------------------------------------------- */
-  function initPlugin() {
-    $('.content-container').horslidernav({
-      speed: 400,
-      easing: 'swing', //easeInOutQuart
-      mobile: false,
-      tablet: false,
-      desktop: false,
-      fade: false,
-      fullHeight: true,
-      linearNav: true,
-      linearProg: false,
-      linearLoop: false,
-      locIndicator: true,
-      assessment: true,
-      singlePageNav: false
-    }); 
   }
 
   /* ----------------------------------------------------------------
@@ -423,40 +179,9 @@ Changelog v1.0.12
     - Fades out the div.loader and it's contents to display: none
   ---------------------------------------------------------------- */
   function hideLoader() {
-    /* --| Old version */
-    //$('div.loader').fadeOut(1000);
-
-    /* --| New version: Fade-in and scroll up */
-    var $htmlbody = $('html,body'),
-        loc; 
-
-    if(!isMobile && $htmlbody.height() <= 655) {
-      loc = $htmlbody.height();
-    } 
-    else if(!isMobile) {
-      loc = ($htmlbody.height()/4);
-    } 
-    else {
-      loc = ($htmlbody.height()/5);
-    }
-
-    $htmlbody.animate({ scrollTop: loc }, 1000);
-
-    setTimeout(function() {
-      $('div.loader').fadeOut(1000);
-      $htmlbody.animate({ scrollTop: 0 }, 2500, 'easeInOutQuart');
-    }, 1100);
-
-  }
-
-  /* ----------------------------------------------------------------
-  Fixes the Course Title
-    - Removes any <br> tags
-  ---------------------------------------------------------------- */
-  function fixCourseTitle() {
-    var $title = $('.course-name a'),
-        str = $title.html().replace(/<br>/g, ' ');
-    $title.html(str);
+    $('div.loader').fadeOut(1000, function() {
+        spinner.stop(); //stop the spinner after fade-in
+    });
   }
 
   /* ---------------------------------------------------------------
@@ -551,11 +276,11 @@ Scroll Function for Nav
   - IMPORTANT -- to use the name of the specific slide
 ---------------------------------------------------------------- */
 function goToByScroll(id, horslidepos, offset, speed) {
-  var $htmlbody = $('html,body');
-  var $html = $('html');
-  var sliderActive = $html.hasClass('horslider');
-  var singlePage = $html.hasClass('single-page-nav');
-  var speed = (speed != undefined) ? speed : 600;
+  var $htmlbody = $('html,body'),
+      $html = $('html'),
+      sliderActive = $html.hasClass('horslider'),
+      singlePage = $html.hasClass('single-page-nav'),
+      speed = (speed != undefined) ? speed : 600;
 
   if(offset == undefined) { offset = 0; }
   
@@ -578,35 +303,6 @@ function goToByScroll(id, horslidepos, offset, speed) {
   }
 }
 
-/* ----------------------------------------------------------------
-Scroll Link Setting (Single Page) 
-  - Sets the positioning, and highlighting of the menu items when 
-    there is only a single page of content. 
-  
-@params: 
-  id --- this is the id in which to go towards 
-  pos -- this is the "horslidepos" number that is passed when the
-         the user sent something in. 
-
-@notes:
-  - IMPORTANT -- to use the name of the specific slide
----------------------------------------------------------------- */
-function setLinksSinglePage(id, pos) {
-  var $link = $('.top-bar ul.dropdown > li').eq(0).nextUntil('li.divider').find('a'),
-      $linkActive = $('.top-bar ul.dropdown li a.active'),
-      temp = $link.get(pos-1);
-
-  $linkActive.removeClass('active');
-
-  if(id === 'top') {
-    temp = $link.get(0);
-  } else if(id === 'bottom') {
-    temp = $link[$link.length-1];
-  }
-
-  //add the .active class to the item clicked on
-  $(temp).addClass('active');
-}
 
 /* ----------------------------------------------------------------
 Checks if IE is in Compatibility Mode
@@ -619,13 +315,13 @@ Checks if IE is in Compatibility Mode
 ---------------------------------------------------------------- */
 function checkIECompView() {
   var agentStr = navigator.userAgent;
-  var mode;
+  var mode = null;
   var isCompView = false; 
 
   //check for IE10 Comp view
   if(agentStr.indexOf('Trident/6.0') > -1 ) {
     if(agentStr.indexOf("MSIE 7.0") > -1) {
-      mode = "IE10 Compatibility View"; 
+      mode = "IE10"; 
       isCompView = true;
     }
     else { 
@@ -635,7 +331,7 @@ function checkIECompView() {
   //check for IE9 Comp view
   else if (agentStr.indexOf("Trident/5.0") > -1) {
     if (agentStr.indexOf("MSIE 7.0") > -1) {
-      mode = "IE9 Compatibility View";
+      mode = "IE9";
       isCompView = true;
     }
     else {
@@ -645,7 +341,7 @@ function checkIECompView() {
   //check for IE8 Comp view
   else if (agentStr.indexOf("Trident/4.0") > -1) {
     if (agentStr.indexOf("MSIE 7.0") > -1) {
-      mode = "IE8 Compatibility View";
+      mode = "IE8";
       isCompView = true;
     }
     else {
@@ -660,6 +356,6 @@ function checkIECompView() {
     isCompView = false;
   }
 
-  return isCompView; //return boolean if comp view is true
+  return { isCompView: isCompView, mode: mode }; //return boolean if comp view is true
 
 }
