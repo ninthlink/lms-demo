@@ -5,7 +5,4 @@ package = Core
 version = VERSION
 
 ; Information added by Drupal.org packaging script on 2014-01-03
-version = "7.25"
-project = "drupal"
-datestamp = "1388709506"
 
