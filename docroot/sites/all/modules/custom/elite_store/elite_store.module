@@ -16,6 +16,87 @@ include_once 'elite_store.features.inc';
  * @todo This may become problematic in the future as managers move stores
  *       It can be solved by changing the authorship of existing stores.
  */
-function elite_store_node_validate($node, $form) {
+function elite_store_node_validate($node, $form, $form_state) {
+  // Check for a previously created and published store.
+  global $user;
+  // As long as the user is not an admin
+  // @todo There may be other roles which are exempt.
+  if ($user->uid != 1) {
+    $query = new EntityFieldQuery;
+    $result = $query
+      ->entityCondition('entity_type', 'node')
+      ->propertyCondition('status', 1)
+      ->propertyCondition('type', 'store')
+      ->propertyCondition('uid', $user->uid)
+      ->execute();
 
+    if (count($result) != 0) {
+      form_set_error('title', t('You cannot create another store.'));
+      // @todo stop processing errors now. also move this to an access page.
+    }
+
+    // The store's region should match the user's region.
+    $user_object = user_load($user->uid);
+    $user_region = field_get_items('user', $user_object, 'field_region');
+
+    if ($form_state['values']['field_store_region'][LANGUAGE_NONE][0]['value'] !=
+      $user_region[0]['value']) {
+      form_set_error('field_store_region', t('Your region must match the store region'));
+    }
+  }
+}
+
+/**
+ * Check if a store exists
+ *
+ * @param $store_id
+ * @return boolean
+ */
+function elite_store_valid_store_id($store_id) {
+  $query = new EntityFieldQuery;
+
+  $result = $query
+    ->entityCondition('entity_type', 'node')
+    ->propertyCondition('status', 1)
+    ->fieldCondition('field_store_id', 'value', $store_id, '=')
+    ->execute();
+
+  if (count($result) > 0) {
+    return TRUE;
+  }
+
+  return FALSE;
+}
+
+/**
+ * All-purpose function to load a store entity. Pass it an array with
+ *   the kind of value you're providing and it will return an entity.
+ *
+ * @param array $lookupval
+ * @return entity store  or false
+ */
+
+function elite_store_load_store($lookupval = array()) {
+  if (array_key_exists('store_id', $lookupval)) {
+    $store_id = $lookupval['store_id'];
+    $query = new EntityFieldQuery;
+
+    $result = $query
+      ->entityCondition('entity_type', 'node')
+      ->propertyCondition('status', 1)
+      ->fieldCondition('field_store_id', 'value', $store_id, '=')
+      ->execute();
+
+    if (count($result) > 0) {
+      $id = array_keys($result['node']);
+      $store = entity_load('node', $id);
+
+      // Return just the object.
+      return reset($store);
+    }
+
+    return FALSE;
+  }
+
+  return FALSE;
 }

@@ -41,13 +41,23 @@ function elite_validation_user_register_validate($form, &$form_state) {
   // @todo JuTTmhdzVRShwQZ7x2p!
   //  This is a placeholder to distinguish manager account creation
   //   from store employee account creation.  This should be revised when
-  //   more specific workflows are implemented.
+  //   more specific workflows and criteria are implemented.
   if ($store_id != '00000') {
     // The user is not a manager.
-    // Let's check the store id against valid database ids
+    // Check the store id against valid database ids
+    if (!elite_store_valid_store_id($store_id)) {
+      form_set_error('store', t('This store id is not valid'));
+    } else {
+      $store = elite_store_load_store(array('store_id' => $store_id));
+      // @todo this should return true. probably need an if here.
+      // The store id is valid.
+      // Check the store's region against the user's region.
+      $user_region = $form_state['values']['field_region'][LANGUAGE_NONE][0]['value'];
 
-    // Everything fails and so...
-    form_set_error('store', t('This store id is not valid'));
+      if ($user_region != $store->field_store_region[LANGUAGE_NONE][0]['value']) {
+        form_set_error('store', t('Your region is incorrect.'));
+      }
+    }
   } else {
     // They are a manager and actually nothing to see here probably
   }
@@ -57,14 +67,21 @@ function elite_validation_user_register_validate($form, &$form_state) {
  * Form alter submit
  */
 function elite_validation_user_register_submit($form, &$form_state) {
-  // based on the store id, they are going to get a manager role
-  // though it won't be validated
-  // or they get a validated role if the store id matches an existing store
-  // @todo make it a function
+  $store_id = $form_state['values']['store'];
 
-  // when they are a manager
-  if (isset($form_state['values']['uid'])) {
-    $role = user_role_load_by_name('manager');
-    user_multiple_role_edit(array($form_state['values']['uid']), 'add_role', $role->rid);
+  if($store_id == '00000') {
+    // based on the store id, they are going to get a manager role
+    // though it won't be validated
+    // or they get a validated role if the store id matches an existing store
+    // @todo make it a function
+
+    // when they are a manager
+    if (isset($form_state['values']['uid'])) {
+      $role = user_role_load_by_name('manager');
+      user_multiple_role_edit(array($form_state['values']['uid']), 'add_role', $role->rid);
+    }
+  } else {
+    // Link the user to the store they entered.
+    // load node and add the newly created employee to the store.
   }
 }
