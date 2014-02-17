@@ -8,6 +8,18 @@ include_once 'elite_store.features.inc';
 
 
 /**
+ * Implments hook_form_FORM_ID_alter().
+ */
+function elite_store_form_store_node_form_alter(&$form, &$form_state, $form_id) {
+  // Unless the editing user is an administrator, hide the store employee item.
+  global $user;
+
+  if (!in_array('administrator', array_values($user->roles))) {
+    hide($form['field_store_employees']);
+  }
+}
+
+/**
  * Implements hook_node_validate().
  *
  * Part of the employee validation process, if the logged in user

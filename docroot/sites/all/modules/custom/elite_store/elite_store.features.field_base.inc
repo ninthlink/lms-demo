@@ -58,32 +58,13 @@ function elite_store_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_store_id'
-  $field_bases['field_store_id'] = array(
+  // Exported field_base: 'field_store_employees'
+  $field_bases['field_store_employees'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_store_id',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(),
-    'indexes' => array(),
-    'locked' => 0,
-    'module' => 'number',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'number_integer',
-  );
-
-  // Exported field_base: 'field_store_manager'
-  $field_bases['field_store_manager'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_store_manager',
+    'field_name' => 'field_store_employees',
     'field_permissions' => array(
       'type' => 0,
     ),
@@ -121,6 +102,25 @@ function elite_store_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_store_id'
+  $field_bases['field_store_id'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_store_id',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_store_region'
