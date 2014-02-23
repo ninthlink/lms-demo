@@ -91,12 +91,8 @@ function elite_validation_user_register_submit($form, &$form_state) {
 
     // Link them to the store they specified.
     $store = elite_store_load_store(array('store_id' => $store_id));
-
     node_object_prepare($store);
-
-    $store->field_store_employees[$store->language][]['target_id'] = $user_id;
-    $store->field_store_employees[$store->language][]['target_type'] = "user";
-
+    $store->field_store_employees[$store->language][]['target_id'] = (string) $user_id;
     node_submit($store);
     node_save($store);
   }
