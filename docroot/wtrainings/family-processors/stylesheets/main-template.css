@@ -248,6 +248,7 @@ body { background-color: black; color: white; font-family: Arial, Helvetica, san
 ----------------------------------------- */
 /*.content-container { background-color: white; }*/
 .slide { padding: 50px 0; overflow: hidden; }
+/*.slide { padding: 10px 0; overflow: hidden; }*/
 .inner-section { padding: 75px 0; }
 .inner-section.first { padding-top: 40px; }
 .inner-section.first-row { padding-bottom: 25px; }
@@ -1623,7 +1624,7 @@ dl.sub-nav dt { color: white; font-weight: bold; }
 
 .prev-arrow:hover:before,
 .next-arrow:hover:before { color: #00acbd; }
-.slide { padding-bottom: 100px; }
+/*.slide { padding-bottom: 100px; }*/
 
 /* --| RTL */
 .rtl .prev-arrow:before { right: 50%; margin-right: -12px; margin-left: 0; }

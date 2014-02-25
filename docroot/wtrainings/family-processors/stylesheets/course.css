@@ -10,7 +10,7 @@
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-body { background-color: black; color: white; }
+body { background-color: #E5E5E5; color: white; }
 
 /* --| Used for columns where something is on the left, that makes it too tight */
 .padding-left-50 { padding-left: 50px; }
@@ -24,6 +24,36 @@ img {
 	-ms-user-select : none;
 	-o-user-select : none;
 	user-select : none;
+}
+
+/* -----------------------------------------
+   Popup: Fix padding for mid-way sections
+----------------------------------------- */
+.section8, .section9, .section10, .section11 { padding-bottom: 0px !important; }
+
+/* -----------------------------------------
+   Vertical Center: The Unknown
+----------------------------------------- */
+/* This parent can be any width and height */
+.v-center-block {
+  text-align: center;
+}
+ 
+/* The ghost, nudged to maintain perfect centering */
+.v-center-block:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can
+   also be of any width and height */ 
+.v-centered {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
 }
 
 /* -----------------------------------------
@@ -57,6 +87,8 @@ ul.chevron.red > li:before { color: #ed2224; }
 /* -----------------------------------------
    Section 1: Mobile Engines 
 ----------------------------------------- */
+.section1 { padding-bottom: 100px !important; }
+
 div.continue-arrow {
 	background: #d52122;
 	width: 50px;
@@ -65,6 +97,7 @@ div.continue-arrow {
 	text-align: center;
 	position: relative;
 	margin-bottom: -25px;
+	top: 75px;
 }
 
 div.continue-arrow:before {
@@ -178,6 +211,12 @@ img.speech-bubbles.rsa 	 { width: 55%; z-index: 3; left: 1%; margin-top: -38%; }
 /*--| Phone Image */
 .tech-phone { margin: 0 auto; position: relative; margin-bottom: -65px; /*width: 70%;*/ visibility: hidden; opacity: 1; }
 .tech-phone > img { width: 100%; /*height: 100%;*/ }
+
+
+/* -----------------------------------------
+   Section 5: Processor Redefined 
+----------------------------------------- */
+.s5p1 .v-center-block { margin-left: -15px; }
 
 /* -----------------------------------------
    Section 6: Leadership 
@@ -404,7 +443,7 @@ p.spec-footnote {
 /* -----------------------------------------
    Quiz
 ----------------------------------------- */
-.quiz.slide { padding: 75px 0; background: black; }
+.quiz.slide { padding: 75px 0 !important; background: black; }
 a.button.large.chevron.quiz-button { font-size: 2.5em; border: 3px solid #121212; }
 .no-touch a.button.large.chevron.quiz-button:hover { background: #121212; }
 
@@ -456,7 +495,7 @@ ol.footnotes > li a {
 	/* -----------------------------------------
    		Section 1: Mobile Engines 
 	----------------------------------------- */
-	div.continue-arrow { margin-bottom: -100px; }
+	div.continue-arrow { margin-bottom: -100px; top: 0; }
 
 	/* -----------------------------------------
    	   Section 4: Technologies Abound 
@@ -466,6 +505,11 @@ ol.footnotes > li a {
 	.tech.battery { top: 0; left: 50%; margin-left: -240px; }
 	.tech.connect { margin-top: -120px; left: 50%; margin-left: 120px; }
 	.tech.speed   { margin-top: -120px; left: 50%; margin-left: -60px; }
+
+	/* -----------------------------------------
+   	Section 5: Processor Redefined 
+	----------------------------------------- */
+	.s5p1 .v-center-block { height: 500px; }
 
 	/* -----------------------------------------
 	   Section 6: Leadership 
@@ -530,7 +574,7 @@ ol.footnotes > li a {
 	/* -----------------------------------------
    		Section 1: Mobile Engines 
 	----------------------------------------- */
-	div.continue-arrow { margin-bottom: -100px; }
+	div.continue-arrow { margin-bottom: -100px; top: 0; }
 
 	/* -----------------------------------------
    	   Section 4: Technologies Abound 
