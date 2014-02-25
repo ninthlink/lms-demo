@@ -27,128 +27,165 @@ $(document).ready(function() {
 	var spinner = new Spinner(opts).spin(target);
 
 	// default animation offset for each section (variance from top of <section>)
-	var offsetDefault = 0;
+	var offsetDefault = '20%';
 
 	// all <h2> will fade in???
 	$('h2').each(function(){
 		$(this).addClass('fade-in');
 	});
-
+	
+	var qmodresize = function() {
+		var qwh = $(window).height();
+		var hdr = $('header');
+		hdr.css('padding',0);
+		var hh = hdr.height();
+		var dif = qwh - hh;
+		if ( dif > 0 ) hdr.css('padding', (Math.floor(dif/2) + 'px 0'));
+	}
+	var qmodresizer;
+	$(window).bind('resize.qmod', function() {
+		//throttle
+		clearTimeout(qmodresizer);
+		qmodresizer = setTimeout(qmodresize, 100);
+	}).trigger('resize.qmod');
+	
+	// qualcommreveal
+	$('.content-container').qualcommreveal({
+      targets: '.block',
+	  scrollspeed: 0,
+    });
+	$.subscribe('qualcommreveal/reveal-finish', function(event, elem, counter) {
+		elem.trigger('qinview');
+	});
+	
+	/* waypoints and other such mayhem */
 	// #2 "Loading" :: fade in h3 and rotator
-	$('#loading').waypoint(function(){ 
-		$('#loading .graphic-position').fadeIn( 500, function() {
-			$('#loading .text-position h3').fadeIn( 500 );
-		} );
-	}, {
-		offset: offsetDefault
+	$('#loading').on('qinview', function() {
+		$(this).waypoint(function(){ 
+			$('#loading .graphic-position').fadeIn( 500, function() {
+				$('#loading .text-position h3').fadeIn( 500 );
+			} );
+		}, {
+			offset: '50%'
+		});
 	});
-
 	// #3 "Difference" :: parallax <li> text; fade in graphic
-	$('#difference').waypoint(function(){ 
-		$('#difference #parallax1').animate({
-			top: "0px",
-			opacity: "1",
-		}, 400 );
-		$('#difference #parallax2').animate({
-			top: "50px",
-			opacity: "1",
-		}, 500 );
-		$('#difference #parallax3').animate({
-			top: "100px",
-			opacity: "1",
-		}, 600 );
-	}, {
-		offset: offsetDefault
-	});
-
-	$('#difference').waypoint(function(){
-		$('#difference .graphic-position').animate({
-			right: 0,
-			opacity: 1,
-		}, 800 );
-	}, {
-		offset: offsetDefault
-	});
-
-	// #4 "Earth" :: flicker in Earth image, then rings around it
-	$('#earth').waypoint(function(){
-		$('#earth .earth').animate({
-			opacity: ".5",
-		}, 500, 'easeInElastic', function() {
-			$('#earth .earth').animate({
+	$('#difference').on('qinview', function() {
+		$(this).waypoint(function(){ 
+			$('#difference #parallax1').animate({
+				top: "0px",
 				opacity: "1",
-			}, 1000, 'easeInElastic');
+			}, 400 );
+			$('#difference #parallax2').animate({
+				top: "50px",
+				opacity: "1",
+			}, 500 );
+			$('#difference #parallax3').animate({
+				top: "100px",
+				opacity: "1",
+			}, 600 );
+		}, {
+			offset: offsetDefault
 		});
-		$('#earth .ring').delay(1000).each(function(e){
-			$(this).delay(250*e).fadeTo( 500, 1, 'easeInElastic');
-		});
-	}, {
-		offset: offsetDefault
-	});
 
-	// #5 "Every Phone" :: load icons one-by-one
-	$('#every-phone').waypoint(function(){
-		$('#every-phone .text-position').fadeTo( 400, 1, 'easeInOutSine' );
-	}, { offset: 200 });
-	$('#every-phone').waypoint(function(){
-		$('#every-phone .graphic-position .three-row').each(function(e){
-			$(this).delay(300*e).fadeTo( 300, 1, 'easeInOutElastic' );
+		$(this).waypoint(function(){
+			$('#difference .graphic-position').animate({
+				right: 0,
+				opacity: 1,
+			}, 800 );
+		}, {
+			offset: offsetDefault
 		});
-	}, {
-		offset: offsetDefault
+	});
+	// #4 "Earth" :: flicker in Earth image, then rings around it
+	$('#earth').on('qinview', function() {
+		$(this).waypoint(function(){
+			$('#earth .earth').animate({
+				opacity: ".5",
+			}, 500, 'easeInElastic', function() {
+				$('#earth .earth').animate({
+					opacity: "1",
+				}, 1000, 'easeInElastic');
+			});
+			$('#earth .ring').delay(1000).each(function(e){
+				$(this).delay(250*e).fadeTo( 500, 1, 'easeInElastic');
+			});
+		}, {
+			offset: offsetDefault
+		});
+	});
+	// #5 "Every Phone" :: load icons one-by-one
+	$('#every-phone').on('qinview', function() {
+		$(this).waypoint(function(){
+			$('#every-phone .text-position').fadeTo( 400, 1, 'easeInOutSine' );
+		}, { offset: 200 });
+		$(this).waypoint(function(){
+			$('#every-phone .graphic-position .three-row').each(function(e){
+				$(this).delay(300*e).fadeTo( 300, 1, 'easeInOutElastic' );
+			});
+		}, {
+			offset: offsetDefault
+		});
 	});
 
 	// #6 "Processes" :: loadicons one-by one, then slide in phone when scroll low enough
-	$('#processes').waypoint(function(){
-		$('#processes .graphic-position .four-row').each(function(e){
-			$(this).delay(250*e).fadeTo( 200, 1, 'easeInExpo');
+	$('#processes').on('qinview', function() {
+		$(this).waypoint(function(){
+			$('#processes .graphic-position .four-row').each(function(e){
+				$(this).delay(250*e).fadeTo( 200, 1, 'easeInExpo');
+			});
+		}, {
+			offset: offsetDefault
 		});
-	}, {
-		offset: offsetDefault
 	});
 
-	$('#processes').waypoint(function(){
-		$('#phone-with-chip').animate({
-			top: "0px",
-		}, 800, 'easeInOutSine' );
-	}, {
-		offset: function() {
-			return -( $(this).height() - 750 );
-		}
+	$('#processes').on('qinview', function() {
+		$(this).waypoint(function(){
+			$('#phone-with-chip').animate({
+				top: "0px",
+			}, 800, 'easeInOutSine' );
+		}, {
+			offset: function() {
+				return -( $(this).height() - 750 );
+			}
+		});
 	});
 
 	// #7 "Delivers" :: fade in graphic, then slide in <li> text from behind graphic
-	$('#delivers').waypoint(function(){
-		$('#delivers .graphic-position ul').delay(500).animate({
-			left: "0px",
-			opacity: "1"
-		}, 900, 'easeInOutBounce' );
-	}, {
-		offset: offsetDefault
+	$('#delivers').on('qinview', function() {
+		$(this).waypoint(function(){
+			$('#delivers .graphic-position ul').delay(500).animate({
+				left: "0px",
+				opacity: "1"
+			}, 900, 'easeInOutBounce' );
+		}, {
+			offset: offsetDefault
+		});
 	});
-
 	// #8 "Mobile Power" ::
 
 	// #9 "Single Chip" :: slide phone to side (large screen) or bottom (small screen), then pop in icons and fade in text
 	$('#pop-power, #pop-lines').css('width',0);
 	$('#single-chip .graphic-position').css('left','-100%');
-	$('#single-chip').waypoint(function(){
-		$('#single-chip .graphic-position').animate({
-			left: "0",
-		}, 600, 'easeInOutSine');
+	$('#single-chip').on('qinview', function() {
+		$(this).waypoint(function(){
+			$('#single-chip .graphic-position').animate({
+				left: "0",
+			}, 600, 'easeInOutSine');
+			
+			$('#single-chip .text-position').fadeTo( 2000, 1, 'easeInOutCubic' );
 		
-		$('#single-chip .text-position').fadeTo( 2000, 1, 'easeInOutCubic' );
-	
-		$('#pop-lines').delay(600).animate({
-			width: "61px",
-		}, 400, 'easeInOutElastic', function() {
-			$('#pop-power').delay(10).animate({
-				width: "42px",
-			}, 400, 'easeInOutElastic' );
+			$('#pop-lines').delay(600).animate({
+				width: "61px",
+			}, 400, 'easeInOutElastic', function() {
+				$('#pop-power').delay(10).animate({
+					width: "42px",
+				}, 400, 'easeInOutElastic' );
+			});
+		}, {
+			offset: offsetDefault,
+			triggerOnce: true,
 		});
-	}, {
-		offset: offsetDefault,
-		triggerOnce: true,
 	});
 
 	// #10 "Multiple Taks" :: slide chips across frame revealing red image, one at a time
@@ -231,11 +268,13 @@ $(document).ready(function() {
 		setTimeout(qchipscroll, 2000);
 	};
 	
-	$('#multiple-tasks').waypoint(function(){
-		qchipscroll();
-	}, { 
-		offset: offsetDefault,
-		triggerOnce: true,
+	$('#multiple-tasks').on('qinview', function() {
+		$(this).waypoint(function(){
+			qchipscroll();
+		}, { 
+			offset: offsetDefault,
+			triggerOnce: true,
+		});
 	});
 
 	$('#frame').click(function(){
@@ -243,8 +282,6 @@ $(document).ready(function() {
 			slide(1);
 		};
 	});
-
-	// #11 "CPU Performance" ::
 
 	// #12 "GPU Performance" ::
 	var gpuwidths = [ 3.3, 6.4, 12.5, 16.2, 78.8, 100 ];
@@ -264,96 +301,108 @@ $(document).ready(function() {
 			$('#gpu-performance p').fadeIn(3000);
 		}
 	};
-	$('#gpu-performance').waypoint(function(){
-		gpustep(0);
-	}, {
-		offset: offsetDefault
+	$('#gpu-performance').on('qinview', function() {
+		$(this).waypoint(function(){
+			gpustep(0);
+		}, {
+			offset: offsetDefault
+		});
 	});
 
 	// #13 "Modem Performance" :: slide in side text from outside frame (arrows rotate via CSS)
-	$('#modem-performance p:last').hide();
-	$('#modem-performance').waypoint(function(){
-		$('#modem-performance .graphic-position .left p').animate({
-			"left": "0px",
-			opacity: 1, 
-		}, 1000, 'easeInOutBack' );
-		$('#modem-performance .graphic-position .right p').animate({
-			"right": "0px",
-			opacity: 1, 
-		}, 1000, 'easeInOutBack', function() {
-			$('#modem-performance p:last').fadeIn(900);
+	$('#modem-performance').on('qinview', function() {
+		$(this).waypoint(function(){
+			$('#modem-performance .graphic-position .left p').animate({
+				"left": "0px",
+				opacity: 1, 
+			}, 1000, 'easeInOutBack' );
+			$('#modem-performance .graphic-position .right p').animate({
+				"right": "0px",
+				opacity: 1, 
+			}, 1000, 'easeInOutBack', function() {
+				$('#modem-performance p:last').fadeIn(900);
+			});
+		}, {
+			offset: offsetDefault
 		});
-	}, {
-		offset: offsetDefault
-	});
-
+	}).find('p:last').hide();
 	// #14 "Thermal Performance" :: fade in image
-	$('#thermal-performance').waypoint(function(){
-		$('#thermal-performance .graphic-position').animate({
-			opacity: "1",
-		}, 1200, 'easeInOutBounce' );
-		
-		
-		
-	}, {
-		offset: offsetDefault
+	$('#thermal-performance').on('qinview', function() {
+		$(this).waypoint(function(){
+			$('#thermal-performance .graphic-position').animate({
+				opacity: "1",
+			}, 1200, 'easeInOutBounce' );
+			
+			
+			
+		}, {
+			offset: offsetDefault
+		});
 	});
 	
-		var bready = function(player_id) {
-			var bplayer = $f(player_id);
-			
-			$('#thermal-performance .video-button').unbind('click').click(function() {
-				jQuery('#butter-video').show().siblings().hide();
-				bplayer.api('play');
-			});
-			
-			bplayer.addEvent('finish', function(data) {
-				jQuery('#butter-video').hide().siblings().show();
-			});
-		};
-		$f(document.getElementById('buttervid')).addEvent('ready', bready);
-
+	var bready = function(player_id) {
+		var bplayer = $f(player_id);
+		
+		$('#thermal-performance .video-button').unbind('click').click(function() {
+			jQuery('#butter-video').show().siblings().hide();
+			bplayer.api('play');
+		});
+		
+		bplayer.addEvent('finish', function(data) {
+			jQuery('#butter-video').hide().siblings().show();
+		});
+	};
+	$f(document.getElementById('buttervid')).addEvent('ready', bready);
+	// pause video when off screen
+	$('#thermal-performance').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
+		if(isInView) {
+			//mm
+		} else {
+			$f('buttervid').api('pause');
+		}
+	});
 	// #15 "Features" :: text slides in looped "n" times
-	$('#features').waypoint(function(){
-		var slidein = function(count) {
-			var s = "600px";
-			count = count - 1;
-			$('#connectivity').delay(800).animate({
-				left: "0px",
-				opacity: "1",
-			}, 1500, function(){
-				$('#connectivity').fadeTo(800, 0).delay(800).css('left', s);
-				$('#performance').delay(500).animate({
+	$('#features').on('qinview', function() {
+		$(this).waypoint(function(){
+			var slidein = function(count) {
+				var s = "600px";
+				count = count - 1;
+				$('#connectivity').delay(800).animate({
 					left: "0px",
 					opacity: "1",
 				}, 1500, function(){
-					$('#performance').fadeTo(800, 0).delay(800).css('left', s);
-					$('#longer-battery').delay(500).animate({
+					$('#connectivity').fadeTo(800, 0).delay(800).css('left', s);
+					$('#performance').delay(500).animate({
 						left: "0px",
 						opacity: "1",
 					}, 1500, function(){
-						$('#longer-battery').fadeTo(800, 0).delay(800).css('left', s);
-						$('#speed').delay(500).animate({
+						$('#performance').fadeTo(800, 0).delay(800).css('left', s);
+						$('#longer-battery').delay(500).animate({
 							left: "0px",
 							opacity: "1",
 						}, 1500, function(){
-							$('#speed').fadeTo(800, 0).delay(800).css('left', s);
-							if ( count > 0 ) {
-								slidein(count);
-							};
+							$('#longer-battery').fadeTo(800, 0).delay(800).css('left', s);
+							$('#speed').delay(500).animate({
+								left: "0px",
+								opacity: "1",
+							}, 1500, function(){
+								$('#speed').fadeTo(800, 0).delay(800).css('left', s);
+								if ( count > 0 ) {
+									slidein(count);
+								};
+							});
 						});
 					});
 				});
-			});
-		};
-		slidein(100);
-	}, {
-		offset: '50%',
-		triggerOnce: true,
+			};
+			slidein(100);
+		}, {
+			offset: '50%',
+			triggerOnce: true,
+		});
 	});
-
 	// #16 "Legal" :: No animations in footer area
-
+	/*
 	// ALL :: slide section to top at specific interval
 	$('header').waypoint(function(direction) {
 		if ( direction == 'down') {
@@ -383,5 +432,5 @@ $(document).ready(function() {
 			});
 		}
 	});
-
+	*/
 });

@@ -1,0 +1,63 @@
+/*=========================================================================================
+Author: Tou Lee
+Created: 2/20/14
+Last Updated: 2/21/14 - 10:54pm
+Version: 1.0.0
+
+Changelog v1.0
+ 	- Created the intial styles
+
+==========================================================================================*/
+/* ----------------------------------------------------------------------------------------
+	Target
+		- The targets to be shown as the user scrolls down the page
+		- '.panel-snap' is the default, but user can pass in anything
+		- The items should be hidden and removed from document flow to keep page short
+		- Added the -webkit-transform to force hardware acceleration on those browsers
+		  that support it.
+---------------------------------------------------------------------------------------- */
+.panel-snap { 
+	display: none; 
+	-webkit-transform: translate3d(0, 0, 0); 
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+
+/* ----------------------------------------------------------------------------------------
+	InView Trigger
+		- The trigger that will trigger the loading in of the next section as the user
+		  progresses downwards. 
+		- Has a height of 90px out of the 100px the container's bottom margin (added in plugin)
+		  so we can account for the "bottom" and "top-bottom" being inview to trigger load in event.
+---------------------------------------------------------------------------------------- */
+div#qreveal-trigger {
+	display: block;
+	width: 100%;
+	height: 90px;
+	position: absolute;
+	bottom: -90px;
+	left: 0;
+	z-index: -1;
+	visibility: hidden;
+	opacity: 0;
+}
+
+/* ----------------------------------------------------------------------------------------
+	Spinner
+		- The spinner that will be inside the trigger
+---------------------------------------------------------------------------------------- */
+div#qreveal-spinner {
+	position: absolute;
+	bottom: 35px;
+	left: 50%;
+	margin-left: -3px;
+}
+
+/* ----------------------------------------------------- 
+   Mobile & Tablet
+----------------------------------------------------- */
+@media only screen and (max-width: 767px) { 
+
+}
+
+

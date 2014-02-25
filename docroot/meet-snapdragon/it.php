@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.4.4
+ * v0.4.6
  */
 ?>
 <!doctype html>
@@ -11,34 +11,28 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<title>Meet Snapdragon</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
+		
+		<meta name="HandheldFriendly" content="True">
+		<meta name="MobileOptimized" content="320">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-touch-fullscreen" content="yes" />
+		<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
 
+		<link rel="stylesheet" href="../wtrainings/_common/css/jquery.qualcomm-reveal.css">
 		<link rel="stylesheet" href="css/main.css">
 
 		<script src="../wtrainings/_common/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><?php /* load CDN or local backup */ ?>
-		<script>window.jQuery || document.write('<script src="../wtrainings/_common/js/jquery-1.10.1.min.js"><\/script>')</script>
-
-		<script src="../wtrainings/_common/js/spin.min.js"></script>
-		<script src="../wtrainings/_common/js/jquery.scrollorama.js"></script>
-		<script src="../wtrainings/_common/js/waypoints.min.js"></script>
-		<script src="../wtrainings/_common/js/swiper.min.js"></script>
-
 	</head>
-
 	<body>
-		
-		<div id="wrapper">
+		<div id="content" class="content-container">
 
 			<?php // Slide #1 ?>
-			<header class="bg-red-grad">
+			<header class="bg-red-grad block">
 				<div class="inner">
 					<h1 class="center txtw">Scopri i processori<br /><span class="thick">Qualcomm</span><sup>&reg;</sup> <span class="thick">Snapdragon</span><sup>&trade;</sup></h1>
 					<div class="header-graphic">
@@ -48,11 +42,9 @@
 					</div>
 				</div>
 			</header>
-			
-			<div id="content">
 				
 				<?php // Slide #2 ?>
-				<section id="loading" class="bg-white">
+				<section id="loading" class="bg-white block">
 					<div class="inner">
 						<div class="graphic-position">
 							<div id="spinner"></div>
@@ -65,7 +57,7 @@
 				</section>
 
 				<?php // Slide #3 ?>
-				<section id="difference" class="bg-grey">
+				<section id="difference" class="bg-grey block">
 					<div class="inner">
 						<div class="text-position">
 							<h2 class="txtr">Scopri come i dispositivi Qualcomm Snapdragon <span class="thick">possono fare la differenza</span></h2>
@@ -82,7 +74,7 @@
 				</section>
 
 				<?php // Slide #4 ?>
-				<section id="earth" class="bg-black">
+				<section id="earth" class="bg-black block">
 					<div class="inner">
 						<div class="text-position">
 							<h2 class="txtw">Tu ti trovi qui. <span class="thick">Terra.</span></h2>
@@ -115,7 +107,7 @@
 				</section>
 
 				<?php // Slide #5 ?>
-				<section id="every-phone" class="bg-grey-grad">
+				<section id="every-phone" class="bg-grey-grad block">
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtb"><span class="thick">Ogni smartphone</span> dispone di un processore</h2>
@@ -142,7 +134,7 @@
 				</section>
 
 				<?php // Slide #6 ?>
-				<section id="processes" class="bg-red-grad-lt">
+				<section id="processes" class="bg-red-grad-lt block">
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtw">Le persone si aspettano che gli smartphone facciano <span class="thick">qualsiasi cosa.</span> I processori Snapdragon sono il cuore di questi processi</h2>
@@ -212,7 +204,7 @@
 				</section>
 
 				<?php // Slide #7 ?>
-				<section id="delivers" class="bg-grey-rdl">
+				<section id="delivers" class="bg-grey-rdl block">
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtr">Snapdragon <span class="thick">offre</span></h2>
@@ -237,7 +229,7 @@
 				</section>
 
 				<?php // Slide #8 ?>
-				<section id="mobile-power">
+				<section id="mobile-power" class="block">
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtw"><span class="thick">Potenzialità mobile</span> straordinaria</h2>
@@ -247,10 +239,10 @@
 				</section>
 
 				<?php // Slide #9 ?>
-				<section id="single-chip" class="bg-red-grad-lt">
+				<section id="single-chip" class="bg-red-grad-lt block">
 					<div class="inner">
 						<div class="text-position">
-							<p class="txtw">Solo Qualcomm progetta i componenti tecnologici principali che permettono di collegare ciascun componente in un  <span class="thick">unico sistema all'interno di un chip</span></p>
+							<p class="txtw">Solo Qualcomm progetta tutti i principali componenti tecnologici di un dispositivo mobile, integrati all'interno di un <span class="thick">unico system-on-chip</span></p>
 						</div>
 						<div class="graphic-position">
 							<img id="single-phone" src="img/tablet.png" />
@@ -263,7 +255,7 @@
 				</section>
 
 				<?php // Slide #10 ?>
-				<section id="multiple-tasks" class="bg-white">
+				<section id="multiple-tasks" class="bg-white block">
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtr">Un unico processore. <span class="thick">Più attività.</span></h2>
@@ -304,7 +296,7 @@
 				</section>
 
 				<?php */ // Slide #12 ?>
-				<section id="gpu-performance" class="bg-grey-rdl">
+				<section id="gpu-performance" class="bg-grey-rdl block">
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtb"><span class="thick">Prestazioni</span> grafiche migliorate</h2>
@@ -326,7 +318,7 @@
 				</section>
         
 				<?php // Slide #13 ?>
-				<section id="modem-performance" class="bg-grey-grad">
+				<section id="modem-performance" class="bg-grey-grad block">
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtb"><span class="thick">Prestazioni</span> del modem</h2>
@@ -352,7 +344,7 @@
 				</section>
 
 				<?php // Slide #14 ?>
-				<section id="thermal-performance" class="bg-black">
+				<section id="thermal-performance" class="bg-black block">
 					<div class="inner">
 						<div class="text-position">
 							<h2 class="txtw" style="font-size: 2em"><span class="thick">Prestazioni</span> termiche migliorate. Minore spreco di energia.</h2>
@@ -375,7 +367,7 @@
 				</section>
 
 				<?php // Slide #15 ?>
-				<section id="features" class="bg-white">
+				<section id="features" class="bg-white block">
 					<div class="inner">
 						<div class="graphic-position">
 							<img src="img/chip381x252.png" />
@@ -401,7 +393,7 @@
 					</div>
 				</section>
 				<?php // quiz CTA ?>
-        <section id="proceed" class="bg-black">
+        <section id="proceed" class="bg-black block">
         	<div class="inner">
           	<div class="text-position center">
             	<div class="video-button">
@@ -411,7 +403,7 @@
           </div>
         </section>
 				<?php // Slide #16 ?>
-				<section id="legal" class="bg-red">
+				<section id="legal" class="bg-red block">
 					<div class="inner">
 						<div class="text-position center">
 							<p class="txtw">&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc. Tutti i diritti riservati.</p>
@@ -424,11 +416,17 @@
 				</section>
 				
 			</div>
+		
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script><?php /* load CDN or local backup */ ?>
+		<script>window.jQuery || document.write('<script src="../wtrainings/_common/js/jquery-1.10.1.min.js"><\/script>')</script>
 
-			<footer>
-			</footer>
-	 
-		</div>
+		<script src="../wtrainings/_common/js/spin.min.js"></script>
+		<script src="../wtrainings/_common/js/jquery.inview.min.js"></script>
+		<script src="../wtrainings/_common/js/jquery.qualcomm-reveal.min.js"></script>
+		<script src="../wtrainings/_common/js/jquery.scrollorama.js"></script>
+		<script src="../wtrainings/_common/js/waypoints.min.js"></script>
+		<script src="../wtrainings/_common/js/swiper.min.js"></script>
+		
 		<script type="text/javascript" src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
 		<script src="js/animate.js"></script>
 <script type="text/javascript"> 

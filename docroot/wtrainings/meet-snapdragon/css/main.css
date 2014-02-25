@@ -313,8 +313,6 @@ height: 100px;
 
 @media only screen and (min-width: 320px) {
     /* section heights for pc size */
-    
-    header { padding-bottom: 5%; }
 
     #loading,
     #loading .inner { min-height: 488px; }
@@ -376,8 +374,6 @@ height: 100px;
 }
 @media only screen and (min-width: 960px) {
     /* section heights for pc size */
-    
-    header { padding-bottom: 5%; }
 
     #loading,
     #loading .inner { min-height: 488px; }
@@ -482,8 +478,11 @@ height: 100px;
 }
 
 /* header area - responsive all sizes */
+	header {
+		padding: 6% 0;
+	}
     header h1 { 
-        padding-top: 6%;
+        padding-top: 0;
         width: 100%;
     }
     header .header-graphic {
