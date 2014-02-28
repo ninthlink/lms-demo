@@ -101,6 +101,9 @@ function elite_store_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_store_region',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'foreign keys' => array(),
     'indexes' => array(
       'value' => array(
@@ -112,9 +115,9 @@ function elite_store_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         'us' => 'United States',
-        'africa' => 'Africa',
+        'uk' => 'United Kingdom',
+        'russia' => 'Russia',
         'china' => 'China',
-        'southamerica' => 'South America',
       ),
       'allowed_values_function' => '',
     ),

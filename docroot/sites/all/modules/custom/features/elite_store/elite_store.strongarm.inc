@@ -21,7 +21,7 @@ function elite_store_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_default_mode_store';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['comment_default_mode_store'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -62,23 +62,6 @@ function elite_store_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
-  $strongarm->name = 'field_bundle_settings_node__store';
-  $strongarm->value = array(
-    'view_modes' => array(),
-    'extra_fields' => array(
-      'form' => array(
-        'title' => array(
-          'weight' => '-5',
-        ),
-      ),
-      'display' => array(),
-    ),
-  );
-  $export['field_bundle_settings_node__store'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_store';
   $strongarm->value = '0';
   $export['language_content_type_store'] = $strongarm;
@@ -87,7 +70,9 @@ function elite_store_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'menu_options_store';
-  $strongarm->value = array();
+  $strongarm->value = array(
+    0 => 'main-menu',
+  );
   $export['menu_options_store'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -119,36 +104,6 @@ function elite_store_strongarm() {
   $strongarm->name = 'node_submitted_store';
   $strongarm->value = 0;
   $export['node_submitted_store'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'unique_field_comp_store';
-  $strongarm->value = 'each';
-  $export['unique_field_comp_store'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'unique_field_fields_store';
-  $strongarm->value = array(
-    0 => 'field_store_id',
-  );
-  $export['unique_field_fields_store'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'unique_field_scope_store';
-  $strongarm->value = 'type';
-  $export['unique_field_scope_store'] = $strongarm;
-
-  $strongarm = new stdClass();
-  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
-  $strongarm->api_version = 1;
-  $strongarm->name = 'unique_field_show_matches_store';
-  $strongarm->value = array();
-  $export['unique_field_show_matches_store'] = $strongarm;
 
   return $export;
 }

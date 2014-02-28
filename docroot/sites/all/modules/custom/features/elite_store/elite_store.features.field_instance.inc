@@ -163,7 +163,7 @@ function elite_store_field_default_field_instances() {
     'bundle' => 'store',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'This is the "Store ID" that Employees will enter during Registration to identify them as Employees of this particular Store.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -186,11 +186,11 @@ function elite_store_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_store_id',
-    'label' => 'ID',
+    'label' => 'Store ID',
     'required' => 0,
     'settings' => array(
       'max' => '',
-      'min' => '',
+      'min' => 0,
       'prefix' => '',
       'suffix' => '',
       'user_register_form' => FALSE,
@@ -207,7 +207,11 @@ function elite_store_field_default_field_instances() {
   // Exported field_instance: 'node-store-field_store_region'
   $field_instances['node-store-field_store_region'] = array(
     'bundle' => 'store',
-    'default_value' => NULL,
+    'default_value' => array(
+      0 => array(
+        'value' => 'us',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -228,11 +232,12 @@ function elite_store_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_store_region',
     'label' => 'Region',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
@@ -245,8 +250,9 @@ function elite_store_field_default_field_instances() {
   t('Address');
   t('Body');
   t('Employees');
-  t('ID');
   t('Region');
+  t('Store ID');
+  t('This is the "Store ID" that Employees will enter during Registration to identify them as Employees of this particular Store.');
 
   return $field_instances;
 }
