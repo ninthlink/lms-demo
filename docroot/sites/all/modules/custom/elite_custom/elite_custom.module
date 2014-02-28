@@ -594,7 +594,8 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
       }
       break;
 		case 'services_views_execute_view':
-			if ($controller['view info']['view_name'] == 'questions_by_quiz') {
+			//watchdog('s v e v', $controller['view info']['view_name']);
+			if ( in_array( $controller['view info']['view_name'], array( 'questions_by_quiz', 'trainings_quiz_service' ) ) ) {
 				// combine answers without massive php errors
 				$oot = array();
 				$usevids = false;
