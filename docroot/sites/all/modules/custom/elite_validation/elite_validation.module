@@ -90,10 +90,15 @@ function elite_validation_user_register_submit($form, &$form_state) {
     }
 
     // Link them to the store they specified.
+	//watchdog('employee link check', 'uid '. $user_id .' : store_id '. $store_id);
     $store = elite_store_load_store(array('store_id' => $store_id));
     node_object_prepare($store);
-    $store->field_store_employees[$store->language][]['target_id'] = (string) $user_id;
+	$store1 = $store;
+    //$store->field_store_employees[$store->language][]['target_id'] = (string) $user_id;
+    $store->field_store_employees[LANGUAGE_NONE][]['target_id'] = (string) $user_id;
     node_submit($store);
     node_save($store);
+	
+	//watchdog('employee link check', 'uid '. $user_id .' : store_id '. $store_id .'<br />store check 1 : <pre>'. print_r($store1, true) .'</pre><br /><br />store check 2 : <pre>'. print_r($store, true) .'</pre>');
   }
 }
