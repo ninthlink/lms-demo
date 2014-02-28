@@ -1,5 +1,5 @@
-name = Elite Shop
-description = the Store is a place to Redeem Userpoints for Rewards
+name = Elite Shop Rewards
+description = Shop/Store area to Redeem Userpoints for Rewards. Rewards content type + view
 core = 7.x
 package = Elite
 version = 7.x-1.0

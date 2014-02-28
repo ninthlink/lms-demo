@@ -1,5 +1,5 @@
 name = Elite Store
-description = Employee Validation "Store" location Content Type + Store "manager" user role + rules
+description = Employee Validation "Store" location Content Type + "manager" role + rules
 core = 7.x
 package = Elite
 version = 7.x-1.1
