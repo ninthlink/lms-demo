@@ -243,13 +243,8 @@ function elite_trends_field_default_field_bases() {
     'locked' => 0,
     'module' => 'list',
     'settings' => array(
-      'allowed_values' => array(
-        'us' => 'United States',
-        'uk' => 'United Kingdom',
-        'russia' => 'Russia',
-        'china' => 'China',
-      ),
-      'allowed_values_function' => '',
+      'allowed_values' => array(),
+      'allowed_values_function' => 'elite_custom_default_regions_list',
     ),
     'translatable' => 0,
     'type' => 'list_text',
