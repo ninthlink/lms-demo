@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * elite_store.features.inc
+ * elite_shop.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function elite_store_ctools_plugin_api($module = NULL, $api = NULL) {
+function elite_shop_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -16,14 +16,14 @@ function elite_store_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function elite_store_views_api($module = NULL, $api = NULL) {
+function elite_shop_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_image_default_styles().
  */
-function elite_store_image_default_styles() {
+function elite_shop_image_default_styles() {
   $styles = array();
 
   // Exported image style: 260x185.
@@ -55,7 +55,7 @@ function elite_store_image_default_styles() {
 /**
  * Implements hook_node_info().
  */
-function elite_store_node_info() {
+function elite_shop_node_info() {
   $items = array(
     'reward' => array(
       'name' => t('Reward Product'),

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * elite_store.field_group.inc
+ * elite_shop.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function elite_store_field_group_info() {
+function elite_shop_field_group_info() {
   $export = array();
 
   $field_group = new stdClass();

@@ -1,9 +1,9 @@
-name = Elite Store
+name = Elite Shop
 description = the Store is a place to Redeem Userpoints for Rewards
 core = 7.x
 package = Elite
 version = 7.x-1.0
-project = elite_store
+project = elite_shop
 dependencies[] = commerce
 dependencies[] = commerce_customer
 dependencies[] = commerce_payment

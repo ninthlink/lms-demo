@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * elite_store.features.field_base.inc
+ * elite_shop.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function elite_store_field_default_field_bases() {
+function elite_shop_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_reward_product'

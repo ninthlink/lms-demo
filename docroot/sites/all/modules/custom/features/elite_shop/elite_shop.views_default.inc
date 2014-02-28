@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * elite_store.views_default.inc
+ * elite_shop.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function elite_store_views_default_views() {
+function elite_shop_views_default_views() {
   $export = array();
 
   $view = new view();

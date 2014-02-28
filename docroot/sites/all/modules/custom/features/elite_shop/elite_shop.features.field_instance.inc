@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * elite_store.features.field_instance.inc
+ * elite_shop.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function elite_store_field_default_field_instances() {
+function elite_shop_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-reward-body'
