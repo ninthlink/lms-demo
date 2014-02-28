@@ -1,0 +1,4 @@
+name = elite_validation
+description = Validating users and storse
+core = 7.x
+package = Features

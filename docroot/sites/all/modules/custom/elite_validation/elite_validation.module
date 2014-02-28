@@ -1,0 +1,99 @@
+<?php
+/**
+ * @file
+ * Code related to validating users and stores
+ */
+
+
+/**
+ * Implements hook_form_alter().
+ *
+ * This will alter the user registration form to add a store field
+ * that can be used for both the employees and managers
+ *
+ * @todo if this is the only alter, pull it into a form-id alter
+ */
+function elite_validation_form_alter(&$form, &$form_state, $form_id) {
+  // #id = user-register-form
+  if ($form_id == 'user_register_form') {
+    // Adding the store id
+    $form['account']['store'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Store Id'),
+      '#size' => 15,
+      '#required' => TRUE
+    );
+
+    $form['#validate'][] = 'elite_validation_user_register_validate';
+
+    $form['#submit'][] = 'elite_validation_user_register_submit';
+
+  }
+
+}
+
+/**
+ * Form alter submit
+ */
+function elite_validation_user_register_validate($form, &$form_state) {
+  $store_id = $form_state['values']['store'];
+
+  // @todo JuTTmhdzVRShwQZ7x2p!
+  //  This is a placeholder to distinguish manager account creation
+  //   from store employee account creation.  This should be revised when
+  //   more specific workflows and criteria are implemented.
+  if ($store_id != '00000') {
+    // The user is not a manager.
+    // Check the store id against valid database ids
+    if (!elite_store_valid_store_id($store_id)) {
+      form_set_error('store', t('This store id is not valid'));
+    } else {
+      $store = elite_store_load_store(array('store_id' => $store_id));
+      // @todo this should return true. probably need an if here.
+      // The store id is valid.
+      // Check the store's region against the user's region.
+      $user_region = $form_state['values']['field_region'][LANGUAGE_NONE][0]['value'];
+
+      if ($user_region != $store->field_store_region[LANGUAGE_NONE][0]['value']) {
+        form_set_error('store', t('Your region is incorrect.'));
+      }
+    }
+  } else {
+    // They are a manager and actually nothing to see here probably
+  }
+}
+
+/**
+ * Form alter submit
+ */
+function elite_validation_user_register_submit($form, &$form_state) {
+  $store_id = $form_state['values']['store'];
+  $user_id = $form_state['values']['uid'];
+
+  if($store_id == '00000') {
+    // based on the store id, they are going to get a manager role
+    // though it won't be validated
+    // or they get a validated role if the store id matches an existing store
+    // @todo make it a function
+
+    // when they are a manager
+    if (isset($form_state['values']['uid'])) {
+      $role = user_role_load_by_name('manager');
+      user_multiple_role_edit(array($user_id), 'add_role', $role->rid);
+    }
+  } else {
+    // They are an employee with a valid store id.
+    // Set their account to validated and link them to the store.
+    if (isset($form_state['values']['uid'])) {
+      $role = user_role_load_by_name('validated');
+      user_multiple_role_edit(array($user_id), 'add_role', $role->rid);
+    }
+
+    // Link them to the store they specified.
+    $store = elite_store_load_store(array('store_id' => $store_id));
+    node_object_prepare($store);
+    $store->field_store_employees[$store->language][]['target_id'] = (string) $user_id;
+    node_submit($store);
+    node_save($store);
+  }
+}
