@@ -638,7 +638,8 @@ article.node-reward .field-type-commerce-product-reference .form-submit {
 ** Homepage blocks
 */
 .block.block-tips,
-.block.block-store {
+.block.block-store,
+.block.block-app {
   position: relative;
   background: #008d95 url(../images/icon-tools.png) no-repeat 388px 50px;
   color: #fff;
@@ -648,8 +649,12 @@ article.node-reward .field-type-commerce-product-reference .form-submit {
 .block.block-store {
   background: #252525 url(../images/icon-cart.png) no-repeat 360px 70px;
 }
+.block.block-app {
+  background: #252525 url(../images/icon-appd.png) no-repeat 360px 34px;
+}
 .block.block-tips h2,
-.block.block-store h2 {
+.block.block-store h2,
+.block.block-app h2 {
   color: #fff;
   text-transform: uppercase;
   padding: 35px 0 0 25px;
@@ -657,14 +662,16 @@ article.node-reward .field-type-commerce-product-reference .form-submit {
   width: 220px;
 }
 .block.block-tips p,
-.block.block-store p {
+.block.block-store p,
+.block.block-app p {
   padding: 0 0 55px 25px;
   width: 300px;
   font-size: 1.15em;
   line-height: 1.1em;
 }
 .block.block-tips .more-link,
-.block.block-store .more-link {
+.block.block-store .more-link,
+.block.block-app .more-link {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -676,12 +683,14 @@ article.node-reward .field-type-commerce-product-reference .form-submit {
   font-family: "Qualcomm-Bold";
 }
 .block.block-tips .more-link a,
-.block.block-store .more-link a {
+.block.block-store .more-link a,
+.block.block-app .more-link a {
   display: block;
   padding: 0 30px;
   background: #57b3b8;
 }
-.block.block-store .more-link a {
+.block.block-store .more-link a,
+.block.block-app .more-link a {
   background: #6d6d6d;
 }
 /*
