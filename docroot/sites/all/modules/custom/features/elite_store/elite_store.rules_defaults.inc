@@ -34,7 +34,7 @@ function elite_store_default_rules_configuration() {
       "ON" : { "node_insert--store" : { "bundle" : "store" } },
       "DO" : [
         { "mail" : {
-            "to" : "nikkilstevens@gmail.com",
+            "to" : [ "node:author:mail" ],
             "subject" : "Your store\\u0027s unique ID",
             "message" : "Your store\\u0027s unique ID is: [node:field-store-id]",
             "language" : [ "" ]
