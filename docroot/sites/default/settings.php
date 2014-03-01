@@ -24,6 +24,24 @@ ini_set('session.use_only_cookies', 1);
 ini_set('session.use_trans_sid',    0);
 ini_set('url_rewriter.tags',        '');
 
+if (isset($_GET['q']) && ( ( strpos($_GET['q'], 'admin') === 0) || ( strpos($_GET['q'], 'batch') === 0) ) ) {
+	ini_set('memory_limit', '512M');
+	ini_set('max_execution_time', 10000);
+	ini_set('max_input_time', 300);
+	ini_set('mysql.connect_timeout', 300);
+	ini_set('default_socket_timeout', 300);
+	
+	if ( strpos($_GET['q'], 'batch') === 0) {
+		set_time_limit(300);
+	}
+}
+/* memcache
+$conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
+$conf['cache_default_class'] = 'MemCacheDrupal';
+$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+*/
+//vde
+$conf['views_data_export_directory'] = 'public://';
 
 // On Acquia Cloud, this include file configures Drupal to use the correct
 // database in each site environment (Dev, Stage, or Prod). To use this
