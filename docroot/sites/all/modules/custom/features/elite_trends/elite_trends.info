@@ -1,8 +1,8 @@
 name = Elite Trends
-description = Trends "Article" content type, View, collect points Flag, Image Styles, Taxes
+description = "Article" content type, View, collect points flag, image styles, taxes...
 core = 7.x
 package = Elite
-version = 7.x-1.1
+version = 7.x-1.2
 project = elite_trends
 dependencies[] = features
 dependencies[] = fivestar
