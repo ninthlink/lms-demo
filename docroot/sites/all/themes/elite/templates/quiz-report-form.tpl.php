@@ -20,8 +20,21 @@
 // $td_class_i = 0;
 $p = drupal_get_path('module', 'quiz') .'/theme/';
 $q_image = $p. 'question_bg.png';
+
+//echo '<div style="display:none"><pre>'. print_r($form,true) .'</pre></div>';
+
+$nq = false;
+if ( isset( $form['op'] ) ) {
+if ( $form['op']['#value'] == t('Next question') ) {
+	$nq = true;
+}
+}
+if ( $nq ) {
+	echo '<div id="quiz_progress" class="nob">'. t('Question Answer') .'</div>';
+} else {
+	echo '<h2>'. t('Quiz Results') .'</h2>';
+}
 ?>
-<h2><?php print t('Quiz Results');?></h2>
 <div class="quiz-report">
 <?php
 foreach ($form as $key => $sub_form):
@@ -56,7 +69,7 @@ foreach ($form as $key => $sub_form):
 				$spanend = strpos( $answertable, '</span>', $spanat) + 7;
 				$span = substr( $answertable, $spanat, $spanend - $spanat );
 				
-				echo '<table><tbody><tr><td>'. substr($answertable, 0, $spanat -2) .' correct">'. substr($answertable, $spanend) .'</td><td>'. $span .'</td></tr></tbody></table>';
+				echo '<table class="answertable"><tbody><tr><td>'. substr($answertable, 0, $spanat -2) .' correct">'. substr($answertable, $spanend) .'</td><td>'. $span .'</td></tr></tbody></table>';
 			}
 		?>
   </div>

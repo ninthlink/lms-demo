@@ -92,8 +92,13 @@ function qelite_taketraining_btn() {
 						return false;
 					});
 				}
+				if ( $('body').hasClass('node-type-quiz') ) {
+					$('.answertable .multichoice-icon.correct').each(function() {
+						$(this).parent().attr('width','40').prev().find('tr.correct').append($(this).parent()).siblings().children().attr('colspan','2');
+					});
+				}
 			}
-			// training details
+			// trend article details
 			if ( $('body').hasClass('node-type-article') ) {
 				var extl = $('.field-name-field-external-link a');
 				if ( extl.size() > 0 ) {
