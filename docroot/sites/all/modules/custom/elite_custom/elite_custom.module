@@ -438,7 +438,7 @@ function elite_custom_quiz_finished($quiz, $score, $rid) {
 		
 		$taken = elite_custom_user_taken_quiz( $quiz->nid );
 		$ptsres = array();
-		if ( TRUE ) { //$taken == 0 ) {
+		if ( $taken == 0 ) {
 			$ptsres = userpoints_userpointsapi( array(
 				'points' => $base_points,
 				'operation' => 'elite_custom_quiz_finished',
@@ -495,11 +495,13 @@ function elite_custom_user_training_count($uid = -1) {
 		global $user;
 		$uid = $user->uid;
 	}
-	$dbresult = db_query('SELECT DISTINCT(n.nid), n.result_id, n.time_start, n.time_end
-    FROM {quiz_node_results} n
-    WHERE n.uid = :uid
-		AND n.time_end > 0
-    ORDER BY n.result_id ASC', array(':uid' => $uid));
+	$dbresult = db_query('SELECT DISTINCT(q.nid), q.result_id, q.time_start, q.time_end, n.nid, n.status
+    FROM {quiz_node_results} q JOIN {node} n
+    WHERE q.nid = n.nid
+		AND q.uid = :uid
+		AND q.time_end > 0
+		AND n.status = 1
+    ORDER BY q.result_id ASC', array(':uid' => $uid));
 
   // count...
 	$total = 0;
@@ -511,6 +513,8 @@ function elite_custom_user_training_count($uid = -1) {
 			$total++;
 		}
   }
+  
+  //watchdog('usercount', 'check '. $total .' : <pre>'. print_r($dbresult,true) .'</pre>');
 	return $total;
 }
 /* old function with alex typo in function name... */
