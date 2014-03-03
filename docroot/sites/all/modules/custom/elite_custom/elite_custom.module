@@ -37,6 +37,21 @@ function elite_custom_form_alter(&$form, &$form_state, $form_id) {
       $form['actions']['checkout']['#disabled'] = TRUE;
     }
   }
+  if ( $form_id == 'quiz_question_answering_form' ) {
+	if ( isset ( $form['navigation'] ) ) {
+		if ( isset( $form['navigation']['submit'] ) ) {
+			if ( $form['navigation']['submit']['#value'] == t('Next') ) {
+				$form['navigation']['submit']['#value'] = t('Answer');
+				
+				$form['op'] = array(
+					'#type' => 'hidden',
+					'#value' => t('Next')
+				);
+			}
+		}
+	}
+	//watchdog('form alt', 'form_id '. $form_id .' **form <pre>'. print_r($form,true) .'</pre>');
+  }
 	//watchdog('form alt', 'form_id '. $form_id);
 }
 
