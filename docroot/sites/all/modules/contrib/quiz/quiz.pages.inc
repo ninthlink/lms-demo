@@ -269,6 +269,7 @@ function quiz_get_user_results($uid) {
     INNER JOIN {users} u ON u.uid = qnrs.uid
     WHERE n.type = :type
       AND u.uid = :uid
+	  AND n.status = 1
     ORDER BY qnrs.result_id DESC', array(':type' => 'quiz', ':uid' => $uid));
 
   // Create an array out of the results.
