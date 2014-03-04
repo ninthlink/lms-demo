@@ -13,11 +13,7 @@ function elite_user_regions_field_default_field_instances() {
   // Exported field_instance: 'user-user-field_region'
   $field_instances['user-user-field_region'] = array(
     'bundle' => 'user',
-    'default_value' => array(
-      0 => array(
-        'value' => 'us',
-      ),
-    ),
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
