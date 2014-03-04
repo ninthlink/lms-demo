@@ -689,6 +689,14 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 					$result->field_rating = $ratings;
 				}
 			}
+			if ( in_array( $result->type , array( 'article', 'training' ) ) ) {
+				$fav = 0 ;
+				if ( function_exists('flag_get_flag') ) {
+					$favflag = flag_get_flag('favorites');
+					$fav = $favflag->is_flagged($result->nid);
+				}
+				$result->favorite = (int)$fav;
+			}
 			//watchdog("node_resource_retrieve", 'result.. <pre>'. print_r($result,true) .'</pre>');
 			break;
 		case 'services_poll_vote':
