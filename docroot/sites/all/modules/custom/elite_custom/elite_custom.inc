@@ -125,7 +125,7 @@ function elite_custom_services_user_counts() {
 }
 
 /**
- * callback for services /locations/regions
+ * callback for services /regions
  * 
  * returns
  * regions for registering peoples
@@ -138,4 +138,13 @@ function elite_custom_services_regions() {
 	$return = $values;
 	
 	return $return;
+}
+/**
+ * callback for services /regions/verbose
+ * 
+ * returns
+ * regions for registering peoples
+ */
+function elite_custom_services_regions_verbose() {
+	return elite_custom_default_regions_list_verbose();
 }

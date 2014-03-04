@@ -189,15 +189,26 @@ function elite_custom_services_resources() {
   );
 
 	$resources['regions']['index'] = array(
-    'file' => array(
-      'type' => 'inc', 
-      'module' => 'elite_custom',
-      'name' => 'elite_custom',
-    ),
+		'file' => array(
+			'type' => 'inc', 
+			'module' => 'elite_custom',
+			'name' => 'elite_custom',
+		),
 		'access callback' => 'services_access_menu', // allow ALL
-    'callback' => 'elite_custom_services_regions',
-    'help'   => t('Get list of Regions as options for when Registering new Users'),
-  );
+		'callback' => 'elite_custom_services_regions',
+		'help'   => t('Get list of Regions as options for when Registering new Users'),
+	);
+	
+	$resources['regions_verbose']['index'] = array(
+		'file' => array(
+			'type' => 'inc', 
+			'module' => 'elite_custom',
+			'name' => 'elite_custom',
+		),
+		'access callback' => 'services_access_menu', // allow ALL
+		'callback' => 'elite_custom_services_regions_verbose',
+		'help'   => t('More verbose API list of Regions as options for when Registering new Users'),
+	);
   return $resources;
 }
 
@@ -940,8 +951,22 @@ function elite_custom_default_regions_list() {
 		'us' => t('United States'),
 		'uk' => t('United Kingdom'),
 		'russia' => t('Russia'),
+		/*
 		'china' => t('China'),
 		'africa' => t('Africa'),
 		'southamerica' => t('South America'),
+		*/
 	);
+}
+
+function elite_custom_default_regions_list_verbose() {
+	$regions = elite_custom_default_regions_list();
+	$oot = array();
+	foreach ( $regions as $c => $n ) {
+		$oot[] = array(
+			'code' => $c,
+			'name' => $n,
+		);
+	}
+	return $oot;
 }
