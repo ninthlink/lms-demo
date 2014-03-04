@@ -62,13 +62,13 @@ function flag_service_flag_content($data) {
   global $user;
   $account = empty($data['uid']) ? $user : user_load($data['uid']);
   $flag = flag_get_flag($data['flag_name']);
-  $skip_permission_check = (boolean) $data['skip_permission_check'];
+  $skip_permission_check = isset( $data['skip_permission_check'] ) ? (boolean) $data['skip_permission_check'] : false;
   if (!$flag) {
     watchdog('services', '<pre>' . print_r(debug_backtrace(), TRUE) . '</pre>');
     // Flag does not exist.
     return services_error(t('There is no flag with the name @flag_name', array('@flag_name' => $data['flag_name'])), 406);
   }
-  return $flag->flag($data['action'], $data['content_id'], $account, $data['skip_permission_check']);
+  return $flag->flag($data['action'], $data['content_id'], $account, $skip_permission_check);
 }
 
 /**
