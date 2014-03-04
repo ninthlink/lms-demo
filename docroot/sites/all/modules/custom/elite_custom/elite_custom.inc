@@ -115,11 +115,14 @@ function elite_custom_services_user_counts() {
 	
 	$points = (int)userpoints_get_current_points($uid);
 	
+	$favorites = (int)elite_custom_user_favorites_count();
+	
 	$return = new stdClass();
 	$return->uid = $uid;
 	$return->points = $points;
 	$return->trainings = $trainings;
 	$return->trends = $trends;
+	$return->favorites = $favorites;
 	
 	return $return;
 }
