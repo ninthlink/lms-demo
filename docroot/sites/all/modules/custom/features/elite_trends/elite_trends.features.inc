@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function elite_trends_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "strongarm" && $api == "strongarm") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_views_api().
  */
 function elite_trends_views_api($module = NULL, $api = NULL) {
@@ -39,6 +48,43 @@ function elite_trends_flag_default_flags() {
       'rss' => 0,
       'search_index' => 0,
       'search_result' => 0,
+    ),
+    'show_as_field' => 1,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
+    'i18n' => 1,
+    'module' => 'elite_trends',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 3,
+  );
+  // Exported flag: "Favorites".
+  $flags['favorites'] = array(
+    'entity_type' => 'node',
+    'title' => 'Favorites',
+    'global' => 0,
+    'types' => array(
+      0 => 'article',
+      1 => 'training',
+    ),
+    'flag_short' => 'Favorite',
+    'flag_long' => '',
+    'flag_message' => 'The [node:type] has been added to your Favorites',
+    'unflag_short' => 'Unfavorite',
+    'unflag_long' => '',
+    'unflag_message' => 'The [node:type] has been removed from your Favorites',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 0,
+      'teaser' => 0,
+      'rss' => 0,
+      'search_index' => 0,
+      'search_result' => 0,
+      'token' => 0,
     ),
     'show_as_field' => 1,
     'show_on_form' => 0,

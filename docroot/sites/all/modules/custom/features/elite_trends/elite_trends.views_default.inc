@@ -46,6 +46,13 @@ function elite_trends_views_default_views() {
   $handler->display->display_options['empty']['area']['empty'] = TRUE;
   $handler->display->display_options['empty']['area']['content'] = 'Check back soon for more Trends.';
   $handler->display->display_options['empty']['area']['format'] = 'filtered_html';
+  /* Relationship: Flags: favorites */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'favorite';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'favorites';
   /* Relationship: Content: Taxonomy terms on node */
   $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
   $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
@@ -117,6 +124,13 @@ function elite_trends_views_default_views() {
   $handler->display->display_options['fields']['nid']['relationship'] = 'field_training_quiz_target_id';
   $handler->display->display_options['fields']['nid']['label'] = 'taken';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  /* Field: Flags: Flag link */
+  $handler->display->display_options['fields']['ops']['id'] = 'ops';
+  $handler->display->display_options['fields']['ops']['table'] = 'flagging';
+  $handler->display->display_options['fields']['ops']['field'] = 'ops';
+  $handler->display->display_options['fields']['ops']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['ops']['label'] = '';
+  $handler->display->display_options['fields']['ops']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -238,6 +252,14 @@ function elite_trends_views_default_views() {
   $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
   $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_training_quiz_target_id';
   $handler->display->display_options['fields']['nid_1']['label'] = 'taken';
+  /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged']['label'] = 'favorite';
+  $handler->display->display_options['fields']['flagged']['type'] = 'boolean';
+  $handler->display->display_options['fields']['flagged']['not'] = 0;
   $handler->display->display_options['path'] = 'trends';
   $translatables['trends'] = array(
     t('Master'),
@@ -250,6 +272,7 @@ function elite_trends_views_default_views() {
     t('Desc'),
     t('<h1 id="page-title">Trends</h1>'),
     t('Check back soon for more Trends.'),
+    t('favorite'),
     t('term'),
     t('quiz'),
     t('taken'),

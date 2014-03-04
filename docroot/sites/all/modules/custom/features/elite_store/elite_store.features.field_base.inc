@@ -95,6 +95,7 @@ function elite_store_field_default_field_bases() {
   );
 
   // Exported field_base: 'field_store_region'
+  $eliteregions = elite_custom_default_regions_list();
   $field_bases['field_store_region'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -113,13 +114,8 @@ function elite_store_field_default_field_bases() {
     'locked' => 0,
     'module' => 'list',
     'settings' => array(
-      'allowed_values' => array(
-        'us' => 'United States',
-        'uk' => 'United Kingdom',
-        'russia' => 'Russia',
-        'china' => 'China',
-      ),
-      'allowed_values_function' => '',
+      'allowed_values' => $eliteregions,
+      'allowed_values_function' => 'elite_custom_default_regions_list',
     ),
     'translatable' => 0,
     'type' => 'list_text',
