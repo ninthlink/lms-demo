@@ -365,6 +365,10 @@ body.page-trends h1#page-title {
   border-right: 1px solid #d6d6d6;
   min-height: 303px;
 }
+.view-trends .view-empty,
+.view-trainings .view-empty {
+	padding: 20px;
+}
 .view-store .views-column {
   min-height: 320px;
 }
@@ -375,6 +379,11 @@ body.page-trends h1#page-title {
 }
 .view-store .views-field-field-image {
   margin: 0 0 15px;
+}
+.view-trainings img,
+.view-trends img {
+	width: 260px;
+	height: 146px;
 }
 .view-trainings .views-field-title,
 .view-trends .views-field-title,
@@ -769,7 +778,8 @@ article.node-article .field-name-field-media-types {
   right: 25px;
 }
 article.node-training .field-name-field-image,
-article.node-article .field-name-field-image {
+article.node-article .field-name-field-image,
+#qvideo {
   margin: 0 0 40px;
 }
 article.node-training .field-name-title-field,
@@ -800,7 +810,47 @@ article.node-training .field-name-field-training-quiz .field-label {
 article.node-training .field-name-field-training-quiz .field-items {
   padding: 25px 40px;
 }
-
+.flag-favorites a.flag,
+span.icon-favorite {
+	display: block;
+	width: 15px;
+	height: 13px;
+	background: url(../images/fav.gif) no-repeat -15px 0;
+	text-indent: -999em;
+}
+span.icon-favorite { float: left; position: relative; margin: 7px 7px 0 0; }
+.flag-favorites a.flag.flag-action {
+	background-position: 0 0;
+}
+.flag-favorites .flag-throbber { display: none }
+article.node-article .flag-outer-favorites,
+article.node-training .flag-outer-favorites {
+	position: absolute;
+	right: 60px;
+	top: 25px;
+}
+.view-trends .views-field-ops,
+.view-trainings .views-field-ops,
+.view-popular-content .views-field-ops {
+	float: left;
+	position: absolute;
+	right: 22px;
+	top: 250px;
+}
+.view-popular-content .views-field-ops {
+	top: 76px;
+}
+.flag-favorites .flag-message {
+	left: auto;
+	top: 3px;
+	right: -10px;
+	text-align: right;
+}
+.views-field-ops .flag-favorites .flag-message {
+	top: -5px;
+	right: -33px;
+	width: 260px;
+}
 #quiz-start-quiz-button-form .form-submit,
 body.node-type-quiz .answering-form input#edit-op,
 body.node-type-quiz .answering-form input#edit-back,
@@ -1567,6 +1617,9 @@ body.node-type-page .region-sidebar-second {
 }
 #elite-user-flop ul.usermenu li.cart a .icon {
   background-position: 0 -287px;
+}
+#elite-user-flop ul.usermenu li.favorites a .icon {
+  background-position: 0 -338px;
 }
 #elite-user-flop ul.usermenu li a .title {
   font: 18px/24px "Qualcomm-Regular", sans-serif;
