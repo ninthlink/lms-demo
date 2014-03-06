@@ -620,11 +620,19 @@ height: 100px;
         opacity: 0;
     }
     @media only screen and (max-width: 959px) {
-    #difference .graphic-position {
+		#difference .graphic-position {
 				width: 100%;
 				text-align: center;
 		}
+		#difference br {
+			display: none;
 		}
+	}
+    @media only screen and (max-width: 799px) {
+		#difference br {
+			display: block;
+		}
+	}
 /* end difference */
 
 /* earth section - responsive */
@@ -820,24 +828,39 @@ height: 100px;
 /* end earth */
 
 /* every phone section - responsive */
-    #every-phone .text-position { opacity: 0; }
+    #every-phone .text-position.center {
+		padding: 9% 0 0;
+		width: 100%;
+		opacity: 0;
+	}
     #every-phone .graphic-position {
         margin-top: 10%;
-        overflow-x: auto;
     }
     #every-phone .graphic-position .scrollx {
         width: 860px;
-        white-space: nowrap;
+		margin: 0 auto;
     }
     #every-phone .graphic-position .three-row { opacity: 0; }
     #speed_performance .sprite { background-position: -120px -10px; }
     #reliable_connectivity .sprite { background-position: -325px -10px; }
     #long_battery_life .sprite { background-position: -520px -10px; }
     #every-phone .graphic-position p {
-    width: 100%;
-    text-align: center;
-    margin: 40px auto 0;
+		width: 100%;
+		text-align: center;
+		margin: 40px auto 0;
     }
+	@media only screen and (max-width: 959px) {
+		#every-phone .graphic-position {
+			margin-top: 0;
+		}
+		#every-phone .graphic-position .scrollx {
+			width: 100%;
+		}
+		#every-phone .graphic-position .three-row {
+			display: block;
+			margin: 0 auto 30px;
+		}
+	}
 /* end every phone */
 
 /* processes section with phone slide - responsive */
@@ -952,6 +975,21 @@ height: 100px;
             margin-left: 0;
         }
     }
+	@media only screen and (max-width: 599px) {
+		#delivers .graphic-position.center {
+			width: 100%;
+			margin: auto;
+		}
+		#delivers .graphic-position ul {
+			padding: 0;
+		}
+	}
+	@media only screen and (max-width: 479px) {
+		#delivers .graphic-position ul li {
+			width: 130px;
+			float: left;
+		}
+	}
 /* end delivers */
 
 /* mobile power */

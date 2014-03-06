@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.4.6
+ * v0.4.7
  */
 ?>
 <!doctype html>
@@ -60,7 +60,7 @@
 				<section id="difference" class="bg-grey block">
 					<div class="inner">
 						<div class="text-position">
-							<h2 class="txtr">Learn how Qualcomm Snapdragon devices<br /><span class="thick">can make a difference</span></h2>
+							<h2 class="txtr">Learn how Qualcomm Snapdragon devices <br /><span class="thick">can make a difference</span></h2>
 							<ul class="txtb">
 								<li id="parallax1">Who is Qualcomm?</li>
 								<li id="parallax2">The role of the processor in a smartphone</li>
