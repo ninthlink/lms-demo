@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.4.7
+ * v0.4.8
  */
 ?>
 <!doctype html>
@@ -242,7 +242,7 @@
 				<section id="single-chip" class="bg-red-grad-lt block">
 					<div class="inner">
 						<div class="text-position">
-							<p class="txtw">Only Qualcomm designs the key  technology components that connect each of the components into a <span class="thick">single system on a chip</span></p>
+							<p class="txtw">Qualcomm designs the key  technology components that connect each of the components into a <span class="thick">single system on a chip</span></p>
 						</div>
 						<div class="graphic-position">
 							<img id="single-phone" src="img/tablet.png" />
