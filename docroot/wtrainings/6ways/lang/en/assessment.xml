@@ -1,0 +1,32 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="6 ways smartphones are changing us" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% or more and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again, but only once in a 24 hour period. Thanks for your time and hard work!" 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="How many people access social networks via a mobile device?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="50 million" />
+		<option key="" value="1 billion" answer="1" />
+		<option key="" value="500 million" />
+		<option key="" value="100 million" />
+	</question>
+
+	<question id="2" q="What percentage of people can't leave home without their mobile device?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="20%" />
+		<option key="" value="30%" />
+		<option key="" value="50%" />
+		<option key="" value="70%" answer="1"/>
+	</question>
+	
+</quiz>
