@@ -956,6 +956,10 @@ height: 100px;
         margin-right: 20px;
         letter-spacing: .75px;
     }
+	#delivers .graphic-position ul li strong {
+		font-family: "Qualcomm-Semibold", sans-serif;
+		font-weight: 400;
+	}
     @media only screen and (min-width: 960px) {
         #delivers .graphic-position .left {
             left: 0;

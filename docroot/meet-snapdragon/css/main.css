@@ -944,7 +944,7 @@ height: 100px;
         margin-top: 30px;
         list-style: none;
         text-align: left;
-				font-family: "Qualcomm-Regular", sans-serif;
+		font-family: "Qualcomm-Regular", sans-serif;
         opacity: 0;
         left: 300px;
     }
@@ -956,6 +956,10 @@ height: 100px;
         margin-right: 20px;
         letter-spacing: .75px;
     }
+	#delivers .graphic-position ul li strong {
+		font-family: "Qualcomm-Semibold", sans-serif;
+		font-weight: 400;
+	}
     @media only screen and (min-width: 960px) {
         #delivers .graphic-position .left {
             left: 0;

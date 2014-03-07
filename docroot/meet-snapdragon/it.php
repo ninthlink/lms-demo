@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.4.8
+ * v0.4.9
  */
 ?>
 <!doctype html>
@@ -216,11 +216,11 @@
 							</div>
 							<div class="right">
 								<ul>
-									<li id="delivers1">4G LTE</li>
+									<li id="delivers1"><strong>4G LTE</strong></li>
 									<li id="delivers2">Multimedialità e grafica</li>
-									<li id="delivers3" style="line-height:26px;position:relative;top:-26px">Design più sottile, dispositivo più leggero e più bello</li>
+									<li id="delivers3" style="line-height:26px;position:relative;top:-26px"><strong>Design più sottile, dispositivo più leggero e più bello</strong></li>
 									<li id="delivers4">Connessioni rapide</li>
-									<li id="delivers5">Esperienza straordinaria</li>
+									<li id="delivers5"><strong>Esperienza straordinaria</strong></li>
 									<li id="delivers6">Maggiore durata della batteria</li>
 								</ul>
 							</div>
