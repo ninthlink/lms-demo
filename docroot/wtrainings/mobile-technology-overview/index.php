@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Mobile Technology Overview
  */
-$v = '0.1.10';
+$v = '1.0.0';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -54,11 +54,9 @@ $qv = '?v='. $v;
 		<div id="Stage4wrap" class="stagewrapper"><div id="Stage4" class="EDGE-50043193"></div></div>
 		<!-- cars -->
 		<div id="Stage5wrap" class="stagewrapper"><div id="Stage5" class="EDGE-15758297"></div></div>
-		<?php /*
 		<div class="stagewrapper proceed">
-		<a href="#quiz">Proceed to quiz</a>
+		<a href="assessment.html" class="txtw" onClick="parent.qelite_taketraining_btn(); return false;">Proceed to <strong>Assessment</strong> <span class="play"></span></a>
 		</div>
-		*/ ?>
 		<div class="stagewrapper ftr">
 			<div class="inner">
 				<p><img src="edge_includes/qualcomm.png" alt="Qualcomm" /></p>
