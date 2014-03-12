@@ -230,7 +230,7 @@ $qv = '?v='. $v;
 								<ul>
 									<li>
 										<h2><span class="thick">Modem</span></h2>
-										<p>performance <!--sup>3</sup--></p>
+										<p>performance <sup>2</sup></p>
 									</li>
 									<li>
 										<h2><span class="thick">GPU</span></h2>
@@ -238,7 +238,7 @@ $qv = '?v='. $v;
 									</li>
 									<li>
 										<h2><span class="thick">CPU</span></h2>
-										<p>performance</p>
+										<p>performance <sup>3</sup></p>
 									</li>
 									<li>
 										<h2><span class="thick">DSP</span></h2>
@@ -357,7 +357,7 @@ lives everywhere - transforming how we live.</p>
         	<div class="inner">
           	<div class="text-position center">
             	<div class="number txtw">&nbsp;</div>
-              <h2><span class="thick">25 Billion</span> mobile devices connected by 2020 <sup>2</sup></h2>
+              <h2><span class="thick">25 Billion</span> mobile devices connected by 2020 <sup>4</sup></h2>
             </div>
           </div>
         </section>
@@ -387,7 +387,7 @@ lives everywhere - transforming how we live.</p>
 			  <div class="circles">
                 <div class="c left growin"><div class="in"><div class="txt fadein">Global data<br />traffic growth <span class="thick">2x</span></div></div></div>
                 <div class="o fadein"></div>
-                <div class="c right growin"><div class="in"><div class="txt fadein">Preparing for <span class="thick">1000x</span> mobile data<br />traffic growth</div></div></div>
+                <div class="c right growin"><div class="in"><div class="txt fadein">Preparing for <span class="thick">1000x</span> mobile data<br />traffic growth <sup>5</sup></div></div></div>
               </div>
             </div>
 						<span class="stretch"></span>
@@ -467,7 +467,10 @@ lives everywhere - transforming how we live.</p>
 						<div class="text-position center txtw">
 							<p>&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc.  All rights reserved.</p>
 							<p>1 - Full-time, part-time and temporary employees per FY13 Form 10-K<br />
-							2 - Source: Machina Research, 2013</p>
+							2 - Modem Source: QCT DSP based on BDTi testing 2012<br />
+							3 - CPU Source: Anandtech, 10/1/13<br />
+							4 - Source: Machina Research, 2013<br />
+							5 - Source: Qualcomm Research. 2GHz carrier frequency, site-to-site distance is 500meter, cluster eMBMS deployment, comparison with unicast is based on the same amount of resource allocation.</p>
 							<p>Qualcomm is a trademark of QUALCOMM Incorporated registered in the United States and other countries. Gobi and Snapdragon are trademarks of Qualcomm Technologies, Inc. Other products and brand names are property of their respective owners.</p>
 						</div>
 					</div>
