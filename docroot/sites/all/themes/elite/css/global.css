@@ -1381,18 +1381,15 @@ body.node-type-page .region-sidebar-second {
 .not-logged-in.page-user .form-item.confirm-parent {
   float: right;
 }
-.not-logged-in.page-user #edit-field-user-of-age,
+#edit-field-user-of-age {
+	display: none;
+}
 .not-logged-in.page-user #edit-field-terms-conditions {
   clear: both;
   float: left;
-  width: 38%;
+  width: 100%;
   text-align: left;
   font-size: .8em;
-}
-.not-logged-in.page-user #edit-field-terms-conditions  {
-  float: right;
-  width: 58%;
-  clear: right;
 }
 .not-logged-in.page-user #edit-field-region,
 .not-logged-in.page-user #edit-field-user-language-pref {
