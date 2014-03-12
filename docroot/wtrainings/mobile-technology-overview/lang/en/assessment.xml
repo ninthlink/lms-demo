@@ -17,7 +17,7 @@
 
 	<question id="1" q="How many people access social networks via a mobile device?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
 		<option key="" value="50 million" />
-		<option key="" value="1 billion" />
+		<option key="" value="1 billion" answer="1" />
 		<option key="" value="500 million" />
 		<option key="" value="100 million" />
 	</question>
