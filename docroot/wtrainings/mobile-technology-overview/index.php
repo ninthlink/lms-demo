@@ -22,8 +22,7 @@ $qv = '?v='. $v;
 	<link rel="stylesheet" href="../_common/fonts/stylesheet.css">
 	<link rel="stylesheet" href="edge_includes/base.css<?php echo $qv ?>">
 <!--Adobe Edge Runtime-->
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script>window.jQuery || document.write('<script src="../_common/js/jquery-1.10.1.min.js"><\/script>')</script>
+	<script src="edge_includes/jquery.min.js"></script>
 	
 	<script src="../_common/js/spin.min.js"></script>
 	<script src="../_common/js/jquery.inview.min.js"></script>
