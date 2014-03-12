@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Mobile Technology Overview
  */
-$v = '0.1.9';
+$v = '0.1.10';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -38,7 +38,7 @@ $qv = '?v='. $v;
 ?>
 <!--Adobe Edge Runtime End-->
 </head>
-<body
+<body>
 	<div class="content-container">
 		<div id="header" class="stagewrapper">
 			<h1>Mobile technology.</h1>
