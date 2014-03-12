@@ -235,6 +235,17 @@ function elite_custom_services_resources() {
 		'callback' => 'elite_custom_services_regions_verbose',
 		'help'   => t('More verbose API list of Regions as options for when Registering new Users'),
 	);
+	
+	$resources['terms']['index'] = array(
+		'file' => array(
+			'type' => 'inc', 
+			'module' => 'elite_custom',
+			'name' => 'elite_custom',
+		),
+		'access callback' => 'services_access_menu', // allow ALL
+		'callback' => 'elite_custom_services_terms',
+		'help'   => t('API to provide the Content from the About / Terms / Privacy pages all at once?'),
+	);
   return $resources;
 }
 

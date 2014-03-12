@@ -137,7 +137,7 @@ function elite_custom_services_regions() {
 	$field = field_info_field('field_region');
 	$values = list_allowed_values($field);
 	
-	$return = new stdClass();
+	//$return = new stdClass();
 	$return = $values;
 	
 	return $return;
@@ -150,4 +150,34 @@ function elite_custom_services_regions() {
  */
 function elite_custom_services_regions_verbose() {
 	return elite_custom_default_regions_list_verbose();
+}
+/**
+ * callback for services /terms
+ * 
+ * returns
+ * Content from the About / Terms / Privacy pages all at once
+ */
+function elite_custom_services_terms() {
+	$return = array();
+	
+	$pages = array(
+		'about' => 'about',
+		'privacy' => 'about/privacy-policy',
+		'cookie' => 'about/cookie-policy',
+		'terms' => 'about/terms-conditions',
+	);
+	foreach ( $pages as $k => $v ) {
+		$path = drupal_lookup_path('source', $v);
+		$node = menu_get_object('node', 1, $path);
+		
+		$return[$k] = new stdClass();
+		if ( $node ) {
+			$return[$k]->title = $node->title;
+			$return[$k]->body = $node->body['und'][0]['safe_value'];
+		} else {
+			$return[$k]->title = $k;
+			$return[$k]->body = '<p>There appears to have been some kind of an error. Please contact the Site Administrators.</p>';
+		}
+	}
+	return $return;
 }
