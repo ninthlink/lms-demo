@@ -1307,12 +1307,12 @@ body.node-type-page .region-sidebar-second {
 /*
 * User Login
 */
-.not-logged-in.page-user #block-system-main-menu,
-.not-logged-in.page-user div.tabs,
-.not-logged-in.page-user #block-menu-menu-footer-menu {
+.not-logged-in #block-system-main-menu,
+.not-logged-in div.tabs,
+.not-logged-in #block-menu-menu-footer-menu {
   display: none;
 }
-.not-logged-in.page-user .branding-data {
+.not-logged-in .branding-data {
   float: none;
   padding: 15px 10px 10px 23px;
   text-align: center;
