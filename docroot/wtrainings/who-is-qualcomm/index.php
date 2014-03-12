@@ -23,7 +23,7 @@ $qv = '?v='. $v;
 		
 		<script src="../_common/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<script type="text/javascript" src="//cdn.sublimevideo.net/js/77emf89m.js"></script>
+		<script type="text/javascript" src="//cdn.sublimevideo.net/js/brxysbmu.js"></script>
 	</head>
 	<body class="bg-grey">
 			<div id="content" class="content-container">
