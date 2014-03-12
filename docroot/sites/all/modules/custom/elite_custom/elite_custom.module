@@ -1,4 +1,30 @@
 <?php
+/**
+ * Implements hook_permission() to define some new permissions
+ */
+function elite_custom_permission() {
+  return array(
+    'access Home section' => array(
+      'title' => t('Access the full Home section'),
+    ),
+    'access Trainings' => array(
+      'title' => t('Access content in the Trainings section'),
+    ),
+    'access Trends' => array(
+      'title' => t('Access content in the Trends section'),
+    ),
+  );
+}
+/**
+ * Implements hook_init() to redirect anon home page to login
+ */
+function elite_custom_init() {
+	if ( drupal_is_front_page() ) {
+		if ( !user_access('access Home section') ) {
+			drupal_goto('user');
+		}
+	}
+}
 
 function elite_custom_form_alter(&$form, &$form_state, $form_id) {
   global $user;
