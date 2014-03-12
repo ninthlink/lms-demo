@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Who is Qualcomm?
  */
-$v = '0.2.6';
+$v = '1.0.0';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -169,8 +169,8 @@ $qv = '?v='. $v;
 										<p>Qualcomm unveils the world’s first commercial CDMA smartphone.</p>
 									</li>
 									<li>
-										<!--img src="img/2000.gif" alt="2000" /-->
-										<h2 class="txtlb noimg">2000</h2>
+										<img src="img/2000.jpg" alt="2000" />
+										<h2 class="txtlb">2000</h2>
 										<p>Qualcomm delivers the first CDMA chipset to integrate GPS.</p>
 									</li>
 									<li>
@@ -457,6 +457,17 @@ lives everywhere - transforming how we live.</p>
 						<span class="stretch"></span>
 					</div>
 				</section>
+        
+				<?php // quiz CTA ?>
+        <section id="proceed" class="bg-black block">
+        	<div class="inner">
+          	<div class="text-position center">
+            	<div class="video-button">
+								<h2><a href="assessment.html" class="txtw" onClick="parent.qelite_taketraining_btn(); return false;">Proceed to <span class="thick">Assessment</span> <span class="sprite play"></span></a></h2>
+							</div>
+            </div>
+          </div>
+        </section>
         
 				<?php // Slide #20 ?>
 				<section id="legal" class="bg-6 block">

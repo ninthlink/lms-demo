@@ -1825,6 +1825,15 @@ p.disc {
 		width: 73%;
 	}
 }
+@media only screen and (min-width: 1400px) {
+	.block.bg-img#driving .text-position.center {
+		padding-top: 41%;
+	}
+	#driving h2,
+	#explore h2 {
+		text-shadow: 0 0 5px rgba(0,0,0,1);
+	}
+}
 /* #13 billion */
 .block#billion {
 	padding-bottom: 5%;
@@ -1868,6 +1877,7 @@ p.disc {
 #applying ul.circles {
 	float: left;
 	width: 100%;
+	height: 232px;
 	margin: 2em 0 0;
 	padding: 0;
 	text-align: center;
@@ -1943,14 +1953,17 @@ p.disc {
 	width: 72px;
 	background-position: -314px 0;
 }
-.js #applying ul.circles {
+.js #applying ul.circles li {
 	display: none;
 }
-.js #applying.onn ul.circles {
-	display: block;
+.js #applying.onn ul.circles li {
+	display: inline-block;
 }
 
 @media only screen and (max-width: 959px) {
+	#applying ul.circles {
+		height: 464px;
+	}
 	#applying ul.circles li.pl {
 		padding-right: 57px
 	}
@@ -1965,6 +1978,9 @@ p.disc {
 	/* 440 */
 	#applying .text-position.center h2 {
 		font-size: 1.3em;
+	}
+	#applying ul.circles {
+		height: 398px;
 	}
 	#applying ul.circles li {
 		width: 130px;
@@ -1991,6 +2007,9 @@ p.disc {
 	/* 300 */
 	#applying .text-position.center h2 {
 		font-size: 1.7em;
+	}
+	#applying ul.circles {
+		height: 597px;
 	}
 	#applying ul.circles li.de,
 	#applying ul.circles li.ob {
@@ -2460,6 +2479,25 @@ p.disc {
 		background-size: cover;
 		margin-top: 80px;
 	}
+}
+@media only screen and (min-width: 1400px) {
+	.block.bg-img#explore .text-position.center {
+		padding-top: 25%;
+	}
+}
+/* proceed section */
+#proceed .text-position {
+	padding: 5% 0;
+}
+#proceed a {
+	text-decoration: none;
+}
+#proceed .play {
+	background: url(../img/btn-play.png) no-repeat 0 0;
+	display: inline-block;
+	width: 64px;
+	height: 63px;
+	vertical-align: middle;
 }
 /* legal section */
 #legal .text-position p { font-size: 0.8em; margin-bottom: 1em; }
