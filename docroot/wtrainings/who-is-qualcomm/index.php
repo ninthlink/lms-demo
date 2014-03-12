@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Who is Qualcomm?
  */
-$v = '0.2.5';
+$v = '0.2.6';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -483,7 +483,7 @@ lives everywhere - transforming how we live.</p>
 
 		<script src="../_common/js/spin.min.js"></script>
 		<script src="../_common/js/jquery.inview.min.js"></script>
-		<script src="../_common/js/jquery.qualcomm-reveal.min.js"></script>
+		<script src="../_common/js/jquery.qualcomm-reveal.min.js?v=1.0.3"></script>
 
 		<script src="../_common/js/waypoints.min.js"></script>
 		<script src="../_common/js/jquery.touchSwipe.min.js"></script>

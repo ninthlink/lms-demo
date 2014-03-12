@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  *
- * v0.4.9
+ * v0.4.10
  */
 ?>
 <!doctype html>
@@ -422,7 +422,7 @@
 
 		<script src="../_common/js/spin.min.js"></script>
 		<script src="../_common/js/jquery.inview.min.js"></script>
-		<script src="../_common/js/jquery.qualcomm-reveal.min.js"></script>
+		<script src="../_common/js/jquery.qualcomm-reveal.min.js?v=1.0.3"></script>
 		<script src="../_common/js/jquery.scrollorama.js"></script>
 		<script src="../_common/js/waypoints.min.js"></script>
 		<script src="../_common/js/swiper.min.js"></script>

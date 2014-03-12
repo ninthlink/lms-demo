@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Mobile Technology Overview
  */
-$v = '0.1.8';
+$v = '0.1.9';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -27,7 +27,7 @@ $qv = '?v='. $v;
 	
 	<script src="../_common/js/spin.min.js"></script>
 	<script src="../_common/js/jquery.inview.min.js"></script>
-	<script src="../_common/js/jquery.qualcomm-reveal.min.js"></script>
+	<script src="../_common/js/jquery.qualcomm-reveal.min.js?v=1.0.3"></script>
 
 <?php
 	$edgejs = array('','SixTechnologies_Mobile','Elite_spaceship_Mobile','Elite_Battery_Mobile','DVD','Cars');
