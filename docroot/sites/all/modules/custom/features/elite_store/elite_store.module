@@ -67,19 +67,21 @@ function elite_store_node_validate($node, $form, $form_state) {
 function elite_store_valid_store_id($store_id) {
   $query = new EntityFieldQuery;
 
-  $result = $query
-    ->entityCondition('entity_type', 'node')
-    ->propertyCondition('status', 1)
+  $result = $query->entityCondition('entity_type', 'node')
     ->fieldCondition('field_store_id', 'value', $store_id, '=')
-    ->execute();
-
-  if (count($result) > 0) {
-    return TRUE;
-  }
-
-  return FALSE;
+		->addMetaData('account', user_load(1))
+		->addTag('eliteqdbg')
+		->execute();
+	
+	watchdog('elite_store chk', 'check for valid store_id : '. $store_id .' : does store_id = 123? '. ($store_id == '123' ? 'YES' : 'NO?') .'<br />results <pre>'. print_r($result,true) .'</pre>');
+	
+  return (count($result) > 0);
 }
-
+function elite_store_query_alter($query) {
+	if ( $query->hasTag('eliteqdbg') ) {
+		watchdog('elite query dbg', 'q string : '. (string)$query .'<br /><br /><pre>'. print_r($query,true) .'</pre>');
+	}
+}
 /**
  * All-purpose function to load a store entity. Pass it an array with
  *   the kind of value you're providing and it will return an entity.
@@ -97,6 +99,7 @@ function elite_store_load_store($lookupval = array()) {
       ->entityCondition('entity_type', 'node')
       ->propertyCondition('status', 1)
       ->fieldCondition('field_store_id', 'value', $store_id, '=')
+			->addMetaData('account', user_load(1))
       ->execute();
 
     if (count($result) > 0) {

@@ -36,7 +36,10 @@ function elite_validation_form_alter(&$form, &$form_state, $form_id) {
  * Form alter submit
  */
 function elite_validation_user_register_validate($form, &$form_state) {
+	
   $store_id = $form_state['values']['store'];
+	
+	watchdog('elite_val', 'user reg : store_id = '. $store_id .' : form_state <pre>'. print_r($form_state,true) .'</pre>');
 
   // @todo JuTTmhdzVRShwQZ7x2p!
   //  This is a placeholder to distinguish manager account creation
@@ -45,6 +48,7 @@ function elite_validation_user_register_validate($form, &$form_state) {
   if ($store_id != '00000') {
     // The user is not a manager.
     // Check the store id against valid database ids
+		$store_id = (int)$store_id;
     if (!elite_store_valid_store_id($store_id)) {
       form_set_error('store', t('The Store ID you entered appears to be invalid. Please double check with your store manager.'));
     } else {
