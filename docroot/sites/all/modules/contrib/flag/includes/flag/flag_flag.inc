@@ -788,19 +788,23 @@ class flag_flag {
       }
     }
     elseif ($action == 'flag') {
+	  if ($this->uses_anonymous_cookies()) {
+         $this->_flag_anonymous($entity_id);
+       }
+
+      // By definition there is no flagging entity yes, but we may have been
+      // passed one in to save.
+      if (!isset($flagging)) {
+        // Construct a new flagging object if we weren't passed one.
+        $flagging = $this->new_flagging($entity_id, $uid, $sid);
+     }
+
       // Invoke hook_entity_presave().
       module_invoke_all('entity_presave', $flagging, 'flagging');
 
-      if ($this->uses_anonymous_cookies()) {
-        $this->_flag_anonymous($entity_id);
-      }
       if (!$flagged) {
-        // The entity is unflagged. By definition there is no flagging entity,
-        // but we may have been passed one in to save.
-        if (!isset($flagging)) {
-          // Construct a new flagging object if we don't have one.
-          $flagging = $this->new_flagging($entity_id, $uid, $sid);
-        }
+        // The entity is unflagged.
+		
         // Save the flagging entity (just our table).
         $flagging_id = $this->_flag($entity_id, $uid, $sid);
         // The _flag() method is a plain DB record writer, so it's a bit
@@ -830,10 +834,10 @@ class flag_flag {
       else {
         // Nothing to do. Item is already flagged.
         //
-        // Except in the case a $flagging object is passed in: in this case
-        // we're, for example, arriving from an editing form and need to update
-        // the entity.
-        if ($flagging) {
+        // Except in the case a $flagging object is one that was passed in: in
+        // this case we're being requested to update the flagging. This occurs,
+        // for example, when the user updates the flagging entity form.
+        if (!empty($flagging->flagging_id)) {
           $this->_update_flagging($flagging);
         }
       }
