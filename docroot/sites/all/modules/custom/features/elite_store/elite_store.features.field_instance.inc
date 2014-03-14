@@ -158,8 +158,8 @@ function elite_store_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-store-field_store_id'
-  $field_instances['node-store-field_store_id'] = array(
+  // Exported field_instance: 'node-store-field_storeid'
+  $field_instances['node-store-field_storeid'] = array(
     'bundle' => 'store',
     'default_value' => NULL,
     'deleted' => 0,
@@ -185,7 +185,7 @@ function elite_store_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_store_id',
+    'field_name' => 'field_storeid',
     'label' => 'Store ID',
     'required' => 0,
     'settings' => array(

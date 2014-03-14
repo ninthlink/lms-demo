@@ -70,14 +70,17 @@ function elite_store_valid_store_id($store_id) {
   $query = new EntityFieldQuery;
 
   $result = $query->entityCondition('entity_type', 'node')
-    ->fieldCondition('field_store_id', 'value', $store_id, '=')
+		->entityCondition('bundle', 'store')
+		->propertyCondition('status', 1)
+    ->fieldCondition('field_storeid', 'value', $store_id, '=')
 		->addMetaData('account', user_load(1))
-		->addTag('eliteqdbg')
+		//->addTag('eliteqdbg')
+		->count()
 		->execute();
 	
-	watchdog('elite_store chk', 'check for valid store_id : '. $store_id .' : does store_id = 123? '. ($store_id == '123' ? 'YES' : 'NO?') .'<br />results <pre>'. print_r($result,true) .'</pre>');
+	//watchdog('elite_store chk', 'check for valid store_id : '. $store_id .' : does store_id = 123? '. ($store_id == '123' ? 'YES' : 'NO?') .'<br />results <pre>'. print_r($result,true) .'</pre>');
 	
-  return (count($result) > 0);
+  return ($result > 0);
 }
 function elite_store_query_alter($query) {
 	if ( $query->hasTag('eliteqdbg') ) {
@@ -99,8 +102,9 @@ function elite_store_load_store($lookupval = array()) {
 
     $result = $query
       ->entityCondition('entity_type', 'node')
+			->entityCondition('bundle', 'store')
       ->propertyCondition('status', 1)
-      ->fieldCondition('field_store_id', 'value', $store_id, '=')
+      ->fieldCondition('field_storeid', 'value', $store_id, '=')
 			->addMetaData('account', user_load(1))
       ->execute();
 
@@ -111,8 +115,6 @@ function elite_store_load_store($lookupval = array()) {
       // Return just the object.
       return reset($store);
     }
-
-    return FALSE;
   }
 
   return FALSE;
