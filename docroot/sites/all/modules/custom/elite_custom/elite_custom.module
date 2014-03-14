@@ -399,6 +399,20 @@ function elite_custom_block_flop_view() {
   return elite_custom_markup_wrapper($markup, array('id' => 'elite-user-flop'));
 }
 
+function elite_custom_views_pre_view(&$view) {
+	if ( in_array( $view->name, array( 'trends', 'popular_content', 'home_slides', 'trainings' ) ) ) {
+		$region = elite_custom_user_region();
+		$dis = array();
+		foreach ( $view->display as $k => $v ) {
+			$dis[] = $k;
+			$view->display[$k]->handler->options['filters']['field_region_value']['value'] = array(
+				$region => $region
+			);
+		}
+		//watchdog('elite pre view', 'user region = '. $region .' : view = '. $view->name .' : displays = <pre>'. print_r($dis,true) .'</pre>');
+	}
+}
+
 function elite_custom_views_pre_render(&$view) {
   global $user;
   if(FALSE && $view->name == 'questions_by_quiz') {
