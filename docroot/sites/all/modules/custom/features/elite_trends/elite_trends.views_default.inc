@@ -13,7 +13,7 @@ function elite_trends_views_default_views() {
   $view = new view();
   $view->name = 'trends';
   $view->description = 'Trends section landing page : Page + Services';
-  $view->tag = 'default';
+  $view->tag = 'elite';
   $view->base_table = 'node';
   $view->human_name = 'Trends';
   $view->core = 7;
@@ -66,6 +66,11 @@ function elite_trends_views_default_views() {
     'type' => 0,
     'userpoints' => 0,
   );
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['id'] = 'field_training_quiz_target_id';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['table'] = 'field_data_field_training_quiz';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['field'] = 'field_training_quiz_target_id';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['label'] = 'quiz';
   /* Field: Field: Product Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -279,6 +284,7 @@ function elite_trends_views_default_views() {
     t('Check back soon for more Trends.'),
     t('favorite'),
     t('term'),
+    t('quiz'),
     t('taken'),
     t('All'),
     t('Trends %1'),
