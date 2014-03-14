@@ -92,3 +92,46 @@ function elite_validation_user_register_submit($form, &$form_state) {
 	//watchdog('employee link check', 'uid '. $user_id .' : store_id '. $store_id .'<br />store check 1 : <pre>'. print_r($store1, true) .'</pre><br /><br />store check 2 : <pre>'. print_r($store, true) .'</pre>');
   //}
 }
+
+function elite_validation_node_access($node, $op, $account) {
+  $type = is_string($node) ? $node : $node->type;
+
+  // if its a super cool content type, user content types machine name.
+  if ( $op == 'view') {
+		global $user;
+		if ( $user->uid > 0 ) {
+			return NODE_ACCESS_ALLOW;
+		} else {
+			// not logged in, can only view certain PAGES
+			if ( $type == 'page' ) {
+				$alias = drupal_get_path_alias('node/'. $node->nid);
+				watchdog('anon nodecheck', $alias . ' : node : <pre>'. print_r($node,true) .'</pre>');
+				if ( in_array( $alias, array('about', 'about/privacy-policy', 'about/cookie-policy', 'about/terms-conditions') ) ) {
+					return NODE_ACCESS_ALLOW;
+				}
+			}
+			return NODE_ACCESS_DENY;
+		}
+	}
+	/*
+    // Define roles that can see super cool content type content.
+   global $user;
+   $super_cool_perms = array_intersect(
+       array(
+     'role name',
+     'role name 2',
+     'role name 3',
+     'role name 4',
+     ),
+       array_values($user->roles));
+   // If they have any of these roles, then they can see the super cool content
+   if ($super_cool_perms){
+      return NODE_ACCESS_ALLOW;
+    }
+    else {
+      return NODE_ACCESS_DENY;
+    }
+  }
+	*/
+  return NODE_ACCESS_IGNORE;
+}
