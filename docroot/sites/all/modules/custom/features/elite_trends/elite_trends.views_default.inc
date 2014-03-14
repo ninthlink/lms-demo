@@ -24,8 +24,10 @@ function elite_trends_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Trends';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access Trends';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -64,11 +66,6 @@ function elite_trends_views_default_views() {
     'type' => 0,
     'userpoints' => 0,
   );
-  /* Relationship: Entity Reference: Referenced Entity */
-  $handler->display->display_options['relationships']['field_training_quiz_target_id']['id'] = 'field_training_quiz_target_id';
-  $handler->display->display_options['relationships']['field_training_quiz_target_id']['table'] = 'field_data_field_training_quiz';
-  $handler->display->display_options['relationships']['field_training_quiz_target_id']['field'] = 'field_training_quiz_target_id';
-  $handler->display->display_options['relationships']['field_training_quiz_target_id']['label'] = 'quiz';
   /* Field: Field: Product Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -165,6 +162,13 @@ function elite_trends_views_default_views() {
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'article' => 'article',
+  );
+  /* Filter criterion: Field: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'us' => 'us',
   );
 
   /* Display: Page */
@@ -275,7 +279,6 @@ function elite_trends_views_default_views() {
     t('Check back soon for more Trends.'),
     t('favorite'),
     t('term'),
-    t('quiz'),
     t('taken'),
     t('All'),
     t('Trends %1'),

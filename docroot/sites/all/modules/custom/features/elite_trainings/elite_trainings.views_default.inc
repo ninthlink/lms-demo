@@ -120,8 +120,10 @@ function elite_trainings_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Featured Trainings';
   $handler->display->display_options['use_more_always'] = FALSE;
-  $handler->display->display_options['access']['type'] = 'perm';
-  $handler->display->display_options['access']['perm'] = 'access Trainings';
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    2 => '2',
+  );
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
@@ -238,19 +240,6 @@ function elite_trainings_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Contextual filter: Field: Region (field_region) */
-  $handler->display->display_options['arguments']['field_region_value']['id'] = 'field_region_value';
-  $handler->display->display_options['arguments']['field_region_value']['table'] = 'field_data_field_region';
-  $handler->display->display_options['arguments']['field_region_value']['field'] = 'field_region_value';
-  $handler->display->display_options['arguments']['field_region_value']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_region_value']['default_argument_type'] = 'php';
-  $handler->display->display_options['arguments']['field_region_value']['default_argument_options']['code'] = '$ret = \'us\';
-if ( function_exists(\'elite_custom_user_region\') ) $ret = elite_custom_user_region();
-return $ret;';
-  $handler->display->display_options['arguments']['field_region_value']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_region_value']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_region_value']['summary_options']['items_per_page'] = '25';
-  $handler->display->display_options['arguments']['field_region_value']['limit'] = '0';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -264,6 +253,13 @@ return $ret;';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'training' => 'training',
+  );
+  /* Filter criterion: Field: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'us' => 'us',
   );
 
   /* Display: Block */
@@ -426,7 +422,6 @@ return $ret;';
     t('queue'),
     t('quiz'),
     t('taken'),
-    t('All'),
     t('Block'),
     t('Page'),
     t('Trainings'),
