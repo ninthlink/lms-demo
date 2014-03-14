@@ -158,46 +158,6 @@ function elite_store_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-store-field_storeid'
-  $field_instances['node-store-field_storeid'] = array(
-    'bundle' => 'store',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'This is the "Store ID" that Employees will enter during Registration to identify them as Employees of this particular Store.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'text',
-        'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_storeid',
-    'label' => 'Store ID',
-    'required' => 0,
-    'settings' => array(
-      'text_processing' => 0,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'text',
-      'settings' => array(
-        'size' => 60,
-      ),
-      'type' => 'text_textfield',
-      'weight' => -1,
-    ),
-  );
-
   // Exported field_instance: 'node-store-field_store_region'
   $field_instances['node-store-field_store_region'] = array(
     'bundle' => 'store',
@@ -236,6 +196,46 @@ function elite_store_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-store-field_storeid'
+  $field_instances['node-store-field_storeid'] = array(
+    'bundle' => 'store',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'This is the "Store ID" that Employees will enter during Registration to identify them as Employees of this particular Store.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_storeid',
+    'label' => 'Store ID',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -1,
     ),
   );
 
