@@ -43,7 +43,8 @@
  *
  * @ingroup themeable
  */
-$vid = '';
+$vid = $vmp4 = $vwebm = '';
+$showvid = false;
 if ( in_array($element['#object']->type, array('article','training') ) ) {
 	if ( is_array( $element['#object']->field_video_url ) ) {
 		if ( isset( $element['#object']->field_video_url['und'] ) ) {
@@ -53,41 +54,63 @@ if ( in_array($element['#object']->type, array('article','training') ) ) {
 				$vat = strpos($vid,'vimeo.com/');
 				if ( $vat > 0 ) {
 					$vid = substr($vid, $vat+10);
+					$showvid = true;
 				} else {
 					$vid = '';
 				}
 			}
 		}
 	}
+	$basepath = defined('ELITELOCAL') ? ELITELOCAL : '';
+	if ( is_array( $element['#object']->field_video_file ) ) {
+		if ( isset( $element['#object']->field_video_file['und'] ) ) {
+			$vmp4 = $basepath .'/sites/default/files/videos/'. $element['#object']->field_video_file['und'][0]['filename'];
+		}
+	}
+	if ( is_array( $element['#object']->field_video_webm ) ) {
+		if ( isset( $element['#object']->field_video_webm['und'] ) ) {
+			$vwebm = $basepath .'/sites/default/files/videos/'. $element['#object']->field_video_webm['und'][0]['filename'];
+		}
+	}
+	if ( ( $vmp4 != '' ) || ( $vwebm != '' ) ) {
+		$vid = ''; // use html5 instead
+		$showvid = true;
+		drupal_add_js('//cdn.sublimevideo.net/js/brxysbmu.js', 'external');
+	}
 }
-$loc = '';
-if ( $vid != '' ) {
-	//lets just print the video here
-	if ( defined('ELITELOCAL') ) {
-		//echo '<!-- ELITELOCAL :: '. ELITELOCAL .' :: '. "\n";
-		if ( is_array( $element['#object']->field_video_file ) ) {
-			if ( isset( $element['#object']->field_video_file['und'] ) ) {
-				$loc = ELITELOCAL .'/sites/default/files/videos/'. $element['#object']->field_video_file['und'][0]['filename'];
+if ( $showvid ) {
+	if ( $vid != '' ) {
+		// falling back to VIMEO, but still check for local debugging :
+		if ( defined('ELITELOCAL') ) {
+			// lets just print the video html5 stuff here
+			if ( is_array( $element['#object']->field_video_file ) ) {
+				if ( isset( $element['#object']->field_video_file['und'] ) ) {
+					$vmp4 = $basepath .'/sites/default/files/videos/'. $element['#object']->field_video_file['und'][0]['filename'];
+				}
 			}
 		}
-		//echo "\n-->";
-	}// else 
-	if ( $loc != '' ) {
-		?>
-<video id="qvideo" controls width="800" height="450" poster="<?php echo ELITELOCAL .'/sites/default/files/field/image/'. $element['#object']->field_image['und'][0]['filename'] ?>">
-    <source src="<?php echo $loc ?>" type="video/mp4" />
-    Your device does not support HTML5 video.
-</video>
-<?php
+		if ( $vmp4 != '' ) {
+			?>
+	<video id="qvideo" controls width="800" height="450" poster="<?php echo $basepath .'/sites/default/files/field/image/'. $element['#object']->field_image['und'][0]['filename'] ?>">
+		<source src="<?php echo $vmp4 ?>" type="video/mp4" />
+		Your device does not support HTML5 video.
+	</video>
+	<?php
+		} else {
+			// just vimeo (for now?)
+			echo '<iframe id="qvideo" src="//player.vimeo.com/video/'. $vid .'?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+		}
 	} else {
-		// just vimeo (for now?)
-		echo '<iframe id="qvideo" src="//player.vimeo.com/video/'. $vid .'?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="100%" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
-	} 
-	/*
-	else {
-		echo '<p>'. $loc .'</p>';
+		?>
+	<video id="qvideo" controls width="800" height="450" poster="<?php echo $basepath .'/sites/default/files/field/image/'. $element['#object']->field_image['und'][0]['filename'] ?>" data-autoresize="fill" preload="none">
+		<?php
+			if ( $vmp4 != '' ) echo '<source src="'. $vmp4 .'" type="video/mp4" />' ."\n";
+			if ( $vwebm != '' ) echo '<source src="'. $vwebm .'" type="video/webm" />' ."\n";
+		?>
+		Your device does not support HTML5 video.
+	</video>
+		<?php
 	}
-	*/
 } else { ?>
 <div class="<?php print $classes; ?>"<?php print $attributes; ?>>
   <?php if (!$label_hidden): ?>
