@@ -93,7 +93,14 @@ function elite_sliders_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['queues'] = array(
     'home_slider' => 'home_slider',
+    'home_slider_uk' => 'home_slider_uk',
+    'featured_trainings' => 0,
+    'featured_trainings_uk' => 0,
+    'shop_slides' => 0,
+    'trainings_slides' => 0,
+    'trends' => 0,
     'whats_hot' => 0,
+    'whats_hot_uk' => 0,
   );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';

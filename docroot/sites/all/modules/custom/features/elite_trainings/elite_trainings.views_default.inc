@@ -147,11 +147,14 @@ function elite_trainings_views_default_views() {
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['queues'] = array(
     'featured_trainings' => 'featured_trainings',
+    'featured_trainings_uk' => 'featured_trainings_uk',
     'home_slider' => 0,
+    'home_slider_uk' => 0,
     'shop_slides' => 0,
     'trainings_slides' => 0,
     'trends' => 0,
     'whats_hot' => 0,
+    'whats_hot_uk' => 0,
   );
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_training_quiz_target_id']['id'] = 'field_training_quiz_target_id';
