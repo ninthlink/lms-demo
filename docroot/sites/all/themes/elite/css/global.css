@@ -784,7 +784,7 @@ article.node-article .field-name-field-image,
   margin: 0 0 40px;
 }
 .sublimevideo-View {
-	float: left;
+	clear: both;
 }
 article.node-training .field-name-title-field,
 article.node-article .field-name-title-field {
