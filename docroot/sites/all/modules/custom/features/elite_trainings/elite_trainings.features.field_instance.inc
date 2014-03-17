@@ -186,7 +186,7 @@ function elite_trainings_field_default_field_instances() {
       'module' => 'number',
       'settings' => array(),
       'type' => 'number',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -240,7 +240,7 @@ function elite_trainings_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -282,7 +282,7 @@ function elite_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -337,7 +337,7 @@ function elite_trainings_field_default_field_instances() {
       'module' => 'fivestar',
       'settings' => array(),
       'type' => 'exposed',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -352,7 +352,7 @@ function elite_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 12,
+        'weight' => 14,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -373,7 +373,7 @@ function elite_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -388,7 +388,7 @@ function elite_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 9,
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -413,7 +413,7 @@ function elite_trainings_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -453,7 +453,7 @@ function elite_trainings_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -468,7 +468,7 @@ function elite_trainings_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 11,
+        'weight' => 13,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -500,13 +500,13 @@ function elite_trainings_field_default_field_instances() {
   $field_instances['node-training-field_video_file'] = array(
     'bundle' => 'training',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'If this Training includes a video in the top area instead of just the static image, upload an H.264 .MP4 video file here so that modern browsers & apps can also play the native HTML5 video',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 10,
+        'weight' => 11,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -517,12 +517,15 @@ function elite_trainings_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_video_file',
-    'label' => 'Video File',
+    'label' => 'MP4 Video File',
     'required' => 0,
     'settings' => array(
       'description_field' => 0,
       'file_directory' => 'videos',
       'file_extensions' => 'mp4',
+      'imagecrop' => array(
+        'rounduser' => 0,
+      ),
       'max_filesize' => '',
       'user_register_form' => FALSE,
     ),
@@ -548,7 +551,7 @@ function elite_trainings_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 8,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -587,6 +590,50 @@ function elite_trainings_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-training-field_video_webm'
+  $field_instances['node-training-field_video_webm'] = array(
+    'bundle' => 'training',
+    'deleted' => 0,
+    'description' => 'If this Training includes a video in the top area instead of just the static image, upload a .webm video file here so that Firefox browsers can also play the native HTML5 video',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_video_webm',
+    'label' => 'Webm Video File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'file_directory' => 'videos',
+      'file_extensions' => 'webm',
+      'imagecrop' => array(
+        'rounduser' => 0,
+      ),
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 5,
     ),
   );
 
@@ -640,7 +687,7 @@ function elite_trainings_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -702,6 +749,9 @@ function elite_trainings_field_default_field_instances() {
   t('Base Points, not counting any particular user-level-specific multiplier(s), that are awarded for successfully completing this Training + Quiz');
   t('Body');
   t('DEPRECATED FIELD FROM OLD VERSION OF API');
+  t('If this Training includes a video in the top area instead of just the static image, upload a .webm video file here so that Firefox browsers can also play the native HTML5 video');
+  t('If this Training includes a video in the top area instead of just the static image, upload an H.264 .MP4 video file here so that modern browsers & apps can also play the native HTML5 video');
+  t('MP4 Video File');
   t('Main Image');
   t('Media Types');
   t('Paste URL here, like "http://vimeo.com/84995453". Please include the "http://" at the start.');
@@ -713,9 +763,9 @@ function elite_trainings_field_default_field_instances() {
   t('Title');
   t('Users of a specific "Region" will only see Content that is for that same Region.');
   t('Video');
-  t('Video File');
   t('Video URL');
   t('WSlash Training URL');
+  t('Webm Video File');
 
   return $field_instances;
 }

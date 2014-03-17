@@ -171,14 +171,27 @@ function elite_trainings_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '0',
         ),
+        'path' => array(
+          'weight' => '14',
+        ),
       ),
-      'display' => array(),
+      'display' => array(
+        'flag_favorites' => array(
+          'default' => array(
+            'weight' => '8',
+            'visible' => TRUE,
+          ),
+        ),
+      ),
     ),
   );
   $export['field_bundle_settings_node__training'] = $strongarm;

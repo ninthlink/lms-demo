@@ -80,17 +80,29 @@ function elite_trends_strongarm() {
       'search_result' => array(
         'custom_settings' => FALSE,
       ),
+      'token' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'title' => array(
           'weight' => '-5',
         ),
+        'path' => array(
+          'weight' => '14',
+        ),
       ),
       'display' => array(
         'flag_collect_points' => array(
           'default' => array(
             'weight' => '7',
+            'visible' => TRUE,
+          ),
+        ),
+        'flag_favorites' => array(
+          'default' => array(
+            'weight' => '8',
             'visible' => TRUE,
           ),
         ),
