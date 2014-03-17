@@ -91,7 +91,7 @@ if ( $showvid ) {
 		}
 		if ( $vmp4 != '' ) {
 			?>
-	<video id="qvideo" controls width="800" height="450" poster="<?php echo $basepath .'/sites/default/files/field/image/'. $element['#object']->field_image['und'][0]['filename'] ?>">
+	<video id="qvideo" controls width="800" height="450" poster="<?php echo $basepath .'/sites/default/files/'. ( $element['#object']->type == 'training' ? 'trainings/' : 'field/image/' ) . $element['#object']->field_image['und'][0]['filename'] ?>">
 		<source src="<?php echo $vmp4 ?>" type="video/mp4" />
 		Your device does not support HTML5 video.
 	</video>
