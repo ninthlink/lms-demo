@@ -394,7 +394,7 @@ function elite_custom_block_flop_view() {
 	
 	// put it all together
   $markup = $uname_markup . $picture_markup . $points_markup . $umenu;
-	$markup .= '<pre style="display:none">'. print_r($user,true) .'</pre>';
+	//$markup .= '<pre style="display:none">'. print_r($user,true) .'</pre>';
 	
   return elite_custom_markup_wrapper($markup, array('id' => 'elite-user-flop'));
 }
