@@ -76,8 +76,6 @@
         <!-- Arrow-Down -->
         <div class="continue-arrow"></div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 1 -->
 
 
@@ -104,9 +102,13 @@
             </ul>
           </div>
         </div>
-        
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
+
+        <div class="s2p2 row" data-context="s2p2">
+          <div class="twelve columns h-center">
+            <p class="footnote" data-field="laserbeam_text">Snapdragon is a product of Qualcomm Technologies, Inc</p>
+          </div>
+        </div>
+      
       </div> <!-- end SECTION 2 -->
 
 
@@ -123,8 +125,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 3 -->
 
 
@@ -178,8 +178,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 4 -->
 
 
@@ -193,8 +191,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 5 -->
 
 
@@ -239,8 +235,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 6 -->
 
       
@@ -273,8 +267,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 7 -->
 
 
@@ -395,8 +387,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 8 -->
 
 
@@ -518,8 +508,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 9 -->
 
 
@@ -643,8 +631,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 10 -->
 
 
@@ -769,8 +755,6 @@
           </div>
         </div>
 
-        <!-- waypoint span -->
-        <span class="waypoint"></span>
       </div> <!-- end SECTION 11 -->
 
 
@@ -779,12 +763,13 @@
         <div class="quiz slide qualcomm-background stone">
           <div class="quizsection row" data-context="quizsection">
             <div class="twelve columns h-center">
-              <a href="assessment.html" class="quiz-button chevron large button radius light">Proceed to <span class="subheader">Assessment</span></a>
+              <!-- ELITE QUIZ -->
+              <a href="assessment.html" class="quiz-button chevron large button radius light" data-field="assessmentbtn_text" onclick="parent.qelite_taketraining_btn(); return false;">Proceed to <span class="subheader">Assessment</span></a>
+              <!-- CCS QUIZ -->
+              <!-- <a href="assessment.html?lang=en" class="quiz-button chevron large button radius light" data-field="assessmentbtn_text">Proceed to <span class="subheader">Assessment</span></a> -->
             </div>
           </div>
 
-          <!-- waypoint span -->
-          <span class="waypoint"></span>
         </div>
         <!-- end QUIZ BUTTON SECTION -->
 
@@ -793,7 +778,7 @@
           <!-- Footnotes -->
           <div class="fnotes row inner-section" data-context="fnotes">
             <div class="twelve columns">
-              <h1 class="subheader" data-field="laserbeam_text">Footnotes</h1>
+              <h2 class="subheader" data-field="laserbeam_text">Footnotes</h2>
                 <ol class="footnotes" data-field="footnotes_text">
                   <li>Source: QCT as of December 2013</li>
                   <li>Source: BDTI - For more detailed information see <a href="www.BDTI.com">www.BDTI.com</a>. All scores &copy;2012 BDTI</li>
@@ -808,13 +793,11 @@
 
                 <hr class="plain light-grey"/>
 
-                <p data-field="legal_text">© 2014 Qualcomm Technologies, Inc. All rights reserved. Qualcomm is a trademark of QUALCOMM Incorporated registered in the United States and other countries. Krait and Snapdragon are trademarks of Qualcomm Technologies, Inc. Other products and brand names are property of their respective owners.</p>
+                <p data-field="legal_text"><strong>©2014 Qualcomm Incorporated and/or its subsidiaries.  All Rights Reserved.<br/><br/>References to “Qualcomm” may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.<br/<br/><br/>Qualcomm Incorporated includes Qualcomm’s licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm’s engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.<br/><br/>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</strong></p>
 
             </div>
           </div>
 
-          <!-- waypoint span -->
-          <span class="waypoint"></span>
         </div> <!-- end FOOTNOTES SECTION -->
 
       </div> <!-- end panel-snap -->
@@ -879,7 +862,6 @@
 
       //Prevent iamge from being draggable
       $("img").mousedown(function(){ return false; });
-
 
 
     }); //end document.ready()

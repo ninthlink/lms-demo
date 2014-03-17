@@ -320,7 +320,7 @@ function checkIECompView() {
 
   //check for IE10 Comp view
   if(agentStr.indexOf('Trident/6.0') > -1 ) {
-    if(agentStr.indexOf("MSIE 7.0") > -1) {
+    if(agentStr.indexOf("MSIE 7.0") > -1 || document.documentMode && document.documentMode === 7) {
       mode = "IE10"; 
       isCompView = true;
     }
@@ -330,7 +330,7 @@ function checkIECompView() {
   } 
   //check for IE9 Comp view
   else if (agentStr.indexOf("Trident/5.0") > -1) {
-    if (agentStr.indexOf("MSIE 7.0") > -1) {
+    if (agentStr.indexOf("MSIE 7.0") > -1 || document.documentMode && document.documentMode === 7) {
       mode = "IE9";
       isCompView = true;
     }
@@ -340,7 +340,7 @@ function checkIECompView() {
   }
   //check for IE8 Comp view
   else if (agentStr.indexOf("Trident/4.0") > -1) {
-    if (agentStr.indexOf("MSIE 7.0") > -1) {
+    if (agentStr.indexOf("MSIE 7.0") > -1 || document.documentMode && document.documentMode === 7) {
       mode = "IE8";
       isCompView = true;
     }
@@ -348,7 +348,7 @@ function checkIECompView() {
       mode = "IE8";
     }
   }
-  else if (agentStr.indexOf("MSIE 7.0") > -1) {
+  else if (agentStr.indexOf("MSIE 7.0") > -1 || document.documentMode && document.documentMode === 7) {
     mode = "IE7";
     isCompView = true;
   }

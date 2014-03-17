@@ -652,6 +652,7 @@ img.center {
 
 h1,h2,h3,h4,h5,h6 { font-family: "qualcomm_office_bold", Arial, Helvetica, sans-serif; color: inherit; margin-bottom: 8px !important; }
 
+.regular { font-family: "qualcomm_office_regular", Arial, Helvetica, sans-serif; color: inherit; line-height: 1.1; font-weight: normal; }
 .subheader { font-family: "qualcomm_office_semibold", Arial, Helvetica, sans-serif; color: inherit; line-height: 1.1; font-weight: normal; }
 .light { font-family: "qualcomm_office_light", Arial, Helvetica, sans-serif; color: inherit; line-height: 1.1; font-weight: normal; }
 .bold { font-family: "qualcomm_office_bold", Arial, Helvetica, sans-serif; color: inherit; }
@@ -1868,6 +1869,8 @@ html.quiz, .quiz body {
 	-ms-user-select: none;
 	user-select: none;
 }
+
+.quiz .main-navigation { background: none; }
 .quiz .content-container { height: 100%; }
 .quiz .quiz-container { min-height: 100%; }
 
@@ -1948,7 +1951,9 @@ html.quiz, .quiz body {
 	-moz-user-select: -moz-none;
 	-ms-user-select: none;
 	user-select: none;
-	}
+	background: black;
+	color: #e7e7e7 !important;
+}
 
 /* -----------------------------------------
 	Quiz - RTL  

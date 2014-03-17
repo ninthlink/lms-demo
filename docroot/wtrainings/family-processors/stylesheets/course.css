@@ -139,6 +139,8 @@ img.speech-bubbles.cust1 { width: 40%; z-index: 2; left: 48%; margin-top: 7%; } 
 img.speech-bubbles.cust2 { width: 30%; z-index: 1; left: 25%; margin-top: 38%; } 	/* O-Left: 28%; / O-Margin:38%  */
 img.speech-bubbles.rsa 	 { width: 55%; z-index: 3; left: 1%; margin-top: -38%; } 	/* O-Left: 1%;  / O-Margin:-38% */
 
+.s2p2 p.footnote { color: #888888 !important; font-size: .94em; }
+
 /* -----------------------------------------
    Section 4: Technologies Abound 
 ----------------------------------------- */

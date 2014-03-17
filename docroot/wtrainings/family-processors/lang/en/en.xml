@@ -5,24 +5,8 @@
     CONTAINER: The main text for the interface of the main file 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	<container title="Container" name="container">
-
 		<!--  Course's Title -->
 		<course-name title="Course Title" field="title_text">Qualcomm® Snapdragon™ Family of Processors</course-name>		
-
-		<!-- Main Navigation: Tabs -->
-		<mainnavigation title="Main Sections" name="tabs">
-			<tab title="Introduction Tab"  		field="tab1_text">Introduction</tab>
-			<tab title="Powerful Companion Tab" field="tab2_text">Exploring the Snapdragon Processor</tab>
-			<tab title="Summary Tab"			field="tab3_text">Summary</tab>
-		</mainnavigation>
-
-		<!-- Assessment Menu --> 
-		<assessment title="Assessment">
-			<text title="Assessment Prompt" 		field="assessment_text"><![CDATA[Are you sure you want to exit this learning module?<br><br>We encourage you to explore this module thoroughly, revisiting those areas that may require a deeper understanding for you. The more you know, the more results you'll see on the sales floor!  You can choose to exit to the assessment at any time.]]></text>
-			<text title="Proceed to Assessment" 	field="assessmentbtn_text">Proceed to Assessment</text>
-			<text title="Continue to Assessment" 	field="yes_text">Yes, continue to the assessment</text>
-			<text title="Return to Module" 			field="cancel_text">Cancel &amp; return to the module</text>
-		</assessment>
 	</container>
 	
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -42,6 +26,14 @@
 			<li>The main differences between each Qualcomm Snapdragon processor</li>
 			<li>How to help your customer choose the right Qualcomm Snapdragon device</li>
 		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2: Page 2
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="s2p2">
+		<laserbeam title="Header" field="laserbeam_text">Snapdragon is a product of Qualcomm Technologies, Inc</laserbeam>
 	</page>
 
 
@@ -313,9 +305,9 @@
 
 
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    S11: Page 3
+    Footnotes
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-	<page title="" name="s12p1">
+	<page title="" name="fnotes">
 		<laserbeam title="Header" field="laserbeam_text">Footnotes</laserbeam>
 
 		<!-- Feature List -->
@@ -331,7 +323,15 @@
             <li>When paired with a discreet modem</li>
         ]]></text>
 
-        <text field="legal_text">© 2014 Qualcomm Technologies, Inc. All rights reserved. Qualcomm is a trademark of QUALCOMM Incorporated registered in the United States and other countries. Krait and Snapdragon are trademarks of Qualcomm Technologies, Inc. Other products and brand names are property of their respective owners.</text>
+        <text field="legal_text"><![CDATA[<strong>©2014 Qualcomm Incorporated and/or its subsidiaries.  All Rights Reserved.<br/><br/>References to “Qualcomm” may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.<br/<br/><br/>Qualcomm Incorporated includes Qualcomm’s licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm’s engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.<br/><br/>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</strong>]]></text>
+	</page>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Assessment
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="quizsection">
+		<!-- Assessment Menu --> 
+		<text field="assessmentbtn_text"><![CDATA[Proceed to <span class="subheader">Assessment</span>]]></text>
 	</page>
 
 </course>
