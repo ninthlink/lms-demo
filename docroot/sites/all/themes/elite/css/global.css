@@ -779,8 +779,12 @@ article.node-article .field-name-field-media-types {
 }
 article.node-training .field-name-field-image,
 article.node-article .field-name-field-image,
-#qvideo {
+#qvideo,
+.sublimevideo-View {
   margin: 0 0 40px;
+}
+.sublimevideo-View {
+	float: left;
 }
 article.node-training .field-name-title-field,
 article.node-article .field-name-title-field {

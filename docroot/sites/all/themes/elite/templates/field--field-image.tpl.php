@@ -102,7 +102,7 @@ if ( $showvid ) {
 		}
 	} else {
 		?>
-	<video id="qvideo" controls width="800" height="450" poster="<?php echo $basepath .'/sites/default/files/field/image/'. $element['#object']->field_image['und'][0]['filename'] ?>" data-autoresize="fill" preload="none">
+	<video class="sublime" id="qvideo" controls width="800" height="450" poster="<?php echo $basepath .'/sites/default/files/field/image/'. $element['#object']->field_image['und'][0]['filename'] ?>" data-uid="q-video-<?php echo $element['#object']->nid ?>" data-autoresize="fit" preload="none">
 		<?php
 			if ( $vmp4 != '' ) echo '<source src="'. $vmp4 .'" type="video/mp4" />' ."\n";
 			if ( $vwebm != '' ) echo '<source src="'. $vwebm .'" type="video/webm" />' ."\n";
