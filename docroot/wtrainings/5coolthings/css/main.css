@@ -801,9 +801,10 @@ sup {
 /* end CTA */
 
 /* legal section */
-    #legal .text-position p { font-size: 0.8em; margin-bottom: 1em; }
-    #legal #logo { margin: 70px auto 30px; }
-		#legal .text-position.center { padding-top: 0; padding-bottom: 70px; }
+	#legal .text-position { padding: 70px 0; margin: 0; font-size: 0.7em }
+    #legal .text-position p { margin: 0 0 1.5em; }
+	#legal hr { margin: 3em 0 }
+	#legal h3 { font-family: "Qualcomm-Semibold", sans-serif }
 /* end legal */
 
 

@@ -5,6 +5,8 @@
  *
  * v0.1.10
  */
+$v = '0.1.10';
+$qv = '?v='. $v;
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -25,7 +27,7 @@
 		<?php /*
 		<link rel="stylesheet" href="../_common/css/jquery.qualcomm-reveal.css">
 		*/ ?>
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/main.css<?php echo $qv ?>">
 
 		<script src="../_common/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -71,7 +73,7 @@
               </div>
 						</div>
 						<div class="text-position">
-							<h3 class="center">Can charge devices <span>up to <span class="thick">75% faster</span> <sup class="sup">*</sup></span></h3>
+							<h3 class="center">Can charge devices <span>up to <span class="thick">75% faster</span> <sup class="sup">1</sup></span></h3>
 						</div>
 
 						<span class="stretch"></span>
@@ -141,13 +143,19 @@
 				<?php // Slide #6 ?>
 				<section id="legal" class="bg-red block">
 					<div class="inner">
-						<div class="graphic-position center">
+						<!--div class="graphic-position center">
 							<img id="logo" src="img/snapdragon.png" />
-						</div>
-						<div class="text-position center txtw">
-							<p>&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc.  All rights reserved.</p>
-              <p>* As compared to devices without fast charge technology.</p>
-							<p>Qualcomm is a trademark of QUALCOMM Incorporated registered in the United States and other countries. Gobi and Snapdragon are trademarks of Qualcomm Technologies, Inc.<br />Other products and brand names are property of their respective owners.</p>
+						</div-->
+						<div class="text-position txtw">
+							<h3>Footnotes</h3>
+							<ol>
+							<li>As compared to devices without fast charge technology.</li>
+							</ol>
+							<hr />
+							<p>&copy;<?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Incorporated and/or its subsidiaries. All Rights Reserved.</p>
+							<p>References to "Qualcomm" may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.</p>
+							<p>Qualcomm Incorporated includes Qualcomm's licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm's engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.</p>
+							<p>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</p>
 						</div>
 					</div>
 				</section>

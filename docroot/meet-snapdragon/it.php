@@ -2,9 +2,9 @@
 /*
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
- *
- * v0.4.9
  */
+$v = '0.4.10';
+$qv = '?v='. $v;
 ?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -23,7 +23,7 @@
 		<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, minimum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="../wtrainings/_common/css/jquery.qualcomm-reveal.css">
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="css/main.css<?php echo $qv ?>">
 
 		<script src="../wtrainings/_common/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
@@ -405,12 +405,11 @@
 				<?php // Slide #16 ?>
 				<section id="legal" class="bg-red block">
 					<div class="inner">
-						<div class="text-position center">
-							<p class="txtw">&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc. Tutti i diritti riservati.</p>
-							<p class="txtw">Qualcomm è un marchio di QUALCOMM Incorporated, registrato negli Stati Uniti e in altri Paesi. Gobi e Snapdragon sono marchi registrati di Qualcomm Technologies, Inc.<br />Altri prodotti e marchi sono di proprietà delle rispettive società/aziende.</p>
-						</div>
-						<div class="graphic-position center">
-							<img id="logo" src="img/snapdragon-logo.png" />
+						<div class="text-position txtw">
+							<p>&copy;<?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Incorporated and/or its subsidiaries. All Rights Reserved.</p>
+							<p>References to "Qualcomm" may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.</p>
+							<p>Qualcomm Incorporated includes Qualcomm's licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm's engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.</p>
+							<p>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</p>
 						</div>
 					</div>
 				</section>

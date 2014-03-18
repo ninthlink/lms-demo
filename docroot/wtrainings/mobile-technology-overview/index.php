@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Mobile Technology Overview
  */
-$v = '1.0.0';
+$v = '1.0.1';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -59,12 +59,17 @@ $qv = '?v='. $v;
 		</div>
 		<div class="stagewrapper ftr">
 			<div class="inner">
-				<p><img src="edge_includes/qualcomm.png" alt="Qualcomm" /></p>
-				<p>&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc. All rights reserved.</p>
-<p>1 - Battery holds ~5 watt-hours of energy<br />
-2 - on network per month in 2013. Source: Cisco VNI, 2013, A.T. Kearney Analysis<br />
-3 - Source: Machina Research, Apr. '13</p>
-<p>Qualcomm is a trademark of QUALCOMM Incorporated registered in the United States and other countries. Gobi and Snapdragon are trademarks of Qualcomm Technologies, Inc. Other products and brand names are property of their respective owners.</p>
+							<h3>Footnotes</h3>
+							<ol>
+							<li>Battery holds ~5 watt-hours of energy</li>
+							<li>on network per month in 2013. Source: Cisco VNI, 2013, A.T. Kearney Analysis</li>
+							<li>Source: Machina Research, Apr. '13</li>
+							</ol>
+							<hr />
+							<p>&copy;<?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Incorporated and/or its subsidiaries. All Rights Reserved.</p>
+							<p>References to "Qualcomm" may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.</p>
+							<p>Qualcomm Incorporated includes Qualcomm's licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm's engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.</p>
+							<p>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</p>
 			</div>
 		</div>
 	</div>

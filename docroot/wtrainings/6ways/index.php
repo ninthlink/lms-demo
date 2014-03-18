@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : 6 ways smartphones are changing us
  */
-$v = '0.1.7';
+$v = '0.1.8';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -69,10 +69,15 @@ $qv = '?v='. $v;
 		<div class="section proceed"><a href="assessment.html" onClick="parent.qelite_taketraining_btn(); return false;">Proceed to quiz</a></div>
 		<div class="section ftr">
 			<div class="inner">
-				<!--p><img src="img/qualcomm.png" alt="Qualcomm" /></p-->
-				<p>Sources: Facebook, Jan. '13; SA, Apr. '12; 2012 Snapdragon Consumer Survey; TIME Mobility Poll, in cooperation with QUALCOMM, Aug. '12</p>
-				<p>&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc. All rights reserved.</p>
-				<p>Qualcomm is a trademark of QUALCOMM Incorporated registered in the United States and other countries. Gobi and Snapdragon are trademarks of Qualcomm Technologies, Inc. Other products and brand names are property of their respective owners.</p>
+				<h3>Footnotes</h3>
+				<ol>
+				<li>Sources: Facebook, Jan. '13; SA, Apr. '12; 2012 Snapdragon Consumer Survey; TIME Mobility Poll, in cooperation with QUALCOMM, Aug. '12</li>
+				</ol>
+				<hr />
+				<p>&copy;<?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Incorporated and/or its subsidiaries. All Rights Reserved.</p>
+				<p>References to "Qualcomm" may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.</p>
+				<p>Qualcomm Incorporated includes Qualcomm's licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm's engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.</p>
+				<p>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</p>
 			</div>
 		</div>
 

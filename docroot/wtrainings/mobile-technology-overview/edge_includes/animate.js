@@ -30,6 +30,7 @@ var qedgepieces = [
 		s: [],
 		t: ['Default Timeline'],
 	},
+	{ i: false /*left intentionally blank*/},
 	{ i: false /*left intentionally blank*/}
 ];
 var qload = function(qsc) {

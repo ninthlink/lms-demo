@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Who is Qualcomm?
  */
-$v = '1.0.0';
+$v = '1.0.1';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -472,17 +472,20 @@ lives everywhere - transforming how we live.</p>
 				<?php // Slide #20 ?>
 				<section id="legal" class="bg-6 block">
 					<div class="inner">
-						<div class="graphic-position center">
-							<img id="logo" src="img/qualcomm.png" />
-						</div>
-						<div class="text-position center txtw">
-							<p>&copy; <?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Technologies, Inc.  All rights reserved.</p>
-							<p>1 - Full-time, part-time and temporary employees per FY13 Form 10-K<br />
-							2 - Modem Source: QCT DSP based on BDTi testing 2012<br />
-							3 - CPU Source: Anandtech, 10/1/13<br />
-							4 - Source: Machina Research, 2013<br />
-							5 - Source: Qualcomm Research. 2GHz carrier frequency, site-to-site distance is 500meter, cluster eMBMS deployment, comparison with unicast is based on the same amount of resource allocation.</p>
-							<p>Qualcomm is a trademark of QUALCOMM Incorporated registered in the United States and other countries. Gobi and Snapdragon are trademarks of Qualcomm Technologies, Inc. Other products and brand names are property of their respective owners.</p>
+						<div class="text-position txtw">
+							<h3>Footnotes</h3>
+							<ol>
+							<li>Full-time, part-time and temporary employees per FY13 Form 10-K</li>
+							<li>Modem Source: QCT DSP based on BDTi testing 2012</li>
+							<li>CPU Source: Anandtech, 10/1/13</li>
+							<li>Source: Machina Research, 2013</li>
+							<li>Source: Qualcomm Research. 2GHz carrier frequency, site-to-site distance is 500meter, cluster eMBMS deployment, comparison with unicast is based on the same amount of resource allocation.</li>
+							</ol>
+							<hr />
+							<p>&copy;<?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Incorporated and/or its subsidiaries. All Rights Reserved.</p>
+							<p>References to "Qualcomm" may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.</p>
+							<p>Qualcomm Incorporated includes Qualcomm's licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm's engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.</p>
+							<p>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</p>
 						</div>
 					</div>
 				</section>

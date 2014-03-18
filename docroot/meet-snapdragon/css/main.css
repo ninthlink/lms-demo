@@ -1571,8 +1571,8 @@ height: 100px;
 /* end CTA */
 
 /* legal section */
+	#legal .text-position { padding: 3em 0; margin: 0 }
     #legal .text-position p { font-size: 0.7em }
-    #legal #logo { margin: 80px; }
 /* end legal */
 
 
