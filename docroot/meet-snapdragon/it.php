@@ -242,7 +242,7 @@ $qv = '?v='. $v;
 				<section id="single-chip" class="bg-red-grad-lt block">
 					<div class="inner">
 						<div class="text-position">
-							<p class="txtw">Solo Qualcomm progetta tutti i principali componenti tecnologici di un dispositivo mobile, integrati all'interno di un <span class="thick">unico system-on-chip</span></p>
+							<p class="txtw">Qualcomm progetta tutti i principali componenti tecnologici di un dispositivo mobile, integrati all'interno di un <span class="thick">unico system-on-chip</span></p>
 						</div>
 						<div class="graphic-position">
 							<img id="single-phone" src="img/tablet.png" />

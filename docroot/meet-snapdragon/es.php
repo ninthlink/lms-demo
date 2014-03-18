@@ -242,7 +242,7 @@ $qv = '?v='. $v;
 				<section id="single-chip" class="bg-red-grad-lt block">
 					<div class="inner">
 						<div class="text-position">
-							<p class="txtw">Solo Qualcomm diseña componentes clave de tecnología que conectan cada uno de los componentes en un <span class="thick">único sistema en un chip</span></p>
+							<p class="txtw">Qualcomm diseña componentes clave de tecnología que conectan cada uno de los componentes en un <span class="thick">único sistema en un chip</span></p>
 						</div>
 						<div class="graphic-position">
 							<img id="single-phone" src="img/tablet.png" />
