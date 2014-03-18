@@ -1271,8 +1271,9 @@ height: 100px;
 /* end cpu performance */
 
 /* gpu performance section */
-		#gpu-performance .text-position {
-			padding-top: 5%;
+		#gpu-performance .text-position.center {
+			padding: 5% 0 0;
+			width: 100%;
 		}
 		#gpu-performance .text-position h3 {
 			font-size: 0.94em;
@@ -1571,8 +1572,10 @@ height: 100px;
 /* end CTA */
 
 /* legal section */
-	#legal .text-position { padding: 3em 0; margin: 0 }
-    #legal .text-position p { font-size: 0.7em }
+	#legal .text-position { padding: 3em 0; margin: 0; font-size: 0.7em }
+	#legal hr { margin: 3em 0 }
+	#legal h3 { font-family: "Qualcomm-Semibold", sans-serif }
+    #legal .text-position p { margin: 0 0 1.5em }
 /* end legal */
 
 

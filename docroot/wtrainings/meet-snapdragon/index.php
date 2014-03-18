@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  */
-$v = '0.4.10';
+$v = '0.4.11';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -300,8 +300,8 @@ $qv = '?v='. $v;
 					<div class="inner">
 						<div class="text-position center">
 							<h2 class="txtb">Enhanced graphic <span class="thick">performance</span></h2>
-							<h3 class="txtb"><span class="thick">Snapdragon 600</span> up to <span class="thick txtr">29X faster performance*</span><br />
-              <span class="thick">Snapdragon 800</span> up to <span class="thick txtr">43X faster performance*</span></h3>
+							<h3 class="txtb"><span class="thick">Snapdragon 600</span> up to <span class="thick txtr">29X faster performance</span> <sup>1</sup><br />
+              <span class="thick">Snapdragon 800</span> up to <span class="thick txtr">43X faster performance</span> <sup>1</sup></h3>
 						</div>
             <div class="graphic-position">
             	<ul>
@@ -312,7 +312,6 @@ $qv = '?v='. $v;
               <li class="a320 txtw"><span class="fill"></span><span class="name">Adreno 320 / <span class="thick">Snapdragon 600</span></span></li>
               <li class="a330 txtw"><span class="fill"></span><span class="name">Adreno 330 / <span class="thick">Snapdragon 800</span></span></li>
               </ul>
-              <p class="center">* Than Adreno 200. Source - QCT Data.</p>
             </div>
 					</div>
 				</section>
@@ -325,20 +324,16 @@ $qv = '?v='. $v;
 						</div>
 						<div class="graphic-position center">
 							<div class="left three-floats">
-								<p>Data Download Speeds<br /><b>Up to 150Mbps*</b></p>
+								<p>Data Download Speeds<br /><b>Up to 150Mbps</b> <sup>2</sup></p>
 							</div>
 							<div class="middle three-floats">
 								<img id="signal" src="img/modem-signal.png" />
 								<img id="spinning-arrows" src="img/spinning-arrows.png" />
 							</div>
 							<div class="right three-floats">
-								<p>Data Upload Speeds<br /><b>Up to 50Mbps*</b></p>
+								<p>Data Upload Speeds<br /><b>Up to 50Mbps</b> <sup>2</sup></p>
 							</div>
-
 							<span class="stretch"></span>
-              
-            	<p class="center"> *Peak measured data rates, actual speeds will vary. </p>
-
 						</div>
 					</div>
 				</section>
@@ -406,6 +401,12 @@ $qv = '?v='. $v;
 				<section id="legal" class="bg-red block">
 					<div class="inner">
 						<div class="text-position txtw">
+							<h3>Footnotes</h3>
+							<ol>
+							<li>Than Adreno 200. Source - QCT Data.</li>
+							<li>Peak measured data rates, actual speeds will vary.</li>
+							</ol>
+							<hr />
 							<p>&copy;<?php date_default_timezone_set('UTC'); echo date('Y'); ?> Qualcomm Incorporated and/or its subsidiaries. All Rights Reserved.</p>
 							<p>References to "Qualcomm" may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.</p>
 							<p>Qualcomm Incorporated includes Qualcomm's licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm's engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.</p>
