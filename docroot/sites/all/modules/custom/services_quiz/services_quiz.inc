@@ -68,10 +68,10 @@ function services_quiz_finalize($data) {
 function _services_quiz_finalize($quiz) {
   $questions = _quiz_get_answers($quiz, $_SESSION['quiz_' . $quiz->nid]['result_id']);
   $score = quiz_end_scoring($quiz, $_SESSION['quiz_' . $quiz->nid]['result_id']);
-	//watchdog('sq', print_r($score, TRUE));
   $session_data = $_SESSION['quiz_' . $quiz->nid];
   //unset($_SESSION['quiz_' . $quiz->nid]);
 
+	//watchdog('sq', 'quiz : <pre>'. print_r($quiz,true) .'</pre><br /><br />sess = <pre>'. print_r($session_data,true) .'</pre><br /><br />score: <pre>'. print_r($score, TRUE) .'</pre>');
   quiz_end_actions($quiz, $score, $session_data);
 
   $return = new stdClass();
