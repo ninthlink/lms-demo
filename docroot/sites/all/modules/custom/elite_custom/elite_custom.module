@@ -505,7 +505,7 @@ function elite_custom_quiz_finished($quiz, $score, $rid) {
   if (!empty($training_node->field_base_points)) {
     $base_points = $training_node->field_base_points[LANGUAGE_NONE][0]['value'];
 		
-		$taken = elite_custom_user_taken_quiz( $quiz->nid );
+		$taken = elite_custom_user_earned_training_points( $training_node->nid );
 		$ptsres = array();
 		if ( $taken == 0 ) {
 			$ptsres = userpoints_userpointsapi( array(
@@ -691,6 +691,32 @@ function elite_custom_user_taken_quiz( $nid = -1, $uid = NULL ) {
 			}
 		}
 	}
+	return ($total==0) ? 0 : 1;
+}
+/*
+ * whether a given user has earned points for completing a particular training quiz
+ *
+ * args:
+ * nid of training node,
+ * uid of current user, set to uid of current user if not given / NULL
+ * 
+ */
+function elite_custom_user_earned_training_points( $nid = -1, $uid = NULL ) {
+	if ( $uid == NULL ) {
+		global $user;
+		$uid = $user->uid;
+	}
+	$total = 0;
+	$nid = (int)$nid;
+	if ( $nid > 0 ) {
+		$total = db_query('SELECT COUNT(*)
+			FROM {userpoints_txn} n
+			WHERE n.entity_id = :nid
+			AND n.uid = :uid
+			AND n.operation = :eop
+			ORDER BY n.time_stamp ASC', array(':nid' => $nid, ':uid' => $uid, ':eop' => 'elite_custom_quiz_finished'))->fetchField();
+	}
+	watchdog('chk earned pts', 'training nid '. $nid .' : uid '. $uid .' : taken count = '. $total );
 	return ($total==0) ? 0 : 1;
 }
 /*
