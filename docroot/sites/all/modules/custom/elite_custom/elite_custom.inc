@@ -93,20 +93,18 @@ function elite_custom_services_user_counts() {
 	
 	$return = new stdClass();
 	if ( $uid > 0 ) {
-		// trainings
-		$total_trainings = (int)elite_custom_get_node_count('training');
-		$complete_trainings = (int)elite_custom_user_training_count();
-		$remaining_trainings = $total_trainings - $complete_trainings;
-		if ( $remaining_trainings < 0 ) $remaining_trainings = 0; // just in case
+		$account = user_load($uid);
+		$region = elite_custom_user_region();
 		
-		$trainings = array(
-			'total' => $total_trainings,
-			'complete' => $complete_trainings,
-			'remaining' => $remaining_trainings,
-		);
+		// trainings
+		$trainings = elite_custom_user_training_count( $uid, $region, true );
+		
 		// trends
-		$total_trends = (int)elite_custom_get_node_count('article');
+		/*
+		$total_trends = (int)elite_custom_get_node_count( 'article', $region );
+		
 		$complete_trends = (int)db_query("SELECT COUNT(*) FROM flagging WHERE uid=:uid and fid=2", array(':uid' => $uid))->fetchField();
+		
 		$remaining_trends = $total_trends - $complete_trends;
 		if ( $remaining_trends < 0 ) $remaining_trends = 0; // just in case
 		
@@ -115,6 +113,8 @@ function elite_custom_services_user_counts() {
 			'complete' => $complete_trends,
 			'remaining' => $remaining_trends,
 		);
+		*/
+		$trends = elite_custom_user_trend_count( $uid, $region, true );
 		
 		$points = (int)userpoints_get_current_points($uid);
 		
