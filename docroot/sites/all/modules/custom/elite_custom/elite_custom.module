@@ -492,6 +492,10 @@ function elite_custom_markup_wrapper($markup, $attributes = NULL, $tag = 'div') 
 
 /**
  * Implements hook_quiz_finished().
+ *
+ * #todo : either make Base Points = REQUIRED for Training nodes
+ * or add field condition here to load training that has base_points = some # ?
+ *
  */
 function elite_custom_quiz_finished($quiz, $score, $rid) {
   $training_data = db_select('field_data_field_training_quiz', 'tq')
@@ -716,7 +720,7 @@ function elite_custom_user_earned_training_points( $nid = -1, $uid = NULL ) {
 			AND n.operation = :eop
 			ORDER BY n.time_stamp ASC', array(':nid' => $nid, ':uid' => $uid, ':eop' => 'elite_custom_quiz_finished'))->fetchField();
 	}
-	watchdog('chk earned pts', 'training nid '. $nid .' : uid '. $uid .' : taken count = '. $total );
+	//watchdog('chk earned pts', 'training nid '. $nid .' : uid '. $uid .' : taken count = '. $total );
 	return ($total==0) ? 0 : 1;
 }
 /*
