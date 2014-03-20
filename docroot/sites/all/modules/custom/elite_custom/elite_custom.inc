@@ -81,6 +81,10 @@ function elite_custom_services_imagecache($data) {
 
 /**
  * callback for services /user/counts
+ * #needswork
+ * #todo :
+ * i(alex) think we could just store ALL the Points / Favorites count / Completed Trainings & Completed Trends counts in fields in the USER object
+ * since they dont get updated very often, and would be a way to CACHE and SAVE this result & improve performance?
  * 
  * returns
  * uid of current user
