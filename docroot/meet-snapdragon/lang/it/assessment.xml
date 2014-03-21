@@ -1,0 +1,51 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="Meet Qualcomm® Snapdragon™ Processors" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again, but only once in a 24 hour period. Thanks for your time and hard work!" 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="I processori Snapdragon utilizzano più componenti ed acceleratori integrati, ciascuno dedicato a un'attività specifica." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" >
+		<option key="" value="Vero" answer="1"/>
+		<option key="" value="Falso" />
+	</question>
+
+	<question id="2" q="Qual è la caratteristica esclusiva dei processori Snapdragon™ di Qualcomm che favorisce prestazioni superiori?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="3G" />
+		<option key="" value="Modem"/>
+		<option key="" value="Sistema su chip (System-on-chip)" answer="1"/>
+		<option key="" value="App"/>
+	</question>
+
+	<question id="3" q="I processori Snapdragon sono progettati per offrire:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Potenza e velocità" />
+		<option key="" value="Maggiore durata della batteria" />
+		<option key="" value="Connettività affidabile" />
+		<option key="" value="Tutte le suddette opzioni" answer="1"/>
+	</question>
+
+	<question id="4" q="I processori Snapdragon sono progettati per ottenere una velocità di download dei dati fino a _____ e di upload fino a _____." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="25 Mpbs, 15 Mbps"/>
+		<option key="" value="50 Mbps, 25 Mbps" />
+		<option key="" value="100 Mbps, 50 Mbps" />
+		<option key="" value="150 Mpbs, 50 Mbps" answer="1" />
+	</question>
+
+	<question id="5" q="Snapdragon 800 è dotato di GPU ____, che offre prestazioni fino a 43 volte più veloci di quelle fornite da Adreno 200." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Adreno 220" />
+		<option key="" value="Adreno 225"/>
+		<option key="" value="Adreno 320"/>
+		<option key="" value="Adreno 330"  answer="1" />
+	</question>
+
+</quiz>

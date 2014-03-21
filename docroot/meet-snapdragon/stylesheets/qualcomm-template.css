@@ -559,7 +559,26 @@ img.center {
     font-weight: normal;
     font-style: normal;
 }
-
+@font-face {
+    font-family: 'Qualcomm-Light';
+    src: url('../fonts/qualcomm-office/QualcommWeb-Light.eot');
+    src: url('../fonts/qualcomm-office/QualcommWeb-Light.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/qualcomm-office/QualcommWeb-Light.woff') format('woff'),
+         url('../fonts/qualcomm-office/QualcommWeb-Light.ttf') format('truetype'),
+         url('../fonts/qualcomm-office/QualcommWeb-Light.svg#QualcommWeb-Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Qualcomm-Semibold';
+    src: url('../fonts/qualcomm-office/QualcommWeb-Semibold.eot');
+    src: url('../fonts/qualcomm-office/QualcommWeb-Semibold.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/qualcomm-office/QualcommWeb-Semibold.woff') format('woff'),
+         url('../fonts/qualcomm-office/QualcommWeb-Semibold.ttf') format('truetype'),
+         url('../fonts/qualcomm-office/QualcommWeb-Semibold.svg#QualcommWeb-Semibold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 /* ---| Custom Font Icons: 
 	    • More can be created here: http://fontastic.me/app/ 
 	    • Map to Unicode: see maps here: http://www.unicodemap.org/ 
@@ -1726,13 +1745,16 @@ dl.sub-nav dt { color: white; font-weight: bold; }
 	Quiz/Assessment
 ========================================================================================================= */
 html.quiz, .quiz body { 
-	height: 100%; 
+	/*height: 100%;*/
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
 	-moz-user-select: -moz-none;
 	-ms-user-select: none;
 	user-select: none;
+}
+html.quiz.quizgo, .quiz.quizgo body { 
+	height: 100%;
 }
 .quiz .content-container { height: 100%; }
 .quiz .quiz-container { min-height: 100%; }
