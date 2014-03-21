@@ -20,6 +20,12 @@
  */
 function flag_service_flag_content_access($data) {
 
+  // Verify if user is Logged IN and has same ID as requesting USER
+  global $user;
+  if ((!isset($user->uid)) || $user->uid != $data['uid']) {
+    return services_error(t('User must be logged in to perform flagging actions.'), 403);
+  }
+
   // Check action is valid.
   if (!in_array($data['action'], array('flag', 'unflag'))) {
     return FALSE;
