@@ -15,18 +15,16 @@
 	total_incorrect="Total Incorrect"
 	total_score="Total Score" >
 
-	<question id="1" q="What is Qualcomm’s unique design for Snapdragon™ processors that drives superior performance?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+	<question id="1" q="Snapdragon Processors use multiple mobile engines – each dedicated to a specific task." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" >
+		<option key="" value="True" answer="1"/>
+		<option key="" value="False" />
+	</question>
+
+	<question id="2" q="What is Qualcomm’s unique design for Snapdragon™ processors that drives superior performance?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
 		<option key="" value="3G" />
 		<option key="" value="Modem"/>
 		<option key="" value="System on a chip" answer="1"/>
 		<option key="" value="Apps"/>
-	</question>
-
-	<question id="2" q="Snapdragon processors are designed to enable data download speeds up to ______ and upload speeds up to _____." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
-		<option key="" value="25Mpbs, 15Mbps"/>
-		<option key="" value="50Mbps, 25Mbps" />
-		<option key="" value="100Mbps, 50Mbps" />
-		<option key="" value="150Mpbs, 50Mbps" answer="1" />
 	</question>
 
 	<question id="3" q="Snapdragon processors are designed to deliver:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
@@ -36,17 +34,18 @@
 		<option key="" value="All the above" answer="1"/>
 	</question>
 
-	<question id="4" q="Snapdragon processors are integrated with Qualcomm® Quick Charge 1.0, which can speed up charge time by up to ____, while Qualcomm Quick Charge 2.0 can speed up charge time by up to ____." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
-		<option key="" value="10%, 20%" />
-		<option key="" value="20%, 45%" />
-		<option key="" value="40%, 75%" answer="1"/>
-		<option key="" value="50%, 90%" />
+	<question id="4" q="Snapdragon processors are designed to enable data download speeds up to ______ and upload speeds up to _____." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="25Mpbs, 15Mbps"/>
+		<option key="" value="50Mbps, 25Mbps" />
+		<option key="" value="100Mbps, 50Mbps" />
+		<option key="" value="150Mpbs, 50Mbps" answer="1" />
 	</question>
 
-	<question id="5" q="What allows Snapdragon processors to have screaming fast download speeds?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
-		<option key="" value="Gobi™ modem" answer="1" />
-		<option key="" value="Bluetooth" />
-		<option key="" value="Hotspots" />
-		<option key="" value="GPS" />
+	<question id="5" q="The Snapdragon 800 is equipped with the ___ GPU, with up to 43x faster performance than the Adreno 200." type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Adreno 220" />
+		<option key="" value="Adreno 225"/>
+		<option key="" value="Adreno 320"/>
+		<option key="" value="Adreno 330"  answer="1" />
 	</question>
+
 </quiz>
