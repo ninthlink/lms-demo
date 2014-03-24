@@ -40,7 +40,7 @@ $(document).ready(function() {
 	$('.block h2').each(function(){
 		$(this).addClass('fade-in');
 	});
-	
+	/*
 	var qmodresize = function() {
 		var qwh = $(window).height();
 		var hdr = $('header');
@@ -55,7 +55,7 @@ $(document).ready(function() {
 		clearTimeout(qmodresizer);
 		qmodresizer = setTimeout(qmodresize, 100);
 	}).trigger('resize.qmod');
-	
+	*/
 	// qualcommreveal
 	$('#content').qualcommreveal({
       targets: '.block',

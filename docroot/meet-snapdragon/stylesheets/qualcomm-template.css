@@ -96,7 +96,8 @@ Changelog v1.0.2
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-body { background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; }
+/*body*/
+.quiz-container { background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; }
 
 .border {
 	border: 1px solid rgba(255,255,255,.09);
@@ -202,6 +203,7 @@ body { background-color: black; color: white; font-family: Arial, Helvetica, san
 	height: 25px;
 	margin-top: 12px; /* Old: .1em */
 	margin-left: .9em;
+	float: left;
 }
 
 /* -----------------------------------------
@@ -594,10 +596,11 @@ img.center {
     font-style: normal;
 }
 
-h1,h2,h3,h4,h5,h6 { font-family: "qualcomm_office_bold", Arial, Helvetica, sans-serif; color: white; }
-.subheader { font-family: "qualcomm_office_regular", Arial, Helvetica, sans-serif; color: white; line-height: 1.2; }
-p, a, cite, blockquote { font-family: Arial, Helvetica, sans-serif; color: white; }
-body, div, dl, dt, dd, ul, ol, li, pre, form, p, blockquote, th, td { font-size: 15px; line-height: 1.5; }
+.quiz-container h1,.quiz-container h2,.quiz-container h3,.quiz-container h4,.quiz-container h5,.quiz-container h6 { font-family: "qualcomm_office_bold", Arial, Helvetica, sans-serif; color: white; }
+.quiz-container .subheader { font-family: "qualcomm_office_regular", Arial, Helvetica, sans-serif; color: white; line-height: 1.2; }
+.quiz-container h5.subheader { font-size: 19px }
+.quiz-container p,.quiz-container a,.quiz-container cite,.quiz-container blockquote { font-family: Arial, Helvetica, sans-serif; color: white; }
+.quiz-container div,.quiz-container dl,.quiz-container dt,.quiz-container dd,.quiz-container ul,.quiz-container ol,.quiz-container li,.quiz-container pre,.quiz-container form,.quiz-container p,.quiz-container blockquote,.quiz-container th,.quiz-container td { font-size: 15px; line-height: 1.5; }
 
 /* --| Word-Wrap/Hypen-Break */
 /*h1,h2,h3,h4,h5,h6,p {
@@ -1677,7 +1680,6 @@ dl.sub-nav dt { color: white; font-weight: bold; }
 .rtl .top-bar ul { margin-right: 0; }
 /*.rtl .top-bar.bars-navicon ul > li.has-dropdown > a:after { right: -6%; }*/
 .rtl .top-bar ul > li.has-dropdown a:after { right: -5%; }
-.rtl .top-bar ul > li.name > img.logo { float: left; }
 
 /* -----------------------------------------
 	Accordion 
@@ -1759,6 +1761,11 @@ html.quiz.quizgo, .quiz.quizgo body {
 .quiz .content-container { height: 100%; }
 .quiz .quiz-container { min-height: 100%; }
 
+html.quiz.quizgo, .quiz.quizgo body, .quiz .content-container, .quiz .quiz-container {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
 /* --| Questions */
 .quiz #question { padding: 0 0 15px 0; }
 .quiz #question * { text-transform: none; }

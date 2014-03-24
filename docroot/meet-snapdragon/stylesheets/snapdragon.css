@@ -98,6 +98,9 @@ h6.lower { text-transform: none; }
 .quiz h2,
 .quiz h3 { text-transform: none; }
 
+.quiz h2 { font-size: 37px }
+.quiz h3 { font-size: 32px }
+
 /* --| Background Colors */
 .qualcomm-gradient.snapdragon-radial-sun h1,
 .qualcomm-gradient.snapdragon-radial-sun h2,
