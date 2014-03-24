@@ -1396,11 +1396,14 @@ body.node-type-page .region-sidebar-second {
   font-size: .8em;
 }
 .not-logged-in.page-user #edit-field-region,
+.not-logged-in.page-user #edit-region,
+.not-logged-in.page-user .form-item-language,
 .not-logged-in.page-user #edit-field-user-language-pref {
   clear: both;
   float: left;
   width: 48%;
 }
+.not-logged-in.page-user .form-item-language,
 .not-logged-in.page-user #edit-field-user-language-pref  {
   float: right;
   clear: right;

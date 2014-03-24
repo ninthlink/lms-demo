@@ -16,20 +16,26 @@
 function elite_validation_form_alter(&$form, &$form_state, $form_id) {
   // #id = user-register-form
   if ($form_id == 'user_register_form') {
+		// move REGION field to account...
+		$form['account']['region'] = $form['field_region'];
+		unset( $form['field_region'] );
     // Adding the store id
     $form['account']['store'] = array(
       '#type' => 'textfield',
       '#title' => t('Store ID'),
       '#size' => 15,
-      '#required' => TRUE
+      '#required' => TRUE,
+			'#weight' => 7,
     );
-
+		$form['account']['region']['#weight'] = 8;
+		$form['account']['locale']['#weight'] = 9;
+		
     $form['#validate'][] = 'elite_validation_user_register_validate';
 
     $form['#submit'][] = 'elite_validation_user_register_submit';
-
+		
+		watchdog('qe reg', 'form : <pre>'. print_r($form,true) ."</pre>");
   }
-
 }
 
 /**
@@ -42,6 +48,9 @@ function elite_validation_user_register_validate($form, &$form_state) {
 		form_set_error('store', t('The Store ID you entered appears to be invalid. Please double check with your store manager.'));
 	} else {
 		// The store id is valid.
+		// move region back..
+		$form_state['values']['field_region'] = $form_state['values']['region'];
+		unset($form_state['values']['region']);
 		// Check the store's region against the user's region.
 		$user_region = $form_state['values']['field_region'][LANGUAGE_NONE][0]['value'];
 		$store = elite_store_load_store(array('store_id' => $store_id));

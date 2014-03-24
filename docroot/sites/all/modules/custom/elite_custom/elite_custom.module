@@ -41,6 +41,25 @@ function elite_custom_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_register_form') {
 		$form['actions']['submit']['#value'] = t('Accept & Create New Account');
     $form['#validate'][] = 'elite_custom_validate_user_register';
+		
+		$languages = language_list();
+		$names = array();
+		foreach ($languages as $key => $language) {
+			$names[$key] = t($language->name);
+		}
+		global $language;
+		$form['account']['locale']['language'] = array(
+			'#type' => 'select',
+			'#title' => t('Language Preference'),
+			'#default_value' => $language->language,
+			'#options' => $names,
+			//'#description' => t("Prefered language for you account."),
+		);
+		// Use exactly the same access logic as the original,
+		// without checking for the 'administer users' permission
+		$form['account']['locale']['#access'] = ($form['#user_category'] == 'account' || ($form['#user_category'] == 'register'));
+		
+		//watchdog('reg form alt', 'form_id '. $form_id .' **form <pre>'. print_r($form,true) .'</pre>');
   }
 	if ( $form_id == 'poll_view_voting' ) {
 		$form['vote']['#submit'][] = 'elite_custom_poll_vote';
