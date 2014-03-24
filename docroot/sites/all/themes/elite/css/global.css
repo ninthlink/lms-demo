@@ -1628,6 +1628,16 @@ body.node-type-page .region-sidebar-second {
   width: 155px;
   margin: 13px 0 0;
 }
+#elite-user-flop ul.usermenu li.nocount a .title {
+	width: 200px
+}
+body.i18n-ru #elite-user-flop ul.usermenu li a .title {
+  line-height: 1;
+  margin-top: 19px;
+}
+body.i18n-ru #elite-user-flop ul.usermenu li.trainings a .title {
+  margin-top: 8px;
+}
 #elite-user-flop ul.usermenu li a .count {
   color: #cc7212;
   font: 24px/28px "Qualcomm-Regular", sans-serif;

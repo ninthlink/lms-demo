@@ -373,7 +373,7 @@ function elite_custom_block_flop_view() {
 	$myaccount = t('My Account');
 	$myaccount = elite_custom_markup_wrapper($myaccount, array(), 'usermenu');
 	$laccount = l( $myaccount, 'user/'. $user->uid .'/edit', array('html'=>true) );
-	$umenu .= '<li class="account">'. $laccount .'</li>';
+	$umenu .= '<li class="account nocount">'. $laccount .'</li>';
 	
 	$training = t('Trainings Completed');
 	$tnum = elite_custom_user_training_count( $user->uid );
@@ -382,13 +382,13 @@ function elite_custom_block_flop_view() {
 	$lt = l( $training, 'user/'. $user->uid .'/myresults', array('html'=>true) );
 	$umenu .= '<li class="trainings">'. $lt .'</li>';
 	
-	$umenu .= '<li class="activity">'. l( elite_custom_markup_wrapper(t('My Activity'), false, 'usermenu'), 'user/'. $user->uid .'/points', array('html'=>true) ) .'</li>';
+	$umenu .= '<li class="activity nocount">'. l( elite_custom_markup_wrapper(t('My Activity'), false, 'usermenu'), 'user/'. $user->uid .'/points', array('html'=>true) ) .'</li>';
 	
 	$fnum = elite_custom_user_favorites_count();
 	$mattr = $fnum > 0 ? array('count'=>$fnum) : false;
 	$umenu .= '<li class="favorites">'. l( elite_custom_markup_wrapper(t('My Favorites'), $mattr, 'usermenu'), 'favorites', array('html'=>true) ) .'</li>';
 	
-	$umenu .= '<li class="logout">'. l( elite_custom_markup_wrapper(t('Log out'), false, 'usermenu'), 'user/logout', array('html'=>true) ) .'</li>';
+	$umenu .= '<li class="logout nocount">'. l( elite_custom_markup_wrapper(t('Log out'), false, 'usermenu'), 'user/logout', array('html'=>true) ) .'</li>';
 	
 	$umenu .= '</ul>';
 	
