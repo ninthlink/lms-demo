@@ -1,8 +1,8 @@
 /*=========================================================================================
 Author: Tou Lee
 Created: 1/27/14
-Last Updated: 2/12/14 - 11:06am
-Version: 1.0.1
+Last Updated: 3/21/14 - 11:26am
+Version: 1.0.2
 
 ** QUALCOMM :: Simplified, non-slider version **
 
@@ -31,6 +31,13 @@ Changelog v1.0.1
       • Updated to return object with mode (string), and isCompView (boolean)
   - Updated minor variable declarations to make them into one var x, y, z
   - Call "spinner.stop()" as callback after the div.loader has been faded out
+
+Changelog v1.0.2
+  - translateVideoeImage()
+      • Updated to have it check if the class of .not-urlLang (.not-ru, .not-zh_cn, etc...)
+        is available then don't translate
+      • Updated so that there is a .video-change class on there as well if the videos are 
+        are to be translated
 
 ==========================================================================================*/
 
@@ -120,7 +127,7 @@ Changelog v1.0.1
         handleAJAX();
 
         if(sublime.hasOwnProperty('player') === true) {
-          sublimeResize();  //activate the subscriptions
+          //sublimeResize();  //activate the subscriptions
         }
 
       });
@@ -189,24 +196,77 @@ Changelog v1.0.1
   and videos) by updating any paths that point to them.
     - Concatinating language prefix to video file so that it 
       references the appropriate language files
+    - Currently works best with Sublime Player 
+
+  @notes
+    - Linking
+        • Please have any <img>, <videos> that will be changed over to 
+          be linked to "lang/en/....." as the default
+    - Classes:
+        - ".img-change"
+            • Will change the <img> path of the specific language image
+
+        - ".video-change" 
+            • Put on <video> if you want them to switch over to a specific 
+              language's version
+
+        - ".poster-change"
+            • Put on <video> to change the poster of the video
+            • Only works of <video> already has class of ".video-change"
+
+        - ".only-[language abbreviation]" > (i.e. .only-ru, .only-zh_cn)
+            • This will only change the video or image for that 
+              specific language
+
+        - ".not-[language abbreviation]" > (i.e. .not-ru, .not-zh_cn)
+            • This will change it for everyother language except for 
+              that language specified
   ---------------------------------------------------------------- */
   function translateImageVideo() {
-    //--| Update the files src path for any subtitles and such
-    $('video').each(function() {
-      var $this = $(this),
-          $video = $this.children('source'),
-          $track = $this.children('track'),
+    /* 
+      Inner Function: Check for '.only-urlLang'
+      - Checks if the element has a class of '.only-urlLang' (i.e .only-ru)
+        and if so, then it only will change it for that specific language. 
+    */
+    var checkIfOnlyLang = function(elem) {
+      var $elem = $(elem),
+          thisClasses = $elem.attr('class').split(/\s+/);
+
+      for(i in thisClasses) {
+        if(thisClasses[i].search('only-') != -1) {          
+          return thisClasses[i].substr(thisClasses[i].indexOf('-') + 1);
+        }
+      }
+    },
+    
+    /*
+      Inner Function: Update images
+    */
+    updateImages = function($elem) {
+      var img_src = $elem.attr('src');
+      if(typeof img_src != 'undefined') {
+        img_src = img_src.replace('/en/', '/'+urlLang+'/');
+        $elem.attr('src', img_src);
+      }
+    },
+
+    /*
+      Inner Function: Update the videos and posters
+    */
+    updateVideos = function($elem) {
+      var $video = $elem.children('source'),
+          $track = $elem.children('track'),
           vcurrentSrc = $video.attr('src');
 
-      //replace the /en/ with the new language abbreviation
+      //Replace the /en/ with the new language abbreviation
       vcurrentSrc = vcurrentSrc.replace('/en/', '/'+urlLang+'/');
       
-      //set the video source path
+      //Set the video source path
       $video.attr('src', vcurrentSrc);
-      $this[0].src = vcurrentSrc;
-      //$(this)[0].load();
+      $elem[0].src = vcurrentSrc;
+      //$(elem)[0].load();
 
-      //replace the track feature
+      //Replace the track feature
       if($track.length > 0) {
         var tracksrc = $track.attr('src');
         tracksrc = tracksrc.replace('/en/', '/'+urlLang+'/');
@@ -216,42 +276,79 @@ Changelog v1.0.1
           'srclang': urlLang 
         });
       }
-    });
 
-    //--| Change the images & poster images with class of ".img-change" to the correct language version 
-    $('.img-change').each(function() {
-      var $this = $(this);
-      //--| Change IMAGES
-      var img_src = $this.attr('src');
-      if(img_src != undefined) {
-        img_src = img_src.replace('/en/', '/'+urlLang+'/');
-        $this.attr('src', img_src);
-      }
-      
-      //--| Update VIDEO POSTERS
-      //change the posters if the element that has .img-change class is of <video>
-      //if it is then go and do that function of switching the video
-      //Have to wait until the window.load event fires because for some reason the 
-      //the sublimevideo code is hot added till then.
-      if($this[0].nodeName.toLowerCase() == 'video') {
-        //$(window).load(function() {
-          img_src = $this.attr('poster');
-          if(img_src != undefined) {
-            img_src = img_src.replace('/en/', '/'+urlLang+'/');
-            $this.attr('poster', img_src);
-          }
-        
-          var $img_tag = $this.siblings('img');
-          var subimg_src = $img_tag.attr('src');
+      /* 
+      Replace VIDEO POSTERS
+        - Change only if the video element has a class of ".poster-change"
+        - Change the posters if the element that has .img-change class is of <video>
+          if it is then go and do that function of switching the video
+          Have to wait until the window.load event fires because for some reason the 
+          the sublimevideo code is hot added till then. 
+      */
+      if($elem.hasClass('poster-change')) {
+        if($elem[0].nodeName.toLowerCase() == 'video') {
+          //$(window).load(function() {
+            img_src = $elem.attr('poster');
+            if(typeof img_src != 'undefined') {
+              img_src = img_src.replace('/en/', '/'+urlLang+'/');
+              $elem.attr('poster', img_src);
+            }
+          
+            var $img_tag = $elem.siblings('img'),
+                subimg_src = $img_tag.attr('src');
 
-          if(subimg_src != undefined) {
-            subimg_src = subimg_src.replace('/en/', '/'+urlLang+'/');
-            $img_tag.attr('src', subimg_src);
-          }
-        //});
+            if(typeof subimg_src != 'undefined') {
+              subimg_src = subimg_src.replace('/en/', '/'+urlLang+'/');
+              $img_tag.attr('src', subimg_src);
+            }
+          //});
+        }
       }
-    });
+    };
+
+    /* 
+      Update the Video Source Path
+        - Update the files src path on any videos & subtitles that have the class of ".video-change"
+          If there is a class of ".not-urlLang" (.not-ru, .not-zh_cn, etc...) then do not update the video 
+    */
+    $('video.video-change').not('.not-'+urlLang).each(function() {
+      var $this = $(this),
+          onlylang = checkIfOnlyLang($this);
+
+      if(typeof onlylang != 'undefined') {
+        if(onlylang === urlLang) {
+          updateVideos($this);
+        }
+      } 
+      else {
+          updateVideos($this);
+      }
+
+    }); //end VIDEO & VIDEO POSTERS
+
+    /*
+      Replace IMAGES
+      - Change the images & poster images with class of ".img-change" to the correct language version 
+        If they have a class of ".not-urLang" (.not-ru, .not-zh_ch, etc...) then don't update the poster images or image
+    */   
+    $('.img-change').not('.not-'+urlLang).each(function() {
+      var $this = $(this),
+          onlylang = checkIfOnlyLang($this);
+
+      if(typeof onlylang != 'undefined') {
+        if(onlylang === urlLang) {
+          updateImages($this);
+        }
+      } 
+      else {
+          updateImages($this);
+      }
+
+
+    }); //end IMAGES
+
   } //end translateImageVideo()
+
 
 })(); //End self-invoking function
 

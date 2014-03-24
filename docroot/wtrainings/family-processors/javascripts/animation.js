@@ -66,7 +66,7 @@ Changelog v1.0.2
       Section 4: Technologies Abound
     ---------------------------------------------------------------- */
     $('.s4p1 .icons.pov').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-      if(isInView && animcounter === 2) {
+      if(isInView && animcounter >= 2) {
        	if(visiblePartY == 'both') {
          	$(this).off('inview');
 
@@ -104,7 +104,7 @@ Changelog v1.0.2
       Section 6: Leadership Circles and #1
     ---------------------------------------------------------------- */
     $('.s6p1 div.square-box > h1.subheader').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-      if(isInView && animcounter === 4) {        
+      if(isInView && animcounter >= 4) {        
         if(visiblePartY == 'top' || visiblePartY == 'both') {
           $(this).off('inview');
 
@@ -123,7 +123,7 @@ Changelog v1.0.2
       Section 7: Snapdragon Family Chips
     ---------------------------------------------------------------- */
     $('.s7p1 .chip-400').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-      if(isInView && animcounter === 5) {
+      if(isInView && animcounter >= 5) {
         if(visiblePartY == 'top' || visiblePartY == 'both') {
           $(this).off('inview');
 

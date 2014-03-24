@@ -1,0 +1,67 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="Qualcomm® Snapdragon™ Family of Processors" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% or higher and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again." 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="Какой процессор Snapdragon вы бы порекомендовали покупателю, который в основном использует свое устройство для телефонных вызовов, текстовых сообщений, электронной почты, навигации и просмотра веб-страниц?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Snapdragon 200" answer="1"/>
+		<option key="" value="Snapdragon 400"/>
+		<option key="" value="Snapdragon 600"/>
+		<option key="" value="Snapdragon 800"/>
+	</question>
+
+	<question id="2" q="Процессор Snapdragon 400 больше всего подходит пользователям, которые используют следующие функции устройств:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Обычные телефонные вызовы, текстовые сообщения, электронная почта и просмотр веб-страниц" />
+		<option key="" value="Фотосъемка, просмотр видео, прослушивание музыки и поиск информации в Интернете" answer="1"/>
+		<option key="" value="Широкие возможности работы в Интернете, простые игры и социальные сети" />
+		<option key="" value="Консольные игры, просмотр фильмов и работа с интерактивными веб-сайтами"/>
+	</question>
+
+	<question id="3" q="Какой процессор Snapdragon вы бы порекомендовали покупателю, который использует устройство для общения в социальных сетях, простых игр, электронной почты, текстовых сообщений и телефонных вызовов?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Snapdragon 200"/>
+		<option key="" value="Snapdragon 400"/>
+		<option key="" value="Snapdragon 600" answer="1"/>
+		<option key="" value="Snapdragon 800"/>
+	</question>
+
+	<question id="4" q="Процессор Snapdragon 800 больше всего подходит пользователям, которые используют следующие функции устройств: " type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Обычные телефонные вызовы, текстовые сообщения, электронная почта и просмотр веб-страниц" />
+		<option key="" value="Фотосъемка, просмотр видео, прослушивание музыки и поиск информации в Интернете" />
+		<option key="" value="Широкие возможности работы в Интернете, простые игры и социальные сети" />
+		<option key="" value="Консольные игры, просмотр фильмов и работа с интерактивными веб-сайтами" answer="1"/>
+	</question>
+
+	<question id="5" q="Выберите процессор Snapdragon, который НЕ поддерживает технологию 4G" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Snapdragon 200" answer="1"/>
+		<option key="" value="Snapdragon 400"/>
+		<option key="" value="Snapdragon 600"/>
+		<option key="" value="Snapdragon 800"/>
+	</question>
+
+	<question id="6" q="Что НЕ является основной функцией, которую вы демонстрируете покупателям процессора Snapdragon 200?" right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Сенсорный экран"/>
+		<option key="" value="Журнал текстовых сообщений и бесед"/>
+		<option key="" value="Съемка фотографий с разрешением DSLR" answer="1"/>
+		<option key="" value="Телефонные вызовы"/>
+	</question>
+
+	<question id="7" q="Какой процессор Snapdragon вы бы порекомендовали покупателям, которым нужны новейшие технологии?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Snapdragon 200"/>
+		<option key="" value="Snapdragon 400"/>
+		<option key="" value="Snapdragon 600"/>
+		<option key="" value="Snapdragon 800" answer="1"/>
+	</question>
+
+</quiz>

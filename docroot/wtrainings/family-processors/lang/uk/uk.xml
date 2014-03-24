@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<course name="Qualcomm® Snapdragon™ Family of Processors" right="false" language="en">
+<course name="Qualcomm® Snapdragon™ Family of Processors" right="false" language="uk">
 
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     LANGUAGE SPECIFIC STYLES: Certain language styles that will be appended to the head 
@@ -7,6 +7,7 @@
 	<langstyles name="langstyles">
 		<![CDATA[
 			<style type="text/css">
+				.sales-tip { display: none; }
 			</style>
 		]]>
 	</langstyles>
@@ -139,13 +140,13 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	<page title="" name="s8p3">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Snapdragon 200 processor <span class="light">Customer</span>]]></laserbeam>
-		<text title="Body" field="body_text">Show them just the basics so you don’t overwhelm them:</text>
+		<text title="Body" field="body_text">They can get a smartphone with great performance without compromising battery life</text>
 
 		<!-- Feature List -->
 		<text field="features_text"><![CDATA[
 			<li>Touch screen</li>
 			<li>Voice calls</li>
-			<li>Texting and conversation history</li>
+			<li>Maps and location services</li>
 			<li>Voice to text</li>
 		]]></text>
 
@@ -193,7 +194,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	<page title="" name="s9p3">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Snapdragon 400 processors <span class="light">Customer</span>]]></laserbeam>
-		<text title="Body" field="body_text">Show them how they can capture moments, share them, and remember them in detail later.</text>
+		<text title="Body" field="body_text">They can capture moments, share them, and remember them in detail later.</text>
 
 		<!-- Feature List -->
 		<text field="features_text"><![CDATA[
@@ -245,7 +246,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	<page title="" name="s10p3">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Snapdragon 600 processors <span class="light">Customer</span>]]></laserbeam>
-		<text title="Body" field="body_text">Show them how they can step up to these advanced smartphone features:</text>
+		<text title="Body" field="body_text">They can step up to these advanced smartphone features:</text>
 
 		<!-- Feature List -->
 		<text field="features_text"><![CDATA[
@@ -300,7 +301,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	<page title="" name="s11p3">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Snapdragon 800 processors <span class="light">Customer</span>]]></laserbeam>
-		<text title="Body" field="body_text">Show them how they can stay ahead of technology with:</text>
+		<text title="Body" field="body_text">They can stay ahead of technology with:</text>
 
 		<!-- Feature List -->
 		<text field="features_text"><![CDATA[

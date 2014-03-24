@@ -1,11 +1,25 @@
 /*=========================================================================================
-Author: Tou Lee
+Copyright © wslash LLC.
+
+All rights reserved. This file and any accompanying materials are licensed for specific 
+use only by wslash and/or its partners and clients, and is not to be used or distributed 
+except in compliance and/or permission with wslash LLC. 
+This file id distributed without warranty.
+
+Contributor(s): Tou Lee
+
 Created: 2/20/14
-Last Updated: 2/21/14 - 10:54pm
-Version: 1.0.0
+Last Updated: 3/18/14 - 1:10pm
+Version: 1.0.2
 
 Changelog v1.0
  	- Created the intial styles
+
+Changelog v1.0.1
+	- Commented out "visiblity:hidden" for the trigger, so that it will show in IE9 and below
+
+Changelog v1.0.2
+	- Commented out "display:none" for .panel-snap, so that comp view is not triggered in IE8
 
 ==========================================================================================*/
 /* ----------------------------------------------------------------------------------------
@@ -15,9 +29,11 @@ Changelog v1.0
 		- The items should be hidden and removed from document flow to keep page short
 		- Added the -webkit-transform to force hardware acceleration on those browsers
 		  that support it.
+		- IE8 removed the "display:none" so that there is no forced into comptability
+		  mode because the display:none is already set in the plugin...
 ---------------------------------------------------------------------------------------- */
 .panel-snap { 
-	display: none; 
+	/*display: none;*/ 
 	-webkit-transform: translate3d(0, 0, 0); 
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 1000;
@@ -38,7 +54,7 @@ div#qreveal-trigger {
 	bottom: -90px;
 	left: 0;
 	z-index: -1;
-	visibility: hidden;
+	/*visibility: hidden;*/
 	opacity: 0;
 }
 
@@ -56,8 +72,6 @@ div#qreveal-spinner {
 /* ----------------------------------------------------- 
    Mobile & Tablet
 ----------------------------------------------------- */
-@media only screen and (max-width: 767px) { 
-
-}
+@media only screen and (max-width: 767px) {}
 
 

@@ -1,872 +1,875 @@
 <!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if lt IE 9]> <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <!-- Set the viewport width to device width for mobile -->
-  <meta name="viewport" content="width=device-width" />
+	<!-- Set the viewport width to device width for mobile -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Qualcomm® Snapdragon™ Family of Processors</title>
-  
-  <!-- Included CSS Files (Uncompressed) -->
-  <!--
-  <link rel="stylesheet" href="stylesheets/foundation.css">
-  -->
+	<title>Qualcomm® Snapdragon™ Family of Processors</title>
 
-  <!-- IE Fix for HTML5 Tags -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-  
-  <!-- Included CSS Files (Compressed) -->
-  <link rel="stylesheet" href="stylesheets/foundation.min.css">
-  <link rel="stylesheet" href="stylesheets/main-template.css">
-  <link rel="stylesheet" href="stylesheets/snapdragon.css">
-  <link rel="stylesheet" href="stylesheets/course.css">
-  <link rel="stylesheet" href="stylesheets/jquery.qualcomm-reveal.css">
+	<!-- IE Fix for HTML5 Tags -->
+	<!--[if lt IE 9]>
+		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	
+	<!-- Included CSS Files (Compressed) -->
+	<link rel="stylesheet" href="stylesheets/foundation.min.css">
+	<link rel="stylesheet" href="stylesheets/main-template.css">
+	<link rel="stylesheet" href="stylesheets/snapdragon.css">
+	<link rel="stylesheet" href="stylesheets/course.css">
+	<link rel="stylesheet" href="stylesheets/jquery.qualcomm-reveal.css">
 
-  <!-- IE9 Fix for Full Stop Gradients -->
-  <!--[if gte IE 9]>
-    <style type="text/css">
-       .qualcomm-gradient { filter: none; }
-    </style>
-  <![endif]-->
+	<!-- IE9 Fix for Full Stop Gradients -->
+	<!--[if gte IE 9]>
+		<style type="text/css">
+			 .qualcomm-gradient { filter: none; }
+		</style>
+	<![endif]-->
 
-  <!--[if lt IE 9]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-  <![endif]-->
+	<!--[if lt IE 9]>
+		<link rel="stylesheet" href="stylesheets/ie.css">
+	<![endif]-->
 
-  <script src="javascripts/modernizr.foundation.js"></script>
-  <!-- Sublime video (Chris - wslash domain) -->
-  <!-- <script type="text/javascript" src="//cdn.sublimevideo.net/js/pk4r4ijx.js"></script> -->
-  <!-- Sublime video with no SSL registered to Qualcomm.com w/ wildcard -->
-  <!-- <script type="text/javascript" src="//cdn.sublimevideo.net/js/brxysbmu.js"></script> -->
+	<script src="javascripts/modernizr.foundation.js"></script>
+	<!-- Sublime video (Chris - wslash domain) -->
+	<!-- <script type="text/javascript" src="//cdn.sublimevideo.net/js/pk4r4ijx.js"></script> -->
+	<!-- Sublime video with no SSL registered to Qualcomm.com w/ wildcard -->
+	<!-- <script type="text/javascript" src="//cdn.sublimevideo.net/js/brxysbmu.js"></script> -->
+
+	<!-- Console.log fix for IE8 and below -->
+	<script type="text/javascript"> if (!window.console) console = {log: function() {}}; </script>
 </head>
 <body>
 
-  <!-- IE Alert -->
-  <div class="ie-alert">
-    <p>You are using Internet Explorer in <em>"Compatibility View"</em> or <em>IE7</em>. Please view this page in IE8 or higher, and in <em>"Standards Mode"</em> - make sure the small <em>CV</em> icon at the right edge of your browser's address bar is <em>not active</em>.</p>
-  </div>
-
-  <!-- Loader for the page -->
-  <div class="loader">
-      <div id="loader-spinner"></div>
-  </div>
-
-   <!-- Content Starts Here 
-      • Slides: they make up each section of content or in relation to Flash course, each SWF that is loaded
-   -->
-   <div class="content-container">
-      <!-- SECTION 1 -->
-      <div class="section1 slide qualcomm-background fire slide-first">
-        <!-- Introduction -->
-        <div class="s1p1 row inner-section first" data-context="s1p1">
-          <div class="twelve columns h-center">
-            <h1 class="light" data-field="laserbeam_text">Qualcomm® Snapdragon™<br/><span class="subheader">Family of Processors</span></h1>
-            <div class="vspacer-25"></div>
-            <img src="images/shared/section1/snapdragon-chip.png" class="center" alt="Snapdragon black chip" />
-          </div>
-        </div>
-
-        <!-- Arrow-Down -->
-        <div class="continue-arrow"></div>
-
-      </div> <!-- end SECTION 1 -->
-
-
-      <!-- SECTION 2 -->
-      <div class="section2 slide qualcomm-background cloud panel-snap">
-        <!-- What You'll Learn -->
-        <div class="s2p1 row inner-section" data-context="s2p1">
-          <div class="six columns">
-            <div class="speech-bubbles-container clearfix">
-              <img src="images/shared/section1/speech-bubbles.gif"     alt="White speech bubble with dots inside"  class="speech-bubbles cust1" />
-              <img src="images/shared/section1/speech-bubbles.gif"     alt="White speech bubble with dots inside"  class="speech-bubbles cust2" />
-              <img src="images/shared/section1/speech-bubbles-rsa.gif" alt="Grey speech bubble with dots inside"   class="speech-bubbles rsa" />
-            </div>
-          </div>
-          <div class="six columns">
-            <h1 class="light" data-field="laserbeam_text">By the end of this module,<br/><span class="subheader">you'll understand:</span></h1>
-
-            <div class="vspacer-25"></div>
-
-            <ul class="chevron" data-field="body_text">
-              <li>How to talk to your customer about their desired smartphone use</li>
-              <li>The main differences between each Qualcomm Snapdragon processor</li>
-              <li>How to help your customer choose the right Qualcomm Snapdragon device</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="s2p2 row" data-context="s2p2">
-          <div class="twelve columns h-center">
-            <p class="footnote" data-field="laserbeam_text">Snapdragon is a product of Qualcomm Technologies, Inc</p>
-          </div>
-        </div>
-      
-      </div> <!-- end SECTION 2 -->
-
-
-      <!-- SECTION 3 -->
-      <div class="section3 slide qualcomm-background beige panel-snap">
-        <!-- Not All Customers -->
-        <div class="s3p1 row inner-section" data-context="s3p1">
-          <div class="six columns">
-            <img src="images/shared/section1/customers.png" class="center" alt="Snapdragon black chip" />
-            <div class="vspacer-25 show-for-small"></div>
-          </div>
-          <div class="six columns">
-            <h1 class="light h-center" data-field="laserbeam_text">Not all customers<br/><span class="subheader">are the same</span></h1>
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 3 -->
-
-
-      <!-- SECTION 4 -->
-      <div class="section4 slide qualcomm-background dark-stone panel-snap">
-        <!-- Technology Abounds - Initial -->
-        <div class="s4p1 row inner-section" data-context="s4p1">
-          <div class="twelve columns h-center">
-            <h1 class="subheader" data-field="laserbeam_text">Technology <span class="light">Abounds</span></h1>
-            <p data-field="body_text">You want to find the right technology for each customer</p>
-
-            <div class="vspacer-25"></div>
-
-            <div class="icons-container">
-              <div class="icons tst"><img src="images/shared/section1/icon1.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon2.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon3.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon4.png" alt=""></div>
-              <div class="icons pov"><img src="images/shared/section1/icon5.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon6.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon7.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon8.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon9.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon10.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon11.png" alt=""></div>
-              <div class="icons"><img src="images/shared/section1/icon12.png" alt=""></div>
-            </div>
-
-            <div class="tech-container">
-              <div class="tech battery">
-                <img src="images/shared/section1/tech-battery.gif" alt="">
-                <img src="images/ie8/tech-circle.png" alt="" class="ie8-tech-circle">
-                <p data-field="tech1_text">Battery Life</p>
-              </div>
-              <div class="tech connect">
-                <img src="images/shared/section1/tech-wifi.gif" alt="">
-                <img src="images/ie8/tech-circle.png" alt="" class="ie8-tech-circle">
-                <p data-field="tech2_text">Connectivity</p>
-              </div>
-              <div class="tech speed">
-                <img src="images/shared/section1/tech-speed.gif" alt="">
-                <img src="images/ie8/tech-circle.png" alt="" class="ie8-tech-circle">
-                <p data-field="tech3_text">Speed &amp; Performance</p>
-              </div>
-            </div>
-
-            <div class="tech-phone">
-              <img src="images/shared/section1/tech-phone.png" alt="Samesung S4 with red circuit wallpaper, with Snapdragon chip centered inside">
-            </div>
-
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 4 -->
-
-
-      <!-- SECTION 5 -->
-      <div class="section5 slide qualcomm-background fire panel-snap">
-        <!-- The Processor -->
-        <div class="s5p1 row inner-section" data-context="s5p1">
-          <div class="twelve columns h-center">
-            <img src="images/shared/section1/chip-lightning.png" class="center" alt="Snapdragon black chip" />
-            <h1 class="subheader" data-field="laserbeam_text">The processor,<br/><span class="light">redefined</span></h1>
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 5 -->
-
-
-      <!-- SECTION 6 -->
-      <div class="section6 slide qualcomm-background cloud panel-snap">
-        <!-- Leadership -->
-        <div class="s6p1 row inner-section" data-context="s6p1">
-          <div class="twelve columns">
-            <!-- #1 box -->
-            <div class="square-box">
-              <h1 class="subheader">#1</h1>
-            </div>
-
-            <div class="vspacer-50"></div>
-
-            <!-- circles -->
-            <div class="circle-container">
-              <div class="circles download">
-                <p data-field="tech1_text"><span>Download</span><br>Speed<sup>1</sup></p>
-                <img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
-              </div>
-              <div class="circles dsp">
-                <p data-field="tech2_text"><span>DSP</span><br>Performance<sup>2</sup></p>
-                <img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
-              </div>
-              <div class="circles battery">
-                <p data-field="tech3_text"><span>Efficiency</span><br>leadership</p>
-                <img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
-              </div>
-              <div class="circles cpu">
-                <p data-field="tech4_text"><span>CPU</span><br>Performance<sup>3</sup></p>
-                <img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
-              </div>
-              <div class="circles gpu">
-                <p data-field="tech5_text"><span>GPU</span><br>Performance<sup>4</sup></p>
-                <img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
-              </div>
-            </div>
-
-            <h1 class="subheader h-center" data-field="laserbeam_text">Leadership in<br/><span class="light">performance and efficiency</span></h1>
-
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 6 -->
-
-      
-      <!-- SECTION 7 -->
-      <div class="section7 slide qualcomm-background beige panel-snap">
-        <!-- Snapdragon Processor Family -->
-        <div class="s7p1 row inner-section" data-context="s7p1">
-          <div class="twelve columns h-center">
-
-            <div class="chip-container clearfix">
-              <div class="chips chip-200">
-                <img src="images/shared/section1/snapdragon-200.png" alt="Snapdragon 200 chip ocean blue colored">
-              </div>
-
-              <div class="chips chip-400">
-                <img src="images/shared/section1/snapdragon-400.png" alt="Snapdragon 400 chip stone grey colored">
-              </div>
-
-              <div class="chips chip-600">
-                <img src="images/shared/section1/snapdragon-600.png" alt="Snapdragon 600 chip sun yellow colored">
-              </div>
-
-              <div class="chips chip-800">
-                <img src="images/shared/section1/snapdragon-800.png" alt="Snapdragon 800 chip fire red colored">
-              </div>
-            </div>
-
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon processor family:<br/><span class="light">Which one is right for your customer?</span></h1>
-
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 7 -->
-
-
-      <!-- SECTION 8 -->
-      <div class="section8 slide qualcomm-background fire panel-snap">
-        <!-- 200: Chip Intro -->
-        <div class="s8p1 row inner-section" data-context="s8p1">
-          <div class="twelve columns">
-            <img src="images/shared/section1/snapdragon-200-nr.png" alt="" class="chip-image center" />
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon 200 processors <span class="light">Overview</span></h1>
-            <p class="subheader" data-field="body_text">Designed to make exceptional performance  and connectivity more accessible than ever. </p>
-
-            <ul class="chevron black" data-field="features_text">
-              <li>Strong connections with 3G, Wi-Fi 802.11n, Bluetooth 4.0, USB 2.0</li>
-              <li>Crystal Clear Voice – Experience voice clarity even in the noisiest environments. Extend talk time with conversations that are pleasant and free of ambient noise</li>
-              <li>Battery life – Like every other processor in our Snapdragon family, these are designed to deliver excellent battery efficiency</li>
-            </ul>
-            
-          </div>
-        </div>
-
-        <!-- 200: Features -->
-        <div class="qualcomm-background dark-fire panel-snap">
-          <div class="s8p2 row inner-section" data-context="s8p2">
-            <div class="twelve columns">
-            
-              <!-- Main Image -->
-              <div class="spec-main-img">
-                <img src="images/shared/section1/200-spec.png" alt="" class="spec-image center" />
-                <img src="images/shared/section1/snapdragon-200-nr.png" alt="" class="spec-chip-img" />
-              </div>
-
-              <h1 class="subheader" data-field="laserbeam_text">Snapdragon 200 processors <span class="light">Features</span></h1>
-
-              <!-- Specs -->
-              <div class="specs-container">
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec video">
-                      <div class="icon"></div>
-                      <p data-field="spec1_text"><strong>HD VIDEO:</strong> 720p HD</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec camera">
-                      <div class="icon"></div>
-                      <p data-field="spec2_text"><strong>CAMERA:</strong> Up to 8MP</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec audio">
-                      <div class="icon"></div>
-                      <p data-field="spec3_text"><strong>AUDIO:</strong> Stereo</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec cpu">
-                      <div class="icon"></div>
-                      <p data-field="spec4_text"><strong>CPU:</strong> Up to 1.4GHz quad core</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec gpu">
-                      <div class="icon"></div>
-                      <p data-field="spec5_text"><strong>GPU:</strong> Adreno™ 302</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec network">
-                      <div class="icon"></div>
-                      <p data-field="spec6_text"><strong>NETWORK:</strong> 3G</p>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- end Specs -->
-
-              <div class="vspacer-25"></div>
-              <p class="footnote spec-footnote" data-field="footnote_text">Features supported will vary by device and manufacturer.</p>
-                       
-            </div>
-          </div>
-        </div>
-
-        <!-- 200: Customer -->
-        <div class="s8p3 row inner-section panel-snap" data-context="s8p3">
-          <div class="twelve columns">
-
-            <!-- Main Image -->
-            <div class="cust-main-img">
-              <img src="images/shared/section1/snapdragon-200-nr.png" alt="" class="cust-chip-img" />
-              <img src="images/shared/section1/cust-phone.png" alt="" class="cust-floating-icon phone" />
-              <img src="images/shared/section1/cust-chat.png"  alt="" class="cust-floating-icon chat" />
-              <img src="images/shared/section1/cust-light.png" alt="" class="cust-image center" />
-            </div>
-
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon 200 processor <span class="light">Customer</span></h1>
-            <p class="subheader" data-field="body_text">Show them how they can step into a smartphone with a Snapdragon processor.</p>
-            
-            <ul class="chevron black" data-field="features_text">
-              <li>Touch screen</li>
-              <li>Voice calls</li>
-              <li>Texting and conversation history</li>
-              <li>Voice to text</li>
-            </ul>
-
-            <div class="vspacer-25"></div>
-
-            <div class="panel sales-tip radius">
-              <p data-field="sellingtip_text"><strong>Selling Tip:</strong> Keep your sales guidance simple, useful and uncomplicated. </p>
-            </div>
-
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 8 -->
-
-
-      <!-- SECTION 9 -->
-      <div class="section9 slide qualcomm-background mid-stone panel-snap">
-        <!-- 400: Chip Intro -->
-        <div class="s9p1 row inner-section" data-context="s9p1">
-          <div class="twelve columns">
-            <img src="images/shared/section1/snapdragon-400-nr.png" alt="" class="chip-image center" />
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon 400 processors <span class="light">Overview</span></h1>
-            <p class="subheader" data-field="body_text">Designed to deliver the most popular smartphone features:</p>
-
-            <ul class="chevron red" data-field="features_text">
-              <li>Strong, speedy connections with 3G/4G LTE, Wi-Fi 802.11ac, Bluetooth 4.0</li>
-              <li>Shoot High-resolution photos up to 13.5MP</li>
-              <li>Capture and playback HD video in up to Full 1080p</li>
-              <li>Great graphics performance with Adreno 305 GPU for responsive web browsing and social media apps</li>
-            </ul>
-            
-          </div>
-        </div>
-
-        <!-- 400: Features -->
-        <div class="qualcomm-background dark-stone panel-snap">
-          <div class="s9p2 row inner-section" data-context="s9p2">
-            <div class="twelve columns">
-              
-              <!-- Main Image -->
-              <div class="spec-main-img">
-                <img src="images/shared/section1/400-spec.png" alt="" class="spec-image center" />
-                <img src="images/shared/section1/snapdragon-400-nr.png" alt="" class="spec-chip-img" />
-              </div>
-
-              <h1 class="subheader" data-field="laserbeam_text">Snapdragon 400 processors <span class="light">Features</span></h1>
-
-              <!-- Specs -->
-              <div class="specs-container">
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec video">
-                      <div class="icon"></div>
-                      <p data-field="spec1_text"><strong>HD VIDEO:</strong> Up to Full HD 1080p</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec camera">
-                      <div class="icon"></div>
-                      <p data-field="spec2_text"><strong>CAMERA:</strong> Up to 13.5MP</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec audio">
-                      <div class="icon"></div>
-                      <p data-field="spec3_text"><strong>AUDIO:</strong> Up to 5.1 surround sound</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec cpu">
-                      <div class="icon"></div>
-                      <p data-field="spec4_text"><strong>CPU:</strong> Up to 1.6GHz quad core</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec gpu">
-                      <div class="icon"></div>
-                      <p data-field="spec5_text"><strong>GPU:</strong> Up to Adreno 306</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec network">
-                      <div class="icon"></div>
-                      <p data-field="spec6_text"><strong>NETWORK:</strong> 3G &amp; 4G</p>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- end Specs -->   
-
-              <div class="vspacer-25"></div>
-              <p class="footnote spec-footnote" data-field="footnote_text">Features supported will vary by device and manufacturer.</p>          
-
-            </div>
-          </div>
-        </div>
-
-        <!-- 400: Customer -->
-        <div class="s9p3 row inner-section panel-snap" data-context="s9p3">
-          <div class="twelve columns">
-
-            <!-- Main Image -->
-            <div class="cust-main-img">
-              <img src="images/shared/section1/snapdragon-400-nr.png" alt="" class="cust-chip-img" />
-              <img src="images/shared/section1/cust-camera-light.png" alt="" class="cust-floating-icon camera" />
-              <img src="images/shared/section1/cust-phone-light.png"  alt="" class="cust-floating-icon phone" />
-              <img src="images/shared/section1/cust-chat-light.png"   alt="" class="cust-floating-icon chat" />
-              <img src="images/shared/section1/cust-dark.png"         alt="" class="cust-image center" />
-            </div>
-
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon 400 processors <span class="light">Customer</span></h1>
-            <p class="subheader" data-field="body_text">Show them how they can capture moments, share them, and remember them in detail later.</p>
-            
-            <ul class="chevron red" data-field="features_text">
-              <li>Camera for photos and video</li>
-              <li>Photo and video editing apps</li>
-              <li>Web browsing</li>
-            </ul>
-
-            <div class="vspacer-25"></div>
-
-            <div class="panel sales-tip radius">
-              <p data-field="sellingtip_text"><strong>Selling Tip:</strong> Help capture moments so they can remember them in detail.</p>
-            </div>
-
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 9 -->
-
-
-      <!-- SECTION 10 -->
-      <div class="section10 slide qualcomm-background fire panel-snap">
-        <!-- 600: Chip Intro -->
-        <div class="s10p1 row inner-section" data-context="s10p1">
-          <div class="twelve columns">
-            <img src="images/shared/section1/snapdragon-600-nr.png" alt="" class="chip-image center" />
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon 600 processors <span class="light">Overview</span></h1>
-            <p class="subheader" data-field="body_text">Designed to deliver advanced smartphone experiences</p>
-
-            <ul class="chevron black" data-field="features_text">
-              <li>High-speed connectivity with 4G LTE<sup>5</sup>, Wi-Fi 802.11n/ac, Bluetooth 4.0</li>
-              <li>Shoot DSLR-resolution photos up to 21MP</li>
-              <li>Capture and playback HD video in up to Full 1080p</li>
-              <li>Stunning visuals and console quality graphics with the Adreno 320 GPU</li>
-            </ul>
-            
-          </div>
-        </div>
-
-        <!-- 600: Features -->
-        <div class="qualcomm-background dark-fire panel-snap">
-          <div class="s10p2 row inner-section" data-context="s10p2">
-            <div class="twelve columns">
-
-              <!-- Main Image -->
-              <div class="spec-main-img">
-                <img src="images/shared/section1/600-spec.png" alt="" class="spec-image center" />
-                <img src="images/shared/section1/snapdragon-600-nr.png" alt="" class="spec-chip-img" />
-              </div>
-
-              <h1 class="subheader" data-field="laserbeam_text">Snapdragon 600 processors <span class="light">Features</span></h1>
-
-              <!-- Specs -->
-              <div class="specs-container">
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec video">
-                      <div class="icon"></div>
-                      <p data-field="spec1_text"><strong>HD VIDEO:</strong> Up to Full HD 1080p</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec camera">
-                      <div class="icon"></div>
-                      <p data-field="spec2_text"><strong>CAMERA:</strong> Up to 21MP</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec audio">
-                      <div class="icon"></div>
-                      <p data-field="spec3_text"><strong>AUDIO:</strong> Up to 5.1 surround sound</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec cpu">
-                      <div class="icon"></div>
-                      <p data-field="spec4_text"><strong>CPU:</strong> Up to 1.9GHz quad core</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec gpu">
-                      <div class="icon"></div>
-                      <p data-field="spec5_text"><strong>GPU:</strong> Adreno 320</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec network">
-                      <div class="icon"></div>
-                      <p data-field="spec6_text"><strong>NETWORK:</strong> 3G &amp; 4G</p>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- end Specs -->
-
-              <div class="vspacer-25"></div>
-              <p class="footnote spec-footnote" data-field="footnote_text">Features supported will vary by device and manufacturer.</p>  
-                       
-            </div>
-          </div>
-        </div>
-
-        <!-- 600: Customer -->
-        <div class="s10p3 row inner-section panel-snap" data-context="s10p3">
-          <div class="twelve columns">
-
-            <!-- Main Image -->
-            <div class="cust-main-img">
-              <img src="images/shared/section1/snapdragon-600-nr.png" alt="" class="cust-chip-img" />
-              <img src="images/shared/section1/cust-play.png"    alt="" class="cust-floating-icon play" />
-              <img src="images/shared/section1/cust-camera.png"  alt="" class="cust-floating-icon camera" />
-              <img src="images/shared/section1/cust-phone.png"   alt="" class="cust-floating-icon phone" />
-              <img src="images/shared/section1/cust-chat.png"    alt="" class="cust-floating-icon chat" />
-              <img src="images/shared/section1/cust-light.png"   alt="" class="cust-image center" />
-            </div>
-
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon 600 processors <span class="light">Customer</span></h1>
-            <p class="subheader" data-field="body_text">Show them how they can step up to these advanced smartphone features:</p>
-            
-            <ul class="chevron black" data-field="features_text">
-              <li>Blazing fast 3G/4G LTE connectivity</li>
-              <li>Capture, edit and share sunning high-resolution photographs.</li>
-              <li>Breathtaking graphics </li>
-              <li>Full HD video conferencing</li>
-            </ul>
-
-            <div class="vspacer-25"></div>
-
-            <div class="panel sales-tip radius">
-              <p data-field="sellingtip_text"><strong>Selling Tip:</strong> Show them how they show off with stunning visuals and console quality graphics.</p>
-            </div>
-
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 10 -->
-
-
-      <!-- SECTION 11 -->
-      <div class="section11 slide qualcomm-background mid-stone panel-snap">
-        <!-- 800: Chip Intro -->
-        <div class="s11p1 row inner-section" data-context="s11p1">
-          <div class="twelve columns">
-            <img src="images/shared/section1/snapdragon-800-nr.png" alt="" class="chip-image center" />
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon 800 processors <span class="light">Overview</span></h1>
-            <p class="subheader" data-field="body_text">Designed to deliver bleeding-edge technology, features, power and performance:</p>
-
-            <ul class="chevron red" data-field="features_text">
-              <li>Superior performance with up to 2.3 GHz of CPU power</li>
-              <li>Shoot and playback Ultra HD 4K video</li>
-              <li>Capture ultra-high resolution photos up to 21MP</li>
-              <li>Home-theater-style audio with 7.1 Surround Sound</li>
-              <li>Incredible graphics speed and detail with Adreno 330</li>
-            </ul>
-            
-          </div>
-        </div>
-
-        <!-- 800: Features -->
-        <div class="qualcomm-background dark-stone panel-snap">
-          <div class="s11p2 row inner-section" data-context="s11p2">
-            <div class="twelve columns">
-
-              <!-- Main Image -->
-              <div class="spec-main-img">
-                <img src="images/shared/section1/800-spec.png" alt="" class="spec-image center" />
-                <img src="images/shared/section1/snapdragon-800-nr.png" alt="" class="spec-chip-img" />
-              </div>
-
-              <h1 class="subheader" data-field="laserbeam_text">Snapdragon 800 processors <span class="light">Features</span></h1>
-
-              <!-- Specs -->
-              <div class="specs-container">
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec video">
-                      <div class="icon"></div>
-                      <p data-field="spec1_text"><strong>HD VIDEO:</strong> Up to 4K Ultra HD</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec camera">
-                      <div class="icon"></div>
-                      <p data-field="spec2_text"><strong>CAMERA:</strong> Up to 21MP</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec audio">
-                      <div class="icon"></div>
-                      <p data-field="spec3_text"><strong>AUDIO:</strong> Up to 7.1 surround sound</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec cpu">
-                      <div class="icon"></div>
-                      <p data-field="spec4_text"><strong>CPU:</strong> Up to 2.3GHz quad core</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="five columns">
-                    <div class="spec gpu">
-                      <div class="icon"></div>
-                      <p data-field="spec5_text"><strong>GPU:</strong> Adreno 330</p>
-                    </div>
-                  </div>
-                  <div class="seven columns">
-                    <div class="spec network">
-                      <div class="icon"></div>
-                      <p data-field="spec6_text"><strong>NETWORK:</strong> 3G &amp; 4G</p>
-                    </div>
-                  </div>
-                </div>
-              </div> <!-- end Specs -->
-
-              <div class="vspacer-25"></div>
-              <p class="footnote spec-footnote" data-field="footnote_text">Features supported will vary by device and manufacturer.</p>              
-
-            </div>
-          </div>
-        </div>
-
-        <!-- 800: Customer -->
-        <div class="s11p3 row inner-section panel-snap" data-context="s11p3">
-          <div class="twelve columns">
-            <!-- Main Image -->
-            <div class="cust-main-img">
-              <img src="images/shared/section1/snapdragon-800-nr.png" alt="" class="cust-chip-img" />
-              <img src="images/shared/section1/cust-controller-light.png"  alt="" class="cust-floating-icon controller" />
-              <img src="images/shared/section1/cust-play-light.png"        alt="" class="cust-floating-icon play" />
-              <img src="images/shared/section1/cust-camera-light.png"      alt="" class="cust-floating-icon camera" />
-              <img src="images/shared/section1/cust-phone-light.png"       alt="" class="cust-floating-icon phone" />
-              <img src="images/shared/section1/cust-chat-light.png"        alt="" class="cust-floating-icon chat" />
-              <img src="images/shared/section1/cust-dark.png"              alt="" class="cust-image center" />
-            </div>
-
-            <h1 class="subheader" data-field="laserbeam_text">Snapdragon 800 processors <span class="light">Customer</span></h1>
-            <p class="subheader" data-field="body_text">Show them how they can stay ahead of technology with:</p>
-            
-            <ul class="chevron red" data-field="features_text">
-              <li>Advanced connectivity with 3G/4G LTE</li>
-              <li>Ultra HD 4K video and ultra-high resolution photos</li>
-              <li>Home theatre style entertainment with 7.1 surround sound DTS-HD, Dolby Digital Plus</li>
-              <li>Cutting edge graphics capability enhance many of today’s best apps.</li>
-            </ul>
-
-            <div class="vspacer-25"></div>
-
-            <div class="panel sales-tip radius">
-              <p data-field="sellingtip_text"><strong>Selling Tip:</strong> Talk to them about the latest technology features.</p>
-            </div>
-
-          </div>
-        </div>
-
-      </div> <!-- end SECTION 11 -->
-
-
-      <div class="panel-snap">
-        <!-- QUIZ BUTTON SECTION -->
-        <div class="quiz slide qualcomm-background stone">
-          <div class="quizsection row" data-context="quizsection">
-            <div class="twelve columns h-center">
-              <!-- ELITE QUIZ -->
-              <a href="assessment.html" class="quiz-button chevron large button radius light" data-field="assessmentbtn_text" onclick="parent.qelite_taketraining_btn(); return false;">Proceed to <span class="subheader">Assessment</span></a>
-              <!-- CCS QUIZ -->
-              <!-- <a href="assessment.html?lang=en" class="quiz-button chevron large button radius light" data-field="assessmentbtn_text">Proceed to <span class="subheader">Assessment</span></a> -->
-            </div>
-          </div>
-
-        </div>
-        <!-- end QUIZ BUTTON SECTION -->
-
-        <!-- FOOTNOTES SECTION -->
-        <div class="footnotes-section slide qualcomm-background cloud">
-          <!-- Footnotes -->
-          <div class="fnotes row inner-section" data-context="fnotes">
-            <div class="twelve columns">
-              <h2 class="subheader" data-field="laserbeam_text">Footnotes</h2>
-                <ol class="footnotes" data-field="footnotes_text">
-                  <li>Source: QCT as of December 2013</li>
-                  <li>Source: BDTI - For more detailed information see <a href="www.BDTI.com">www.BDTI.com</a>. All scores &copy;2012 BDTI</li>
-                  <li>Source: Anandtech, 10/1/13, <a href="http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review">http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review</a></li>
-                  <li>Source: <a href="http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review">http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review</a>,
-                  <a href="http://anandtech.com/show/7314/intel-baytrail-preview-intel-atom-z3770-tested">http://anandtech.com/show/7314/intel-baytrail-preview-intel-atom-z3770-tested</a>,
-                  <a href="http://anandtech.com/show/7335/the-iphone-5s-review">http://anandtech.com/show/7335/the-iphone-5s-review</a>,
-                  <a href="http://www.gsmarena.com/sony_xperia_z_ultra-review-975p5.php/">http://www.gsmarena.com/sony_xperia_z_ultra-review-975p5.php/</a>,
-                  <a href="http://seekingalpha.com/article/1736492-bay-trail-trails">http://seekingalpha.com/article/1736492-bay-trail-trails</a></li>
-                  <li>When paired with a discreet modem</li>
-                </ol>
-
-                <hr class="plain light-grey"/>
-
-                <p data-field="legal_text"><strong>©2014 Qualcomm Incorporated and/or its subsidiaries.  All Rights Reserved.<br/><br/>References to “Qualcomm” may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.<br/<br/><br/>Qualcomm Incorporated includes Qualcomm’s licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm’s engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.<br/><br/>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</strong></p>
-
-            </div>
-          </div>
-
-        </div> <!-- end FOOTNOTES SECTION -->
-
-      </div> <!-- end panel-snap -->
-
-
-      <!-- trigger for the inview -->
-      <!-- <div class="inview-trigger">
-        <div class="arrow-down"></div>
-        <div id="spin" class="spinner"></div>
-      </div> -->
-
-
-   </div> <!-- end "content-container" -->
-
-  <script type="text/javascript">
-    /*--------------------------------------------------------------------------------------------
-      Get the url parameter passed in to load in the appropriate XML file to parse.
-    --------------------------------------------------------------------------------------------*/
-    var urlLang = getUrlVars()["lang"];
-    /*--------------------------------------------------------------------------------------------
-      Get URL Parameter Function
-       - Gets the URL parameters and stores in an associative array
-       - If the user clicks a tab it appends a #hash tag to the URL, which can return a 
-         URL variables such as "lang=fr#experience1". 
-       - Function will only take anything from the "?" to the first index of the "#" IF the hash 
-         is found, othewise, just take from "?" to the end of URL.
-    --------------------------------------------------------------------------------------------*/
-    function getUrlVars() {
-        var vars = {};
-        var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
-            var hashIndex = value.search('#');
-            if(hashIndex == -1) {
-              vars[key] = value;
-            } else {
-              value = value.substring(0,hashIndex);
-              vars[key] = value;
-            }
-        });
-        return vars;
-    }
-  </script>
-  
-  <!-- Included JS Files (Compressed) -->
-  <script type="text/javascript" src="javascripts/foundation.min.js"></script>
-
-  <!-- 3rd Party JS Plugins/Scripts -->
-  <script type="text/javascript" src="javascripts/com/TweenMax.min.js"></script>
-  <script type="text/javascript" src="javascripts/com/spin.min.js"></script>
-  <script type="text/javascript" src="javascripts/com/jquery.inview.min.js"></script>
-  <script type="text/javascript" src="javascripts/jquery.qualcomm-reveal.min.js"></script>
-
-  <!-- Initialize JS Plugins && Core JS -->
-  <script type="text/javascript" src="javascripts/app.js"></script>
-  <script type="text/javascript" src="javascripts/parse-xml-v1.5.js"></script>
-  <script type="text/javascript" src="javascripts/main-template.js"></script>
-  <script type="text/javascript" src="javascripts/animation.js"></script>
-
-  <!-- Course JS -->
-  <script type="text/javascript">
-  (function() {
-    $(document).ready(function() {
-
-      //Prevent iamge from being draggable
-      $("img").mousedown(function(){ return false; });
-
-
-    }); //end document.ready()
-  })(); //end self-invoking function
-  </script>
+	<!-- IE Alert -->
+	<div class="ie-alert">
+		<p>You are using Internet Explorer in <em>"Compatibility View"</em> or <em>IE7</em>. Please view this page in IE8 or higher, and in <em>"Standards Mode"</em> - make sure the small <em>CV</em> icon at the right edge of your browser's address bar is <em>not active</em>.</p>
+	</div>
+
+	<!-- Loader for the page -->
+	<div class="loader">
+			<div id="loader-spinner"></div>
+	</div>
+
+	 <!-- Content Starts Here 
+			• Slides: they make up each section of content or in relation to Flash course, each SWF that is loaded
+	 -->
+	 <div class="content-container">
+			<!-- SECTION 1 -->
+			<div class="section1 slide qualcomm-background fire slide-first">
+				<!-- Introduction -->
+				<div class="s1p1 row inner-section first" data-context="s1p1">
+					<div class="twelve columns h-center">
+						<h1 class="light" data-field="laserbeam_text">Qualcomm® Snapdragon™<br/><span class="subheader">Family of Processors</span></h1>
+						<div class="vspacer-25"></div>
+						<img src="images/shared/section1/snapdragon-chip.png" class="center" alt="Snapdragon black chip" />
+					</div>
+				</div>
+
+				<!-- Arrow-Down -->
+				<div class="continue-arrow"></div>
+
+			</div> <!-- end SECTION 1 -->
+
+
+			<!-- SECTION 2 -->
+			<div class="section2 slide qualcomm-background cloud panel-snap">
+				<!-- What You'll Learn -->
+				<div class="s2p1 row inner-section" data-context="s2p1">
+					<div class="six columns">
+						<div class="speech-bubbles-container clearfix">
+							<img src="images/shared/section1/speech-bubbles.gif"     alt="White speech bubble with dots inside"  class="speech-bubbles cust1" />
+							<img src="images/shared/section1/speech-bubbles.gif"     alt="White speech bubble with dots inside"  class="speech-bubbles cust2" />
+							<img src="images/shared/section1/speech-bubbles-rsa.gif" alt="Grey speech bubble with dots inside"   class="speech-bubbles rsa" />
+						</div>
+					</div>
+					<div class="six columns">
+						<h1 class="light" data-field="laserbeam_text">By the end of this module,<br/><span class="subheader">you'll understand:</span></h1>
+
+						<div class="vspacer-25"></div>
+
+						<ul class="chevron" data-field="body_text">
+							<li>How to talk to your customer about their desired smartphone use</li>
+							<li>The main differences between each Qualcomm Snapdragon processor</li>
+							<li>How to help your customer choose the right Qualcomm Snapdragon device</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="s2p2 row" data-context="s2p2">
+					<div class="twelve columns h-center">
+						<p class="footnote" data-field="laserbeam_text">Snapdragon is a product of Qualcomm Technologies, Inc</p>
+					</div>
+				</div>
+			
+			</div> <!-- end SECTION 2 -->
+
+
+			<!-- SECTION 3 -->
+			<div class="section3 slide qualcomm-background beige panel-snap">
+				<!-- Not All Customers -->
+				<div class="s3p1 row inner-section" data-context="s3p1">
+					<div class="six columns">
+						<img src="images/shared/section1/customers.png" class="center" alt="Snapdragon black chip" />
+						<div class="vspacer-25 show-for-small"></div>
+					</div>
+					<div class="six columns">
+						<h1 class="light h-center" data-field="laserbeam_text">Not all customers<br/><span class="subheader">are the same</span></h1>
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 3 -->
+
+
+			<!-- SECTION 4 -->
+			<div class="section4 slide qualcomm-background dark-stone panel-snap">
+				<!-- Technology Abounds - Initial -->
+				<div class="s4p1 row inner-section" data-context="s4p1">
+					<div class="twelve columns h-center">
+						<h1 class="subheader" data-field="laserbeam_text">Technology <span class="light">Abounds</span></h1>
+						<p data-field="body_text">You want to find the right technology for each customer</p>
+
+						<div class="vspacer-25"></div>
+
+						<div class="icons-container">
+							<div class="icons tst"><img src="images/shared/section1/icon1.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon2.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon3.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon4.png" alt=""></div>
+							<div class="icons pov"><img src="images/shared/section1/icon5.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon6.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon7.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon8.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon9.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon10.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon11.png" alt=""></div>
+							<div class="icons"><img src="images/shared/section1/icon12.png" alt=""></div>
+						</div>
+
+						<div class="tech-container">
+							<div class="tech battery">
+								<img src="images/shared/section1/tech-battery.gif" alt="">
+								<img src="images/ie8/tech-circle.png" alt="" class="ie8-tech-circle">
+								<p data-field="tech1_text">Battery Life</p>
+							</div>
+							<div class="tech connect">
+								<img src="images/shared/section1/tech-wifi.gif" alt="">
+								<img src="images/ie8/tech-circle.png" alt="" class="ie8-tech-circle">
+								<p data-field="tech2_text">Connectivity</p>
+							</div>
+							<div class="tech speed">
+								<img src="images/shared/section1/tech-speed.gif" alt="">
+								<img src="images/ie8/tech-circle.png" alt="" class="ie8-tech-circle">
+								<p data-field="tech3_text">Speed &amp; Performance</p>
+							</div>
+						</div>
+
+						<div class="tech-phone">
+							<img src="images/shared/section1/tech-phone.png" alt="Samesung S4 with red circuit wallpaper, with Snapdragon chip centered inside">
+						</div>
+
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 4 -->
+
+
+			<!-- SECTION 5 -->
+			<div class="section5 slide qualcomm-background fire panel-snap">
+				<!-- The Processor -->
+				<div class="s5p1 row inner-section" data-context="s5p1">
+					<div class="twelve columns h-center">
+						<img src="images/shared/section1/chip-lightning.png" class="center" alt="Snapdragon black chip" />
+						<h1 class="subheader" data-field="laserbeam_text">The processor,<br/><span class="light">redefined</span></h1>
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 5 -->
+
+
+			<!-- SECTION 6 -->
+			<div class="section6 slide qualcomm-background cloud panel-snap">
+				<!-- Leadership -->
+				<div class="s6p1 row inner-section" data-context="s6p1">
+					<div class="twelve columns">
+						<!-- #1 box -->
+						<div class="square-box">
+							<h1 class="subheader">#1</h1>
+						</div>
+
+						<div class="vspacer-50"></div>
+
+						<!-- circles -->
+						<div class="circle-container">
+							<div class="circles download">
+								<p data-field="tech1_text"><span>Download</span><br>Speed<sup>1</sup></p>
+								<img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
+							</div>
+							<div class="circles dsp">
+								<p data-field="tech2_text"><span>DSP</span><br>Performance<sup>2</sup></p>
+								<img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
+							</div>
+							<div class="circles battery">
+								<p data-field="tech3_text"><span>Efficiency</span><br>leadership</p>
+								<img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
+							</div>
+							<div class="circles cpu">
+								<p data-field="tech4_text"><span>CPU</span><br>Performance<sup>3</sup></p>
+								<img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
+							</div>
+							<div class="circles gpu">
+								<p data-field="tech5_text"><span>GPU</span><br>Performance<sup>4</sup></p>
+								<img src="images/ie8/feature-circle.png" alt="" class="ie8-feature-circle">
+							</div>
+						</div>
+
+						<h1 class="subheader h-center" data-field="laserbeam_text">Leadership in<br/><span class="light">performance and efficiency</span></h1>
+
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 6 -->
+
+			
+			<!-- SECTION 7 -->
+			<div class="section7 slide qualcomm-background beige panel-snap">
+				<!-- Snapdragon Processor Family -->
+				<div class="s7p1 row inner-section" data-context="s7p1">
+					<div class="twelve columns h-center">
+
+						<div class="chip-container clearfix">
+							<div class="chips chip-200">
+								<img src="images/shared/section1/snapdragon-200.png" alt="Snapdragon 200 chip ocean blue colored">
+							</div>
+
+							<div class="chips chip-400">
+								<img src="images/shared/section1/snapdragon-400.png" alt="Snapdragon 400 chip stone grey colored">
+							</div>
+
+							<div class="chips chip-600">
+								<img src="images/shared/section1/snapdragon-600.png" alt="Snapdragon 600 chip sun yellow colored">
+							</div>
+
+							<div class="chips chip-800">
+								<img src="images/shared/section1/snapdragon-800.png" alt="Snapdragon 800 chip fire red colored">
+							</div>
+						</div>
+
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon processor family:<br/><span class="light">Which one is right for your customer?</span></h1>
+
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 7 -->
+
+
+			<!-- SECTION 8 -->
+			<div class="section8 slide qualcomm-background fire panel-snap">
+				<!-- 200: Chip Intro -->
+				<div class="s8p1 row inner-section" data-context="s8p1">
+					<div class="twelve columns">
+						<img src="images/shared/section1/snapdragon-200-nr.png" alt="" class="chip-image center" />
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon 200 processors <span class="light">Overview</span></h1>
+						<p class="subheader" data-field="body_text">Designed to make exceptional performance  and connectivity more accessible than ever. </p>
+
+						<ul class="chevron black" data-field="features_text">
+							<li>Strong connections with 3G, Wi-Fi 802.11n, Bluetooth 4.0, USB 2.0</li>
+							<li>Crystal Clear Voice – Experience voice clarity even in the noisiest environments. Extend talk time with conversations that are pleasant and free of ambient noise</li>
+							<li>Battery life – Like every other processor in our Snapdragon family, these are designed to deliver excellent battery efficiency</li>
+						</ul>
+						
+					</div>
+				</div>
+
+				<!-- 200: Features -->
+				<div class="qualcomm-background dark-fire panel-snap">
+					<div class="s8p2 row inner-section" data-context="s8p2">
+						<div class="twelve columns">
+						
+							<!-- Main Image -->
+							<div class="spec-main-img">
+								<img src="images/shared/section1/200-spec.png" alt="" class="spec-image center" />
+								<img src="images/shared/section1/snapdragon-200-nr.png" alt="" class="spec-chip-img" />
+							</div>
+
+							<h1 class="subheader" data-field="laserbeam_text">Snapdragon 200 processors <span class="light">Features</span></h1>
+
+							<!-- Specs -->
+							<div class="specs-container">
+								<div class="row">
+									<div class="five columns">
+										<div class="spec video">
+											<div class="icon"></div>
+											<p data-field="spec1_text"><strong>HD VIDEO:</strong> 720p HD</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec camera">
+											<div class="icon"></div>
+											<p data-field="spec2_text"><strong>CAMERA:</strong> Up to 8MP</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="five columns">
+										<div class="spec audio">
+											<div class="icon"></div>
+											<p data-field="spec3_text"><strong>AUDIO:</strong> Stereo</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec cpu">
+											<div class="icon"></div>
+											<p data-field="spec4_text"><strong>CPU:</strong> Up to 1.4GHz quad core</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="five columns">
+										<div class="spec gpu">
+											<div class="icon"></div>
+											<p data-field="spec5_text"><strong>GPU:</strong> Adreno™ 302</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec network">
+											<div class="icon"></div>
+											<p data-field="spec6_text"><strong>NETWORK:</strong> 3G</p>
+										</div>
+									</div>
+								</div>
+							</div> <!-- end Specs -->
+
+							<div class="vspacer-25"></div>
+							<p class="footnote spec-footnote" data-field="footnote_text">Features supported will vary by device and manufacturer.</p>
+											 
+						</div>
+					</div>
+				</div>
+
+				<!-- 200: Customer -->
+				<div class="s8p3 row inner-section panel-snap" data-context="s8p3">
+					<div class="twelve columns">
+
+						<!-- Main Image -->
+						<div class="cust-main-img">
+							<img src="images/shared/section1/snapdragon-200-nr.png" alt="" class="cust-chip-img" />
+							<img src="images/shared/section1/cust-phone.png" alt="" class="cust-floating-icon phone" />
+							<img src="images/shared/section1/cust-chat.png"  alt="" class="cust-floating-icon chat" />
+							<img src="images/shared/section1/cust-light.png" alt="" class="cust-image center" />
+						</div>
+
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon 200 processor <span class="light">Customer</span></h1>
+						<p class="subheader" data-field="body_text">Show them how they can step into a smartphone with a Snapdragon processor.</p>
+						
+						<ul class="chevron black" data-field="features_text">
+							<li>Touch screen</li>
+							<li>Voice calls</li>
+							<li>Texting and conversation history</li>
+							<li>Voice to text</li>
+						</ul>
+
+						<div class="vspacer-25"></div>
+
+						<div class="panel sales-tip radius">
+							<p data-field="sellingtip_text"><strong>Selling Tip:</strong> Keep your sales guidance simple, useful and uncomplicated. </p>
+						</div>
+
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 8 -->
+
+
+			<!-- SECTION 9 -->
+			<div class="section9 slide qualcomm-background mid-stone panel-snap">
+				<!-- 400: Chip Intro -->
+				<div class="s9p1 row inner-section" data-context="s9p1">
+					<div class="twelve columns">
+						<img src="images/shared/section1/snapdragon-400-nr.png" alt="" class="chip-image center" />
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon 400 processors <span class="light">Overview</span></h1>
+						<p class="subheader" data-field="body_text">Designed to deliver the most popular smartphone features:</p>
+
+						<ul class="chevron red" data-field="features_text">
+							<li>Strong, speedy connections with 3G/4G LTE, Wi-Fi 802.11ac, Bluetooth 4.0</li>
+							<li>Shoot High-resolution photos up to 13.5MP</li>
+							<li>Capture and playback HD video in up to Full 1080p</li>
+							<li>Great graphics performance with Adreno 305 GPU for responsive web browsing and social media apps</li>
+						</ul>
+						
+					</div>
+				</div>
+
+				<!-- 400: Features -->
+				<div class="qualcomm-background dark-stone panel-snap">
+					<div class="s9p2 row inner-section" data-context="s9p2">
+						<div class="twelve columns">
+							
+							<!-- Main Image -->
+							<div class="spec-main-img">
+								<img src="images/shared/section1/400-spec.png" alt="" class="spec-image center" />
+								<img src="images/shared/section1/snapdragon-400-nr.png" alt="" class="spec-chip-img" />
+							</div>
+
+							<h1 class="subheader" data-field="laserbeam_text">Snapdragon 400 processors <span class="light">Features</span></h1>
+
+							<!-- Specs -->
+							<div class="specs-container">
+								<div class="row">
+									<div class="five columns">
+										<div class="spec video">
+											<div class="icon"></div>
+											<p data-field="spec1_text"><strong>HD VIDEO:</strong> Up to Full HD 1080p</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec camera">
+											<div class="icon"></div>
+											<p data-field="spec2_text"><strong>CAMERA:</strong> Up to 13.5MP</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="five columns">
+										<div class="spec audio">
+											<div class="icon"></div>
+											<p data-field="spec3_text"><strong>AUDIO:</strong> Up to 5.1 surround sound</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec cpu">
+											<div class="icon"></div>
+											<p data-field="spec4_text"><strong>CPU:</strong> Up to 1.6GHz quad core</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="five columns">
+										<div class="spec gpu">
+											<div class="icon"></div>
+											<p data-field="spec5_text"><strong>GPU:</strong> Up to Adreno 306</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec network">
+											<div class="icon"></div>
+											<p data-field="spec6_text"><strong>NETWORK:</strong> 3G &amp; 4G</p>
+										</div>
+									</div>
+								</div>
+							</div> <!-- end Specs -->   
+
+							<div class="vspacer-25"></div>
+							<p class="footnote spec-footnote" data-field="footnote_text">Features supported will vary by device and manufacturer.</p>          
+
+						</div>
+					</div>
+				</div>
+
+				<!-- 400: Customer -->
+				<div class="s9p3 row inner-section panel-snap" data-context="s9p3">
+					<div class="twelve columns">
+
+						<!-- Main Image -->
+						<div class="cust-main-img">
+							<img src="images/shared/section1/snapdragon-400-nr.png" alt="" class="cust-chip-img" />
+							<img src="images/shared/section1/cust-camera-light.png" alt="" class="cust-floating-icon camera" />
+							<img src="images/shared/section1/cust-phone-light.png"  alt="" class="cust-floating-icon phone" />
+							<img src="images/shared/section1/cust-chat-light.png"   alt="" class="cust-floating-icon chat" />
+							<img src="images/shared/section1/cust-dark.png"         alt="" class="cust-image center" />
+						</div>
+
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon 400 processors <span class="light">Customer</span></h1>
+						<p class="subheader" data-field="body_text">Show them how they can capture moments, share them, and remember them in detail later.</p>
+						
+						<ul class="chevron red" data-field="features_text">
+							<li>Camera for photos and video</li>
+							<li>Photo and video editing apps</li>
+							<li>Web browsing</li>
+						</ul>
+
+						<div class="vspacer-25"></div>
+
+						<div class="panel sales-tip radius">
+							<p data-field="sellingtip_text"><strong>Selling Tip:</strong> Help capture moments so they can remember them in detail.</p>
+						</div>
+
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 9 -->
+
+
+			<!-- SECTION 10 -->
+			<div class="section10 slide qualcomm-background fire panel-snap">
+				<!-- 600: Chip Intro -->
+				<div class="s10p1 row inner-section" data-context="s10p1">
+					<div class="twelve columns">
+						<img src="images/shared/section1/snapdragon-600-nr.png" alt="" class="chip-image center" />
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon 600 processors <span class="light">Overview</span></h1>
+						<p class="subheader" data-field="body_text">Designed to deliver advanced smartphone experiences</p>
+
+						<ul class="chevron black" data-field="features_text">
+							<li>High-speed connectivity with 4G LTE<sup>5</sup>, Wi-Fi 802.11n/ac, Bluetooth 4.0</li>
+							<li>Shoot DSLR-resolution photos up to 21MP</li>
+							<li>Capture and playback HD video in up to Full 1080p</li>
+							<li>Stunning visuals and console quality graphics with the Adreno 320 GPU</li>
+						</ul>
+						
+					</div>
+				</div>
+
+				<!-- 600: Features -->
+				<div class="qualcomm-background dark-fire panel-snap">
+					<div class="s10p2 row inner-section" data-context="s10p2">
+						<div class="twelve columns">
+
+							<!-- Main Image -->
+							<div class="spec-main-img">
+								<img src="images/shared/section1/600-spec.png" alt="" class="spec-image center" />
+								<img src="images/shared/section1/snapdragon-600-nr.png" alt="" class="spec-chip-img" />
+							</div>
+
+							<h1 class="subheader" data-field="laserbeam_text">Snapdragon 600 processors <span class="light">Features</span></h1>
+
+							<!-- Specs -->
+							<div class="specs-container">
+								<div class="row">
+									<div class="five columns">
+										<div class="spec video">
+											<div class="icon"></div>
+											<p data-field="spec1_text"><strong>HD VIDEO:</strong> Up to Full HD 1080p</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec camera">
+											<div class="icon"></div>
+											<p data-field="spec2_text"><strong>CAMERA:</strong> Up to 21MP</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="five columns">
+										<div class="spec audio">
+											<div class="icon"></div>
+											<p data-field="spec3_text"><strong>AUDIO:</strong> Up to 5.1 surround sound</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec cpu">
+											<div class="icon"></div>
+											<p data-field="spec4_text"><strong>CPU:</strong> Up to 1.9GHz quad core</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="five columns">
+										<div class="spec gpu">
+											<div class="icon"></div>
+											<p data-field="spec5_text"><strong>GPU:</strong> Adreno 320</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec network">
+											<div class="icon"></div>
+											<p data-field="spec6_text"><strong>NETWORK:</strong> 3G &amp; 4G</p>
+										</div>
+									</div>
+								</div>
+							</div> <!-- end Specs -->
+
+							<div class="vspacer-25"></div>
+							<p class="footnote spec-footnote" data-field="footnote_text">Features supported will vary by device and manufacturer.</p>  
+											 
+						</div>
+					</div>
+				</div>
+
+				<!-- 600: Customer -->
+				<div class="s10p3 row inner-section panel-snap" data-context="s10p3">
+					<div class="twelve columns">
+
+						<!-- Main Image -->
+						<div class="cust-main-img">
+							<img src="images/shared/section1/snapdragon-600-nr.png" alt="" class="cust-chip-img" />
+							<img src="images/shared/section1/cust-play.png"    alt="" class="cust-floating-icon play" />
+							<img src="images/shared/section1/cust-camera.png"  alt="" class="cust-floating-icon camera" />
+							<img src="images/shared/section1/cust-phone.png"   alt="" class="cust-floating-icon phone" />
+							<img src="images/shared/section1/cust-chat.png"    alt="" class="cust-floating-icon chat" />
+							<img src="images/shared/section1/cust-light.png"   alt="" class="cust-image center" />
+						</div>
+
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon 600 processors <span class="light">Customer</span></h1>
+						<p class="subheader" data-field="body_text">Show them how they can step up to these advanced smartphone features:</p>
+						
+						<ul class="chevron black" data-field="features_text">
+							<li>Blazing fast 3G/4G LTE connectivity</li>
+							<li>Capture, edit and share sunning high-resolution photographs.</li>
+							<li>Breathtaking graphics </li>
+							<li>Full HD video conferencing</li>
+						</ul>
+
+						<div class="vspacer-25"></div>
+
+						<div class="panel sales-tip radius">
+							<p data-field="sellingtip_text"><strong>Selling Tip:</strong> Show them how they show off with stunning visuals and console quality graphics.</p>
+						</div>
+
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 10 -->
+
+
+			<!-- SECTION 11 -->
+			<div class="section11 slide qualcomm-background mid-stone panel-snap">
+				<!-- 800: Chip Intro -->
+				<div class="s11p1 row inner-section" data-context="s11p1">
+					<div class="twelve columns">
+						<img src="images/shared/section1/snapdragon-800-nr.png" alt="" class="chip-image center" />
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon 800 processors <span class="light">Overview</span></h1>
+						<p class="subheader" data-field="body_text">Designed to deliver bleeding-edge technology, features, power and performance:</p>
+
+						<ul class="chevron red" data-field="features_text">
+							<li>Superior performance with up to 2.3 GHz of CPU power</li>
+							<li>Shoot and playback Ultra HD 4K video</li>
+							<li>Capture ultra-high resolution photos up to 21MP</li>
+							<li>Home-theater-style audio with 7.1 Surround Sound</li>
+							<li>Incredible graphics speed and detail with Adreno 330</li>
+						</ul>
+						
+					</div>
+				</div>
+
+				<!-- 800: Features -->
+				<div class="qualcomm-background dark-stone panel-snap">
+					<div class="s11p2 row inner-section" data-context="s11p2">
+						<div class="twelve columns">
+
+							<!-- Main Image -->
+							<div class="spec-main-img">
+								<img src="images/shared/section1/800-spec.png" alt="" class="spec-image center" />
+								<img src="images/shared/section1/snapdragon-800-nr.png" alt="" class="spec-chip-img" />
+							</div>
+
+							<h1 class="subheader" data-field="laserbeam_text">Snapdragon 800 processors <span class="light">Features</span></h1>
+
+							<!-- Specs -->
+							<div class="specs-container">
+								<div class="row">
+									<div class="five columns">
+										<div class="spec video">
+											<div class="icon"></div>
+											<p data-field="spec1_text"><strong>HD VIDEO:</strong> Up to 4K Ultra HD</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec camera">
+											<div class="icon"></div>
+											<p data-field="spec2_text"><strong>CAMERA:</strong> Up to 21MP</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="five columns">
+										<div class="spec audio">
+											<div class="icon"></div>
+											<p data-field="spec3_text"><strong>AUDIO:</strong> Up to 7.1 surround sound</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec cpu">
+											<div class="icon"></div>
+											<p data-field="spec4_text"><strong>CPU:</strong> Up to 2.3GHz quad core</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="five columns">
+										<div class="spec gpu">
+											<div class="icon"></div>
+											<p data-field="spec5_text"><strong>GPU:</strong> Adreno 330</p>
+										</div>
+									</div>
+									<div class="seven columns">
+										<div class="spec network">
+											<div class="icon"></div>
+											<p data-field="spec6_text"><strong>NETWORK:</strong> 3G &amp; 4G</p>
+										</div>
+									</div>
+								</div>
+							</div> <!-- end Specs -->
+
+							<div class="vspacer-25"></div>
+							<p class="footnote spec-footnote" data-field="footnote_text">Features supported will vary by device and manufacturer.</p>              
+
+						</div>
+					</div>
+				</div>
+
+				<!-- 800: Customer -->
+				<div class="s11p3 row inner-section panel-snap" data-context="s11p3">
+					<div class="twelve columns">
+						<!-- Main Image -->
+						<div class="cust-main-img">
+							<img src="images/shared/section1/snapdragon-800-nr.png" alt="" class="cust-chip-img" />
+							<img src="images/shared/section1/cust-controller-light.png"  alt="" class="cust-floating-icon controller" />
+							<img src="images/shared/section1/cust-play-light.png"        alt="" class="cust-floating-icon play" />
+							<img src="images/shared/section1/cust-camera-light.png"      alt="" class="cust-floating-icon camera" />
+							<img src="images/shared/section1/cust-phone-light.png"       alt="" class="cust-floating-icon phone" />
+							<img src="images/shared/section1/cust-chat-light.png"        alt="" class="cust-floating-icon chat" />
+							<img src="images/shared/section1/cust-dark.png"              alt="" class="cust-image center" />
+						</div>
+
+						<h1 class="subheader" data-field="laserbeam_text">Snapdragon 800 processors <span class="light">Customer</span></h1>
+						<p class="subheader" data-field="body_text">Show them how they can stay ahead of technology with:</p>
+						
+						<ul class="chevron red" data-field="features_text">
+							<li>Advanced connectivity with 3G/4G LTE</li>
+							<li>Ultra HD 4K video and ultra-high resolution photos</li>
+							<li>Home theatre style entertainment with 7.1 surround sound DTS-HD, Dolby Digital Plus</li>
+							<li>Cutting edge graphics capability enhance many of today’s best apps.</li>
+						</ul>
+
+						<div class="vspacer-25"></div>
+
+						<div class="panel sales-tip radius">
+							<p data-field="sellingtip_text"><strong>Selling Tip:</strong> Talk to them about the latest technology features.</p>
+						</div>
+
+					</div>
+				</div>
+
+			</div> <!-- end SECTION 11 -->
+
+
+			<div class="panel-snap">
+				<!-- QUIZ BUTTON SECTION -->
+				<div class="quiz slide qualcomm-background stone">
+					<div class="quizsection row" data-context="quizsection">
+						<div class="twelve columns h-center">
+							<!-- ELITE QUIZ -->
+							<a href="assessment.html" class="quiz-button chevron large button radius light" data-field="assessmentbtn_text">Proceed to <span class="subheader">Assessment</span></a>
+							<!-- CCS QUIZ -->
+							<!-- <a href="assessment.html?lang=en" class="quiz-button chevron large button radius light" data-field="assessmentbtn_text">Proceed to <span class="subheader">Assessment</span></a> -->
+						</div>
+					</div>
+
+				</div>
+				<!-- end QUIZ BUTTON SECTION -->
+
+				<!-- FOOTNOTES SECTION -->
+				<div class="footnotes-section slide qualcomm-background cloud">
+					<!-- Footnotes -->
+					<div class="fnotes row inner-section" data-context="fnotes">
+						<div class="twelve columns">
+							<h2 class="subheader" data-field="laserbeam_text">Footnotes</h2>
+							 <ul class="footnotes" data-field="footnotes_text">
+									<li><span>1.</span>Source: QCT as of December 2013</li>
+									<li><span>2.</span>Source: BDTI - For more detailed information see <a href="www.BDTI.com">www.BDTI.com</a>. All scores &copy;2012 BDTI</li>
+									<li><span>3.</span>Source: Anandtech, 10/1/13, <a href="http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review">http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review</a></li>
+									<li><span>4.</span>Source: <a href="http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review">http://www.anandtech.com/print/7376/samsung-galaxy-note-3-review</a>,
+									<a href="http://anandtech.com/show/7314/intel-baytrail-preview-intel-atom-z3770-tested">http://anandtech.com/show/7314/intel-baytrail-preview-intel-atom-z3770-tested</a>,
+									<a href="http://anandtech.com/show/7335/the-iphone-5s-review">http://anandtech.com/show/7335/the-iphone-5s-review</a>,
+									<a href="http://www.gsmarena.com/sony_xperia_z_ultra-review-975p5.php/">http://www.gsmarena.com/sony_xperia_z_ultra-review-975p5.php/</a>,
+									<a href="http://seekingalpha.com/article/1736492-bay-trail-trails">http://seekingalpha.com/article/1736492-bay-trail-trails</a></li>
+									<li><span>5.</span>When paired with a discreet modem</li>
+								</ul>
+
+								<hr class="plain light-grey"/>
+
+								<p class="legal-footer" data-field="legal_text"><strong>©2014 Qualcomm Incorporated and/or its subsidiaries.  All Rights Reserved.<br/><br/>References to “Qualcomm” may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.<br/<br/><br/>Qualcomm Incorporated includes Qualcomm’s licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm’s engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.<br/><br/>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</strong></p>
+
+						</div>
+					</div>
+
+				</div> <!-- end FOOTNOTES SECTION -->
+
+			</div> <!-- end panel-snap -->
+
+
+	 </div> <!-- end "content-container" -->
+
+	<script type="text/javascript">
+		/*--------------------------------------------------------------------------------------------
+			Get the url parameter passed in to load in the appropriate XML file to parse.
+		--------------------------------------------------------------------------------------------*/
+		var urlLang = getUrlVars()["lang"];
+		/*--------------------------------------------------------------------------------------------
+			Get URL Parameter Function
+			 - Gets the URL parameters and stores in an associative array
+			 - If the user clicks a tab it appends a #hash tag to the URL, which can return a 
+				 URL variables such as "lang=fr#experience1". 
+			 - Function will only take anything from the "?" to the first index of the "#" IF the hash 
+				 is found, othewise, just take from "?" to the end of URL.
+		--------------------------------------------------------------------------------------------*/
+		function getUrlVars() {
+				var vars = {};
+				var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+						var hashIndex = value.search('#');
+						if(hashIndex == -1) {
+							vars[key] = value;
+						} else {
+							value = value.substring(0,hashIndex);
+							vars[key] = value;
+						}
+				});
+				return vars;
+		}
+	</script>
+	
+	<!-- Included JS Files (Compressed) -->
+	<script type="text/javascript" src="javascripts/foundation.min.js"></script>
+
+	<!-- 3rd Party JS Plugins/Scripts -->
+	<script type="text/javascript" src="javascripts/com/TweenMax.min.js"></script>
+	<script type="text/javascript" src="javascripts/com/spin.min.js"></script>
+	<script type="text/javascript" src="javascripts/com/jquery.inview.min.js"></script>
+	<script type="text/javascript" src="javascripts/jquery.qualcomm-reveal.min.js"></script>
+
+	<!-- Initialize JS Plugins && Core JS -->
+	<script type="text/javascript" src="javascripts/app.js"></script>
+	<script type="text/javascript" src="javascripts/parse-xml.js"></script>
+	<script type="text/javascript" src="javascripts/main-template.js"></script>
+	<script type="text/javascript" src="javascripts/animation.js"></script>
+
+	<!-- Course JS -->
+	<script type="text/javascript">
+	(function() {
+		$(document).ready(function() {
+
+			//Prevent iamge from being draggable
+			$("img").mousedown(function(){ return false; });
+
+
+		}); //end document.ready()
+	})(); //end self-invoking function
+	</script>
+
+	<script type="text/javascript"> 
+	var $buoop = {}; 
+	$buoop.ol = window.onload; 
+	window.onload=function(){ 
+		try { if ($buoop.ol) $buoop.ol();} catch (e) {} 
+			var e = document.createElement("script"); 
+			e.setAttribute("type", "text/javascript"); 
+			e.setAttribute("src", "//browser-update.org/update.js"); 
+	 		document.body.appendChild(e); 
+	} 
+	</script> 
 
 </body>
 </html>
