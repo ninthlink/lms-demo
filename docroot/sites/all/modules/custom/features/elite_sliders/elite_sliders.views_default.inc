@@ -60,6 +60,7 @@ function elite_sliders_views_default_views() {
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['hide_on_single_slide'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
     'title' => 'title',
@@ -85,14 +86,38 @@ function elite_sliders_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['advanced_options'] = '{"containerResize":"0","fit":"1","height":"auto","width":"auto","slideResize":"0"}';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content translation: Source translation */
+  $handler->display->display_options['relationships']['tnid']['id'] = 'tnid';
+  $handler->display->display_options['relationships']['tnid']['table'] = 'node';
+  $handler->display->display_options['relationships']['tnid']['field'] = 'tnid';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+  $handler->display->display_options['relationships']['nodequeue_rel']['label'] = 'queue untranslated';
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['queues'] = array(
     'home_slider' => 'home_slider',
+    'home_slider_russia_' => 'home_slider_russia_',
+    'home_slider_uk' => 'home_slider_uk',
+    'featured_trainings' => 0,
+    'featured_trainings_uk' => 0,
+    'shop_slides' => 0,
+    'trainings_slides' => 0,
+    'trends' => 0,
+    'whats_hot' => 0,
+    'whats_hot_uk' => 0,
+  );
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['id'] = 'nodequeue_rel_1';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['relationship'] = 'tnid';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['label'] = 'queue translated';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['queues'] = array(
+    'home_slider' => 'home_slider',
+    'home_slider_russia_' => 'home_slider_russia_',
     'home_slider_uk' => 'home_slider_uk',
     'featured_trainings' => 0,
     'featured_trainings_uk' => 0,
@@ -187,6 +212,10 @@ function elite_sliders_views_default_views() {
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
   $handler->display->display_options['sorts']['position']['field'] = 'position';
   $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -201,6 +230,37 @@ function elite_sliders_views_default_views() {
   $handler->display->display_options['filters']['field_region_value']['value'] = array(
     'us' => 'us',
   );
+  $handler->display->display_options['filters']['field_region_value']['group'] = 1;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'promo_slide' => 'promo_slide',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue_1']['id'] = 'in_queue_1';
+  $handler->display->display_options['filters']['in_queue_1']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue_1']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue_1']['relationship'] = 'nodequeue_rel_1';
+  $handler->display->display_options['filters']['in_queue_1']['value'] = '1';
+  $handler->display->display_options['filters']['in_queue_1']['group'] = 2;
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue']['value'] = '1';
+  $handler->display->display_options['filters']['in_queue']['group'] = 2;
 
   /* Display: Home Slides */
   $handler = $view->new_display('block', 'Home Slides', 'block');
@@ -388,7 +448,9 @@ function elite_sliders_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('queue'),
+    t('Source translation'),
+    t('queue untranslated'),
+    t('queue translated'),
     t('Home Slides'),
     t('Services'),
     t('title'),
@@ -442,6 +504,7 @@ function elite_sliders_views_default_views() {
   $handler->display->display_options['style_options']['widgets']['top']['views_slideshow_slide_counter']['weight'] = '1';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['enable'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['weight'] = '1';
+  $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['hide_on_single_slide'] = 1;
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['type'] = 'views_slideshow_pager_fields';
   $handler->display->display_options['style_options']['widgets']['bottom']['views_slideshow_pager']['views_slideshow_pager_fields_fields'] = array(
     'title' => 'title',
@@ -561,6 +624,10 @@ function elite_sliders_views_default_views() {
   $handler->display->display_options['sorts']['position']['table'] = 'nodequeue_nodes';
   $handler->display->display_options['sorts']['position']['field'] = 'position';
   $handler->display->display_options['sorts']['position']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -568,23 +635,80 @@ function elite_sliders_views_default_views() {
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'promo_slide' => 'promo_slide',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  $handler->display->display_options['filters']['language']['group'] = 1;
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue']['id'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue']['relationship'] = 'nodequeue_rel';
+  $handler->display->display_options['filters']['in_queue']['value'] = '1';
+  $handler->display->display_options['filters']['in_queue']['group'] = 2;
+  /* Filter criterion: Nodequeue: In queue */
+  $handler->display->display_options['filters']['in_queue_1']['id'] = 'in_queue_1';
+  $handler->display->display_options['filters']['in_queue_1']['table'] = 'nodequeue_nodes';
+  $handler->display->display_options['filters']['in_queue_1']['field'] = 'in_queue';
+  $handler->display->display_options['filters']['in_queue_1']['relationship'] = 'nodequeue_rel_1';
+  $handler->display->display_options['filters']['in_queue_1']['value'] = '1';
+  $handler->display->display_options['filters']['in_queue_1']['group'] = 2;
 
   /* Display: Trainings Slider */
   $handler = $view->new_display('block', 'Trainings Slider', 'block_2');
   $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content translation: Source translation */
+  $handler->display->display_options['relationships']['tnid']['id'] = 'tnid';
+  $handler->display->display_options['relationships']['tnid']['table'] = 'node';
+  $handler->display->display_options['relationships']['tnid']['field'] = 'tnid';
   /* Relationship: Nodequeue: Queue */
   $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
   $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
   $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
-  $handler->display->display_options['relationships']['nodequeue_rel']['required'] = TRUE;
+  $handler->display->display_options['relationships']['nodequeue_rel']['relationship'] = 'tnid';
+  $handler->display->display_options['relationships']['nodequeue_rel']['label'] = 'queue translated';
   $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
   $handler->display->display_options['relationships']['nodequeue_rel']['queues'] = array(
     'trainings_slides' => 'trainings_slides',
     'featured_trainings' => 0,
+    'featured_trainings_uk' => 0,
     'home_slider' => 0,
+    'home_slider_russia_' => 0,
+    'home_slider_uk' => 0,
     'shop_slides' => 0,
     'trends' => 0,
     'whats_hot' => 0,
+    'whats_hot_uk' => 0,
+  );
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['id'] = 'nodequeue_rel_1';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['label'] = 'queue untranslated';
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel_1']['queues'] = array(
+    'trainings_slides' => 'trainings_slides',
+    'featured_trainings' => 0,
+    'featured_trainings_uk' => 0,
+    'home_slider' => 0,
+    'home_slider_russia_' => 0,
+    'home_slider_uk' => 0,
+    'shop_slides' => 0,
+    'trends' => 0,
+    'whats_hot' => 0,
+    'whats_hot_uk' => 0,
   );
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
@@ -874,6 +998,9 @@ function elite_sliders_views_default_views() {
     t('Desc'),
     t('queue'),
     t('Trainings Slider'),
+    t('Source translation'),
+    t('queue translated'),
+    t('queue untranslated'),
     t('Trends Slider'),
     t('Store Slider'),
   );
