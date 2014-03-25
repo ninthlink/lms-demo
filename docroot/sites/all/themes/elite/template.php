@@ -36,6 +36,47 @@ function elite_preprocess_page( &$vars, $hook ) {
 		$vars['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', $vars['node']->type);
 		$vars['theme_hook_suggestions'][] = 'page__'. str_replace('_', '--', drupal_get_path_alias());
 	}
+	
+	if ( !isset( $vars['page']['pre_top'] ) ) {
+		$vars['page']['pre_top'] = array();
+	}
+	// tealium
+	$qenv = 'dev';
+	if (isset($_ENV['AH_SITE_ENVIRONMENT'])) {
+	  switch ($_ENV['AH_SITE_ENVIRONMENT']) {
+		case 'dev':
+		  $qenv = 'dev';
+		  break;
+		case 'test':
+		  $qenv = 'qa';
+		  break;
+		case 'prod':
+		  $qenv = 'prod';
+		  break;
+	  }
+	}
+	$vars['page']['pre_top']['qtealium'] = array(
+		'#markup' => "<script type=\"text/javascript\">
+var utag_data = {
+  ev : '',
+  action : '',
+  detail : '',
+  label : '',
+  location : ''
+}
+</script>
+
+
+<script type=\"text/javascript\">
+    (function(a,b,c,d){
+    a='//tags.tiqcdn.com/utag/qualcomm/elite-web/". $qenv ."/utag.js';
+    b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
+    a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
+    })();
+</script>"
+	);
+
+	watchdog('qe', 'elite_preprocess_page? hdr : <pre>'. print_r($vars['page'],true) .'</pre>');
 }
 
 function elite_quiz_admin_summary($variables) {

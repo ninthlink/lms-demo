@@ -4,6 +4,11 @@
  * Alpha's theme implementation to display a single Drupal page.
  */
 ?>
+<!-- PRE_TOP -->
+<?php if (isset($page['pre_top'])) : ?>
+<?php print render($page['pre_top']); ?>
+<?php endif; ?>
+<!-- /PRE_TOP -->
 <div<?php print $attributes; ?>>
   <?php if (isset($page['header'])) : ?>
     <?php print render($page['header']); ?>
