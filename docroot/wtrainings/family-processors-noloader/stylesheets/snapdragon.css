@@ -1,0 +1,250 @@
+
+/*=========================================================================================
+Author: Tou Lee
+Created: 10/16/13
+Last Updated: 11/6/13 - 11:18pm
+Version: 1.0.1
+
+Changelog v1.0
+  	- Added panel colors: fire, sun, ocean, stone, and cloud
+
+Changelog v1.0.1
+	- Added style for the active link of the navigation
+	- Added solid background styles
+	- Changed hr.dark opactiy from .3 --> .4
+
+==========================================================================================*/
+
+/* -------------------------------------------------- 
+   Table of Contents - SNAPDRAGON Styles
+-----------------------------------------------------
+:: Shared Styles
+:: Backgrounds
+:: Typography
+:: Horizontal Rules
+:: Panels
+*/
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+.fire 	{ color: #ee3124 !important; }
+.sun 	{ color: #FFd457 !important; }
+.stone 	{ color: #636466 !important; }
+.ocean 	{ color: #20BEC6 !important; }
+.cloud 	{ color: #fffff8 !important; }
+.beige  { color: #e8e8e1 !important; }
+
+/* -----------------------------------------
+   Backgrounds: Gradients
+----------------------------------------- */
+.qualcomm-gradient.snapdragon-radial-fire {
+	background: #ee3124; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMSUiIHN0b3AtY29sb3I9IiNkNjRiM2EiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOTQxYTFkIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-radial-gradient(center, ellipse cover,  #d64b3a 1%, #941a1d 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#d64b3a), color-stop(100%,#941a1d)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #d64b3a 1%,#941a1d 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #d64b3a 1%,#941a1d 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #d64b3a 1%,#941a1d 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #d64b3a 1%,#941a1d 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d64b3a', endColorstr='#941a1d',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+.qualcomm-gradient.snapdragon-radial-stone {
+	background: #636466; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM4Mjg0ODYiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNDU0NTQ4IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-radial-gradient(center, ellipse cover,  #828486 0%, #454548 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#828486), color-stop(100%,#454548)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #828486 0%,#454548 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #828486 0%,#454548 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #828486 0%,#454548 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #828486 0%,#454548 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#828486', endColorstr='#454548',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+.qualcomm-gradient.snapdragon-radial-sun {
+	background: #FFd457; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmU1NjMiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZjZhZTNmIiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-radial-gradient(center, ellipse cover,  #ffe563 0%, #f6ae3f 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffe563), color-stop(100%,#f6ae3f)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #ffe563 0%,#f6ae3f 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #ffe563 0%,#f6ae3f 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #ffe563 0%,#f6ae3f 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #ffe563 0%,#f6ae3f 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffe563', endColorstr='#f6ae3f',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+.qualcomm-gradient.snapdragon-radial-ocean {
+	background: #20BEC6; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiM2MmM5ZGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMDFhZGM1IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-radial-gradient(center, ellipse cover,  #62c9dc 0%, #01adc5 100%); /* FF3.6+ */
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#62c9dc), color-stop(100%,#01adc5)); /* Chrome,Safari4+ */
+	background: -webkit-radial-gradient(center, ellipse cover,  #62c9dc 0%,#01adc5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-radial-gradient(center, ellipse cover,  #62c9dc 0%,#01adc5 100%); /* Opera 12+ */
+	background: -ms-radial-gradient(center, ellipse cover,  #62c9dc 0%,#01adc5 100%); /* IE10+ */
+	background: radial-gradient(ellipse at center,  #62c9dc 0%,#01adc5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#62c9dc', endColorstr='#01adc5',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+}
+
+/* -----------------------------------------
+   Backgrounds: Solid Backgrounds
+----------------------------------------- */
+.qualcomm-background.fire  { background-color: #ed2224; }
+.qualcomm-background.sun   { background-color: #FFd457; }
+.qualcomm-background.stone { background-color: #636466; }
+.qualcomm-background.ocean { background-color: #20BEC6; }
+.qualcomm-background.cloud { background-color: #fffff8; }
+.qualcomm-background.beige { background-color: #e8e8e1; }
+
+/*--| Mid versions */
+.qualcomm-background.mid-stone { background-color: #323334; }
+
+/*--| Dark versions */
+.qualcomm-background.dark-fire { background-color: #da0017; }
+.qualcomm-background.dark-stone { background-color: #2a2a2c; }
+
+
+/*--| Font-colors */
+.qualcomm-background.fire *, 
+.qualcomm-background.stone * { color: white !important; }
+
+.qualcomm-background.cloud *:not(a), 
+.qualcomm-background.beige *:not(a) { color: #363636 !important; }
+
+.lt-ie9 .qualcomm-background.cloud *, 
+.lt-ie9 .qualcomm-background.beige * { color: #363636 !important; }
+
+/* -----------------------------------------
+   Typography
+----------------------------------------- */
+/*h1,h2,h3,h4,h5,h6 { font-family: Arial, sans-serif; }
+h1,h2,h3 { text-transform: uppercase; }
+
+h1.qualcomm-header { font-weight: bolder; }
+
+h1.subheader,
+h2.subheader,
+h3.subheader,
+h4.subheader,
+h5.subheader,
+h6.subheader { font-family: Arial, sans-serif; }
+
+h1.lower,
+h2.lower,
+h3.lower,
+h4.lower, 
+h5.lower,
+h6.lower { text-transform: none; }*/
+
+/* --| Exclude these from the Snapdragon Styling */
+.top-bar h1 { font-family: 'qualcomm_office_regular', Arial, sans-serif; text-transform: none; }
+
+.quiz h1,
+.quiz h2,
+.quiz h3 { text-transform: none; }
+
+/* --| Background Colors */
+.qualcomm-gradient.snapdragon-radial-sun h1,
+.qualcomm-gradient.snapdragon-radial-sun h2,
+.qualcomm-gradient.snapdragon-radial-sun h3,
+.qualcomm-gradient.snapdragon-radial-sun h4,
+.qualcomm-gradient.snapdragon-radial-sun h5,
+.qualcomm-gradient.snapdragon-radial-sun h6,
+.qualcomm-gradient.snapdragon-radial-sun p,
+.qualcomm-gradient.snapdragon-radial-sun ul li,
+.qualcomm-gradient.snapdragon-radial-sun ol li,
+.qualcomm-gradient.snapdragon-radial-sun dl dd,
+.qualcomm-gradient.snapdragon-radial-sun dl dt { color: #222; }
+
+/* -----------------------------------------
+   Layout: Main Navigation
+----------------------------------------- */
+.top-bar ul>li.has-dropdown .dropdown li a.active { color: #FFd457; }
+
+/* -----------------------------------------
+   Horizontal Rules
+----------------------------------------- */
+hr {
+	margin: 50px 0;
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(246,246,238,0), rgba(246,246,238,.4), rgba(246,246,238,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(246,246,238,0), rgba(246,246,238,.4), rgba(246,246,238,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(246,246,238,0), rgba(246,246,238,.4), rgba(246,246,238,0)); 
+    background-image:      -o-linear-gradient(left, rgba(246,246,238,0), rgba(246,246,238,.4), rgba(246,246,238,0)); 
+}
+
+hr.dark {
+    border: 0;
+    height: 1px;
+    background-image: -webkit-linear-gradient(left, rgba(99,99,99,0), rgba(99,99,99,0.4), rgba(99,99,99,0)); 
+    background-image:    -moz-linear-gradient(left, rgba(99,99,99,0), rgba(99,99,99,0.4), rgba(99,99,99,0)); 
+    background-image:     -ms-linear-gradient(left, rgba(99,99,99,0), rgba(99,99,99,0.4), rgba(99,99,99,0)); 
+    background-image:      -o-linear-gradient(left, rgba(99,99,99,0), rgba(99,99,99,0.4), rgba(99,99,99,0)); 
+}
+
+.lt-ie9 hr.plain,
+hr.plain {
+	background-image: none;
+	border-color: white;
+	border-top-width: 1px;
+	border-style: solid;
+}
+
+hr.plain.dark { border-color: #474747; }
+hr.plain.grey { border-color: #DCDCDC; }
+hr.plain.light-grey { border-color: #F0F0F0; }
+hr.margin-25 { margin: 25px 0; }
+
+/* -- IE8 */
+.lt-ie9 hr {
+	border: 1px;
+	height: 1px;
+	border-color: white;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=15)"; filter: alpha(opacity=15); 
+	border-style: dashed;
+}
+
+.lt-ie9 hr.dark { border-color: #474747; }
+
+
+/* -----------------------------------------
+   Horizontal Rules
+----------------------------------------- */
+.panel.callout.cloud { background-color: #fffff8; }
+.panel.callout.fire  { background-color: #ee3124; }
+	.panel.callout.fire * { color: #fffff8; }
+
+.panel.callout.sun 	 { background-color: #FFd457; }
+.panel.callout.stone { background-color: #636466; }
+.panel.callout.ocean { background-color: #20BEC6; }
+
+/* ----------------------------------------------------- 
+   Mobile
+----------------------------------------------------- */
+@media only screen and (max-width: 767px) { 
+}
+
+/* ----------------------------------------------------- 
+   Horizontal Slider
+----------------------------------------------------- */
+/*.next-arrow {
+	border-bottom-left-radius: 5px;
+	border-top-left-radius: 5px;
+}
+
+.prev-arrow {
+	border-bottom-right-radius: 5px;
+	border-top-right-radius: 5px;
+}*/
+
+
+
+
+
+
+

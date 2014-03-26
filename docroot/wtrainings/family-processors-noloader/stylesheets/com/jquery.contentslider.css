@@ -1,0 +1,156 @@
+/*=========================================================================================
+Author: Tou Lee
+Created: 11/8/13
+Last Updated: 11/8/13 - 12:30pm
+Version: 1.0.0
+
+Changelog v1.0
+  - Created the intial slider styles
+
+==========================================================================================*/
+
+/* ----------------------------------------------------------------------------------------
+	Slider Wrapper
+		- The wrapper that goes around the resposive content slider
+---------------------------------------------------------------------------------------- */
+.content-slider-wrapper { position: relative; }
+
+/* ----------------------------------------------------------------------------------------
+	Slider 
+		- The core slider wrapper
+		- UL: Holds the slides
+		- LI: The slides that your content resides;
+---------------------------------------------------------------------------------------- */
+.slider {
+	width: inherit;
+	min-height: 300px;
+	height: auto;
+	/*overflow: scroll;*/
+	position: relative;
+	overflow: hidden;
+}
+
+.slider ul {
+	/*width: 10000px;*/
+	list-style: none;
+	width: auto;
+	margin-left: 0;
+}
+
+.slider ul:before, .slider ul:after {
+	content: "."; 
+	display: block; 
+	height: 0; 
+	width: 0; 
+	clear: both; 
+	visibility: hidden;
+	overflow: hidden; 
+}
+
+.slider li {
+	float: left;
+	width: 100%;
+	padding: 0 20px;
+}
+
+/* ----------------------------------------------------------------------------------------
+	Slider Navigation
+		- The navigation that works in conjunction with the slider.
+		- By default, they reside outside of the slider area
+---------------------------------------------------------------------------------------- */
+.content-slider-nav { 
+	/*display: none; */
+	margin-top: 1em;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+}
+
+.content-slider-nav .content-nav {
+	position: absolute;
+	background: transparent;
+	color: white;
+	min-width: 80px;
+	height: 80px;
+	width: auto;
+}
+
+.content-slider-nav .content-prev-arrow { top: 50%; left: -90px; margin-top: -80px; }
+.content-slider-nav .content-next-arrow { top: 50%; right: -90px; margin-top: -80px; }
+
+/* --| Pseudo Elements */
+.content-slider-nav .content-nav:before {
+	content: "";
+	font-family: 'custom-icons';
+	font-size: 50px;
+	top: 4px;
+	display: block;
+	position: absolute;
+	color: black;
+	-webkit-transition: color .3s; 
+	-moz-transition: color .3s; 
+	-o-transition: color .3s; 
+	transition:  color .3s;
+	left: 50%;
+	margin-left: -25px;
+	background: #e8e8e1;
+}
+
+.content-slider-nav .content-prev-arrow:before { 
+	content: "\E003";
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.content-slider-nav .content-next-arrow:before { 
+	content: "\E002";
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+/* --| Hover States 
+		• No Hover state is set on touch devices
+*/
+.no-touch .content-slider-nav .content-nav:hover { cursor: pointer; }
+.no-touch .content-slider-nav .content-nav:hover:before { color: #ee3124; }
+
+/* ----------------------------------------------------------------------------------------
+ 	RTL
+		- Right to left language support
+		- These styles rely on the HTML element having a class of ".rtl"
+---------------------------------------------------------------------------------------- */
+.rtl .content-slider-nav .content-prev-arrow { top: 50%; right: -100%; left: 90px; }
+.rtl .content-slider-nav .content-next-arrow { top: 50%; left: -100%; right: 90px; }
+
+.rtl .content-slider-nav .content-prev-arrow:before { 
+	content: "\E002";
+	border-radius: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.rtl .content-slider-nav .content-next-arrow:before { 
+	content: "\E003";
+	border-radius: 0;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.rtl .slider li { float: right; }
+
+/* ----------------------------------------------------- 
+   Mobile & Tablet
+----------------------------------------------------- */
+@media only screen and (max-width: 940px) { 
+	
+	/* --| Navigation */
+	.content-slider-nav { bottom: 20px; top: auto; position: relative; }
+	.content-slider-nav .content-prev-arrow { top: 50%; left: 0; margin-top: 0; }
+	.content-slider-nav .content-next-arrow { top: 50%; right: 0; margin-top: 0; }
+
+	/* --| Navigation: RTL */
+	.rtl .content-slider-nav .content-prev-arrow { top: 50%; right: 0; left: inherit; }
+	.rtl .content-slider-nav .content-next-arrow { top: 50%; left: 0; right: inherit; }
+}
+
+
