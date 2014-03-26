@@ -1223,3 +1223,10 @@ function elite_custom_userpoints_list_transactions_alter( &$data ) {
 		}
 	}
 }
+
+/*
+ * hook_user_login to redirect to homepage
+ */
+function elite_custom_user_login(&$edit, $account) {
+  $edit['redirect'] = '<front>';
+}
