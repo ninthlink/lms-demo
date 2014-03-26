@@ -185,6 +185,13 @@ function elite_custom_services_languages_list() {
 	foreach ( $oot as $k => $v ) {
 		if ( isset($v['weight']) ) unset( $oot[$k]['weight'] );
 	}
+	// and then append REGIONS list to it as well for simplifying calls
+	$regions = elite_custom_default_regions_list_verbose();
+	$oot = array(
+		'languages' => $oot,
+		'regions' => $regions,
+	);
+	
 	return $oot;
 }
 /**
