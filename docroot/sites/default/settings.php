@@ -40,6 +40,7 @@ $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
 $conf['cache_default_class'] = 'MemCacheDrupal';
 $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 */
+$conf['userpoints_truncate'] = 100;
 //vde
 $conf['views_data_export_directory'] = 'public://';
 
