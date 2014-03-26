@@ -76,7 +76,7 @@ var utag_data = {
 </script>"
 	);
 
-	watchdog('qe', 'elite_preprocess_page? hdr : <pre>'. print_r($vars['page'],true) .'</pre>');
+	//watchdog('qe', 'elite_preprocess_page? hdr : <pre>'. print_r($vars['page'],true) .'</pre>');
 }
 
 function elite_quiz_admin_summary($variables) {
