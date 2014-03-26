@@ -18,7 +18,8 @@ function elite_validation_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == 'user_register_form') {
 		// move REGION field to account...
 		$form['account']['region'] = $form['field_region'];
-		unset( $form['field_region'] );
+		// unset( $form['field_region'] );
+		$form['field_region']['#access'] = 0;
     // Adding the store id
     $form['account']['store'] = array(
       '#type' => 'textfield',
@@ -34,12 +35,12 @@ function elite_validation_form_alter(&$form, &$form_state, $form_id) {
 
     $form['#submit'][] = 'elite_validation_user_register_submit';
 		
-		watchdog('qe reg', 'form : <pre>'. print_r($form,true) ."</pre>");
+		watchdog('qe reg', 'form : <pre>'. print_r($form,true) ."</pre><br /><br />form_state : <pre>". print_r($form_state,true) ."</pre>");
   }
 }
 
 /**
- * Form alter submit
+ * Form alter validate
  */
 function elite_validation_user_register_validate($form, &$form_state) {
 	// Check the store id against valid database ids
@@ -49,8 +50,14 @@ function elite_validation_user_register_validate($form, &$form_state) {
 	} else {
 		// The store id is valid.
 		// move region back..
+		$preval = $form_state['values'];
+		
 		$form_state['values']['field_region'] = $form_state['values']['region'];
 		unset($form_state['values']['region']);
+		
+		$postval = $form_state['values'];
+		watchdog('qe vchk', 'pre : <pre>'. print_r($preval,true) .'</pre><br /><br />post: <pre>'. print_r($postval,true) .'</pre>');
+		
 		// Check the store's region against the user's region.
 		$user_region = $form_state['values']['field_region'][LANGUAGE_NONE][0]['value'];
 		$store = elite_store_load_store(array('store_id' => $store_id));
@@ -143,4 +150,49 @@ function elite_validation_node_access($node, $op, $account) {
   }
 	*/
   return NODE_ACCESS_IGNORE;
+}
+/*
+ * hook_services_request_preprocess_alter ?
+ */
+function elite_validation_services_request_preprocess_alter($controller, &$args, $options) {
+	$languages = array();
+	$lang = 'LANGUAGEFAIL';
+	switch ( $controller['callback'] ) {
+		case '_user_resource_create':
+			// fix REGION to new flow, if the old is present
+			if ( isset( $args[0]['field_region'] ) ) {
+				if ( isset( $args[0]['field_region'][LANGUAGE_NONE] ) ) {
+					if ( isset( $args[0]['field_region'][LANGUAGE_NONE]['value'] ) ) {
+						if ( !isset ( $args[0]['region'] ) ) {
+							$args[0]['region'] = array();
+						}
+						if ( !isset ( $args[0]['region'][LANGUAGE_NONE] ) ) {
+							$args[0]['region'][LANGUAGE_NONE] = array();
+						}
+						$args[0]['region']['und']['value'] = $args[0]['field_region'][LANGUAGE_NONE]['value'];
+						unset( $args[0]['field_region'] );
+					}
+				}
+			}
+			// fix LANGUAGE to new flow, if the old is present
+			if ( function_exists('language_list') ) {
+				$languages = language_list('enabled');
+				if ( isset( $languages[1] ) ) {
+					if ( count( $languages[1] ) > 0 ) {
+						if ( isset( $args[0]['field_user_language_pref'] ) ) {
+							if ( isset( $args[0]['field_user_language_pref'][LANGUAGE_NONE] ) ) {
+								$lang = $args[0]['field_user_language_pref'][LANGUAGE_NONE];
+								if ( isset( $languages[1][$lang] ) ) {
+									$args[0]['language'] = $lang;
+								} else {
+									$args[0]['language'] = 'en';
+								}
+							}
+						}
+					}
+				}
+			}
+			break;
+	}
+	//watchdog('hook srpa1', 'controller : <pre>'. print_r($controller,true) .'</pre><br /><br />args : <pre>'. print_r($args,true) .'</pre><br /><br />options : <pre>'. print_r($options,true) .'</pre><br /><br />lang = '. $lang .' : languages : <pre>'. print_r($languages,true) .'</pre>');
 }
