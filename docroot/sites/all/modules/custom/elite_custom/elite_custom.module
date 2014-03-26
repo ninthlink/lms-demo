@@ -42,6 +42,7 @@ function elite_custom_form_alter(&$form, &$form_state, $form_id) {
 		$form['actions']['submit']['#value'] = t('Accept & Create New Account');
     $form['#validate'][] = 'elite_custom_validate_user_register';
 		
+		// add LANGUAGE PREFERENCE field to the Registration form to set new user's Language
 		$languages = language_list();
 		$names = array();
 		foreach ($languages as $key => $language) {
@@ -253,6 +254,17 @@ function elite_custom_services_resources() {
 		'access callback' => 'services_access_menu', // allow ALL
 		'callback' => 'elite_custom_services_regions_verbose',
 		'help'   => t('More verbose API list of Regions as options for when Registering new Users'),
+	);
+	
+	$resources['languages']['index'] = array(
+		'file' => array(
+			'type' => 'inc', 
+			'module' => 'elite_custom',
+			'name' => 'elite_custom',
+		),
+		'access callback' => 'services_access_menu', // allow ALL
+		'callback' => 'elite_custom_services_languages_list',
+		'help'   => t('List of enabled Languages on the site'),
 	);
 	
 	$resources['terms']['index'] = array(

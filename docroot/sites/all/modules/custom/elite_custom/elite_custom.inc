@@ -157,6 +157,36 @@ function elite_custom_services_regions() {
 function elite_custom_services_regions_verbose() {
 	return elite_custom_default_regions_list_verbose();
 }
+function _elite_custom_language_list_sort( $a, $b ) {
+	return $a['weight'] - $b['weight'];
+}
+/**
+ * callback for services /languages
+ * 
+ * returns
+ * list of enabled languages
+ */
+function elite_custom_services_languages_list() {
+	$oot = array();
+	if ( function_exists('language_list') ) {
+		$languages = language_list('enabled');
+		if ( isset( $languages[1] ) ) {
+			foreach ( $languages[1] as $l ) {
+				$oot[] = array(
+					'code' => $l->language,
+					'name' => $l->name,
+					'native' => $l->native,
+					'weight' => $l->weight,
+				);
+			}
+			usort( $oot, '_elite_custom_language_list_sort' );
+		}
+	}
+	foreach ( $oot as $k => $v ) {
+		if ( isset($v['weight']) ) unset( $oot[$k]['weight'] );
+	}
+	return $oot;
+}
 /**
  * callback for services /terms
  * 
