@@ -242,7 +242,7 @@ function elite_custom_services_resources() {
 		),
 		'access callback' => 'services_access_menu', // allow ALL
 		'callback' => 'elite_custom_services_regions',
-		'help'   => t('Get list of Regions as options for when Registering new Users'),
+		'help'   => t('DEPRECATED : USE languages INSTEAD... Get list of Regions as options for when Registering new Users'),
 	);
 	
 	$resources['regions_verbose']['index'] = array(
@@ -253,7 +253,7 @@ function elite_custom_services_resources() {
 		),
 		'access callback' => 'services_access_menu', // allow ALL
 		'callback' => 'elite_custom_services_regions_verbose',
-		'help'   => t('More verbose API list of Regions as options for when Registering new Users'),
+		'help'   => t('DEPRECATED : USE languages INSTEAD... More verbose API list of Regions as options for when Registering new Users'),
 	);
 	
 	$resources['languages']['index'] = array(
