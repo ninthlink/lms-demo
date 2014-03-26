@@ -1206,3 +1206,20 @@ function elite_custom_default_regions_list_verbose() {
 	}
 	return $oot;
 }
+/*
+ * hook_userpoints_list_transactions_alter
+ * to remove unwanted columns from /user/#/points via the drupal_alter('userpoints_list_transactions', $output);
+ */
+function elite_custom_userpoints_list_transactions_alter( &$data ) {
+	//watchdog('ecula', 'datas : <pre>'. print_r($data,true) .'</pre>');
+	// remove Status + Actions columns (for now?)
+	$remove = array(3,4);
+	foreach ( $remove as $r ) {
+		unset($data['list']['table']['#header'][$r]);
+	}
+	foreach ( $data['list']['table']['#rows'] as $k => $v ) {
+		foreach ( $remove as $r ) {
+			unset($data['list']['table']['#rows'][$k]['data'][$r]);
+		}
+	}
+}
