@@ -561,6 +561,9 @@ function elite_custom_quiz_finished($quiz, $score, $rid) {
  */
 function elite_custom_userpoints_info() {
   return array(
+    'elite_custom_collect_points' => array(
+      'description callback' => 'elite_custom_userpoints_description_callback',
+    ),
     'elite_custom_quiz_finished' => array(
       'description callback' => 'elite_custom_userpoints_description_callback',
     ),
@@ -584,6 +587,9 @@ function elite_custom_userpoints_description_callback($operation, $entity) {
   }
 
   switch ($operation->operation) {
+    case 'elite_custom_collect_points':
+      return t('Collected points for "%title" Trend', $arguments);
+      break;
     case 'elite_custom_quiz_finished':
       return t('Completed training quiz "%title"', $arguments);
       break;
