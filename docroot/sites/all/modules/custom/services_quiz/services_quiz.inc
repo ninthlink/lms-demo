@@ -31,7 +31,10 @@ function services_quiz_eval_question($data) {
   $question = node_load($question_id);
   if (!isset($_SESSION['quiz_' . $quiz_id])) {
     _quiz_take_quiz_init($quiz);
-  }
+		watchdog('sqeq', 'quiz INIT : <pre>'. print_r($_SESSION['quiz_' . $quiz_id],true) .'</pre>');
+  } else {
+		watchdog('sqeq', 'quiz already started : <pre>'. print_r($_SESSION['quiz_' . $quiz_id],true) .'</pre>');
+	}
   $result_id = $_SESSION['quiz_' . $quiz_id]['result_id'];
 	
 	$quiz_all_questions = quiz_build_question_list($quiz);
