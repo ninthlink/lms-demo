@@ -169,6 +169,13 @@ function elite_content_views_default_views() {
     'article' => 'article',
     'training' => 'training',
   );
+  /* Filter criterion: Content: Язык */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -304,7 +311,7 @@ function elite_content_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'What\'s Hot';
+  $handler->display->display_options['title'] = 'Популярные';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'role';
   $handler->display->display_options['access']['role'] = array(
@@ -420,6 +427,13 @@ function elite_content_views_default_views() {
   $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
   $handler->display->display_options['filters']['field_region_value']['value'] = array(
     'us' => 'us',
+  );
+  /* Filter criterion: Content: Язык */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
 
   /* Display: Block */
@@ -589,7 +603,7 @@ function elite_content_views_default_views() {
   $handler->display->display_options['path'] = 'popular_content';
   $translatables['popular_content'] = array(
     t('Master'),
-    t('What\'s Hot'),
+    t('Популярные'),
     t('more'),
     t('Apply'),
     t('Reset'),
