@@ -33,8 +33,16 @@ function services_quiz_eval_question($data) {
     _quiz_take_quiz_init($quiz);
   }
   $result_id = $_SESSION['quiz_' . $quiz_id]['result_id'];
+	
+	$quiz_all_questions = quiz_build_question_list($quiz);
+	if ( ( count( $_SESSION['quiz_' . $quiz_id]['quiz_questions'] ) == 0 ) && ( count( $_SESSION['quiz_' . $quiz_id]['previous_quiz_questions'] ) == 0 ) ) {
+		// something went wrong??  re-init?
+		$_SESSION['quiz_' . $quiz_id]['quiz_questions'] = $quiz_all_questions;
+	}
+	$_SESSION['quiz_' . $quiz_id]['quiz_questions'][0]['rid'] = $result_id;
+  $_SESSION['quiz_' . $quiz_id]['previous_quiz_questions'][] = $_SESSION['quiz_' . $quiz_id]['quiz_questions'][0];
+	
   $question_array = array_shift($_SESSION['quiz_' . $quiz_id]['quiz_questions']);
-	$question_array['rid'] = $result_id;
 	
 	//$former_question_array = $question_array;
 	//$former_question = node_load($former_question_array['nid'], $former_question_array['vid']);
@@ -53,6 +61,18 @@ function services_quiz_eval_question($data) {
   	quiz_store_question_result($quiz, $result, array('set_msg' => TRUE, 'question_data' => $question_array));
 	}
 	watchdog('sqeq 4', 'quiz : <pre>'. print_r($quiz,true) .'</pre><br /><br />result : <pre>'. print_r($result,true) .'</pre><br /><br />question_data : <pre>'. print_r($question_array,true) .'</pre>');
+	
+	
+	if ($quiz->repeat_until_correct && $result->is_valid === TRUE) {
+		// If the question was answered incorrectly, repeat it
+		if ($result && !$result->is_correct && $result->is_evaluated) {
+			$last_q = array_pop($_SESSION['quiz_' . $quiz_id]['previous_quiz_questions']);
+			array_unshift($_SESSION['quiz_' . $quiz_id]['quiz_questions'], $last_q);
+			//drupal_set_message(t('The answer was incorrect. Please try again.'), 'error');
+			$repeat_until_correct_error = TRUE;
+			unset($_SESSION['quiz_' . $quiz->nid]['feedback']);
+		}
+	}
 	
 	return $result;
 }
