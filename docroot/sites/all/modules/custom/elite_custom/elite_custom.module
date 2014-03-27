@@ -606,10 +606,13 @@ function elite_custom_user_trend_count($uid = -1, $region = false, $fullcount = 
 		$region = elite_custom_user_region();
 	}
 	
+	global $language;
+	
 	$query = new EntityFieldQuery;
 	$query->entityCondition( 'entity_type', 'node' )
 		->entityCondition( 'bundle', 'article' )
 		->propertyCondition( 'status', 1 )
+		->propertyCondition( 'language', $language->language )
 		->fieldCondition( 'field_region', 'value', $region, '=' );
 	
 	$trends = $query->execute();
@@ -648,11 +651,12 @@ function elite_custom_user_training_count($uid = -1, $region = false, $fullcount
 	if ( $region == false ) {
 		$region = elite_custom_user_region();
 	}
-	
+	global $language;
 	// first use EntityReference to get array of published active Trainings in given region...
 	$query = new EntityFieldQuery;
 	$results = $query->entityCondition( 'entity_type', 'node' )
 		->entityCondition( 'bundle', 'training' )
+		->propertyCondition( 'language', $language->language )
 		->propertyCondition( 'status', 1 )
 		->fieldCondition( 'field_region', 'value', $region, '=' )
 		->execute();
@@ -929,7 +933,28 @@ function elite_custom_check_taken_content( $type, $nid, $uid = NULL ) {
 function elite_custom_user_favorites_count() {
 	$flagged = flag_get_user_flags('node');
 	//watchdog('flag count', '<pre>'. print_r($flagged,true) .'</pre>');
-	return isset( $flagged['favorites'] ) ? count( $flagged['favorites'] ) : 0;
+	$count = isset( $flagged['favorites'] ) ? count( $flagged['favorites'] ) : 0;
+	// unfortunately flag_get_user_flags doesnt care about LANGUAGE, so..
+	if ( $count > 0 ) {
+		// create array of just the IDs that have been favorited..
+		$nids = array();
+		foreach ( $flagged['favorites'] as $i => $o ) {
+			$nids[] = $i;
+		}
+		// filter to count those node IDs that match the region + language..
+		global $language;
+		$region = elite_custom_user_region();
+		
+		$query = new EntityFieldQuery;
+		$count = $query->entityCondition( 'entity_type', 'node' )
+			->entityCondition( 'entity_id', $nids, "IN" )
+			->propertyCondition( 'status', 1 )
+			->propertyCondition( 'language', $language->language )
+			->fieldCondition( 'field_region', 'value', $region, '=' )
+			->count()
+			->execute();
+	}
+	return $count;
 }
 /**
  * hook_flag_flag_flag
