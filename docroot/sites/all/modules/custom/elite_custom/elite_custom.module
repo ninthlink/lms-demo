@@ -1,4 +1,4 @@
-<?php
+	<?php
 /**
  * Implements hook_permission() to define some new permissions
  */
@@ -657,6 +657,7 @@ function elite_custom_user_training_count($uid = -1, $region = false, $fullcount
 		->fieldCondition( 'field_region', 'value', $region, '=' )
 		->execute();
 	$total_trainings = count( $results );
+	$taken = 0;
 	if ( $total_trainings ) {
 		$trainings = $results['node'];
 		
@@ -672,18 +673,17 @@ function elite_custom_user_training_count($uid = -1, $region = false, $fullcount
 		foreach ( $trainings as $k => $v ) {
 			$quiz_ids[] = $v->field_training_quiz['und'][0]['target_id'];
 		}
+		
+		$records = db_query('SELECT DISTINCT(nid) FROM {quiz_node_results}
+		WHERE nid IN (:nids)
+			AND uid = :uid
+			AND time_end > 0
+		ORDER BY nid ASC', array(':nids' => $quiz_ids , ':uid' => $uid))->fetchAll();
+	  // count...
+		$taken = count( $records );
+	  
+		//watchdog('training_count8', 'uid '. $uid .' region = '. $region .' : trainings total = '. $total_trainings .' : taken = '. $taken .'<br /><br />quiz results : <pre>'. print_r($records,true) .'</pre><br /><br />from ( quiz ids ) ARR : <pre>'. print_r($quiz_ids,true) .'</pre><br /><br />trainings ARR : <pre>'. print_r($trainings,true) .'</pre><br /><br />fields ARR : <pre>'. print_r($fields,true) .'</pre>');
 	}
-	
-	$records = db_query('SELECT DISTINCT(nid) FROM {quiz_node_results}
-    WHERE nid IN (:nids)
-		AND uid = :uid
-		AND time_end > 0
-    ORDER BY nid ASC', array(':nids' => $quiz_ids , ':uid' => $uid))->fetchAll();
-  // count...
-	$taken = count( $records );
-  
-	//watchdog('training_count8', 'uid '. $uid .' region = '. $region .' : trainings total = '. $total_trainings .' : taken = '. $taken .'<br /><br />quiz results : <pre>'. print_r($records,true) .'</pre><br /><br />from ( quiz ids ) ARR : <pre>'. print_r($quiz_ids,true) .'</pre><br /><br />trainings ARR : <pre>'. print_r($trainings,true) .'</pre><br /><br />fields ARR : <pre>'. print_r($fields,true) .'</pre>');
-	
 	if ( $fullcounts ) {
 		$remaining_trainings  = $total_trainings - $taken;
 		if ( $remaining_trainings < 0 ) $remaining_trainings = 0; // just in case
