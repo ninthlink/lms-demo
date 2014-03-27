@@ -264,6 +264,13 @@ function elite_trainings_views_default_views() {
   $handler->display->display_options['filters']['field_region_value']['value'] = array(
     'us' => 'us',
   );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
 
   /* Display: Block */
   $handler = $view->new_display('block', 'Block', 'block');
