@@ -54,12 +54,16 @@ function services_quiz_eval_question($data) {
 			$question_array = $q;
 		}
 	}
+	
+	watchdog('sqeq 12', 'result_id '. $result_id .' : question_id '. $question_id .' : all questions <pre>'. print_r($quiz_all_questions, true) .'</pre><br /><br />so question_array = <pre>'. print_r($question_array,true) .'</pre>');
+	
 	$result = new stdClass();
 	if ( $question_array === false ) {
 		$result->is_correct = 0;
 		$result->is_valid = t('You must provide an answer');
 	} else {
 		$result = module_invoke('quiz_question', 'evaluate_question', $question, $result_id);
+		watchdog('sqeq 13', 'result: <pre>'. print_r($result,true) .'</pre>');
 		if ( $result->is_valid === TRUE ) {
 			quiz_store_question_result($quiz, $result, array('set_msg' => TRUE, 'question_data' => $question_array));
 		}
