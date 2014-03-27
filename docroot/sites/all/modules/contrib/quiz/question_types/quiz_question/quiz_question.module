@@ -237,15 +237,15 @@ function quiz_question_evaluate_question($question, $result_id, $answer = NULL) 
   }
   unset($_POST['tries']);
   $response = _quiz_question_response_get_instance($result_id, $question, $answer);
-watchdog('qq response get', 'result_id : '. $result_id, ' : question : <pre>'. print_r($question,true) .'</pre><br /><br />answer: <pre>'. print_r($answer,true) .'</pre><br /><br />RESPONSE: <pre>'. print_r($response,true) .'</pre>');
+//watchdog('qq response get', 'result_id : '. $result_id, ' : question : <pre>'. print_r($question,true) .'</pre><br /><br />answer: <pre>'. print_r($answer,true) .'</pre><br /><br />RESPONSE: <pre>'. print_r($response,true) .'</pre>');
   // If a result_id is set, we are taking a quiz.
   if ($result_id && isset($answer)) {
     // We don't know whether or not the user has gone back a question. However,
     // we do know that deleting a question for this result set should be safe in
     // the case where the user has not gone back (since there will be no entries
     // to delete). So we always run the delete.
-    $response->delete();
-    $response->saveResult();
+		if ( method_exists( $response, 'delete' ) ) $response->delete();
+    if ( method_exists( $response, 'saveResult' ) ) $response->saveResult();
   }
 
   // Convert the response to a bare object.
