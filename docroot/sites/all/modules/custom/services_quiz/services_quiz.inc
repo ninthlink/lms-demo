@@ -33,16 +33,24 @@ function services_quiz_eval_question($data) {
     _quiz_take_quiz_init($quiz);
   }
   $result_id = $_SESSION['quiz_' . $quiz_id]['result_id'];
-  $question_array = array_shift($_SESSION['quiz_' . $quiz->nid]['quiz_questions']);
+  $question_array = array_shift($_SESSION['quiz_' . $quiz_id]['quiz_questions']);
+	$question_array['rid'] = $result_id;
+	$former_question_array = $question_array;
+	$former_question = node_load($former_question_array['nid'], $former_question_array['vid']);
 	
-	watchdog('sqeq 2', 'result_id '. $result_id .' : data : <pre>'. print_r($data,true) .'</pre><br /><br />user: <pre>'. print_r($user,true) .'</pre>');
+	watchdog('sqeq 2', 'result_id '. $result_id .'? data : <pre>'. print_r($data,true) .'</pre><br /><br />question: <pre>'. print_r($question,true) .'</pre><br /><br />former_question: <pre>'. print_r($former_question,true) .'</pre><br /><br />user: <pre>'. print_r($user,true) .'</pre>');
 	
-  $result = module_invoke('quiz_question', 'evaluate_question', $question, $result_id, $answer);
+	$types = _quiz_get_question_types();
+	$module = $types[$former_question->type]['module'];
+	
+	watchdog('sqeq 25', 'module '. $module .' =?= quiz_question');
+	
+  $result = module_invoke('quiz_question', 'evaluate_question', $question, $result_id);
 	
 	watchdog('sqeq 3', 'result : <pre>'. print_r($result,true) .'</pre><br /><br />question : <pre>'. print_r($question,true) .'</pre><br /><br />result_id : <pre>'. print_r($result_id,true) .'</pre><br /><br />answer : <pre>'. print_r($answer,true) .'</pre>');
-	
-  quiz_store_question_result($quiz, $result, array('question_data' => $question_array));
-  
+	if ( $result->is_valid === TRUE ) {
+  	quiz_store_question_result($quiz, $result, array('set_msg' => TRUE, 'question_data' => $question_array));
+	}
 	watchdog('sqeq 4', 'quiz : <pre>'. print_r($quiz,true) .'</pre><br /><br />result : <pre>'. print_r($result,true) .'</pre><br /><br />question_data : <pre>'. print_r($question_array,true) .'</pre>');
 	
 	return $result;
