@@ -62,8 +62,15 @@ function services_quiz_eval_question($data) {
 		$result->is_correct = 0;
 		$result->is_valid = t('You must provide an answer');
 	} else {
-		$result = module_invoke('quiz_question', 'evaluate_question', $question, $result_id);
-		watchdog('sqeq 13', 'result: <pre>'. print_r($result,true) .'</pre>');
+		$question_array['rid'] = $result_id;
+		$former_question = node_load($question_array['nid'], $question_array['vid']);
+		$types = _quiz_get_question_types();
+    $module = $types[$former_question->type]['module'];
+		
+		$result = module_invoke($module, 'evaluate_question', $former_question, $result_id, $answer);
+		
+		watchdog('sqeq 13', 'result: <pre>'. print_r($result,true) .'</pre><br /><br />question: <pre>'. print_r($question,true) .'</pre><br /><br />question_array: <pre>'. print_r($question_array,true) .'</pre>');
+		
 		if ( $result->is_valid === TRUE ) {
 			quiz_store_question_result($quiz, $result, array('set_msg' => TRUE, 'question_data' => $question_array));
 		}
