@@ -38,10 +38,34 @@ function services_quiz_eval_question($data) {
   $result_id = $_SESSION['quiz_' . $quiz_id]['result_id'];
 	
 	$quiz_all_questions = quiz_build_question_list($quiz);
-	if ( ( count( $_SESSION['quiz_' . $quiz_id]['quiz_questions'] ) == 0 ) && ( count( $_SESSION['quiz_' . $quiz_id]['previous_quiz_questions'] ) == 0 ) ) {
+	// the way the quiz module handles it with $_POSTs and sessions is willy wonk right now, so..
+	/*
+	if ( count( $_SESSION['quiz_' . $quiz_id]['quiz_questions'] ) + count( $_SESSION['quiz_' . $quiz_id]['previous_quiz_questions'] ) != count( $quiz_all_questions ) ) {
 		// something went wrong??  re-init?
 		$_SESSION['quiz_' . $quiz_id]['quiz_questions'] = $quiz_all_questions;
+		
 	}
+	*/
+	$i = -1;
+	$question_array = false;
+	foreach ( $quiz_all_questions as $k => $q ) {
+		if ( $q['nid'] == $question_id ) {
+			$i = $k;
+			$question_array = $q;
+		}
+	}
+	$result = new stdClass();
+	if ( $question_array === false ) {
+		$result->is_correct = 0;
+		$result->is_valid = t('You must provide an answer');
+	} else {
+		$result = module_invoke('quiz_question', 'evaluate_question', $question, $result_id);
+		if ( $result->is_valid === TRUE ) {
+			quiz_store_question_result($quiz, $result, array('set_msg' => TRUE, 'question_data' => $question_array));
+		}
+	}
+	/*
+	
 	$_SESSION['quiz_' . $quiz_id]['quiz_questions'][0]['rid'] = $result_id;
   $_SESSION['quiz_' . $quiz_id]['previous_quiz_questions'][] = $_SESSION['quiz_' . $quiz_id]['quiz_questions'][0];
 	
@@ -76,7 +100,7 @@ function services_quiz_eval_question($data) {
 			unset($_SESSION['quiz_' . $quiz->nid]['feedback']);
 		}
 	}
-	
+	*/
 	return $result;
 }
 
