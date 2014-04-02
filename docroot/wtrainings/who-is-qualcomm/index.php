@@ -417,7 +417,7 @@ lives everywhere - transforming how we live.</p>
             	<li class="a1"><img src="img/41.jpg" width="320" height="296" alt="" /><span class="c">Knows your location</span></li>
             	<li class="a2"><img src="img/42.jpg" width="320" height="296" alt="" /><span class="c">Senses your motion</span></li>
             	<li class="a3"><img src="img/43.jpg" width="320" height="296" alt="" /><span class="c">Understands your<br />environment</span></li>
-            	<li class="a4"><img src="img/44.jpg" width="320" height="296" alt="" /><span class="c">Recognizes<br />enviornmental<br />sound</span></li>
+            	<li class="a4"><img src="img/44.jpg" width="320" height="296" alt="" /><span class="c">Recognizes<br />environmental<br />sound</span></li>
             </ul>
         </section>
         
