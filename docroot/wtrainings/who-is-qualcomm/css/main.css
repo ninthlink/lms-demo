@@ -702,6 +702,10 @@ h1 {
 	width: 960px;
 	height: 540px;
 }
+#whatname .nameanim {
+	font-size: 2.5em;
+	margin: 4em auto;
+}
 @media only screen and (min-width: 800px) and (max-width: 959px) {
 	/* 720 */
 	#whatname .videohere,

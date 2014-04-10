@@ -65,8 +65,15 @@ $(document).ready(function() {
 		$(this).addClass('fadein l'+ i); //sit
 	});
 	// #3 video
+	var qnameanim = function() {
+		//alert('and then?');
+	}
 	$('#whatname').bind('qinview', function() {
-		sublime.prepare('3eb3c5c9');
+		if ( $(this).find('.videohere').size() > 0 ) {
+			sublime.prepare('3eb3c5c9');
+		} else if ( $(this).find('.nameanim').size() > 0 ) {
+			qnameanim();
+		}
 	});
 	// #10 inventing the future
 	$('#future').find('img').fadeOut();
