@@ -65,14 +65,83 @@ $(document).ready(function() {
 		$(this).addClass('fadein l'+ i); //sit
 	});
 	// #3 video
+	var qnamestep;
+	var qnametimer;
 	var qnameanim = function() {
-		//alert('and then?');
+		clearTimeout(qnametimer);
+		var qw = 200;
+		var qna = $('.nameanim');
+		if ( qnamestep < 0 ) {
+			qnamestep = 0;
+		}
+		switch ( qnamestep ) {
+			case 0:
+				qw = 500;
+				qna.find('span').removeAttr('style').css({'display':'none'});
+				break;
+			case 1:
+				qw = 900;
+				qna.children('.q,.i').css({'opacity':0,'display':'inline-block'}).animate({
+					opacity: 1,
+				}, qw);
+				break;
+			case 2:
+				qw = 500;
+				qna.children('.w').each(function() {
+					$(this).addClass('txtbk').css('display','inline-block').children().css('display','inline-block');
+					var tw = $(this).width();
+					$(this).css('margin-right','-'+tw+'px').animate({
+						'margin-right': 0
+					},qw);
+				});
+				break;
+			case 3:
+				qw = 1000;
+				qna.children('.w').css('color','#fff');
+				break;
+			case 4:
+				qw = 500;
+				qna.find('.u').each(function() {
+					$(this).parent().css('width','auto');
+					var tw = $(this).width();
+					$(this).css({'display':'inline-block','width':tw+'px'}).animate({
+						'width': 0
+					},qw);
+				});
+			case 5:
+				qw = 500;
+				qna.find('.i,.s').each(function() {
+					var tw = $(this).width();
+					$(this).css({'display':'inline-block','width':tw+'px','overflow':'hidden'}).animate({
+						'width': 0
+					},qw);
+				});
+				qna.find('.c').css('text-transform','lowercase');
+				break;
+			case 6:
+				qw = 0;
+				qna.find('.i,.s,.u').removeAttr('style');
+				break;
+		}
+		
+		qnamestep++;
+		if ( qw > 0 ) {
+			qnametimer = setTimeout(qnameanim, qw);
+		}
 	}
-	$('#whatname').bind('qinview', function() {
-		if ( $(this).find('.videohere').size() > 0 ) {
-			sublime.prepare('3eb3c5c9');
-		} else if ( $(this).find('.nameanim').size() > 0 ) {
-			qnameanim();
+	$('#whatname').bind({
+		'qinview': function() {
+			if ( $(this).find('.videohere').size() > 0 ) {
+				sublime.prepare('3eb3c5c9');
+			} else {
+				$(this).trigger('reset');
+			}
+		},
+		'reset': function() {
+			if ( $(this).find('.nameanim').size() > 0 ) {
+				qnamestep = 0;
+				qnameanim();
+			}
 		}
 	});
 	// #10 inventing the future

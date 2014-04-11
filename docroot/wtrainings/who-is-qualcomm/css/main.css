@@ -283,6 +283,7 @@ sup {
 
 /* text colors */
 .txtw { color: #fff; }
+.txtbk { color: #000; }
 .txtb { color: #363636; }
 .txtg { color: #969696; }
 .txtr { color: #d32431; }
@@ -704,7 +705,21 @@ h1 {
 }
 #whatname .nameanim {
 	font-size: 2.5em;
-	margin: 4em auto;
+	line-height: 63px;
+	height: 63px;
+	margin: 3em auto;
+}
+#whatname .nameanim span {
+	display: none;
+	overflow: hidden;
+	line-height: 63px;
+	height: 63px;
+}
+#whatname .nameanim .w {
+	-webkit-transition: color 1s linear;
+	-moz-transition: color 1s linear;
+	-o-transition: color 1s linear;
+	transition: color 1s linear;
 }
 @media only screen and (min-width: 800px) and (max-width: 959px) {
 	/* 720 */
@@ -727,10 +742,14 @@ h1 {
 	#whatname .videohere {
 		margin: 0 -10px;
 	}
+	#whatname .nameanim {
+		font-size: 2em;
+	}
 }
 @media only screen and (min-width: 480px) and (max-width: 599px) {
 	/* 440 */
-	#whatname .text-position h2 {
+	#whatname .text-position h2,
+	#whatname .nameanim {
 		font-size: 1.7em;
 	}
 	#whatname .videohere,
@@ -744,7 +763,8 @@ h1 {
 }
 @media only screen and (max-width: 479px) {
 	/* 300 */
-	#whatname .text-position h2 {
+	#whatname .text-position h2,
+	#whatname .nameanim	{
 		font-size: 1.5em;
 	}
 	#whatname .videohere,

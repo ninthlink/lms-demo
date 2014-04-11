@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Who is Qualcomm?
  */
-$v = '1.1.1';
+$v = '1.1.2';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -74,11 +74,11 @@ $qv = '?v='. $v;
 				</section>
 			
 				<?php // Slide #3 ?>
-				<section id="whatname" class="bg-black block" data-waypoint-offset="50%">
+				<section id="whatname" class="bg-black block comeon" data-waypoint-offset="50%">
 					<div class="inner">
 						<div class="text-position center txtw">
 							<h2><span class="thick">Qualcomm.</span> What’s in the name?</h2>
-							<div class="nameanim"><span class="thick">Quality</span></div>
+							<div class="nameanim thick"><span class="q">Qual</span><span class="i">ity</span><span class="w"><span class="s">&nbsp;</span><span class="c">Comm</span><span class="u">unications</span></span></div>
 						</div>
 
 						<span class="stretch"></span>
