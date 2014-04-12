@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<course name="Selling a 3G Smartphone" right="false" language="en">
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    LANGUAGE SPECIFIC STYLES: Certain language styles that will be appended to the head 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<langstyles name="langstyles">
+		<![CDATA[
+			<style type="text/css">
+			</style>
+		]]>
+	</langstyles>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    CONTAINER: The main text for the interface of the main file 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<container title="Container" name="container">
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text">Selling a 3G Smartphone</course-name>		
+	</container>
+	
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S1p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="title">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Selling a <br class="hide-for-small"/><span class="subheader">3G Smartphone</span>]]></laserbeam>
+	</page>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S2p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="youll-learn">
+		<laserbeam title="Header" field="laserbeam_text">By the end of this module, you'll learn:</laserbeam>
+		<text title="Body" field="body_text"><![CDATA[
+			<li>What is a 3G smartphone?</li>
+			<li>The differences between a 3G smartphone and 2G basic phone</li>
+			<li>Ways to help your customer upgrade to a 3G smartphone</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S3p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="changing-world">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">The world</span> is changing]]></laserbeam>
+		<text title="Body" field="body_text">The Internet has become an indispensable way in which we communicate, work, entertain ourselves and share events.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S4p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="without-mobile">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">World without</span> Mobile]]></laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S5p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="whatis3g">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">What is a</span><br class="hide-for-small"> 3G Smartphone?]]></laserbeam>
+		<text title="Body" field="body_text"><![CDATA[
+			<li>Interactive</li>
+			<li>Engaging</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S6p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="makes-difference">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">3G connectivity</span> makes the difference]]></laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S7p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="cust-communicate">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">How is your customer</span> communicating?]]></laserbeam>
+		<text title="Body" field="body_text">The mobile phone is no longer just a phone—it's a comprehensive communication tool.</text>
+
+		<!-- 1G -->
+		<text field="1g_header"><![CDATA[1G<span>/</span><span>Voice</span>]]></text>
+		<text field="1g_body"><![CDATA[
+			<li>Basic voice service</li>
+			<li>Analog Cellular</li>
+		]]></text>
+
+		<!-- 2G -->
+		<text field="2g_header"><![CDATA[2G<span>/</span><span>Voice + Messaging</span>]]></text>
+		<text field="2g_body"><![CDATA[
+			<li>Designed for voice</li>
+			<li>Digital Cellular</li>
+			<li>Better coverage, capacity</li>
+			<li>Can access 1G networks</li>
+		]]></text>
+
+		<!-- 3G -->
+		<text field="3g_header"><![CDATA[3G<span>/</span><span>Mobile Broadband</span>]]></text>
+		<text field="3g_body"><![CDATA[
+			<li>High-speed mobile data</li>
+			<li>Designed for voice + data</li>
+			<li>Web browsing, video, GPS, location-based services and social sharing.</li>
+			<li>Can access 2G, 1G networks</li>
+		]]></text>
+
+		<!-- 4G -->
+		<text field="4g_header"><![CDATA[4G<span>/</span><span>Advanced Mobile Broadband</span>]]></text>
+		<text field="4g_body"><![CDATA[
+			<li>True mobile broadband</li>
+			<li>Designed for data</li>
+			<li>Faster mobile experiences</li>
+			<li>Web browsing, video, GPS, location-based services and social sharing.</li>
+			<li>Can access 3G, 2G, 1G networks</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S8p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="one-device">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">One device.</span> Many features.]]></laserbeam>
+		<text title="Body" field="body_text">A 3G smartphone can save money by taking the place of many individual devices.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S9p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="daily-life">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">How can a 3G smartphone</span><br/>change daily life?]]></laserbeam>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S10p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="ways-to-use">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[6 ways to use <span class="light">a 3G smartphone</span>]]></laserbeam>
+
+		<!-- Relax -->
+		<text field="relax_header">Relax</text>
+		<text field="relax_body"><![CDATA[
+			<li>Stream radio stations from around the world.</li>
+			<li>Watch video, movies, TV shows</li>
+			<li>Play games</li>
+		]]></text>
+
+		<!-- Socialize -->
+		<text field="social_header">Socialize</text>
+		<text field="social_body"><![CDATA[
+			<li>Stay connected with your friends through social networks</li>
+			<li>Discover new ideas, news and information</li>
+			<li>Express yourself with photos, videos and comments</li>
+		]]></text>
+
+	 	<!-- Learn -->
+		<text field="learn_header">Learn</text>
+		<text field="learn_body"><![CDATA[
+			<li>Access information about news, weather, stocks, sports, and any other interest</li>
+			<li>Educate yourself in your spare time</li>
+		]]></text>
+
+	 	<!-- Shop -->
+		<text field="shop_header">Shop</text>
+		<text field="shop_body"><![CDATA[
+			<li>Browse the Internet to pick a restaurant</li>
+			<li>Save time by getting instant information about products and services</li>
+			<li>Find a good deal or the best price to make a smart purchase decision</li>
+		]]></text>
+
+		<!-- Plan -->
+		<text field="plan_header">Plan and manage</text>
+		<text field="plan_body"><![CDATA[
+			<li>Prepare and organize for the day ahead </li>
+			<li>Access email, calendar, voice calls without being tied to your desk</li>
+			<li>Check the weather, get directions before heading out</li>
+		]]></text>
+
+		<!-- Share -->
+		<text field="share_header">Share</text>
+		<text field="share_body"><![CDATA[
+			<li>Express yourself with photos and videos</li>
+			<li>Share inspirations with friends, even when they can’t be there in person</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S11p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="cool-things">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Some other cool things</span><br class="hide-for-small"/> to do with your smartphone.]]></laserbeam>
+
+		<text field="feat1_text">Check traffic and get directions</text>
+		<text field="feat2_text">Find the name of a song you're hearing</text>
+		<text field="feat3_text">A tape measure in your pocket</text>
+		<text field="feat4_text">Send and receive pictures, audio, notes, and video messages</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S12p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="upgrade">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">How to help your customer</span><br/>upgrade to a 3G smartphone]]></laserbeam>
+
+		<text field="feat1_header">Show them that it is easy to use</text>
+		<text field="feat1_body">Letting them try the device will make them feel confident and ease their worries.</text>
+
+		<text field="feat2_header">Show them the useful new experiences they will get</text>
+		<text field="feat2_body">Show them helpful apps that will provide useful information and entertainment.</text>
+
+		<text field="feat3_header">Show them how affordable they can be.</text>
+		<text field="feat3_body">Show them how they can get a 3G smartphone for about the price of a basic phone.</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S13p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="sales-floor">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">On the</span> sales floor]]></laserbeam>
+		<text title="Subheader" field="sublaser_text">A few ways to let them try the features</text>
+		<text title="Body" field="body_text"><![CDATA[
+			<li>Let them hold and try the device.</li>
+			<li>Map your location.</li>
+			<li>Test a text or email.</li>
+			<li>Show them how to navigate.</li>
+			<li>Take a photo.</li>
+			<li>Show them helpful apps.</li>
+			<li>Watch a video.</li>
+		]]></text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    S14p1
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="objections">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Overcoming</span> Objections]]></laserbeam>
+
+		<text field="quest1_cust">3G devices are too expensive.</text>
+		<text field="quest1_rsa">Show them how there is a wide variety of 3G smartphones, and they can find one to fit their budget.</text>
+
+		<text field="quest2_cust">I like my 2G device.</text>
+		<text field="quest2_rsa">With a 3G connection, you can still get 2G coverage in addition to 3G data capabilities.</text>
+
+		<text field="quest3_cust">My Wi-Fi connection is adequate.</text>
+		<text field="quest3_rsa">3G is kind of like “Wi-Fi everywhere,” meaning it provides Internet access via the same radio towers that provide voice service to your mobile phone. 3G lets you have the freedom to go almost anywhere and still have a connection.  (FYI: 4G is the same thing, just faster.)</text>
+	</page>
+
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Footnotes
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="fnotes">
+		<laserbeam title="Header" field="laserbeam_text">Footnotes</laserbeam>
+
+		<!-- Feature List -->
+		<text field="footnotes_text"><![CDATA[
+        ]]></text>
+
+        <text field="legal_text"><![CDATA[<strong>©2014 Qualcomm Incorporated and/or its subsidiaries.  All Rights Reserved.<br/><br/>References to “Qualcomm” may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.<br/><br/>Qualcomm Incorporated includes Qualcomm’s licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm’s engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.<br/><br/>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</strong>]]></text>
+	</page>
+
+<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    Assessment
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+	<page title="" name="quizsection">
+		<!-- Assessment Menu --> 
+		<text field="assessmentbtn_text"><![CDATA[Proceed to <span class="subheader">Assessment</span>]]></text>
+	</page>
+
+</course>
+

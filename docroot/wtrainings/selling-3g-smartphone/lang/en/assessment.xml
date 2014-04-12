@@ -1,0 +1,67 @@
+<?xml version="1.0"  encoding="utf-8"?>
+<quiz debug="1" rtl_lang="false" random_questions="0"
+	title="Selling a 3G Smartphone" 
+	header="Test Your Knowledge"
+	laser="It is time to test your knowledge with an interactive Assessment. You will need to score 80% or better to successfully complete this course. You may only attempt the Assessment once per day, but you may retake it daily as many times as needed. Click the START button below to begin."	
+	start="Start"
+	submit="Submit"
+	next="Next"
+	page="Page"
+	end_header="Quiz Results" 
+	end_body="If you finished with a score of 80% or better you have successfully completed this course. Great job, and thanks for your time and hard work!" 
+	end_pass="You have finished with a score of 80% or higher and have successfully completed this course. Thanks for your time and hard work!" 
+	end_fail="You have not finished the course because you have a score of less than 80%. You may take the assessment again." 
+	total_correct="Total Correct"
+	total_incorrect="Total Incorrect"
+	total_score="Total Score" >
+
+	<question id="1" q="Which Snapdragon processor would you recommend to a customer that use their device for phone calls, texting, email, maps and web browsing?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Snapdragon 200" answer="1"/>
+		<option key="" value="Snapdragon 400"/>
+		<option key="" value="Snapdragon 600"/>
+		<option key="" value="Snapdragon 800"/>
+	</question>
+
+	<question id="2" q="A Snapdragon 400 processor would be best suited for a customer that uses their devices for experiences like:" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Basic phone calls, texting, email and web browsing" />
+		<option key="" value="Taking photos, watching video, listening to much and information web browsing" answer="1"/>
+		<option key="" value="Rich web interaction, casual gaming and social networking" />
+		<option key="" value="Console style gaming, watching movies and heavy interactive web usage"/>
+	</question>
+
+	<question id="3" q="Which Snapdragon processor would you recommend to a customer that uses their device for social networking, rich web interaction, casual gaming, email, texts and calls?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Snapdragon 200"/>
+		<option key="" value="Snapdragon 400"/>
+		<option key="" value="Snapdragon 600" answer="1"/>
+		<option key="" value="Snapdragon 800"/>
+	</question>
+
+	<question id="4" q="A Snapdragon 800 processor would be best suited for a customer that uses their devices for experiences like" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Basic phone calls, texting, email and web browsing" />
+		<option key="" value="Taking photos, watching video, listening to much and information web browsing" />
+		<option key="" value="Rich web interaction, casual gaming and social networking" />
+		<option key="" value="Console style gaming, watching movies and heavy interactive web usage" answer="1"/>
+	</question>
+
+	<question id="5" q="Select the Snapdragon Processor that is NOT equipped with 4G technology" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Snapdragon 200" answer="1"/>
+		<option key="" value="Snapdragon 400"/>
+		<option key="" value="Snapdragon 600"/>
+		<option key="" value="Snapdragon 800"/>
+	</question>
+
+	<question id="6" q="What is NOT a basic feature you show a Snapdragon 200 Customer?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 
+		<option key="" value="Touch Screen"/>
+		<option key="" value="Texting and conversation history"/>
+		<option key="" value="Shoot DSLR-resolution photos" answer="1"/>
+		<option key="" value="Voice calls"/>
+	</question>
+
+	<question id="7" q="Which Snapdragon Processor would you recommend for customers who want the latest technology?" type="radio" random_answers="0" points="1" image="" option_text="Please select the correct answer." right="That's correct!" wrong="Sorry, that's the wrong answer" > 	
+		<option key="" value="Snapdragon 200"/>
+		<option key="" value="Snapdragon 400"/>
+		<option key="" value="Snapdragon 600"/>
+		<option key="" value="Snapdragon 800" answer="1"/>
+	</question>
+
+</quiz>

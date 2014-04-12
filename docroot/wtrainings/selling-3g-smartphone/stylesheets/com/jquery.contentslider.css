@@ -1,0 +1,194 @@
+/*=========================================================================================
+Author: Tou Lee
+Created: 11/8/13
+Last Updated: 4/3/14 - 3:39pm
+Version: 1.0.3
+
+Changelog v1.0
+ 	- Created the intial slider styles
+
+Changelog v1.0.1
+	- Changed from 940px to 767px in the media query
+
+Changelog v1.0.2
+	- Changed to make selectors .slider more defined, by using child selector ">"
+		• .slider ul --> .slider > ul
+		• .slider li --> .slider > ul > li
+
+Changelog v1.0.3
+	- Created new styles for the .content-slider-indicators
+	- Added IE8 fix for the fading out elements inside the slides
+
+==========================================================================================*/
+
+/* ----------------------------------------------------------------------------------------
+	Slider Wrapper
+		- The wrapper that goes around the resposive content slider
+---------------------------------------------------------------------------------------- */
+.content-slider-wrapper { position: relative; }
+
+/* ----------------------------------------------------------------------------------------
+	Slider 
+		- The core slider wrapper
+		- UL: Holds the slides
+		- LI: The slides that your content resides;
+---------------------------------------------------------------------------------------- */
+.slider {
+	width: inherit;
+	min-height: 300px;
+	height: auto;
+	/*overflow: scroll;*/
+	position: relative;
+	overflow: hidden;
+}
+
+.slider > ul {
+	/*width: 10000px;*/
+	list-style: none;
+	width: auto;
+	margin-left: 0;
+}
+
+.slider > ul:before, .slider > ul:after {
+	content: "."; 
+	display: block; 
+	height: 0; 
+	width: 0; 
+	clear: both; 
+	visibility: hidden;
+	overflow: hidden; 
+}
+
+.slider > ul > li {
+	float: left;
+	width: 100%;
+	padding: 0 20px;
+}
+
+/* ----------------------------------------------------------------------------------------
+	Slider Navigation
+		- The navigation that works in conjunction with the slider.
+		- By default, they reside outside of the slider area
+---------------------------------------------------------------------------------------- */
+.content-slider-nav { 
+	/*display: none; */
+	margin-top: 1em;
+	position: absolute;
+	width: 100%;
+	top: 50%;
+}
+
+.content-slider-nav .content-nav {
+	position: absolute;
+	background: transparent;
+	color: white;
+	min-width: 80px;
+	height: 80px;
+	width: auto;
+}
+
+.content-slider-nav .content-prev-arrow { top: 50%; left: -90px; margin-top: -80px; }
+.content-slider-nav .content-next-arrow { top: 50%; right: -90px; margin-top: -80px; }
+
+/* --| Pseudo Elements */
+.content-slider-nav .content-nav:before {
+	content: "";
+	font-family: 'custom-icons';
+	font-size: 50px;
+	top: 4px;
+	display: block;
+	position: absolute;
+	color: black;
+	-webkit-transition: color .3s; 
+	-moz-transition: color .3s; 
+	-o-transition: color .3s; 
+	transition:  color .3s;
+	left: 50%;
+	margin-left: -25px;
+	background: #e8e8e1;
+}
+
+.content-slider-nav .content-prev-arrow:before { 
+	content: "\E003";
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.content-slider-nav .content-next-arrow:before { 
+	content: "\E002";
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+/* --| Hover States 
+		• No Hover state is set on touch devices
+*/
+.no-touch .content-slider-nav .content-nav:hover { cursor: pointer; }
+.no-touch .content-slider-nav .content-nav:hover:before { color: #ee3124; }
+
+/* ----------------------------------------------------------------------------------------
+	Slider Indicators
+		- Indicators for where the slider is in relation to the slides
+---------------------------------------------------------------------------------------- */
+.content-slider-indicators div.indicator {
+	width: 12px;
+	height: 12px;
+	background: #E0E0E0;
+	border-radius: 12px;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	display: inline-block;
+	margin: 0 5px;
+}
+
+.content-slider-indicators div.indicator:hover { cursor: pointer; }
+.content-slider-indicators div.indicator.active { background: #949494; }
+
+
+/* ----------------------------------------------------------------------------------------
+ 	RTL
+		- Right to left language support
+		- These styles rely on the HTML element having a class of ".rtl"
+---------------------------------------------------------------------------------------- */
+.rtl .content-slider-nav .content-prev-arrow { top: 50%; right: -100%; left: 90px; }
+.rtl .content-slider-nav .content-next-arrow { top: 50%; left: -100%; right: 90px; }
+
+.rtl .content-slider-nav .content-prev-arrow:before { 
+	content: "\E002";
+	border-radius: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.rtl .content-slider-nav .content-next-arrow:before { 
+	content: "\E003";
+	border-radius: 0;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.rtl .slider > ul li { float: right; }
+
+/* ----------------------------------------------------- 
+   Mobile & Tablet
+----------------------------------------------------- */
+@media only screen and (max-width: 767px) { 
+
+	/* --| Slider */
+	.slider { min-height: 0; }
+	
+	/* --| Navigation */
+	.content-slider-nav { bottom: 20px; top: auto; position: relative; }
+	.content-slider-nav .content-prev-arrow { top: 50%; left: 0; margin-top: 0; }
+	.content-slider-nav .content-next-arrow { top: 50%; right: 0; margin-top: 0; }
+
+	/* --| Navigation: RTL */
+	.rtl .content-slider-nav .content-prev-arrow { top: 50%; right: 0; left: inherit; }
+	.rtl .content-slider-nav .content-next-arrow { top: 50%; left: 0; right: inherit; }
+}
+
+/* ----------------------------------------------------- 
+   Internet Explorer 8
+----------------------------------------------------- */
+.slider > ul > li * { opacity: inherit; filter: inherit; }
+

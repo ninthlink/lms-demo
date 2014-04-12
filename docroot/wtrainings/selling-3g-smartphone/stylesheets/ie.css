@@ -1,0 +1,52 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: IE8
+*/
+
+
+/* -----------------------------------------
+   IE8 - Qualcomm Template UI Elements
+----------------------------------------- */
+/* --| Loader */
+div.loader { background: url(../images/ie8/ie8-black-80.png); }
+
+/* --| Button: IE8 */
+.button { background: url(../images/ie8/ie8-black-60.png); }
+.button:hover { background: url(../images/ie8/ie8-black-80.png); }
+
+/* --| Chevron Links: IE8 */
+a.chevron:before, 
+a.chevron.black:before, 
+a.chevron:hover:before { background-image: none; }
+a.chevron,
+h2 a.chevron,
+h3 a.chevron,
+h4 a.chevron,
+h5 a.chevron,
+h6 a.chevron,
+p a.chevron { padding-left: 0; }
+
+/* --| Chevron Button: IE8 */
+.button.chevron:after,
+.button.chevron.secondary:after,
+.button.chevron.alert:after,
+.button.chevron.success:after { background-image: none; }
+
+.button.chevron { padding: 10px 20px 11px; }
+.button.large.chevron { padding: 15px 30px 16px; }
+.button.small.chevron { padding: 7px 14px 8px; }
+.button.tiny.chevron { padding: 5px 10px 6px; }
+
+/* -----------------------------------------
+   IE8 - Quiz
+----------------------------------------- */
+.quiz #options label { display: inline; }
+.quiz #qresult { background: url(../images/ie8/ie8-black-10.png); }
+.quiz #qresult > .arrow-down { display: none; }
+.quiz #endresult .totals > h5 { background: url(../images/ie8/ie8-white-20.png); }
+
+
+
