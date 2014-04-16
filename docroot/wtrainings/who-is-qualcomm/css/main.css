@@ -1273,12 +1273,19 @@ p.disc {
 	/* 300 */
 	#years .slider {
 		width: 270px;
-		height: 325px;
+		height: 360px;
 		margin-top: 25px;
 	}
 	#years ul.slides img {
 		max-width: 270px;
 		height: auto;
+	}
+	#years .text-position h2 .txtbl {
+		display: inline;
+		font-size: 1em;
+		line-height: 1;
+		vertical-align: baseline;
+		top: 0;
 	}
 }
 /* #7 firsts */
@@ -1394,7 +1401,7 @@ p.disc {
 	position: relative;
 	margin: 54px auto 30px;
 	padding: 16px 140px 108px 141px;
-	background: url(../img/bg-leader.png) no-repeat 50% 0;
+	background: url(../img/bg-lead.png) no-repeat 50% 0;
 }
 #leader .text-position .slider ul.dots {
 	bottom: 0;

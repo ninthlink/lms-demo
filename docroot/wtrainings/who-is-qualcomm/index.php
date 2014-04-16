@@ -2,7 +2,7 @@
 /*
  * Qualcomm HTML5 Modules : Who is Qualcomm?
  */
-$v = '1.0.1';
+$v = '1.2.1';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
