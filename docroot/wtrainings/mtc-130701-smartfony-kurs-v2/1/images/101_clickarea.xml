@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+'*	101_clickarea.xml
+'*	Copyright (c) Websoft, 2007.  All rights reserved.
+-->
+<params>
+	<object>
+		<label>Область нажатия</label>
+		<width>200</width>
+		<height>100</height>
+		<description>Прямоугольная область для нажатия мышью с возможностью выделения</description>
+	</object>
+	<page name=" Выделение " w="220" h="180">
+	    <param type="edit" id="hidden.label" text="" def="Область нажатия" x="10" y="-50" w="110" h="13"/>
+		<param type="line" x="8" y="12" w="204" h="22"/>
+		<param type="label" text=" " x="10" y="6" w="5" h="13"/>
+		<param type="check" id="blink" text="Мигание" def="no" x="15" y="6" w="46" h="13">
+			<events>
+				<event name="check" target="lab_timer" action="enable" />
+				<event name="check" target="timer" action="enable" />
+				<event name="check" target="lab_timer2" action="enable" />
+				<event name="uncheck" target="lab_timer" action="disable" />
+				<event name="uncheck" target="timer" action="disable" />
+				<event name="uncheck" target="lab_timer2" action="disable" />
+			</events>
+		</param>
+		<param type="label" id="lab_timer" text="Задержка мигания:" x="15" y="19" w="85" h="13"/>
+		<param type="edit" id="timer" text="" def="0.5" x="100" y="18" w="25" h="13"/>
+		<param type="label" id="lab_timer2" text="сек." x="128" y="19" w="20" h="13"/>
+
+		<param type="label" id="lab_opacity" text="Прозрачность:" x="10" y="42" w="90" h="13"/>
+		<param type="edit" id="opacity" text="" def="40" x="100" y="41" w="20" h="13" />
+		<param type="label" id="lab_opacity2" text="процентов" x="128" y="42" w="60" h="13"/>
+		<param type="label" id="lab_bgcolor" text="Цвет заливки:" x="10" y="58" w="90" h="13"/>
+		<param type="color" id="bgcolor" text="" def="#FF9900" x="100" y="57" w="40" h="13" />
+		<param type="label" id="lab_borderstyle" text="Стиль границы:" x="10" y="74" w="90" h="13"/>
+		<param type="select" id="borderstyle" text="" def="none" x="100" y="73" w="110" h="13">
+			<items>
+				<item id="none" label="Без границы">
+					<events>
+						<event name="selendok" target="lab_bordercolor" action="disable" />
+						<event name="selendok" target="bordercolor" action="disable" />
+						<event name="selendok" target="lab_borderwidth" action="disable" />
+						<event name="selendok" target="borderwidth" action="disable" />
+						<event name="selendok" target="lab_borderwidth2" action="disable" />
+						<event name="selend" target="lab_bordercolor" action="enable" />
+						<event name="selend" target="bordercolor" action="enable" />
+						<event name="selend" target="lab_borderwidth" action="enable" />
+						<event name="selend" target="borderwidth" action="enable" />
+						<event name="selend" target="lab_borderwidth2" action="enable" />
+					</events>
+				</item>
+				<item id="solid" label="Сплошная"/>
+				<item id="double" label="Двойная сплошная"/>
+				<item id="inset" label="Поднимающаяся"/>
+				<item id="outset" label="Опускающаяся"/>
+				<item id="ridge" label="Выпуклая"/>
+				<item id="groove" label="Вдавленная"/>
+				<item id="dashed" label="Пунктирная"/>
+				<item id="dotted" label="Точечная"/>
+			</items>
+		</param>
+		<param type="label" id="lab_bordercolor" text="Цвет границы:" x="10" y="90" w="90" h="13"/>
+		<param type="color" id="bordercolor" text="" def="#CC6600" x="100" y="89" w="40" h="13" />
+		<param type="label" id="lab_borderwidth" text="Толщина границы:" x="10" y="106" w="90" h="13"/>
+		<param type="edit" id="borderwidth" text="" def="2" x="100" y="105" w="18" h="13" />
+		<param type="label" id="lab_borderwidth2" text="пикс." x="120" y="106" w="60" h="13"/>
+		<param type="check" id="preview" text="Предпросмотр выделения" def="no" x="10" y="122" w="100" h="13">
+			<events>
+				<event name="check" target="lab_line_txt" action="enable" />
+				<event name="check" target="lab_txt1" action="enable" />
+				<event name="check" target="lab_txt2" action="enable" />
+				<event name="uncheck" target="lab_line_txt" action="disable" />
+				<event name="uncheck" target="lab_txt1" action="disable" />
+				<event name="uncheck" target="lab_txt2" action="disable" />
+			</events>
+		</param>
+		<param type="line" id="lab_line_txt" x="8" y="138" w="204" h="32"/>
+		<param type="label" id="lab_txt1" text="ВНИМАНИЕ! Выделенная область не прозрачна " x="20" y="145" w="180" h="13"/>
+		<param type="label" id="lab_txt2" text="в процессе предпросмотра в редакторе" x="20" y="155" w="180" h="13"/>
+    </page>
+	<methods>
+		<method name="Constructor" label="_Constructor" access="private">
+            <params>
+            </params>
+            <body>
+			<![CDATA[function Constructor(argobj)
+			{
+				if(argobj.pid==null) return false;
+				var oCurObj = document.getElementById(argobj.pid);
+				if(oCurObj==null) return false;
+				oCurObj.setAttribute("highlighted","0");
+				oCurObj.setAttribute("active","0");
+				if(!g_isMSIE)
+				{
+					var oHighlighted = document.getElementById(argobj.pid + "_HIGHLIGHT");
+					oHighlighted.style.width = oHighlighted.getAttribute("ww3c");
+					oHighlighted.style.height = oHighlighted.getAttribute("hw3c");
+				}
+				return true;
+			}]]>
+            </body>
+        </method>
+		<method name="HighlightOn" label="ВЫДЕЛЕНИЕ ВКЛ." access="public">
+            <params>
+            </params>
+            <body>
+			<![CDATA[function HighlightOn(argobj)
+			{
+				if(argobj.pid==null) return false;
+				var oCurObj = document.getElementById(argobj.pid);
+				if(oCurObj==null) return false;
+				if(oCurObj.style.display=="none" || oCurObj.getAttribute("active")=="1" || oCurObj.getAttribute("highlighted")!="0") return false;
+				oCurObj.setAttribute("active","1");
+				var oParams = g_oParams.selectSingleNode("./param[@objectid='"+argobj.pid+"']");
+				if(oParams==null) return false;
+				var oEmpty = document.getElementById(argobj.pid + "_EMPTYAREA");
+				var oHighlighted = document.getElementById(argobj.pid + "_HIGHLIGHT");
+				if(oEmpty==null || oHighlighted==null) return false;
+				if(oEmpty.style.display!="none")
+				{
+					oEmpty.style.display = "none";
+					oHighlighted.style.display = "block";
+					if(oParams.selectSingleNode("blink").text=="yes")
+					{
+						var sDelay = oParams.selectSingleNode("timer").text;
+						var nDelay = parseFloat(sDelay);
+						if(isNaN(nDelay)) nDelay = 1;
+						TransitionBlink({ targetid: argobj.pid, delay: nDelay });
+					}
+					oCurObj.setAttribute("highlighted","1");
+				}
+				return true;
+			}]]>
+            </body>
+        </method>
+		<method name="HighlightOff" label="ВЫДЕЛЕНИЕ ВЫКЛ." access="public">
+            <params>
+            </params>
+            <body>
+			<![CDATA[function HighlightOff(argobj)
+			{
+				if(argobj.pid==null) return false;
+				var oCurObj = document.getElementById(argobj.pid);
+				if(oCurObj==null) return false;
+				if(oCurObj.style.display=="none") return false;
+				oCurObj.setAttribute("active","0");
+				var oParams = g_oParams.selectSingleNode("./param[@objectid='"+argobj.pid+"']");
+				if(oParams==null) return false;
+				var oEmpty = document.getElementById(argobj.pid + "_EMPTYAREA");
+				var oHighlighted = document.getElementById(argobj.pid + "_HIGHLIGHT");
+				if(oEmpty==null || oHighlighted==null) return false;
+				if(oEmpty.style.display=="none")
+				{
+					oHighlighted.style.display = "none";
+					oEmpty.style.display = "block";
+					oCurObj.setAttribute("highlighted","0");
+					if(oParams.selectSingleNode("blink").text=="yes") ClearTransitionBlink(argobj.pid);
+				}
+				return true;
+			}]]>
+            </body>
+        </method>
+	</methods>
+</params>
