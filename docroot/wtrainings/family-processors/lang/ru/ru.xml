@@ -18,12 +18,17 @@
 			   	a.button.large.chevron.quiz-button { font-size: 1.6em; }
 			   }
 
+				body,
+				.light,
+				.subheader,
+				p, a, li, cite, blockquote { font-family: Arial, Helvetica, sans-serif; }
+
 			   .sales-tip { display: none; }
 			   .subheader { font-weight: bold; }
 			   .tech p { font-size: 0.8em; }
 
 			   /* leadership */
-			   .square-box h1.subheader { font-weight: normal; }
+			   .square-box h1.subheader { font-weight: bold; }
 			   .circles.battery p { font-size: 0.85em; }
 
 			   .legal-footer { display: none; }
@@ -37,14 +42,14 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	<container title="Container" name="container">
 		<!--  Course's Title -->
-		<course-name title="Course Title" field="title_text">Qualcomm® Snapdragon™ Семейство процессоров</course-name>		
+		<course-name title="Course Title" field="title_text">Семейство процессоров Qualcomm Snapdragon</course-name>		
 	</container>
 	
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     S1: Page 1
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 	<page title="" name="s1p1">
-		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Qualcomm® Snapdragon™<br/><span class="subheader">Семейство процессоров</span>]]></laserbeam>
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="subheader">Семейство процессоров</span><br/>Qualcomm Snapdragon]]></laserbeam>
 	</page>
 
 <!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -106,10 +111,10 @@
 
 		<!-- Features -->
 		<text field="tech1_text"><![CDATA[Скорость<br><span>загрузки</span><sup>1</sup>]]></text>
-		<text field="tech2_text"><![CDATA[Производи-<br/>тельность<br><span>DSP</span><sup>2</sup>]]></text>
-		<text field="tech3_text"><![CDATA[<span>Лидирующие позиции</span><br/>с точки зрения энергоэфф-<br/>ективности]]></text>
-		<text field="tech4_text"><![CDATA[Производи-<br/>тельность<br><span>ЦП</span><sup>3</sup>]]></text>
-		<text field="tech5_text"><![CDATA[Производ-<br/>ительность<br><span>ГП4</span><sup>4</sup>]]></text>
+		<text field="tech2_text"><![CDATA[Произво-<br/>дительность<br><span>DSP</span><sup>2</sup>]]></text>
+		<text field="tech3_text"><![CDATA[<span>Лидирующие позиции</span><br/>с точки зрения энергоэф-<br/>фективности]]></text>
+		<text field="tech4_text"><![CDATA[Произво-<br/>дительность<br><span>CPU</span><sup>3</sup>]]></text>
+		<text field="tech5_text"><![CDATA[Произво-<br/>дительность<br><span>GPU</span><sup>4</sup>]]></text>
 	</page>
 
 
@@ -147,8 +152,8 @@
 		<text field="spec1_text"><![CDATA[<strong>HD-ВИДЕО:</strong> 720p HD]]></text>
 		<text field="spec2_text"><![CDATA[<strong>КАМЕРА:</strong> до 8 МП]]></text>
 		<text field="spec3_text"><![CDATA[<strong>АУДИО:</strong> стерео]]></text>
-		<text field="spec4_text"><![CDATA[<strong>ЦП:</strong> четырехъядерный, до 1,4 Гц]]></text>
-		<text field="spec5_text"><![CDATA[<strong>ГП:</strong> Adreno™ 302]]></text>
+		<text field="spec4_text"><![CDATA[<strong>CPU:</strong> четырехъядерный, до 1,4 Гц]]></text>
+		<text field="spec5_text"><![CDATA[<strong>GPU:</strong> Adreno™ 302]]></text>
 		<text field="spec6_text"><![CDATA[<strong>СЕТЬ:</strong> 3G]]></text>
 
 		<text field="footnote_text">Поддерживаемые характеристики могут отличаться в зависимости от устройства и производителя.</text>
@@ -201,8 +206,8 @@
 		<text field="spec1_text"><![CDATA[<strong>HD-ВИДЕО:</strong> до Full HD 1080p]]></text>
 		<text field="spec2_text"><![CDATA[<strong>КАМЕРА:</strong> до 13,5 МП]]></text>
 		<text field="spec3_text"><![CDATA[<strong>АУДИО:</strong> объемный звук в формате 5.1 Surround Sound]]></text>
-		<text field="spec4_text"><![CDATA[<strong>ЦП:</strong> четырехъядерный, до 1,6 Гц]]></text>
-		<text field="spec5_text"><![CDATA[<strong>ГП:</strong> до Adreno 306]]></text>
+		<text field="spec4_text"><![CDATA[<strong>CPU:</strong> четырехъядерный, до 1,6 Гц]]></text>
+		<text field="spec5_text"><![CDATA[<strong>GPU:</strong> до Adreno 306]]></text>
 		<text field="spec6_text"><![CDATA[<strong>СЕТЬ:</strong> 3G и 4G]]></text>
 
 		<text field="footnote_text">Поддерживаемые характеристики могут отличаться в зависимости от устройства и производителя.</text>
@@ -254,8 +259,8 @@
 		<text field="spec1_text"><![CDATA[<strong>HD-ВИДЕО:</strong> до Full HD 1080p]]></text>
 		<text field="spec2_text"><![CDATA[<strong>КАМЕРА:</strong> до 21 МП]]></text>
 		<text field="spec3_text"><![CDATA[<strong>АУДИО:</strong> объемный звук в формате 5.1 Surround Sound]]></text>
-		<text field="spec4_text"><![CDATA[<strong>ЦП:</strong> четырехъядерный, до 1,9 Гц]]></text>
-		<text field="spec5_text"><![CDATA[<strong>ГП:</strong> Adreno 320]]></text>
+		<text field="spec4_text"><![CDATA[<strong>CPU:</strong> четырехъядерный, до 1,9 Гц]]></text>
+		<text field="spec5_text"><![CDATA[<strong>GPU:</strong> Adreno 320]]></text>
 		<text field="spec6_text"><![CDATA[<strong>СЕТЬ:</strong> 3G и 4G]]></text>
 
 		<text field="footnote_text">Поддерживаемые характеристики могут отличаться в зависимости от устройства и производителя.</text>
@@ -290,11 +295,11 @@
 
 		<!-- Feature List -->
 		<text field="features_text"><![CDATA[
-			<li>Превосходная производительность благодаря мощному ЦП до 2,3 Гц</li>
+			<li>Превосходная производительность благодаря мощному центральному процессору до 2,3 Гц</li>
          <li>Съемка и воспроизведение видео в формате Ultra HD 4K</li>
          <li>Съемка фотографий со сверхвысоким разрешением DSLR до 21 МП</li>
          <li>Аудиосистема в формате домашнего кинотеатра 7.1 Surround Sound</li>
-         <li>Невероятная скорость обработки и четкость графики благодаря Adreno 330</li>
+         <li>Невероятная скорость обработки и четкость графики благодаря графическому процессору Adreno 330</li>
 		]]></text>
 	</page>
 
@@ -309,8 +314,8 @@
 		<text field="spec1_text"><![CDATA[<strong>HD-ВИДЕО:</strong> до 4K Ultra HD]]></text>
 		<text field="spec2_text"><![CDATA[<strong>КАМЕРА:</strong> до 21 МП]]></text>
 		<text field="spec3_text"><![CDATA[<strong>АУДИО:</strong> объемный звук в формате 7.1 Surround Sound]]></text>
-		<text field="spec4_text"><![CDATA[<strong>ЦП:</strong> четырехъядерный, до 2,3 Гц]]></text>
-		<text field="spec5_text"><![CDATA[<strong>ГП:</strong> Adreno 330]]></text>
+		<text field="spec4_text"><![CDATA[<strong>CPU:</strong> четырехъядерный, до 2,3 Гц]]></text>
+		<text field="spec5_text"><![CDATA[<strong>GPU:</strong> Adreno 330]]></text>
 		<text field="spec6_text"><![CDATA[<strong>СЕТЬ:</strong> 3G и 4G]]></text>
 
 		<text field="footnote_text">Поддерживаемые характеристики могут отличаться в зависимости от устройства и производителя.</text>
