@@ -36,9 +36,9 @@ if (isset($_GET['q']) && ( ( strpos($_GET['q'], 'admin') === 0) || ( strpos($_GE
 	}
 }
 /* memcache
-*$conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
-*$conf['cache_default_class'] = 'MemCacheDrupal';
-*$conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
+* $conf['cache_backends'][] = './sites/all/modules/contrib/memcache/memcache.inc';
+* $conf['cache_default_class'] = 'MemCacheDrupal';
+* $conf['cache_class_cache_form'] = 'DrupalDatabaseCache';
 */
 $conf['userpoints_truncate'] = 100;
 //vde
@@ -62,7 +62,7 @@ if (file_exists('/var/www/site-php')) {
     'prefix' => '',
   );
   //define('ELITELOCAL', 'http://192.168.0.57/elite/docroot');
-}
+// }
 // t() overrides?
 $conf['locale_custom_strings_en'][''] = array(
     'The e-mail address %mail is not valid.' => 'The e-mail address you provided is not valid.',
