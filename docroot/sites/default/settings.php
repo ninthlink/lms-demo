@@ -64,6 +64,6 @@ if (file_exists('/var/www/site-php')) {
   //define('ELITELOCAL', 'http://192.168.0.57/elite/docroot');
 }
 // t() overrides?
-$conf['locale_custom_strings_en'][''] = array(
-    'The e-mail address %mail is not valid.' => 'The e-mail address you provided is not valid.',
-);
+//$conf['locale_custom_strings_en'][''] = array(
+//    'The e-mail address %mail is not valid.' => 'The e-mail address you provided is not //valid.',
+//);
