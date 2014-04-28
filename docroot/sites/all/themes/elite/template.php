@@ -56,6 +56,7 @@ function elite_preprocess_page( &$vars, $hook ) {
 	  }
 	}
 	$vars['page']['pre_top']['qtealium'] = array(
+		/*
 		'#markup' => "<script type=\"text/javascript\">
 var utag_data = {
   ev : '',
@@ -65,9 +66,8 @@ var utag_data = {
   location : ''
 }
 </script>
-
-
-<script type=\"text/javascript\">
+		*/
+		'#markup' => "<script type=\"text/javascript\">
     (function(a,b,c,d){
     a='//tags.tiqcdn.com/utag/qualcomm/elite-web/". $qenv ."/utag.js';
     b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
