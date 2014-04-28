@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <course name="Selling a 3G Smartphone" right="false" language="en">
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    LANGUAGE SPECIFIC STYLES: Certain language styles that will be appended to the head 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    LANGUAGE SPECIFIC STYLES: 
+    	• Certain language styles that will be appended to the head 
+————————————————————————————————————————————————————–––––––––– -->
 	<langstyles name="langstyles">
 		<![CDATA[
 			<style type="text/css">
@@ -11,24 +12,24 @@
 		]]>
 	</langstyles>
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     CONTAINER: The main text for the interface of the main file 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<container title="Container" name="container">
 		<!--  Course's Title -->
 		<course-name title="Course Title" field="title_text">Selling a 3G Smartphone</course-name>		
 	</container>
 	
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S1p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="title">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Selling a <br class="hide-for-small"/><span class="subheader">3G Smartphone</span>]]></laserbeam>
 	</page>
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S2p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="youll-learn">
 		<laserbeam title="Header" field="laserbeam_text">By the end of this module, you'll learn:</laserbeam>
 		<text title="Body" field="body_text"><![CDATA[
@@ -39,26 +40,26 @@
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S3p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="changing-world">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">The world</span> is changing]]></laserbeam>
 		<text title="Body" field="body_text">The Internet has become an indispensable way in which we communicate, work, entertain ourselves and share events.</text>
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S4p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="without-mobile">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">World without</span> Mobile]]></laserbeam>
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S5p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="whatis3g">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">What is a</span><br class="hide-for-small"> 3G Smartphone?]]></laserbeam>
 		<text title="Body" field="body_text"><![CDATA[
@@ -68,17 +69,17 @@
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S6p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="makes-difference">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">3G connectivity</span> makes the difference]]></laserbeam>
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S7p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="cust-communicate">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">How is your customer</span> communicating?]]></laserbeam>
 		<text title="Body" field="body_text">The mobile phone is no longer just a phone—it's a comprehensive communication tool.</text>
@@ -120,26 +121,26 @@
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S8p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="one-device">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">One device.</span> Many features.]]></laserbeam>
 		<text title="Body" field="body_text">A 3G smartphone can save money by taking the place of many individual devices.</text>
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S9p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="daily-life">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">How can a 3G smartphone</span><br/>change daily life?]]></laserbeam>
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S10p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="ways-to-use">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[6 ways to use <span class="light">a 3G smartphone</span>]]></laserbeam>
 
@@ -191,9 +192,9 @@
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S11p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="cool-things">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Some other cool things</span><br class="hide-for-small"/> to do with your smartphone.]]></laserbeam>
 
@@ -204,9 +205,9 @@
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S12p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="upgrade">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">How to help your customer</span><br/>upgrade to a 3G smartphone]]></laserbeam>
 
@@ -221,9 +222,24 @@
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S12-5p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="data-plan">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Add a</span> 3G data plan]]></laserbeam>
+		<text title="Body" field="body_text">A 3G data plan makes a smartphone, well smart. If your customer has concerns, remind them that:</text>
+
+		<text title="" field="features_text"><![CDATA[
+			<li>A 3G data plan often costs the same as a 2G plan<sup>1</sup>.</li>
+			<li>Apps and settings can help track, monitor data</li>
+			<li>Use Wi-Fi at home and 3G on-the-go for convenient connectivity options.</li>
+		]]></text>
+		
+	</page>
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S13p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="sales-floor">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">On the</span> sales floor]]></laserbeam>
 		<text title="Subheader" field="sublaser_text">A few ways to let them try the features</text>
@@ -239,9 +255,9 @@
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     S14p1
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="objections">
 		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Overcoming</span> Objections]]></laserbeam>
 
@@ -256,22 +272,23 @@
 	</page>
 
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     Footnotes
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="fnotes">
 		<laserbeam title="Header" field="laserbeam_text">Footnotes</laserbeam>
 
 		<!-- Feature List -->
 		<text field="footnotes_text"><![CDATA[
+			<li><span>1.</span>Per MTN, Global pricing, April 2014</li>
         ]]></text>
 
         <text field="legal_text"><![CDATA[<strong>©2014 Qualcomm Incorporated and/or its subsidiaries.  All Rights Reserved.<br/><br/>References to “Qualcomm” may mean Qualcomm Incorporated, Qualcomm Technologies, Inc. or subsidiaries or business units within the Qualcomm corporate structure, as applicable.<br/><br/>Qualcomm Incorporated includes Qualcomm’s licensing business, QTL, and the vast majority of its patent portfolio. Qualcomm Technologies, Inc., a wholly-owned subsidiary of Qualcomm Incorporated, operates, along with its subsidiaries, substantially all of Qualcomm’s engineering, research and development functions, and substantially all of its products and services businesses, including its semiconductor business, QCT.<br/><br/>Nothing in these materials is an offer to sell any of the components or devices referenced herein.</strong>]]></text>
 	</page>
 
-<!--///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
     Assessment
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+————————————————————————————————————————————————————–––––––––– -->
 	<page title="" name="quizsection">
 		<!-- Assessment Menu --> 
 		<text field="assessmentbtn_text"><![CDATA[Proceed to <span class="subheader">Assessment</span>]]></text>

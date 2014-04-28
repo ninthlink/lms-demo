@@ -586,6 +586,93 @@ div.dashed-line:before {
 .lt-ie9 .s12p1 img { visibility: visible; }
 
 /* -----------------------------------------
+   Section 12-5 - 3G Data Plan
+----------------------------------------- */
+#data-plan hr { border-color: #D6D6D6; }
+
+div.cube-container {
+	max-width: 569px;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	/*background: lightgrey;*/
+}
+
+div.cube-images {
+	position: relative;
+	max-width: 354px;
+	width: 100%;
+	top: 135px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+}
+
+img.cube {
+	position: relative;
+	max-width: 306px;
+	width: 100%;
+	z-index: 5;
+	left: 50%;
+	top: 10px;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+
+}
+
+img.cube-shadow {
+	position: relative;
+	max-width: 306px;
+	width: 100%;
+	top: -195px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+}
+
+div.cicons {
+	max-width: 354px;
+	width: 100%;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+}
+
+div.cicons > img.cube-icons {
+	max-width: 100px;
+	width: 100%;
+	position: absolute;
+}
+
+div.cicons > img.cube-icon1 { top: 55px; left: 0px; }
+div.cicons > img.cube-icon2 { 
+	top: 0%; 
+	left: 50%; 
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+	-moz-transform: translate(-50%, 0);
+	-ms-transform: translate(-50%, 0);
+}
+
+div.cicons > img.cube-icon3 { top: 55px; right: 0px; }
+div.cube-container img { visibility: hidden; opacity: 1; }
+
+/* IE8 */
+.lt-ie9 img.cube,
+.lt-ie9 img.cube-shadow { margin-left: -153px; width: 306px; }
+.lt-ie9 img.cube-shadow { margin-left: -312px; top: 30px; }
+.lt-ie9 div.cube-images { margin-left: -177px; }
+.lt-ie9 div.cicons > img.cube-icons { width: 100px; }
+.lt-ie9 div.cicons > img.cube-icon2 { margin-left: -50px; }
+.lt-ie9 div.cube-container img { visibility: visible; }
+
+/* -----------------------------------------
    Section 13
 ----------------------------------------- */
 #section13 { padding-top: 0; padding-bottom: 0; }
@@ -899,6 +986,15 @@ p.legal-footer { font-size: 0.8em; }
 	}
 	.s12p1 .upgrades .three.columns:first-child { margin-top: 0; }
 
+	/* -----------------------------------------
+	   Section 12-5 - 3G Data Plan
+	----------------------------------------- */
+	div.cube-container { margin-top: 15px; }
+	div.cicons > img.cube-icons { width: 33%; }
+	img.cube-shadow, img.cube { max-width: 250px; }
+	img.cube-shadow { top: -158px; }
+	div.cicons > img.cube-icon1,
+	div.cicons > img.cube-icon3 { top: 65px; }
 
 	/* -----------------------------------------
 	   Section 13

@@ -18,7 +18,8 @@ Changelog v1.0.0
 			isMobile = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i),
 			isMobileScreen = Modernizr.mq('screen and (max-width: 767px)'),
 			isIE8under = ($('html').hasClass('lt-ie9') || document.documentMode <= 8) ? true : false,
-			animcounter;
+			animcounter,
+			animelem;
 
 	$(document).ready(function() {
 		/* ----------------------------------------------------------------
@@ -76,7 +77,9 @@ Changelog v1.0.0
 
 		$.subscribe('qualcommreveal/reveal-start', function(event, elem, counter) {
 			animcounter = counter;
-			console.log(animcounter);
+			animelem = elem;
+			//console.log(animcounter);
+			//console.log(animelem);
 		});
 
 		$.subscribe('qualcommreveal/reveal-finish', function(event, elem, counter) { 
@@ -123,7 +126,7 @@ Changelog v1.0.0
 			Section 2: By the end of this module
 		---------------------------------------------------------------- */
 		$('#section2 .light-bulb').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animcounter === 1) {
+			if(isInView && !isIE8under && animelem.is('#section2') ) {
 				if(visiblePartY == 'both' || visiblePartY == 'top') {
 					var $this = $(this),
 							$propeller = $this.find('.propeller');
@@ -148,7 +151,7 @@ Changelog v1.0.0
 				- IE8 also
 		---------------------------------------------------------------- */
 		$('#section3 .worldchange-container').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && animcounter === 2) {
+			if(isInView && animelem.is('#section3')) {
 				if(visiblePartY == 'both' || visiblePartY == 'top') {
 					var $this = $(this);
 					$this.off('inview');
@@ -165,7 +168,7 @@ Changelog v1.0.0
 			Section 5: What is a 3G Smartphone
 		---------------------------------------------------------------- */
 		$('#section5 img.speedometer').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animcounter === 4) {
+			if(isInView && !isIE8under && animelem.is('#section5')) {
 				if(visiblePartY == 'both' || visiblePartY == 'bottom') {
 					var $this = $(this);
 					$this.off('inview');
@@ -183,7 +186,7 @@ Changelog v1.0.0
 			Section 6: 3G Connectivity
 		---------------------------------------------------------------- */
 		$('#section6 .phones2g-container').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animcounter === 5) {
+			if(isInView && !isIE8under && animelem.is('#section6')) {
 				if(visiblePartY == 'both' || visiblePartY == 'top') {
 					var $this = $(this);
 					$this.off('inview');
@@ -215,7 +218,7 @@ Changelog v1.0.0
 			var $this = $(this);
 
 			$this.find('div.icons').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if(isInView && !isIE8under && animcounter === 6) {
+				if(isInView && !isIE8under && animelem.is('#section7')) {
 					if(visiblePartY == 'both' || visiblePartY == 'top') {
 						var $inthis = $(this);
 						$inthis.off('inview');
@@ -237,7 +240,7 @@ Changelog v1.0.0
 			Section 8: One Device. Many Features
 		---------------------------------------------------------------- */
 		$('#section8 h1.subheader + p').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animcounter === 7) {
+			if(isInView && !isIE8under && animelem.is('#section8')) {
 				if(visiblePartY == 'both' || visiblePartY == 'bottom') {
 					var $this = $(this);
 					$this.off('inview');
@@ -266,7 +269,7 @@ Changelog v1.0.0
 			var $this = $(this);
 
 			$this.siblings('img').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if(isInView && animcounter === 10) {
+				if(isInView && animelem.is('#section11')) {
 					if(visiblePartY == 'both' || visiblePartY == 'top') {
 						var $inthis = $(this);
 						$inthis.off('inview');
@@ -287,7 +290,7 @@ Changelog v1.0.0
 			var $this = $(this);
 
 			$this.on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if(isInView && !isIE8under && animcounter === 11) {
+				if(isInView && !isIE8under && animelem.is('#section12')) {
 					if(visiblePartY == 'both') {
 						$this.off('inview');
 
@@ -301,22 +304,24 @@ Changelog v1.0.0
 
 
 		/* ----------------------------------------------------------------
-			Section 13: On the Sales Floor
+			Section 12-5: 3G Data Plan
 		---------------------------------------------------------------- */
-		/*
-		$('#section13').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under) {
-				if(visiblePartY == 'both' || visiblePartY == 'top' && animcounter === 12) {
+		$('#data-plan img.cube').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
+			if(isInView && !isIE8under && animelem.is('#data-plan')) {
+				if(visiblePartY == 'both' || visiblePartY == 'top') {
 					var $this = $(this);
 					$this.off('inview');
 
-					console.log('SECTION 13 triggered');
+					var tl = new TimelineMax();
+					tl.from($this, 0.5, { css: { autoAlpha: 0} })
+					  .from($this, 0.5, { css: { top: '-40px' }, ease: 'Bounce.easeOut' }, '-=0.1')
+					  .from($this.siblings('img.cube-shadow'), 1, { css: { autoAlpha: 0, scale: 0.5 }, ease: 'Bounce.easeOut' }, '-=0.8')
+					  .staggerFrom($('img.cube-icons'), 0.5, { css: { autoAlpha: 0, y: '50px' }}, 0.5);
 
-					TweenMax.staggerFrom($this.find('div.dots img'), 0.7, { css: { autoAlpha: 0, scale: 0.5, rotation: 360 }}, 0.5);
+					console.log('SECTION 12-5 triggered');
 				}
 			}
 		});
-		*/
 		
 
 		/* ----------------------------------------------------------------
@@ -326,7 +331,7 @@ Changelog v1.0.0
 			var $this = $(this);
 
 			$this.on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if(isInView && animcounter === 13) {
+				if(isInView && animelem.is('#section14')) {
 					if(visiblePartY == 'both' || visiblePartY == 'top') {
 						var $cust = $this.siblings('div.customer');
 							 $rsa  = $this;
