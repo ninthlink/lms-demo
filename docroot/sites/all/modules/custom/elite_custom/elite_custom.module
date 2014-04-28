@@ -438,11 +438,11 @@ function elite_custom_views_pre_view(&$view) {
 		$dis = array();
 		foreach ( $view->display as $k => $v ) {
 			$dis[] = $k;
-			/*
+			
 			$view->display[$k]->handler->options['filters']['field_region_value']['value'] = array(
 				$region => $region
 			);
-			*/
+			
 		}
 		watchdog('elite pre view', 'user region = '. $region .' : view = '. $view->name .' : displays = <pre>'. print_r($dis,true) .'</pre>');
 	}
