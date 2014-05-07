@@ -43,9 +43,11 @@
  *
  * @ingroup themeable
  */
+ 
+
 $vid = $vmp4 = $vwebm = '';
 $showvid = false;
-if ( in_array($element['#object']->type, array('article','training') ) ) {
+if ( in_array($element['#object']->type, array('article','training','tool') ) ) {
 	if ( is_array( $element['#object']->field_video_url ) ) {
 		if ( isset( $element['#object']->field_video_url['und'] ) ) {
 			if ( $element['#object']->field_video_url['und'][0]['url'] != '' ) {
@@ -76,6 +78,13 @@ if ( in_array($element['#object']->type, array('article','training') ) ) {
 		$vid = ''; // use html5 instead
 		$showvid = true;
 		drupal_add_js('//cdn.sublimevideo.net/js/brxysbmu.js', 'external');
+	}
+	
+	if ( $element['#object']->type == 'tool' ) {
+		// field_image can be MULTIPLE images, so grab the 1st one as the top left image, and the rest (or video) in gallery form..
+		$firstimage = array_shift( $items );
+		$firstattr = array_shift( $item_attributes );
+		print '<div class="field-item tool-mainimg" '. $firstattr .'>'. render($firstimage) .'</div>';
 	}
 }
 if ( $showvid ) {

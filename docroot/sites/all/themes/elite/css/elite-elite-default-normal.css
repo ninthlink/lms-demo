@@ -50,6 +50,15 @@
 	margin-right: 20px;
 }
 
+a.bigBtn,
+span.bigBtn {
+	width: 90%;
+	margin-right: 0;
+}
+
+.node-type-tool .container-12 .grid-9.region-content { width: 100% }
+.node-type-tool .container-12 .grid-3.region-sidebar-second { display: none }
+
 /* vive / padding grid fix? */
 body.context-vive .field-name-title-field {
 	height: 398px;

@@ -1,5 +1,19 @@
 /* This file will hold styles that are loaded using the same media query as the wide grid. */
 
+body.page-node.node-type-training #zone-content,
+body.page-node.node-type-quiz #zone-content,
+body.page-node.node-type-article #zone-content,
+body.page-node.node-type-tool #zone-content {
+  background: #fff url(../images/bg-twocol.gif) repeat-y 100% 0;
+  background-size: 100%;
+}
+body.page-node.node-type-tool #zone-content {
+	background-color: #f8f8f8;
+}
+
+.node-type-tool .container-12 .grid-9.region-content { width: 75% }
+.node-type-tool .container-12 .grid-3.region-sidebar-second { display: inline; width: 25% }
+
 /* vive / padding grid fix? */
 body.context-vive .field-name-title-field {
 	height: 531px;
