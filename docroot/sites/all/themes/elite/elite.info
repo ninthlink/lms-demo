@@ -81,6 +81,13 @@ stylesheets[all and (max-width: 320px)][] = css/elite-elite-default-narrow.css
 stylesheets[all][] = css/elite-elite-default-narrow.css
 stylesheets[all and (min-width: 320px)][] = css/grid/elite/narrow/elite-default-narrow-12.css
 
+; WHITELABEL STYLES
+
+css[whitelabel.css][name] = Whitelabel specific styles
+css[whitelabel.css][description] = This file holds whitelabel override styles.
+css[whitelabel.css][path] = whitelabel/css
+css[whitelabel.css][options][weight] = 12
+
 ; JS FILES
 
 scripts[] = js/elite.js

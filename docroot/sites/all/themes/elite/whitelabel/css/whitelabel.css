@@ -1,0 +1,148 @@
+body {
+  background-color: #e30613;
+}
+
+/*
+** Header
+*/
+.branding-data {
+  padding-top: 7px;
+}
+
+/*
+** Menu
+*/
+#block-system-main-menu {
+  float: right;
+  margin-right: 25px;
+}
+
+/*
+** Home Slides
+*/
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a,
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a {
+  background: #eb1b24;
+  background: -moz-linear-gradient(top,  #eb1b24 0%, #bd1319 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eb1b24), color-stop(100%,#bd1319));
+  background: -webkit-linear-gradient(top,  #eb1b24 0%,#bd1319 100%);
+  background: -o-linear-gradient(top,  #eb1b24 0%,#bd1319 100%);
+  background: -ms-linear-gradient(top,  #eb1b24 0%,#bd1319 100%);
+  background: linear-gradient(to bottom,  #eb1b24 0%,#bd1319 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb1b24', endColorstr='#bd1319',GradientType=0 );
+
+  border-color: #f26268;
+  -webkit-box-shadow: 0 5px 0 0 #72030a;
+  box-shadow: 0 5px 0 0 #72030a;
+  color: #fff;
+}
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover,
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover {
+  background: #eb1b24;
+}
+
+/*
+** Trainings
+*/
+.view-trainings .taken .views-field-field-base-points span.chk,
+.view-trends .taken .views-field-field-base-points span.chk,
+.view-store .taken .views-field-commerce-price span.chk,
+.view-popular-content .taken .views-field-field-base-points span.chk {
+  background: url(../images/taken.png) no-repeat 0 0;
+}
+.view-store .views-field-add-to-cart-form .form-submit {
+  color: #e30613;
+}
+.view-trainings .view-footer article.node-poll {
+  background: #58595b;
+}
+.view-trainings .view-footer article.node-poll .field-name-field-base-points {
+  background: #8d8e8f;
+}
+
+/*
+** Homepage blocks
+*/
+.block.block-tips {
+  background: #497faa url(../images/tips-block-bg.jpg) no-repeat 0 0;
+}
+.block.block-store,
+.block.block-app {
+  background: #000000 url(../images/app-block-bg.png) no-repeat 320px bottom;
+}
+.block.block-tips .more-link a,
+.block.block-store .more-link a,
+.block.block-app .more-link a {
+  background: transparent url(../images/transparent-white-bg.png) repeat 0 0;
+}
+@media only screen and (max-width: 767px) {
+  /* The following styles are not overrides of global.css.  They're copied directly from
+     global.css and are only necessary to reset the override styles above. */
+  .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a,
+  .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button  a {
+    background: url(../images/fx.gif) repeat 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover,
+  .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button  a:hover{
+    background: url(../images/fx.gif) repeat 0 0;
+  }
+}
+
+/*
+** Generic Page
+*/
+.section-title {
+  background: #eb1b24;
+  background: -moz-linear-gradient(left,  #eb1b24 0%, #bd1319 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#eb1b24), color-stop(100%,#bd1319));
+  background: -webkit-linear-gradient(left,  #eb1b24 0%,#bd1319 100%);
+  background: -o-linear-gradient(left,  #eb1b24 0%,#bd1319 100%);
+  background: -ms-linear-gradient(left,  #eb1b24 0%,#bd1319 100%);
+  background: linear-gradient(to right,  #eb1b24 0%,#bd1319 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb1b24', endColorstr='#bd1319',GradientType=1 );
+}
+#block-menu-menu-about-section-menu ul.menu li a {
+  color: #e30613;
+}
+
+/*
+** User Login
+*/
+.not-logged-in #zone-branding,
+.not-logged-in.page-user #zone-content {
+  background: none;
+}
+.not-logged-in.page-user #block-system-main {
+  background: #a4040e;
+}
+.not-logged-in.page-user .form-submit {
+  background: #eb1b24;
+  background: -moz-linear-gradient(top,  #eb1b24 0%, #bd1319 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eb1b24), color-stop(100%,#bd1319));
+  background: -webkit-linear-gradient(top,  #eb1b24 0%,#bd1319 100%);
+  background: -o-linear-gradient(top,  #eb1b24 0%,#bd1319 100%);
+  background: -ms-linear-gradient(top,  #eb1b24 0%,#bd1319 100%);
+  background: linear-gradient(to bottom,  #eb1b24 0%,#bd1319 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eb1b24', endColorstr='#bd1319',GradientType=0 );
+
+  border-color: #f26268;
+  -webkit-box-shadow: 0 5px 0 0 #72030a;
+  box-shadow: 0 5px 0 0 #72030a;
+}
+
+/*
+** Profile
+*/
+#elite-user-block-wrapper,
+#elite-user-flop {
+  background-image: url(../images/right-node-userimg-bg-full.jpg);
+}
+#block-elite-custom-avatar-block .points-wrapper,
+#elite-user-block-wrapper .points-wrapper,
+#elite-user-flop .points-wrapper,
+#elite-user-flop ul.usermenu li a:hover,
+#elite-user-flop ul.usermenu li a .count {
+  color: #e30613;
+}
