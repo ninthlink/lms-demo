@@ -1,6 +1,4 @@
-/* This file will hold styles that are loaded using the same media query as the normal grid. */
-/* If you are using the default media queries provided by Omega, these styles will also
- *  apply to the widescreen layout unless they are overridden by the widescreen styles. */
+/* CSS for max-width 770px? */
 .responsive-layout-normal .view-trainings .views-column,
 .responsive-layout-normal .view-trends .views-column {
   min-height: 234px;
@@ -56,9 +54,25 @@ span.bigBtn {
 	margin-right: 0;
 }
 
-.node-type-tool .container-12 .grid-9.region-content { width: 100% }
-.node-type-tool .container-12 .grid-3.region-sidebar-second { display: none }
-
+.node-type-tool .container-12 .grid-9.region-content {
+	width: 100%
+}
+.node-type-tool .container-12 .grid-3.region-sidebar-second {
+	display: none
+}
+.node-tool .field-name-field-external-link {
+	float: left
+}
+.node-tool .field-name-body {
+	padding: 1em 2em;
+}
+.node-tool .flag-outer-favorites {
+	margin-right: 2em
+}
+.node-tool .field-name-field-image,
+.node-tool .field-name-field-image img {
+	height: 432px;
+}
 /* vive / padding grid fix? */
 body.context-vive .field-name-title-field {
 	height: 398px;

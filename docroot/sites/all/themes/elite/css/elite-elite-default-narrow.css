@@ -1,7 +1,4 @@
-/* This file will hold styles that are loaded using the same media query as the narrow grid. */
-/* If you are using the default media queries provided by Omega, these styles will also
- *  apply to the normal and widescreen layouts. You may override these styles in the normal
- *  and widescreen CSS files as appropriate. */
+/* CSS for max-width = 320px? */
 .not-logged-in.page-user.responsive-layout-narrow #zone-content {
   padding: 20px 0;
   min-height: 0;
@@ -35,7 +32,7 @@ span.bigBtn {
 	margin: 0 35px 35px;
 }
 .node-tool h1 {
-	margin: 1em 0.5em 0;
+	margin: 0.5em 0.5em 0;
 }
 .node-tool .field-name-field-company {
 	margin: 0 1em 1em;
@@ -46,7 +43,10 @@ span.bigBtn {
 .node-tool .field-name-body {
 	padding: 1em;
 }
-
+.node-tool .tool-mainimg {
+	width: 100%;
+	margin: 0;
+}
 .node-tool .field-name-field-rating {
 	margin-left: 1em;
 }
