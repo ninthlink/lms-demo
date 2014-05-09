@@ -57,6 +57,13 @@ function elite_tools_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Show Details */
+  $handler->display->display_options['fields']['field_details']['id'] = 'field_details';
+  $handler->display->display_options['fields']['field_details']['table'] = 'field_data_field_details';
+  $handler->display->display_options['fields']['field_details']['field'] = 'field_details';
+  $handler->display->display_options['fields']['field_details']['label'] = '';
+  $handler->display->display_options['fields']['field_details']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_details']['element_label_colon'] = FALSE;
   /* Field: Field: Main Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
@@ -176,6 +183,17 @@ function elite_tools_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Show Details */
+  $handler->display->display_options['fields']['field_details']['id'] = 'field_details';
+  $handler->display->display_options['fields']['field_details']['table'] = 'field_data_field_details';
+  $handler->display->display_options['fields']['field_details']['field'] = 'field_details';
+  $handler->display->display_options['fields']['field_details']['label'] = '';
+  $handler->display->display_options['fields']['field_details']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_details']['type'] = 'list_key';
+  $handler->display->display_options['fields']['field_details']['settings'] = array(
+    'skip_safe' => 1,
+    'skip_empty_values' => 0,
+  );
   /* Field: Field: Main Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
