@@ -71,7 +71,7 @@ function elite_trends_views_default_views() {
   $handler->display->display_options['relationships']['field_training_quiz_target_id']['table'] = 'field_data_field_training_quiz';
   $handler->display->display_options['relationships']['field_training_quiz_target_id']['field'] = 'field_training_quiz_target_id';
   $handler->display->display_options['relationships']['field_training_quiz_target_id']['label'] = 'quiz';
-  /* Field: Field: Product Image */
+  /* Field: Field: Main Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
@@ -209,7 +209,7 @@ function elite_trends_views_default_views() {
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['label'] = '';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
-  /* Field: Field: Product Image */
+  /* Field: Field: Main Image */
   $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
   $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
   $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
