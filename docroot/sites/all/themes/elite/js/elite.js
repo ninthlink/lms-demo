@@ -111,6 +111,32 @@ function qelite_taketraining_btn() {
 					}
 				}
 			}
+			// tool details
+			if ( $('body').hasClass('node-type-tool') ) {
+				var tgal = $('.field-name-field-image');
+				if ( !tgal.hasClass('gal') ) {
+					if ( tgal.find('.field-item:first').addClass('onn').siblings().size() > 0 ) {
+						// more than 1 img = arrow'd
+						tgal.append('<a href="#" class="arr p"></a><a href="#" class="arr n"></a>').children('.arr').click(function() {
+							var onn = $(this).siblings('.field-items').find('.onn');
+							var nx = onn.next();
+							if ( $(this).hasClass('p') ) {
+								nx = onn.prev();
+								if ( nx.size() == 0 ) {
+									nx = onn.parent().children(':last');
+								}
+							} else {
+								if ( nx.size() == 0 ) {
+									nx = onn.parent().children(':first');
+								}
+							}
+							onn.add(nx).toggleClass('onn');
+							return false;
+						});
+					}
+					tgal.addClass('gal');
+				}
+			}
 		}
 	};
 })(jQuery);

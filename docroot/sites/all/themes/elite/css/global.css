@@ -1141,6 +1141,7 @@ span.bigBtn.taken {
 	display: block;
 	float: none;
 	height: 176px;
+	position: relative;
 	overflow: hidden;
 }
 .node-tool .tool-mainimg img,
@@ -1158,6 +1159,47 @@ span.bigBtn.taken {
 .node-tool .group-tooltop {
 	float: left;
 	width: 100%;
+}
+.node-tool .gal .field-item {
+	float: left;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-ms-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	transition-duration: 1s;
+}
+.node-tool .gal .field-item.onn { 
+	-webkit-animation:fadein 1s;
+	-moz-animation:fadein 1s;
+	animation:fadein 1s;
+	opacity: 1;
+	z-index: 2;
+}
+.node-tool .gal a.arr {
+	display: block;
+	width: 11px;
+	height: 23px;
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	margin-top: -11px;
+	background: url(../images/arrows.png) no-repeat 0 0;
+	z-index: 3;
+}
+.node-tool .gal a.arr.n {
+	left: auto;
+	right: 15px;
+	background-position: -11px 0;
 }
 /* --------------- System Tabs  --------------- */
 
@@ -1957,3 +1999,7 @@ body.context-vive a.tbutton {
 }
 body.context-vive a.tbutton:hover { text-decoration: none }
 body.context-vive a.tbutton.right { float: right }
+
+@-webkit-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
+@-moz-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
