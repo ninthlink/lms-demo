@@ -128,7 +128,9 @@ hr {
   color: #959595;
   text-decoration: none;
 }
-#block-system-main-menu ul.menu li a:hover {
+#block-system-main-menu ul.menu li a:hover,
+#block-system-main-menu ul.menu li a.active:link,
+#block-system-main-menu ul.menu li a.active:visited {
   color: #fff;
 }
 p  {
