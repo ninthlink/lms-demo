@@ -26,6 +26,11 @@ function elite_trainings_context_default_contexts() {
         'node_form' => '1',
       ),
     ),
+    'path' => array(
+      'values' => array(
+        'node/*/take' => 'node/*/take',
+      ),
+    ),
   );
   $context->reactions = array(
     'menu' => 'trainings',
