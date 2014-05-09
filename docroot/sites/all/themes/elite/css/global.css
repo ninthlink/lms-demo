@@ -1138,11 +1138,10 @@ span.bigBtn.taken {
 }
 .node-tool .field-name-field-image {
 	background: #ebebeb;
-	display: block;
-	float: none;
 	height: 176px;
 	position: relative;
 	overflow: hidden;
+	margin-bottom: 1em;
 }
 .node-tool .tool-mainimg img,
 .node-tool .field-name-field-image img {
