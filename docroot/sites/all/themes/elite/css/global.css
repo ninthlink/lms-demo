@@ -358,7 +358,8 @@ body.page-trends h1#page-title {
 }
 .view-trainings .views-column,
 .view-trends .views-column,
-.view-store .views-column {
+.view-store .views-column,
+.view-tools .views-column {
   position: relative;
   box-shadow: 0 0 3px rgba(0, 0, 0, .2);
   padding: 5px 4px 5px 5px;
@@ -374,7 +375,8 @@ body.page-trends h1#page-title {
 }
 .view-trainings .views-field-field-image,
 .view-trends .views-field-field-image,
-.view-store .views-field-field-image {
+.view-store .views-field-field-image,
+.view-tools .views-field-field-image {
   margin: 0 0 20px;
 }
 .view-store .views-field-field-image {
@@ -387,11 +389,10 @@ body.page-trends h1#page-title {
 }
 .view-trainings .views-field-title,
 .view-trends .views-field-title,
-.view-store .views-field-title {
-  line-height: 1em;
-  margin: 0 20px 40px;
-  font-family: "Qualcomm-SemiBold";
-  font-size: 1.2em;
+.view-store .views-field-title,
+.view-tools .views-field-title {
+  font: 1.2em/1 "Qualcomm-SemiBold";
+  margin: 0 1em 2em;
 }
 .view-store .views-field-title {
   margin: 0 10px 20px;
@@ -729,12 +730,6 @@ article.node-reward .field-type-commerce-product-reference .form-submit {
 * Training detail
 */
 /* 2 col... prolly another way to do this... */
-body.page-node.node-type-training #zone-content,
-body.page-node.node-type-quiz #zone-content,
-body.page-node.node-type-article #zone-content {
-  background: #fff url(../images/bg-twocol.gif) repeat-y 100% 0;
-  background-size: 100%;
-}
 article.node-training,
 article.node-article {
   position: relative;
@@ -982,10 +977,11 @@ body.node-type-quiz #quiz-report-form .dd table tr.correct td {
 	color: #75bc8f;
 }
 a.bigBtn,
-span.bigBtn {
+span.bigBtn,
+a.outBtn {
   float: left;
-  margin: 0 0 35px 35px;
-  width: 741px;
+  margin: 0 0 35px;
+  width: 100%;
   height: 57px;
   font-size: 24px;
   line-height: 57px;
@@ -994,10 +990,24 @@ span.bigBtn {
   text-transform: uppercase;
   background: url(../images/btn-large.jpg) no-repeat 0 0;
   text-align: center;
+	border-radius: 8px;
 }
 a.bigBtn:focus,
-a.bigBtn:hover {
+a.bigBtn:hover,
+a.outBtn:focus,
+a.outBtn:hover {
   text-decoration: none;
+}
+a.outBtn {
+	background: #fff;
+	border: 1px solid #dd7a10;
+	color: #111;
+	display: block;
+	float: none;
+	font-size: 18px;
+	height: 38px;
+	line-height: 38px;
+	width: 238px;
 }
 span.bigBtn.taken {
   background-image: url(../images/btn-largeComplete.jpg);
@@ -1032,6 +1042,164 @@ span.bigBtn.taken {
 #wslashd iframe {
   float: left;
   width: 100%;
+}
+/* Tools */
+.view-tools .view-header {
+	color: #fff;
+	padding: 2em;
+  background: #f25f22; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f25f22 0%, #f5871f 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f25f22), color-stop(100%,#f5871f)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f25f22 0%,#f5871f 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f25f22 0%,#f5871f 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f25f22 0%,#f5871f 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f25f22 0%,#f5871f 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f25f22', endColorstr='#f5871f',GradientType=0 ); /* IE6-9 */
+}
+.view-tools .view-header h1#page-title {
+	color: #fff;
+	font: 5em/1 "Qualcomm-Light";
+	margin: 0;
+	padding: 0;
+}
+.view-tools .view-header h2 {
+	font: 1.6em/1 "Qualcomm-Light";
+	margin: 0;
+	padding: 0;
+}
+.view-tools .views-column {
+	background: #f8f8f8;
+}
+.view-tools .views-field-title {
+	font-size: 1.45em;
+	margin: 0 0 0.4em 0.8em;
+}
+.view-tools .views-field-body {
+	margin: 0 1em;
+	font: 1.2em/1.11 "Qualcomm-Regular";
+}
+.view-tools .views-field-field-rating {
+	float: left;
+	margin-left: 1em;
+}
+.view-tools .views-field-field-rating .views-label {
+	float: left;
+	font: 1.2em/1 "Qualcomm-Regular";
+}
+.view-tools .views-field-field-rating .field-content {
+	float: left;
+	margin: 2px 0.5em 0;
+}
+.view-tools .views-field-ops {
+	float: right;
+	margin: 2px 1em 0 0;
+}
+.view-tools .views-field-field-external-link {
+	float: left;
+	width: 100%;
+}
+.view-tools a.outBtn {
+	margin: 0.8em auto 1em;
+}
+.node-tool {
+	background-color: #f8f8f8;
+}
+.node-tool .field-name-body .field-label {
+	font: 2em/1.4 "Qualcomm-Semibold";
+}
+.node-tool .field-name-body {
+	background: #fff;
+}
+.node-tool h1 {
+	margin: 1em 0 0;
+}
+.node-tool .field-name-field-rating {
+	float: left;
+}
+.node-tool .field-name-field-rating .field-label {
+	font-family: "Qualcomm-Regular";
+	font-size: 1.2em;
+	line-height: 1;
+	font-weight: normal;
+}
+.node-tool .field-name-field-rating .field-items,
+.node-tool .flag-outer-favorites {
+	margin-top: 2px;
+}
+.node-tool .flag-outer-favorites {
+	float: right;
+}
+.node-tool .tool-mainimg,
+.node-tool .field-name-field-image {
+	float: left;
+	width: 100%;
+	height: 172px;
+	background: #fff;
+}
+.node-tool .field-name-field-image {
+	background: #ebebeb;
+	display: block;
+	float: none;
+	height: 176px;
+	position: relative;
+	overflow: hidden;
+}
+.node-tool .tool-mainimg img,
+.node-tool .field-name-field-image img {
+	display: block;
+	margin: 0 auto;
+	width: auto;
+	height: 172px;
+	max-width: 260px;
+}
+.node-tool .field-name-field-image img {
+	height: 176px;
+	max-width: 100%;
+}
+.node-tool .group-tooltop {
+	float: left;
+	width: 100%;
+}
+.node-tool .gal .field-item {
+	float: left;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	z-index: 1;
+	-webkit-transition-property: opacity;
+	-moz-transition-property: opacity;
+	-ms-transition-property: opacity;
+	transition-property: opacity;
+	-webkit-transition-duration: 1s;
+	-moz-transition-duration: 1s;
+	-ms-transition-duration: 1s;
+	transition-duration: 1s;
+}
+.node-tool .gal .field-item.onn { 
+	-webkit-animation:fadein 1s;
+	-moz-animation:fadein 1s;
+	animation:fadein 1s;
+	opacity: 1;
+	z-index: 2;
+}
+.node-tool .gal a.arr {
+	display: block;
+	width: 11px;
+	height: 23px;
+	position: absolute;
+	top: 50%;
+	left: 15px;
+	margin-top: -11px;
+	background: url(../images/arrows.png) no-repeat 0 0;
+	z-index: 3;
+}
+.node-tool .gal a.arr.n {
+	left: auto;
+	right: 15px;
+	background-position: -11px 0;
 }
 /* --------------- System Tabs  --------------- */
 
@@ -1831,3 +1999,7 @@ body.context-vive a.tbutton {
 }
 body.context-vive a.tbutton:hover { text-decoration: none }
 body.context-vive a.tbutton.right { float: right }
+
+@-webkit-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
+@-moz-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
+@keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }

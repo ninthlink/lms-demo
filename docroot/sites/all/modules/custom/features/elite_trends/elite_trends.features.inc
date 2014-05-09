@@ -67,7 +67,8 @@ function elite_trends_flag_default_flags() {
     'global' => 0,
     'types' => array(
       0 => 'article',
-      1 => 'training',
+      1 => 'tool',
+      2 => 'training',
     ),
     'flag_short' => 'Favorite',
     'flag_long' => '',

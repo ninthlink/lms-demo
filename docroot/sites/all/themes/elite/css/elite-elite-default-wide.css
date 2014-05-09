@@ -1,5 +1,46 @@
-/* This file will hold styles that are loaded using the same media query as the wide grid. */
+/* CSS for width > 770px? */
 
+body.page-node.node-type-training #zone-content,
+body.page-node.node-type-quiz #zone-content,
+body.page-node.node-type-article #zone-content,
+body.page-node.node-type-tool #zone-content {
+  background: #fff url(../images/bg-twocol.gif) repeat-y 100% 0;
+  background-size: 100%;
+}
+body.page-node.node-type-tool #zone-content {
+	background-color: #f8f8f8;
+}
+
+.node-type-tool .container-12 .grid-9.region-content {
+	width: 75%
+}
+.node-type-tool .container-12 .grid-3.region-sidebar-second {
+	display: inline;
+	width: 25%
+}
+.node-tool h1 {
+	margin-left: 0;
+	padding-left: 0;
+}
+.node-tool .field-name-field-company {
+	margin-bottom: 3.5em;
+	margin-left: 0;
+	padding-left: 0;
+}
+.node-tool a.outBtn {
+	margin: -0.5em 1.5em 0 -0.5em;
+}
+.node-tool .tool-mainimg {
+	width: 260px; margin: 5px
+}
+.node-tool .group-tooltop {
+	float: right;
+	width: 520px;
+}
+.node-tool .field-name-field-image,
+.node-tool .field-name-field-image img {
+	height: 456px;
+}
 /* vive / padding grid fix? */
 body.context-vive .field-name-title-field {
 	height: 531px;
