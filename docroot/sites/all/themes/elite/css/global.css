@@ -1108,9 +1108,15 @@ span.bigBtn.taken {
 }
 .node-tool .field-name-body .field-label {
 	font: 2em/1.4 "Qualcomm-Semibold";
+	padding: 0.5em 1em 0.25em;
+}
+.node-tool .field-name-body .field-items {
+	padding: 0 2em 1em;
 }
 .node-tool .field-name-body {
 	background: #fff;
+	float: left;
+	width: 100%;
 }
 .node-tool h1 {
 	margin: 1em 0 0;
@@ -1143,7 +1149,6 @@ span.bigBtn.taken {
 	height: 176px;
 	position: relative;
 	overflow: hidden;
-	margin-bottom: 1em;
 }
 .node-tool .tool-mainimg img,
 .node-tool .field-name-field-image img {
