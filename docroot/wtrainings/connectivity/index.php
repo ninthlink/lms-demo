@@ -24,7 +24,7 @@ $qv = '?v='. $v;
 		
 		<script src="../_common/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-		<script type="text/javascript" src="//cdn.sublimevideo.net/js/77emf89m.js"></script>
+		<script type="text/javascript" src="//cdn.sublimevideo.net/js/brxysbmu.js"></script>
 	</head>
 	<body class="bg-grey">
 			<div id="content" class="content-container">
@@ -59,7 +59,7 @@ $qv = '?v='. $v;
 							<li>What is a modem?</li>
 							<li>What is a Snapdragon modem and why is it better?</li>
 							</ul>
-							<p class="center"><small>Qualcomm Snapdragon is a product of Qualcomm Technologies, Inc.</small</p>
+							<p class="center"><small>Qualcomm Snapdragon is a product of Qualcomm Technologies, Inc.</small></p>
 						</div>
 					</div>
 				</section>
@@ -449,7 +449,7 @@ $qv = '?v='. $v;
         	<div class="inner">
           	<div class="text-position center">
             	<div class="video-button">
-								<h2><a href="assessment.html" class="txtbk" onclick="parent.qelite_taketraining_btn(); return false;">Proceed to quiz <span class="sprite play"></span></a></h2>
+								<h2><a href="assessment.html" class="txtbk" onClick="parent.qelite_taketraining_btn(); return false;">Proceed to quiz <span class="sprite play"></span></a></h2>
 							</div>
             </div>
           </div>
