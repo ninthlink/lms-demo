@@ -175,12 +175,12 @@ $qv = '?v='. $v;
 									<li>
 										<img src="img/2007.jpg" alt="2007" />
 										<h2 class="txtlb">2007</h2>
-										<p>Qualcomm premieres Snapdragon processors – the first to break the GHz barrier.</p>
+										<p>Qualcomm анонсировала первый процессор Snapdragon, который покончил с существовавшими ограничениями Гц</p>
 									</li>
 									<li>
 										<img src="img/2008.jpg" alt="2008" />
 										<h2 class="txtlb">2008</h2>
-										<p>Qualcomm Snapdragon processor powers world's first Android-based mobile device.</p>
+										<p>выпущено первое Android устройство, и оно на базе процессора Qualcomm Snapdragon</p>
 									</li>
 									<li>
 										<img src="img/2010.jpg" alt="2010" />
@@ -378,9 +378,9 @@ $qv = '?v='. $v;
 						</div>
           	<div class="graphic-position">
 			  <div class="circles">
-                <div class="c left growin"><div class="in"><div class="txt fadein">Global data<br />traffic growth <span class="thick">2x</span></div></div></div>
+                <div class="c left growin"><div class="in"><div class="txt fadein" style="font-size:1.5em; line-height:1.2">2-кратный<br />рост объемов<br />передачи<br />данных в год</div></div></div>
                 <div class="o fadein"></div>
-                <div class="c right growin"><div class="in"><div class="txt fadein">Preparing for <span class="thick">1000x</span> mobile data<br />traffic growth <sup>5</sup></div></div></div>
+                <div class="c right growin"><div class="in"><div class="txt fadein" style="font-size:1.3em; line-height:1">Мы готовимся к<br />1000-кратному<br />росту объема<br />данных,<br />передаваемых<br />мобильными<br />устройствами <sup>5</sup></div></div></div>
               </div>
             </div>
 						<span class="stretch"></span>
