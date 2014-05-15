@@ -123,6 +123,11 @@ body {
 		margin: 0 1em;
 		overflow: hidden;
 	}
+	
+	article.node-training .field-name-field-rating,
+	article.node-article .field-name-field-rating {
+		margin-left: 41px !important;
+	}
 }
 /*
 ** Generic Page
