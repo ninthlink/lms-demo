@@ -144,8 +144,8 @@ $qv = '?v='. $v;
 									<ul>
 									<li>Просматривать интернет-страницы и мобильное видео</li>
 									<li>Обеспечивать доступ к GPS-навигации и геолокационным сервисам</li>
-									<li>Social sharing</li>
-									<li>Other connectivity-based mobile activities</li>
+									<li>поделиться в социальных сетях</li>
+									<li>Много других возможностейблагодаря мобильному телефону с выходом в Интернет</li>
 									</ul>
 									<div class="icns fadein"><div class="i c"></div><div class="i d"></div><div class="i n"></div><div class="i l"></div><div class="i v"></div><div class="i s"></div></div>
 								</div>
@@ -304,7 +304,7 @@ $qv = '?v='. $v;
 					<div class="inner">
 						<div class="text-position center">
 							<h2>Модем разработан для того, чтобы обеспечить следующие <span class="thick">преимущества</span> для пользователей</h2>
-							<p>Improved performance, power, mobility, and coverage enhances mobile experiences</p>
+							<p>Оптимизированная производительность, а также мощность, мобильность и зона покрытия – и ты получаешь удовольствие от работы со своим мобильным устройством</p>
 						</div>
 						<div class="graphic-position">
 							<div class="bk fast">

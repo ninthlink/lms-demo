@@ -268,7 +268,7 @@ $qv = '?v='. $v;
               <li class="dsp"><span class="img"></span>DSP</li>
               <li class="cpu"><span class="img"></span>Центральный процессор</li>
               <li class="gpu"><span class="img"></span>Графический процессор</li>
-              <li class="nav"><span class="img"></span>Navigation</li>
+              <li class="nav"><span class="img"></span>навигация</li>
             </ul>
             <ul class="mid">
               <li class="mm onn"><span class="img"></span>Мультимедиа</li>
@@ -391,7 +391,7 @@ $qv = '?v='. $v;
 							<h3>Сноски</h3>
 							<ol>
 							<li>По сравнению с Adreno 200. Источник  — QCT Data.</li>
-							<li>Peak measured data rates, actual speeds will vary.</li>
+							<li>скорость может варьироваться, приведены показатели пика.</li>
 							</ol>
 							<hr />
 							<p>&copy; Qualcomm Incorporated и/или дочерние предприятия компании, 2014. Все права защищены.</p>
