@@ -63,12 +63,26 @@ body {
 /*
 ** Homepage blocks
 */
+.block.block-tips,
+.block.block-store,
+.block.block-app {
+	min-height: 275px;
+}
 .block.block-tips {
   background: #497faa url(../images/tips-block-bg.jpg) no-repeat 0 0;
+	background-size: cover;
 }
 .block.block-store,
 .block.block-app {
   background: #000000 url(../images/app-block-bg.png) no-repeat 320px bottom;
+}
+.block.block-tips h2, .block.block-store h2, .block.block-app h2 {
+	padding: 25px 0 0 25px;
+	width: 250px;
+}
+.block.block-tips p, .block.block-store p, .block.block-app p {
+	width: 340px;
+	margin: 0;
 }
 .block.block-tips .more-link a,
 .block.block-store .more-link a,
@@ -89,7 +103,27 @@ body {
     background: url(../images/fx.gif) repeat 0 0;
   }
 }
-
+@media only screen and (min-width: 1040px) {
+	body.front .view-home-slides,
+	body.front #views_slideshow_cycle_main_home_slides-block,
+	body.front #views_slideshow_cycle_teaser_section_home_slides-block {
+		height: 455px;
+	}
+	body.front .view-trainings .views-field-title {
+		height: 3em;
+		overflow: hidden;
+	}
+	body.front .view-popular-content .views-field-title {
+		height: 2em;
+		overflow: hidden;
+	}
+	body.page-trainings .view-trainings .views-field-title {
+		line-height: 1;
+		height: 4em;
+		margin: 0 1em;
+		overflow: hidden;
+	}
+}
 /*
 ** Generic Page
 */
