@@ -20,7 +20,7 @@ function elite_custom_permission() {
  */
 function elite_custom_init() {
 	if ( drupal_is_front_page() ) {
-		if ( !user_access('access Home section') ) {
+		if ( !user_access('access Home section') && !drupal_is_cli() ) {
 			drupal_goto('user');
 		}
 	}
