@@ -35,7 +35,7 @@ function elite_validation_form_alter(&$form, &$form_state, $form_id) {
 
     $form['#submit'][] = 'elite_validation_user_register_submit';
 		
-		watchdog('qe reg', 'form : <pre>'. print_r($form,true) ."</pre><br /><br />form_state : <pre>". print_r($form_state,true) ."</pre>");
+		//watchdog('qe reg', 'form : <pre>'. print_r($form,true) ."</pre><br /><br />form_state : <pre>". print_r($form_state,true) ."</pre>");
   }
 }
 
@@ -56,7 +56,7 @@ function elite_validation_user_register_validate($form, &$form_state) {
 		unset($form_state['values']['region']);
 		
 		$postval = $form_state['values'];
-		watchdog('qe vchk', 'pre : <pre>'. print_r($preval,true) .'</pre><br /><br />post: <pre>'. print_r($postval,true) .'</pre>');
+		//watchdog('qe vchk', 'pre : <pre>'. print_r($preval,true) .'</pre><br /><br />post: <pre>'. print_r($postval,true) .'</pre>');
 		
 		// Check the store's region against the user's region.
 		$user_region = $form_state['values']['field_region'][LANGUAGE_NONE][0]['value'];
@@ -121,7 +121,7 @@ function elite_validation_node_access($node, $op, $account) {
 			// not logged in, can only view certain PAGES
 			if ( $type == 'page' ) {
 				$alias = drupal_get_path_alias('node/'. $node->nid);
-				watchdog('anon nodecheck', $alias . ' : node : <pre>'. print_r($node,true) .'</pre>');
+				//watchdog('anon nodecheck', $alias . ' : node : <pre>'. print_r($node,true) .'</pre>');
 				if ( in_array( $alias, array('about', 'about/privacy-policy', 'about/cookie-policy', 'about/terms-conditions') ) ) {
 					return NODE_ACCESS_ALLOW;
 				}
