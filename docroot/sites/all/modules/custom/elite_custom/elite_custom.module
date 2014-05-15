@@ -431,22 +431,7 @@ function elite_custom_block_flop_view() {
 }
 
 function elite_custom_views_pre_view(&$view) {
-	/*
-	// moved to views_query_alter instead
-	if ( in_array( $view->name, array( 'trends', 'popular_content', 'home_slides', 'trainings' ) ) ) {
-		//$region = elite_custom_user_region();
-		$dis = array();
-		foreach ( $view->display as $k => $v ) {
-			$dis[] = $k;
-			
-			$view->display[$k]->handler->options['filters']['field_region_value']['value'] = array(
-				$region => $region
-			);
-			
-		}
-		watchdog('elite pre view', 'user region = '. $region .' : view = '. $view->name .' : displays = <pre>'. print_r($dis,true) .'</pre>');
-	}
-	*/
+	// moved to views_query_alter instead ...
 }
 
 function elite_custom_views_query_alter(&$view, &$query) {
@@ -462,21 +447,12 @@ function elite_custom_views_query_alter(&$view, &$query) {
 		//watchdog('elite pre view ALT', 'user region = '. $region .' : view = '. $view->name .' : WHERE = <pre>'. print_r($query->where,true) .'</pre>');
 	}
 }
-
+/*
+ * hook_views_pre_render to change some things as needed
+ * NOTE : for SERVICES / API output, there is function elite_custom_services_request_postprocess_alter too
+ */
 function elite_custom_views_pre_render(&$view) {
-  global $user;
-  if(FALSE && $view->name == 'questions_by_quiz') {
-    //collapse multi-answer listings
-    $results = $answers = array();
-    foreach($view->result as $result) {
-      if (isset($result->quiz_node_relationship_child_nid) && $qid = $result->quiz_node_relationship_child_nid){
-        $answers[$qid][] = $result->quiz_multichoice_answers_answer;
-        $result->quiz_multichoice_answers_answer = json_encode($answers[$qid]);
-        $results[$qid] = $result;
-      }
-    }
-    $view->result = array_values($results);
-  }
+	global $user;
 	
 	if ( $view->name == 'trainings' ) {
 		foreach($view->result as $result) {
@@ -497,7 +473,6 @@ function elite_custom_views_pre_render(&$view) {
 			$result->node_field_data_field_training_quiz_nid = elite_custom_check_taken_content( $type, $nid );
 			if ( isset( $result->flagging_flagged ) ) $result->flagging_flagged = (int)$result->flagging_flagged;
 		}
-		//watchdog('views pre', 'view name '. $view->name .'<br />results: <pre>'. print_r($view->result,true) .'</pre>');
 	}
 	
 	if ( $view->name == 'related_content' ) {
@@ -509,7 +484,6 @@ function elite_custom_views_pre_render(&$view) {
 			}
 			$result->node_field_data_field_training_quiz_nid = elite_custom_check_taken_content( $type, $nid );
 		}
-		//watchdog('views pre', 'view name '. $view->name .'<br />results: <pre>'. print_r($view->result,true) .'</pre>');
 	}
 }
 
@@ -858,10 +832,18 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 				}
 				$result = array_values($oot);
 			}
-      foreach($result as $k => &$v) {
-        if (isset($v->title)) {
+			// for ALL views, sanitize Services output some
+      foreach( $result as $k => &$v ) {
+        // make sure Titles contain the special characters, its ok
+				if ( isset( $v->title ) ) {
           $v->title = htmlspecialchars_decode($v->title);
         }
+				// make sure field_image always returns a single image object, not array with 1 result
+				if ( isset( $v->field_image ) ) {
+					if ( is_array( $v->field_image ) ) {
+						$v->field_image = $v->field_image[0];
+					}
+				}
       }
   
 			break;
