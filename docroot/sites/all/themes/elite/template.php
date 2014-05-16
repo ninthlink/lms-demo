@@ -55,25 +55,25 @@ function elite_preprocess_page( &$vars, $hook ) {
 		  break;
 	  }
 	}
-	$vars['page']['pre_top']['qtealium'] = array(
-		/*
-		'#markup' => "<script type=\"text/javascript\">
-var utag_data = {
-  ev : '',
-  action : '',
-  detail : '',
-  label : '',
-  location : ''
-}
-</script>
-		*/
-		'#markup' => "<script type=\"text/javascript\">
+	$tealiumk = "<script type=\"text/javascript\">
     (function(a,b,c,d){
     a='//tags.tiqcdn.com/utag/qualcomm/elite-web/". $qenv ."/utag.js';
     b=document;c='script';d=b.createElement(c);d.src=a;d.type='text/java'+c;d.async=true;
     a=b.getElementsByTagName(c)[0];a.parentNode.insertBefore(d,a);
     })();
-</script>"
+</script>";
+	global $user;
+	if ( $user->uid ) {
+		$region = elite_custom_user_region();
+		$tealiumk = "<script type=\"text/javascript\">
+var utag_data = {
+  location : \"". $region ."\",
+  logged_in : \"". $yes ."\"
+}
+</script>". $tealiumk;
+	}
+	$vars['page']['pre_top']['qtealium'] = array(
+		'#markup' => $tealiumk
 	);
 
 	//watchdog('qe', 'elite_preprocess_page? hdr : <pre>'. print_r($vars['page'],true) .'</pre>');
