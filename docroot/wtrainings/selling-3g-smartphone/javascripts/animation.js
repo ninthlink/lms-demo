@@ -28,7 +28,7 @@ Changelog v1.0.0
 		---------------------------------------------------------------- */
 		var cslider = $('.slider').contentslider({
 			animation: 'fade',
-			autoTimer: 3500,
+			autoTimer: 8000,
 			initialPaused: true
 		});
 
@@ -72,14 +72,20 @@ Changelog v1.0.0
 					to keep track of the items, and make sure animations do not
 					fire prematurely
 		---------------------------------------------------------------- */
+		var shownsect = [];
+
 		//Initalize the plugin
 		$('.content-container').qualcommreveal({ offset: 10, scrollspeed: 0 });
 
 		$.subscribe('qualcommreveal/reveal-start', function(event, elem, counter) {
 			animcounter = counter;
 			animelem = elem;
+			
+			shownsect.push( animelem.attr('id') );
+			
 			//console.log(animcounter);
 			//console.log(animelem);
+			//console.log(shownsect);
 		});
 
 		$.subscribe('qualcommreveal/reveal-finish', function(event, elem, counter) { 
@@ -126,7 +132,7 @@ Changelog v1.0.0
 			Section 2: By the end of this module
 		---------------------------------------------------------------- */
 		$('#section2 .light-bulb').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animelem.is('#section2') ) {
+			if(isInView && !isIE8under && $.inArray( 'section2', shownsect) != -1) {
 				if(visiblePartY == 'both' || visiblePartY == 'top') {
 					var $this = $(this),
 							$propeller = $this.find('.propeller');
@@ -151,7 +157,7 @@ Changelog v1.0.0
 				- IE8 also
 		---------------------------------------------------------------- */
 		$('#section3 .worldchange-container').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && animelem.is('#section3')) {
+			if(isInView && $.inArray( 'section3', shownsect) != -1) {
 				if(visiblePartY == 'both' || visiblePartY == 'top') {
 					var $this = $(this);
 					$this.off('inview');
@@ -168,7 +174,7 @@ Changelog v1.0.0
 			Section 5: What is a 3G Smartphone
 		---------------------------------------------------------------- */
 		$('#section5 img.speedometer').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animelem.is('#section5')) {
+			if(isInView && !isIE8under && $.inArray( 'section5', shownsect) != -1) {
 				if(visiblePartY == 'both' || visiblePartY == 'bottom') {
 					var $this = $(this);
 					$this.off('inview');
@@ -186,7 +192,7 @@ Changelog v1.0.0
 			Section 6: 3G Connectivity
 		---------------------------------------------------------------- */
 		$('#section6 .phones2g-container').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animelem.is('#section6')) {
+			if(isInView && !isIE8under && $.inArray( 'section6', shownsect) != -1) {
 				if(visiblePartY == 'both' || visiblePartY == 'top') {
 					var $this = $(this);
 					$this.off('inview');
@@ -218,7 +224,8 @@ Changelog v1.0.0
 			var $this = $(this);
 
 			$this.find('div.icons').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if(isInView && !isIE8under && animelem.is('#section7')) {
+				//if(isInView && !isIE8under && animelem.is('#section7')) {
+				if(isInView && !isIE8under && $.inArray( 'section7', shownsect) != -1) {
 					if(visiblePartY == 'both' || visiblePartY == 'top') {
 						var $inthis = $(this);
 						$inthis.off('inview');
@@ -240,7 +247,7 @@ Changelog v1.0.0
 			Section 8: One Device. Many Features
 		---------------------------------------------------------------- */
 		$('#section8 h1.subheader + p').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animelem.is('#section8')) {
+			if(isInView && !isIE8under && $.inArray( 'section8', shownsect) != -1) {
 				if(visiblePartY == 'both' || visiblePartY == 'bottom') {
 					var $this = $(this);
 					$this.off('inview');
@@ -269,7 +276,7 @@ Changelog v1.0.0
 			var $this = $(this);
 
 			$this.siblings('img').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if(isInView && animelem.is('#section11')) {
+				if(isInView && $.inArray( 'section11', shownsect) != -1) {
 					if(visiblePartY == 'both' || visiblePartY == 'top') {
 						var $inthis = $(this);
 						$inthis.off('inview');
@@ -290,7 +297,7 @@ Changelog v1.0.0
 			var $this = $(this);
 
 			$this.on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if(isInView && !isIE8under && animelem.is('#section12')) {
+				if(isInView && !isIE8under && $.inArray( 'section12', shownsect) != -1) {
 					if(visiblePartY == 'both') {
 						$this.off('inview');
 
@@ -307,7 +314,7 @@ Changelog v1.0.0
 			Section 12-5: 3G Data Plan
 		---------------------------------------------------------------- */
 		$('#data-plan img.cube').on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-			if(isInView && !isIE8under && animelem.is('#data-plan')) {
+			if(isInView && !isIE8under && $.inArray( 'data-plan', shownsect) != -1) {
 				if(visiblePartY == 'both' || visiblePartY == 'top') {
 					var $this = $(this);
 					$this.off('inview');
@@ -331,7 +338,7 @@ Changelog v1.0.0
 			var $this = $(this);
 
 			$this.on('inview', function(event, isInView, visiblePartX, visiblePartY) {
-				if(isInView && animelem.is('#section14')) {
+				if(isInView && $.inArray( 'section14', shownsect) != -1) {
 					if(visiblePartY == 'both' || visiblePartY == 'top') {
 						var $cust = $this.siblings('div.customer');
 							 $rsa  = $this;

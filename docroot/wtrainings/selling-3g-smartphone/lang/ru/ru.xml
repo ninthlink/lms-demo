@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<course name="Как продать 3G-смартфон" right="false" language="ru">
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    LANGUAGE SPECIFIC STYLES: 
+    	• Certain language styles that will be appended to the head 
+————————————————————————————————————————————————————–––––––––– -->
+	<langstyles name="langstyles">
+		<![CDATA[
+			<style type="text/css">
+				@media only screen and (min-width: 941px) { 
+			      h1 { font-size: 38px; }
+			      p, li { font-size: 0.96em; }
+			      .s13p1 div.text-content { width: 50%; }
+			   }
+
+			   @media only screen and (min-width: 768px) and (max-width: 940px) {
+			   	.s13p1 div.text-content { width: 50%; }
+			   }
+
+			   @media only screen and (max-width: 767px) { 
+					h1 { font-size: 1.4em; }
+					h2 { font-size: 1.3em; }
+			   	h3 { font-size: 1.1em; }
+			   	h4 { font-size: 1.0em; }
+
+			   	#quiz a.quiz-button.chevron.large.button.radius.light.white { font-size: 1.4em; }
+			   }
+
+			   body, .light, .subheader, p, a, li, cite, blockquote { font-family: Arial, Helvetica, sans-serif; }
+				.subheader { font-weight: bold; }
+				p, li { font-size: 0.8em; }
+
+				div.cool-circles > p { font-size: 0.75em; font-weight: normal; }
+
+			</style>
+		]]>
+	</langstyles>
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    CONTAINER: The main text for the interface of the main file 
+————————————————————————————————————————————————————–––––––––– -->
+	<container title="Container" name="container">
+		<!--  Course's Title -->
+		<course-name title="Course Title" field="title_text">Как продать 3G-смартфон</course-name>		
+	</container>
+	
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S1p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="title">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[Как продать<br/><span class="subheader">3G-смартфон</span>]]></laserbeam>
+	</page>
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S2p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="youll-learn">
+		<laserbeam title="Header" field="laserbeam_text">По завершении этого модуля вы узнаете:</laserbeam>
+		<text title="Body" field="body_text"><![CDATA[
+			<li>Что такое 3G-смартфон</li>
+			<li>Отличия между 3G-смартфоном и обычным 2G-телефоном</li>
+			<li>Как помочь покупателю купить 3G-смартфон</li>
+		]]></text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S3p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="changing-world">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Мир</span> меняется]]></laserbeam>
+		<text title="Body" field="body_text">Интернет стал незаменимым способом общения, частью нашей работы, развлечений и площадкой, где мы можем поделиться впечатлениями и контентом с окружающими.</text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S4p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="without-mobile">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Мир без</span> мобильных устройств]]></laserbeam>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S5p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="whatis3g">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Что такое</span><br/>3G-смартфон?]]></laserbeam>
+		<text title="Body" field="body_text"><![CDATA[
+			<li>Интерактивное устройство</li>
+			<li>Эффективный инструмент для решения повседневных задач</li>
+			<li>Элемент вашего стиля</li>
+		]]></text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S6p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="makes-difference">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Способность устройства подключаться к</span><br/>3G-сетям имеет ряд преимуществ]]></laserbeam>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S7p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="cust-communicate">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Как общаются</span>  ваши покупатели?]]></laserbeam>
+		<text title="Body" field="body_text">Мобильный телефон больше не является просто телефоном — это всеобъемлющее устройство для связи.</text>
+
+		<!-- 1G -->
+		<text field="1g_header"><![CDATA[1G<span>/</span><span>Голос</span>]]></text>
+		<text field="1g_body"><![CDATA[
+			<li>Основные голосовые услуги</li>
+			<li>Аналоговый сотовый телефон</li>
+		]]></text>
+
+		<!-- 2G -->
+		<text field="2g_header"><![CDATA[2G<span>/</span><span>Голосовые вызовы + обмен сообщениями</span>]]></text>
+		<text field="2g_body"><![CDATA[
+			<li>Разработаны для голосового общения</li>
+			<li>Цифровой сотовый телефон</li>
+			<li>Улучшенная зона покрытия, емкость мобильных сетей</li>
+			<li>Возможность доступа к 1G-сетям</li>
+		]]></text>
+
+		<!-- 3G -->
+		<text field="3g_header"><![CDATA[3G<span>/</span><span>Мобильный широкополосный доступ</span>]]></text>
+		<text field="3g_body"><![CDATA[
+			<li>Высокая скорость обмена данными по мобильной сети</li>
+			<li>Разработаны для голосового общения + обмена данными</li>
+			<li>Просмотр страниц в Интернете, видео, GPS-навигация, геолокационные сервисы, социальные сети</li>
+			<li>Возможность доступа к 2G- и 1G-сетям</li>
+		]]></text>
+
+		<!-- 4G -->
+		<text field="4g_header"><![CDATA[4G<span>/</span><span>Улучшенный мобильный широкополосный доступ</span>]]></text>
+		<text field="4g_body"><![CDATA[
+			<li>Настоящий мобильный широкополосный доступ</li>
+			<li>Разработаны для данных</li>
+			<li>Еще более высокая скорость мобильных сетей</li>
+			<li>Просмотр страниц в Интернете, видео, GPS-навигация, геолокационные сервисы, социальные сети</li>
+			<li>Возможность доступа к 3G-, 2G-, 1G-сетям</li>
+		]]></text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S8p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="one-device">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Одно устройство.</span> Множество функций.]]></laserbeam>
+		<text title="Body" field="body_text">3G-смартфон поможет сэкономить, заменяя собой множество отдельных устройств.</text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S9p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="daily-life">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Как 3G-смартфоны могут</span> <br class="hide-for-small"/>изменить вашу жизнь?]]></laserbeam>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S10p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="ways-to-use">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[6 способов, как можно использовать<br/><span class="light">3G-смартфон</span>]]></laserbeam>
+
+		<!-- Relax -->
+		<text field="relax_header">Отдых</text>
+		<text field="relax_body"><![CDATA[
+			<li>Прослушивание радиостанций с потоковой передачей со всего мира.</li>
+			<li>Просмотр видео, фильмов и телепередач</li>
+			<li>Игры</li>
+		]]></text>
+
+		<!-- Socialize -->
+		<text field="social_header">Общение</text>
+		<text field="social_body"><![CDATA[
+			<li>Возможность быть на связи с друзьями посредством социальных сетей</li>
+			<li>Получение новых идей, новостей и информации</li>
+			<li>Самовыражение с помощью фотографий, видео и комментариев</li>
+		]]></text>
+
+	 	<!-- Learn -->
+		<text field="learn_header">Обучение</text>
+		<text field="learn_body"><![CDATA[
+			<li>Доступ к информации о новостях, погоде, акциях, спорте и любых других интересах</li>
+			<li>Самообразование в удобное время</li>
+		]]></text>
+
+	 	<!-- Shop -->
+		<text field="shop_header">Покупки</text>
+		<text field="shop_body"><![CDATA[
+			<li>Выбор ресторана с помощью поиска в Интернете</li>
+			<li>Экономия времени путем получения мгновенной информации о продуктах и услугах</li>
+			<li>Поиск лучших цен для принятия правильного решения о покупке</li>
+		]]></text>
+
+		<!-- Plan -->
+		<text field="plan_header">Планирование дел</text>
+		<text field="plan_body"><![CDATA[
+			<li>Подготовка и организация предстоящего дня</li>
+			<li>Доступ к эл. почте, календарю, голосовым вызовам без необходимости нахождения у рабочего стола</li>
+			<li>Информация о погоде и другая информация перед началом дня</li>
+		]]></text>
+
+		<!-- Share -->
+		<text field="share_header">Обмен информацией</text>
+		<text field="share_body"><![CDATA[
+			<li>Самовыражение с помощью фотографий и видео</li>
+			<li>Обмен впечатлениями с друзьями на расстоянии</li>
+		]]></text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S11p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="cool-things">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Еще несколько примеров</span><br class="hide-for-small"/> полезных функций смартфона.]]></laserbeam>
+
+		<text field="feat1_text">Проверка пробок на дорогах и получение указаний</text>
+		<text field="feat2_text">Поиск названия прослушиваемой песни</text>
+		<text field="feat3_text">Карманная рулетка для измерения длины</text>
+		<text field="feat4_text">Отправка и получение изображений, аудио, заметок и видеосообщений</text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S12p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="upgrade">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Как помочь покупателю</span><br/>купить 3G-смартфон]]></laserbeam>
+
+		<text field="feat1_header">Продемонстрируйте легкость в управлении</text>
+		<text field="feat1_body">Дайте покупателю немного потестировать устройство — это повысит степень их доверия и избавит от сомнений.</text>
+
+		<text field="feat2_header">Упомяните, что смартфон — это один из элементов имиджа и статуса современного человека</text>
+		<text field="feat2_body">Объясните, почему иметь 3G-смартфон сегодня — это необходимость.</text>
+
+		<text field="feat3_header">Расскажите о доступной цене.</text>
+		<text field="feat3_body">Упомяните, что купить 3G-смартфон по той же цене, что обычный мобильный телефон 2G — это реальность.</text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S12-5p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="data-plan">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Добавление тарифного плана</span> МТС с пакетом мобильного Интернета]]></laserbeam>
+		<text title="Body" field="body_text">Использование 3G-смартфона с пакетом мобильного интернета от МТС превращает смартфон в интеллектуальное устройство. Если у покупателя есть сомнения, напомните ему:</text>
+
+		<text title="" field="features_text"><![CDATA[
+			<li>Цена мобильного Интернета от МТС в сетях 3G не отличается от цены в 2G<sup>1</sup>.</li>
+			<li>Различные приложения и настройки могут помочь в отслеживании и контроле расходов на мобильный Интернет </li>
+			<li>Использовать Wi-Fi-соединение дома и Интернет 3G на ходу — это очень удобно: Интернет всегда под рукой. </li>
+		]]></text>
+		
+	</page>
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S13p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="sales-floor">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">В</span> торговом зале]]></laserbeam>
+		<text title="Subheader" field="sublaser_text">Несколько примеров, как показать смартфон в действии</text>
+		<text title="Body" field="body_text"><![CDATA[
+			<li>Дайте покупателю возможность подержать устройство в руках и попробовать его в действии.</li>
+			<li>Покажите, как устройство определяет местоположение</li>
+			<li>Отправьте с устройства имейл или мгновенное сообщение </li>
+			<li>Продемонстрируйте возможности навигации.</li>
+			<li>Сделайте фото и загрузите в социальную сеть.</li>
+			<li>Продемонстрируйте работу полезных приложений.</li>
+			<li>Просмотрите видео.</li>
+		]]></text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    S14p1
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="objections">
+		<laserbeam title="Header" field="laserbeam_text"><![CDATA[<span class="light">Работа с</span> возражениями]]></laserbeam>
+
+		<text field="quest1_cust">Устройства с поддержкой 3G-сетей слишком дорогие.</text>
+		<text field="quest1_rsa">Продемонстрируйте широкий выбор 3G-смартфонов, а также возможность найти вариант в соответствии с любым бюджетом.</text>
+
+		<text field="quest2_cust">Мне нравится мое 2G-устройство.</text>
+		<text field="quest2_rsa">3G-устройство сохраняет все возможности 2G-сетей, а также дает дополнительные возможности 3G-сетей.</text>
+
+		<text field="quest3_cust">Качество моего Wi-Fi-соединения меня устраивает.</text>
+		<text field="quest3_rsa">3G соединение — это, как если бы Wi-Fi был везде. Доступ к Интернету предоставляется посредством тех же радиовышек, которые предоставляют голосовой сервис для мобильного телефона. С 3G вы можете быть где угодно — и при этом у вас почти всегда будет Интернет под рукой. (Примечание: сети 4G имеют такие же возможности, только являются более быстрыми.)</text>
+	</page>
+
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    Footnotes
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="fnotes">
+		<laserbeam title="Header" field="laserbeam_text">Сноски</laserbeam>
+
+		<!-- Feature List -->
+		<text field="footnotes_text"><![CDATA[
+			<li><span>1.</span>по информации о тарифных планах МТС, апрель 2014 года.</li>
+        ]]></text>
+
+        <text field="legal_text"><![CDATA[<strong>©Qualcomm Incorporated и/или дочерние предприятия компании, 2014. Все права защищены.<br/><br/>Наименование "Qualcomm" может означать Qualcomm Incorporated, Qualcomm Technologies, Inc. или их дочерние подразделения в корпоративной структуре Qualcomm.<br/><br/>Qualcomm Incorporated занимается лицензированием Qualcomm, QTL и большей частью патентного портфеля. Компания Qualcomm Technologies, Inc., находящаяся в полной собственности Qualcomm Incorporated, управляет как своими дочерними компаниями, так и научно-исследовательскими разработками Qualcomm, а также всеми продуктами и услугами, включая производство полупроводниковых устройств, QCT.<br/><br/>Ничего из данных материалов не является предложением о продаже каких-либо упомянутых здесь компонентов или устройств.</strong>]]></text>
+	</page>
+
+<!-- –––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
+    Assessment
+————————————————————————————————————————————————————–––––––––– -->
+	<page title="" name="quizsection">
+		<!-- Assessment Menu --> 
+		<text field="assessmentbtn_text"><![CDATA[Перейти к <span class="subheader">тестированию</span>]]></text>
+	</page>
+
+</course>
+
