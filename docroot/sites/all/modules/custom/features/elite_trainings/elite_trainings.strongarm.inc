@@ -181,7 +181,7 @@ function elite_trainings_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '14',
+          'weight' => '15',
         ),
       ),
       'display' => array(

@@ -108,7 +108,7 @@ function elite_trainings_views_default_views() {
 
   $view = new view();
   $view->name = 'trainings';
-  $view->description = 'Trainings homepage section + landing page : Block + Page + Services';
+  $view->description = 'Trainings homepage block + landing pages : Block + Pages + Services';
   $view->tag = 'elite';
   $view->base_table = 'node';
   $view->human_name = 'Trainings';
@@ -271,9 +271,19 @@ function elite_trainings_views_default_views() {
   $handler->display->display_options['filters']['language']['value'] = array(
     '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
   );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    17 => '17',
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'training_group';
 
-  /* Display: Block */
-  $handler = $view->new_display('block', 'Block', 'block');
+  /* Display: Block : Featured */
+  $handler = $view->new_display('block', 'Block : Featured', 'block');
+  $handler->display->display_options['display_description'] = 'Featured Trainings block, shown on the homepage';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'responsive_grid';
   $handler->display->display_options['style_options']['columns'] = '3';
@@ -289,10 +299,11 @@ function elite_trainings_views_default_views() {
   $handler->display->display_options['footer']['view']['field'] = 'view';
   $handler->display->display_options['footer']['view']['view_to_insert'] = 'polls:block';
 
-  /* Display: Page */
-  $handler = $view->new_display('page', 'Page', 'page_1');
+  /* Display: Page : Trainings */
+  $handler = $view->new_display('page', 'Page : Trainings', 'page_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Trainings';
+  $handler->display->display_options['display_description'] = 'Trainings landing page';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -311,8 +322,8 @@ function elite_trainings_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
 
-  /* Display: Services */
-  $handler = $view->new_display('services', 'Services', 'services_1');
+  /* Display: Services : Trainings */
+  $handler = $view->new_display('services', 'Services : Trainings', 'services_1');
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -419,6 +430,425 @@ function elite_trainings_views_default_views() {
   $handler->display->display_options['fields']['flagged']['type'] = 'boolean';
   $handler->display->display_options['fields']['flagged']['not'] = 0;
   $handler->display->display_options['path'] = 'trainings';
+
+  /* Display: Page : 4G Cert */
+  $handler = $view->new_display('page', 'Page : 4G Cert', 'page_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '4G Cert';
+  $handler->display->display_options['display_description'] = '4G Cert landing page';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'training' => 'training',
+  );
+  /* Filter criterion: Field: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'us' => 'us',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    18 => '18',
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'training_group';
+  $handler->display->display_options['path'] = '4Gcert';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = '4G Cert';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Services : 4G Cert */
+  $handler = $view->new_display('services', 'Services : 4G Cert', 'services_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '4G Cert';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Flags: favorites */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'favorite';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'favorites';
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['queues'] = array(
+    'featured_trainings' => 'featured_trainings',
+    'home_slider' => 0,
+    'whats_hot' => 0,
+  );
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['id'] = 'field_training_quiz_target_id';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['table'] = 'field_data_field_training_quiz';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['field'] = 'field_training_quiz_target_id';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['label'] = 'quiz';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '50';
+  $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Main Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['type'] = 'services';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'skip_safe' => 1,
+    'skip_empty_values' => 1,
+  );
+  /* Field: Content: Rate this */
+  $handler->display->display_options['fields']['field_rating']['id'] = 'field_rating';
+  $handler->display->display_options['fields']['field_rating']['table'] = 'field_data_field_rating';
+  $handler->display->display_options['fields']['field_rating']['field'] = 'field_rating';
+  $handler->display->display_options['fields']['field_rating']['label'] = '';
+  $handler->display->display_options['fields']['field_rating']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_rating']['click_sort_column'] = 'rating';
+  $handler->display->display_options['fields']['field_rating']['type'] = 'services';
+  $handler->display->display_options['fields']['field_rating']['settings'] = array(
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+  );
+  /* Field: Content: Media Types */
+  $handler->display->display_options['fields']['field_media_types']['id'] = 'field_media_types';
+  $handler->display->display_options['fields']['field_media_types']['table'] = 'field_data_field_media_types';
+  $handler->display->display_options['fields']['field_media_types']['field'] = 'field_media_types';
+  $handler->display->display_options['fields']['field_media_types']['label'] = '';
+  $handler->display->display_options['fields']['field_media_types']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_types']['type'] = 'services';
+  $handler->display->display_options['fields']['field_media_types']['settings'] = array(
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+  );
+  $handler->display->display_options['fields']['field_media_types']['group_column'] = 'tid';
+  /* Field: Content: Base Points */
+  $handler->display->display_options['fields']['field_base_points']['id'] = 'field_base_points';
+  $handler->display->display_options['fields']['field_base_points']['table'] = 'field_data_field_base_points';
+  $handler->display->display_options['fields']['field_base_points']['field'] = 'field_base_points';
+  $handler->display->display_options['fields']['field_base_points']['label'] = '';
+  $handler->display->display_options['fields']['field_base_points']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_base_points']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_base_points']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_training_quiz_target_id';
+  $handler->display->display_options['fields']['nid_1']['label'] = 'taken';
+  /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged']['label'] = 'favorite';
+  $handler->display->display_options['fields']['flagged']['type'] = 'boolean';
+  $handler->display->display_options['fields']['flagged']['not'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'training' => 'training',
+  );
+  /* Filter criterion: Field: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'us' => 'us',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    18 => '18',
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'training_group';
+  $handler->display->display_options['path'] = 'trainings_4gcert';
+
+  /* Display: Page : 3G Cert */
+  $handler = $view->new_display('page', 'Page : 3G Cert', 'page_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '3G Cert';
+  $handler->display->display_options['enabled'] = FALSE;
+  $handler->display->display_options['display_description'] = '3G Cert landing page';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['content'] = '<h1 id="page-title">3G Cert</h1>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'training' => 'training',
+  );
+  /* Filter criterion: Field: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'us' => 'us',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    19 => '19',
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'training_group';
+  $handler->display->display_options['path'] = '3Gcert';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = '3G Cert';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+
+  /* Display: Services : 3G Cert */
+  $handler = $view->new_display('services', 'Services : 3G Cert', 'services_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = '3G Cert';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Flags: favorites */
+  $handler->display->display_options['relationships']['flag_content_rel']['id'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['flag_content_rel']['field'] = 'flag_content_rel';
+  $handler->display->display_options['relationships']['flag_content_rel']['label'] = 'favorite';
+  $handler->display->display_options['relationships']['flag_content_rel']['required'] = 0;
+  $handler->display->display_options['relationships']['flag_content_rel']['flag'] = 'favorites';
+  /* Relationship: Nodequeue: Queue */
+  $handler->display->display_options['relationships']['nodequeue_rel']['id'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['table'] = 'node';
+  $handler->display->display_options['relationships']['nodequeue_rel']['field'] = 'nodequeue_rel';
+  $handler->display->display_options['relationships']['nodequeue_rel']['limit'] = 1;
+  $handler->display->display_options['relationships']['nodequeue_rel']['queues'] = array(
+    'featured_trainings' => 'featured_trainings',
+    'home_slider' => 0,
+    'whats_hot' => 0,
+  );
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['id'] = 'field_training_quiz_target_id';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['table'] = 'field_data_field_training_quiz';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['field'] = 'field_training_quiz_target_id';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['label'] = 'quiz';
+  $handler->display->display_options['relationships']['field_training_quiz_target_id']['required'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['max_length'] = '50';
+  $handler->display->display_options['fields']['title']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Field: Main Image */
+  $handler->display->display_options['fields']['field_image']['id'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['table'] = 'field_data_field_image';
+  $handler->display->display_options['fields']['field_image']['field'] = 'field_image';
+  $handler->display->display_options['fields']['field_image']['label'] = '';
+  $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['type'] = 'services';
+  $handler->display->display_options['fields']['field_image']['settings'] = array(
+    'skip_safe' => 1,
+    'skip_empty_values' => 1,
+  );
+  /* Field: Content: Rate this */
+  $handler->display->display_options['fields']['field_rating']['id'] = 'field_rating';
+  $handler->display->display_options['fields']['field_rating']['table'] = 'field_data_field_rating';
+  $handler->display->display_options['fields']['field_rating']['field'] = 'field_rating';
+  $handler->display->display_options['fields']['field_rating']['label'] = '';
+  $handler->display->display_options['fields']['field_rating']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_rating']['click_sort_column'] = 'rating';
+  $handler->display->display_options['fields']['field_rating']['type'] = 'services';
+  $handler->display->display_options['fields']['field_rating']['settings'] = array(
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+  );
+  /* Field: Content: Media Types */
+  $handler->display->display_options['fields']['field_media_types']['id'] = 'field_media_types';
+  $handler->display->display_options['fields']['field_media_types']['table'] = 'field_data_field_media_types';
+  $handler->display->display_options['fields']['field_media_types']['field'] = 'field_media_types';
+  $handler->display->display_options['fields']['field_media_types']['label'] = '';
+  $handler->display->display_options['fields']['field_media_types']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_media_types']['type'] = 'services';
+  $handler->display->display_options['fields']['field_media_types']['settings'] = array(
+    'skip_safe' => 0,
+    'skip_empty_values' => 0,
+  );
+  $handler->display->display_options['fields']['field_media_types']['group_column'] = 'tid';
+  /* Field: Content: Base Points */
+  $handler->display->display_options['fields']['field_base_points']['id'] = 'field_base_points';
+  $handler->display->display_options['fields']['field_base_points']['table'] = 'field_data_field_base_points';
+  $handler->display->display_options['fields']['field_base_points']['field'] = 'field_base_points';
+  $handler->display->display_options['fields']['field_base_points']['label'] = '';
+  $handler->display->display_options['fields']['field_base_points']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_base_points']['type'] = 'number_unformatted';
+  $handler->display->display_options['fields']['field_base_points']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid_1']['id'] = 'nid_1';
+  $handler->display->display_options['fields']['nid_1']['table'] = 'node';
+  $handler->display->display_options['fields']['nid_1']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid_1']['relationship'] = 'field_training_quiz_target_id';
+  $handler->display->display_options['fields']['nid_1']['label'] = 'taken';
+  /* Field: Flags: Flagged */
+  $handler->display->display_options['fields']['flagged']['id'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['table'] = 'flagging';
+  $handler->display->display_options['fields']['flagged']['field'] = 'flagged';
+  $handler->display->display_options['fields']['flagged']['relationship'] = 'flag_content_rel';
+  $handler->display->display_options['fields']['flagged']['label'] = 'favorite';
+  $handler->display->display_options['fields']['flagged']['type'] = 'boolean';
+  $handler->display->display_options['fields']['flagged']['not'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'training' => 'training',
+  );
+  /* Filter criterion: Field: Region (field_region) */
+  $handler->display->display_options['filters']['field_region_value']['id'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['table'] = 'field_data_field_region';
+  $handler->display->display_options['filters']['field_region_value']['field'] = 'field_region_value';
+  $handler->display->display_options['filters']['field_region_value']['value'] = array(
+    'us' => 'us',
+  );
+  /* Filter criterion: Content: Language */
+  $handler->display->display_options['filters']['language']['id'] = 'language';
+  $handler->display->display_options['filters']['language']['table'] = 'node';
+  $handler->display->display_options['filters']['language']['field'] = 'language';
+  $handler->display->display_options['filters']['language']['value'] = array(
+    '***CURRENT_LANGUAGE***' => '***CURRENT_LANGUAGE***',
+  );
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    19 => '19',
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'training_group';
+  $handler->display->display_options['path'] = 'trainings_3gcert';
   $translatables['trainings'] = array(
     t('Master'),
     t('Featured Trainings'),
@@ -432,12 +862,23 @@ function elite_trainings_views_default_views() {
     t('queue'),
     t('quiz'),
     t('taken'),
-    t('Block'),
-    t('Page'),
+    t('Block : Featured'),
+    t('Featured Trainings block, shown on the homepage'),
+    t('Page : Trainings'),
     t('Trainings'),
+    t('Trainings landing page'),
     t('<h1 id="page-title">Trainings</h1>'),
-    t('Services'),
+    t('Services : Trainings'),
     t('title'),
+    t('Page : 4G Cert'),
+    t('4G Cert'),
+    t('4G Cert landing page'),
+    t('Services : 4G Cert'),
+    t('Page : 3G Cert'),
+    t('3G Cert'),
+    t('3G Cert landing page'),
+    t('<h1 id="page-title">3G Cert</h1>'),
+    t('Services : 3G Cert'),
   );
   $export['trainings'] = $view;
 
