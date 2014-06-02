@@ -88,6 +88,11 @@ css[whitelabel.css][description] = This file holds whitelabel override styles fo
 css[whitelabel.css][path] = whitelabel/mts/css
 css[whitelabel.css][options][weight] = 12
 
+css[viettel.css][name] = Viettel whitelabel styles
+css[viettel.css][description] = This file holds whitelabel override styles for the Viettel site.
+css[viettel.css][path] = whitelabel/viettel/css
+css[viettel.css][options][weight] = 12
+
 ; JS FILES
 
 scripts[] = js/elite.js

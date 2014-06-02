@@ -1,0 +1,243 @@
+body {
+  background-color: #FFF;
+}
+
+/*
+** Header
+*/
+#zone-branding {
+  background: none;
+}
+.branding-data {
+  padding-top: 3px;
+  padding-bottom: 5px;
+}
+.logged-in .logo-img {
+  float: left;
+}
+@media only screen and (max-width: 1024px) {
+  #block-system-main-menu ul.menu li a:link {
+    font-size: 16px;
+    padding: 0 6px;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .logged-in .branding-data {
+    width: 65%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/*
+** Menu
+*/
+#block-system-main-menu {
+  float: right;
+  margin-right: 25px;
+}
+@media only screen and (max-width: 769px) {
+  #block-system-main-menu {
+    float: left;
+  }
+}
+#block-system-main-menu ul.menu li a:hover,
+#block-system-main-menu ul.menu li a.active:link,
+#block-system-main-menu ul.menu li a.active:visited {
+  color: inherit;
+}
+
+/*
+** Home Slides
+*/
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a,
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a {
+  background: #d58430;
+  -webkit-box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover,
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover {
+  background: #e2aa70;
+}
+
+/*
+** Popular Views
+*/
+.view-popular-content .views-field-field-base-points {
+  color: #00918c;
+}
+.fivestar-outline div.fivestar-widget .star a {
+  background-image: url(../images/star.png);
+}
+
+/*
+** Trainings
+*/
+.view-trainings .taken .views-field-field-base-points span.chk,
+.view-trends .taken .views-field-field-base-points span.chk,
+.view-store .taken .views-field-commerce-price span.chk,
+.view-popular-content .taken .views-field-field-base-points span.chk {
+  background: url(../images/taken.png) no-repeat 0 0;
+}
+.view-store .views-field-add-to-cart-form .form-submit {
+  color: #d58430;
+}
+.view-trainings .view-footer article.node-poll {
+  background: #d58430;
+}
+.view-trainings .view-footer article.node-poll .field-name-field-base-points {
+  background: #deaa73;
+}
+.view-trainings .views-field-field-base-points {
+  color: #00918c;
+}
+
+/*
+** Homepage blocks
+*/
+.block.block-tips,
+.block.block-store,
+.block.block-app {
+	min-height: 275px;
+}
+.block.block-tips {
+  background: #6aa644 url(../images/tips-block-bg.png) no-repeat 388px 50px;
+}
+.block.block-store,
+.block.block-app {
+  background: #00918c url(../images/app-block-bg.png) no-repeat 320px bottom;
+}
+.block.block-tips h2, .block.block-store h2, .block.block-app h2 {
+	padding: 25px 0 0 25px;
+	width: 250px;
+}
+.block.block-tips p, .block.block-store p, .block.block-app p {
+	width: 340px;
+	margin: 0;
+}
+.block.block-tips .more-link a,
+.block.block-store .more-link a,
+.block.block-app .more-link a {
+  background: transparent url(../images/transparent-white-bg.png) repeat 0 0;
+}
+@media only screen and (max-width: 767px) {
+  /* The following styles are not overrides of global.css.  They're copied directly from
+     global.css and are only necessary to reset the override styles above. */
+  .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a,
+  .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button  a {
+    background: url(../images/fx.gif) repeat 0 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover,
+  .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button  a:hover{
+    background: url(../images/fx.gif) repeat 0 0;
+  }
+}
+@media only screen and (min-width: 1040px) {
+	body.front .view-home-slides,
+	body.front #views_slideshow_cycle_main_home_slides-block,
+	body.front #views_slideshow_cycle_teaser_section_home_slides-block {
+		height: 455px;
+	}
+	body.front .view-trainings .views-field-title {
+		height: 3em;
+		overflow: hidden;
+	}
+	body.front .view-popular-content .views-field-title {
+		height: 2em;
+		overflow: hidden;
+	}
+	body.page-trainings .view-trainings .views-field-title {
+		line-height: 1;
+		height: 4em;
+		margin: 0 1em;
+		overflow: hidden;
+	}
+	
+	article.node-training .field-name-field-rating,
+	article.node-article .field-name-field-rating {
+		margin-left: 41px !important;
+	}
+}
+
+/*
+** Generic Page
+*/
+.section-title {
+  background: #00918c;
+}
+#block-menu-menu-about-section-menu ul.menu li a {
+  color: #00918c;
+}
+.zone-footer {
+  background-color: #555555;
+}
+
+/*
+** User Login
+*/
+.not-logged-in.page-user #zone-content {
+  background: none;
+  min-height: 0;
+  padding-top: 20px;
+}
+.not-logged-in.page-user #block-system-main {
+  background: #00918c !important;
+}
+.not-logged-in.page-user .form-submit {
+  background: #d58430;
+  border-color: #e2aa70;
+  -webkit-box-shadow: 0 5px 0 0 #006562;
+  box-shadow: 0 5px 0 0 #006562;
+}
+.not-logged-in .site-name-slogan,
+.not-logged-in .zone-footer {
+  display: none;
+}
+
+/*
+** Profile
+*/
+#elite-user-block-wrapper,
+#elite-user-flop {
+  background-image: url(../images/right-node-userimg-bg-full.jpg);
+}
+#block-elite-custom-userflop {
+  background-color: #FFF;
+  box-shadow: -1px 1px 8px #a0a2a2;
+}
+#block-elite-custom-userflop,
+#block-elite-custom-userflop a {
+  color: #00918c;
+}
+#elite-user-flop .user-name {
+  background-color: #1e2324;
+  margin: 0 0 32px;
+  padding: 10px 0 10px;
+}
+#elite-user-flop ul.usermenu li a {
+  color: #00918c;
+  border: none;
+  box-shadow: none;
+  border-bottom: 1px solid #d4d4d4;
+  background-color: #fbfbfb;
+}
+#elite-user-flop ul.usermenu li a .icon {
+  background-image: url(../images/icons-usermenu.png);
+}
+#elite-user-block-wrapper .points-wrapper,
+#elite-user-flop ul.usermenu li a:hover,
+#elite-user-flop ul.usermenu li a .count {
+  color: #d58430;
+}
+#block-elite-custom-avatar-block .points-wrapper,
+#elite-user-flop .points-wrapper {
+  color: #00918c;
+}
+#elite-user-block-wrapper .points-wrapper strong,
+#elite-user-flop .points-wrapper strong {
+  color: #363636;
+}
