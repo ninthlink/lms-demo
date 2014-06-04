@@ -93,6 +93,11 @@ css[viettel.css][description] = This file holds whitelabel override styles for t
 css[viettel.css][path] = whitelabel/viettel/css
 css[viettel.css][options][weight] = 12
 
+css[hidepoints.css][name] = Hide Points
+css[hidepoints.css][description] = Hide all instances of Points on the front-end. You should also go to /admin/config/people/userpoints/settings and turn Messages > "Display message" to No
+css[hidepoints.css][path] = whitelabel/hidepoints/css
+css[hidepoints.css][options][weight] = 13
+
 ; JS FILES
 
 scripts[] = js/elite.js
