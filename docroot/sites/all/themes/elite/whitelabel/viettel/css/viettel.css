@@ -226,9 +226,11 @@ body {
 /*
 ** Profile
 */
-#elite-user-block-wrapper,
 #elite-user-flop {
   background-image: url(../images/right-node-userimg-bg-full.jpg);
+}
+#elite-user-block-wrapper {
+  background-image: url(../images/right-node-userimg-bg-full2.jpg);
 }
 #block-elite-custom-userflop {
   background-color: #FFF;
@@ -265,4 +267,7 @@ body {
 #elite-user-block-wrapper .points-wrapper strong,
 #elite-user-flop .points-wrapper strong {
   color: #363636;
+}
+#region-content {
+	background: #fff url(../images/cbg.gif) repeat-x 0 0;
 }
