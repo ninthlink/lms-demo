@@ -185,3 +185,14 @@ body {
 #elite-user-flop ul.usermenu li a .count {
   color: #e30613;
 }
+
+/*
+ * Training details
+ */
+.wbar #logo {
+	top: 8px;
+	width: 106px;
+	height: 39px;
+	margin-left: -53px;
+	background-image: url(../logo.png);
+}
