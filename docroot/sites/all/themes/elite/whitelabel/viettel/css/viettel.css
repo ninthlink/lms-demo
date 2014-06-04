@@ -61,7 +61,32 @@ body {
 .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button a:hover {
   background: #e2aa70;
 }
-
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-title,
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-subheader {
+	padding: 0 60px;
+	position: relative;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-title {
+	padding: 35px 60px;
+	width: 60%;
+	font-family: "Qualcomm-Bold", sans-serif;
+	z-index: 2;
+}
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button {
+	position: relative;
+	margin: 75px 0 0;
+	bottom: 0;
+	z-index: 2;
+}
 /*
 ** Popular Views
 */
