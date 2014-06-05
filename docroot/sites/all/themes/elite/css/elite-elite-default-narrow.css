@@ -134,3 +134,11 @@ article.node-training .field-name-field-media-types, article.node-article .field
 	background-color: #363636;
 	height: 270px;
 }
+.not-logged-in.page-user h1 {
+	letter-spacing: 0;
+	font-size: 1.5em;
+	line-height: 1;
+}
+.not-logged-in.page-user .form-submit {
+	font-size: 0.9em;
+}

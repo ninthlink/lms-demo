@@ -188,3 +188,12 @@ body.page-node.node-type-tool #zone-content {
 #elite-user-block-wrapper {
 	height: 209px;
 }
+
+.not-logged-in.page-user h1 {
+	letter-spacing: -1px;
+	font-size: 4.5em;
+	line-height: 0.7;
+}
+.not-logged-in.page-user .form-submit {
+	font-size: 1.3em;
+}
