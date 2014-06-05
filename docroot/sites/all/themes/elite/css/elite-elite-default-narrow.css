@@ -1,4 +1,11 @@
 /* CSS for max-width = 320px? */
+body.page-node.node-type-training #zone-content,
+body.page-node.node-type-quiz #zone-content,
+body.page-node.node-type-article #zone-content,
+body.page-node.node-type-tool #zone-content {
+  background: #fff;
+	background-image: none;
+}
 .not-logged-in.page-user.responsive-layout-narrow #zone-content {
   padding: 20px 0;
   min-height: 0;
