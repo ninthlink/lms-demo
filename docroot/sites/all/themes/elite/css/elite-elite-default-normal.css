@@ -50,8 +50,8 @@
 
 a.bigBtn,
 span.bigBtn {
-	width: 90%;
-	margin-right: 0;
+	width: 487px;
+	margin: 0 40px 40px;
 }
 
 .node-type-tool .container-12 .grid-9.region-content {
@@ -117,4 +117,74 @@ body.context-vive .device.odd img {
 }
 body.context-vive .devicerow {
 	border-top: 1px solid #959595;
+}
+/* header */
+#avatar-block-wrapper .points-wrapper {
+	display: block
+}
+#block-system-main-menu ul.menu li a:link, #block-system-main-menu ul.menu li a:visited {
+	padding: 0 15px;
+	font-size: 19px;
+}
+/* homepage */
+.view-popular-content .views-field-field-image img {
+	margin: 0 0 5px;
+	max-width: none;
+	width: 100%;
+	float: none;
+}
+.view-popular-content .views-field-field-image,
+.view-popular-content .views-field-title {
+	float: left;
+	width: 100%;
+}
+.responsive-layout-normal .view-popular-content .views-field-field-rating {
+	left: 5px;
+}
+.responsive-layout-normal .view-popular-content .views-column {
+	min-height: 200px
+}
+.view-trends .views-field-ops,
+.view-trainings .views-field-ops,
+.view-popular-content .views-field-ops {
+	top: auto;
+	bottom: 40px;
+	right: 10px;
+}
+.view-trainings .views-field-field-media-types, .view-trends .views-field-field-media-types {
+	right: 10px;
+}
+.view-trainings img,
+.view-trends img {
+	width: 182px;
+	height: 102px;
+}
+.view-trainings .views-field-title, .view-trends .views-field-title, .view-store .views-field-title {
+	margin: 0 0 2em 0.5em;
+}
+.view-trainings .views-field-field-rating, .view-trends .views-field-field-rating, .view-store .views-field-field-rating {
+	left: 10px;
+}
+.block.block-app {
+	background-position: 90% 34px;
+}
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-title {
+	font-size: 61px;
+	top: 20px;
+}
+article.node-article .flag-outer-favorites, article.node-training .flag-outer-favorites {
+	right: 60px;
+}
+article.node-training .field-name-field-media-types, article.node-article .field-name-field-media-types {
+	right: 25px;
+}
+body.page-node.node-type-training #zone-content,
+body.page-node.node-type-quiz #zone-content,
+body.page-node.node-type-article #zone-content,
+body.page-node.node-type-tool #zone-content {
+  background: #fff url(../images/bg-twocol768.gif) repeat-y 100% 0;
+  background-size: 100%;
+}
+#elite-user-block-wrapper {
+	height: 209px;
 }

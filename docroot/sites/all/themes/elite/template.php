@@ -27,7 +27,7 @@ function elite_preprocess_views_view_responsive_grid(&$vars) {
 				$count++;
 			}
 		}
-//		watchdog('rowscheck', 'rows : <pre>'. print_r($vars['rows'],true) .'</pre><br />view results <pre>'. print_r($vars['view']->result,true) .'</pre>');
+		//watchdog('rowscheck', 'rows : <pre>'. print_r($vars['rows'],true) .'</pre><br />view results <pre>'. print_r($vars['view']->result,true) .'</pre>');
 	}
 }
 
@@ -68,14 +68,13 @@ function elite_preprocess_page( &$vars, $hook ) {
 		$tealiumk = "<script type=\"text/javascript\">
 var utag_data = {
   location : \"". $region ."\",
-  logged_in : \"". $yes ."\"
+  logged_in : \"yes\"
 }
 </script>". $tealiumk;
 	}
 	$vars['page']['pre_top']['qtealium'] = array(
 		'#markup' => $tealiumk
 	);
-
 	//watchdog('qe', 'elite_preprocess_page? hdr : <pre>'. print_r($vars['page'],true) .'</pre>');
 }
 
@@ -148,4 +147,15 @@ function elite_quiz_take_summary($variables) {
     $output .= drupal_render($form);
   }
   return $output;
+}
+/*
+ * hook template_preprocess_field
+ */
+function elite_preprocess_field(&$vars) {
+	// here is one way to change it from "50 points" to "<strong>50</strong> points"...
+	if ( ( $vars['element']['#field_name'] == 'field_base_points' ) && ( $vars['element']['#bundle'] == 'poll' ) ) {
+		foreach ( $vars['items'] as $k => $v ) {
+			$vars['items'][$k] = '<strong>'. $vars['element']['#items'][$k]['value'] .'</strong> '. t('points');
+		}
+	}
 }

@@ -1,5 +1,4 @@
 /* CSS for width > 770px? */
-
 body.page-node.node-type-training #zone-content,
 body.page-node.node-type-quiz #zone-content,
 body.page-node.node-type-article #zone-content,
@@ -28,10 +27,15 @@ body.page-node.node-type-tool #zone-content {
 	padding-left: 0;
 }
 .node-tool a.outBtn {
+	width: 100%;
 	margin: -0.5em 1.5em 0 -0.5em;
 }
 .node-tool .tool-mainimg {
 	width: 260px; margin: 5px
+}
+a.bigBtn,
+span.bigBtn {
+	width: 730px;
 }
 .node-tool .group-tooltop {
 	float: right;
@@ -74,4 +78,42 @@ body.context-vive .field-name-title-field a.tbutton {
 
 body.context-vive .orange {
 	height: 1230px;
+}
+/* homepage */
+.view-popular-content .views-field-title {
+	width: 135px;
+}
+.view-popular-content .views-field-field-image {
+	width: 114px;
+	margin-right: 10px;
+}
+.view-trainings .views-field-title,
+.view-trends .views-field-title,
+.view-store .views-field-title {
+	margin: 0 1em 2em;
+}
+.view-trainings .views-field-field-rating, .view-trends .views-field-field-rating, .view-store .views-field-field-rating {
+	left: 20px;
+}
+.view-trends .views-field-ops, .view-trainings .views-field-ops, .view-popular-content .views-field-ops,
+.view-trainings .views-field-field-media-types, .view-trends .views-field-field-media-types {
+	right: 20px;
+}
+.view-trainings img,
+.view-trends img {
+	width: 260px;
+	height: 146px;
+}
+.block.block-app {
+	background-position: 360px 34px;
+}
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-title {
+	font-size: 5em;
+	top: 20px;
+}
+article.node-training .field-name-field-rating, article.node-article .field-name-field-rating {
+	margin: 20px 0 0 138px;
+}
+article.node-training .field-name-field-rating .field-label, article.node-article .field-name-field-rating .field-label {
+	display: inline-block;
 }

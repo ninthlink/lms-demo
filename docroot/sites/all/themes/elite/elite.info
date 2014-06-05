@@ -70,15 +70,15 @@ grids[elite_default][columns][12] = 12 Columns
 
 stylesheets[all][] = css/typography.css
 stylesheets[all and (max-width: 1080px)][] = css/elite-elite-default-wide.css
-stylesheets[all][] = css/elite-elite-default-wide.css
+;stylesheets[all][] = css/elite-elite-default-wide.css
 stylesheets[all and (min-width: 1080px)][] = css/grid/elite/wide/elite-default-wide-12.css
 
 stylesheets[all and (max-width: 770px)][] = css/elite-elite-default-normal.css
-stylesheets[all][] = css/elite-elite-default-normal.css
+;stylesheets[all][] = css/elite-elite-default-normal.css
 stylesheets[all and (min-width: 770px)][] = css/grid/elite/normal/elite-default-normal-12.css
 
 stylesheets[all and (max-width: 320px)][] = css/elite-elite-default-narrow.css
-stylesheets[all][] = css/elite-elite-default-narrow.css
+;stylesheets[all][] = css/elite-elite-default-narrow.css
 stylesheets[all and (min-width: 320px)][] = css/grid/elite/narrow/elite-default-narrow-12.css
 
 ; WHITELABEL STYLES

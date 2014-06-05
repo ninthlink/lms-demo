@@ -460,7 +460,8 @@ body.page-trends h1#page-title {
 }
 .view-trainings .views-field-field-base-points strong,
 .view-trends .views-field-field-base-points strong,
-.view-store .views-field-commerce-price strong {
+.view-store .views-field-commerce-price strong,
+.view-polls .field-name-field-base-points strong {
   font-weight: normal;
   font-family: "Qualcomm-Bold";
 }
@@ -1009,7 +1010,7 @@ a.outBtn {
 	font-size: 18px;
 	height: 38px;
 	line-height: 38px;
-	width: 238px;
+	width: 90%;
 }
 span.bigBtn.taken {
   background-image: url(../images/btn-largeComplete.jpg);

@@ -28,8 +28,10 @@
 
 a.bigBtn,
 span.bigBtn {
-	width: 80%;
-	margin: 0 35px 35px;
+	display: block;
+	float: none;
+	width: 90%;
+	margin: 0 auto 35px;
 }
 .node-tool h1 {
 	margin: 0.5em 0.5em 0;
@@ -70,4 +72,65 @@ body.context-vive .device.odd img {
 }
 body.context-vive .devicerow {
 	border-top: none;
+}
+/* header */
+#avatar-block-wrapper .points-wrapper {
+	display: none
+}
+#block-system-main-menu ul.menu li a:link, #block-system-main-menu ul.menu li a:visited {
+	padding: 0 7px;
+	font-size: 16px;
+}
+/* homepage */
+.view-popular-content .views-field-field-image img {
+	margin: 0 0 5px;
+	max-width: none;
+	width: 100%;
+	float: none;
+}
+.view-popular-content .views-field-title {
+	width: 135px;
+}
+.view-popular-content .views-field-field-image {
+	width: 114px;
+	margin-right: 10px;
+}
+.view-trainings img,
+.view-trends img {
+	width: 302px;
+	height: 170px;
+}
+.view-trainings .views-field-title, .view-trends .views-field-title, .view-store .views-field-title {
+	margin: 0 1em 2em;
+}
+.view-trainings .views-field-field-rating, .view-trends .views-field-field-rating, .view-store .views-field-field-rating {
+	left: 20px;
+}
+.view-trends .views-field-ops, .view-trainings .views-field-ops, .view-popular-content .views-field-ops,
+.view-trainings .views-field-field-media-types, .view-trends .views-field-field-media-types {
+	right: 22px;
+}
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-title {
+	font-size: 36px;
+	top: 10px;
+}
+.view-tools .views-column {
+	float: left;
+	width: 100%;
+}
+article.node-training .field-name-field-rating, article.node-article .field-name-field-rating {
+	margin: 20px 0 0;
+}
+article.node-training .field-name-field-rating .field-label, article.node-article .field-name-field-rating .field-label {
+	display: none;
+}
+article.node-article .flag-outer-favorites, article.node-training .flag-outer-favorites {
+	right: 35px;
+}
+article.node-training .field-name-field-media-types, article.node-article .field-name-field-media-types {
+	right: 2px;
+}
+#elite-user-block-wrapper {
+	background-color: #363636;
+	height: 270px;
 }
