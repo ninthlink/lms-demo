@@ -200,7 +200,7 @@ function elite_custom_services_terms() {
 			$return[$k]->body = $node->body['und'][0]['safe_value'];
 		} else {
 			$return[$k]->title = $k;
-			$return[$k]->body = '<p>There appears to have been some kind of an error. Please contact the Site Administrators.</p>';
+			$return[$k]->body = '<p>'. t('There appears to have been some kind of an error. Please contact the Site Administrators.') .'</p>';
 		}
 	}
 	return $return;
