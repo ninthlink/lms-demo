@@ -189,6 +189,9 @@ body {
 /*
  * Training details
  */
+.wbar {
+	background: #e30613;
+}
 .wbar #logo {
 	top: 8px;
 	width: 106px;
