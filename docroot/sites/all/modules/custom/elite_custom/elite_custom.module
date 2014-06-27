@@ -19,6 +19,7 @@ function elite_custom_permission() {
  * Implements hook_init() to redirect anon home page to login
  */
 function elite_custom_init() {
+  drupal_add_http_header('Expires', 'Sun, 26 June 1978 05:00:00 GMT');
 	if ( drupal_is_front_page() ) {
 		if ( !user_access('access Home section') && !drupal_is_cli() ) {
 			drupal_goto('user');
