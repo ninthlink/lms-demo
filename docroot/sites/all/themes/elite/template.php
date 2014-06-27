@@ -159,6 +159,10 @@ function elite_preprocess_field(&$vars) {
 		}
 	}
 }
+/*
+ * hook_html_head_alter
+ * remove "X-Generator" header, via https://www.drupal.org/node/982034#comment-3758880
+ */
 function elite_html_head_alter(&$head_elements) {
   unset($head_elements['system_meta_generator']);
 }
