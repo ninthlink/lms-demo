@@ -1,4 +1,4 @@
-name = User
+name = Elite User
 description = Configuration of user fields and user specific permissions
 core = 7.x
 package = Elite
