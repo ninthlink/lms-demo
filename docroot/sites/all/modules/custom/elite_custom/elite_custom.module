@@ -40,6 +40,9 @@ function elite_custom_form_alter(&$form, &$form_state, $form_id) {
       '#weight' => 101
     );
   }
+  if ($form_id == 'user_profile_form') {
+    $form['#attributes'] = array('autocomplete' => 'off');
+  }
   if ($form_id == 'user_register_form') {
     $form['#attributes'] = array('autocomplete' => 'off');
 		$form['actions']['submit']['#value'] = t('Accept & Create New Account');
