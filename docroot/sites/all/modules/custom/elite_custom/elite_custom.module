@@ -30,6 +30,7 @@ function elite_custom_init() {
 function elite_custom_form_alter(&$form, &$form_state, $form_id) {
   global $user;
   if($form_id == 'user_login') {
+    $form['#attributes'] = array('autocomplete' => 'off');
     $register_link = elite_custom_markup_wrapper(t('Register'), array('href' => '/user/register', 'class' => 'user-link'), 'a');
     $forgot_link = elite_custom_markup_wrapper(t('Forgot Password'), array('href' => '/user/password', 'class' => 'user-link'), 'a');
     
