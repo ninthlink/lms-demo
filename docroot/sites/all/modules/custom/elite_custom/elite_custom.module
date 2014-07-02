@@ -1215,7 +1215,8 @@ function elite_custom_user_region() {
 }
 
 function elite_custom_default_regions_list() {
-	return array(
+  $excluded_regions = variable_get('elite_custom_excluded_regions', array());
+  $regions = array(
 		'us' => t('United States'),
 		'uk' => t('United Kingdom'),
 		'russia' => t('Russia'),
@@ -1225,6 +1226,14 @@ function elite_custom_default_regions_list() {
 		'southamerica' => t('South America'),
 		*/
 	);
+  
+  foreach($excluded_regions as $key) {
+    if (isset($regions[$key])) {
+      unset($regions[$key]);
+    }
+  }
+  
+	return $regions; 
 }
 
 function elite_custom_default_regions_list_verbose() {
