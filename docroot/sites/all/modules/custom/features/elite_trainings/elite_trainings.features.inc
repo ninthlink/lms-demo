@@ -24,6 +24,61 @@ function elite_trainings_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function elite_trainings_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: 310x174.
+  $styles['310x174'] = array(
+    'name' => '310x174',
+    'label' => '310x174',
+    'effects' => array(
+      31 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 310,
+          'height' => 174,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: 604x339.
+  $styles['604x339'] = array(
+    'name' => '604x339',
+    'label' => '604x339',
+    'effects' => array(
+      30 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'image_resize_form',
+        'summary theme' => 'image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 604,
+          'height' => 339,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function elite_trainings_node_info() {
