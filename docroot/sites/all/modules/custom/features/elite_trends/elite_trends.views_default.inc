@@ -78,10 +78,25 @@ function elite_trends_views_default_views() {
   $handler->display->display_options['fields']['field_image']['label'] = '';
   $handler->display->display_options['fields']['field_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image']['type'] = 'cs_adaptive_image';
   $handler->display->display_options['fields']['field_image']['settings'] = array(
-    'image_style' => '260x146',
     'image_link' => 'content',
+    'styles' => array(
+      'breakpoint_1' => '320',
+      'style_1' => '310x174',
+      'breakpoint_2' => '768',
+      'style_2' => '604x339',
+      'breakpoint_3' => '1080',
+      'style_3' => '260x146',
+      'breakpoint_4' => '',
+      'style_4' => '',
+      'breakpoint_5' => '',
+      'style_5' => '',
+      'max_style' => '260x146',
+      'fallback_style' => '260x146',
+    ),
   );
+  $handler->display->display_options['fields']['field_image']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
