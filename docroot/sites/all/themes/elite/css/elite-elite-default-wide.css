@@ -117,3 +117,7 @@ article.node-training .field-name-field-rating, article.node-article .field-name
 article.node-training .field-name-field-rating .field-label, article.node-article .field-name-field-rating .field-label {
 	display: inline-block;
 }
+
+.block-home-slides-block:before {
+  padding-top: 35%;
+}

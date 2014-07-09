@@ -197,3 +197,7 @@ body.page-node.node-type-tool #zone-content {
 .not-logged-in.page-user .form-submit {
 	font-size: 1.3em;
 }
+
+.block-home-slides-block:before {
+  padding-top: 50%;
+}
