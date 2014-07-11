@@ -2016,3 +2016,13 @@ body.context-vive a.tbutton.right { float: right }
 @-webkit-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
 @-moz-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
 @keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
+
+#messages {
+  width: 80%;
+  margin: 0 auto;
+}
+#better-messages-wrapper {
+  width: 80%!important;
+  top: 30%!important;
+  left: 10%!important;
+}
