@@ -459,6 +459,8 @@ function elite_custom_views_query_alter(&$view, &$query) {
  */
 function elite_custom_views_pre_render(&$view) {
 	global $user;
+  
+  $view->set_title(t($view->get_title()));
 	
 	if ( $view->name == 'trainings' ) {
 		foreach($view->result as $result) {
@@ -553,6 +555,33 @@ function elite_custom_quiz_finished($quiz, $score, $rid) {
 		}
 		//if ( function_exists('watchdog') ) watchdog('elite quizd', 'training done? <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre><br />base pts?! '. $base_points .' : <pre>'. print_r($ptsres,true) .'</pre>');
   }
+}
+
+function elite_custom_field_update_field($field, $prior_field, $has_data) {
+  if ($field['field_name'] == 'field_region') {
+    //check if any value are out of bounds
+    $rejects = array();
+    $allowed_values = array_keys($field['settings']['allowed_values']);
+    $query = db_select('field_data_field_region', 'frd')
+      ->fields('frd')
+      ->condition('frd.field_region_value', $allowed_values, 'NOT IN');
+    $result = $query->execute();
+    
+    foreach($result as $val) {
+      $rejects[] = $val->entity_id;
+    }
+    
+    if(!empty($rejects)) {
+      $reject_str = implode(', ', $rejects);
+      $default_value = reset($allowed_values);
+      watchdog('Elite Custom', "Resetting entity field values to fall within allowed values: $reject_str");
+      $query = db_update('field_data_field_region')
+        ->fields(array('field_region_value' => $default_value))
+        ->condition('entity_id', $rejects, 'IN')
+        ->execute();
+    }
+  }
+  
 }
 
 /**
