@@ -200,6 +200,9 @@ article.node-training .field-name-field-media-types, article.node-article .field
 body.node-type-quiz .quiz-score-submit input.form-submit {
   padding: 0 60px;
 }
+#block-system-main-menu ul.menu li.first {
+   display: none;
+} 
 
 @media only screen and (max-device-width: 400px) {
   .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-subheader, 

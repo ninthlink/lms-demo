@@ -132,3 +132,6 @@ article.node-training .field-name-field-rating .field-label, article.node-articl
 body.node-type-quiz .quiz-score-submit input.form-submit {
   padding: 0 100px;
 }
+#block-system-main-menu ul.menu li.first {
+   display: inline-block;
+}
