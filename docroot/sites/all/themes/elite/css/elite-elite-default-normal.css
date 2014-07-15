@@ -205,3 +205,6 @@ body.page-node.node-type-tool #zone-content {
 .wbar #logo {
     left: 50%;
 }
+body.node-type-quiz .quiz-score-submit input.form-submit {
+  padding: 0 100px;
+}
