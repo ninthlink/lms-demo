@@ -28,7 +28,7 @@ body.page-node.node-type-tool #zone-content {
 }
 .node-tool a.outBtn {
 	width: 100%;
-	margin: 0 1em 1em;
+	margin: 0;
 	padding: 0 1em;
 }
 .node-tool .tool-mainimg {
