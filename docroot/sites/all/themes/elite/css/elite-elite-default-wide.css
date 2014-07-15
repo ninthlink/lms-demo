@@ -28,7 +28,8 @@ body.page-node.node-type-tool #zone-content {
 }
 .node-tool a.outBtn {
 	width: 100%;
-	margin: -0.5em 1.5em 0 -0.5em;
+	margin: 0 1em 1em;
+	padding: 0 1em;
 }
 .node-tool .tool-mainimg {
 	width: 260px; margin: 5px
@@ -120,4 +121,8 @@ article.node-training .field-name-field-rating .field-label, article.node-articl
 
 .block-home-slides-block:before {
   padding-top: 35%;
+}
+
+.node-tool .field-name-field-external-link {
+	margin: 0;
 }

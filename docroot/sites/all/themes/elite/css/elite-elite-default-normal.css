@@ -61,7 +61,8 @@ span.bigBtn {
 	display: none
 }
 .node-tool .field-name-field-external-link {
-	float: left
+	float: left;
+	margin: 0 0 0 1em;
 }
 .node-tool .flag-outer-favorites {
 	margin-right: 2em

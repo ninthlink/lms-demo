@@ -48,6 +48,7 @@ span.bigBtn {
 }
 .node-tool a.outBtn {
 	margin: 0 1em 1em;
+	padding: 0 1em;
 }
 .node-tool .tool-mainimg {
 	width: 100%;
