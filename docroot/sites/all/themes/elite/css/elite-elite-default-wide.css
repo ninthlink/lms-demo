@@ -126,3 +126,6 @@ article.node-training .field-name-field-rating .field-label, article.node-articl
 .node-tool .field-name-field-external-link {
 	margin: 0;
 }
+.wbar #logo {
+    left: 50%;
+}

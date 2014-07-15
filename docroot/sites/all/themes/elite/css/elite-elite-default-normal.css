@@ -202,3 +202,6 @@ body.page-node.node-type-tool #zone-content {
 .block-home-slides-block:before {
   padding-top: 50%;
 }
+.wbar #logo {
+    left: 50%;
+}
