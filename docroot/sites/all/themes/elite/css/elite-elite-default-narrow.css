@@ -190,3 +190,10 @@ article.node-training .field-name-field-media-types, article.node-article .field
 .view-trainings .view-footer article.node-poll {
   min-height: 238px;
 }
+
+@media only screen and (max-device-width: 400px) {
+  .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-subheader, 
+  .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-subheader {
+    bottom: 0;
+  }
+}
