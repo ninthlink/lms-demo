@@ -47,7 +47,7 @@ span.bigBtn {
 	margin: 0 1em 1em;
 }
 .node-tool a.outBtn {
-	margin: 0 1em 1em;
+	margin: 0;
 	padding: 0 1em;
 }
 .node-tool .tool-mainimg {
@@ -107,7 +107,7 @@ body.context-vive .devicerow {
 .view-trends img,
 .view-tools img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 .view-trainings .views-field-title, .view-trends .views-field-title, .view-store .views-field-title {
 	margin: 0 1em 2em;
