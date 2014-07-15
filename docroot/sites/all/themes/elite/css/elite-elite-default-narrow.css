@@ -191,6 +191,10 @@ article.node-training .field-name-field-media-types, article.node-article .field
   min-height: 238px;
 }
 
+.tabs ul.primary li a {
+  padding: 10px 9px;
+}
+
 @media only screen and (max-device-width: 400px) {
   .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-subheader, 
   .view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-subheader {
