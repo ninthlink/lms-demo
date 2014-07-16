@@ -192,7 +192,7 @@ article.node-training .field-name-field-media-types, article.node-article .field
 }
 
 .tabs ul.primary li a {
-  padding: 10px 9px;
+  padding: 10px 6px;
 }
 .wbar #logo {
   left: 60%;
@@ -201,8 +201,11 @@ body.node-type-quiz .quiz-score-submit input.form-submit {
   padding: 0 60px;
 }
 #block-system-main-menu ul.menu li.first {
-   display: none;
-} 
+  display: none;
+}
+.password-strength {
+  float: none;
+}
 
 @media only screen and (max-device-width: 400px) {
   .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-subheader, 

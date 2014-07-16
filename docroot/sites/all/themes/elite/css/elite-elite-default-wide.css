@@ -124,14 +124,20 @@ article.node-training .field-name-field-rating .field-label, article.node-articl
 }
 
 .node-tool .field-name-field-external-link {
-	margin: 0;
+  margin: 0;
+}
+.tabs ul.primary li a {
+  padding: 10px 15px;
 }
 .wbar #logo {
-    left: 50%;
+  left: 50%;
 }
 body.node-type-quiz .quiz-score-submit input.form-submit {
   padding: 0 100px;
 }
 #block-system-main-menu ul.menu li.first {
-   display: inline-block;
+  display: inline-block;
+}
+.password-strength {
+  float: right;
 }
