@@ -864,6 +864,11 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 						$oot[$i] = $q;
 					}
 					$oot[$i]->answer[$v->answer_id] = $v->answer;
+					// also set an "answer_order" standard array
+					if ( !property_exists( $oot[$i], 'answer_order' ) ) {
+						$oot[$i]->answer_order = array();
+					}
+					$oot[$i]->answer_order[] = $v->answer_id;
 				}
 				$result = array_values($oot);
 			}
