@@ -93,10 +93,14 @@ function elite_custom_services_imagecache($data) {
  */
 function elite_custom_services_user_counts() {
 	global $user;
-	$uid = (int)$user->uid;
 	
 	$return = new stdClass();
-	if ( $uid > 0 ) {
+	if (!$user->uid) {
+    // User is not logged in
+    return services_error(t('User is not logged in.'), 406);
+  } else {
+		$uid = (int)$user->uid;
+	
 		$account = user_load($uid);
 		$region = elite_custom_user_region();
 		
