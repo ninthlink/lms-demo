@@ -185,7 +185,14 @@ function elite_validation_services_request_preprocess_alter($controller, &$args,
 								if ( isset( $languages[1][$lang] ) ) {
 									$args[0]['language'] = $lang;
 								} else {
-									$args[0]['language'] = 'en';
+									// but sometimes apparently like the Windows MTS app currently sends
+									// [field_user_language_pref][und] = 'english' or 'russian'
+									// so this is a hack...
+									if ( $lang == 'russian' ) {
+										$args[0]['language'] = 'ru';
+									} else {
+										$args[0]['language'] = 'en';
+									}
 								}
 							}
 						}
