@@ -189,6 +189,15 @@ function elite_validation_services_request_preprocess_alter($controller, &$args,
 								}
 							}
 						}
+						if ( isset( $args[0]['field_user_language'] ) ) {
+							// in this case, its [field_user_language] = 'en' or 'ru' or whatever
+							$lang = $args[0]['field_user_language'];
+							if ( isset( $languages[1][$lang] ) ) {
+								$args[0]['language'] = $lang;
+							} else {
+								$args[0]['language'] = 'en';
+							}
+						}
 					}
 				}
 			}
