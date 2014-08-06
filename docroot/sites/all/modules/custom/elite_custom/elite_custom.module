@@ -829,11 +829,31 @@ function elite_custom_node_load( $nodes, $types ) {
 }
 
 /**
+ * hook_rest_server_execute_errors_alter(&$error_alter_array, $controller, $arguments)
+ */
+function elite_custom_rest_server_execute_errors_alter(&$error_alter_array, $controller, $arguments) {
+	// remove HTML from ALL the errors?
+	if ( isset( $error_alter_array['header_message'] ) ) {
+		$error_alter_array['header_message'] = strip_tags( $error_alter_array['header_message'] );
+	}
+	if ( isset( $error_alter_array['body_data'] ) ) {
+		if ( isset( $error_alter_array['body_data']['form_errors'] ) ) {
+			if ( is_array( $error_alter_array['body_data']['form_errors'] ) ) {
+				foreach( $error_alter_array['body_data']['form_errors'] as $k => $v ) {
+					$error_alter_array['body_data']['form_errors'][$k] = strip_tags( $v );
+				}
+			}
+		}
+	}
+	//watchdog('service ealt', 'error_alter_array <pre>'. print_r($error_alter_array,true) .'</pre><br />controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($arguments,true) .'</pre>');
+}
+
+/**
  * hook_services_request_postprocess_alter($controller, $args, &$result)
  */
 function elite_custom_services_request_postprocess_alter($controller, $args, &$result) {
 	global $user;
-	//watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
+	watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
 	switch( $controller['callback'] ) {
 		case 'logintoboggan_services_login':
 			if($user = user_load($result->user->uid, TRUE)) {
