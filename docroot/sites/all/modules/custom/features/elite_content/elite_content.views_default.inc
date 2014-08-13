@@ -279,6 +279,11 @@ function elite_content_views_default_views() {
   $handler->display->display_options['fields']['flagged']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['flagged']['type'] = 'boolean';
   $handler->display->display_options['fields']['flagged']['not'] = 0;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = 'type';
   $handler->display->display_options['path'] = 'favorites';
   $translatables['favorites'] = array(
     t('Master'),
@@ -301,6 +306,7 @@ function elite_content_views_default_views() {
     t('Services'),
     t('title'),
     t('favorite'),
+    t('type'),
   );
   $export['favorites'] = $view;
 
@@ -399,12 +405,6 @@ function elite_content_views_default_views() {
     'style' => 'average',
     'text' => 'average',
   );
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_training_base_points']['id'] = 'field_training_base_points';
-  $handler->display->display_options['fields']['field_training_base_points']['table'] = 'field_data_field_training_base_points';
-  $handler->display->display_options['fields']['field_training_base_points']['field'] = 'field_training_base_points';
-  $handler->display->display_options['fields']['field_training_base_points']['label'] = '';
-  $handler->display->display_options['fields']['field_training_base_points']['element_label_colon'] = FALSE;
   /* Field: Content: Media Types */
   $handler->display->display_options['fields']['field_media_types']['id'] = 'field_media_types';
   $handler->display->display_options['fields']['field_media_types']['table'] = 'field_data_field_media_types';
@@ -605,6 +605,11 @@ function elite_content_views_default_views() {
   $handler->display->display_options['fields']['flagged']['label'] = 'favorite';
   $handler->display->display_options['fields']['flagged']['type'] = 'boolean';
   $handler->display->display_options['fields']['flagged']['not'] = 0;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = 'type';
   $handler->display->display_options['path'] = 'popular_content';
   $translatables['popular_content'] = array(
     t('Master'),
@@ -622,6 +627,7 @@ function elite_content_views_default_views() {
     t('taken'),
     t('Services'),
     t('title'),
+    t('type'),
   );
   $export['popular_content'] = $view;
 
