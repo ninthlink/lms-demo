@@ -1274,6 +1274,7 @@ function elite_custom_default_regions_list() {
 		'us' => t('United States'),
 		'uk' => t('United Kingdom'),
 		'russia' => t('Russia'),
+		'mexico' => t('Mexico'),
 		/*
 		'china' => t('China'),
 		'africa' => t('Africa'),
