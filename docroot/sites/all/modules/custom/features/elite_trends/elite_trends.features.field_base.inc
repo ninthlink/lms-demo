@@ -216,6 +216,7 @@ function elite_trends_field_default_field_bases() {
   );
 
   // Exported field_base: 'field_rating'
+  $default_regions = elite_custom_default_regions_list();
   $field_bases['field_rating'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -255,11 +256,7 @@ function elite_trends_field_default_field_bases() {
     'locked' => 0,
     'module' => 'list',
     'settings' => array(
-      'allowed_values' => array(
-        'us' => 'United States',
-        'uk' => 'United Kingdom',
-        'russia' => 'Russia',
-      ),
+      'allowed_values' => $default_regions,
       'allowed_values_function' => 'elite_custom_default_regions_list',
     ),
     'translatable' => 0,

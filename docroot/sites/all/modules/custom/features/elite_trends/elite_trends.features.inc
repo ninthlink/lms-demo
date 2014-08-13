@@ -94,7 +94,7 @@ function elite_trends_flag_default_flags() {
     'show_on_form' => 0,
     'access_author' => '',
     'show_contextual_link' => 0,
-    'i18n' => 1,
+    'i18n' => 0,
     'module' => 'elite_trends',
     'locked' => array(
       0 => 'name',
