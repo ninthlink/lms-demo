@@ -5,6 +5,7 @@ package = Elite
 version = 7.x-2.2
 project = elite_trends
 dependencies[] = context
+dependencies[] = cs_adaptive_image
 dependencies[] = features
 dependencies[] = file
 dependencies[] = fivestar

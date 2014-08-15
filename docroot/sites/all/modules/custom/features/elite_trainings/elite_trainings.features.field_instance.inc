@@ -714,7 +714,7 @@ function elite_trainings_field_default_field_instances() {
       'rel_remove' => 'default',
       'title' => 'value',
       'title_maxlength' => 128,
-      'title_value' => 'Launch this Training',
+      'title_value' => 'Launch Training',
       'url' => 0,
       'user_register_form' => FALSE,
       'validate_url' => 1,

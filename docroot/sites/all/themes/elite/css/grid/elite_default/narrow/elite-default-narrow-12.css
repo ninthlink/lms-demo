@@ -21,9 +21,9 @@ body {
 /* Containers
 ----------------------------------------------------------------------------------------------------*/
 .container-12 {
-  margin-left: auto;
-  margin-right: auto;
-  width: 312px;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
 }
 
 /* Grid >> Global
@@ -373,11 +373,3 @@ body {
 .clearfix {
   zoom: 1;
 }
-
-/* home slider : 768 x 380 */
-.view-home-slides, #views_slideshow_cycle_main_home_slides-block, #views_slideshow_cycle_teaser_section_home_slides-block {
-width: 312px;
-height: 212px;
-position: relative;
-}
-
