@@ -166,3 +166,82 @@ function elite_preprocess_field(&$vars) {
 function elite_html_head_alter(&$head_elements) {
   unset($head_elements['system_meta_generator']);
 }
+
+/*
+ * theme_quiz_get_user_results from quiz module quiz.pages.inc
+ */
+function elite_quiz_get_user_results($variables) {
+  global $language;
+  $results = $variables['results'];
+  $rows = array();
+
+  while (list($key, $result) = each($results)) {
+    $interval = _quiz_format_duration($result['time_end'] - $result['time_start']);
+    $passed = $result['score'] >= $result['pass_rate'];
+    $grade = $passed ? t('Passed') : t('Failed');
+    $passed_class = $passed ? 'quiz-passed' : 'quiz-failed';
+    if (!is_numeric($result['score'])) {
+      $score = t('In progress');
+    }
+    elseif (!$result['is_evaluated']) {
+      $score = t('Not evaluated');
+    }
+    else {
+      if (!empty($result['pass_rate']) && is_numeric($result['score'])) {
+        $pre_score = '<span class = "' . $passed_class . '">';
+        $post_score = ' %<br><em>' . $grade . '</em></span>';
+      }
+      else {
+        $post_score = ' %';
+      }
+      $score = $pre_score . $result['score'] . $post_score;
+    }
+	// instead of linking to the Quiz and Quiz title, link to the Training for the Quiz?
+	$quiz_title = l($result['title'], 'node/' . $result['nid']);
+	if ( function_exists( 'elite_custom_quiz_training' ) ) {
+		$tnode = elite_custom_quiz_training( $result['nid'] );
+		if ( $tnode->language != $language->language ) {
+			$tlang = new stdClass();
+			$tlang->language = $tnode->language;
+			$quiz_title = l( $tnode->title, 'node/' . $tnode->nid, array('prefix' => $tnode->language .'/', 'language' => $tlang ) );
+		} else {
+			$quiz_title = l( $tnode->title, 'node/' . $tnode->nid ); //, array( 'language' => $tlang ) );
+		}
+	}
+    $rows[] = array(
+      'title'       => $quiz_title,
+      'time_start'  => format_date($result['time_start'], 'short'),
+      'time_end'    => ($result['time_end'] > 0) ? format_date($result['time_end'], 'short') . '<br />' . t('Duration :  @value', array('@value' => $interval)) : t('In Progress'),
+
+      'score'       => $score,
+      'evaluated'   => $result['is_evaluated'] ? t('Yes') : t('No'),
+      'op'          => l(t('View answers'), 'user/quiz/' . $result['result_id'] . '/userresults'),
+    );
+
+  }
+
+  if (empty($rows)) {
+    return t('No @quiz results found.', array('@quiz' => QUIZ_NAME));
+  }
+
+  $header = array(
+    t('Trainings'),
+    t('Started'),
+    t('Finished'),
+    t('Score'),
+    t('Evaluated'),
+    t('Operation'),
+  );
+
+  $per_page = 10;
+  // Initialise the pager
+  $current_page = pager_default_initialize(count($rows), $per_page);
+  // Split your list into page sized chunks
+  $chunks = array_chunk($rows, $per_page, TRUE);
+  // Show the appropriate items from the list
+  $output = theme('table', array('header' => $header, 'rows' => $chunks[$current_page]));
+  // Show the pager
+  $output .= theme('pager', array('quantity',count($rows)));
+  $output .= '<p><em>' . t('@quizzes that are not evaluated may have a different score and grade once evaluated.', array('@quizzes' => QUIZ_NAME)) . '</em></p>';
+  return $output;
+}

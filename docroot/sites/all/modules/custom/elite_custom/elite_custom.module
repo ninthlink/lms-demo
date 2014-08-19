@@ -521,7 +521,18 @@ function elite_custom_markup_wrapper($markup, $attributes = NULL, $tag = 'div') 
 	}
   return $output;
 }
-
+/**
+ * given a quiz NID, return the Training node referencing that Quiz
+ */
+function elite_custom_quiz_training( $quiz_nid ) {
+	$training_data = db_select('field_data_field_training_quiz', 'tq')
+    ->fields('tq', array('entity_id'))
+    ->condition('field_training_quiz_target_id', $quiz_nid)
+    ->orderBy('entity_id', 'DESC')
+    ->execute()
+    ->fetchAssoc();
+  return node_load($training_data['entity_id']);
+}
 /**
  * Implements hook_quiz_finished().
  *
@@ -530,13 +541,7 @@ function elite_custom_markup_wrapper($markup, $attributes = NULL, $tag = 'div') 
  *
  */
 function elite_custom_quiz_finished($quiz, $score, $rid) {
-  $training_data = db_select('field_data_field_training_quiz', 'tq')
-    ->fields('tq', array('entity_id'))
-    ->condition('field_training_quiz_target_id', $quiz->nid)
-    ->orderBy('entity_id', 'DESC')
-    ->execute()
-    ->fetchAssoc();
-  $training_node = node_load($training_data['entity_id']);
+  $training_node = elite_custom_quiz_training( $quiz->nid );
 	//watchdog('elite quizd', 'trainign done?! <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre>');
   if (!empty($training_node->field_base_points)) {
     $base_points = $training_node->field_base_points[LANGUAGE_NONE][0]['value'];
