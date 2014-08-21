@@ -52,7 +52,7 @@
     <?php foreach ($items as $delta => $item): ?>
       <div class="field-item <?php print $delta % 2 ? 'odd' : 'even'; ?>"<?php print $item_attributes[$delta]; ?>><?php
 			// print title of poll, if it was not taken, and print "Result" otherwise
-			if ( $element['#object']->vote == 1 ) {
+			if ( $element['#object']->vote > -1 ) {
 				print '<div class="poll-title">'. t('Result') .'</h1>';
 			} else {
 				print render($item);
