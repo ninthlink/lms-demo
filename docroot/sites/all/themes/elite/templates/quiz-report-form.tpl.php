@@ -21,6 +21,7 @@
 $p = drupal_get_path('module', 'quiz') .'/theme/';
 $q_image = $p. 'question_bg.png';
 
+//echo '<div style="display:none"><pre>'. print_r($_SESSION['quiz_' . intval(arg(1))],true) .'</pre></div>';
 //echo '<div style="display:none"><pre>'. print_r($form,true) .'</pre></div>';
 
 $nq = false;
@@ -78,4 +79,8 @@ foreach ($form as $key => $sub_form):
   </div>
 <?php endforeach; ?>
 </div>
+<?php
+$lastq = count($_SESSION['quiz_' . intval(arg(1))]['quiz_questions']) == 0;
+$form['op']['#value'] = $lastq ? t('Finish') : t('Next question');
+?>
 <div class="quiz-score-submit"><?php print drupal_render_children($form);?></div>
