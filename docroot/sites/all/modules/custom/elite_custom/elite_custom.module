@@ -85,7 +85,7 @@ function elite_custom_form_alter(&$form, &$form_state, $form_id) {
       $points_available = userpoints_get_current_points($user->uid);
     }
     if ($points_required > $points_available) {
-      drupal_set_message('Sorry, you don\'t have enough points to complete the checkout process. Take more trainings and read more trends to earn more.', 'error');
+      drupal_set_message( t('Sorry, you don\'t have enough points to complete the checkout process. Take more trainings and read more trends to earn more.'), 'error');
       $form['actions']['checkout']['#disabled'] = TRUE;
     }
   }
@@ -556,7 +556,7 @@ function elite_custom_quiz_finished($quiz, $score, $rid) {
 				'entity_type' => 'node',
 			));
 		} else {
-			drupal_set_message('You have already redeemed the points from this piece.', 'warning');
+			drupal_set_message( t('You have already redeemed the points from this piece.'), 'warning');
 		}
 		//if ( function_exists('watchdog') ) watchdog('elite quizd', 'training done? <pre>'. print_r($training_data['entity_id'],true) .'</pre> training_node <pre>'. print_r($training_node,true) .'</pre><br />base pts?! '. $base_points .' : <pre>'. print_r($ptsres,true) .'</pre>');
   }
@@ -1049,7 +1049,7 @@ function elite_custom_flag_flag($flag, $entity_id, $account, $flagging) {
 				'entity_type' => 'node',
 			));
 			if ( !$ptsres['status'] ) {
-				drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+				drupal_set_message( t('There has been an error in Collecting your Points: ') . $ptsres['reason'], 'error');
 			}
 		}
 	}
@@ -1082,7 +1082,7 @@ function elite_custom_flag_unflag($flag, $entity_id, $account, $flagging) {
 				'entity_type' => 'node',
 			));
 			if ( !$ptsres['status'] ) {
-				drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+				drupal_set_message( t('There has been an error in Collecting your Points: ') . $ptsres['reason'], 'error');
 			}
 		}
 	}
@@ -1104,7 +1104,7 @@ function elite_custom_poll_vote($form, &$form_state) {
 					'entity_type' => 'node',
 				));
 				if ( !$ptsres['status'] ) {
-					drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+					drupal_set_message( t('There has been an error in Collecting your Points: ') . $ptsres['reason'], 'error');
 				}
 			}
 		}
@@ -1128,7 +1128,7 @@ function elite_custom_poll_cancel($form, &$form_state) {
 					'entity_type' => 'node',
 				));
 				if ( !$ptsres['status'] ) {
-					drupal_set_message('There has been an error in Collecting your Points: '. $ptsres['reason'], 'error');
+					drupal_set_message( t('There has been an error in Collecting your Points: ') . $ptsres['reason'], 'error');
 				}
 			}
 		}
