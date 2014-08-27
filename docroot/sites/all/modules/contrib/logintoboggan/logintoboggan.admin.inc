@@ -178,18 +178,21 @@ function logintoboggan_main_settings() {
     '#title' => t('Message : Further instructions...'),
     '#default_value' => variable_get('logintoboggan_message_further', ''),
     '#description' => t('\'Further instructions have been sent to your e-mail address.\' message shown to newly-registered users.'),
+	'#maxlength' => 256,
   );
   $form['messages']['logintoboggan_message_validation'] = array(
     '#type' => 'textfield',
     '#title' => t('Message : A validation e-mail has been sent...'),
     '#default_value' => variable_get('logintoboggan_message_validation', ''),
     '#description' => t('\'A validation e-mail has been sent...\' message shown to newly-registered users if e-mail verification is required when a visitor creates an account.'),
+	'#maxlength' => 256,
   );
   $form['messages']['logintoboggan_message_pending'] = array(
     '#type' => 'textfield',
     '#title' => t('Message : Thank you for applying for an account. Your account is currently pending approval...'),
     '#default_value' => variable_get('logintoboggan_message_pending', ''),
     '#description' => t('\'Thank you for applying for an account. Your account is currently pending approval...\' message shown to newly-registered users when administrator approval is required to register accounts.'),
+	'#maxlength' => 256,
   );
   
   return system_settings_form($form);

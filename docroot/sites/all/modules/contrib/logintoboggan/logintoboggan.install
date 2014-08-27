@@ -55,6 +55,9 @@ function logintoboggan_uninstall() {
     'logintoboggan_immediate_login_on_register',
     'logintoboggan_override_destination_parameter',
     'logintoboggan_denied_remove_sidebars',
+    'logintoboggan_message_further',
+    'logintoboggan_message_validation',
+    'logintoboggan_message_pending',
   );
   foreach ($variables as $variable) {
   	variable_del($variable);
