@@ -168,7 +168,30 @@ function logintoboggan_main_settings() {
     '#default_value' => variable_get('logintoboggan_minimum_password_length', 0),
     '#description' => t('LoginToboggan automatically performs basic password validation for illegal characters. If you would additionally like to have a minimum password length requirement, select the length here, or set to \'None\' for no password length validation.')
   );
-
+  
+  $form['messages'] = array('#type' => 'fieldset',
+    '#title' => t('Messages'),
+    '#tree' => FALSE,
+  );
+  $form['messages']['logintoboggan_message_further'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Message : Further instructions...'),
+    '#default_value' => variable_get('logintoboggan_message_further', ''),
+    '#description' => t('\'Further instructions have been sent to your e-mail address.\' message shown to newly-registered users.'),
+  );
+  $form['messages']['logintoboggan_message_validation'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Message : A validation e-mail has been sent...'),
+    '#default_value' => variable_get('logintoboggan_message_validation', ''),
+    '#description' => t('\'A validation e-mail has been sent...\' message shown to newly-registered users if e-mail verification is required when a visitor creates an account.'),
+  );
+  $form['messages']['logintoboggan_message_pending'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Message : Thank you for applying for an account. Your account is currently pending approval...'),
+    '#default_value' => variable_get('logintoboggan_message_pending', ''),
+    '#description' => t('\'Thank you for applying for an account. Your account is currently pending approval...\' message shown to newly-registered users when administrator approval is required to register accounts.'),
+  );
+  
   return system_settings_form($form);
 }
 

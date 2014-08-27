@@ -101,6 +101,30 @@ function logintoboggan_variable_variable_info($options) {
       'group' => 'user_settings',
       'localize' => FALSE,
     ),
+    'logintoboggan_message_further' => array(
+      'title' => t('\'Further instructions...\' message', array(), $options),
+      'description' => t('Message shown to newly-registered users.', array(), $options),
+      'default' => 'Further instructions have been sent to your e-mail address.',
+      'type' => 'string',
+      'group' => 'user_settings',
+      'localize' => FALSE,
+    ),
+    'logintoboggan_message_validation' => array(
+      'title' => t('\'A validation e-mail has been sent...\' message', array(), $options),
+      'description' => t('Message shown to newly-registered users if e-mail verification is required when a visitor creates an account.', array(), $options),
+      'default' => 'A validation e-mail has been sent to your e-mail address. In order to gain full access to the site, you will need to follow the instructions in that message.',
+      'type' => 'string',
+      'group' => 'user_settings',
+      'localize' => FALSE,
+    ),
+    'logintoboggan_message_pending' => array(
+      'title' => t('\'Your account is currently pending approval...\' message', array(), $options),
+      'description' => t('Message shown to newly-registered users when administrator approval is required to register accounts.', array(), $options),
+      'default' => 'Thank you for applying for an account. Your account is currently pending approval by the site administrator.<br />Once it has been approved, you will receive an e-mail containing further instructions.',
+      'type' => 'string',
+      'group' => 'user_settings',
+      'localize' => FALSE,
+    ),
   );
   return $variables;
 }

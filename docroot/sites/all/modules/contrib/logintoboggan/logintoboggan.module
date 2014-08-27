@@ -439,7 +439,6 @@ function logintoboggan_page_alter(&$page) {
  * @ingroup logintoboggan_form
  */
 function logintoboggan_user_register_submit($form, &$form_state) {
-
   $reg_pass_set = !variable_get('user_email_verification', TRUE);
 
   // Test here for a valid pre-auth -- if the pre-auth is set to the auth user, we
@@ -503,9 +502,10 @@ function logintoboggan_user_register_submit($form, &$form_state) {
   //   1. Users can set their own password.
   //   2. The pre-auth role isn't the auth user.
   //   3. Visitors can create their own accounts.
-  $message = t('Further instructions have been sent to your e-mail address.');
+  
+  $message = t( variable_get('logintoboggan_message_further', 'Further instructions have been sent to your e-mail address.'), array(), array('langcode' => $account->language));
   if($reg_pass_set && $pre_auth && variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL) == USER_REGISTER_VISITORS) {
-    $message = t('A validation e-mail has been sent to your e-mail address. In order to gain full access to the site, you will need to follow the instructions in that message.');
+    $message = t( variable_get('logintoboggan_message_validation', 'A validation e-mail has been sent to your e-mail address. In order to gain full access to the site, you will need to follow the instructions in that message.'), array(), array('langcode' => $account->language));
   }
 
   if (variable_get('user_register', USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL) == USER_REGISTER_VISITORS) {
@@ -518,7 +518,7 @@ function logintoboggan_user_register_submit($form, &$form_state) {
     // Create new user account, administrator approval required.
     $mailkey = 'register_pending_approval';
 
-    $message = t('Thank you for applying for an account. Your account is currently pending approval by the site administrator.<br />Once it has been approved, you will receive an e-mail containing further instructions.');
+    $message = t( variable_get('logintoboggan_message_pending', 'Thank you for applying for an account. Your account is currently pending approval by the site administrator.<br />Once it has been approved, you will receive an e-mail containing further instructions.'), array(), array('langcode' => $account->language));
   }
 
   // Mail the user.
@@ -619,11 +619,11 @@ function logintoboggan_user_edit_validate($form, &$form_state) {
  *
  * @ingroup logintoboggan_core
  *
- * This is the best current place to dynamically remove the authenticated role
- * from the user object on initial page load.  hook_init() is too late, as menu
- * access checks have already been performed.
+ * This is currently the best place to dynamically remove the authenticated role
+ * from the user object, hook_boot() allows us to act on the user object before
+ * any access checks are performed.
  */
-function logintoboggan_menu_get_item_alter() {
+function logintoboggan_boot() {
   global $user;
 
   // Make sure any user with pre-auth role doesn't have authenticated user role
@@ -744,6 +744,12 @@ function logintoboggan_revalidate_access($account) {
  *   Which form to display, should be 'login' or 'register'.
  */
 function logintoboggan_unified_login_page($active_form = 'login') {
+  // Sanitise the $active_form text as it comes direct from the url.
+  // It should only ever be 'login' or 'register', so default to 'login'.
+  if ($active_form != 'login' && $active_form != 'register') {
+    $active_form = 'login';
+  }
+
   global $user;
   if ($user->uid) {
     menu_set_active_item('user/' . $user->uid);
