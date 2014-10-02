@@ -120,9 +120,9 @@ DirectoryIndex index.php index.html index.htm
   # Requires both mod_rewrite and mod_headers to be enabled.
   <IfModule mod_headers.c>
 	# unset some generator / version info
-    Header unset X-Generator
-    Header unset X-Drupal-Cache
-    Header unset X-Powered-By
+    #Header unset X-Generator
+    #Header unset X-Drupal-Cache
+    #Header unset X-Powered-By
   
     # Serve gzip compressed CSS files if they exist and the client accepts gzip.
     RewriteCond %{HTTP:Accept-encoding} gzip
