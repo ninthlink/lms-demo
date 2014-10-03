@@ -384,7 +384,7 @@ function elite_custom_block_flop_view() {
   if (!empty($user->field_user_name_last)) {
 		$uname .= $user->field_user_name_last['und'][0]['value'];
 	}
-	$uname_markup = elite_custom_markup_wrapper($uname, array('class' => 'user-name' ) );
+	$uname_markup = elite_custom_markup_wrapper( check_plain( $uname ), array('class' => 'user-name' ) );
 	
   $picture_markup = elite_custom_user_image($user, 'rounduser');
 	
@@ -858,7 +858,7 @@ function elite_custom_rest_server_execute_errors_alter(&$error_alter_array, $con
  */
 function elite_custom_services_request_postprocess_alter($controller, $args, &$result) {
 	global $user;
-	watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
+	//watchdog('service alt', 'controller <pre>'. print_r($controller,true) .'</pre><br />args <pre>'. print_r($args,true) .'</pre><br />result <pre>'. print_r($result,true) .'</pre>');
 	switch( $controller['callback'] ) {
 		case 'logintoboggan_services_login':
 			if($user = user_load($result->user->uid, TRUE)) {
@@ -899,7 +899,7 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 			}
 			// for ALL views, sanitize Services output some
       foreach( $result as $k => &$v ) {
-        // make sure Titles contain the special characters, its ok
+        // make sure Titles contain the special characters, its ok ?!
 				if ( isset( $v->title ) ) {
           $v->title = htmlspecialchars_decode($v->title);
         }
