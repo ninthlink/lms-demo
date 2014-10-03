@@ -92,7 +92,8 @@
 
   <div class="content"<?php print $content_attributes; ?>>
     <?php
-      // We hide the comments and links now so that we can render them later.
+      /* more hardcoded for security..
+	  // We hide the comments and links now so that we can render them later.
       hide($content['comments']);
       hide($content['links']);
 			
@@ -100,7 +101,93 @@
 			$content['title_field'][0]['#markup'] = "\n". '<div class="pad">'. "\n". '<a href="/" class="qlogo">Qualcomm</a>'. "\n". $content['title_field'][0]['#markup'] .'<h2>'. t('Synergize your Network') .'</h2>'."\n".'<p class="tdisc">'. t('Qualcomm VIVE and StreamBoost are products of Qualcomm Atheros, Inc.') ."</p>\n".'<a href="/wtrainings/vive-b/" class="tbutton">'. t('Take the Training') ."</a>\n</div>\n";
 			
       print render($content);
+	  */
     ?>
+	<div class="field field-name-title-field field-type-text field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even">
+	<div class="pad">
+		<a href="/" class="qlogo">Qualcomm</a>
+		<h1><?php print t('Qualcomm&reg; VIVE&trade; with StreamBoost&trade;'); ?></h1>
+		<h2><?php print t('Synergize your Network'); ?></h2>
+		<p class="tdisc"><?php print t('Qualcomm VIVE and StreamBoost are products of Qualcomm Atheros, Inc.'); ?></p>
+		<a href="/wtrainings/vive-b/" class="tbutton"><?php print t('Take the Training'); ?></a>
+	</div>
+	</div>
+      </div>
+</div>
+<div class="field field-name-body field-type-text-with-summary field-label-hidden">
+    <div class="field-items">
+          <div class="field-item even">
+		  <div class="grid-12">
+  <div class="pad">
+    <div class="grid-12">
+      <h2>Your wireless network is getting crowded. Moving your media around to all your devices requires Wi-Fi networks that keep up with intense demands for more bandwidth and speed. </h2>
+    </div>
+    <div class="grid-8">
+    <p>Introducing Qualcomm&reg; VIVE&trade; 802.11ac. Unleashing Gigabit Wi-Fi and more efficient connectivity to all your devices, VIVE is "Wi with a lot more Fi". <br /><br />Qualcomm VIVE brings your content and devices to life. It is 3x faster than 11n, so you can enjoy faster downloads, smoother video and music streams, and latency-free gaming, on more connected devices. <br /><br />With Qualcomm&reg; VIVE&trade; 11ac inside, a router uses superior channel agility to perform better in the presence of legacy Wi-Fi devices. VIVE-based routers can transmit data over 80, 40 or 20 MHz channels &mdash; depending on the available bandwidth and type of client devices on the other end of the connection.<br /><br />In addition, Qualcomm 11ac is smartly designed with an efficient architecture to reduce your router&rsquo;s power usage by up to 30% less than other networking solutions. </p>
+    </div>
+    <div class="grid-4">
+      <img src="/sites/all/themes/elite/images/vive/icons.png" alt="Channel Agility, 30% Lower Power than Competition, 3x Faster than 11n" />
+    </div>
+  </div>
+</div>
+</div>
+<div class="grid-12 orange">
+  <div class="pad">
+    <div class="grid-10">
+      <h2>What else is unique to Qualcomm VIVE technology?</h2>
+      <p>In some of the new Qualcomm VIVE 11ac routers, you can also enjoy StreamBoost technology. StreamBoost intelligently manages bandwidth coming into your home network. It automatically gives each app &amp; device what it needs to ensure a great online experience for everyone on the network. </p>
+    </div>
+    <div class="grid-12">
+      <h2>Today&lsquo;s home networks suffer<br />from network contention</h2>
+      <h4>Devices &amp; APPs compete<br />for limited bandwidth</h4>
+    </div>
+    <div class="grid-12">
+      <h2>Qualcomm&reg; StreamBoost&trade;<br />has the intelligence<br />needed to fix this</h2>
+      <h4>With Streamboost, your network<br />runs smooth</h4>
+    </div>
+    <div class="grid-10">
+      <h2>Qualcomm StreamBoost provides:</h2>
+      <ul>
+      <li>Faster, more efficient home networks - especially when running many applications on multiple devices</li>
+      <li>A simple, web-based interface to see and manage devices &amp; apps on your network </li>
+      <li>Cloud-based updates. StreamBoost routers can continuously learn &amp; adapt as your network changes, for improved performance over time.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="grid-12 teal">
+  <div class="pad">
+    <div class="grid-12">
+    	<h3>Qualcomm&reg; VIVE&trade; 11ac Routers With StreamBoost</h3>
+    </div>
+  </div>
+</div>
+<div class="grid-12 devicerow">
+<div class="grid-6 device odd"><img src="/sites/all/themes/elite/images/vive/d1.jpg" alt="" /><span class="name">D-Link AC1300 Dual Band Gaming Router</span></div>
+<div class="grid-6 device"><img src="/sites/all/themes/elite/images/vive/d2.jpg" alt="" /><span class="name">ZyXEL NBG6716</span></div>
+</div>
+<div class="grid-12 teal"><div class="pad"><div class="grid-12"><h3>Qualcomm&reg; VIVE&trade; 11ac Routers</h3></div></div></div>
+<div class="grid-12 devicerow">
+<div class="grid-6 device odd"><img src="/sites/all/themes/elite/images/vive/d3.jpg" alt="" /><span class="name">NETGEAR AC1200</span></div>
+<div class="grid-6 device"><img src="/sites/all/themes/elite/images/vive/d4.jpg" alt="" /><span class="name">Belkin AC1750</span></div>
+</div>
+<div class="grid-12 devicerow">
+<div class="grid-6 device odd"><img src="/sites/all/themes/elite/images/vive/d5.jpg" alt="" /><span class="name">TP-LINK Archer C7</span></div>
+<div class="grid-6 device"><img src="/sites/all/themes/elite/images/vive/d6.jpg" alt="" /><span class="name">EnGenius Technologies AC1750 &amp; 1200</span></div>
+</div>
+<div class="grid-12 teal">
+  <div class="pad">
+    <div class="grid-12">
+    	<a href="/wtrainings/vive-b/" class="tbutton right">Take the Training</a>
+    	<h3 style="float:left;margin: 20px 0; line-height: 53px">Qualcomm&reg; VIVE&trade; With StreamBoost</h3>
+    </div>
+  </div>
+</div>
+		  </div>
+	</div>
+</div>
   </div>
 
   <?php //print render($content['links']); ?>
