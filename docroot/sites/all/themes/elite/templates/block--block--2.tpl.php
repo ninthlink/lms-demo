@@ -6,7 +6,7 @@
     
     <div<?php print $content_attributes; ?>>
 	  <?php if ($block->subject): ?>
-      <h2><?php print t($block->subject); ?></h2>
+      <h2><?php print t( check_plain( $block->subject ) ); ?></h2>
       <?php endif; ?>
       <?php print $content ?>
 	  <div class="more-link"><a href="#"><?php print t('Coming Soon'); ?></a></div>
