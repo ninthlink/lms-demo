@@ -13,7 +13,7 @@ function services_quiz_services_resources() {
       'name' => 'services_quiz',
     ),
     'help'   => t('Retrieve quiz data.'),
-    'access arguments' => array('access content'),
+    'access arguments' => array('access quiz'),
     'callback' => 'services_quiz_data',
     'args'     => array(
       array(
@@ -33,7 +33,7 @@ function services_quiz_services_resources() {
       'name' => 'services_quiz',
     ),
     'help'   => t('Evaluate a single question on a quiz.'),
-    'access arguments' => array('access content'),
+    'access arguments' => array('access quiz'),
     'callback' => 'services_quiz_eval_question',
     'args'     => array(
       array(
@@ -67,7 +67,7 @@ function services_quiz_services_resources() {
       'name' => 'services_quiz',
     ),
     'help'   => t('Finalize quiz, submit to grading and assign points.'),
-    'access arguments' => array('access content'),
+    'access arguments' => array('access quiz'),
     'callback' => 'services_quiz_finalize',
     'args' => array(
       array(
