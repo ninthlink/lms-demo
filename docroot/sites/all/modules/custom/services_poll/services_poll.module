@@ -13,7 +13,7 @@ function services_poll_services_resources() {
       'name' => 'services_poll',
     ),
     'help'   => t('Retrieve poll data.'),
-    'access arguments' => array('access content'),
+    'access arguments' => array('vote on polls'),
     'callback' => 'services_poll_data',
     'args'     => array(
       array(
@@ -33,7 +33,7 @@ function services_poll_services_resources() {
       'name' => 'services_poll',
     ),
     'help'   => t('Vote on a poll.'),
-    'access arguments' => array('access content'),
+    'access arguments' => array('vote on polls'),
     'callback' => 'services_poll_vote',
     'args'     => array(
       array(
