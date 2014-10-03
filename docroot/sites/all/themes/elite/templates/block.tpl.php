@@ -8,7 +8,26 @@
     <?php print render($title_suffix); ?>
     
     <div<?php print $content_attributes; ?>>
-      <?php print $content ?>
+      <?php
+	  switch( $block->bid ) {
+		case 'block-4':
+			print '<h1>'. t('Log In') .'</h1>';
+			break;
+		case 'block-5':
+			print '<div id="forget-password-link">'. t( 'Forgot your <a href="@user-password">password</a>?', array( '@user-password' => '/user/password' ) ) .'</div>';
+			break;
+		case 'block-6':
+			print '<h1>'. t('Request Password') .'</h1>';
+			break;
+		case 'block-7':
+			print '<h1>'. t('Register') .'</h1>';
+			break;
+		default:
+			print $content;
+			break;
+	  }
+	  //watchdog('block check', '<pre>'. print_r($block,true) .'</pre>');
+	  ?>
     </div>
   </div>
 </<?php print $tag; ?>>
