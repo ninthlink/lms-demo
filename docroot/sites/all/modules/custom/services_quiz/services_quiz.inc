@@ -21,7 +21,7 @@ function _services_quiz_data($quiz, $reset = FALSE) {
 }
 
 function services_quiz_eval_question($data) {
-	watchdog('sqeq 1', 'data : <pre>'. print_r($data,true) .'</pre>');
+  //watchdog('sqeq 1', 'data : <pre>'. print_r($data,true) .'</pre>');
   global $user;
   $quiz_id = $data['quiz_id'];
   $question_id = $data['question_id'];
@@ -31,10 +31,10 @@ function services_quiz_eval_question($data) {
   $question = node_load($question_id);
   if (!isset($_SESSION['quiz_' . $quiz_id])) {
     _quiz_take_quiz_init($quiz);
-		watchdog('sqeq', 'quiz INIT : <pre>'. print_r($_SESSION['quiz_' . $quiz_id],true) .'</pre>');
+	//watchdog('sqeq', 'quiz INIT : <pre>'. print_r($_SESSION['quiz_' . $quiz_id],true) .'</pre>');
   } else {
-		watchdog('sqeq', 'quiz already started : <pre>'. print_r($_SESSION['quiz_' . $quiz_id],true) .'</pre>');
-	}
+	//watchdog('sqeq', 'quiz already started : <pre>'. print_r($_SESSION['quiz_' . $quiz_id],true) .'</pre>');
+  }
   $result_id = $_SESSION['quiz_' . $quiz_id]['result_id'];
 	
 	$quiz_all_questions = quiz_build_question_list($quiz);
@@ -55,7 +55,7 @@ function services_quiz_eval_question($data) {
 		}
 	}
 	
-	watchdog('sqeq 12', 'result_id '. $result_id .' : question_id '. $question_id .' : all questions <pre>'. print_r($quiz_all_questions, true) .'</pre><br /><br />so question_array = <pre>'. print_r($question_array,true) .'</pre>');
+	//watchdog('sqeq 12', 'result_id '. $result_id .' : question_id '. $question_id .' : all questions <pre>'. print_r($quiz_all_questions, true) .'</pre><br /><br />so question_array = <pre>'. print_r($question_array,true) .'</pre>');
 	
 	$result = new stdClass();
 	if ( $question_array === false ) {
@@ -69,7 +69,7 @@ function services_quiz_eval_question($data) {
 		
 		$result = module_invoke($module, 'evaluate_question', $former_question, $result_id, $answer);
 		
-		watchdog('sqeq 13', 'result: <pre>'. print_r($result,true) .'</pre><br /><br />question: <pre>'. print_r($question,true) .'</pre><br /><br />question_array: <pre>'. print_r($question_array,true) .'</pre>');
+		//watchdog('sqeq 13', 'result: <pre>'. print_r($result,true) .'</pre><br /><br />question: <pre>'. print_r($question,true) .'</pre><br /><br />question_array: <pre>'. print_r($question_array,true) .'</pre>');
 		
 		if ( $result->is_valid === TRUE ) {
 			quiz_store_question_result($quiz, $result, array('set_msg' => TRUE, 'question_data' => $question_array));
