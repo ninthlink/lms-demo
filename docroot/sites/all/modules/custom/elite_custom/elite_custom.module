@@ -931,18 +931,20 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 			}
 			$result->taken = ''. elite_custom_check_taken_content( $result->type, $nid, $user->uid );
 			// fix rating?
-			if ( is_array( $result->field_rating ) ) {
-				if ( function_exists('fivestar_get_votes') ) {
-					$votes = fivestar_get_votes('node', $result->nid);
-					$ratings = array();
-					foreach ( $votes as $k => $v ) {
-						if ( is_array( $v ) ) {
-							if ( isset( $v['value'] ) ) {
-								$ratings[$k] = $v['value'];
+			if ( isset( $result->field_rating ) ) {
+				if ( is_array( $result->field_rating ) ) {
+					if ( function_exists('fivestar_get_votes') ) {
+						$votes = fivestar_get_votes('node', $result->nid);
+						$ratings = array();
+						foreach ( $votes as $k => $v ) {
+							if ( is_array( $v ) ) {
+								if ( isset( $v['value'] ) ) {
+									$ratings[$k] = $v['value'];
+								}
 							}
 						}
+						$result->field_rating = $ratings;
 					}
-					$result->field_rating = $ratings;
 				}
 			}
 			if ( in_array( $result->type , array( 'article', 'training', 'tool' ) ) ) {
@@ -952,6 +954,14 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 					$fav = $favflag->is_flagged($result->nid);
 				}
 				$result->favorite = (int)$fav;
+			}
+			// clean up some unnecessary results
+			$gone = array( "vid", "uid", "log", "status", "comment", "promote", "sticky", "created", "changed", "tnid", "translate", "revision_timestamp", "revision_uid", "cid", "last_comment_timestamp", "last_comment_name", "last_comment_uid", "comment_count", "name", "picture", "data" );
+			$gcount = count( $gone );
+			while( $gcount-- ) {
+				if ( isset( $result->$gone[$gcount] ) ) {
+					unset( $result->$gone[$gcount] );
+				}
 			}
 			//watchdog("node_resource_retrieve", 'result.. <pre>'. print_r($result,true) .'</pre>');
 			break;
