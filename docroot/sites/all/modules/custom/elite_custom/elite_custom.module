@@ -959,7 +959,7 @@ function elite_custom_services_request_postprocess_alter($controller, $args, &$r
 			$gone = array( "vid", "uid", "log", "status", "comment", "promote", "sticky", "created", "changed", "tnid", "translate", "revision_timestamp", "revision_uid", "cid", "last_comment_timestamp", "last_comment_name", "last_comment_uid", "comment_count", "name", "picture", "data" );
 			$gcount = count( $gone );
 			while( $gcount-- ) {
-				if ( isset( $result->$gone[$gcount] ) ) {
+				if ( property_exists( $result, $gone[$gcount] ) ) {
 					unset( $result->$gone[$gcount] );
 				}
 			}
