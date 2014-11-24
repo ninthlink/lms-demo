@@ -36,6 +36,7 @@ function qelite_taketraining_btn() {
 				});
 				if ( $('#wslashd').size() > 0 ) {
 					var ih = qelite_wh - ( $('body').hasClass('admin-menu') ? 20 : 0 ) - 54;
+          //console.log('set wslashd iframe width '+ qelite_ww + ' height '+ ih);
 					$('#wslashd iframe').attr('width', qelite_ww).attr('height',ih);
 				}
 				if ( $('#block-views-home-slides-block').size() > 0 ) {
@@ -79,7 +80,8 @@ function qelite_taketraining_btn() {
 						var wh = $(window).height() - ( $('body').hasClass('admin-menu') ? 20 : 0 ) - 54;
 						
 						var ifr = $('<iframe />');
-						ifr.attr('src',turl).attr('width','100%').attr('height',wh);
+            //console.log('creating iframe width '+ qelite_ww + ' height '+ wh);
+						ifr.attr('src',turl).attr('width',qelite_ww).attr('height',wh);
 						ifr.appendTo(wc);
 						wc.appendTo('#page');
 						
