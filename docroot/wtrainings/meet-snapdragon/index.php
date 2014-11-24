@@ -3,7 +3,7 @@
  * Qualcomm HTML5 Modules
  * Meet Qualcomm® Snapdragon™ Processors
  */
-$v = '0.4.11';
+$v = '0.4.12';
 $qv = '?v='. $v;
 ?>
 <!doctype html>
@@ -26,7 +26,7 @@ $qv = '?v='. $v;
 		<link rel="stylesheet" href="css/main.css<?php echo $qv ?>">
 
 		<script src="../_common/js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-		<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+		<!--[if lt IE 9]><script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 	</head>
 	<body>
 		<div id="content" class="content-container">
@@ -427,7 +427,7 @@ $qv = '?v='. $v;
 		<script src="../_common/js/waypoints.min.js"></script>
 		<script src="../_common/js/swiper.min.js"></script>
 		
-		<script type="text/javascript" src="http://a.vimeocdn.com/js/froogaloop2.min.js"></script>
+		<script type="text/javascript" src="//a.vimeocdn.com/js/froogaloop2.min.js"></script>
 		<script src="js/animate.js"></script>
 <script type="text/javascript"> 
 //browser-update.org
