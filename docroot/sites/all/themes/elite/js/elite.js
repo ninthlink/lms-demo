@@ -36,7 +36,7 @@ function qelite_taketraining_btn() {
 				});
 				if ( $('#wslashd').size() > 0 ) {
 					var ih = qelite_wh - ( $('body').hasClass('admin-menu') ? 20 : 0 ) - 54;
-					$('#wslashd iframe').attr('height',ih);
+					$('#wslashd iframe').attr('width', qelite_ww).attr('height',ih);
 				}
 				if ( $('#block-views-home-slides-block').size() > 0 ) {
 					if ( qelite_widthchange ) {
