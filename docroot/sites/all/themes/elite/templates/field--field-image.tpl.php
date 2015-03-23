@@ -47,6 +47,14 @@
 
 $vid = $vmp4 = $vwebm = '';
 $showvid = false;
+$vid_dir = '/sites/default/files/videos/';
+$vid_suffix = '';
+// update $vid_dir path if track_da_files
+if ( function_exists( 'track_da_files_tracking' ) ) {
+  $vid_dir = '/system/tdf/videos/';
+  $vid_suffix = '/?file=1&type=node&id='. $element['#object']->nid;
+}
+
 if ( in_array($element['#object']->type, array('article','training','tool') ) ) {
 	if ( is_array( $element['#object']->field_video_url ) ) {
 		if ( isset( $element['#object']->field_video_url['und'] ) ) {
@@ -66,12 +74,12 @@ if ( in_array($element['#object']->type, array('article','training','tool') ) ) 
 	$basepath = defined('ELITELOCAL') ? ELITELOCAL : '';
 	if ( is_array( $element['#object']->field_video_file ) ) {
 		if ( isset( $element['#object']->field_video_file['und'] ) ) {
-			$vmp4 = $basepath .'/sites/default/files/videos/'. $element['#object']->field_video_file['und'][0]['filename'];
+			$vmp4 = $basepath . $vid_dir . $element['#object']->field_video_file['und'][0]['filename'] . $vid_suffix;
 		}
 	}
 	if ( is_array( $element['#object']->field_video_webm ) ) {
 		if ( isset( $element['#object']->field_video_webm['und'] ) ) {
-			$vwebm = $basepath .'/sites/default/files/videos/'. $element['#object']->field_video_webm['und'][0]['filename'];
+			$vwebm = $basepath . $vid_dir . $element['#object']->field_video_webm['und'][0]['filename'] . $vid_suffix;
 		}
 	}
 	if ( ( $vmp4 != '' ) || ( $vwebm != '' ) ) {
@@ -94,7 +102,7 @@ if ( $showvid ) {
 			// lets just print the video html5 stuff here
 			if ( is_array( $element['#object']->field_video_file ) ) {
 				if ( isset( $element['#object']->field_video_file['und'] ) ) {
-					$vmp4 = $basepath .'/sites/default/files/videos/'. $element['#object']->field_video_file['und'][0]['filename'];
+					$vmp4 = $basepath . $vid_dir . $element['#object']->field_video_file['und'][0]['filename'] . $vid_suffix;
 				}
 			}
 		}
