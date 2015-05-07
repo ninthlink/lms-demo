@@ -1,0 +1,109 @@
+/* typography : open sans maybe?! */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+body,
+.block-views h2.block-title,
+body.page-trainings h1#page-title,
+body.page-trends h1#page-title,
+.view-trainings .view-footer article.node-poll h1,
+.view-trainings .view-footer article.node-poll .poll-title,
+body.node-type-quiz #quiz_progress,
+body.node-type-quiz #quiz_score_possible,
+body.node-type-quiz #quiz-report-form,
+.view-tools .views-field-body,
+.view-tools .views-field-field-rating .views-label,
+.node-tool .field-name-field-rating .field-label,
+body.node-type-page article.node h1,
+.not-logged-in.page-user .form-text,
+.not-logged-in.page-user .form-select,
+#elite-user-flop .user-name,
+#elite-user-flop a.x,
+#elite-user-flop ul.usermenu li a .title,
+#elite-user-flop ul.usermenu li a .count {
+  font-weight: 400;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,
+.poll-title,
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-slide-button,
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-slide-button,
+	.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-field-subheader,
+	.view-sliders .views-slideshow-cycle-main-frame-row .views-field-field-subheader,
+.view-trainings .views-field-title,
+.view-trends .views-field-title,
+.view-store .views-field-title,
+.view-tools .views-field-title,
+article.node-reward .field-type-commerce-product-reference .form-submit,
+#quiz-start-quiz-button-form .form-submit,
+body.node-type-quiz .answering-form input#edit-op,
+body.node-type-quiz .answering-form input#edit-back,
+body.node-type-quiz .answering-form input#edit-submit,
+body.node-type-quiz .quiz-score-submit input.form-submit,
+a.bigBtn,
+span.bigBtn,
+a.outBtn,
+.node-tool .field-name-body .field-label,
+.section-title,
+#block-elite-custom-avatar-block .points-wrapper,
+#elite-user-block-wrapper .points-wrapper strong,
+#elite-user-flop .points-wrapper strong {
+  font-weight: 600;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.view-home-slides .views-slideshow-cycle-main-frame-row .views-field-title,
+.view-sliders .views-slideshow-cycle-main-frame-row .views-field-title,
+.view-trainings .view-footer article.node-poll h2.node-title,
+.view-tools .view-header h1#page-title,
+.view-tools .view-header h2,
+#elite-user-block-wrapper .points-wrapper,
+#elite-user-flop .points-wrapper {
+  font-weight: 300;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.view-popular-content .views-field-field-base-points strong,
+.view-trainings .views-field-field-base-points strong,
+.view-trends .views-field-field-base-points strong,
+.view-store .views-field-commerce-price strong,
+.view-polls .field-name-field-base-points strong,
+.view-store .views-field-add-to-cart-form .form-submit,
+.block.block-tips .more-link,
+.block.block-store .more-link,
+.block.block-app .more-link,
+.not-logged-in.page-user h1,
+body.context-vive.node-type-page article.node h1 {
+  font-weight: 700;
+  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* colors and more then */
+.not-logged-in.page-user #zone-content {
+  background-image: url(../images/bg-login-4.jpg);
+}
+.not-logged-in.page-user #block-system-main {
+  background: transparent url(../images/loginbox.png) repeat 0 0;
+}
+.not-logged-in.page-user .form-submit {
+  background: #3588be;
+  border: none;
+  box-shadow: none;
+  text-transform: none;
+  font-weight: 400;
+}
+.block.block-tips {
+  background-color: #739e4d;
+  background-image: url(../images/icon-tools.png);
+}
+.block.block-tips .more-link a {
+  background-color: #8fb171;
+  color: #fff;
+}
+.block.block-app {
+  background-color: #000;
+  background-image: url(../images/icon-get-app.png);
+}
+.block.block-app .more-link a {
+  background-color: #333;
+  color: #fff;
+}

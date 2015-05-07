@@ -1,5 +1,5 @@
-name = Qualcomm Elite
-description = Subtheme of Omega 3x
+name = Elite
+description = Base Theme (with child theme options) for the Elite LMS, originally based off of the Omega 3x theme
 core = 7.x
 engine = phptemplate
 screenshot = screenshot.png
@@ -83,20 +83,10 @@ stylesheets[all and (min-width: 320px)][] = css/grid/elite/narrow/elite-default-
 
 ; WHITELABEL STYLES
 
-css[whitelabel.css][name] = MTS whitelabel styles
-css[whitelabel.css][description] = This file holds whitelabel override styles for the MTS site.
-css[whitelabel.css][path] = whitelabel/mts/css
-css[whitelabel.css][options][weight] = 12
-
-css[viettel.css][name] = Viettel whitelabel styles
-css[viettel.css][description] = This file holds whitelabel override styles for the Viettel site.
-css[viettel.css][path] = whitelabel/viettel/css
-css[viettel.css][options][weight] = 12
-
-css[hidepoints.css][name] = Hide Points
-css[hidepoints.css][description] = Hide all instances of Points on the front-end. You should also go to /admin/config/people/userpoints/settings and turn Messages > "Display message" to No
-css[hidepoints.css][path] = whitelabel/hidepoints/css
-css[hidepoints.css][options][weight] = 13
+css[sonynow.css][name] = Sony Now styles
+css[sonynow.css][description] = This file holds whitelabel override styles for the Sony Now site.
+css[sonynow.css][path] = whitelabel/sonynow/css
+css[sonynow.css][options][weight] = 12
 
 ; JS FILES
 
