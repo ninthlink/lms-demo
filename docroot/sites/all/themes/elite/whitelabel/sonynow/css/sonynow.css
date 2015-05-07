@@ -1,6 +1,37 @@
 /* typography : open sans maybe?! */
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
-
+/*@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);*/
+@font-face {
+  font-family: "SST W01 Ultra Light";
+  src: url("fonts/3240ecb4-2593-4c68-9c4e-d1b085d7f382.eot?#iefix");
+  src: url("fonts/3240ecb4-2593-4c68-9c4e-d1b085d7f382.eot?#iefix") format("eot"), url("fonts/faa57799-d76d-4717-998a-9c4a047a7789.woff") format("woff"), url("fonts/3f16361a-1f5e-4c78-b655-33ab9b78cc83.ttf") format("truetype"), url("fonts/af63977b-d291-4aba-a2ad-ddc47dd696d6.svg#af63977b-d291-4aba-a2ad-ddc47dd696d6") format("svg");
+}
+@font-face {
+  font-family: "SST W01 Light";
+  src: url("fonts/78c7630a-e8c0-4c87-b979-85c4e48d3848.eot?#iefix");
+  src: url("fonts/78c7630a-e8c0-4c87-b979-85c4e48d3848.eot?#iefix") format("eot"), url("fonts/7046acd2-1a7d-4092-9b55-9c3b0babe5a6.woff") format("woff"), url("fonts/277ea3f1-1f2f-41f9-80d4-b118c36814db.ttf") format("truetype"), url("fonts/766b32a6-2abc-4be8-9ec8-d48a0781122e.svg#766b32a6-2abc-4be8-9ec8-d48a0781122e") format("svg");
+}
+@font-face {
+  font-family: "SST W01 Roman";
+  src: url("fonts/580b2ea4-f6e0-4626-9ef8-3562f00da4b3.eot?#iefix");
+  src: url("fonts/580b2ea4-f6e0-4626-9ef8-3562f00da4b3.eot?#iefix") format("eot"), url("fonts/5c14fe05-1e00-48ad-90a4-7fa0de36fb7b.woff") format("woff"), url("fonts/2ed52a6a-e86f-4b97-923e-5c9af2866617.ttf") format("truetype"), url("fonts/8f7596eb-da17-4318-8ca4-46c048c4e97a.svg#8f7596eb-da17-4318-8ca4-46c048c4e97a") format("svg");
+}
+@font-face {
+  font-family: "SST W01 Medium";
+  src: url("fonts/9f864997-7267-46fa-a7f1-2362457ef574.eot?#iefix");
+  src: url("fonts/9f864997-7267-46fa-a7f1-2362457ef574.eot?#iefix") format("eot"), url("fonts/56cdf8fd-1b80-4a14-9521-5e0657b68580.woff") format("woff"), url("fonts/24b26d61-1835-43d2-bc7e-1fd71538a3d0.ttf") format("truetype"), url("fonts/9aa3dbe3-cd43-4003-95be-7121a3333e5e.svg#9aa3dbe3-cd43-4003-95be-7121a3333e5e") format("svg");
+}
+@font-face {
+  font-family: "SST W01 Bold";
+  src: url("fonts/52adf2b6-12bd-41e4-bfee-9ca637d6045d.eot?#iefix");
+  src: url("fonts/52adf2b6-12bd-41e4-bfee-9ca637d6045d.eot?#iefix") format("eot"), url("fonts/21ee40af-ca04-4a40-a3cc-e0f6a8d68101.woff") format("woff"), url("fonts/7c0c7307-e38f-4784-a632-d49333cb65e8.ttf") format("truetype"), url("fonts/f3aa7336-d7d0-40dd-9177-d17f97a16f45.svg#f3aa7336-d7d0-40dd-9177-d17f97a16f45") format("svg");
+}
+/*
+@font-face {
+  font-family: "SST W01 Heavy";
+  src: url("fonts/7f2e7624-d986-4a13-9851-4369980e6262.eot?#iefix");
+  src: url("fonts/7f2e7624-d986-4a13-9851-4369980e6262.eot?#iefix") format("eot"), url("fonts/81f7c124-d9ed-455d-9913-6f175a31d5f0.woff") format("woff"), url("fonts/3d8e748a-2503-4696-87bc-340e8671dfda.ttf") format("truetype"), url("fonts/98fc992a-420f-4dcf-8cee-665347888c34.svg#98fc992a-420f-4dcf-8cee-665347888c34") format("svg");
+}
+*/
 body,
 .block-views h2.block-title,
 body.page-trainings h1#page-title,
@@ -21,7 +52,7 @@ body.node-type-page article.node h1,
 #elite-user-flop ul.usermenu li a .title,
 #elite-user-flop ul.usermenu li a .count {
   font-weight: 400;
-  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "SST W01 Roman", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 h1,
@@ -48,8 +79,8 @@ a.outBtn,
 #block-elite-custom-avatar-block .points-wrapper,
 #elite-user-block-wrapper .points-wrapper strong,
 #elite-user-flop .points-wrapper strong {
-  font-weight: 600;
-  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-family: "SST W01 Medium", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .view-home-slides .views-slideshow-cycle-main-frame-row .views-field-title,
@@ -59,8 +90,8 @@ a.outBtn,
 .view-tools .view-header h2,
 #elite-user-block-wrapper .points-wrapper,
 #elite-user-flop .points-wrapper {
-  font-weight: 300;
-  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-family: "SST W01 Light", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .view-popular-content .views-field-field-base-points strong,
@@ -75,7 +106,7 @@ a.outBtn,
 .not-logged-in.page-user h1,
 body.context-vive.node-type-page article.node h1 {
   font-weight: 700;
-  font-family: "Open Sans", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "SST W01 Bold", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 /* colors and more then */
 .not-logged-in.page-user #zone-content {
@@ -112,5 +143,10 @@ body.context-vive.node-type-page article.node h1 {
   #views_slideshow_cycle_teaser_section_home_slides-block {
     width: 1080px;
     height: 455px;
+  }
+}
+@media screen and (min-width: 770px) {
+  #block-system-main-menu ul.menu li a:link, #block-system-main-menu ul.menu li a:visited {
+    font-size: 15px !important;
   }
 }
