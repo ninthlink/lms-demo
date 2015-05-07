@@ -138,15 +138,23 @@ body.context-vive.node-type-page article.node h1 {
   background-color: #333;
   color: #fff;
 }
+@media screen and (min-width: 770px) {
+  #block-system-main-menu ul.menu li a:link, #block-system-main-menu ul.menu li a:visited {
+    font-size: 15px !important;
+  }
+  
+  .block.block-tips,
+  .block.block-app {
+    height: 260px !important;
+  }
+  .view-trainings .view-footer article.node-poll {
+    min-height: 303px !important;
+  }
+}
 @media screen and (min-width: 1024px) {
   .view-home-slides, #views_slideshow_cycle_main_home_slides-block,
   #views_slideshow_cycle_teaser_section_home_slides-block {
     width: 1080px;
     height: 455px !important;
-  }
-}
-@media screen and (min-width: 770px) {
-  #block-system-main-menu ul.menu li a:link, #block-system-main-menu ul.menu li a:visited {
-    font-size: 15px !important;
   }
 }
