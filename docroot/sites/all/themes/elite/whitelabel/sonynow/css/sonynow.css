@@ -142,7 +142,7 @@ body.context-vive.node-type-page article.node h1 {
   .view-home-slides, #views_slideshow_cycle_main_home_slides-block,
   #views_slideshow_cycle_teaser_section_home_slides-block {
     width: 1080px;
-    height: 455px;
+    height: 455px !important;
   }
 }
 @media screen and (min-width: 770px) {
