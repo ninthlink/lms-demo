@@ -138,8 +138,17 @@ body.context-vive.node-type-page article.node h1 {
   background-color: #333;
   color: #fff;
 }
-#forum {
+#forum,
+.node-forum {
   padding: 20px;
+}
+.node-forum .user-picture {
+  float: left;
+  width: 41px;
+  margin: 0 10px 10px 0;
+}
+#forum table {
+  width: 100%;
 }
 @media screen and (min-width: 770px) {
   #block-system-main-menu ul.menu li a:link, #block-system-main-menu ul.menu li a:visited {
